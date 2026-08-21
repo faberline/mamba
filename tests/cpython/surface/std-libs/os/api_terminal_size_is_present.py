@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """os.terminal_size: api_terminal_size_is_present (surface)."""

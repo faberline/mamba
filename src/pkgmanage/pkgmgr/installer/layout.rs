@@ -1,9 +1,9 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:b9a36beb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-layout-rs" reason="Existing hand-written code in projects/mamba/src/pkgmgr/installer/layout.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:b9a36beb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-layout-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/layout.rs requires tracked generator coverage."
 // payload to the appropriate site_packages subtree; top-level archive entries
 // go to `site_packages/`. Hardlink-vs-copy choice gated on `stat.st_dev`
 // equality (R9 P3 optimisation).
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/installer.md#Logic
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/installer.md#Logic
 use std::fs;
 use std::path::{Path, PathBuf};
 

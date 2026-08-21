@@ -126,7 +126,7 @@ fn baseline_block_is_committed_versioned_and_checksummed() {
         .get("baseline_relative_path_within_repo")
         .and_then(|v| v.as_str())
         .unwrap();
-    assert!(path.starts_with("projects/mamba/tests/"));
+    assert!(path.starts_with("apps/mamba/tests/"));
     assert!(path.ends_with("baseline.json"));
     assert_eq!(
         b.get("baseline_format").and_then(|v| v.as_str()),

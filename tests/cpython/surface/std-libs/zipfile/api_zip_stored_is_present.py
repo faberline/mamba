@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """zipfile.ZIP_STORED: api_zip_stored_is_present (surface)."""

@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """socket.INADDR_MAX_LOCAL_GROUP: api_inaddr_max_local_group_is_present (surface)."""

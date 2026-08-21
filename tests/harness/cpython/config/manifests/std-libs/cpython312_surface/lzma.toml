@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "CHECK_CRC32"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "CHECK_CRC64"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "CHECK_ID_MAX"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "CHECK_NONE"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "CHECK_SHA256"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "CHECK_UNKNOWN"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "FILTER_ARM"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "FILTER_ARMTHUMB"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "FILTER_DELTA"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "FILTER_IA64"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "FILTER_LZMA1"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "FILTER_LZMA2"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "FILTER_POWERPC"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "FILTER_SPARC"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "FILTER_X86"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "FORMAT_ALONE"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "FORMAT_AUTO"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "FORMAT_RAW"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "FORMAT_XZ"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "LZMACompressor"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "LZMADecompressor"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "LZMAError"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "LZMAFile"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "MF_BT2"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "MF_BT3"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "MF_BT4"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "MF_HC3"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "MF_HC4"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "MODE_FAST"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "MODE_NORMAL"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "PRESET_DEFAULT"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "PRESET_EXTREME"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "compress"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "decompress"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "is_check_supported"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,4 +398,4 @@ probe     = "attr"
 attr      = "open"
 expr      = "lzma"
 module    = "lzma"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"

@@ -52,10 +52,10 @@ must_be_offline = true
 must_be_deterministic = true
 
 # Acceptance: vendored / submoduled at
-# projects/mamba/conformance/cpython-lib-test/.
+# apps/mamba/conformance/cpython-lib-test/.
 [denominator_source_contract]
 case = "denominator_source_is_vendored_cpython_lib_test"
-denominator_source_relative_path = "projects/mamba/conformance/cpython-lib-test"
+denominator_source_relative_path = "apps/mamba/conformance/cpython-lib-test"
 denominator_source_relative_path_field_name = "denominator_source_path"
 must_pin_denominator_source_relative_path = true
 forbid_denominator_source_outside_project = true
@@ -69,10 +69,10 @@ denominator_substituted_with_self_defined_exit_code = 256
 must_distinguish_source_missing_from_substitution = true
 
 # Acceptance: "Runner exists at
-# projects/mamba/conformance/cpython_lib_test_runner.rs (or similar)".
+# apps/mamba/conformance/cpython_lib_test_runner.rs (or similar)".
 [runner_location_contract]
 case = "runner_lives_under_projects_mamba_conformance"
-runner_relative_path = "projects/mamba/conformance/cpython_lib_test_runner.rs"
+runner_relative_path = "apps/mamba/conformance/cpython_lib_test_runner.rs"
 runner_relative_path_field_name = "runner_relative_path"
 must_pin_runner_relative_path = true
 forbid_runner_outside_projects_mamba_conformance = true

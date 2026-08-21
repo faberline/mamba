@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """base64.b32decode: api_b32decode_is_present (surface)."""

@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "ALLOW_MISSING"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "abspath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "altsep"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "basename"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "commonpath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "commonprefix"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "curdir"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "defpath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "devnull"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "dirname"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "exists"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "expanduser"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "expandvars"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "extsep"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "getatime"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "getctime"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "getmtime"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "getsize"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "isabs"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "isdir"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "isfile"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "isjunction"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "islink"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "ismount"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "join"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "lexists"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "normcase"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "normpath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "pardir"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "pathsep"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "realpath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "relpath"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "samefile"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "sameopenfile"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "samestat"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "sep"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "split"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "splitdrive"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "splitext"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "splitroot"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,4 +453,4 @@ probe     = "attr"
 attr      = "supports_unicode_filenames"
 expr      = "os.path"
 module    = "os.path"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"

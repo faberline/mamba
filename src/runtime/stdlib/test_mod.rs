@@ -1054,7 +1054,7 @@ fn oracle_test_package_dir() -> Option<PathBuf> {
             if direct.exists() {
                 return Some(direct);
             }
-            let via_projects = dir.join("projects/mamba").join(REL);
+            let via_projects = dir.join("apps/mamba").join(REL);
             if via_projects.exists() {
                 return Some(via_projects);
             }

@@ -20,7 +20,7 @@ const CO_FUTURE_BARRY_AS_BDFL: i64 = 0x40_0000;
 const CO_FUTURE_GENERATOR_STOP: i64 = 0x80_0000;
 const CO_FUTURE_ANNOTATIONS: i64 = 0x100_0000;
 
-// @spec .aw/tech-design/projects/mamba/stdlib/future.md
+// @spec .aw/tech-design/apps/mamba/stdlib/future.md
 pub fn register() {
     register_feature_class();
 

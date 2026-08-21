@@ -11,7 +11,7 @@
 #   - Exactly three required programs (pytest_hello, flask_hello,
 #     requests_get) — no more, no less.
 #   - Each child gate is wired to its own fixture under
-#     projects/mamba/tests/governance/gates/third_party/<family>_gate/.
+#     apps/mamba/tests/governance/gates/third_party/<family>_gate/.
 #   - The umbrella is GREEN only when all three child gates are
 #     GREEN; partial pass (e.g. 2/3) reports as parent FAIL with the
 #     missing-child names enumerated.
@@ -73,7 +73,7 @@ unknown_required_program_exit_code = 296
 must_distinguish_required_program_missing_from_unknown_required_program = true
 
 # Each child program is wired to its own fixture under
-# projects/mamba/tests/governance/gates/third_party/<family>_gate/.
+# apps/mamba/tests/governance/gates/third_party/<family>_gate/.
 [child_gate_wiring_contract]
 case = "each_child_program_is_wired_to_its_own_fixture"
 must_wire_pytest_hello_to_child_gate = true
@@ -82,9 +82,9 @@ must_wire_requests_get_to_child_gate = true
 forbid_collapsing_children_into_a_single_combined_gate = true
 forbid_silently_dropping_a_child_from_the_wiring = true
 child_gate_wiring_field_name = "child_gate_wiring"
-pytest_child_gate_relative_path = "projects/mamba/tests/governance/gates/third_party/c3_pytest_runs_unmodified_gate/manifest.toml"
-flask_child_gate_relative_path = "projects/mamba/tests/governance/gates/third_party/c3_flask_runs_unmodified_gate/manifest.toml"
-requests_child_gate_relative_path = "projects/mamba/tests/governance/gates/third_party/c3_requests_runs_unmodified_gate/manifest.toml"
+pytest_child_gate_relative_path = "apps/mamba/tests/governance/gates/third_party/c3_pytest_runs_unmodified_gate/manifest.toml"
+flask_child_gate_relative_path = "apps/mamba/tests/governance/gates/third_party/c3_flask_runs_unmodified_gate/manifest.toml"
+requests_child_gate_relative_path = "apps/mamba/tests/governance/gates/third_party/c3_requests_runs_unmodified_gate/manifest.toml"
 pytest_child_issue = 1234
 flask_child_issue = 1257
 requests_child_issue = 1259

@@ -25,7 +25,7 @@ import os, re, subprocess, sys, argparse, shlex
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-ROOT = Path(__file__).resolve().parents[4]          # projects/mamba
+ROOT = Path(__file__).resolve().parents[4]          # apps/mamba
 TYPE_DIR = ROOT / "tests/cpython/type"
 SOUND_DIR = ROOT / "tests/cpython/behavior/core"
 README = ROOT / "README.md"

@@ -2,14 +2,14 @@
 
 //! `ResolvedGraph` -> deterministic TOML bytes (R1, R5).
 //!
-//! See `.aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic` —
+//! See `.aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic` —
 //! the `lockfile-write` flowchart drives the projection.
 
 use crate::pkgmanage::pkgmgr::resolver::ResolvedGraph;
 
 use super::{Lockfile, LockfileError, Package};
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic (lockfile-write)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic (lockfile-write)
 pub(super) fn to_toml(graph: &ResolvedGraph, input_hash: &str) -> Result<String, LockfileError> {
     let mut packages: Vec<Package> = graph
         .nodes

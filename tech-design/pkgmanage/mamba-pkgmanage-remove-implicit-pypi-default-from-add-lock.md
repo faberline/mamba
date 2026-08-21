@@ -107,32 +107,32 @@ requirementDiagram
 
 ```yaml
 changes:
-  - file: projects/mamba/src/pkgmanage/add.rs
+  - file: apps/mamba/src/pkgmanage/add.rs
     action: modify
     section: logic
     impl_mode: hand-written
     description: "Change add source-policy resolution so public PyPI is never selected implicitly; local frozen index and explicit registry URL remain supported."
-  - file: projects/mamba/src/pkgmanage/lock.rs
+  - file: apps/mamba/src/pkgmanage/lock.rs
     action: modify
     section: logic
     impl_mode: hand-written
     description: "Change lock source-policy resolution so public PyPI is never selected implicitly; local frozen index and explicit registry URL remain supported."
-  - file: projects/mamba/src/main.rs
+  - file: apps/mamba/src/main.rs
     action: modify
     section: logic
     impl_mode: hand-written
     description: "Update CLI help text for add/lock to describe explicit local/private registry sources instead of default PyPI."
-  - file: projects/mamba/tests/pkgmgr/add.rs
+  - file: apps/mamba/tests/pkgmgr/add.rs
     action: modify
     section: unit-test
     impl_mode: hand-written
     description: "Add regression coverage for no-source add fail-fast/no-mutation behavior while preserving frozen-index and explicit registry tests."
-  - file: projects/mamba/tests/pkgmgr/lock.rs
+  - file: apps/mamba/tests/pkgmgr/lock.rs
     action: modify
     section: unit-test
     impl_mode: hand-written
     description: "Add regression coverage for no-source lock fail-fast/no-partial-lockfile behavior while preserving frozen-index and explicit registry tests."
-  - file: projects/mamba/README.md
+  - file: apps/mamba/README.md
     action: modify
     section: logic
     impl_mode: hand-written

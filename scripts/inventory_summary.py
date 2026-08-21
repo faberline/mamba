@@ -12,7 +12,7 @@ CPython Lib/test seed, real-world) and bench fixture counts.
 Usage:
     python3 scripts/inventory_summary.py
     python3 scripts/inventory_summary.py --json
-    python3 scripts/inventory_summary.py --root /abs/path/to/projects/mamba
+    python3 scripts/inventory_summary.py --root /abs/path/to/apps/mamba
 
 Exit codes:
     0 — inventory printed
@@ -244,7 +244,7 @@ def main(argv: Iterable[str]) -> int:
         "--root",
         type=Path,
         default=_default_root(),
-        help="path to projects/mamba (defaults to script's parent)",
+        help="path to apps/mamba (defaults to script's parent)",
     )
     parser.add_argument(
         "--json", action="store_true", help="emit machine-readable JSON"

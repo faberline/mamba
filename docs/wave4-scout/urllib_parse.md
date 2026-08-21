@@ -1,6 +1,6 @@
 # urllib.parse — pure-string compute, wave-4 leader candidate
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/urllib/parse.pyi` (354 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/urllib/parse.pyi` (354 lines).
 
 ## Surface (21-entry __all__)
 

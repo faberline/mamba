@@ -411,7 +411,7 @@ fn oracle_cache_dir() -> &'static Path {
     static DIR: OnceLock<PathBuf> = OnceLock::new();
     DIR.get_or_init(|| {
         let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        // projects/mamba → workspace target/ two levels up (CARGO_TARGET_DIR
+        // apps/mamba → workspace target/ two levels up (CARGO_TARGET_DIR
         // wins when set, matching where cargo itself writes).
         let target = std::env::var_os("CARGO_TARGET_DIR")
             .map(PathBuf::from)

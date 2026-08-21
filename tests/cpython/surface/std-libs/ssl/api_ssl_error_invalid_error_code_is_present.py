@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.SSL_ERROR_INVALID_ERROR_CODE: api_ssl_error_invalid_error_code_is_present (surface)."""

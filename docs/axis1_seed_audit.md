@@ -3,7 +3,7 @@
 Generated: 2026-05-20
 Source: #3334 (epic: #3331)
 
-Audits the 71 entries under `projects/mamba/tests/cpython/lib_test_seeds/seed/` against the current `target/release/mamba` build to classify each as ready-to-promote, skeleton, blocked, or unstable. Live results were collected by running each seed under a 60s wall-clock timeout. The `MAMBA_ASSERTION_PASS:` stdout marker is the AssertionPass proof signal (per #2540).
+Audits the 71 entries under `apps/mamba/tests/cpython/lib_test_seeds/seed/` against the current `target/release/mamba` build to classify each as ready-to-promote, skeleton, blocked, or unstable. Live results were collected by running each seed under a 60s wall-clock timeout. The `MAMBA_ASSERTION_PASS:` stdout marker is the AssertionPass proof signal (per #2540).
 
 ## Summary
 
@@ -90,7 +90,7 @@ Total: 71
 | test_uuid | Fail | exit 1 | blocked | error: syntax error at 1945..1946: unexpected token: , | #3414 |
 | test_with | Fail | exit 1 | blocked | error: type error at 28002..28008: called value is not a function | — |
 | test_yield_from | Fail | exit 1 | blocked | error: codegen error: codegen error: define: Duplicate definition of identifier: _mb_4000203 | — |
-| test_poplib | Fail | panic/signal (exit 101) | unrunnable | thread 'main' (219386380) panicked at projects/mamba/src/codegen/cranelift/jit.rs:841:77: | — |
+| test_poplib | Fail | panic/signal (exit 101) | unrunnable | thread 'main' (219386380) panicked at apps/mamba/src/codegen/cranelift/jit.rs:841:77: | — |
 
 ## Action items
 
@@ -203,7 +203,7 @@ These exit 0 but emit no `MAMBA_ASSERTION_PASS:` marker — they are skeletons. 
 
 Timeouts, panics, or signals. Each needs a mamba runtime-gap or stability issue before the seed is meaningful.
 
-- `test_poplib` — exit 101: thread 'main' (219386380) panicked at projects/mamba/src/codegen/cranelift/jit.rs:841:77: (no axis-1 issue mapped, baseline=Fail)
+- `test_poplib` — exit 101: thread 'main' (219386380) panicked at apps/mamba/src/codegen/cranelift/jit.rs:841:77: (no axis-1 issue mapped, baseline=Fail)
 
 ## Methodology
 

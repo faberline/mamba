@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_ACCESS_DENIED"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_BAD_CERTIFICATE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_BAD_CERTIFICATE_HASH_VALUE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_BAD_CERTIFICATE_STATUS_RESPONSE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_BAD_RECORD_MAC"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_CERTIFICATE_EXPIRED"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_CERTIFICATE_REVOKED"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_CERTIFICATE_UNKNOWN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_CERTIFICATE_UNOBTAINABLE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_CLOSE_NOTIFY"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_DECODE_ERROR"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_DECOMPRESSION_FAILURE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_DECRYPT_ERROR"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_HANDSHAKE_FAILURE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_ILLEGAL_PARAMETER"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_INSUFFICIENT_SECURITY"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_INTERNAL_ERROR"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_NO_RENEGOTIATION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_PROTOCOL_VERSION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_RECORD_OVERFLOW"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNEXPECTED_MESSAGE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNKNOWN_CA"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNKNOWN_PSK_IDENTITY"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNRECOGNIZED_NAME"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNSUPPORTED_CERTIFICATE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_UNSUPPORTED_EXTENSION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "ALERT_DESCRIPTION_USER_CANCELLED"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "AlertDescription"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "CERT_NONE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "CERT_OPTIONAL"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "CERT_REQUIRED"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "CHANNEL_BINDING_TYPES"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "CertificateError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "DER_cert_to_PEM_cert"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "DefaultVerifyPaths"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "HAS_ALPN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "HAS_ECDH"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "HAS_NEVER_CHECK_COMMON_NAME"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "HAS_NPN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "HAS_SNI"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "HAS_SSLv2"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "HAS_SSLv3"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "HAS_TLSv1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "HAS_TLSv1_1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "HAS_TLSv1_2"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "HAS_TLSv1_3"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "MemoryBIO"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "OPENSSL_VERSION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "OPENSSL_VERSION_INFO"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "OPENSSL_VERSION_NUMBER"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "OP_ALL"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "OP_CIPHER_SERVER_PREFERENCE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "OP_ENABLE_KTLS"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "OP_ENABLE_MIDDLEBOX_COMPAT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "OP_IGNORE_UNEXPECTED_EOF"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "OP_LEGACY_SERVER_CONNECT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "OP_NO_COMPRESSION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "OP_NO_RENEGOTIATION"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "OP_NO_SSLv2"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "OP_NO_SSLv3"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "OP_NO_TICKET"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "OP_NO_TLSv1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "OP_NO_TLSv1_1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "OP_NO_TLSv1_2"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "OP_NO_TLSv1_3"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "OP_SINGLE_DH_USE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "OP_SINGLE_ECDH_USE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "Options"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "PEM_FOOTER"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "PEM_HEADER"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "PEM_cert_to_DER_cert"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "PROTOCOL_SSLv23"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLS"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLS_CLIENT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLS_SERVER"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLSv1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLSv1_1"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "PROTOCOL_TLSv1_2"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "Purpose"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "RAND_add"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "RAND_bytes"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "RAND_status"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "SOCK_STREAM"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "SOL_SOCKET"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "SO_TYPE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "SSLCertVerificationError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "SSLContext"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "SSLEOFError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "SSLError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "SSLErrorNumber"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "SSLObject"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "SSLSession"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "SSLSocket"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "SSLSyscallError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "SSLWantReadError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "SSLWantWriteError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "SSLZeroReturnError"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_EOF"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_INVALID_ERROR_CODE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_SSL"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_SYSCALL"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_WANT_CONNECT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_WANT_READ"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_WANT_WRITE"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_WANT_X509_LOOKUP"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "SSL_ERROR_ZERO_RETURN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "TLSVersion"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "VERIFY_ALLOW_PROXY_CERTS"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "VERIFY_CRL_CHECK_CHAIN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "VERIFY_CRL_CHECK_LEAF"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "VERIFY_DEFAULT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "VERIFY_X509_PARTIAL_CHAIN"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "VERIFY_X509_STRICT"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "VERIFY_X509_TRUSTED_FIRST"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "VerifyFlags"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "VerifyMode"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "base64"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "cert_time_to_seconds"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "create_connection"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "create_default_context"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "errno"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "get_default_verify_paths"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "get_protocol_name"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "get_server_certificate"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "namedtuple"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "os"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "socket"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "socket_error"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "sys"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,4 +1432,4 @@ probe     = "attr"
 attr      = "warnings"
 expr      = "ssl"
 module    = "ssl"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"

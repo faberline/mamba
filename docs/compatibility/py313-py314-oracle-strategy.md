@@ -81,10 +81,10 @@ upgrade blob:
 
 ## Repo Evidence Pointers
 
-- `projects/mamba/README.md` keeps the public `py3.13 / py3.14 feature candidates`
+- `apps/mamba/README.md` keeps the public `py3.13 / py3.14 feature candidates`
   roadmap table.
-- `projects/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md` documents
+- `apps/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md` documents
   today's default oracle path and 3.12 baseline assumptions.
-- `projects/mamba/tests/governance/schema_gates/strict_type_accounting_gate_704.rs`
+- `apps/mamba/tests/governance/schema_gates/strict_type_accounting_gate_704.rs`
   already locks version-specific and removed-module examples that this strategy
   needs to keep consistent.

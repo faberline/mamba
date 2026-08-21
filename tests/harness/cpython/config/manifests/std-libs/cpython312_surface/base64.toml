@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "a85decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "a85encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "b16decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "b16encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "b32decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "b32encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "b32hexdecode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "b32hexencode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "b64decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "b64encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "b85decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "b85encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "decodebytes"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "encodebytes"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "standard_b64decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "standard_b64encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "urlsafe_b64decode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,4 +222,4 @@ probe     = "attr"
 attr      = "urlsafe_b64encode"
 expr      = "base64"
 module    = "base64"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"

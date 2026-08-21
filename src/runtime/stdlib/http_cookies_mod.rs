@@ -4,7 +4,7 @@ use super::super::value::MbValue;
 /// http.cookies module for Mamba (#1477, #1265 Goal 2 / 3-gate).
 ///
 /// Provides the CPython 3.12 `http.cookies` 5-entry public surface
-/// (per `projects/mamba/data/cpython312_surface.json`, augmented to also
+/// (per `apps/mamba/data/cpython312_surface.json`, augmented to also
 /// surface `Morsel` because it is a typeshed-exported public name even
 /// though the trimmed surface JSON omits it):
 ///   - `BaseCookie`  — dict-subclass base.

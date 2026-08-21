@@ -106,7 +106,7 @@ fixtures counted above, not as walls.
 
 ```bash
 # focused inner loop (seconds; runner-parity verdicts, shared oracle cache; set MAMBA_BIN after a release build)
-# — from projects/mamba/tests/harness/cpython/ (sweep.py resolves relative paths against tests/cpython/
+# — from apps/mamba/tests/harness/cpython/ (sweep.py resolves relative paths against tests/cpython/
 # already, so args must NOT be prefixed with tests/cpython/ — doing so double-nests and hard-fails)
 python3 tools/sweep.py concurrency \
   {surface,behavior,errors,real_world,_regression}/std-libs/{asyncio,threading,multiprocessing,concurrent_futures} \

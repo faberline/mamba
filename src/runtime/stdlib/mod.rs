@@ -350,11 +350,11 @@ pub fn register_stdlib() {
     contextvars_mod::register();
     // http.cookies override must run AFTER http_mod::register() so the
     // callable class-shell surface replaces the legacy non-callable
-    // string-stub block. See projects/mamba/src/runtime/stdlib/http_cookies_mod.rs.
+    // string-stub block. See apps/mamba/src/runtime/stdlib/http_cookies_mod.rs.
     http_cookies_mod::register();
     // http.cookiejar override must run AFTER http_mod::register() for the
     // same dotted-name override reason. See
-    // projects/mamba/src/runtime/stdlib/http_cookiejar_mod.rs.
+    // apps/mamba/src/runtime/stdlib/http_cookiejar_mod.rs.
     http_cookiejar_mod::register();
     email_mod::register();
     multiprocessing_mod::register();

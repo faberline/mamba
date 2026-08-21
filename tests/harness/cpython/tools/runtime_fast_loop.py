@@ -100,8 +100,8 @@ def normalize_fixture_arg(raw: str) -> str:
     path = Path(raw)
     if path.is_absolute():
         return path.relative_to(FIXTURES_DIR).as_posix()
-    if raw.startswith("projects/mamba/tests/cpython/"):
-        return Path(raw).relative_to("projects/mamba/tests/cpython").as_posix()
+    if raw.startswith("apps/mamba/tests/cpython/"):
+        return Path(raw).relative_to("apps/mamba/tests/cpython").as_posix()
     if raw.startswith("tests/cpython/"):
         return Path(raw).relative_to("tests/cpython").as_posix()
     return raw
@@ -112,13 +112,13 @@ def normalize_repo_path(raw: str) -> str:
     if path.is_absolute():
         return path.relative_to(WORKSPACE_DIR).as_posix()
     if raw.startswith(("src/", "tests/")):
-        return (Path("projects/mamba") / raw).as_posix()
+        return (Path("apps/mamba") / raw).as_posix()
     return raw
 
 
 def changed_fixtures() -> list[str]:
     fixtures: list[str] = []
-    for rel in git_changed(["projects/mamba/tests/cpython"]):
+    for rel in git_changed(["apps/mamba/tests/cpython"]):
         if not rel.endswith(".py"):
             continue
         fixtures.append(normalize_fixture_arg(rel))
@@ -126,7 +126,7 @@ def changed_fixtures() -> list[str]:
 
 
 def changed_rust(paths: list[str] | None) -> list[str]:
-    roots = [normalize_repo_path(path) for path in paths] if paths else ["projects/mamba/src"]
+    roots = [normalize_repo_path(path) for path in paths] if paths else ["apps/mamba/src"]
     return sorted(rel for rel in git_changed(roots) if rel.endswith(".rs"))
 
 

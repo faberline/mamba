@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "Enum"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "NAMESPACE_DNS"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "NAMESPACE_OID"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "NAMESPACE_URL"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "NAMESPACE_X500"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "RESERVED_FUTURE"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "RESERVED_MICROSOFT"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "RESERVED_NCS"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "RFC_4122"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "SafeUUID"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "UUID"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "bytes_"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "getnode"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "int_"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "main"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "os"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "sys"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "uuid1"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "uuid3"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "uuid4"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,4 +233,4 @@ probe     = "attr"
 attr      = "uuid5"
 expr      = "uuid"
 module    = "uuid"
-source    = "projects/mamba/data/cpython312_surface.json"
+source    = "apps/mamba/data/cpython312_surface.json"

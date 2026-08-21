@@ -159,7 +159,7 @@ fn r2_three_canonical_3p_programs() {
     );
     assert_eq!(
         c["threep_umbrella_relative_path"].as_str(),
-        Some("projects/mamba/tests/governance/gates/third_party/c3_3p_libs_conformance_umbrella_gate/manifest.toml")
+        Some("apps/mamba/tests/governance/gates/third_party/c3_3p_libs_conformance_umbrella_gate/manifest.toml")
     );
     assert_eq!(
         c["threep_umbrella_relative_path_field_name"].as_str(),
@@ -204,12 +204,12 @@ fn r3_stdlib_denominator_is_explicit() {
     assert_eq!(
         c["cpython_lib_test_gate_relative_path"].as_str(),
         Some(
-            "projects/mamba/tests/governance/gates/cpython_lib_test_denominator_gate/manifest.toml"
+            "apps/mamba/tests/governance/gates/cpython_lib_test_denominator_gate/manifest.toml"
         )
     );
     assert_eq!(
         c["typeshed_surface_gate_relative_path"].as_str(),
-        Some("projects/mamba/tests/governance/gates/typeshed_surface_gate/manifest.toml")
+        Some("apps/mamba/tests/governance/gates/typeshed_surface_gate/manifest.toml")
     );
     assert_eq!(
         c["cpython_lib_test_gate_relative_path_field_name"].as_str(),

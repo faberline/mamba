@@ -130,7 +130,7 @@ this domain — a different stdlib module's surface) and `type/std-libs/{email_g
 ## Verification
 
 ```bash
-# inner loop (seconds; runner-parity verdicts; paths relative to tests/cpython) — from projects/mamba/tests/harness/cpython/
+# inner loop (seconds; runner-parity verdicts; paths relative to tests/cpython) — from apps/mamba/tests/harness/cpython/
 python3 tools/sweep.py behavior/core/generators behavior/core/generator_float_inference behavior/core/yield_from \
   _regression/core/generators _regression/core/generator_lifecycle _regression/core/yield_from        # generators slice
 python3 tools/sweep.py behavior/core/iter behavior/builtin-libs/iter behavior/builtin-libs/enumerate \

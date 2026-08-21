@@ -441,14 +441,14 @@ fn test_immortal_survives_many_retain_calls() {
 //
 // 1. **Module-scope (`__main__` / entry body) function epilogue does NOT
 //    release locals.** The `is_entry_body` guard at
-//    `projects/mamba/src/codegen/cranelift/mod.rs:333` (and the matching
+//    `apps/mamba/src/codegen/cranelift/mod.rs:333` (and the matching
 //    JIT path) intentionally skips `mb_release_value` over the local
 //    VReg set on `Return` to dodge a double-free regression on BigInt
 //    `Vec<u64>` digit storage (iter-5 of #1663 T4c5). For module-scope
 //    hot loops the entry body never returns until program exit, so any
 //    fresh-VReg allocation that is not itself rebound (e.g. the per-iter
 //    `MakeList { dest: args_list, … }` synthesised by method-call
-//    lowering at `projects/mamba/src/lower/hir_to_mir.rs:4515-4518`)
+//    lowering at `apps/mamba/src/lower/hir_to_mir.rs:4515-4518`)
 //    accumulates monotonically.
 //
 // 2. **Rebound names with refcount-bearing values DO release** on the

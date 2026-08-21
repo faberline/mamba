@@ -134,7 +134,7 @@ A compile reject in any dir from the Positive contract above is a type-system fa
 ## Verification
 
 ```bash
-# inner loop (seconds; paths relative to tests/cpython) — from projects/mamba/tests/harness/cpython/
+# inner loop (seconds; paths relative to tests/cpython) — from apps/mamba/tests/harness/cpython/
 python3 tools/sweep.py behavior/std-libs/string behavior/std-libs/strings behavior/std-libs/userstring \
   behavior/std-libs/encode_basestring_ascii behavior/core/fstring _regression/core/fstring \
   _regression/core/string_escapes                                    # methods + formatting slice

@@ -2,7 +2,7 @@
 
 //! TOML bytes -> `ResolvedGraph` (R2, R3 enforcement).
 //!
-//! See `.aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic` —
+//! See `.aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic` —
 //! the `lockfile-parse` flowchart drives the lift.
 
 use std::collections::BTreeSet;
@@ -12,14 +12,14 @@ use crate::pkgmanage::pkgmgr::types::FileHash;
 
 use super::{Lockfile, LockfileError};
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic (lockfile-parse)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic (lockfile-parse)
 pub(super) fn from_toml(text: &str) -> Result<Lockfile, LockfileError> {
     toml::from_str::<Lockfile>(text).map_err(|e| LockfileError::TomlDecode {
         detail: e.to_string(),
     })
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic (lockfile-parse)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic (lockfile-parse)
 ///
 /// Lift a parsed `Lockfile` to a `ResolvedGraph`. Version-range information
 /// is intentionally lost: the lockfile pins exact versions, so the rebuilt

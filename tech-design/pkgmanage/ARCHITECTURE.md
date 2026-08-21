@@ -1,7 +1,7 @@
 # pkgmanage — architecture (as-is, 2026-07-15)
 
-Scope: `projects/mamba/src/pkgmanage/` — the C4 (uv-like package manager) bounded context.
-All refs relative to `projects/mamba/`. Fix TDs in this directory are cross-referenced by filename, not restated.
+Scope: `apps/mamba/src/pkgmanage/` — the C4 (uv-like package manager) bounded context.
+All refs relative to `apps/mamba/`. Fix TDs in this directory are cross-referenced by filename, not restated.
 
 ## Responsibilities
 

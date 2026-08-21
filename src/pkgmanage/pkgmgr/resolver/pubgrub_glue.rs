@@ -2,7 +2,7 @@
 //! Adapter between mamba's async [`IndexClient`] and PubGrub's sync
 //! `DependencyProvider` trait.
 //!
-//! Logic source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic`
+//! Logic source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic`
 //! (`fetch_meta` + `filter_yanked` + `pick_pkg` nodes).
 //!
 //! ## Async-to-sync bridge
@@ -33,7 +33,7 @@ use super::specifier;
 /// calls re-fetch.
 type Cache = Arc<Mutex<HashMap<String, PackageMetadata>>>;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (fetch_meta)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (fetch_meta)
 ///
 /// Wraps an [`IndexClient`] for sync consumption inside the PubGrub solver
 /// loop. All I/O goes through `block_on`; results are memoised so each
@@ -99,7 +99,7 @@ impl IndexClientProvider {
         Ok(fetched)
     }
 
-    /// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (filter_yanked)
+    /// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (filter_yanked)
     ///
     /// Return the candidate versions for `name` in newest-first order, with
     /// yanked + marker-excluded versions removed. The marker filter is a
@@ -125,7 +125,7 @@ impl IndexClientProvider {
         Ok(out)
     }
 
-    /// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (intersect)
+    /// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (intersect)
     ///
     /// Filter `versions` (already PEP 440 valid) to those satisfying every
     /// specifier in `req.specifiers`. Empty specifier set means "any version".

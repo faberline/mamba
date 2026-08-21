@@ -24,7 +24,7 @@ from pathlib import Path
 TOOLS_DIR = Path(__file__).resolve().parent
 CPYTHON_DIR = TOOLS_DIR.parents[2] / "cpython"  # tests/cpython (fixtures + .cache)
 MAMBA_DIR = CPYTHON_DIR.parent.parent
-# Scope is tests/** only. projects/mamba/benches/ is a separate perf subsystem
+# Scope is tests/** only. apps/mamba/benches/ is a separate perf subsystem
 # outside tests/ and is intentionally NOT swept here.
 ROOTS = [CPYTHON_DIR]
 

@@ -90,19 +90,19 @@ flowchart TD
 
 ```yaml
 changes:
-  - path: projects/mamba/src/runtime/async_rt.rs
+  - path: apps/mamba/src/runtime/async_rt.rs
     action: modify
     section: logic
     impl_mode: hand-written
-  - path: projects/mamba/src/runtime/async_task.rs
+  - path: apps/mamba/src/runtime/async_task.rs
     action: modify
     section: logic
     impl_mode: hand-written
-  - path: projects/mamba/tests/external_contracts/mamba_core_semantics_ec.rs
+  - path: apps/mamba/tests/external_contracts/mamba_core_semantics_ec.rs
     action: modify
     section: unit-test
     impl_mode: hand-written
-  - path: projects/mamba/src/runtime/stdlib/asyncio_mod.rs
+  - path: apps/mamba/src/runtime/stdlib/asyncio_mod.rs
     action: modify
     section: unit-test
     impl_mode: hand-written

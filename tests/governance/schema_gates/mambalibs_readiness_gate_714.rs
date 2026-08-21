@@ -154,7 +154,7 @@ fn mambalibs_readiness_evidence_commands_are_current() {
     for needle in [
         "mambalibs_readiness.py --json",
         "cargo build -p mamba",
-        "projects/mamba/mambalibs",
+        "apps/mamba/mambalibs",
         "target/debug/mamba --help",
         "--test mambalibs",
     ] {
@@ -168,7 +168,7 @@ fn mambalibs_readiness_evidence_commands_are_current() {
     assert!(
         commands
             .iter()
-            .all(|cmd| !cmd.as_str().unwrap_or("").contains("projects/mambalibs")),
-        "#714 evidence must not keep the stale projects/mambalibs path"
+            .all(|cmd| !cmd.as_str().unwrap_or("").contains("apps/mambalibs")),
+        "#714 evidence must not keep the stale apps/mambalibs path"
     );
 }

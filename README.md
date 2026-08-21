@@ -44,7 +44,7 @@ correctness plus race, deadlock, leak, CPU, peak-RSS, and multicore evidence.
 
 - Surfaces: `mamba check|build|run`; `threading`, `concurrent.futures`,
   `asyncio`, built-in container mutation
-- Contracts: `projects/mamba/external-contracts/{type-system,concurrency}.md`
+- Contracts: `apps/mamba/external-contracts/{type-system,concurrency}.md`
 - Exit gate: #2028 (fail-closed rollup that releases Tier 2) — **not written**
 
 #### T2. CPython-compatible Language Core — #2002
@@ -55,8 +55,8 @@ introspection, operator dispatch, compiler lowering, native codegen, and
 optimizer passes preserve CPython 3.12-visible behavior. Tier 2 never restores
 implicit `Any` or GIL-dependent execution.
 
-- Contracts: `projects/mamba/external-contracts/{frontend,codegen,name-resolution,calling-convention,object-model,exceptions,iterators,import-system}.md`
-- Oracle: `projects/mamba/tests/harness/cpython`
+- Contracts: `apps/mamba/external-contracts/{frontend,codegen,name-resolution,calling-convention,object-model,exceptions,iterators,import-system}.md`
+- Oracle: `apps/mamba/tests/harness/cpython`
 - Exit gate: #2035 — **not written**
 
 #### T3. Built-ins and Core Value Model — #2001
@@ -66,7 +66,7 @@ iterators, reductions, reflection, codecs, and built-in errors match CPython
 3.12 except for the declared Tier 1 type divergences. Built-in operations
 retain Tier 1 single-mutation memory safety and free-threaded execution.
 
-- Contracts: `projects/mamba/external-contracts/{numbers,collections,strings,iterators}.md`
+- Contracts: `apps/mamba/external-contracts/{numbers,collections,strings,iterators}.md`
 - Exit gate: #2056 — **not written**
 
 #### T4. C-backed Stdlib Compatibility — #2003
@@ -76,8 +76,8 @@ through real macOS/Linux backends with explicit platform classification,
 correct resource lifetime, and blocking/cancellation behavior. No stub or mock
 success; unsupported platform rows stay visible and issue-owned.
 
-- Contract: `projects/mamba/external-contracts/stdlib.md`
-- Platform matrix: `projects/mamba/tests/harness/cpython/tools/platform_readiness.py`
+- Contract: `apps/mamba/external-contracts/stdlib.md`
+- Platform matrix: `apps/mamba/tests/harness/cpython/tools/platform_readiness.py`
 - Exit gate: #2061 — **not written**
 
 #### T5. Hot Stdlib Native/Hybrid Paths — #1103
@@ -89,8 +89,8 @@ they preserve complete CPython behavior **and** demonstrate module-specific
 CPU, RSS, or startup value. Unimplemented tails resolve through one proven
 vendored module identity, never a native shell or sentinel stub.
 
-- Perf config: `projects/mamba/tests/harness/cpython/config/perf`
-- Source: `projects/mamba/src/runtime/stdlib`, `.../vendor_lib.rs`
+- Perf config: `apps/mamba/tests/harness/cpython/config/perf`
+- Source: `apps/mamba/src/runtime/stdlib`, `.../vendor_lib.rs`
 - Exit gate: #2080 — **not written**
 
 #### T6. Third-party Ecosystem — #1119
@@ -100,7 +100,7 @@ nontrivial user journeys through an explicit route: pure-Python, native SDK,
 replacement, bounded emulation, or unsupported. Import-only probes, sentinel
 shims, and fake modules never count as readiness.
 
-- Contract: `projects/mamba/external-contracts/third-party.md`
+- Contract: `apps/mamba/external-contracts/third-party.md`
 - Exit gate: #2096 — **not written**
 
 #### T7. Other Stdlib: Vendor then Rewrite — #2004
@@ -111,7 +111,7 @@ is green may a measured candidate move to a native or hybrid implementation,
 and the vendored path stays the oracle and the rollback until promotion is
 proven.
 
-- Source: `projects/mamba/src/runtime/stdlib/vendor_lib.rs`, `projects/mamba/vendor`
+- Source: `apps/mamba/src/runtime/stdlib/vendor_lib.rs`, `apps/mamba/vendor`
 - Exit gates: 7a #2104, 7b #2116 — **not written**
 
 ### C1. Py3.12 functional parity
@@ -125,7 +125,7 @@ behavior failures.
 - Root WI: #702
 - Gates: `cargo test -p mamba --test conformance_cpython_lib_test`;
   `--test conformance_contract`; `--test conformance_real_world`;
-  `--test conformance_runtime_shutdown`; `projects/mamba/tests/PRODUCTION-GATE.md`
+  `--test conformance_runtime_shutdown`; `apps/mamba/tests/PRODUCTION-GATE.md`
 - Surfaces: `mamba build|check|run|test|test-batch|pytest|surface-report`
 
 The CPython oracle gate itself remains open — the tier exit gates above are
@@ -142,8 +142,8 @@ externally before claiming progress.
 - Root WI: #707
 - Gates: `cargo test -p mamba --release --test perf_pin -- perf_pin`;
   `cargo bench -p mamba --bench mamba_bench`;
-  `projects/mamba/benches/3p/cross_runtime.rs`;
-  `projects/mamba/tests/harness/cpython/config/perf/pins`
+  `apps/mamba/benches/3p/cross_runtime.rs`;
+  `apps/mamba/tests/harness/cpython/config/perf/pins`
 - Surfaces: `mamba bench --compare cpython|--fixtures|--check`
 
 Measured state is bimodal — see
@@ -162,8 +162,8 @@ plugin layer.
 - Gates: `cargo test -p mamba --test mambalibs`;
   `cargo test -p mambalibs-http --test client_http2_test` (httpkit HTTP/2, #526,
   the one verified child)
-- Source: `projects/mamba/mambalibs`,
-  `projects/mamba/src/pkgmanage/builder/force_link.rs`
+- Source: `apps/mamba/mambalibs`,
+  `apps/mamba/src/pkgmanage/builder/force_link.rs`
 
 ### C4. Package manager — uv-like
 
@@ -176,7 +176,7 @@ add/remove, lockfile generation, sync/install, cache, and validation workflows �
 - Gates: `cargo test -p mamba --test pkgmgr`;
   `cargo test -p mamba --test schema_gates pkgmgr`;
   `./target/debug/mamba pkgmgr-validate --json`
-- Source: `projects/mamba/src/pkgmanage`, `projects/mamba/tests/pkgmgr`
+- Source: `apps/mamba/src/pkgmanage`, `apps/mamba/tests/pkgmgr`
 
 `mamba init/auth/index/add/remove/lock/export/tree/version/package/publish/pip/venv/python/workspace/shell/sync/run/install/tool/hash/cache`
 plus `pkgmgr-validate` are wired through offline frozen-index gates, direct

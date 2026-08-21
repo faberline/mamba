@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """sqlite3.SQLITE_LIMIT_EXPR_DEPTH: api_sqlite_limit_expr_depth_is_present (surface)."""

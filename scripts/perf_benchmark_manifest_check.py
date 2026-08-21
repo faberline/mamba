@@ -39,7 +39,7 @@ Operating modes
 
 `--manifest PATH`
     Override the default
-    `projects/mamba/validation/perf_benchmark_manifest.toml`.
+    `apps/mamba/validation/perf_benchmark_manifest.toml`.
 
 Exit codes
 ----------
@@ -247,7 +247,7 @@ def _parse_args(argv: list[str]) -> argparse.Namespace:
         type=Path,
         default=None,
         help="path to perf_benchmark_manifest.toml "
-             "(default: projects/mamba/validation/perf_benchmark_manifest.toml)",
+             "(default: apps/mamba/validation/perf_benchmark_manifest.toml)",
     )
     p.add_argument("--format", choices=("text", "json"), default="text")
     return p.parse_args(argv)

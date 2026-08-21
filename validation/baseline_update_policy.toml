@@ -113,7 +113,7 @@ issue_link_regex = "^(#[0-9]+|https?://.+)$"
 # reference is present, so a renamed/moved policy file fails the gate.
 
 [references]
-performance = "projects/mamba/validation/profiles/performance.toml"
-correctness = "projects/mamba/validation/profiles/correctness.toml"
-ecosystem = "projects/mamba/validation/profiles/ecosystem.toml"
-smoke = "projects/mamba/validation/profiles/smoke.toml"
+performance = "apps/mamba/validation/profiles/performance.toml"
+correctness = "apps/mamba/validation/profiles/correctness.toml"
+ecosystem = "apps/mamba/validation/profiles/ecosystem.toml"
+smoke = "apps/mamba/validation/profiles/smoke.toml"

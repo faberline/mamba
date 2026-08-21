@@ -6,7 +6,7 @@ use std::cell::RefCell;
 /// signal module for Mamba (#1470, #1265 Goal 2 / 3-gate).
 ///
 /// Provides the CPython 3.12 `signal` 61-entry public surface
-/// (per `projects/mamba/data/cpython312_surface.json`):
+/// (per `apps/mamba/data/cpython312_surface.json`):
 ///   - 30 `SIG*` integer constants (one per host platform's signal-number
 ///     vocabulary; values mirror macOS/Linux POSIX assignments).
 ///   - 4 `SIG_BLOCK` / `SIG_UNBLOCK` / `SIG_SETMASK` mask-op constants.

@@ -1,8 +1,8 @@
 // HANDWRITE-BEGIN gap="missing-generator:hand-written:526b1361" tracker="standardize-gap-projects-mamba-src-pkgmgr-resolver-specifier-rs" reason="PEP 440 SpecifierSet + intersection. Reuses pkgmgr/pep440.rs for version ordering."
 //! PEP 440 version specifier — parsing, evaluation, conjunctive intersection.
 //!
-//! Schema source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema`.
-//! Logic source:  `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic`
+//! Schema source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema`.
+//! Logic source:  `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic`
 //! (intersect node — "Specifier intersection non-empty?").
 
 use std::cmp::Ordering;
@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::pkgmanage::pkgmgr::pep440;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (VersionSpecifier.op)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (VersionSpecifier.op)
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Op {
     #[serde(rename = "==")]
@@ -45,7 +45,7 @@ impl Op {
     }
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (VersionSpecifier)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (VersionSpecifier)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct VersionSpecifier {
     pub op: Op,
@@ -154,7 +154,7 @@ fn compatible_upper_bound_matches(candidate: &str, pin: &str) -> bool {
 
 /// Conjunctive evaluation: every specifier must match.
 ///
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (intersect)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (intersect)
 pub fn all_match(specs: &[VersionSpecifier], candidate: &str) -> bool {
     specs.iter().all(|s| s.matches(candidate))
 }

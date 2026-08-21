@@ -49,7 +49,7 @@ Two independent tools, two independent purposes:
    consumed directly by `perf_pin.rs`):
 
    ```bash
-   cd projects/mamba
+   cd apps/mamba
    PY=tests/cpython/.cache/oracle-env/bin/python3   # the REAL interpreter — see below
    $PY tests/harness/cpython/tools/perf_baseline.py record --python "$PY"
    # single pin:
@@ -60,7 +60,7 @@ Two independent tools, two independent purposes:
    250 `bench/*.py` fixtures, for tuning/triage rather than gating):
 
    ```bash
-   cd projects/mamba
+   cd apps/mamba
    python3 tools/perf_baseline.py record --runtime cpython
    MAMBA_BIN=$PWD/target/release/mamba python3 tools/perf_baseline.py record --runtime mamba
    python3 tools/perf_baseline.py view
@@ -89,7 +89,7 @@ also has `export`/`import` subcommands that serialize/deserialize the DB to a
 JSONL sidecar, one sorted JSON object (by `pin_path`) per line:
 
 ```bash
-cd projects/mamba
+cd apps/mamba
 PY=tests/cpython/.cache/oracle-env/bin/python3
 
 # 1. record locally (as above)
@@ -122,7 +122,7 @@ from the warning.
 ## Running the enforcing gate
 
 ```bash
-cd projects/mamba
+cd apps/mamba
 PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH" \
   cargo build --release -p mamba
 PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH" \

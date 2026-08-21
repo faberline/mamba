@@ -70,7 +70,7 @@ Runtime semantics (class registry, exceptions, GC) belong to their own domains; 
 
 ## EC surface
 
-Per `projects/mamba/external-contracts/README.md`: codegen is the substrate — **every run-dimension fixture** (`behavior/errors/real_world/surface/_regression/security/concurrency`) exercises it; a compile reject there is a defect by definition. Proof-bearing subsets:
+Per `apps/mamba/external-contracts/README.md`: codegen is the substrate — **every run-dimension fixture** (`behavior/errors/real_world/surface/_regression/security/concurrency`) exercises it; a compile reject there is a defect by definition. Proof-bearing subsets:
 
 - `behavior/core/sys_settrace/` + `std-libs/{bdb,trace}` — trace-event emission (gate of `1535-…md`, this dir).
 - `_regression/core/{class_system,mro_super,language}`, `behavior/core/descr` — class registration/drain ordering (shared with object-model).

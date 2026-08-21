@@ -1,4 +1,4 @@
-// SPEC-MANAGED: projects/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability
+// SPEC-MANAGED: apps/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec mamba-t1-to-thread-gather-stability

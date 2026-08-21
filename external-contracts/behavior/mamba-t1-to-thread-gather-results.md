@@ -16,7 +16,7 @@ e2e_tests:
     claim_id: parallel-to-thread-gather-preserves-every-result
     contract_id: MAMBA-T1-FT-GATHER-RESULTS
     category: behavior
-    test_path: projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs
+    test_path: apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs
     command: "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_results --exact"
     assertions:
       - "Two or more concurrently completing asyncio.to_thread calls with distinct inputs are gathered into one result list containing every expected value exactly once and in asyncio.gather input order."

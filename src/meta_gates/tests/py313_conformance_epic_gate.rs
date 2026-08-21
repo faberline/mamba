@@ -301,7 +301,7 @@ fn r5_conformance_suite_forks_into_py313_subdir() {
     }
     assert_eq!(
         c["py313_subdir_relative_path"].as_str(),
-        Some("projects/mamba/tests/cpython/cpython_ported/py313")
+        Some("apps/mamba/tests/cpython/cpython_ported/py313")
     );
     assert_eq!(
         c["py313_subdir_relative_path_field_name"].as_str(),

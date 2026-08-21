@@ -63,7 +63,7 @@ JIT-emitted refcount protocol. Fix-family hazards in this directory
 
 ## EC surface
 
-Per `projects/mamba/external-contracts/README.md`: memory = `gc/`, `stability/` soaks, **plus absence of hang/SIGTRAP anywhere in the 46k corpus** — symptom jurisdiction, not directory jurisdiction.
+Per `apps/mamba/external-contracts/README.md`: memory = `gc/`, `stability/` soaks, **plus absence of hang/SIGTRAP anywhere in the 46k corpus** — symptom jurisdiction, not directory jurisdiction.
 
 - Fixture dirs: `tests/cpython/behavior/std-libs/gc/` (~50, incl. `self_referential_cycle_soak.py`), `surface/std-libs/gc/`, `type/std-libs/gc/`, `_regression/core/stability/heap_churn_soak.py`.
 - Regression anchors from the fix TDs: `_regression/builtin-libs/list_methods/reentrancy.py` (1610), `behavior/std-libs/tempfile/temporary_directory_cleanup_on_exit.py` + `real_world/std-libs/errno/translate_oserror_errno_to_name.py` (1627, run repeatedly — intermittency).

@@ -22,37 +22,37 @@ MAMBA_DIR = TOOLS_DIR.parents[3]
 REPO_ROOT = MAMBA_DIR.parents[1]
 
 DOC_PATHS = (
-    "projects/mamba/README.md",
-    "projects/mamba/tests/README.md",
-    "projects/mamba/tests/PRODUCTION-GATE.md",
-    "projects/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
-    "projects/mamba/tests/harness/cpython/conventions/REAL-WORLD-CONVENTION.md",
+    "apps/mamba/README.md",
+    "apps/mamba/tests/README.md",
+    "apps/mamba/tests/PRODUCTION-GATE.md",
+    "apps/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
+    "apps/mamba/tests/harness/cpython/conventions/REAL-WORLD-CONVENTION.md",
     ".github/ISSUE_TEMPLATE/axis1-seed.md",
-    "projects/mamba/llms.txt",
+    "apps/mamba/llms.txt",
     "CLAUDE.md",
     "AGENTS.md",
 )
 
 REQUIRED_PATHS = (
-    "projects/mamba/tests/PRODUCTION-GATE.md",
-    "projects/mamba/tests/cpython",
-    "projects/mamba/tests/cpython/type",
-    "projects/mamba/tests/harness/cpython",
-    "projects/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
-    "projects/mamba/tests/harness/cpython/tools/wall_status.py",
-    "projects/mamba/tests/harness/cpython/tools/gate_check.py",
-    "projects/mamba/tests/harness/cpython/tools/verify_cpython_oracle.py",
-    "projects/mamba/tests/harness/cpython/tools/fixture_lint.py",
-    "projects/mamba/tools/fixture_gen.py",
+    "apps/mamba/tests/PRODUCTION-GATE.md",
+    "apps/mamba/tests/cpython",
+    "apps/mamba/tests/cpython/type",
+    "apps/mamba/tests/harness/cpython",
+    "apps/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
+    "apps/mamba/tests/harness/cpython/tools/wall_status.py",
+    "apps/mamba/tests/harness/cpython/tools/gate_check.py",
+    "apps/mamba/tests/harness/cpython/tools/verify_cpython_oracle.py",
+    "apps/mamba/tests/harness/cpython/tools/fixture_lint.py",
+    "apps/mamba/tools/fixture_gen.py",
 )
 
 FORBIDDEN_PATTERNS = (
-    (r"\bprojects/mamba/PRODUCTION-GATE\.md\b", "production_gate_moved_under_tests"),
-    (r"\b(?:projects/mamba/)?tests/cpython/fixtures\b", "retired_cpython_fixtures_root"),
-    (r"\b(?:projects/mamba/)?tests/cpython/tools\b", "retired_cpython_tools_root"),
-    (r"\b(?:projects/mamba/)?tests/cpython/conventions\b", "retired_cpython_conventions_root"),
-    (r"\b(?:projects/mamba/)?tests/cpython/type-strict\b", "retired_type_strict_root"),
-    (r"\bprojects/mamba/tests/fixtures/cpython_lib_test\b", "retired_axis1_seed_root"),
+    (r"\bapps/mamba/PRODUCTION-GATE\.md\b", "production_gate_moved_under_tests"),
+    (r"\b(?:apps/mamba/)?tests/cpython/fixtures\b", "retired_cpython_fixtures_root"),
+    (r"\b(?:apps/mamba/)?tests/cpython/tools\b", "retired_cpython_tools_root"),
+    (r"\b(?:apps/mamba/)?tests/cpython/conventions\b", "retired_cpython_conventions_root"),
+    (r"\b(?:apps/mamba/)?tests/cpython/type-strict\b", "retired_type_strict_root"),
+    (r"\bapps/mamba/tests/fixtures/cpython_lib_test\b", "retired_axis1_seed_root"),
     (r"--test\s+cpython_lib_test_runner\b", "renamed_axis1_test_binary"),
     (
         r"--test\s+conformance_cpython_lib_test\s+--release\b",
@@ -68,7 +68,7 @@ FORBIDDEN_PATTERNS = (
 
 PYTHON_COMMAND_RE = re.compile(
     r"python3(?:\.\d+)?\s+"
-    r"(?P<path>(?:projects/mamba/)?(?:tests/harness/cpython/tools|tools)/[A-Za-z0-9_./-]+\.py)"
+    r"(?P<path>(?:apps/mamba/)?(?:tests/harness/cpython/tools|tools)/[A-Za-z0-9_./-]+\.py)"
 )
 
 
@@ -93,7 +93,7 @@ def repo_path(path: str) -> Path:
 
 
 def resolve_command_path(raw: str) -> Path:
-    if raw.startswith("projects/mamba/"):
+    if raw.startswith("apps/mamba/"):
         return REPO_ROOT / raw
     if raw.startswith("tests/") or raw.startswith("tools/"):
         return MAMBA_DIR / raw
@@ -145,9 +145,9 @@ def scan_docs(show: int) -> dict[str, Any]:
         "python_commands_checked": dict(sorted(commands_checked.items())),
         "missing_python_command_paths": sorted(set(missing_command_paths)),
         "evidence_commands": [
-            "python3.12 projects/mamba/tests/harness/cpython/tools/harness_doc_paths.py --json",
-            "python3.12 projects/mamba/tests/harness/cpython/tools/wall_status.py --help",
-            "python3.12 projects/mamba/tests/harness/cpython/tools/gate_check.py --help",
+            "python3.12 apps/mamba/tests/harness/cpython/tools/harness_doc_paths.py --json",
+            "python3.12 apps/mamba/tests/harness/cpython/tools/wall_status.py --help",
+            "python3.12 apps/mamba/tests/harness/cpython/tools/gate_check.py --help",
             "cargo test -p mamba --test schema_gates harness_doc_paths_gate_716 -- --nocapture",
         ],
     }

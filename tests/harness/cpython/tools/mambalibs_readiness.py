@@ -39,24 +39,24 @@ class NativeKit:
 
 
 NATIVE_KITS: tuple[NativeKit, ...] = (
-    NativeKit("array", "mambalibs.array", ("projects/mamba/mambalibs/arraykit",), "array_import_gate", ("numpy",)),
+    NativeKit("array", "mambalibs.array", ("apps/mamba/mambalibs/arraykit",), "array_import_gate", ("numpy",)),
     NativeKit("fetch", "mambalibs.fetch", (), "fetch_import_gate", ("requests", "httpx", "aiohttp"), True),
     NativeKit("frame", "mambalibs.frame", ("crates/cclab-frame",), "frame_import_gate", ("pandas",), True),
     NativeKit("grid", "mambalibs.grid", ("crates/cclab-grid",), "grid_import_gate", (), True),
-    NativeKit("learn", "mambalibs.learn", ("crates/cclab-learn", "projects/mamba/mambalibs/scikit"), "learn_import_gate", ("scikit-learn",), True),
+    NativeKit("learn", "mambalibs.learn", ("crates/cclab-learn", "apps/mamba/mambalibs/scikit"), "learn_import_gate", ("scikit-learn",), True),
     NativeKit("log", "mambalibs.log", ("crates/cclab-log-mamba", "crates/cclab-log"), "log_import_gate", ("loguru", "structlog"), True),
-    NativeKit("media", "mambalibs.media", ("projects/mamba/mambalibs/mediakit",), "media_import_gate", (), True),
-    NativeKit("pg", "mambalibs.pg", ("projects/mamba/mambalibs/pgkit",), "pg_import_gate", ("psycopg",), True),
-    NativeKit("plot", "mambalibs.plot", ("projects/mamba/mambalibs/plotkit",), "plot_import_gate", (), True),
+    NativeKit("media", "mambalibs.media", ("apps/mamba/mambalibs/mediakit",), "media_import_gate", (), True),
+    NativeKit("pg", "mambalibs.pg", ("apps/mamba/mambalibs/pgkit",), "pg_import_gate", ("psycopg",), True),
+    NativeKit("plot", "mambalibs.plot", ("apps/mamba/mambalibs/plotkit",), "plot_import_gate", (), True),
     NativeKit("schema", "mambalibs.schema", ("crates/cclab-schema-mamba", "crates/cclab-schema"), "schema_import_gate", ("pydantic", "marshmallow", "jsonschema"), True),
-    NativeKit("sci", "mambalibs.sci", ("projects/mamba/mambalibs/scikit",), "sci_import_gate", ("numpy", "scipy"), True),
+    NativeKit("sci", "mambalibs.sci", ("apps/mamba/mambalibs/scikit",), "sci_import_gate", ("numpy", "scipy"), True),
     NativeKit("text", "mambalibs.text", ("crates/cclab-text",), "text_import_gate", (), True),
-    NativeKit("http", "mambalibs.http", ("projects/mamba/mambalibs/httpkit",), None, ("requests", "httpx", "fastapi", "aiohttp")),
-    NativeKit("di", "mambalibs.di", ("projects/mamba/mambalibs/dikit",), None, ("fastapi",)),
+    NativeKit("http", "mambalibs.http", ("apps/mamba/mambalibs/httpkit",), None, ("requests", "httpx", "fastapi", "aiohttp")),
+    NativeKit("di", "mambalibs.di", ("apps/mamba/mambalibs/dikit",), None, ("fastapi",)),
     NativeKit("dataclasses", "mambalibs.dataclasses", ("crates/cclab-schema-mamba", "crates/cclab-schema"), None, ("pydantic", "marshmallow", "jsonschema")),
-    NativeKit("queue", "mambalibs.queue", ("projects/mamba/mambalibs/queuekit",), None, ("celery", "rq")),
-    NativeKit("crypto", "mambalibs.crypto", ("projects/mamba/mambalibs/cryptokit",), None, ("cryptography", "pyopenssl")),
-    NativeKit("mongo", "mambalibs.mongo", ("projects/mamba/mambalibs/mongokit",), None, ()),
+    NativeKit("queue", "mambalibs.queue", ("apps/mamba/mambalibs/queuekit",), None, ("celery", "rq")),
+    NativeKit("crypto", "mambalibs.crypto", ("apps/mamba/mambalibs/cryptokit",), None, ("cryptography", "pyopenssl")),
+    NativeKit("mongo", "mambalibs.mongo", ("apps/mamba/mambalibs/mongokit",), None, ()),
 )
 
 REQUIRED_SUPPORT_STATUSES = ("pass", "xfail", "blocker")
@@ -436,9 +436,9 @@ def build_report(show: int) -> dict[str, Any]:
         "blockers": blockers[:show],
         "blocker_count": len(blockers),
         "evidence_commands": [
-            "python3.12 projects/mamba/tests/harness/cpython/tools/mambalibs_readiness.py --json",
+            "python3.12 apps/mamba/tests/harness/cpython/tools/mambalibs_readiness.py --json",
             "cargo build -p mamba",
-            "rg \"mambalibs\" projects/mamba projects/mamba/mambalibs",
+            "rg \"mambalibs\" apps/mamba apps/mamba/mambalibs",
             "target/debug/mamba --help",
             "cargo test -p mamba --test mambalibs -- --nocapture",
             "cargo test -p mamba --test schema_gates mambalibs_readiness_gate_714 -- --nocapture",

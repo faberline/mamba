@@ -26,11 +26,11 @@ Run these before any staging so the landing braid is explicit:
 git status --short
 git diff --name-only
 git diff --stat
-git diff -- projects/mamba/src/lower
-git diff -- projects/mamba/src/runtime/stdlib
-git diff -- projects/mamba/src/types/stdlib_sigs.rs
-git diff -- projects/mamba/src/types/stdlib_sigs_generated.rs
-rg -n "#897|#953|#976|#977|#1014|#1015" projects/mamba/src projects/mamba/tests
+git diff -- apps/mamba/src/lower
+git diff -- apps/mamba/src/runtime/stdlib
+git diff -- apps/mamba/src/types/stdlib_sigs.rs
+git diff -- apps/mamba/src/types/stdlib_sigs_generated.rs
+rg -n "#897|#953|#976|#977|#1014|#1015" apps/mamba/src apps/mamba/tests
 ```
 
 Main thread evidence capture for already-closed fixes from 2026-07-04 and
@@ -71,11 +71,11 @@ Stage only the braid hunks. Do not execute broad staging commands.
 
 ```bash
 git diff > /tmp/1102-full.diff
-git diff -- projects/mamba/src/lower > /tmp/1102-lower.diff
-git diff -- projects/mamba/src/runtime/stdlib/vendor_lib.rs > /tmp/1102-vendor.diff
-git diff -- projects/mamba/src/runtime/stdlib/py_src > /tmp/1102-py-src.diff
-git diff -- projects/mamba/src/types/stdlib_sigs.rs > /tmp/1102-stdlib-sigs.diff
-git diff -- projects/mamba/src/types/stdlib_sigs_generated.rs > /tmp/1102-stdlib-sigs-generated.diff
+git diff -- apps/mamba/src/lower > /tmp/1102-lower.diff
+git diff -- apps/mamba/src/runtime/stdlib/vendor_lib.rs > /tmp/1102-vendor.diff
+git diff -- apps/mamba/src/runtime/stdlib/py_src > /tmp/1102-py-src.diff
+git diff -- apps/mamba/src/types/stdlib_sigs.rs > /tmp/1102-stdlib-sigs.diff
+git diff -- apps/mamba/src/types/stdlib_sigs_generated.rs > /tmp/1102-stdlib-sigs-generated.diff
 ```
 
 Build the staged patch by copying only the required `@@` hunks into a filtered
@@ -100,7 +100,7 @@ Preferred path after creating the landing commit:
 ```bash
 git rev-parse HEAD
 git worktree add /tmp/mamba-1102-verify <commit-sha>
-cd /tmp/mamba-1102-verify/projects/mamba
+cd /tmp/mamba-1102-verify/apps/mamba
 cargo build -p mamba
 cargo test -p mamba lower:: -- --nocapture
 ```
@@ -127,8 +127,8 @@ Focused lockstep proof:
 Conformance follow-up at baseline:
 
 ```bash
-python3 projects/mamba/tests/harness/cpython/tools/replacement_readiness.py --help
-python3 projects/mamba/tests/harness/cpython/tools/platform_readiness.py --help
+python3 apps/mamba/tests/harness/cpython/tools/replacement_readiness.py --help
+python3 apps/mamba/tests/harness/cpython/tools/platform_readiness.py --help
 ```
 
 Run the normal conformance baseline or sweep command used by the main thread

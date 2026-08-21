@@ -23,7 +23,7 @@ golden tests).
 ## Directory layout
 
 ```text
-projects/mamba/tests/cpython/
+apps/mamba/tests/cpython/
 ├── fixtures/                          # Python test specimens
 │   ├── core/                          # language semantics
 │   ├── pep/                           # PEP-numbered features
@@ -51,7 +51,7 @@ projects/mamba/tests/cpython/
     ├── perf/pins/                     # perf-pin TOMLs
     └── seeds/                         # spec seeds (lib_test runner)
 
-projects/mamba/tests/harness/
+apps/mamba/tests/harness/
 └── cpython/                           # Rust runners (Cargo [[test]])
 ```
 
@@ -149,7 +149,7 @@ Hard constraints:
 
 ## Runner contract
 
-`projects/mamba/tests/harness/cpython/real_world.rs` is the Rust integration
+`apps/mamba/tests/harness/cpython/real_world.rs` is the Rust integration
 test that walks `tests/cpython/{std-libs,3rd-libs}/*/real_world/`
 and shells out for every `*.py` it finds.
 
@@ -174,7 +174,7 @@ patrol explicitly invoke the real-world gate.
 
 ## Bench harness (Phase 1.C)
 
-`projects/mamba/benches/3p/cross_runtime.rs` is the cross-runtime bench
+`apps/mamba/benches/3p/cross_runtime.rs` is the cross-runtime bench
 that walks `tests/cpython/{std-libs,3rd-libs}/*/bench/` and runs
 each `*.py` under both `python3` and `mamba run`, picking the minimum
 wall-clock per side (best-of-N) and emitting one line per fixture:

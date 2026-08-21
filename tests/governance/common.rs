@@ -10,7 +10,7 @@
 //! files; only the plumbing is shared.
 //!
 //! `env!("CARGO_MANIFEST_DIR")` is a compile-time macro expanded in the
-//! integration-test crate, so it resolves to `projects/mamba` here exactly
+//! integration-test crate, so it resolves to `apps/mamba` here exactly
 //! as it did inside each gate module.
 
 #![allow(dead_code)]
@@ -30,7 +30,7 @@ pub fn load_toml(path: &Path) -> toml::Value {
         .unwrap_or_else(|e| panic!("{} parse error: {e}", path.display()))
 }
 
-/// The mamba crate root (`projects/mamba`). Former gates spelled this
+/// The mamba crate root (`apps/mamba`). Former gates spelled this
 /// `project_root()` / `mamba_root()`; both expanded to exactly this.
 pub fn project_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))

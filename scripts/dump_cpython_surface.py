@@ -8,7 +8,7 @@ for conformance issues #1414–#1532).
 
 ## Deliverable shape
 
-Output file: ``projects/mamba/data/cpython312_surface.json`` (relative to
+Output file: ``apps/mamba/data/cpython312_surface.json`` (relative to
 the repo root). The file is committed; this script is the single source of
 truth for regenerating it.
 
@@ -63,8 +63,8 @@ CPython 3.12 — no other inputs.
 
 ::
 
-    python3 projects/mamba/scripts/dump_cpython_surface.py \\
-        --output projects/mamba/data/cpython312_surface.json
+    python3 apps/mamba/scripts/dump_cpython_surface.py \\
+        --output apps/mamba/data/cpython312_surface.json
 
 Requires CPython 3.12. Refuses to run under any other minor version so
 the committed JSON stays pinned to the documented denominator.
@@ -286,7 +286,7 @@ def main() -> int:
         / "data"
         / "cpython312_surface.json",
         help="Path to write the JSON denominator (default: "
-        "projects/mamba/data/cpython312_surface.json).",
+        "apps/mamba/data/cpython312_surface.json).",
     )
     args = parser.parse_args()
 

@@ -1,7 +1,7 @@
 // HANDWRITE-BEGIN gap="missing-generator:hand-written:fe294a5d" tracker="standardize-gap-projects-mamba-src-pkgmgr-resolver-mod-rs" reason="Public API: Resolver::resolve(roots: &amp;[Requirement]) -> Result<ResolvedGraph, ResolutionError>. Wires PubGrub state machine to IndexClient."
 //! Mamba dependency resolver — Phase-1.2.
 //!
-//! Spec source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md`.
+//! Spec source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md`.
 //!
 //! Public API: [`Resolver::resolve`].
 //!
@@ -36,7 +36,7 @@ use crate::pkgmanage::pkgmgr::types::{IndexError, ReleaseFile};
 
 use pubgrub_glue::IndexClientProvider;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (entry type)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (entry type)
 pub struct Resolver {
     provider: IndexClientProvider,
     /// Closure deciding whether a candidate version's marker excludes it from
@@ -101,7 +101,7 @@ impl Resolver {
         self
     }
 
-    /// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (resolve-flow)
+    /// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (resolve-flow)
     ///
     /// Execute the full flowchart (parse_roots → init → pick_pkg → fetch_meta
     /// → filter_yanked → intersect → solved/build_graph), collapsing the

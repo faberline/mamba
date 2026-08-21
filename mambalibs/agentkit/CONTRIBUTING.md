@@ -2,9 +2,9 @@
 
 ## Brief
 
-How to change `projects/mamba/mambalibs/agentkit`. What it promises lives in
+How to change `apps/mamba/mambalibs/agentkit`. What it promises lives in
 [README.md](README.md); mamba's own engineering doctrine and working-tree
-discipline live in [projects/mamba/CONTRIBUTING.md](../../CONTRIBUTING.md);
+discipline live in [apps/mamba/CONTRIBUTING.md](../../CONTRIBUTING.md);
 repository-wide authoring and verification rules live in the root
 [CONTRIBUTING.md](../../../../CONTRIBUTING.md).
 
@@ -14,7 +14,7 @@ rather than driven through `e2e -> unit -> logic`.
 
 ## Verification
 
-`projects/mamba/mambalibs/agentkit` is a container of 8 crates rather than one,
+`apps/mamba/mambalibs/agentkit` is a container of 8 crates rather than one,
 so the gate names all of them.
 
 | Gate | Command |

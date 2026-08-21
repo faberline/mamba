@@ -41,8 +41,8 @@ For each ready package row:
 - Tier 6 route and package issues: `#2085` through `#2099`
 - Tier 6 fail-closed exit gate: `#2096`
 - Native-extension SDK: `#2092`
-- Mamba native kits: `projects/mamba/mambalibs/`
-- Package and integration harness: `projects/mamba/tests/harness/`
+- Mamba native kits: `apps/mamba/mambalibs/`
+- Package and integration harness: `apps/mamba/tests/harness/`
 
 Missing, skipped, xfailed, stale, wrong-version, sentinel, and import-only rows
 are red. Tier 7 is not dependency-ready until the selected Tier 6 package

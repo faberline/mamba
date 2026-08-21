@@ -69,7 +69,7 @@ TOOLS_DIR = Path(__file__).resolve().parent
 SUITE_DIR = TOOLS_DIR.parent  # tests/harness/go_suite
 FIXTURES_DIR = SUITE_DIR / "fixtures"
 GO_DIR = SUITE_DIR / "go"
-MAMBA_DIR = TOOLS_DIR.parents[2]  # projects/mamba
+MAMBA_DIR = TOOLS_DIR.parents[2]  # apps/mamba
 REPO_ROOT = MAMBA_DIR.parents[1]  # repo root (target/ lives here)
 
 DEFAULT_JSONL = SUITE_DIR / "results.jsonl"

@@ -4,7 +4,7 @@ use super::super::value::MbValue;
 /// http.cookiejar module for Mamba (#1478, #1265 Goal 2 / 3-gate).
 ///
 /// Provides the CPython 3.12 `http.cookiejar` 8-entry public surface
-/// (per `projects/mamba/data/cpython312_surface.json`):
+/// (per `apps/mamba/data/cpython312_surface.json`):
 ///   - `Cookie`             — per-cookie record (passive class shell).
 ///   - `CookieJar`          — primary jar container (perf-gate hot path).
 ///   - `CookiePolicy`       — abstract policy base class shell.

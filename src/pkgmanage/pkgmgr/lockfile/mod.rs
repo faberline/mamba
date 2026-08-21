@@ -2,7 +2,7 @@
 
 //! Lockfile public API.
 //!
-//! See `.aw/tech-design/projects/mamba/pkgmgr/lockfile.md` for the full
+//! See `.aw/tech-design/apps/mamba/pkgmgr/lockfile.md` for the full
 //! design — schema definitions, write/parse flowcharts, R1-R5 contracts.
 
 use std::path::Path;
@@ -20,7 +20,7 @@ mod serialize;
 /// Bump on every breaking change to the on-disk shape.
 pub const MAX_SUPPORTED_FORMAT_VERSION: u32 = 1;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#schema (Lockfile)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#schema (Lockfile)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Lockfile {
     pub format_version: u32,
@@ -29,7 +29,7 @@ pub struct Lockfile {
     pub packages: Vec<Package>,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#schema (Package)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#schema (Package)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Package {
     pub name: String,
@@ -44,7 +44,7 @@ pub struct Package {
     pub source_ref: Option<SourceRef>,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#schema (SourceRef)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#schema (SourceRef)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct SourceRef {
     pub kind: SourceRefKind,
@@ -64,7 +64,7 @@ pub enum SourceRefKind {
     Git,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#schema (LockfileDiff)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#schema (LockfileDiff)
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct LockfileDiff {
     pub added: Vec<String>,
@@ -79,7 +79,7 @@ pub struct PackageChange {
     pub new_version: String,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#schema (LockfileError)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#schema (LockfileError)
 #[derive(Debug, Error)]
 pub enum LockfileError {
     #[error("io: {detail}")]

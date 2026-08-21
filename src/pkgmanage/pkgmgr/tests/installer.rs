@@ -1,9 +1,9 @@
 #![cfg(test)]
 
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:3de634b8" tracker="standardize-gap-projects-mamba-tests-pkgmgr-installer-test-rs" reason="Existing hand-written code in projects/mamba/tests/pkgmgr_installer_test.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:3de634b8" tracker="standardize-gap-projects-mamba-tests-pkgmgr-installer-test-rs" reason="Existing hand-written code in apps/mamba/tests/pkgmgr_installer_test.rs requires tracked generator coverage."
 // AC6 gated on `PYPI_LIVE=1` env var (offline-safe CI default).
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/installer.md#Test%20Plan
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/installer.md#Test%20Plan
 use std::fs;
 use std::io::Write;
 use std::path::{Path, PathBuf};

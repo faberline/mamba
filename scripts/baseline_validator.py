@@ -3,7 +3,7 @@
 
 Parent: #2530 (performance gate suite).
 
-Walks `projects/mamba/baseline.json` and validates that every benchmark
+Walks `apps/mamba/baseline.json` and validates that every benchmark
 entry carries the tier metadata downstream tools (#2565 floor, #2569
 suite geomean, #2820 release summary) depend on.
 
@@ -190,7 +190,7 @@ def _parse_args(argv: list[str]) -> argparse.Namespace:
         description="Validate baseline.json tier metadata (#2566).",
     )
     p.add_argument("--baseline", type=Path, default=None,
-                   help="path to baseline.json (default: projects/mamba/baseline.json)")
+                   help="path to baseline.json (default: apps/mamba/baseline.json)")
     p.add_argument("--format", choices=("text", "json"), default="text")
     p.add_argument("--legacy-compat", action="store_true",
                    help="tolerate missing 'tier' fields (report as drift, not error)")

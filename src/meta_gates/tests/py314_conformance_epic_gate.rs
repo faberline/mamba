@@ -292,7 +292,7 @@ fn r5_conformance_suite_forks_into_py314_subdir() {
     }
     assert_eq!(
         c["py314_subdir_relative_path"].as_str(),
-        Some("projects/mamba/tests/cpython/cpython_ported/py314")
+        Some("apps/mamba/tests/cpython/cpython_ported/py314")
     );
     let tags: Vec<_> = c["allowed_cpython_3_14_release_tag_formats"]
         .as_array()

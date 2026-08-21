@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:63c8d753" tracker="standardize-gap-projects-mamba-tests-runtime-shutdown-conformance-tests-rs" reason="Existing hand-written code in projects/mamba/tests/runtime_shutdown_conformance_tests.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:63c8d753" tracker="standardize-gap-projects-mamba-tests-runtime-shutdown-conformance-tests-rs" reason="Existing hand-written code in apps/mamba/tests/runtime_shutdown_conformance_tests.rs requires tracked generator coverage."
 // "
 use std::path::{Path, PathBuf};
 use std::process::{Command, ExitStatus};

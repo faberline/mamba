@@ -16,7 +16,7 @@ e2e_tests:
     claim_id: parallel-to-thread-gather-preserves-every-result
     contract_id: MAMBA-T1-FT-GATHER-STABILITY
     category: stability
-    test_path: projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs
+    test_path: apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs
     command: "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_stability --exact"
     assertions:
       - "Across 100 rounds of eight concurrently gathered CPU-bound asyncio.to_thread calls, every round returns all eight distinct expected values exactly once with zero crash, panic, timeout, or deadlock."

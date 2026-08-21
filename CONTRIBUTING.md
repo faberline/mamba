@@ -16,7 +16,7 @@ cargo build --release -p mamba
 | Rule | Why |
 |------|-----|
 | Foreground builds only; never background a build then stop | stalled-agent class failure; re-run the identical command if the harness backgrounds it |
-| Binary lands at **workspace root** `target/release/mamba`, not `projects/mamba/target/` | wrong-path runs test a stale binary |
+| Binary lands at **workspace root** `target/release/mamba`, not `apps/mamba/target/` | wrong-path runs test a stale binary |
 | Ship profile (no env overrides) only for perf-pin **gating**; fast-verify for everything else | pins README documents the split |
 | Concurrent sessions share `target/` — copy the binary to a scratch path before long verification runs | mid-verify rebuilds swap the binary under you |
 | Debug-assertions variant for memory bugs: `CARGO_PROFILE_RELEASE_DEBUG_ASSERTIONS=true` + separate `--target-dir` | `rc.rs debug_validate_obj` catches double-frees deterministically (150/150 bar, see #1018/#1027) |

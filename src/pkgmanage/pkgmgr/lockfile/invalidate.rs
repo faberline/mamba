@@ -2,7 +2,7 @@
 
 //! `pyproject.toml` canonical fingerprint compute (R4).
 //!
-//! See `.aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic` —
+//! See `.aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic` —
 //! the `lockfile-input-hash` flowchart drives the canonicalisation.
 
 use std::path::Path;
@@ -11,7 +11,7 @@ use sha2::{Digest, Sha256};
 
 use super::LockfileError;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/lockfile.md#logic (lockfile-input-hash)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/lockfile.md#logic (lockfile-input-hash)
 pub(super) fn compute(pyproject_path: &Path) -> Result<String, LockfileError> {
     let text = std::fs::read_to_string(pyproject_path).map_err(|e| LockfileError::Io {
         detail: e.to_string(),

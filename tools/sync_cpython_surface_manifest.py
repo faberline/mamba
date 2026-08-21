@@ -95,7 +95,7 @@ def render_manifest(module: str, names: list[str]) -> str:
                 f"attr      = {q(name)}",
                 f"expr      = {q(module)}",
                 f"module    = {q(import_module)}",
-                f"source    = {q('projects/mamba/data/cpython312_surface.json')}",
+                f"source    = {q('apps/mamba/data/cpython312_surface.json')}",
                 "",
             ]
         )

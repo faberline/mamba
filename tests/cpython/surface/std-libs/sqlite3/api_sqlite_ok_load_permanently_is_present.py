@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """sqlite3.SQLITE_OK_LOAD_PERMANENTLY: api_sqlite_ok_load_permanently_is_present (surface)."""

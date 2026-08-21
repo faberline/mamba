@@ -1,10 +1,10 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:32b74adb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-archive-rs" reason="Existing hand-written code in projects/mamba/src/pkgmgr/installer/archive.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:32b74adb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-archive-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/archive.rs requires tracked generator coverage."
 // Produces a `WheelArchive` with the dist-info prefix and computed name/version.
 // Surfaces malformed-wheel errors (missing WHEEL, missing RECORD, multiple
 // dist-info dirs).
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/installer.md#Schema
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/installer.md#Logic
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/installer.md#Schema
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/installer.md#Logic
 use std::fs::{self, File};
 use std::io::{self, Read};
 use std::path::{Path, PathBuf};

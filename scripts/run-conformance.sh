@@ -4,9 +4,9 @@
 # semantics) get killed by SIGXCPU instead of stalling the suite.
 #
 # Usage:
-#   projects/mamba/scripts/run-conformance.sh                 # 60s cap, default
-#   CAP=120 projects/mamba/scripts/run-conformance.sh         # bump cap
-#   FILTER=stdlib projects/mamba/scripts/run-conformance.sh   # only stdlib::* tests
+#   apps/mamba/scripts/run-conformance.sh                 # 60s cap, default
+#   CAP=120 apps/mamba/scripts/run-conformance.sh         # bump cap
+#   FILTER=stdlib apps/mamba/scripts/run-conformance.sh   # only stdlib::* tests
 #
 # Env knobs:
 #   CAP     — per-process CPU-second cap (default 60). Inherited by every

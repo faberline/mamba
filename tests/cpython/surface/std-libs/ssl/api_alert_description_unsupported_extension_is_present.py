@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.ALERT_DESCRIPTION_UNSUPPORTED_EXTENSION: api_alert_description_unsupported_extension_is_present (surface)."""

@@ -87,7 +87,7 @@ fn missing_root_returns_nonzero() {
     let out = Command::new("python3")
         .arg(&script)
         .arg("--root")
-        .arg("/nonexistent/projects/mamba/does/not/exist")
+        .arg("/nonexistent/apps/mamba/does/not/exist")
         .output()
         .expect("failed to launch python3");
     assert_ne!(

@@ -1,8 +1,8 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:e1c4453f" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-uninstall-rs" reason="Existing hand-written code in projects/mamba/src/pkgmgr/installer/uninstall.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:e1c4453f" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-uninstall-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/uninstall.rs requires tracked generator coverage."
 // site_packages, deletes every listed file (idempotent on missing entries),
 // removes the dist-info directory. Errors when no dist-info matches the name.
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/installer.md#Logic
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/installer.md#Logic
 use std::fs;
 use std::path::{Path, PathBuf};
 

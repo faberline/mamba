@@ -12,7 +12,7 @@ use std::collections::{HashMap, HashSet};
 use std::path::PathBuf;
 
 const GEVENT_GREENLET_MIGRATION_GUIDE: &str =
-    "projects/mamba/docs/migrations/gevent-greenlet-to-asyncio.md";
+    "apps/mamba/docs/migrations/gevent-greenlet-to-asyncio.md";
 
 /// A loaded module's namespace.
 pub struct MbModule {

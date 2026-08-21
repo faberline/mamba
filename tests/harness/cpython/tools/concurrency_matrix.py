@@ -50,7 +50,7 @@ from pathlib import Path
 TOOLS_DIR = Path(__file__).resolve().parent
 MAMBA_DIR = TOOLS_DIR.parents[3]  # tools → cpython → harness → tests → mamba
 README = MAMBA_DIR / "README.md"
-# The cargo workspace target lives at the repo root (projects/mamba/../../target),
+# The cargo workspace target lives at the repo root (apps/mamba/../../target),
 # matching tools/type_enforce_matrix.py. Override with MAMBA_BIN.
 MAMBA_BIN = os.environ.get("MAMBA_BIN", str(MAMBA_DIR / ".." / ".." / "target" / "release" / "mamba"))
 

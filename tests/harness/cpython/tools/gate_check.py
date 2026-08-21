@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Executable definition of DONE for the mamba production test gate.
 
-Runs the 10 success-metrics from projects/mamba/tests/PRODUCTION-GATE.md and
+Runs the 10 success-metrics from apps/mamba/tests/PRODUCTION-GATE.md and
 prints one line `GATE: N/10 criteria met`, naming each criterion PASS/FAIL with
 a short detail. The gate is DONE — the measuring instrument is complete and
 honest — when this prints `GATE: 10/10 criteria met`. It does NOT assert that
@@ -28,7 +28,7 @@ from pathlib import Path
 TOOLS_DIR = Path(__file__).resolve().parent                 # tests/harness/cpython/tools
 HARNESS_CPYTHON_DIR = TOOLS_DIR.parent                      # tests/harness/cpython
 TESTS_DIR = TOOLS_DIR.parents[2]                            # tests
-MAMBA_DIR = TOOLS_DIR.parents[3]                            # projects/mamba
+MAMBA_DIR = TOOLS_DIR.parents[3]                            # apps/mamba
 REPO_ROOT = MAMBA_DIR.parent
 CPYTHON_DIR = TESTS_DIR / "cpython"                         # fixtures + .cache root
 

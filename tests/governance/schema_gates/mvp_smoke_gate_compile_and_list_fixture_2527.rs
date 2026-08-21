@@ -70,7 +70,7 @@ fn surface_pins_smoke_list_summary_and_coverage_path_coverage() {
     assert_eq!(s["canonical_package_name"].as_str(), Some("mamba"));
     assert_eq!(
         s["canonical_package_relative_path"].as_str(),
-        Some("projects/mamba")
+        Some("apps/mamba")
     );
 }
 
@@ -107,11 +107,11 @@ fn worker_can_run_the_canonical_smoke_and_list_commands() {
     }
     assert_eq!(
         c["canonical_smoke_command"].as_str(),
-        Some("cargo test --manifest-path projects/mamba/Cargo.toml")
+        Some("cargo test --manifest-path apps/mamba/Cargo.toml")
     );
     assert_eq!(
         c["canonical_list_command"].as_str(),
-        Some("cargo test --manifest-path projects/mamba/Cargo.toml -- --list")
+        Some("cargo test --manifest-path apps/mamba/Cargo.toml -- --list")
     );
     assert_eq!(
         c["canonical_smoke_command_field_name"].as_str(),
@@ -207,7 +207,7 @@ fn coverage_tooling_points_at_projects_mamba_and_package_mamba_not_stale_crate_p
     }
     assert_eq!(
         c["required_coverage_target_path"].as_str(),
-        Some("projects/mamba")
+        Some("apps/mamba")
     );
     assert_eq!(
         c["required_coverage_target_package"].as_str(),

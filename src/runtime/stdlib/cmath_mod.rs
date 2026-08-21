@@ -16,7 +16,7 @@ use std::collections::HashMap;
 
 // ── Variadic dispatchers (callable from module-attr context) ──
 // NOTE: dispatcher fn names must start with `dispatch_` so the surface
-// walker (projects/mamba/src/surface.rs::pick_tuple_dispatcher) recognises
+// walker (apps/mamba/src/surface.rs::pick_tuple_dispatcher) recognises
 // them. Without the prefix Gate 3 surface scores 0/N.
 
 macro_rules! disp_unary {

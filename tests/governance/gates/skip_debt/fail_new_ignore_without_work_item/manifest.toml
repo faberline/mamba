@@ -44,7 +44,7 @@ must_share_work_item_reference_definition = true
 
 # The committed baseline against which the guard diffs.
 [baseline]
-baseline_relative_path_within_repo = "projects/mamba/tests/governance/gates/skip_debt/fail_new_ignore_without_work_item/baseline.json"
+baseline_relative_path_within_repo = "apps/mamba/tests/governance/gates/skip_debt/fail_new_ignore_without_work_item/baseline.json"
 baseline_format = "json"
 must_be_committed_to_repo = true
 must_be_versioned = true

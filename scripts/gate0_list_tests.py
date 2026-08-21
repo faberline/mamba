@@ -160,7 +160,7 @@ def main(argv: Iterable[str]) -> int:
         "--manifest",
         type=Path,
         default=_default_manifest(),
-        help="path to projects/mamba/Cargo.toml (defaults to script's parent)",
+        help="path to apps/mamba/Cargo.toml (defaults to script's parent)",
     )
     parser.add_argument(
         "--release",

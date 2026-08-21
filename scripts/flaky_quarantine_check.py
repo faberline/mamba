@@ -4,7 +4,7 @@
 Parent: #2775 (MVP release blocking CI profiles).
 
 Walks the quarantine policy file (default
-`projects/mamba/validation/flaky_quarantine_policy.toml`) and validates
+`apps/mamba/validation/flaky_quarantine_policy.toml`) and validates
 that each `[[quarantine]]` entry satisfies the rules in `[validation]`.
 
 Acceptance (issue #2824):

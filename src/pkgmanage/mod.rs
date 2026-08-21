@@ -8,7 +8,7 @@
 //   - lockfile/  : mamba.lock (top-level, separate from pkgmgr internal lockfile)
 //
 // Lives alongside `cpython::*` (language + stdlib) and `mambalibs::*`
-// (PyPI-equivalents). See projects/mamba/PLAN.md.
+// (PyPI-equivalents). See apps/mamba/PLAN.md.
 
 pub mod add;
 pub mod audit;

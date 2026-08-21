@@ -97,7 +97,7 @@ mod tests {
 
     #[test]
     fn test_crate_name_from_dir_nested() {
-        let p = Path::new("/projects/cclab/projects/mamba");
+        let p = Path::new("/projects/cclab/apps/mamba");
         assert_eq!(crate_name_from_dir(p), "mamba");
     }
 

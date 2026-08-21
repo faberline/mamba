@@ -47,10 +47,10 @@ must_be_offline = true
 must_be_deterministic = true
 
 # Acceptance: "Stub parser + introspection runner at
-# projects/mamba/conformance/typeshed_surface.rs".
+# apps/mamba/conformance/typeshed_surface.rs".
 [runner_location_contract]
 case = "runner_lives_under_projects_mamba_conformance"
-runner_relative_path = "projects/mamba/conformance/typeshed_surface.rs"
+runner_relative_path = "apps/mamba/conformance/typeshed_surface.rs"
 runner_relative_path_field_name = "runner_relative_path"
 must_pin_runner_relative_path = true
 forbid_runner_outside_projects_mamba_conformance = true

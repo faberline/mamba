@@ -1,7 +1,7 @@
 version = 2
 project = "mamba"
 ir_kind = "td"
-td_path = "projects/mamba/tech-design"
+td_path = "apps/mamba/tech-design"
 generated_at = "2026-07-20T05:30:46.945423+00:00"
 digest = "sha256:13616b5dc2a357c01ee73f77b2bffd781168bb6ab9fec579c296985a51f70015"
 source_digest = "sha256:13616b5dc2a357c01ee73f77b2bffd781168bb6ab9fec579c296985a51f70015"

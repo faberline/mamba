@@ -11,7 +11,7 @@
 //! with `cargo test -p mamba --test conformance_real_world -- --ignored`.
 //!
 //! #2550: fixtures are split into **required** and **optional** buckets
-//! using the manifest at `projects/mamba/ecosystem_fixture_manifest.toml`
+//! using the manifest at `apps/mamba/ecosystem_fixture_manifest.toml`
 //! (which #2551 introduced). The MVP gate fails on a `required_fail`,
 //! never on `optional_fail`. Both categories are reported on stderr so
 //! a worker can still see the optional-bucket health without having it

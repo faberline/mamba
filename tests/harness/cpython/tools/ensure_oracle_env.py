@@ -3,7 +3,7 @@
 
 The Rust harness and sweep.py prefer:
 
-    projects/mamba/tests/cpython/.cache/oracle-env/bin/python3
+    apps/mamba/tests/cpython/.cache/oracle-env/bin/python3
 
 when MAMBA_ORACLE_PYTHON is not set. This tool creates that venv from the
 checked-in oracle-env requirements lock, copies CPython's Lib/test package into
@@ -261,7 +261,7 @@ def atomic_rebuild(env_dir: Path, requirements: Path, python: str, uv: str, lib_
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Create or refresh projects/mamba/tests/cpython/.cache/oracle-env "
+            "Create or refresh apps/mamba/tests/cpython/.cache/oracle-env "
             "from the pinned CPython oracle requirements lock."
         )
     )

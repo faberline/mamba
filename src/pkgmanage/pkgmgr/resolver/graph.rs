@@ -1,7 +1,7 @@
 // HANDWRITE-BEGIN gap="missing-generator:hand-written:9c45cd2d" tracker="standardize-gap-projects-mamba-src-pkgmgr-resolver-graph-rs" reason="ResolvedGraph, ResolvedNode, ResolutionError types. Codegen will eventually own these from the schema section once mamba-side schema codegen is wired."
 //! Resolver output types — successful graph + structured failure.
 //!
-//! Schema source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema`.
+//! Schema source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema`.
 
 use serde::{Deserialize, Serialize};
 
@@ -9,7 +9,7 @@ use crate::pkgmanage::pkgmgr::types::FileHash;
 
 use super::requirement::Requirement;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (ResolvedGraph)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (ResolvedGraph)
 ///
 /// Successful resolution output — full transitive closure. `nodes` is sorted by
 /// `name` for byte-stable output (R5 / AC4); `roots` records the originally
@@ -21,7 +21,7 @@ pub struct ResolvedGraph {
     pub roots: Vec<String>,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (ResolvedNode)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (ResolvedNode)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ResolvedNode {
     pub name: String,
@@ -30,7 +30,7 @@ pub struct ResolvedNode {
     pub requires: Vec<Requirement>,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (ResolutionError.kind)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (ResolutionError.kind)
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum ResolutionErrorKind {
@@ -41,7 +41,7 @@ pub enum ResolutionErrorKind {
     Cycle,
 }
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (ResolutionError)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (ResolutionError)
 ///
 /// Carries a PubGrub-style human-readable trace plus the set of package names
 /// that participated in the conflict (for downstream UX / lockfile diagnostics).

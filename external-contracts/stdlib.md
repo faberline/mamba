@@ -98,7 +98,7 @@ domain's own modules — belongs to type-system. For context only (not this doma
 
 ```bash
 # inner loop (seconds; runner-parity verdicts; set MAMBA_BIN after a release build) — from
-# projects/mamba/tests/harness/cpython/ — vendored py_src slice (only dirs that exist; nturl2path has none)
+# apps/mamba/tests/harness/cpython/ — vendored py_src slice (only dirs that exist; nturl2path has none)
 python3 tools/sweep.py \
   behavior/std-libs/{colorsys,fileinput,getopt,getpass,mailbox,plistlib,quopri,uu} \
   errors/std-libs/{colorsys,getopt} real_world/std-libs/{colorsys,getopt} \

@@ -1,6 +1,6 @@
 # pickle — subset B small-allocation-many-times (json-shaped)
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/pickle.pyi` (240 lines, 82-entry __all__).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/pickle.pyi` (240 lines, 82-entry __all__).
 
 ## Surface (82-entry __all__)
 

@@ -1,95 +1,95 @@
 version = 1
 project = "mamba"
 ir_kind = "ec"
-ec_path = "projects/mamba/external-contracts"
-inventory_path = "projects/mamba/aw.toml"
+ec_path = "apps/mamba/external-contracts"
+inventory_path = "apps/mamba/aw.toml"
 generated_at = "2026-07-19T08:09:26.401364+00:00"
 ir_digest = "sha256:efdd5e9070e4bcd61f35d51a627141fa348755d16de5bf67383976509f66bffc"
 source_digest = "sha256:33c297f1c14849acfa1eccbd8fef6adc7f5e7cbaefe9a7854dd74efd003362fd"
 tool_contracts = []
 
 [[sources]]
-path = "projects/mamba/external-contracts/HARNESS.md"
+path = "apps/mamba/external-contracts/HARNESS.md"
 digest = "sha256:87557a7bddcf5b4591e914bd5cb2f2736d6af8d80e6ae51e1f07517067c1827c"
 
 [[sources]]
-path = "projects/mamba/external-contracts/README.md"
+path = "apps/mamba/external-contracts/README.md"
 digest = "sha256:73ff8646348b2161a918624d4dd7dffed4df41fceb77dc423620cd9d687e2b37"
 
 [[sources]]
-path = "projects/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md"
+path = "apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md"
 digest = "sha256:1311c27f979757041bf206925f9e8611b749a47cfa300afdf7260dced1311a84"
 
 [[sources]]
-path = "projects/mamba/external-contracts/calling-convention.md"
+path = "apps/mamba/external-contracts/calling-convention.md"
 digest = "sha256:c4478507aa39c93bf9e43fc049811d788ce525f1d17807863517c8866a12588b"
 
 [[sources]]
-path = "projects/mamba/external-contracts/closures.md"
+path = "apps/mamba/external-contracts/closures.md"
 digest = "sha256:ce2cc6fa64c5cfb6bbed1488945d2e25173dc3f3bc72003ea1d728ec4246826b"
 
 [[sources]]
-path = "projects/mamba/external-contracts/codegen.md"
+path = "apps/mamba/external-contracts/codegen.md"
 digest = "sha256:4a4a8a6a58684b13b1e591be1111e466fb9d337d28a85ed96655943f06eb4723"
 
 [[sources]]
-path = "projects/mamba/external-contracts/collections.md"
+path = "apps/mamba/external-contracts/collections.md"
 digest = "sha256:9e541aad893e26a22788777c04137cbf20f39c89f14cac1f41050cdc64825f8d"
 
 [[sources]]
-path = "projects/mamba/external-contracts/concurrency.md"
+path = "apps/mamba/external-contracts/concurrency.md"
 digest = "sha256:c2d7cd321b46bf20dc88733a95793af0485b5defbb6174203f7e6e9299a23f78"
 
 [[sources]]
-path = "projects/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md"
+path = "apps/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md"
 digest = "sha256:1d059fb1e112c2386501b3803d25db00847847df17f6fac2dbc24839bc8caf3d"
 
 [[sources]]
-path = "projects/mamba/external-contracts/exceptions.md"
+path = "apps/mamba/external-contracts/exceptions.md"
 digest = "sha256:4451824e4cbff13455ccb4944964f191180e0e170230b3f6c88e17ba3a885277"
 
 [[sources]]
-path = "projects/mamba/external-contracts/frontend.md"
+path = "apps/mamba/external-contracts/frontend.md"
 digest = "sha256:f0d00d631dd1bdbccf9f822399276d61cb78b68fb4a30c4cfec93e1ebc8b2d30"
 
 [[sources]]
-path = "projects/mamba/external-contracts/import-system.md"
+path = "apps/mamba/external-contracts/import-system.md"
 digest = "sha256:fd39b9be044cae81c6775a8f5ea974a4a4b47f54dec7d6e488eacca65fc1fc30"
 
 [[sources]]
-path = "projects/mamba/external-contracts/iterators.md"
+path = "apps/mamba/external-contracts/iterators.md"
 digest = "sha256:3633fbbf44d8476bac052d1a2d13d6b75d06fad88ecf4828c8589e1b13c9b5c4"
 
 [[sources]]
-path = "projects/mamba/external-contracts/memory.md"
+path = "apps/mamba/external-contracts/memory.md"
 digest = "sha256:98c266c8169c0d31e0901063b9195b5debad3d2130f7a60a3a38603f15812930"
 
 [[sources]]
-path = "projects/mamba/external-contracts/name-resolution.md"
+path = "apps/mamba/external-contracts/name-resolution.md"
 digest = "sha256:3dead73ffa7066be32b8090ff31a37b694caef27113d80d45125829109555f19"
 
 [[sources]]
-path = "projects/mamba/external-contracts/numbers.md"
+path = "apps/mamba/external-contracts/numbers.md"
 digest = "sha256:84ae2c30235bc0b56aa7db4e23c001e663a3e352edf01f131ebf2f480c7eae1c"
 
 [[sources]]
-path = "projects/mamba/external-contracts/object-model.md"
+path = "apps/mamba/external-contracts/object-model.md"
 digest = "sha256:a367810ec4ce5e3d9b1182df48c3f2e5b162abc957af61082bbffcbe7a720886"
 
 [[sources]]
-path = "projects/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md"
+path = "apps/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md"
 digest = "sha256:0e3f27756a722fc7e4d8ecf8a77e90f118b8b4fbab4eb6f70743bb27f6fdebe8"
 
 [[sources]]
-path = "projects/mamba/external-contracts/stdlib.md"
+path = "apps/mamba/external-contracts/stdlib.md"
 digest = "sha256:7f67be0d15fc82a45618e5be7dde20845d25b2e426482fcd4c2648d940a6d9c0"
 
 [[sources]]
-path = "projects/mamba/external-contracts/strings.md"
+path = "apps/mamba/external-contracts/strings.md"
 digest = "sha256:a3640002cb96d8c61939aa115bebb8110f6203a134b80e723e6b2c88d2bc0a14"
 
 [[sources]]
-path = "projects/mamba/external-contracts/type-system.md"
+path = "apps/mamba/external-contracts/type-system.md"
 digest = "sha256:87e13f2a436505bf63e6ff3a89b1ecdb25388d39fe11c017a8184d7bd4cba88e"
 
 [[cases]]
@@ -98,8 +98,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-EFFICIENCY"
 dimension = "efficiency"
-source_ref = "projects/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs"
+source_ref = "apps/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_efficiency --exact"
 required_for_production = true
 assertions = [
@@ -118,8 +118,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-RESULTS"
 dimension = "behavior"
-source_ref = "projects/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs"
+source_ref = "apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_results --exact"
 required_for_production = true
 assertions = [
@@ -138,8 +138,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-STABILITY"
 dimension = "stability"
-source_ref = "projects/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs"
+source_ref = "apps/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_stability --exact"
 required_for_production = true
 assertions = [

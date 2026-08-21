@@ -24,7 +24,7 @@ import argparse
 import sys
 from pathlib import Path
 
-MAMBA_DIR = Path(__file__).resolve().parents[4]   # projects/mamba
+MAMBA_DIR = Path(__file__).resolve().parents[4]   # apps/mamba
 TYPESHED_STDLIB = MAMBA_DIR / "vendor" / "typeshed" / "stdlib"
 CPYTHON_DIR = MAMBA_DIR / "tests" / "cpython"
 BEHAVIOR_GAPS = MAMBA_DIR / "tests" / "harness" / "cpython" / "config" / "behavior_gaps.txt"

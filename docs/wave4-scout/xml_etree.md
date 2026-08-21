@@ -1,6 +1,6 @@
 # xml.etree.ElementTree — subset B many-elements, allocation-bound
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/xml/etree/ElementTree.pyi` (385 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/xml/etree/ElementTree.pyi` (385 lines).
 
 ## Surface
 

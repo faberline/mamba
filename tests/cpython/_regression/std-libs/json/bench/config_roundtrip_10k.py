@@ -14,7 +14,7 @@ mamba's json.loads of a moderately-nested dict (`endpoints: [{...},{...}]`
 + `feature_flags: {...}` style) deadlocks the runtime somewhere between
 iter 200 and iter 250. Process drops to 0% CPU at ~250 allocations and
 never wakes up — likely a refcount cycle or lock-ordering bug in
-`json_to_mbvalue` recursion (`projects/mamba/src/runtime/stdlib/json_mod.rs:229-262`).
+`json_to_mbvalue` recursion (`apps/mamba/src/runtime/stdlib/json_mod.rs:229-262`).
 Until #2109 closes, the bench fixture must stay below that threshold OR
 use a flatter shape that doesn't trip the bug. We chose flatter-but-many
 so the bench produces a meaningful ratio at 10k iters.

@@ -180,7 +180,7 @@ unsafe extern "C" fn dispatch_findfile(args: *const MbValue, n: usize) -> MbValu
             if direct.exists() {
                 return MbValue::from_ptr(MbObject::new_str(direct.to_string_lossy().into_owned()));
             }
-            let via_projects = dir.join("projects/mamba").join(&rel);
+            let via_projects = dir.join("apps/mamba").join(&rel);
             if via_projects.exists() {
                 return MbValue::from_ptr(MbObject::new_str(
                     via_projects.to_string_lossy().into_owned(),

@@ -8,7 +8,7 @@
 # target plus CPU contention. The eleven small targets (~140s serial, mostly
 # startup overhead) run as one sequential lane alongside.
 #
-# Usage:  tests/harness/cpython/tools/run-all.sh   # from projects/mamba
+# Usage:  tests/harness/cpython/tools/run-all.sh   # from apps/mamba
 # Env:    MAMBA_ORACLE_CACHE=0 to disable the D5.3 CPython oracle cache.
 #
 # Exit code is non-zero if any target failed; per-target results and the

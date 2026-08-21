@@ -348,7 +348,7 @@ def mambalibs_native_evidence() -> dict[str, Any]:
         "fixtures_dir": repo_rel(MAMBALIBS_FIXTURES_DIR),
         "sample_import_gates": [path.name for path in import_gates[:8]],
         "native_kit_readiness_report": (
-            "python3.12 projects/mamba/tests/harness/cpython/tools/"
+            "python3.12 apps/mamba/tests/harness/cpython/tools/"
             "mambalibs_readiness.py --json"
         ),
         "counts_as_pure_python_package": False,
@@ -658,7 +658,7 @@ def build_report(show: int, db: Path) -> dict[str, Any]:
         + len(gaps),
         "blockers": blockers,
         "evidence_commands": [
-            "python3.12 projects/mamba/tests/harness/cpython/tools/third_party_readiness.py --json",
+            "python3.12 apps/mamba/tests/harness/cpython/tools/third_party_readiness.py --json",
             "cargo test -p mamba --test schema_gates third_party_readiness_gate_711 -- --nocapture",
             "cargo test -p mamba --test schema_gates ecosystem_fixture_manifest_smoke -- --nocapture",
             "target/debug/mamba add --provider mamba mamba-httpx-compat",

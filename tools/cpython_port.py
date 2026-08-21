@@ -27,9 +27,9 @@ oracle exits non-zero (e.g., because the port lost necessary context)
 is auto-quarantined into ``ported/_invalid/`` for hand review.
 
 Usage:
-    python3 projects/mamba/tools/cpython_port.py \\
+    python3 apps/mamba/tools/cpython_port.py \\
         --source /path/to/cpython/Lib/test/test_bool.py \\
-        --dest projects/mamba/tests/cpython/behavior/builtin-libs/bool_type
+        --dest apps/mamba/tests/cpython/behavior/builtin-libs/bool_type
 """
 
 from __future__ import annotations

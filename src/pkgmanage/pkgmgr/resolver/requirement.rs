@@ -1,7 +1,7 @@
 // HANDWRITE-BEGIN gap="missing-generator:hand-written:d2aeab54" tracker="standardize-gap-projects-mamba-src-pkgmgr-resolver-requirement-rs" reason="PEP 508 parser. Subset for P1: name, specifier set, extras, python_version + sys_platform markers. Optionally backed by pep508_rs crate."
 //! PEP 508 dependency declaration parser (Phase-1 subset).
 //!
-//! Schema source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema`.
+//! Schema source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema`.
 //! Recognised grammar:
 //!     name [ "[" extras "]" ] [ specifier_set ] [ ";" marker ]
 //! `name` is PEP 503-normalised (lowercase, runs of `[-_.]` collapsed to `-`).
@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 
 use super::specifier::VersionSpecifier;
 
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#schema (Requirement)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#schema (Requirement)
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Requirement {
     pub name: String,
@@ -44,7 +44,7 @@ impl std::error::Error for ParseError {}
 
 /// Parse one PEP 508 requirement line.
 ///
-/// @spec .aw/tech-design/projects/mamba/pkgmgr/resolver.md#logic (parse_roots)
+/// @spec .aw/tech-design/apps/mamba/pkgmgr/resolver.md#logic (parse_roots)
 pub fn parse(input: &str) -> Result<Requirement, ParseError> {
     let s = input.trim();
     if s.is_empty() {

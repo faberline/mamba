@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "projects/mamba/data/cpython312_surface.json"
+# source = "apps/mamba/data/cpython312_surface.json"
 # status = "filled"
 # ///
 """sqlite3.SQLITE_LIMIT_WORKER_THREADS: api_sqlite_limit_worker_threads_is_present (surface)."""

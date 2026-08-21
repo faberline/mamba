@@ -69,7 +69,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import harness_lib  # noqa: E402
 
 TOOLS_DIR = Path(__file__).resolve().parent
-MAMBA_DIR = TOOLS_DIR.parents[3]                       # projects/mamba
+MAMBA_DIR = TOOLS_DIR.parents[3]                       # apps/mamba
 FIXTURES_DIR = MAMBA_DIR / "tests" / "cpython"
 STATE_DIR = FIXTURES_DIR / ".cache" / "sweep"
 STATE_FILE = STATE_DIR / "failures.txt"

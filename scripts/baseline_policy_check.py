@@ -4,9 +4,9 @@
 Parent: #2775 (MVP release blocking CI profiles).
 
 Walks the baseline changelog (default
-`projects/mamba/validation/baseline_changelog.toml`) and validates each
+`apps/mamba/validation/baseline_changelog.toml`) and validates each
 entry against the policy declared in
-`projects/mamba/validation/baseline_update_policy.toml`.
+`apps/mamba/validation/baseline_update_policy.toml`.
 
 Acceptance (issue #2823):
 

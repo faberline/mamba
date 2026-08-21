@@ -20,7 +20,7 @@ ships. Pure research — no source edits.
 
 ## colorsys — pure-scalar tuple-return, trivial ship
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/colorsys.pyi` (15 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/colorsys.pyi` (15 lines).
 
 **Surface (9 entries):**
 - **Constants (3):** `ONE_SIXTH`, `ONE_THIRD`, `TWO_THIRD` (all `Final[float]`).
@@ -78,7 +78,7 @@ floating-point stability assert (within 1e-9). Third (informational):
 
 ## fractions — single OOP class, GCD-heavy compute
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/fractions.pyi` (167 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/fractions.pyi` (167 lines).
 
 **Surface (1 class — `Fraction`, ~36 callable members):**
 - **Constants (0):** none top-level (Fraction is the only export per `__all__`).
@@ -165,7 +165,7 @@ exercise the continued-fraction kernel.
 
 ## uuid — module-level bulk-id, integer-handle class
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/uuid.pyi` (106 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/uuid.pyi` (106 lines).
 
 **Surface (15 entries):**
 - **Constants (8):** `NAMESPACE_DNS`, `NAMESPACE_URL`, `NAMESPACE_OID`,
@@ -246,7 +246,7 @@ construct UUID from fixed int, read `.hex` × 100k for integer-to-hex bench.
 
 ## functools — reduce-only forward ship; lru_cache/partial deferred
 
-**Source:** `projects/mamba/vendor/typeshed/stdlib/functools.pyi` (275 lines).
+**Source:** `apps/mamba/vendor/typeshed/stdlib/functools.pyi` (275 lines).
 
 **Surface (proposed forward-only ship: 5 entries; FULL surface ~13 entries with
 4 callable classes deferred):**

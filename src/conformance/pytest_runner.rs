@@ -1886,7 +1886,7 @@ class Bare(TestCase):
     fn detect_layout_picks_pytest_for_vendor_paths() {
         let cases = [
             "/tmp/conformance/3p/urllib3/vendor_tests/test_url.py",
-            "/tmp/projects/mamba/tests/cpython/3rd-libs/_baseline/vendor_tests/test_smoke.py",
+            "/tmp/apps/mamba/tests/cpython/3rd-libs/_baseline/vendor_tests/test_smoke.py",
             "/tmp/site-packages/idna/tests/test_idna.py",
             "/tmp/some/pkg/tests/test_module.py",
         ];

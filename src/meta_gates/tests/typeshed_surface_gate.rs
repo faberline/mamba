@@ -82,7 +82,7 @@ fn runner_lives_under_projects_mamba_conformance() {
     );
     assert_eq!(
         c["runner_relative_path"].as_str(),
-        Some("projects/mamba/conformance/typeshed_surface.rs")
+        Some("apps/mamba/conformance/typeshed_surface.rs")
     );
     assert_eq!(
         c["runner_relative_path_field_name"].as_str(),

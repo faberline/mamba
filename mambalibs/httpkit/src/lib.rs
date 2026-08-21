@@ -3,7 +3,7 @@
 //! This crate owns the native API-side model: app/route metadata,
 //! request/response types, protocol normalization, host configuration, and
 //! the async HTTP client (`client`). Language bindings live in sibling crates
-//! such as `projects/mamba/mambalibs/httpkit/binding`.
+//! such as `apps/mamba/mambalibs/httpkit/binding`.
 
 // SPEC-MANAGED: generated/httpkit-core#mamba-independent-mod-decls
 // CODEGEN-BEGIN

@@ -120,7 +120,7 @@ fn cli() -> Command {
                 .about("Compare mamba's registered Python-level surface for a stdlib/3p package against the typeshed stub")
                 .arg(Arg::new("package").long("package").short('p').required(true).value_name("NAME").help("Package name (e.g. os, ssl, idna)"))
                 .arg(Arg::new("typeshed").long("typeshed").value_name("PATH").help("Path to typeshed checkout (default: vendor/typeshed)"))
-                .arg(Arg::new("mamba-src").long("mamba-src").value_name("PATH").help("Path to projects/mamba/src (default: projects/mamba/src)")),
+                .arg(Arg::new("mamba-src").long("mamba-src").value_name("PATH").help("Path to apps/mamba/src (default: apps/mamba/src)")),
         )
         .subcommand(
             Command::new("pytest")
@@ -931,17 +931,17 @@ fn cmd_surface_report(sub: &ArgMatches) -> Result<()> {
         .cloned()
         .unwrap_or_else(|| {
             // Default: probe project-local checkout, fall back to a repo-root one.
-            for p in ["projects/mamba/vendor/typeshed", "vendor/typeshed"] {
+            for p in ["apps/mamba/vendor/typeshed", "vendor/typeshed"] {
                 if std::path::Path::new(p).is_dir() {
                     return p.to_string();
                 }
             }
-            "projects/mamba/vendor/typeshed".to_string()
+            "apps/mamba/vendor/typeshed".to_string()
         });
     let mamba_src = sub
         .get_one::<String>("mamba-src")
         .cloned()
-        .unwrap_or_else(|| "projects/mamba/src".to_string());
+        .unwrap_or_else(|| "apps/mamba/src".to_string());
 
     let report = mamba::surface::build_report(
         package,
@@ -1099,7 +1099,7 @@ fn cmd_run(sub: &ArgMatches) -> Result<()> {
 
     // Package-manager preflight: when invoked inside a mamba project
     // with a populated lockfile, require `.venv` to be in sync before
-    // running anything. See projects/mamba/src/pkgmanage/run.rs.
+    // running anything. See apps/mamba/src/pkgmanage/run.rs.
     let cwd_for_preflight = std::env::current_dir().context("getcwd")?;
     let preflight_mode = match mamba::pkgmanage::run::preflight(&cwd_for_preflight) {
         Ok(mode) => mode,

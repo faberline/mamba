@@ -1,6 +1,6 @@
 [project]
 name = "mamba"
-cap_path = "projects/mamba/README.md"
+cap_path = "apps/mamba/README.md"
 
 # AW-EC-BEGIN
 [aw.ec.generated]
@@ -14,8 +14,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-EFFICIENCY"
 category = "efficiency"
-td_ref = "projects/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs"
+td_ref = "apps/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_efficiency --exact"
 required_for_production = true
 assertions = [
@@ -31,8 +31,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-RESULTS"
 category = "behavior"
-td_ref = "projects/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs"
+td_ref = "apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_results.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_results --exact"
 required_for_production = true
 assertions = [
@@ -48,8 +48,8 @@ capability_id = "mamba-core-semantics"
 claim_id = "parallel-to-thread-gather-preserves-every-result"
 contract_id = "MAMBA-T1-FT-GATHER-STABILITY"
 category = "stability"
-td_ref = "projects/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability"
-test_path = "projects/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs"
+td_ref = "apps/mamba/external-contracts/stability/mamba-t1-to-thread-gather-stability.md#mamba-t1-to-thread-gather-stability"
+test_path = "apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_stability.rs"
 command = "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_stability --exact"
 required_for_production = true
 assertions = [

@@ -9,7 +9,7 @@ the canonical MVP rule:
     Release-blocking profiles never count `skip`, `xfail`, `Stub`, or
     `ImportPass` as pass.
 
-The rule is already declared in `projects/mamba/validation/mvp.toml`
+The rule is already declared in `apps/mamba/validation/mvp.toml`
 under `[policy]`:
 
     release_required_outcomes = ["pass", "AssertionPass"]

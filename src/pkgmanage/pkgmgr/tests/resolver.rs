@@ -2,7 +2,7 @@
 // HANDWRITE-BEGIN gap="missing-generator:hand-written:b59d08ba" tracker="standardize-gap-projects-mamba-tests-pkgmgr-resolver-test-rs" reason="Integration tests covering AC1-AC6. AC6 gated on PYPI_LIVE=1 env var."
 //! Integration tests for the mamba pkgmgr resolver.
 //!
-//! Spec source: `.aw/tech-design/projects/mamba/pkgmgr/resolver.md#test-plan`.
+//! Spec source: `.aw/tech-design/apps/mamba/pkgmgr/resolver.md#test-plan`.
 //!
 //! Phase-1.2 status: AC1/AC3/AC4/AC5 require a frozen index fixture or live
 //! PyPI; the fixture pipeline is a separate follow-up issue. Until that lands,
