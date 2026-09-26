@@ -107,10 +107,10 @@ to close one named reproducer.
 ### `OwnershipSiteAudit`
 
 Owned seam: one deterministic repository tool under
-`apps/mamba/tools/ownership/`.
+`tools/ownership/`.
 
 - Enumerates `new_list`, `new_set`, `new_tuple`, inline/untracked siblings, and
-  their borrowed variants under `apps/mamba/src/runtime/`.
+  their borrowed variants under `src/runtime/`.
 - Classifies the value origin feeding each constructor as owned, borrowed, or
   mixed.
 - Follows local rebinding instead of matching only the identifier at the call.
@@ -123,17 +123,17 @@ The audit is a measurement instrument. It never edits `src/**`.
 
 | Order | Capability | Exact writable implementation seams | Machine oracle |
 |---:|---|---|---|
-| 1 | A1 armed detector and attribution reconciliation | AGY: `apps/mamba/src/runtime/rc.rs` only; controller: any required existing harness attribution call | focused unit tests prove default disarmed, explicit armed, attributed abort, and release-profile compile-out |
-| 2 | A2 optimization-invariant must-turn-red control | `apps/mamba/src/runtime/rc.rs` test module only | the named positive control passes at test opt-level 0 and 1 because the detector trips with the expected marker |
-| 3 | A3 named-workload leak balance | `apps/mamba/src/runtime/rc.rs` plus one narrowly named source-local test module | clean control delta is zero; the reproducer reports zero after the correct ownership path and nonzero under a test-only deliberate leak |
-| 4 | A4 deterministic ownership-site audit | no `src/**`; one tool subtree under `apps/mamba/tools/ownership/` plus tool-local fixtures | two runs are byte-identical; rows reconcile to count; an unseen fixture recomputes rather than using pinned totals |
+| 1 | A1 armed detector and attribution reconciliation | AGY: `src/runtime/rc.rs` only; controller: any required existing harness attribution call | focused unit tests prove default disarmed, explicit armed, attributed abort, and release-profile compile-out |
+| 2 | A2 optimization-invariant must-turn-red control | `src/runtime/rc.rs` test module only | the named positive control passes at test opt-level 0 and 1 because the detector trips with the expected marker |
+| 3 | A3 named-workload leak balance | `src/runtime/rc.rs` plus one narrowly named source-local test module | clean control delta is zero; the reproducer reports zero after the correct ownership path and nonzero under a test-only deliberate leak |
+| 4 | A4 deterministic ownership-site audit | no `src/**`; one tool subtree under `tools/ownership/` plus tool-local fixtures | two runs are byte-identical; rows reconcile to count; an unseen fixture recomputes rather than using pinned totals |
 
 A2 depends on A1. A3 depends on A1 because a green balance without a still-live
 violation detector cannot distinguish evidence weakening. A4 is independent of
 A2/A3 but must finish before a consuming source-fix ticket claims a site-count
 delta.
 
-All `apps/mamba/src/**` changes are AGY-owned. The controller owns this
+All `src/**` changes are AGY-owned. The controller owns this
 design, tracker contracts, tools/tests outside `src/**`, independent
 verification, commits, and closure.
 

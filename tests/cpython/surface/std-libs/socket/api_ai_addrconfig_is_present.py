@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """socket.AI_ADDRCONFIG: api_ai_addrconfig_is_present (surface)."""

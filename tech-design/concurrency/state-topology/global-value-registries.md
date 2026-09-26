@@ -173,4 +173,4 @@ migrating before #2839.
   `runtime/stdlib/asyncio_mod.rs`, and
   `runtime/stdlib/weakref_mod.rs`.
 - Snapshot rule: #2976 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

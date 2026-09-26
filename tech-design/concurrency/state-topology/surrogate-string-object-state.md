@@ -239,7 +239,7 @@ atomized without substituting a second representation.
 
 Exact primary path:
 
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
 
 Add `MbStringState`, ordinary/surrogate constructors, borrowed scalar access,
 semantic codepoint view, owned scalar extraction, and cloning helpers while
@@ -252,7 +252,7 @@ Forbidden in this slice: TLS deletion or behavior change.
 Inventory command:
 
 ```text
-rg -l 'ObjData::Str\(' apps/mamba/src/runtime apps/mamba/src/codegen
+rg -l 'ObjData::Str\(' src/runtime src/codegen
 ```
 
 Migrate direct payload consumers in bounded owner families to the semantic
@@ -271,9 +271,9 @@ silently stand in for `String::clone()`.
 
 Exact primary paths:
 
-- `apps/mamba/src/runtime/rc.rs`
-- `apps/mamba/src/runtime/string_ops.rs`
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/rc.rs`
+- `src/runtime/string_ops.rs`
+- `src/runtime/mod.rs`
 
 Change `ObjData::Str` to `MbStringState`; route normal and immortal surrogate
 constructors to intrinsic metadata; unify hash/equality/length/encoding;

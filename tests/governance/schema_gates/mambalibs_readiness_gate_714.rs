@@ -154,7 +154,7 @@ fn mambalibs_readiness_evidence_commands_are_current() {
     for needle in [
         "mambalibs_readiness.py --json",
         "cargo build -p mamba",
-        "apps/mamba/mambalibs",
+        "mambalibs",
         "target/debug/mamba --help",
         "--test mambalibs",
     ] {

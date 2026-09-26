@@ -340,7 +340,7 @@ fn seq_index(items: &[MbValue], key: MbValue, kind: &str) -> MbValue {
 
 // ── Variadic dispatchers (callable from module-attr context) ──
 // NOTE: dispatcher fn names must start with `dispatch_` so the surface walker
-// (apps/mamba/src/surface.rs::pick_tuple_dispatcher) recognises them.
+// (src/surface.rs::pick_tuple_dispatcher) recognises them.
 
 macro_rules! disp_unary {
     ($disp:ident, $name:literal, $fn:path) => {

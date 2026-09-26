@@ -425,7 +425,7 @@ fn setup_locked_project(bin: &Path, project: &Path, index: &Path) -> Option<Fami
 /// path needs a real wheel archive on disk (a metadata-only fixture fails
 /// with "malformed wheel ... invalid Zip archive" once `sync` stops
 /// stubbing installs). Built through the product's own `WheelBuilder`, the
-/// same recipe `apps/mamba/tests/pkgmgr/fixtures.rs::fixture_pkg` uses.
+/// same recipe `tests/pkgmgr/fixtures.rs::fixture_pkg` uses.
 fn stake_pkg(index: &Path, normalized_name: &str, version: &str, requires: &[&str]) {
     use crate::pkgmanage::pkgmgr::wheel_build::{
         compose_filename, CoreMetadata, WheelBuilder, WheelMetadata,

@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "BsdDbShelf"
 expr      = "shelve"
 module    = "shelve"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "DbfilenameShelf"
 expr      = "shelve"
 module    = "shelve"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "Shelf"
 expr      = "shelve"
 module    = "shelve"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,4 +46,4 @@ probe     = "attr"
 attr      = "open"
 expr      = "shelve"
 module    = "shelve"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

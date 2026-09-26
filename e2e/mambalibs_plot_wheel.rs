@@ -7,8 +7,8 @@
 //!
 //! The case drives real tools over a throwaway tree and reads only what they
 //! wrote. It links no product type: three wheels are built by `maturin` from
-//! `apps/mamba/mambalibs/arraykit/pyo3`, `apps/mamba/mambalibs/scikit/pyo3`,
-//! and `apps/mamba/mambalibs/plotkit/pyo3`, frozen together by one `mamba
+//! `mambalibs/arraykit/pyo3`, `mambalibs/scikit/pyo3`,
+//! and `mambalibs/plotkit/pyo3`, frozen together by one `mamba
 //! index build`, locked by one `mamba add --index` naming all three
 //! distributions, installed by one `mamba sync`, and finally judged by the
 //! project interpreter itself. A green run means those five steps agree on
@@ -100,7 +100,7 @@
 use std::path::{Path, PathBuf};
 use std::process::{Command, Output};
 
-/// `CARGO_MANIFEST_DIR` is `apps/mamba`, so the PyO3 crates and the pytest
+/// `CARGO_MANIFEST_DIR` is `mamba`, so the PyO3 crates and the pytest
 /// directory are found without knowing where the repository is checked out.
 fn manifest_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))

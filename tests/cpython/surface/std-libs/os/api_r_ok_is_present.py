@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """os.R_OK: api_r_ok_is_present (surface)."""

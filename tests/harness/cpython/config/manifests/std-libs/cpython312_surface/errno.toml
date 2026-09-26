@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "E2BIG"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "EACCES"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "EADDRINUSE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "EADDRNOTAVAIL"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "EAFNOSUPPORT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "EAGAIN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "EALREADY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "EAUTH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "EBADARCH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "EBADEXEC"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "EBADF"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "EBADMACHO"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "EBADMSG"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "EBADRPC"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "EBUSY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "ECANCELED"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "ECHILD"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "ECONNABORTED"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "ECONNREFUSED"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "ECONNRESET"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "EDEADLK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "EDESTADDRREQ"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "EDEVERR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "EDOM"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "EDQUOT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "EEXIST"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "EFAULT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "EFBIG"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "EFTYPE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "EHOSTDOWN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "EHOSTUNREACH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "EIDRM"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "EILSEQ"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "EINPROGRESS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "EINTR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "EINVAL"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "EIO"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "EISCONN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "EISDIR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "ELOOP"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "EMFILE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "EMLINK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "EMSGSIZE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "EMULTIHOP"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "ENAMETOOLONG"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "ENEEDAUTH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "ENETDOWN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "ENETRESET"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "ENETUNREACH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "ENFILE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "ENOATTR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "ENOBUFS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "ENODATA"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "ENODEV"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "ENOENT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "ENOEXEC"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "ENOLCK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "ENOLINK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "ENOMEM"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "ENOMSG"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "ENOPOLICY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "ENOPROTOOPT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "ENOSPC"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "ENOSR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "ENOSTR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "ENOSYS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "ENOTBLK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "ENOTCONN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "ENOTDIR"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "ENOTEMPTY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "ENOTRECOVERABLE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "ENOTSOCK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "ENOTSUP"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "ENOTTY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "ENXIO"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "EOPNOTSUPP"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "EOVERFLOW"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "EOWNERDEAD"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "EPERM"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "EPFNOSUPPORT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "EPIPE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "EPROCLIM"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "EPROCUNAVAIL"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "EPROGMISMATCH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "EPROGUNAVAIL"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "EPROTO"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "EPROTONOSUPPORT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "EPROTOTYPE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "EPWROFF"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "EQFULL"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "ERANGE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "EREMOTE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "EROFS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "ERPCMISMATCH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "ESHLIBVERS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "ESHUTDOWN"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "ESOCKTNOSUPPORT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "ESPIPE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "ESRCH"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "ESTALE"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "ETIME"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "ETIMEDOUT"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "ETOOMANYREFS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "ETXTBSY"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "EUSERS"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "EWOULDBLOCK"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "EXDEV"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,4 +1190,4 @@ probe     = "attr"
 attr      = "errorcode"
 expr      = "errno"
 module    = "errno"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

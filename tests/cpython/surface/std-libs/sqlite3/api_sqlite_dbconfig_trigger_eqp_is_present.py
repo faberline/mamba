@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """sqlite3.SQLITE_DBCONFIG_TRIGGER_EQP: api_sqlite_dbconfig_trigger_eqp_is_present (surface)."""

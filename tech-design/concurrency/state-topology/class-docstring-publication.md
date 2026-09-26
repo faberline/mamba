@@ -42,7 +42,7 @@ inside the definition, and any aggregate shared with function docstrings.
 Selector:
 
 ```bash
-rg -n 'static CLASS_DOCS|CLASS_DOCS\.with' apps/mamba/src/runtime/class/mod.rs
+rg -n 'static CLASS_DOCS|CLASS_DOCS\.with' src/runtime/class/mod.rs
 ```
 
 Denominator: 4 production rows, 0 test rows. The test module boundary is
@@ -235,8 +235,8 @@ must be preserved, not assumed, once the value moves behind a lease.
 - Inventory count: 4 production rows, 0 test rows.
 - Selector digest:
   `2ad334b261611c0055a2dd4e32797de2783828eb3ba5602b4b9a199886570fe2`.
-- Exact source: `apps/mamba/src/runtime/class/mod.rs`.
+- Exact source: `src/runtime/class/mod.rs`.
 - Behavior evidence: the four-row oracle table above, reproducible with
   `inspect.getdoc` and `__doc__` on a docstringed class and one instance.
 - Snapshot rule: #3049 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

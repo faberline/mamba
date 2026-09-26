@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "BadStatusLine"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "CannotSendHeader"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "CannotSendRequest"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "HTTPConnection"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "HTTPException"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "HTTPResponse"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "HTTPSConnection"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "ImproperConnectionState"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "IncompleteRead"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "InvalidURL"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "LineTooLong"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "NotConnected"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "RemoteDisconnected"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "ResponseNotReady"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "UnimplementedFileMode"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "UnknownProtocol"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "UnknownTransferEncoding"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "error"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,4 +211,4 @@ probe     = "attr"
 attr      = "responses"
 expr      = "http.client"
 module    = "http.client"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

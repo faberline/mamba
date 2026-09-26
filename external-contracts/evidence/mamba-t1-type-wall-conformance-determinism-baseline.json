@@ -1,7 +1,7 @@
 {
   "aw_ownership": "HANDWRITE-BEGIN gap=missing-generator:unit-test tracker=#1942 reason: pinned deterministic type-wall baseline",
   "source_revision": "9113cc02e6f38321092e308726bf968b4c709438",
-  "manifest_path": "apps/mamba/tests/governance/gates/t1_type_wall_denominator/manifest.toml",
+  "manifest_path": "tests/governance/gates/t1_type_wall_denominator/manifest.toml",
   "denominator_sha256": "eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28",
   "row_count": 7407,
   "command": "cargo test -p mamba --release --test cpython_ported_integration cpython_ported::gen::_type -- --nocapture",

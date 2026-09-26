@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "A"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "ASCII"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "DOTALL"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "I"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "IGNORECASE"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "L"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "LOCALE"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "M"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "MULTILINE"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "Match"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "NOFLAG"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "Pattern"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "RegexFlag"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "S"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "U"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "UNICODE"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "VERBOSE"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "X"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "compile"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "error"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "escape"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "findall"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "finditer"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "fullmatch"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "match"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "purge"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "search"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "split"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "sub"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "subn"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,4 +343,4 @@ probe     = "attr"
 attr      = "template"
 expr      = "re"
 module    = "re"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

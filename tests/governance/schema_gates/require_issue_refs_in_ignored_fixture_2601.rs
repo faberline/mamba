@@ -267,7 +267,7 @@ fn existing_ignored_tests_are_annotated_or_listed() {
         .get("inventory_relative_path_within_repo")
         .and_then(|v| v.as_str())
         .unwrap();
-    assert!(path.starts_with("apps/mamba/tests/"));
+    assert!(path.starts_with("tests/"));
     assert!(path.ends_with(".json"));
 }
 

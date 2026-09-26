@@ -799,7 +799,7 @@ pub enum ObjKind {
     // Closing #2182 lands a true `Generator = 14` kind backed by either a
     // closure-state pair (`next_fn: fn(*mut Self) -> Option<MbValue>` + boxed
     // state) or the existing low-level coroutine infrastructure in
-    // `apps/mamba/src/runtime/generator.rs` (already shipped for
+    // `src/runtime/generator.rs` (already shipped for
     // user-defined `def f(): yield`). Until then every "iterator" surface
     // above ships as `ObjKind::List` (eager materialization), which is
     // behaviourally CPython-compatible for finite inputs but breaks

@@ -42,13 +42,13 @@ fn c_api_feasibility_spike_declares_scope_and_non_goals() {
 fn c_api_feasibility_spike_keeps_required_repo_evidence_points() {
     let doc = load_spike_doc();
     for needle in [
-        "apps/mamba/README.md",
-        "apps/mamba/ecosystem_fixture_manifest.toml",
+        "README.md",
+        "ecosystem_fixture_manifest.toml",
         "#2526 mamba native-extension loader not ready for numpy C core",
         "#2526 mamba native-extension loader not ready for cryptography Rust _rust extension",
-        "apps/mamba/src/pkgmanage/pkgmgr/maturin_compat.rs",
+        "src/pkgmanage/pkgmgr/maturin_compat.rs",
         "bindings = \"pyo3\"",
-        "apps/mamba/src/runtime/stdlib/ctypes_mod.rs",
+        "src/runtime/stdlib/ctypes_mod.rs",
         "viable C-extension ABI",
     ] {
         assert!(

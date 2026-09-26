@@ -1,12 +1,12 @@
 # Mamba ownership-site audit
 
 `audit.py` inventories every list, set, and tuple constructor that owns or
-retains `MbValue` elements under `apps/mamba/src/runtime/`.
+retains `MbValue` elements under `src/runtime/`.
 
 ```bash
-python3 apps/mamba/tools/ownership/audit.py
-python3 apps/mamba/tools/ownership/audit.py --check
-python3 apps/mamba/tools/ownership/audit.py --fixture /tmp/case.rs
+python3 tools/ownership/audit.py
+python3 tools/ownership/audit.py --check
+python3 tools/ownership/audit.py --fixture /tmp/case.rs
 ```
 
 The default command emits one stable JSON document. Rows are ordered by

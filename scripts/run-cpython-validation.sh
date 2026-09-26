@@ -4,9 +4,9 @@
 # parity rule is "mamba PASS = matches CPython exactly").
 #
 # Usage:
-#   apps/mamba/scripts/run-cpython-validation.sh
-#   FILTER=stdlib apps/mamba/scripts/run-cpython-validation.sh
-#   TIMEOUT=20 apps/mamba/scripts/run-cpython-validation.sh
+#   scripts/run-cpython-validation.sh
+#   FILTER=stdlib scripts/run-cpython-validation.sh
+#   TIMEOUT=20 scripts/run-cpython-validation.sh
 #
 # Output: /tmp/cpython_validation.csv with columns:
 #   status,exit_code,seconds,relpath
@@ -24,7 +24,7 @@ TIMEOUT="${TIMEOUT:-10}"
 JOBS="${JOBS:-8}"
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-FIXTURES_ROOT="$REPO_ROOT/apps/mamba/tests/cpython"
+FIXTURES_ROOT="$REPO_ROOT/tests/cpython"
 OUT_CSV="/tmp/cpython_validation.csv"
 OUT_FAIL="/tmp/cpython_validation_failures.txt"
 

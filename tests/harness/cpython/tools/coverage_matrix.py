@@ -37,7 +37,7 @@ import harness_lib  # shared oracle/SUT runner (tools/): isolated scratch CWD + 
 from wall_gen_core import parse_header  # shared PEP-723 [tool.mamba] header parse
 
 TOOLS_DIR = Path(__file__).resolve().parent
-FIXTURES_DIR = TOOLS_DIR.parents[2] / "cpython"          # apps/mamba/tests/cpython
+FIXTURES_DIR = TOOLS_DIR.parents[2] / "cpython"          # tests/cpython
 MAMBA_ROOT = TOOLS_DIR.parents[3]                        # apps/mamba
 README = MAMBA_ROOT / "README.md"
 DRILLDOWN = (

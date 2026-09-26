@@ -83,7 +83,7 @@ nothing reaches PyPI implicitly.
   `url`; `remove` keeps the remaining roots' closure and digests; and
   `pkgmgr-validate` accepts the PEP 503 canonical name the lock records. No
   mamba runtime is needed for any of it. Each behaviour is one black-box
-  `[[test]]` under `apps/mamba/e2e/`: `pkgmgr_run_file_venv`,
+  `[[test]]` under `e2e/`: `pkgmgr_run_file_venv`,
   `pkgmgr_sync_real_install`, `pkgmgr_sync_prune`,
   `pkgmgr_lock_frozen_transitive`, `pkgmgr_index_url_simple`,
   `pkgmgr_lock_registry_sha_pairs_url`, `pkgmgr_add_registry_transitive`,

@@ -111,7 +111,7 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
 
     # 1. ordinary_parity_corpus
     ordinary_manifest_paths = []
-    manifests_dir = repo_root / "apps/mamba/tests/harness/cpython/config/manifests"
+    manifests_dir = repo_root / "tests/harness/cpython/config/manifests"
     if manifests_dir.is_dir():
         for p in manifests_dir.rglob("*.toml"):
             ordinary_manifest_paths.append(p.relative_to(repo_root).as_posix())
@@ -143,7 +143,7 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
                 raise ValueError(f"duplicate manifest case identity '{source_id}' in manifest '{path_str}'")
             ordinary_identities_set.add(source_id)
 
-    gaps_path = repo_root / "apps/mamba/tests/harness/cpython/config/behavior_gaps.txt"
+    gaps_path = repo_root / "tests/harness/cpython/config/behavior_gaps.txt"
     if gaps_path.is_file():
         ordinary_paths.append(gaps_path.relative_to(repo_root).as_posix())
         for line in gaps_path.read_text(encoding="utf-8").splitlines():
@@ -151,7 +151,7 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
             if trimmed and not trimmed.startswith("#"):
                 ordinary_identities_set.add(trimmed)
 
-    div_path = repo_root / "apps/mamba/tests/harness/cpython/config/type_divergences.txt"
+    div_path = repo_root / "tests/harness/cpython/config/type_divergences.txt"
     if div_path.is_file():
         ordinary_paths.append(div_path.relative_to(repo_root).as_posix())
         for line in div_path.read_text(encoding="utf-8").splitlines():
@@ -175,9 +175,9 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
     ec_paths = []
     ec_identities_set = set()
     ec_dirs = [
-        repo_root / "apps/mamba/external-contracts/behavior",
-        repo_root / "apps/mamba/external-contracts/stability",
-        repo_root / "apps/mamba/external-contracts/efficiency",
+        repo_root / "external-contracts/behavior",
+        repo_root / "external-contracts/stability",
+        repo_root / "external-contracts/efficiency",
     ]
 
     for d in ec_dirs:
@@ -232,7 +232,7 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
     # 3. tier1_gate_denominators
     denom_paths = []
     denom_identities_set = set()
-    gates_dir = repo_root / "apps/mamba/tests/governance/gates"
+    gates_dir = repo_root / "tests/governance/gates"
 
     if gates_dir.is_dir():
         for entry in sorted(gates_dir.iterdir(), key=lambda x: x.name):
@@ -240,8 +240,8 @@ def discover_authoritative_source_sets(repo_root: pathlib.Path) -> dict:
             if entry.is_dir() and dir_name.startswith("t1_") and dir_name.endswith("_denominator"):
                 manifest_path = entry / "manifest.toml"
                 denom_txt = entry / "denominator.txt"
-                manifest_rel = f"apps/mamba/tests/governance/gates/{dir_name}/manifest.toml"
-                denom_rel = f"apps/mamba/tests/governance/gates/{dir_name}/denominator.txt"
+                manifest_rel = f"tests/governance/gates/{dir_name}/manifest.toml"
+                denom_rel = f"tests/governance/gates/{dir_name}/denominator.txt"
 
                 denom_paths.append(manifest_rel)
                 denom_paths.append(denom_rel)
@@ -357,7 +357,7 @@ def main():
         for identity in info["source_identities"]:
             if (name, identity) in represented_pairs:
                 continue
-            reviewed_against = "#2022" if identity == "apps/mamba/tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt" else "#2010"
+            reviewed_against = "#2022" if identity == "tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt" else "#2010"
             reason = f"{name} identity is outside the bounded eight-row oracle sample"
             dispositions.append({
                 "source_set": name,

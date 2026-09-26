@@ -36,7 +36,7 @@ lifetime. A lock guard never substitutes for that lease.
 
 The admitted set contains exactly one newline-terminated identity:
 
-`apps/mamba/src/codegen/cranelift/jit.rs::JIT_LOCK`
+`src/codegen/cranelift/jit.rs::JIT_LOCK`
 
 Its SHA-256 is
 `641ef73f9f1eda26edff1920c1a6868d776ef728e3d663d0a313b7c165405e79`.
@@ -252,4 +252,4 @@ green tests.
 - Poison gate: injected finalization failure follows the reviewed recovery or
   fail-closed policy.
 - Snapshot rule: #2979 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

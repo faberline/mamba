@@ -19,7 +19,7 @@ from typing import Any
 
 TOOLS_DIR = Path(__file__).resolve().parent
 MAMBA_DIR = TOOLS_DIR.parents[3]
-WORKSPACE_DIR = MAMBA_DIR.parents[1]
+WORKSPACE_DIR = MAMBA_DIR
 PROMOTION_GATE = TOOLS_DIR / "promotion_gate.py"
 DENOMINATOR_INVENTORY = MAMBA_DIR / "tools" / "cpython_regrtest_inventory.py"
 STRICT_TYPE_ACCOUNTING = TOOLS_DIR / "strict_type_accounting.py"
@@ -130,7 +130,7 @@ def promotion_dimension(show: int) -> Dimension:
             "parse_errors": payload["parse_error_count"],
         },
         evidence=[
-            "python3.12 apps/mamba/tests/harness/cpython/tools/promotion_gate.py --profile replacement --json"
+            "python3.12 tests/harness/cpython/tools/promotion_gate.py --profile replacement --json"
         ],
         blockers=blockers,
     )
@@ -182,7 +182,7 @@ def denominator_dimension(show: int) -> Dimension:
             "invalid_metadata_files": ownership["invalid_metadata_files"],
             "parse_errors": ownership["parse_errors"],
         },
-        evidence=["python3.12 apps/mamba/tools/cpython_regrtest_inventory.py --json"],
+        evidence=["python3.12 tools/cpython_regrtest_inventory.py --json"],
         blockers=blockers,
     )
 
@@ -254,8 +254,8 @@ def strict_type_dimension(show: int, type_limit: int) -> Dimension:
             "sampled": payload["sampled"],
         },
         evidence=[
-            "python3.12 apps/mamba/tests/harness/cpython/tools/strict_type_accounting.py --json",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/fixture_lint.py --bucket type",
+            "python3.12 tests/harness/cpython/tools/strict_type_accounting.py --json",
+            "python3.12 tests/harness/cpython/tools/fixture_lint.py --bucket type",
         ],
         blockers=blockers,
     )
@@ -349,7 +349,7 @@ def perf_dimension(show: int) -> Dimension:
         },
         evidence=[
             "cargo test -p mamba --test cpython_status -- --json",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/perf_baseline.py record --missing-only --ready-only --limit 10 --keep-going",
+            "python3.12 tests/harness/cpython/tools/perf_baseline.py record --missing-only --ready-only --limit 10 --keep-going",
         ],
         blockers=blockers[:show],
     )
@@ -394,9 +394,9 @@ def safety_dimension(show: int) -> Dimension:
             "d4_safety_detail": d4["detail"] if d4 else "missing D4 criterion",
         },
         evidence=[
-            "python3.12 apps/mamba/tests/harness/cpython/tools/gate_check.py --json",
+            "python3.12 tests/harness/cpython/tools/gate_check.py --json",
             "cargo test -p mamba -- --list",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/verify_cpython_oracle.py --help",
+            "python3.12 tests/harness/cpython/tools/verify_cpython_oracle.py --help",
         ],
         blockers=blockers,
     )

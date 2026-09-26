@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:397a59b9" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-mod-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/mod.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:397a59b9" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-mod-rs" reason="Existing hand-written code in src/pkgmgr/installer/mod.rs requires tracked generator coverage."
 // `Installer::uninstall(name: &str, site_packages: &Path) -> Result<(), InstallerError>`,
 // and the graph-driven `install_graph(graph: &ResolvedGraph, site_packages, python_exe)`
 // orchestrator (R7). Routes to archive/record/layout/scripts/uninstall submodules.

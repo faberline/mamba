@@ -6,7 +6,7 @@
 //!
 //! The case drives real tools over a throwaway tree and reads only what they
 //! wrote. It links no product type: the wheel is built by `maturin` from
-//! `apps/mamba/mambalibs/arraykit/pyo3`, frozen by `mamba index build`, locked
+//! `mambalibs/arraykit/pyo3`, frozen by `mamba index build`, locked
 //! by `mamba add --index`, installed by `mamba sync`, and finally judged by the
 //! project interpreter itself. A green run means those five steps agree on one
 //! artifact — a wrong ABI tag, a wheel that lands outside the environment, or
@@ -64,7 +64,7 @@
 use std::path::{Path, PathBuf};
 use std::process::{Command, Output};
 
-/// `CARGO_MANIFEST_DIR` is `apps/mamba`, so the PyO3 crate and the pytest
+/// `CARGO_MANIFEST_DIR` is `mamba`, so the PyO3 crate and the pytest
 /// directory are found without knowing where the repository is checked out.
 fn manifest_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))

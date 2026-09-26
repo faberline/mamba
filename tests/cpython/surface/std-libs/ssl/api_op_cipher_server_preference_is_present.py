@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.OP_CIPHER_SERVER_PREFERENCE: api_op_cipher_server_preference_is_present (surface)."""

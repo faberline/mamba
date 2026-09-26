@@ -33,7 +33,7 @@ from type_wall_gen import SENTINEL, WRONG_VALUE
 
 TOOLS_DIR = Path(__file__).resolve().parent
 MAMBA_DIR = TOOLS_DIR.parents[3]
-REPO_ROOT = MAMBA_DIR.parents[1]
+REPO_ROOT = MAMBA_DIR
 FIXTURES_DIR = MAMBA_DIR / "tests" / "cpython"
 TYPE_DIR = FIXTURES_DIR / "type"
 SOUND_DIR = FIXTURES_DIR / "behavior" / "core"

@@ -49,7 +49,7 @@ invocation.
 
 The exact current state identity is:
 
-`apps/mamba/src/runtime/builtins/wide_call.rs::SHIM_JIT`
+`src/runtime/builtins/wide_call.rs::SHIM_JIT`
 
 There is one production state identity and zero test-only state identities. Its
 sorted newline-terminated SHA-256 is

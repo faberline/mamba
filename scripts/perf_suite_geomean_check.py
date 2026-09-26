@@ -3,7 +3,7 @@
 
 Parent: #2530 (performance gate suite).
 
-Reads a baseline JSON (default `apps/mamba/baseline.json`) and the
+Reads a baseline JSON (default `baseline.json`) and the
 performance profile manifest (default
 `validation/profiles/performance.toml`, #2815) and enforces the suite
 average rule:
@@ -228,7 +228,7 @@ def _parse_args(argv: list[str]) -> argparse.Namespace:
         description="Enforce 10× suite geomean over required benchmarks (#2569).",
     )
     p.add_argument("--baseline", type=Path, default=None,
-                   help="path to baseline.json (default: apps/mamba/baseline.json)")
+                   help="path to baseline.json (default: baseline.json)")
     p.add_argument("--policy", type=Path, default=None,
                    help="path to performance.toml (default: relative to this script)")
     p.add_argument("--format", choices=("text", "json"), default="text")

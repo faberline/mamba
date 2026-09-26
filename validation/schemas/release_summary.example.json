@@ -77,7 +77,7 @@
   "artifacts": {
     "summary_path": "/tmp/mamba/release/mvp-dryrun.summary.json",
     "logs_path": "/tmp/mamba/release/mvp-dryrun.logs.tar.zst",
-    "baseline_path": "apps/mamba/baseline.json",
+    "baseline_path": "baseline.json",
     "lockfile_path": null,
     "environment_path": null,
     "project_path": null

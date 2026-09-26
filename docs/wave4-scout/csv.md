@@ -1,6 +1,6 @@
 # csv — startup-dominated for short streams, balanced for long
 
-**Source:** `apps/mamba/vendor/typeshed/stdlib/csv.pyi` (151 lines).
+**Source:** `vendor/typeshed/stdlib/csv.pyi` (151 lines).
 
 ## Surface (20-entry __all__ + 2 conditional)
 

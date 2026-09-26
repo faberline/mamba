@@ -15,7 +15,7 @@ The target creates no second published class owner. A
 `ClassDefinitionRegistry`, type objects by `TypeObjectRegistry`, and closure
 cell contents by `RuntimeRegistrySet.cells`.
 
-No `apps/mamba/src/**` change occurs in this slice.
+No `src/**` change occurs in this slice.
 
 ## Bounded context
 
@@ -70,9 +70,9 @@ or value domains. No migration may reinterpret one as another.
 
 The admitted production identities are:
 
-- `apps/mamba/src/runtime/class/mod.rs::CLASSCELL_REQUIRED`
-- `apps/mamba/src/runtime/class/mod.rs::CLASSCELL_SYMBOL_IDS`
-- `apps/mamba/src/runtime/class/mod.rs::CLASSCELL_VALUES`
+- `src/runtime/class/mod.rs::CLASSCELL_REQUIRED`
+- `src/runtime/class/mod.rs::CLASSCELL_SYMBOL_IDS`
+- `src/runtime/class/mod.rs::CLASSCELL_VALUES`
 
 There are zero test-only identities. The SHA-256 over the sorted,
 newline-terminated identity set is:
@@ -436,13 +436,13 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/class/cells.rs`
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
-- `apps/mamba/src/runtime/closure.rs`
-- `apps/mamba/src/lower/hir_to_mir.rs`
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/execution_context.rs`
+- `src/runtime/class/cells.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/builtins/type_objects.rs`
+- `src/runtime/closure.rs`
+- `src/lower/hir_to_mir.rs`
+- `src/runtime/mod.rs`
 
 Forbidden changes:
 

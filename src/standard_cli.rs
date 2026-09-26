@@ -10,7 +10,7 @@ use std::future::Future;
 
 const TOOL: cli_std::ToolInfo = cli_std::ToolInfo {
     project: "mamba",
-    repo: "chrischeng-c4/axiom",
+    repo: "faberline/mamba",
     target: env!("MAMBA_TARGET"),
     version: env!("CARGO_PKG_VERSION"),
     git_sha: env!("MAMBA_GIT_SHA"),

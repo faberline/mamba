@@ -110,7 +110,7 @@ A mem-regression failure under G3 is one of:
   layout change, deferred).
 
 See parent #2096 + the archived runtime layout notes in
-`apps/mamba/docs/notes/archive/autonomous-loop-scratchpad.md`
+`docs/notes/archive/autonomous-loop-scratchpad.md`
 before touching either.
 
 ---
@@ -152,7 +152,7 @@ This gate is `phase:created` until #2532 lands the actual harness.
 |---|---------|---------|----------|---------------|
 | G6.1 | `cargo test -p mamba -- --ignored --list` | `<5s` | Required (when manifest lands) | New ignored tests added without a matching `debt_manifest.toml` entry, or a manifest entry whose seed/test no longer exists. |
 | G6.2 | `cargo test -p mamba --test cpython_compat -- --nocapture` | `<30s` | Required | An `# XFAIL` fixture started passing (logged as `[xpass]`) without removing the `cpython_known_failures.toml` entry. |
-| G6.3 | `grep -r 'HANDWRITE-BEGIN' apps/mamba/src/` | `<5s` | Required | Surfaces hand-written-with-marker debt for the score standardization loop (`/aw:standardize-run`). |
+| G6.3 | `grep -r 'HANDWRITE-BEGIN' src/` | `<5s` | Required | Surfaces hand-written-with-marker debt for the score standardization loop (`/aw:standardize-run`). |
 
 This gate is `phase:created` until #2533 lands the manifest schema.
 

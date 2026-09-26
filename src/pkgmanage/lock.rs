@@ -704,7 +704,7 @@ fn resolve_transitive(
 }
 
 /// Metadata read from `<INDEX>/<name>/<version>/metadata.toml` (or, when a
-/// key is absent — the legacy fixture shape `apps/mamba/tests/pkgmgr/fixtures.rs`
+/// key is absent — the legacy fixture shape `tests/pkgmgr/fixtures.rs`
 /// still writes — derived from the version directory's one wheel).
 pub(crate) struct IndexMetadata {
     pub(crate) sha256: String,
@@ -823,7 +823,7 @@ pub(crate) fn load_metadata_with(
 
 /// The one `.whl` file staged in a version directory, if any — the fallback
 /// source of `sha256`/`path` for a `metadata.toml` written before those keys
-/// existed (`apps/mamba/tests/pkgmgr/fixtures.rs`).
+/// existed (`tests/pkgmgr/fixtures.rs`).
 fn find_single_wheel(ver_dir: &Path) -> Result<Option<PathBuf>> {
     if !ver_dir.is_dir() {
         return Ok(None);

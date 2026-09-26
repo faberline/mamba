@@ -15,7 +15,7 @@ The target folds claim state into the accepted `ClassDefinitionTransaction`.
 `ClassDefinitionRegistry` and `TypeObjectRegistry` retain sole ownership of
 published records.
 
-No `apps/mamba/src/**` change occurs in this slice.
+No `src/**` change occurs in this slice.
 
 ## Bounded context
 
@@ -60,7 +60,7 @@ capabilities, and stack positions are distinct domains.
 
 The admitted identity is:
 
-`apps/mamba/src/runtime/class/mod.rs::METACLASS_DEFINITION_STACK`
+`src/runtime/class/mod.rs::METACLASS_DEFINITION_STACK`
 
 The SHA-256 over the newline-terminated identity is:
 
@@ -366,10 +366,10 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/execution_context.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/builtins/type_objects.rs`
+- `src/runtime/mod.rs`
 
 Forbidden changes:
 

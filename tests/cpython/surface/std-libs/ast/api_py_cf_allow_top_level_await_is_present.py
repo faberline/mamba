@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ast.PyCF_ALLOW_TOP_LEVEL_AWAIT: api_py_cf_allow_top_level_await_is_present (surface)."""

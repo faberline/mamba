@@ -63,7 +63,7 @@ calls = ["read_packet"]
 [[families]]
 id = "fixture_direct"
 name = "fixture_direct"
-path = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
+path = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
 typed_code = 1
 topology = "direct"
 exposure = "public_opaque_int"
@@ -76,7 +76,7 @@ proof = "fixture exact producer selector proof"
 [[public_escapes]]
 id = "fixture_public_escape"
 name = "fixture_public_escape"
-path = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
+path = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
 typed_code = 2
 start_line = 1
 end_line = 20
@@ -90,13 +90,13 @@ proof = "fixture public consumer escape proof"
 
 [[selectors]]
 family_id = "fixture_direct"
-path = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
+path = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
 symbol = "produce"
 kind = "helper_assignment_producer"
 role = "helper_assignment_producer"
 category = "producer"
 normalized_digest = "2c1802dd13402b88220a474a10d9dc3e6067646917a25fea623dc2cc8913153d"
-anchor = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs::produce::2c1802dd13402b88220a474a10d9dc3e6067646917a25fea623dc2cc8913153d"
+anchor = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs::produce::2c1802dd13402b88220a474a10d9dc3e6067646917a25fea623dc2cc8913153d"
 topology = "direct"
 exposure = "public_opaque_int"
 allocator_or_table = "fixture_direct:runtime_store"
@@ -124,13 +124,13 @@ site_ids = ["typed-producer"]
 
 [[public_selectors]]
 public_escape_id = "fixture_public_escape"
-path = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
+path = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs"
 symbol = "consume"
 kind = "opaque_consumer"
 role = "opaque_consumer"
 category = "consumer"
 normalized_digest = "aa9896a0ae9d3efc31229d6bb9f1aa1c93e197f11600f90fdf5ae7513d995328"
-anchor = "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs::consume::aa9896a0ae9d3efc31229d6bb9f1aa1c93e197f11600f90fdf5ae7513d995328"
+anchor = "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs::consume::aa9896a0ae9d3efc31229d6bb9f1aa1c93e197f11600f90fdf5ae7513d995328"
 topology = "unregistered_side_table"
 exposure = "public_opaque_int"
 allocator_or_table = "fixture_public_escape:consume"

@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.VERIFY_CRL_CHECK_LEAF: api_verify_crl_check_leaf_is_present (surface)."""

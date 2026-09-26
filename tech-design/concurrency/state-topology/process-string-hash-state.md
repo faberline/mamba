@@ -134,7 +134,7 @@ Forbidden changes:
 - removing the ordinary-empty-string zero behavior;
 - claiming `PYTHONHASHSEED` support without a bootstrap implementation.
 
-No `apps/mamba/src/**` implementation ticket is generated from #3003.
+No `src/**` implementation ticket is generated from #3003.
 
 ## Verification gates
 

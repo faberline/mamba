@@ -87,17 +87,17 @@ flowchart TD
 
 ```yaml
 changes:
-  - path: apps/mamba/src/runtime/closure.rs
+  - path: src/runtime/closure.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: build_globals_dict
-  - path: apps/mamba/src/runtime/dict_ops.rs
+  - path: src/runtime/dict_ops.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: to_dict_key
-  - path: apps/mamba/tests/external_contracts/mamba_core_semantics_ec.rs
+  - path: tests/external_contracts/mamba_core_semantics_ec.rs
     action: modify
     section: unit-test
     impl_mode: hand-written

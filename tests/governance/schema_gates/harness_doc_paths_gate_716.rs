@@ -84,9 +84,9 @@ fn harness_doc_paths_report_is_green_and_complete() {
 
     let docs = payload["docs"].as_array().expect("docs array");
     for required_doc in [
-        "apps/mamba/README.md",
-        "apps/mamba/tests/README.md",
-        "apps/mamba/tests/PRODUCTION-GATE.md",
+        "README.md",
+        "tests/README.md",
+        "tests/PRODUCTION-GATE.md",
         ".github/ISSUE_TEMPLATE/axis1-seed.md",
     ] {
         assert!(

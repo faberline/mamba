@@ -19,39 +19,37 @@ from typing import Any
 
 TOOLS_DIR = Path(__file__).resolve().parent
 MAMBA_DIR = TOOLS_DIR.parents[3]
-REPO_ROOT = MAMBA_DIR.parents[1]
+REPO_ROOT = MAMBA_DIR
 
 DOC_PATHS = (
-    "apps/mamba/README.md",
-    "apps/mamba/tests/README.md",
-    "apps/mamba/tests/PRODUCTION-GATE.md",
-    "apps/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
-    "apps/mamba/tests/harness/cpython/conventions/REAL-WORLD-CONVENTION.md",
+    "README.md",
+    "tests/README.md",
+    "tests/PRODUCTION-GATE.md",
+    "tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
+    "tests/harness/cpython/conventions/REAL-WORLD-CONVENTION.md",
     ".github/ISSUE_TEMPLATE/axis1-seed.md",
-    "apps/mamba/llms.txt",
-    "CLAUDE.md",
-    "AGENTS.md",
+    "llms.txt",
 )
 
 REQUIRED_PATHS = (
-    "apps/mamba/tests/PRODUCTION-GATE.md",
-    "apps/mamba/tests/cpython",
-    "apps/mamba/tests/cpython/type",
-    "apps/mamba/tests/harness/cpython",
-    "apps/mamba/tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
-    "apps/mamba/tests/harness/cpython/tools/wall_status.py",
-    "apps/mamba/tests/harness/cpython/tools/gate_check.py",
-    "apps/mamba/tests/harness/cpython/tools/verify_cpython_oracle.py",
-    "apps/mamba/tests/harness/cpython/tools/fixture_lint.py",
-    "apps/mamba/tools/fixture_gen.py",
+    "tests/PRODUCTION-GATE.md",
+    "tests/cpython",
+    "tests/cpython/type",
+    "tests/harness/cpython",
+    "tests/harness/cpython/conventions/FIXTURE-LAYOUT.md",
+    "tests/harness/cpython/tools/wall_status.py",
+    "tests/harness/cpython/tools/gate_check.py",
+    "tests/harness/cpython/tools/verify_cpython_oracle.py",
+    "tests/harness/cpython/tools/fixture_lint.py",
+    "tools/fixture_gen.py",
 )
 
 FORBIDDEN_PATTERNS = (
     (r"\bapps/mamba/PRODUCTION-GATE\.md\b", "production_gate_moved_under_tests"),
-    (r"\b(?:apps/mamba/)?tests/cpython/fixtures\b", "retired_cpython_fixtures_root"),
-    (r"\b(?:apps/mamba/)?tests/cpython/tools\b", "retired_cpython_tools_root"),
-    (r"\b(?:apps/mamba/)?tests/cpython/conventions\b", "retired_cpython_conventions_root"),
-    (r"\b(?:apps/mamba/)?tests/cpython/type-strict\b", "retired_type_strict_root"),
+    (r"\btests/cpython/fixtures\b", "retired_cpython_fixtures_root"),
+    (r"\btests/cpython/tools\b", "retired_cpython_tools_root"),
+    (r"\btests/cpython/conventions\b", "retired_cpython_conventions_root"),
+    (r"\btests/cpython/type-strict\b", "retired_type_strict_root"),
     (r"\bapps/mamba/tests/fixtures/cpython_lib_test\b", "retired_axis1_seed_root"),
     (r"--test\s+cpython_lib_test_runner\b", "renamed_axis1_test_binary"),
     (
@@ -68,7 +66,7 @@ FORBIDDEN_PATTERNS = (
 
 PYTHON_COMMAND_RE = re.compile(
     r"python3(?:\.\d+)?\s+"
-    r"(?P<path>(?:apps/mamba/)?(?:tests/harness/cpython/tools|tools)/[A-Za-z0-9_./-]+\.py)"
+    r"(?P<path>(?:tests/harness/cpython/tools|tools)/[A-Za-z0-9_./-]+\.py)"
 )
 
 
@@ -93,10 +91,6 @@ def repo_path(path: str) -> Path:
 
 
 def resolve_command_path(raw: str) -> Path:
-    if raw.startswith("apps/mamba/"):
-        return REPO_ROOT / raw
-    if raw.startswith("tests/") or raw.startswith("tools/"):
-        return MAMBA_DIR / raw
     return REPO_ROOT / raw
 
 
@@ -145,9 +139,9 @@ def scan_docs(show: int) -> dict[str, Any]:
         "python_commands_checked": dict(sorted(commands_checked.items())),
         "missing_python_command_paths": sorted(set(missing_command_paths)),
         "evidence_commands": [
-            "python3.12 apps/mamba/tests/harness/cpython/tools/harness_doc_paths.py --json",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/wall_status.py --help",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/gate_check.py --help",
+            "python3.12 tests/harness/cpython/tools/harness_doc_paths.py --json",
+            "python3.12 tests/harness/cpython/tools/wall_status.py --help",
+            "python3.12 tests/harness/cpython/tools/gate_check.py --help",
             "cargo test -p mamba --test schema_gates harness_doc_paths_gate_716 -- --nocapture",
         ],
     }

@@ -56,7 +56,7 @@ the owning context and object lifetime.
 
 The one production state identity is:
 
-`apps/mamba/src/runtime/builtins/type_objects.rs::TYPE_OBJECT_STATE`
+`src/runtime/builtins/type_objects.rs::TYPE_OBJECT_STATE`
 
 There are zero test-only state identities. The sorted newline-terminated
 identity SHA-256 is
@@ -293,15 +293,15 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - supply `ObjectDomain`, context operation lease, and typed registry owner.
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
+- `src/runtime/builtins/type_objects.rs`
   - replace `TYPE_OBJECT_STATE`, split identity/display lookup, balance aliases,
     and add publication/retirement operations.
-- `apps/mamba/src/runtime/gc.rs`
+- `src/runtime/gc.rs`
   - move type roots into the context GC domain and expose root unregister
     without RC side effects.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - order quiescent context retirement and remove ambient cleanup dependence.
 
 Forbidden changes:

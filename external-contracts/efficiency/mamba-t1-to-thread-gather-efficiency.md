@@ -16,7 +16,7 @@ e2e_tests:
     claim_id: parallel-to-thread-gather-preserves-every-result
     contract_id: MAMBA-T1-FT-GATHER-EFFICIENCY
     category: efficiency
-    test_path: apps/mamba/tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs
+    test_path: tests/external_contracts/ec_mamba_t1_to_thread_gather_efficiency.rs
     command: "cargo test -p mamba --release --test mamba_core_semantics_ec -- to_thread_gather_efficiency --exact"
     assertions:
       - "On a host exposing at least four logical CPUs, four equal CPU-bound asyncio.to_thread jobs complete with wall-clock speedup at least 1.50x versus the same jobs run serially, while returning the exact same ordered results."

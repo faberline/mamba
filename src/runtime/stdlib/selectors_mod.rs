@@ -3,7 +3,7 @@ use super::super::value::MbValue;
 /// selectors module for Mamba (#1471, #1265 Goal 2 / 3-gate).
 ///
 /// Provides the CPython 3.12 `selectors` 15-entry public surface
-/// (per `apps/mamba/data/cpython312_surface.json`):
+/// (per `data/cpython312_surface.json`):
 ///   - 2 event-mask integer constants: `EVENT_READ = 1`, `EVENT_WRITE = 2`.
 ///   - 6 selector class shells: `BaseSelector`, `DefaultSelector`,
 ///     `SelectSelector`, `PollSelector`, `EpollSelector`, `KqueueSelector`.

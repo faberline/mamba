@@ -109,14 +109,14 @@ separate generation counter.
 
 The admitted production identity is:
 
-`apps/mamba/src/runtime/class/mod.rs::SIMPLE_CLASS_CACHE`
+`src/runtime/class/mod.rs::SIMPLE_CLASS_CACHE`
 
 The exact selector is:
 
 ```bash
 rg -n \
   'static SIMPLE_CLASS_CACHE|SIMPLE_CLASS_CACHE\.with' \
-  apps/mamba/src/runtime/class/mod.rs
+  src/runtime/class/mod.rs
 ```
 
 The sorted newline-terminated selector output has SHA-256:
@@ -152,10 +152,10 @@ These categories are disjoint and set-equal to the five-row denominator.
 
 This topology refines:
 
-- `apps/mamba/tech-design/concurrency/execution-context.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-definition-registry.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-layout-policy.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-method-lookup-cache.md`.
+- `tech-design/concurrency/execution-context.md`;
+- `tech-design/concurrency/state-topology/class-definition-registry.md`;
+- `tech-design/concurrency/state-topology/class-layout-policy.md`;
+- `tech-design/concurrency/state-topology/class-method-lookup-cache.md`.
 
 The class definition remains the sole policy owner. The class method cache is
 a separate non-authoritative projection and is not changed by this slice.
@@ -560,13 +560,13 @@ class definition payload.
 
 ## Planned implementation paths
 
-- `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/stdlib/dataclasses_mod.rs`
-- `apps/mamba/src/runtime/mod.rs`
-- focused Rust unit tests in `apps/mamba/src/runtime/class/mod.rs`
+- `src/runtime/execution_context.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/stdlib/dataclasses_mod.rs`
+- `src/runtime/mod.rs`
+- focused Rust unit tests in `src/runtime/class/mod.rs`
 - focused Rust unit tests in
-  `apps/mamba/src/runtime/stdlib/dataclasses_mod.rs`
+  `src/runtime/stdlib/dataclasses_mod.rs`
 
 No other source path is implied by this inventory. If implementation proves a
 new path necessary, the implementation ticket must name and justify it before
@@ -607,7 +607,7 @@ any enumerated seam.
 Minimum gates:
 
 ```bash
-rg -n 'SIMPLE_CLASS_CACHE' apps/mamba/src
+rg -n 'SIMPLE_CLASS_CACHE' src
 cargo test -p mamba runtime::class
 cargo test -p mamba runtime::stdlib::dataclasses_mod
 ```

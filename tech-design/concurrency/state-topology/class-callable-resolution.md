@@ -22,7 +22,7 @@ A non-owning resolver returns a `CallableInvocationLease` before any unsafe
 call. That lease carries the ABI and lifetime evidence required for
 guard-free invocation.
 
-No `apps/mamba/src/**` change occurs in this slice.
+No `src/**` change occurs in this slice.
 
 ## Bounded context
 
@@ -80,11 +80,11 @@ boolean, semantic handle, and invocation lease are distinct domains.
 
 The admitted identity is:
 
-`apps/mamba/src/runtime/class/mod.rs::CALLABLE_REGISTRY`
+`src/runtime/class/mod.rs::CALLABLE_REGISTRY`
 
 The exact code-reference selector is:
 
-`rg -n 'static CALLABLE_REGISTRY|CALLABLE_REGISTRY\.with' apps/mamba/src/runtime/class/mod.rs`
+`rg -n 'static CALLABLE_REGISTRY|CALLABLE_REGISTRY\.with' src/runtime/class/mod.rs`
 
 The SHA-256 of its sorted newline-terminated output is:
 
@@ -512,12 +512,12 @@ The native catalog retires only with `ProcessImage`.
 
 | Path | Planned responsibility |
 |---|---|
-| `apps/mamba/src/runtime/execution_context.rs` | context authority, resolver access, retirement |
-| `apps/mamba/src/runtime/class/mod.rs` | typed member handles and class dispatch migration |
-| `apps/mamba/src/runtime/module.rs` | ABI lookup and native/JIT owner split |
-| `apps/mamba/src/runtime/closure.rs` | closure-handle semantic resolution and module relation |
-| `apps/mamba/src/codegen/cranelift/jit.rs` | module id, generation, executable-memory lease |
-| `apps/mamba/src/runtime/mod.rs` | compatibility binding and resolver surface |
+| `src/runtime/execution_context.rs` | context authority, resolver access, retirement |
+| `src/runtime/class/mod.rs` | typed member handles and class dispatch migration |
+| `src/runtime/module.rs` | ABI lookup and native/JIT owner split |
+| `src/runtime/closure.rs` | closure-handle semantic resolution and module relation |
+| `src/codegen/cranelift/jit.rs` | module id, generation, executable-memory lease |
+| `src/runtime/mod.rs` | compatibility binding and resolver surface |
 
 ## Planned focused tests
 
@@ -560,4 +560,4 @@ This slice is complete when:
 - class versions store typed handles and preserve old leased versions;
 - invocation is guard-free under a live typed lease;
 - worker, module, address-reuse, and context retirement rules fail closed;
-- implementation remains a later AGY-owned `apps/mamba/src/**` slice.
+- implementation remains a later AGY-owned `src/**` slice.

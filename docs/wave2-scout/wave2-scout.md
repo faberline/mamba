@@ -15,7 +15,7 @@ math.scalar_sqrt 3.21× internal PASS in Task #36).
 
 ## cmath — clean math-mirror on complex
 
-**Source:** `apps/mamba/vendor/typeshed/stdlib/cmath.pyi` (37 lines).
+**Source:** `vendor/typeshed/stdlib/cmath.pyi` (37 lines).
 
 **Surface (31 entries):**
 - **Constants (7):** `e`, `pi`, `tau`, `inf`, `infj`, `nan`, `nanj`
@@ -55,7 +55,7 @@ print(f"INTERNAL_TIME_NS={int((_t1 - _t0) * 1_000_000_000)}", file=sys.stderr, f
 
 ## statistics — bulk-iterable + scalar mix, NormalDist OOP
 
-**Source:** `apps/mamba/vendor/typeshed/stdlib/statistics.pyi` (162 lines).
+**Source:** `vendor/typeshed/stdlib/statistics.pyi` (162 lines).
 
 **Surface (~16 entries top-level):**
 - **Constants (0):** none.
@@ -128,7 +128,7 @@ Second fixture for `stdev` on the same DATA shape — expected closer to compute
 
 ## random — Mersenne Twister + scalar, OOP-state heavy
 
-**Source:** `apps/mamba/vendor/typeshed/stdlib/random.pyi` (135 lines).
+**Source:** `vendor/typeshed/stdlib/random.pyi` (135 lines).
 
 **Surface (~24 entries top-level):**
 - **Constants (0):** none top-level (`_inst` is private).
@@ -202,7 +202,7 @@ on (range(1000), k=100) × 1000 iters for allocation-bound check.
 
 ## operator — forward wrappers + 3 callback classes (split-ship recommended)
 
-**Source:** `apps/mamba/vendor/typeshed/stdlib/operator.pyi` (218 lines).
+**Source:** `vendor/typeshed/stdlib/operator.pyi` (218 lines).
 
 **Surface (~58 entries top-level):**
 - **Constants (0):** none.

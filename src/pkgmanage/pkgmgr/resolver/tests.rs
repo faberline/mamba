@@ -627,7 +627,7 @@ fn unparseable_requires_dist_line_refuses_naming_package_version_and_line() {
 // a `requires_dist` fetch that the index cannot answer at all must not be
 // swallowed into a leaf node -- `Universe::node` for the real,
 // `IndexClientProvider`-backed `Resolver`, driven against a `wiremock`
-// registry (see `apps/mamba/src/pkgmanage/tests.rs` for the construction
+// registry (see `src/pkgmanage/tests.rs` for the construction
 // shape this copies: `IndexClientProvider::new` + `Resolver::new` over an
 // `IndexClient` pointed at a loopback `MockServer`).
 // --------------------------------------------------------------------------

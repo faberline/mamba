@@ -1,4 +1,4 @@
-// SPEC-MANAGED: apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results
+// SPEC-MANAGED: external-contracts/behavior/mamba-t1-to-thread-gather-results.md#mamba-t1-to-thread-gather-results
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec mamba-t1-to-thread-gather-results

@@ -84,8 +84,8 @@ def default_mamba_bin() -> str:
     if override := os.environ.get("MAMBA_BIN", "").strip():
         return override
     for candidate in (
-        MAMBA_DIR.parents[1] / "target" / "debug" / "mamba",
-        MAMBA_DIR.parents[1] / "target" / "release" / "mamba",
+        MAMBA_DIR / "target" / "debug" / "mamba",
+        MAMBA_DIR / "target" / "release" / "mamba",
     ):
         if candidate.is_file():
             return str(candidate)

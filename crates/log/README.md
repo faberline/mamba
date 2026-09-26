@@ -33,7 +33,7 @@ convenience level methods, and fan-out to registered sinks.
 - Gate — behavior: `cargo test -p mamba-log` - logger context binding, level
   filtering, and sink fan-out behavior smoke
 - Gate: `cargo test -p mamba-log`
-- Evidence: `cargo test -p mamba-log`; apps/mamba/crates/log/src/logger.rs
+- Evidence: `cargo test -p mamba-log`; crates/log/src/logger.rs
 
 ### Sink Contract And Configuration
 
@@ -48,7 +48,7 @@ gaps.
 - Gate — behavior: `cargo test -p mamba-log` - sink config, level parsing, file
   append, UDP/TCP network write, and flush behavior smoke
 - Gate: `cargo test -p mamba-log`
-- Evidence: `cargo test -p mamba-log`; apps/mamba/crates/log/src/sink.rs
+- Evidence: `cargo test -p mamba-log`; crates/log/src/sink.rs
 
 ### Log Error Contract
 
@@ -60,4 +60,4 @@ failures, format failures, rotation failures, and I/O errors.
 - Gate — behavior: `cargo test -p mamba-log` - typed error display and I/O
   conversion behavior smoke
 - Gate: `cargo test -p mamba-log`
-- Evidence: `cargo test -p mamba-log`; apps/mamba/crates/log/src/error.rs
+- Evidence: `cargo test -p mamba-log`; crates/log/src/error.rs

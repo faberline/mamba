@@ -174,7 +174,7 @@ family without repairing it.
 | 4 | family verification | paired opt profiles and fixed-composition soak | none unless a new defect is proven |
 
 The controller owns this contract, ticket boundaries, oracle, verification,
-commit, and closure. AGY owns every eventual `apps/mamba/src/**` edit.
+commit, and closure. AGY owns every eventual `src/**` edit.
 
 ## Forbidden fixes
 

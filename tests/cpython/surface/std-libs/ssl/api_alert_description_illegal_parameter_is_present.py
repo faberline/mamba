@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.ALERT_DESCRIPTION_ILLEGAL_PARAMETER: api_alert_description_illegal_parameter_is_present (surface)."""

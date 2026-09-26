@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """doctest.DONT_ACCEPT_TRUE_FOR_1: api_dont_accept_true_for_1_is_present (surface)."""

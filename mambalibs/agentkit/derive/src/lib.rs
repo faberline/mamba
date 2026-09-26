@@ -26,8 +26,8 @@
 //! `HashMap<K,V>` / `BTreeMap<K,V>` and additional `#[schema(...)]`
 //! customization stay tracked under follow-ups (P6+).
 //!
-//! @spec gh://chrischeng-c4/cclab/issues/1952
-//! @spec gh://chrischeng-c4/cclab/issues/1953
+//! @spec gh://faberline/mamba/issues/1952
+//! @spec gh://faberline/mamba/issues/1953
 //
 // HANDWRITE-BEGIN reason: codegen has no proc-macro generator. Closing
 // this gap requires (a) a section type "rust-proc-macro-derive" and

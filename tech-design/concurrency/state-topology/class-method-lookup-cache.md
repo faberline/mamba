@@ -126,7 +126,7 @@ The exact code-reference selector is:
 ```bash
 rg -n \
   'static METHOD_CACHE|static METHOD_CACHE_GEN|METHOD_CACHE\.with|METHOD_CACHE_GEN\.with' \
-  apps/mamba/src/runtime/class/mod.rs
+  src/runtime/class/mod.rs
 ```
 
 Its sorted-newline SHA-256 digest is:
@@ -163,9 +163,9 @@ The partition is:
 
 This topology refines:
 
-- `apps/mamba/tech-design/concurrency/execution-context.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-definition-registry.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-callable-resolution.md`.
+- `tech-design/concurrency/execution-context.md`;
+- `tech-design/concurrency/state-topology/class-definition-registry.md`;
+- `tech-design/concurrency/state-topology/class-callable-resolution.md`.
 
 `ClassDefinitionRegistry` remains the sole definition/member owner.
 `ClassVisibilityGeneration` is the aggregate publication boundary already
@@ -602,9 +602,9 @@ Weak cache entries do not delay definition or Python-member retirement.
 
 Required source paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`;
-- `apps/mamba/src/runtime/class/mod.rs`;
-- `apps/mamba/src/runtime/mod.rs`.
+- `src/runtime/execution_context.rs`;
+- `src/runtime/class/mod.rs`;
+- `src/runtime/mod.rs`.
 
 Required tests are focused Rust tests in the owning runtime modules.
 

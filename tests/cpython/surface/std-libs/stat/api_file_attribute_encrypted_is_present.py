@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """stat.FILE_ATTRIBUTE_ENCRYPTED: api_file_attribute_encrypted_is_present (surface)."""

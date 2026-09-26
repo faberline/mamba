@@ -228,4 +228,4 @@ or clearing process-native facts during context retirement.
   a native semantic identity.
 - Cleanup has no operation that mutates the sealed native catalog.
 - Snapshot rule: #2982 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

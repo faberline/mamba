@@ -165,7 +165,7 @@ pub struct CraneliftJitBackend {
 /// runs in the same process; freeing those pages creates dangling references
 /// that fault when later tests touch the global state. The leak is bounded:
 /// each compilation creates ~4-16 KB of executable pages. With the
-/// `selinux-fix` feature (enabled in apps/mamba/Cargo.toml) those pages
+/// `selinux-fix` feature (enabled in Cargo.toml) those pages
 /// live in `memmap2`-managed anonymous mmap regions rather than libsystem's
 /// heap, so the leak does not pressure malloc bookkeeping.
 ///

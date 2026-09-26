@@ -85,9 +85,9 @@ types. No implicit Rust-string conversion performs identity resolution.
 
 The three admitted production identities are:
 
-- `apps/mamba/src/runtime/class/mod.rs::CLASS_RUNTIME_KEY_ALIASES`
-- `apps/mamba/src/runtime/class/mod.rs::NEXT_CLASS_RUNTIME_KEY`
-- `apps/mamba/src/runtime/class/mod.rs::USER_CLASSES`
+- `src/runtime/class/mod.rs::CLASS_RUNTIME_KEY_ALIASES`
+- `src/runtime/class/mod.rs::NEXT_CLASS_RUNTIME_KEY`
+- `src/runtime/class/mod.rs::USER_CLASSES`
 
 There are zero test-only identities. The sorted newline-terminated identity
 SHA-256 is:
@@ -485,16 +485,16 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - add context-owned identity catalog, checked allocator, operation leases,
     publication coordinator, and retirement ordering.
-- `apps/mamba/src/runtime/class/mod.rs`
+- `src/runtime/class/mod.rs`
   - replace alias/classification TLS, process allocator, snapshot/replace,
     ambient behavior branches, and best-effort cleanup.
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
+- `src/runtime/builtins/type_objects.rs`
   - accept typed class/type binding and preserve type-registry sole ownership,
     root ordering, and caller alias contracts.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - order context rejection, quiescence, alias detach, definition detach,
     type-root unregister, and ownership drain.
 

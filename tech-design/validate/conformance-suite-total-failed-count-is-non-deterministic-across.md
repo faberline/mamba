@@ -3,7 +3,7 @@ id: '1942'
 summary: >
   WI #1942 closes deterministic type-wall outcomes with a fail-closed Tier 1
   conformance verifier bound to the exact
-  `apps/mamba/tests/governance/gates/t1_type_wall_denominator/manifest.toml`
+  `tests/governance/gates/t1_type_wall_denominator/manifest.toml`
   surface. The design keeps the release conformance command fixed at `cargo
   test -p mamba --release --test conformance -- --nocapture`, requires the
   pinned `row_count = 7407` and
@@ -33,8 +33,8 @@ id: mamba-t1-type-wall-conformance-determinism
 entry: accepted_ec
 nodes:
   accepted_ec: { kind: start, label: "Accepted EC + WI #1942 define the oracle: determinism is proven only against the exact Tier 1 type-wall denominator, not by internal runtime explanations or equal-count heuristics" }
-  load_manifest: { kind: process, label: "Read apps/mamba/tests/governance/gates/t1_type_wall_denominator/{manifest.toml,denominator.txt}; assert row_count=7407 and denominator_sha256=eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28 before any run" }
-  load_baseline: { kind: process, label: "Read apps/mamba/external-contracts/evidence/mamba-t1-type-wall-conformance-determinism-baseline.json; require revision, manifest path, manifest digest, row_count, exact command, capture timestamp, baseline failure count, and full normalized allowed-failing set" }
+  load_manifest: { kind: process, label: "Read tests/governance/gates/t1_type_wall_denominator/{manifest.toml,denominator.txt}; assert row_count=7407 and denominator_sha256=eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28 before any run" }
+  load_baseline: { kind: process, label: "Read external-contracts/evidence/mamba-t1-type-wall-conformance-determinism-baseline.json; require revision, manifest path, manifest digest, row_count, exact command, capture timestamp, baseline failure count, and full normalized allowed-failing set" }
   spawn_run: { kind: process, label: "Spawn three fresh isolated subprocesses of exactly cargo test -p mamba --release --test conformance -- --nocapture, each with its own temp/output capture, timeout, and zero shared prior-run in-memory state" }
   parse_output: { kind: process, label: "Parse terminal fixture rows from each run into normalized denominator records keyed by fixture path + final outcome; reject truncation, missing summary, duplicate rows, unparseable rows, skipped/filtered rows, or any denominator cardinality other than exactly 7407 unique terminal results" }
   compare_runs: { kind: decision, label: "Do all three normalized failing-path sets and total failure counts match exactly?" }
@@ -56,8 +56,8 @@ edges:
   - { from: mutation_canaries, to: ec_pass, label: "both canaries fail closed" }
 ---
 flowchart TD
-    A["Accepted EC + WI #1942 define the oracle:\ndeterminism is proven only against the exact Tier 1\ntype-wall denominator, NOT by internal runtime explanations\nor equal-count heuristics"] --> B["Load apps/mamba/tests/governance/gates/\nt1_type_wall_denominator/{manifest.toml, denominator.txt}\nand assert the pinned row_count=7407 plus\ndenominator_sha256=eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28\nbefore any evidence run"]
-    B --> C["Load apps/mamba/external-contracts/evidence/\nmamba-t1-type-wall-conformance-determinism-baseline.json\nand require revision, manifest path, manifest digest,\nrow_count, exact command, capture timestamp, baseline\nfailure_count, and the full normalized allowed-failing set"]
+    A["Accepted EC + WI #1942 define the oracle:\ndeterminism is proven only against the exact Tier 1\ntype-wall denominator, NOT by internal runtime explanations\nor equal-count heuristics"] --> B["Load tests/governance/gates/\nt1_type_wall_denominator/{manifest.toml, denominator.txt}\nand assert the pinned row_count=7407 plus\ndenominator_sha256=eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28\nbefore any evidence run"]
+    B --> C["Load external-contracts/evidence/\nmamba-t1-type-wall-conformance-determinism-baseline.json\nand require revision, manifest path, manifest digest,\nrow_count, exact command, capture timestamp, baseline\nfailure_count, and the full normalized allowed-failing set"]
     C --> D["Spawn THREE fresh isolated subprocesses of exactly\ncargo test -p mamba --release --test conformance -- --nocapture,\neach with its own temp/output capture, timeout,\nand zero shared prior-run in-memory state"]
     D --> E["Parse each run's terminal fixture rows into normalized\ndenominator records keyed by fixture path + final outcome;\nreject truncation, missing summary, duplicate rows,\nunparseable rows, skipped/filtered rows, or any denominator\ncardinality other than EXACTLY 7407 unique terminal results"]
     E --> F{"Do all three normalized failing-path sets\nand total failure counts match exactly?"}
@@ -73,16 +73,16 @@ flowchart TD
 
 ```yaml
 changes:
-  - path: apps/mamba/tests/external_contracts/mamba_core_semantics_ec.rs
+  - path: tests/external_contracts/mamba_core_semantics_ec.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: to_thread_gather_efficiency
-  - path: apps/mamba/tests/external_contracts/ec_mamba_t1_type_wall_conformance_determinism.rs
+  - path: tests/external_contracts/ec_mamba_t1_type_wall_conformance_determinism.rs
     action: modify
     section: unit-test
     impl_mode: codegen
-  - path: apps/mamba/external-contracts/evidence/mamba-t1-type-wall-conformance-determinism-baseline.json
+  - path: external-contracts/evidence/mamba-t1-type-wall-conformance-determinism-baseline.json
     action: create
     section: unit-test
     impl_mode: hand-written
@@ -108,7 +108,7 @@ requirements:
     verify: type_wall_conformance_determinism (baseline subset containment plus failure_count <= baseline failure_count)
   EC1:
     id: EC1
-    text: "The verifier fail-closes on denominator drift by asserting apps/mamba/tests/governance/gates/t1_type_wall_denominator/manifest.toml still reports row_count = 7407 and denominator_sha256 = eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28, and that denominator.txt still matches both."
+    text: "The verifier fail-closes on denominator drift by asserting tests/governance/gates/t1_type_wall_denominator/manifest.toml still reports row_count = 7407 and denominator_sha256 = eb45a673ca92c766c1df6596592aa226fae56ab81f8f27fea47e1168743eae28, and that denominator.txt still matches both."
     kind: regression
     risk: high
     verify: cargo test -p mamba t1_type_wall_denominator_gate

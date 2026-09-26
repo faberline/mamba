@@ -268,7 +268,7 @@ fn manifest_is_consumed_by_ecosystem_summary() {
         .get("consumption_artifact_relative_path_within_repo")
         .and_then(|v| v.as_str())
         .unwrap();
-    assert!(path.starts_with("apps/mamba/tests/"));
+    assert!(path.starts_with("tests/"));
     assert!(path.ends_with(".json"));
     let required: Vec<&str> = e
         .get("consumption_artifact_required_fields")

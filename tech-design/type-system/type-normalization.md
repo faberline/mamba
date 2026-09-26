@@ -120,7 +120,7 @@ would make #2007 provenance unsound.
 
 ### N1 — preserve function annotation presence
 
-Owner: AGY for all `apps/mamba/src/**` edits.
+Owner: AGY for all `src/**` edits.
 
 - Give parsed function parameters an explicit annotation-presence
   representation; do not use an `Any` filler to represent omission.

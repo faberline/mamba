@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "ArithmeticError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "AssertionError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "AttributeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "BaseException"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "BaseExceptionGroup"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "BlockingIOError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "BrokenPipeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "BufferError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "BytesWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "ChildProcessError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "ConnectionAbortedError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "ConnectionError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "ConnectionRefusedError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "ConnectionResetError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "DeprecationWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "EOFError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "Ellipsis"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "EncodingWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "EnvironmentError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "Exception"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "ExceptionGroup"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "False"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "FileExistsError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "FileNotFoundError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "FloatingPointError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "FutureWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "GeneratorExit"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "IOError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "ImportError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "ImportWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "IndentationError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "IndexError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "InterruptedError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "IsADirectoryError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "KeyError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "KeyboardInterrupt"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "LookupError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "MemoryError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "ModuleNotFoundError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "NameError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "None"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "NotADirectoryError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "NotImplemented"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "NotImplementedError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "OSError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "OverflowError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "PendingDeprecationWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "PermissionError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "ProcessLookupError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "RecursionError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "ReferenceError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "ResourceWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "RuntimeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "RuntimeWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "StopAsyncIteration"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "StopIteration"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "SyntaxError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "SyntaxWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "SystemError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "SystemExit"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "TabError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "TimeoutError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "True"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "TypeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "UnboundLocalError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "UnicodeDecodeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "UnicodeEncodeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "UnicodeError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "UnicodeTranslateError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "UnicodeWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "UserWarning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "ValueError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "Warning"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "ZeroDivisionError"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "abs"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "aiter"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "all"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "anext"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "any"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "ascii"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "bin"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "bool"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "breakpoint"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "bytearray"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "bytes"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "callable"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "chr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "classmethod"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "compile"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "complex"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "copyright"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "credits"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "delattr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "dict"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "dir"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "divmod"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "enumerate"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "eval"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "exec"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "exit"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "filter"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "float"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "format"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "frozenset"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "getattr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "globals"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "hasattr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "hash"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "help"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "hex"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "id"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "input"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "int"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "isinstance"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "issubclass"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "iter"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "len"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "license"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "list"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "locals"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "map"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "max"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "memoryview"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "min"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "next"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "object"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "oct"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "open"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "ord"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,7 +1432,7 @@ probe     = "attr"
 attr      = "pow"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1443,7 +1443,7 @@ probe     = "attr"
 attr      = "print"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1454,7 +1454,7 @@ probe     = "attr"
 attr      = "property"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1465,7 +1465,7 @@ probe     = "attr"
 attr      = "quit"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1476,7 +1476,7 @@ probe     = "attr"
 attr      = "range"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1487,7 +1487,7 @@ probe     = "attr"
 attr      = "repr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1498,7 +1498,7 @@ probe     = "attr"
 attr      = "reversed"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1509,7 +1509,7 @@ probe     = "attr"
 attr      = "round"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1520,7 +1520,7 @@ probe     = "attr"
 attr      = "set"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1531,7 +1531,7 @@ probe     = "attr"
 attr      = "setattr"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1542,7 +1542,7 @@ probe     = "attr"
 attr      = "slice"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1553,7 +1553,7 @@ probe     = "attr"
 attr      = "sorted"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1564,7 +1564,7 @@ probe     = "attr"
 attr      = "staticmethod"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1575,7 +1575,7 @@ probe     = "attr"
 attr      = "str"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1586,7 +1586,7 @@ probe     = "attr"
 attr      = "sum"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1597,7 +1597,7 @@ probe     = "attr"
 attr      = "super"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1608,7 +1608,7 @@ probe     = "attr"
 attr      = "tuple"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1619,7 +1619,7 @@ probe     = "attr"
 attr      = "type"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1630,7 +1630,7 @@ probe     = "attr"
 attr      = "vars"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1641,4 +1641,4 @@ probe     = "attr"
 attr      = "zip"
 expr      = "builtins"
 module    = "builtins"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

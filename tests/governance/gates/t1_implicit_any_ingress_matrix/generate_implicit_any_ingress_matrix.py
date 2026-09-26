@@ -133,10 +133,10 @@ def normalize_explicit(raw_bytes: bytes) -> bytes:
 def main():
     gate_dir = os.path.join(
         REPO_ROOT,
-        "apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix",
+        "tests/governance/gates/t1_implicit_any_ingress_matrix",
     )
     evidence_dir = os.path.join(
-        REPO_ROOT, "apps/mamba/external-contracts/evidence"
+        REPO_ROOT, "external-contracts/evidence"
     )
 
     cases_path = os.path.join(gate_dir, "cases.jsonl")
@@ -150,8 +150,8 @@ def main():
     cases_rows = []
 
     for family in FAMILIES:
-        imp_rel = f"apps/mamba/tests/cpython/_regression/core/typecheck/implicit_any_ingress/{family}.py"
-        exp_rel = f"apps/mamba/tests/cpython/_regression/core/typecheck/explicit_any_acceptance/{family}.py"
+        imp_rel = f"tests/cpython/_regression/core/typecheck/implicit_any_ingress/{family}.py"
+        exp_rel = f"tests/cpython/_regression/core/typecheck/explicit_any_acceptance/{family}.py"
 
         imp_abs = os.path.join(REPO_ROOT, imp_rel)
         exp_abs = os.path.join(REPO_ROOT, exp_rel)
@@ -263,15 +263,15 @@ def main():
 
     manifest_content = (
         f"schema_version = 1\n"
-        f'inventory_path = "apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl"\n'
+        f'inventory_path = "tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl"\n'
         f'inventory_sha256 = "{inventory_sha256}"\n'
         f"row_count = 7\n"
         f'required_channels = ["compile", "behavior", "concurrency", "performance"]\n'
         f'source_set = "implicit_any_ingress_matrix"\n'
         f"migration_inputs = [\n"
-        f'    "apps/mamba/external-contracts/behavior/2011.md",\n'
-        f'    "apps/mamba/tests/cpython/_regression/core/typecheck/implicit_any_ingress/",\n'
-        f'    "apps/mamba/tests/cpython/_regression/core/typecheck/explicit_any_acceptance/"\n'
+        f'    "external-contracts/behavior/2011.md",\n'
+        f'    "tests/cpython/_regression/core/typecheck/implicit_any_ingress/",\n'
+        f'    "tests/cpython/_regression/core/typecheck/explicit_any_acceptance/"\n'
         f"]\n"
         f'cpython312_executable = "{CPYTHON312_EXECUTABLE}"\n'
         f'cpython312_version = "{CPYTHON312_VERSION}"\n'
@@ -293,19 +293,19 @@ def main():
         "capture_timestamp": GENERATED_AT,
         "cpython312_executable": CPYTHON312_EXECUTABLE,
         "cpython312_version": CPYTHON312_VERSION,
-        "evidence_path": "apps/mamba/external-contracts/evidence/mamba-t1-implicit-any-ingress-matrix-lock.json",
+        "evidence_path": "external-contracts/evidence/mamba-t1-implicit-any-ingress-matrix-lock.json",
         "fixture_records": fixture_records,
         "generated_at": GENERATED_AT,
-        "inventory_path": "apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl",
+        "inventory_path": "tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl",
         "inventory_sha256": inventory_sha256,
         "mamba_binary_sha256": MAMBA_BINARY_SHA256,
         "mamba_git_sha": MAMBA_GIT_SHA,
-        "manifest_path": "apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix/manifest.toml",
+        "manifest_path": "tests/governance/gates/t1_implicit_any_ingress_matrix/manifest.toml",
         "manifest_sha256": manifest_sha256,
         "migration_inputs": [
-            "apps/mamba/external-contracts/behavior/2011.md",
-            "apps/mamba/tests/cpython/_regression/core/typecheck/implicit_any_ingress/",
-            "apps/mamba/tests/cpython/_regression/core/typecheck/explicit_any_acceptance/",
+            "external-contracts/behavior/2011.md",
+            "tests/cpython/_regression/core/typecheck/implicit_any_ingress/",
+            "tests/cpython/_regression/core/typecheck/explicit_any_acceptance/",
         ],
         "pairs": pairs_data,
         "platform": PLATFORM,

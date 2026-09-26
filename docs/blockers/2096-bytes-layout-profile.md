@@ -179,12 +179,12 @@ Per team-lead's Task #57 brief:
 
 ## References
 
-- [#2096](https://github.com/chrischeng-c4/cclab/issues/2096) — bytes
+- [#2096](https://github.com/faberline/axiom/issues/2096) — bytes
   2× memory regression (parent issue)
-- [#2100](https://github.com/chrischeng-c4/cclab/issues/2100) (closed)
+- [#2100](https://github.com/faberline/axiom/issues/2100) (closed)
   — GC-bound resolution; 1A threshold bump caused part of subset A
   mem regression
-- [#2178](https://github.com/chrischeng-c4/cclab/issues/2178) (open)
+- [#2178](https://github.com/faberline/axiom/issues/2178) (open)
   — per-iter JIT alloc; array/typed_bulk's internal-0.25× cohort
   member
 - [2100-post-bundle-rebench.md](2100-post-bundle-rebench.md) — full

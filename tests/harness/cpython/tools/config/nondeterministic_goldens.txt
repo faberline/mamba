@@ -10,4 +10,4 @@
 # oracle_skip_goldens.txt entry, or — for the common "<case> OK\n" self-checkers —
 # derived from the `# case` header.
 
-apps/mamba/tests/cpython/behavior/std-libs/ssl/threaded_tests__test_starttls.py
+tests/cpython/behavior/std-libs/ssl/threaded_tests__test_starttls.py

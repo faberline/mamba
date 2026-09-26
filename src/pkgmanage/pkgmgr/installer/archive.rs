@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:32b74adb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-archive-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/archive.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:32b74adb" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-archive-rs" reason="Existing hand-written code in src/pkgmgr/installer/archive.rs requires tracked generator coverage."
 // Produces a `WheelArchive` with the dist-info prefix and computed name/version.
 // Surfaces malformed-wheel errors (missing WHEEL, missing RECORD, multiple
 // dist-info dirs).

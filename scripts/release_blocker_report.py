@@ -7,7 +7,7 @@ Consumes a release-gate summary file (the artifact produced by
 `scripts/release_gate.py` from #2821; shape locked by #2820's
 `release_summary.schema.json`) and renders the blocker rollup against
 the per-objective budget declared in
-`apps/mamba/validation/blocker_budget.toml`.
+`validation/blocker_budget.toml`.
 
 Acceptance (issue #2822):
 

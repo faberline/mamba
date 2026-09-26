@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "Random"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "SystemRandom"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "betavariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "binomialvariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "choice"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "choices"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "expovariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "gammavariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "gauss"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "getrandbits"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "getstate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "lognormvariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "normalvariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "paretovariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "randbytes"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "randint"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "random"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "randrange"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "sample"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "seed"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "setstate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "shuffle"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "triangular"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "uniform"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "vonmisesvariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,4 +288,4 @@ probe     = "attr"
 attr      = "weibullvariate"
 expr      = "random"
 module    = "random"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

@@ -3,7 +3,7 @@
 
 Parent: #2530 (performance gate suite).
 
-Reads a baseline JSON (default `apps/mamba/baseline.json`, the
+Reads a baseline JSON (default `baseline.json`, the
 release-blocking perf source of truth — see #2823) and enforces the
 per-benchmark floor rule from `validation/profiles/performance.toml`:
 
@@ -226,7 +226,7 @@ def _parse_args(argv: list[str]) -> argparse.Namespace:
         description="Enforce 1× per-benchmark floor on required benchmarks (#2565).",
     )
     p.add_argument("--baseline", type=Path, default=None,
-                   help="path to baseline.json (default: apps/mamba/baseline.json)")
+                   help="path to baseline.json (default: baseline.json)")
     p.add_argument("--policy", type=Path, default=None,
                    help="path to performance.toml (default: relative to this script)")
     p.add_argument("--format", choices=("text", "json"), default="text")

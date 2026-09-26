@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "AMPER"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "AMPEREQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "ASYNC"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "AT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "ATEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "AWAIT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "CIRCUMFLEX"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "CIRCUMFLEXEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "COLON"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "COLONEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "COMMA"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "COMMENT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "DEDENT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "DOT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "DOUBLESLASH"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "DOUBLESLASHEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "DOUBLESTAR"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "DOUBLESTAREQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "ELLIPSIS"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "ENCODING"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "ENDMARKER"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "EQEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "EQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "ERRORTOKEN"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "EXACT_TOKEN_TYPES"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "EXCLAMATION"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "FSTRING_END"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "FSTRING_MIDDLE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "FSTRING_START"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "GREATER"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "GREATEREQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "INDENT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "ISEOF"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "ISNONTERMINAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "ISTERMINAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "LBRACE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "LEFTSHIFT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "LEFTSHIFTEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "LESS"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "LESSEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "LPAR"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "LSQB"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "MINEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "MINUS"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "NAME"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "NEWLINE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "NL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "NOTEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "NT_OFFSET"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "NUMBER"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "N_TOKENS"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "OP"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "PERCENT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "PERCENTEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "PLUS"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "PLUSEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "RARROW"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "RBRACE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "RIGHTSHIFT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "RIGHTSHIFTEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "RPAR"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "RSQB"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "SEMI"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "SLASH"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "SLASHEQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "SOFT_KEYWORD"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "STAR"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "STAREQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "STRING"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "TILDE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "TYPE_COMMENT"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "TYPE_IGNORE"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "TokenInfo"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "VBAR"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "VBAREQUAL"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "detect_encoding"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "generate_tokens"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "tok_name"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "tokenize"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,4 +882,4 @@ probe     = "attr"
 attr      = "untokenize"
 expr      = "tokenize"
 module    = "tokenize"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

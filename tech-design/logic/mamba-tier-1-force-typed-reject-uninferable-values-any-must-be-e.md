@@ -66,47 +66,47 @@ flowchart TD
 
 ```yaml
 changes:
-  - path: apps/mamba/src/lower/ast_to_hir.rs
+  - path: src/lower/ast_to_hir.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: annotation_repr_opt
-  - path: apps/mamba/src/types/check_expr.rs
+  - path: src/types/check_expr.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: check_structured_stdlib_call
-  - path: apps/mamba/tests/harness/cpython/tools/strict_type_accounting.py
+  - path: tests/harness/cpython/tools/strict_type_accounting.py
     action: modify
     section: unit-test
     impl_mode: hand-written
-  - path: apps/mamba/tests/governance/schema_gates/strict_type_accounting_gate_704.rs
+  - path: tests/governance/schema_gates/strict_type_accounting_gate_704.rs
     action: modify
     section: unit-test
     impl_mode: hand-written
     anchor: strict_type_accounting_requires_authoritative_contract_inventory
-  - path: apps/mamba/tests/external_contracts/ec_mamba_t1_force_typed_contract_completion.rs
+  - path: tests/external_contracts/ec_mamba_t1_force_typed_contract_completion.rs
     action: modify
     section: unit-test
     impl_mode: hand-written
     anchor: mamba_t1_force_typed_contract_completion
-  - path: apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl
+  - path: tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl
     action: create
     section: unit-test
     impl_mode: hand-written
-  - path: apps/mamba/tests/governance/gates/t1_explicit_any_acceptance_matrix/cases.jsonl
+  - path: tests/governance/gates/t1_explicit_any_acceptance_matrix/cases.jsonl
     action: create
     section: unit-test
     impl_mode: hand-written
-  - path: apps/mamba/tests/governance/gates/t1_forcetyped_contract_completion_inventory/cases.jsonl
+  - path: tests/governance/gates/t1_forcetyped_contract_completion_inventory/cases.jsonl
     action: create
     section: unit-test
     impl_mode: hand-written
-  - path: apps/mamba/tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py
+  - path: tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py
     action: create
     section: unit-test
     impl_mode: hand-written
-  - path: apps/mamba/tests/harness/cpython/config/perf/pins/force_typed_contract_completion_2011.toml
+  - path: tests/harness/cpython/config/perf/pins/force_typed_contract_completion_2011.toml
     action: create
     section: unit-test
     impl_mode: hand-written
@@ -177,13 +177,13 @@ requirements:
     text: "The no-global-serialization oracle proves one-worker versus four-worker parallel compile progress across the seven paired ingress families from the public path, and barrier stability cannot substitute for this proof."
     kind: regression
     risk: medium
-    verify: python3.12 apps/mamba/tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py
+    verify: python3.12 tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py
   R5:
     id: R5
     text: "The barrier stability probe preserves its exact authored worker, round, timeout, and no-alive-thread thresholds across repeated execution, proving the fix does not trade type-wall correctness for deadlock risk."
     kind: regression
     risk: medium
-    verify: python3.12 apps/mamba/tests/harness/cpython/tools/stress_suites.py concurrency --repeat 3 --timeout 20 --json
+    verify: python3.12 tests/harness/cpython/tools/stress_suites.py concurrency --repeat 3 --timeout 20 --json
   R6:
     id: R6
     text: "The perf witness remains provenance-bound: baseline row identity, baseline_row_sha256, host fingerprint, CPython executable identity, and selected-trial CPU or RSS grading all agree before the WI can close."
@@ -199,9 +199,9 @@ flowchart TD
     r1[R1 R1] --> strict_type_dynamic_ingress_cargo_test_p_mamba_strict_type_dynamic_ingress[strict_type_dynamic_ingress (cargo test -p mamba strict_type_dynamic_ingress)]
     r3[R3 R3] --> strict_type_accounting_gate_704_cargo_test_p_mamba_strict_type_accounting_gate_704[strict_type_accounting_gate_704 (cargo test -p mamba strict_type_accounting_gate_704)]
     ac4[AC4 AC4] --> force_typed_contract_completion_parallel_compile_progress_py_plus_barrier_rounds_complete_without_deadlock_py[force_typed_contract_completion_parallel_compile_progress.py plus barrier_rounds_complete_without_deadlock.py]
-    r4[R4 R4] --> python3_12_projects_mamba_tests_cpython_concurrency_primitives_threading_force_typed_contract_completion_parallel_compile_progress_py[python3.12 apps/mamba/tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py]
+    r4[R4 R4] --> python3_12_projects_mamba_tests_cpython_concurrency_primitives_threading_force_typed_contract_completion_parallel_compile_progress_py[python3.12 tests/cpython/concurrency/primitives/threading/force_typed_contract_completion_parallel_compile_progress.py]
     ac5[AC5 AC5] --> run_pin_force_typed_contract_completion_2011_toml_mamba_require_cpython_perf_baseline_1_cargo_test_p_mamba_release_test_perf_pin_run_pin_force_typed_contract_completion_2011_toml[run_pin::force_typed_contract_completion_2011.toml (MAMBA_REQUIRE_CPYTHON_PERF_BASELINE=1 cargo test -p mamba --release --test perf_pin -- run_pin::force_typed_contract_completion_2011.toml)]
     r6[R6 R6] --> run_pin_force_typed_contract_completion_2011_toml_mamba_require_cpython_perf_baseline_1_cargo_test_p_mamba_release_test_perf_pin_run_pin_force_typed_contract_completion_2011_toml
-    r5[R5 R5] --> python3_12_projects_mamba_tests_harness_cpython_tools_stress_suites_py_concurrency_repeat_3_timeout_20_json[python3.12 apps/mamba/tests/harness/cpython/tools/stress_suites.py concurrency --repeat 3 --timeout 20 --json]
+    r5[R5 R5] --> python3_12_projects_mamba_tests_harness_cpython_tools_stress_suites_py_concurrency_repeat_3_timeout_20_json[python3.12 tests/harness/cpython/tools/stress_suites.py concurrency --repeat 3 --timeout 20 --json]
     ac6[AC6 AC6] --> strict_type_accounting_gate_704_plus_strict_type_dynamic_ingress_plus_aw_td_code_check[strict_type_accounting_gate_704 plus strict_type_dynamic_ingress plus aw td code-check]
 ```

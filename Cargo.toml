@@ -1,3 +1,67 @@
+[workspace]
+resolver = "2"
+members = ["mambalibs/mongokit", "mambalibs/mongokit/binding", "mambalibs/pgkit/pg", "crates/core", "mambalibs/queuekit", "crates/schema", "mambalibs/agentkit/core", "mambalibs/agentkit/derive", "mambalibs/agentkit/graph", "mambalibs/agentkit/llm", "mambalibs/agentkit/tools", "mambalibs/agentkit/frontend", "mambalibs/agentkit/backend", "mambalibs/httpkit", "mambalibs/httpkit/binding", "mambalibs/arraykit", "mambalibs/arraykit/binding", "mambalibs/arraykit/pyo3", "crates/frame", "mambalibs/scikit", "mambalibs/scikit/binding", "mambalibs/scikit/pyo3", "mambalibs/plotkit", "mambalibs/plotkit/binding", "mambalibs/plotkit/pyo3", "mambalibs/mediakit", "mambalibs/mediakit/binding", "mambalibs/cryptokit", "mambalibs/cryptokit/binding", ".", "crates/mamba-registry", "crates/schema-mamba", "mambalibs/pgkit/binding", "crates/log-mamba", "mambalibs/agentkit/binding", "mambalibs/dikit", "mambalibs/dikit/binding", "crates/qc-mamba", "mambalibs/pgkit/pg-cli", "crates/mcp-mamba", "crates/log"]
+
+[workspace.package]
+version = "0.4.13"
+authors = ["Chris Cheng <chris.cheng.c4@gmail.com>"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/faberline/mamba"
+
+[workspace.dependencies]
+tokio = { version = "1.40", features = ["full"] }
+futures = "0.3"
+once_cell = "1.20"  # For static initialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+anyhow = "1.0"
+thiserror = "2.0"
+mongodb = { version = "3.1" }
+bson = { version = "2.13", features = ["chrono-0_4"] }
+reqwest = { version = "0.12", default-features = false, features = ["charset", "http2", "system-proxy", "rustls-tls-native-roots", "json", "cookies", "gzip", "brotli", "multipart", "stream"] }
+http = "1.2"
+url = "2.5"
+bytes = "1.9"
+axum = { version = "0.8", features = ["ws"] }
+tower = "0.5"
+chrono = { version = "0.4", features = ["serde"] }
+async-trait = "0.1"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+regex = "1.11"
+rayon = "1.10"
+image = "0.25"
+parking_lot = "0.12"
+base64 = "0.22"
+jsonwebtoken = "9"
+clap = { version = "4", features = ["derive", "string"] }
+linkme = "0.3"
+futures-util = "0.3"
+tracing-appender = "0.2"
+wiremock = "0.6"
+scraper = "0.20"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.test]
+opt-level = 1
+
+# Vendor patch: cranelift-jit memory allocator enforces a 256 MB minimum
+# chunk so all JIT'd functions stay within ±128 MB of each other on
+# aarch64 — fixes Reloc::Arm64Call BL immediate-range overflow
+# (compiled_blob.rs:90 assertion) on macOS Apple Silicon. The PIC/PLT
+# path is x86_64-only in upstream cranelift-jit 0.116.1.
+[patch.crates-io]
+cranelift-jit = { path = "vendor/cranelift-jit" }
+
 [package]
 name = "mamba"
 version.workspace = true
@@ -14,7 +78,7 @@ autotests = false
 # behind `mambalibs.sci` at `mambalibs/scikit/pyo3`, and resolving either moves
 # the workspace member list and the lock file. These keys name that write set
 # so the impl phase's C0 scope can admit it; without them the only impl root is
-# `apps/mamba/src/`. One entry per kit: a root that is not listed is refused,
+# `src/`. One entry per kit: a root that is not listed is refused,
 # so the list grows with the kits rather than widening to `mambalibs/`.
 [package.metadata.aw]
 impl-roots = [
@@ -222,7 +286,7 @@ tempfile = "3"
 schema-mamba = { path = "crates/schema-mamba" }
 # Unified profiling toolchain (Phase 1.5 / Task #13 / cclab #2093).
 # Used by `benches/3p/cross_runtime.rs` for wall-time + memory snapshotting.
-qc = { package = "meter", path = "../../apps/meter" }
+qc = { package = "meter", git = "https://github.com/faberline/meter", rev = "6689b38705978657eef0c3f8e12a937c416c5deb" }
 wiremock.workspace = true
 
 # ── Integration test binaries (DDD-grouped under tests/<domain>/) ──

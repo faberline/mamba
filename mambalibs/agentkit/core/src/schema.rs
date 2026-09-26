@@ -31,7 +31,7 @@
 //! (`pattern`, `enum`, …), union / oneOf, $ref,
 //! tuple-typed arrays, additionalProperties tuning.
 //!
-//! @spec gh://chrischeng-c4/cclab/issues/1949 — feat(agent): Schema builder
+//! @spec gh://faberline/mamba/issues/1949 — feat(agent): Schema builder
 //! API + primitive field types. The spec lives on the GitHub issue body
 //! until a `.aw/tech-design/projects/agentkit/specs/schema-builder.md`
 //! spec gets authored alongside the rest of the typed-I/O track.

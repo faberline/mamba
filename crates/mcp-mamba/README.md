@@ -34,10 +34,10 @@ stub, and streamable HTTP app handles for mounting.
   `mb_mcp_server_name`; Rust module registrar: `McpMambaModule`
 - Gate — behavior: `cargo test -p mcp-mamba`
 - Gate: `cargo test -p mcp-mamba`
-- Source: `apps/mamba/crates/mcp-mamba/src/lib.rs`,
-  `apps/mamba/crates/mcp-mamba/src/methods.rs`,
-  `apps/mamba/crates/mcp-mamba/src/types.rs`,
-  `apps/mamba/crates/mcp-mamba/tests/methods_test.rs`
-- Evidence: `cargo test -p mcp-mamba`; apps/mamba/crates/mcp-mamba/src/lib.rs;
-  apps/mamba/crates/mcp-mamba/src/methods.rs; apps/mamba/crates/mcp-mamba/src/types.rs;
-  apps/mamba/crates/mcp-mamba/tests/methods_test.rs
+- Source: `crates/mcp-mamba/src/lib.rs`,
+  `crates/mcp-mamba/src/methods.rs`,
+  `crates/mcp-mamba/src/types.rs`,
+  `crates/mcp-mamba/tests/methods_test.rs`
+- Evidence: `cargo test -p mcp-mamba`; crates/mcp-mamba/src/lib.rs;
+  crates/mcp-mamba/src/methods.rs; crates/mcp-mamba/src/types.rs;
+  crates/mcp-mamba/tests/methods_test.rs

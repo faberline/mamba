@@ -148,4 +148,4 @@ or clearing the save stack without releasing parked retains.
     fallback, nested begin/end capture.
   - `runtime/exception.rs`: four TLS declarations and the incomplete
     `cleanup_all_exceptions`.
-- Snapshot rule: no `apps/mamba/src/**` change is permitted for #2969.
+- Snapshot rule: no `src/**` change is permitted for #2969.

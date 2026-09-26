@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:46d753da" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-record-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/record.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:46d753da" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-record-rs" reason="Existing hand-written code in src/pkgmgr/installer/record.rs requires tracked generator coverage."
 // decodes base64url with the `base64` crate, recomputes sha256 with `sha2::Sha256`,
 // compares to recorded value. Exempts the RECORD file itself from hashing
 // (its own row carries blank fields).

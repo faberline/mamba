@@ -133,7 +133,7 @@ fn scan_scope_pins_three_marker_kinds_within_mamba_tests() {
     }
     assert_eq!(
         s.get("scan_root_relative_path").and_then(|v| v.as_str()),
-        Some("apps/mamba/tests")
+        Some("tests")
     );
 
     let x = doc
@@ -297,7 +297,7 @@ fn summary_linkable_from_smoke_report() {
         .get("link_artifact_relative_path_within_repo")
         .and_then(|v| v.as_str())
         .unwrap();
-    assert!(path.starts_with("apps/mamba/tests/"));
+    assert!(path.starts_with("tests/"));
     assert!(path.ends_with(".json"));
     assert_eq!(
         s.get("must_be_stable_across_runs_on_identical_input")

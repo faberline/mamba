@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "CLD_CONTINUED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "CLD_DUMPED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "CLD_EXITED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "CLD_KILLED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "CLD_STOPPED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "CLD_TRAPPED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "DirEntry"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "EX_CANTCREAT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "EX_CONFIG"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "EX_DATAERR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "EX_IOERR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "EX_NOHOST"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "EX_NOINPUT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "EX_NOPERM"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "EX_NOUSER"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "EX_OK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "EX_OSERR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "EX_OSFILE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "EX_PROTOCOL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "EX_SOFTWARE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "EX_TEMPFAIL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "EX_UNAVAILABLE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "EX_USAGE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "F_LOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "F_OK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "F_TEST"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "F_TLOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "F_ULOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "NGROUPS_MAX"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "O_ACCMODE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "O_APPEND"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "O_ASYNC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "O_CLOEXEC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "O_CREAT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "O_DIRECTORY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "O_DSYNC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "O_EVTONLY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "O_EXCL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "O_EXEC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "O_EXLOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "O_FSYNC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "O_NDELAY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "O_NOCTTY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "O_NOFOLLOW"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "O_NOFOLLOW_ANY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "O_NONBLOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "O_RDONLY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "O_RDWR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "O_SEARCH"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "O_SHLOCK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "O_SYMLINK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "O_SYNC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "O_TRUNC"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "O_WRONLY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "POSIX_SPAWN_CLOSE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "POSIX_SPAWN_DUP2"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "POSIX_SPAWN_OPEN"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "PRIO_DARWIN_BG"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "PRIO_DARWIN_NONUI"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "PRIO_DARWIN_PROCESS"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "PRIO_DARWIN_THREAD"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "PRIO_PGRP"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "PRIO_PROCESS"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "PRIO_USER"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "P_ALL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "P_NOWAIT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "P_NOWAITO"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "P_PGID"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "P_PID"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "P_WAIT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "RTLD_GLOBAL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "RTLD_LAZY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "RTLD_LOCAL"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "RTLD_NODELETE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "RTLD_NOLOAD"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "RTLD_NOW"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "R_OK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "SCHED_FIFO"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "SCHED_OTHER"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "SCHED_RR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "SEEK_CUR"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "SEEK_DATA"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "SEEK_END"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "SEEK_HOLE"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "SEEK_SET"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "ST_NOSUID"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "ST_RDONLY"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "TMP_MAX"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "WCONTINUED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "WCOREDUMP"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "WEXITED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "WEXITSTATUS"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "WIFCONTINUED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "WIFEXITED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "WIFSIGNALED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "WIFSTOPPED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "WNOHANG"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "WNOWAIT"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "WSTOPPED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "WSTOPSIG"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "WTERMSIG"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "WUNTRACED"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "W_OK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "X_OK"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "_exit"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "abort"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "access"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "altsep"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "chdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "chflags"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "chmod"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "chown"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "chroot"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "close"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "closerange"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "confstr"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "confstr_names"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "cpu_count"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "ctermid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "curdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "defpath"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "device_encoding"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "devnull"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "dup"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "dup2"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "environ"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "environb"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "error"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "execl"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,7 +1432,7 @@ probe     = "attr"
 attr      = "execle"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1443,7 +1443,7 @@ probe     = "attr"
 attr      = "execlp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1454,7 +1454,7 @@ probe     = "attr"
 attr      = "execlpe"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1465,7 +1465,7 @@ probe     = "attr"
 attr      = "execv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1476,7 +1476,7 @@ probe     = "attr"
 attr      = "execve"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1487,7 +1487,7 @@ probe     = "attr"
 attr      = "execvp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1498,7 +1498,7 @@ probe     = "attr"
 attr      = "execvpe"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1509,7 +1509,7 @@ probe     = "attr"
 attr      = "extsep"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1520,7 +1520,7 @@ probe     = "attr"
 attr      = "fchdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1531,7 +1531,7 @@ probe     = "attr"
 attr      = "fchmod"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1542,7 +1542,7 @@ probe     = "attr"
 attr      = "fchown"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1553,7 +1553,7 @@ probe     = "attr"
 attr      = "fdopen"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1564,7 +1564,7 @@ probe     = "attr"
 attr      = "fork"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1575,7 +1575,7 @@ probe     = "attr"
 attr      = "forkpty"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1586,7 +1586,7 @@ probe     = "attr"
 attr      = "fpathconf"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1597,7 +1597,7 @@ probe     = "attr"
 attr      = "fsdecode"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1608,7 +1608,7 @@ probe     = "attr"
 attr      = "fsencode"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1619,7 +1619,7 @@ probe     = "attr"
 attr      = "fspath"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1630,7 +1630,7 @@ probe     = "attr"
 attr      = "fstat"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1641,7 +1641,7 @@ probe     = "attr"
 attr      = "fstatvfs"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1652,7 +1652,7 @@ probe     = "attr"
 attr      = "fsync"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1663,7 +1663,7 @@ probe     = "attr"
 attr      = "ftruncate"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1674,7 +1674,7 @@ probe     = "attr"
 attr      = "fwalk"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1685,7 +1685,7 @@ probe     = "attr"
 attr      = "get_blocking"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1696,7 +1696,7 @@ probe     = "attr"
 attr      = "get_exec_path"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1707,7 +1707,7 @@ probe     = "attr"
 attr      = "get_inheritable"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1718,7 +1718,7 @@ probe     = "attr"
 attr      = "get_terminal_size"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1729,7 +1729,7 @@ probe     = "attr"
 attr      = "getcwd"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1740,7 +1740,7 @@ probe     = "attr"
 attr      = "getcwdb"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1751,7 +1751,7 @@ probe     = "attr"
 attr      = "getegid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1762,7 +1762,7 @@ probe     = "attr"
 attr      = "getenv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1773,7 +1773,7 @@ probe     = "attr"
 attr      = "getenvb"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1784,7 +1784,7 @@ probe     = "attr"
 attr      = "geteuid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1795,7 +1795,7 @@ probe     = "attr"
 attr      = "getgid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1806,7 +1806,7 @@ probe     = "attr"
 attr      = "getgrouplist"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1817,7 +1817,7 @@ probe     = "attr"
 attr      = "getgroups"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1828,7 +1828,7 @@ probe     = "attr"
 attr      = "getloadavg"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1839,7 +1839,7 @@ probe     = "attr"
 attr      = "getlogin"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1850,7 +1850,7 @@ probe     = "attr"
 attr      = "getpgid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1861,7 +1861,7 @@ probe     = "attr"
 attr      = "getpgrp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1872,7 +1872,7 @@ probe     = "attr"
 attr      = "getpid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1883,7 +1883,7 @@ probe     = "attr"
 attr      = "getppid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1894,7 +1894,7 @@ probe     = "attr"
 attr      = "getpriority"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1905,7 +1905,7 @@ probe     = "attr"
 attr      = "getsid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1916,7 +1916,7 @@ probe     = "attr"
 attr      = "getuid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1927,7 +1927,7 @@ probe     = "attr"
 attr      = "initgroups"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1938,7 +1938,7 @@ probe     = "attr"
 attr      = "isatty"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1949,7 +1949,7 @@ probe     = "attr"
 attr      = "kill"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1960,7 +1960,7 @@ probe     = "attr"
 attr      = "killpg"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1971,7 +1971,7 @@ probe     = "attr"
 attr      = "lchflags"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1982,7 +1982,7 @@ probe     = "attr"
 attr      = "lchmod"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1993,7 +1993,7 @@ probe     = "attr"
 attr      = "lchown"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2004,7 +2004,7 @@ probe     = "attr"
 attr      = "linesep"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2015,7 +2015,7 @@ probe     = "attr"
 attr      = "link"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2026,7 +2026,7 @@ probe     = "attr"
 attr      = "listdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2037,7 +2037,7 @@ probe     = "attr"
 attr      = "lockf"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2048,7 +2048,7 @@ probe     = "attr"
 attr      = "login_tty"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2059,7 +2059,7 @@ probe     = "attr"
 attr      = "lseek"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2070,7 +2070,7 @@ probe     = "attr"
 attr      = "lstat"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2081,7 +2081,7 @@ probe     = "attr"
 attr      = "major"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2092,7 +2092,7 @@ probe     = "attr"
 attr      = "makedev"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2103,7 +2103,7 @@ probe     = "attr"
 attr      = "makedirs"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2114,7 +2114,7 @@ probe     = "attr"
 attr      = "minor"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2125,7 +2125,7 @@ probe     = "attr"
 attr      = "mkdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2136,7 +2136,7 @@ probe     = "attr"
 attr      = "mkfifo"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2147,7 +2147,7 @@ probe     = "attr"
 attr      = "mknod"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2158,7 +2158,7 @@ probe     = "attr"
 attr      = "name"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2169,7 +2169,7 @@ probe     = "attr"
 attr      = "nice"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2180,7 +2180,7 @@ probe     = "attr"
 attr      = "open"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2191,7 +2191,7 @@ probe     = "attr"
 attr      = "openpty"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2202,7 +2202,7 @@ probe     = "attr"
 attr      = "pardir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2213,7 +2213,7 @@ probe     = "attr"
 attr      = "path"
 expr      = "os"
 module    = "os.path"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2224,7 +2224,7 @@ probe     = "attr"
 attr      = "pathconf"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2235,7 +2235,7 @@ probe     = "attr"
 attr      = "pathconf_names"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2246,7 +2246,7 @@ probe     = "attr"
 attr      = "pathsep"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2257,7 +2257,7 @@ probe     = "attr"
 attr      = "pipe"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2268,7 +2268,7 @@ probe     = "attr"
 attr      = "popen"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2279,7 +2279,7 @@ probe     = "attr"
 attr      = "posix_spawn"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2290,7 +2290,7 @@ probe     = "attr"
 attr      = "posix_spawnp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2301,7 +2301,7 @@ probe     = "attr"
 attr      = "pread"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2312,7 +2312,7 @@ probe     = "attr"
 attr      = "preadv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2323,7 +2323,7 @@ probe     = "attr"
 attr      = "putenv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2334,7 +2334,7 @@ probe     = "attr"
 attr      = "pwrite"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2345,7 +2345,7 @@ probe     = "attr"
 attr      = "pwritev"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2356,7 +2356,7 @@ probe     = "attr"
 attr      = "read"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2367,7 +2367,7 @@ probe     = "attr"
 attr      = "readlink"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2378,7 +2378,7 @@ probe     = "attr"
 attr      = "readv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2389,7 +2389,7 @@ probe     = "attr"
 attr      = "register_at_fork"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2400,7 +2400,7 @@ probe     = "attr"
 attr      = "remove"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2411,7 +2411,7 @@ probe     = "attr"
 attr      = "removedirs"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2422,7 +2422,7 @@ probe     = "attr"
 attr      = "rename"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2433,7 +2433,7 @@ probe     = "attr"
 attr      = "renames"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2444,7 +2444,7 @@ probe     = "attr"
 attr      = "replace"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2455,7 +2455,7 @@ probe     = "attr"
 attr      = "rmdir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2466,7 +2466,7 @@ probe     = "attr"
 attr      = "scandir"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2477,7 +2477,7 @@ probe     = "attr"
 attr      = "sched_get_priority_max"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2488,7 +2488,7 @@ probe     = "attr"
 attr      = "sched_get_priority_min"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2499,7 +2499,7 @@ probe     = "attr"
 attr      = "sched_yield"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2510,7 +2510,7 @@ probe     = "attr"
 attr      = "sendfile"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2521,7 +2521,7 @@ probe     = "attr"
 attr      = "sep"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2532,7 +2532,7 @@ probe     = "attr"
 attr      = "set_blocking"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2543,7 +2543,7 @@ probe     = "attr"
 attr      = "set_inheritable"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2554,7 +2554,7 @@ probe     = "attr"
 attr      = "setegid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2565,7 +2565,7 @@ probe     = "attr"
 attr      = "seteuid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2576,7 +2576,7 @@ probe     = "attr"
 attr      = "setgid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2587,7 +2587,7 @@ probe     = "attr"
 attr      = "setgroups"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2598,7 +2598,7 @@ probe     = "attr"
 attr      = "setpgid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2609,7 +2609,7 @@ probe     = "attr"
 attr      = "setpgrp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2620,7 +2620,7 @@ probe     = "attr"
 attr      = "setpriority"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2631,7 +2631,7 @@ probe     = "attr"
 attr      = "setregid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2642,7 +2642,7 @@ probe     = "attr"
 attr      = "setreuid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2653,7 +2653,7 @@ probe     = "attr"
 attr      = "setsid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2664,7 +2664,7 @@ probe     = "attr"
 attr      = "setuid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2675,7 +2675,7 @@ probe     = "attr"
 attr      = "spawnl"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2686,7 +2686,7 @@ probe     = "attr"
 attr      = "spawnle"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2697,7 +2697,7 @@ probe     = "attr"
 attr      = "spawnlp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2708,7 +2708,7 @@ probe     = "attr"
 attr      = "spawnlpe"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2719,7 +2719,7 @@ probe     = "attr"
 attr      = "spawnv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2730,7 +2730,7 @@ probe     = "attr"
 attr      = "spawnve"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2741,7 +2741,7 @@ probe     = "attr"
 attr      = "spawnvp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2752,7 +2752,7 @@ probe     = "attr"
 attr      = "spawnvpe"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2763,7 +2763,7 @@ probe     = "attr"
 attr      = "stat"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2774,7 +2774,7 @@ probe     = "attr"
 attr      = "stat_result"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2785,7 +2785,7 @@ probe     = "attr"
 attr      = "statvfs"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2796,7 +2796,7 @@ probe     = "attr"
 attr      = "statvfs_result"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2807,7 +2807,7 @@ probe     = "attr"
 attr      = "strerror"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2818,7 +2818,7 @@ probe     = "attr"
 attr      = "supports_bytes_environ"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2829,7 +2829,7 @@ probe     = "attr"
 attr      = "symlink"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2840,7 +2840,7 @@ probe     = "attr"
 attr      = "sync"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2851,7 +2851,7 @@ probe     = "attr"
 attr      = "sysconf"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2862,7 +2862,7 @@ probe     = "attr"
 attr      = "sysconf_names"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2873,7 +2873,7 @@ probe     = "attr"
 attr      = "system"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2884,7 +2884,7 @@ probe     = "attr"
 attr      = "tcgetpgrp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2895,7 +2895,7 @@ probe     = "attr"
 attr      = "tcsetpgrp"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2906,7 +2906,7 @@ probe     = "attr"
 attr      = "terminal_size"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2917,7 +2917,7 @@ probe     = "attr"
 attr      = "times"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2928,7 +2928,7 @@ probe     = "attr"
 attr      = "times_result"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2939,7 +2939,7 @@ probe     = "attr"
 attr      = "truncate"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2950,7 +2950,7 @@ probe     = "attr"
 attr      = "ttyname"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2961,7 +2961,7 @@ probe     = "attr"
 attr      = "umask"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2972,7 +2972,7 @@ probe     = "attr"
 attr      = "uname"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2983,7 +2983,7 @@ probe     = "attr"
 attr      = "uname_result"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2994,7 +2994,7 @@ probe     = "attr"
 attr      = "unlink"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3005,7 +3005,7 @@ probe     = "attr"
 attr      = "unsetenv"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3016,7 +3016,7 @@ probe     = "attr"
 attr      = "urandom"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3027,7 +3027,7 @@ probe     = "attr"
 attr      = "utime"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3038,7 +3038,7 @@ probe     = "attr"
 attr      = "wait"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3049,7 +3049,7 @@ probe     = "attr"
 attr      = "wait3"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3060,7 +3060,7 @@ probe     = "attr"
 attr      = "wait4"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3071,7 +3071,7 @@ probe     = "attr"
 attr      = "waitpid"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3082,7 +3082,7 @@ probe     = "attr"
 attr      = "waitstatus_to_exitcode"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3093,7 +3093,7 @@ probe     = "attr"
 attr      = "walk"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3104,7 +3104,7 @@ probe     = "attr"
 attr      = "write"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -3115,4 +3115,4 @@ probe     = "attr"
 attr      = "writev"
 expr      = "os"
 module    = "os"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

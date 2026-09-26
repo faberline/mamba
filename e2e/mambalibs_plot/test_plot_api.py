@@ -6,7 +6,7 @@ with ``python -m pytest -p no:cacheprovider`` inside the environment it built.
 does.
 
 Every assertion below maps onto a function, type, or literal that already
-exists in ``apps/mamba/mambalibs/plotkit/src/viz``. The work item freezes
+exists in ``mambalibs/plotkit/src/viz``. The work item freezes
 "existing core API only, no matplotlib-parity promise and no rendering backend
 beyond what ``viz`` already does", so nothing here asks for behaviour the Rust
 crate does not implement, and each expected value is derived from the Rust

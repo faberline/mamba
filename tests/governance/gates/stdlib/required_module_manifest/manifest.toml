@@ -119,7 +119,7 @@ case = "manifest_is_consumed_by_ecosystem_summary"
 must_be_consumable_by_ecosystem_summary = true
 must_emit_consumption_artifact = true
 consumption_artifact_format = "json"
-consumption_artifact_relative_path_within_repo = "apps/mamba/tests/governance/gates/stdlib/required_module_manifest/ecosystem_link.json"
+consumption_artifact_relative_path_within_repo = "tests/governance/gates/stdlib/required_module_manifest/ecosystem_link.json"
 consumption_artifact_required_fields = [
     "manifest_path",
     "schema_version",

@@ -229,7 +229,7 @@ fn r4_conformance_fixture_spawns_server_curls_and_asserts() {
     }
     assert_eq!(
         c["fixture_relative_path"].as_str(),
-        Some("apps/mamba/tests/cpython/3rd-libs/flask_hello_world")
+        Some("tests/cpython/3rd-libs/flask_hello_world")
     );
     assert_eq!(
         c["fixture_relative_path_field_name"].as_str(),

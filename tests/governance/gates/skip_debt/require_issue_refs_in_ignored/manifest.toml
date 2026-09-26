@@ -85,7 +85,7 @@ must_not_silently_pass_unannotated = true
 missing_inventory_failure_kind = "existing_violations_inventory_missing"
 missing_inventory_exit_code = 50
 inventory_must_be_committed_to_repo = true
-inventory_relative_path_within_repo = "apps/mamba/tests/governance/gates/skip_debt/require_issue_refs_in_ignored/existing_violations.json"
+inventory_relative_path_within_repo = "tests/governance/gates/skip_debt/require_issue_refs_in_ignored/existing_violations.json"
 
 # Acceptance: "Validation can run without compiling the project."
 [compile_free_contract]

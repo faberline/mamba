@@ -149,4 +149,4 @@ migrating before #2839.
 - Negative selector: no read/peek of `ACTIVE_MODULE_SYM_IDS` beyond push, pop,
   and cleanup.
 - Snapshot rule: #2977 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

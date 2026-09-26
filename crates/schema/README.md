@@ -34,10 +34,10 @@ constraints; nested structures; and accumulated validation errors.
 - Gate — efficiency: `cargo test -p schema` - zero-copy validation
   remains covered by crate tests until a dedicated meter cube exists
 - Gate: `cargo test -p schema`
-- Source: `apps/mamba/crates/schema/tests/validation_tests.rs`,
-  `apps/mamba/crates/schema/tests/error_paths_tests.rs`,
-  `apps/mamba/crates/schema/tests/field_validator_tests.rs`,
-  `apps/mamba/crates/schema/tests/model_validator_tests.rs`
+- Source: `crates/schema/tests/validation_tests.rs`,
+  `crates/schema/tests/error_paths_tests.rs`,
+  `crates/schema/tests/field_validator_tests.rs`,
+  `crates/schema/tests/model_validator_tests.rs`
 - Evidence: `cargo test -p schema`
 
 ### Mamba Dataclass Schema Surface
@@ -58,11 +58,11 @@ metadata without changing CPython stdlib `dataclasses` behavior.
   aliases, defaults, coercion, nested models, and validation detail helpers
 - Gate: `cargo test -p schema`
 - Gate: `cargo test -p schema-mamba`
-- Source: `apps/mamba/crates/schema/src/dataclass.rs`,
-  `apps/mamba/crates/schema-mamba/tests/test_binding.rs`
+- Source: `crates/schema/src/dataclass.rs`,
+  `crates/schema-mamba/tests/test_binding.rs`
 - Evidence: `cargo test -p schema`; `cargo test -p schema-mamba`;
-  apps/mamba/crates/schema/src/dataclass.rs;
-  apps/mamba/crates/schema-mamba/tests/test_binding.rs
+  crates/schema/src/dataclass.rs;
+  crates/schema-mamba/tests/test_binding.rs
 
 ### Serialization And Storage Features
 
@@ -80,8 +80,8 @@ BSON types, field/model serializers, and computed values.
 - Gate — efficiency: `cargo test -p schema` - sonic-backed JSON path
   remains declared until a dedicated meter cube exists
 - Gate: `cargo test -p schema`
-- Source: `apps/mamba/crates/schema/Cargo.toml`,
-  `apps/mamba/crates/schema/tests/serializer_tests.rs`
+- Source: `crates/schema/Cargo.toml`,
+  `crates/schema/tests/serializer_tests.rs`
 - Evidence: `cargo test -p schema`
 
 ## Overview

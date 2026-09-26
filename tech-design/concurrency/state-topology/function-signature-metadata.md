@@ -152,7 +152,7 @@ into thread state, or migrating all remaining `FUNC_*` registries together.
 - Inventory count: 3.
 - Inventory digest:
   `2bdfd494c16660497232ee6101c5c8902582eb26e52b296e55c76a0bf933a1ad`.
-- Exact source: `apps/mamba/src/runtime/closure.rs`.
+- Exact source: `src/runtime/closure.rs`.
 - Complete static inventory: 24 candidates, 3 admitted and 21 discarded.
 - Snapshot rule: #2974 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

@@ -72,7 +72,7 @@ runtime binder re-checks the same scalar contract at ingress (`validate_and_adap
 ## Verification
 
 ```bash
-# inner loop (seconds; paths relative to tests/cpython) — from apps/mamba/tests/harness/cpython/
+# inner loop (seconds; paths relative to tests/cpython) — from tests/harness/cpython/
 python3 tools/sweep.py _regression/core/args_kwargs_binding _regression/core/args_kwargs _regression/core/star_call \
   behavior/core/args_kwargs_binding behavior/core/funcattrs behavior/std-libs/extcall behavior/std-libs/call \
   behavior/std-libs/userfunctions behavior/std-libs/keywordonlyarg behavior/std-libs/positional_only_arg \

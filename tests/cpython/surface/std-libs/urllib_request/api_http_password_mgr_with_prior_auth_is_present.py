@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """urllib.request.HTTPPasswordMgrWithPriorAuth: api_http_password_mgr_with_prior_auth_is_present (surface)."""

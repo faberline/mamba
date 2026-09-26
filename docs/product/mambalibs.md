@@ -25,7 +25,7 @@ wheel's Python API is the contract the runtime carrier must match.
   A wheel built by `maturin build` is frozen by `mamba index build`, installed
   by `mamba add mambalibs-<kit>` followed by `mamba sync`, and the kit's
   Python cases pass under pytest on the `.venv` interpreter. Each kit is one
-  black-box `[[test]]` under `apps/mamba/e2e/`: `mambalibs_array_wheel`,
+  black-box `[[test]]` under `e2e/`: `mambalibs_array_wheel`,
   `mambalibs_sci_wheel`, and `mambalibs_plot_wheel`. The wheel's Python API is
   the contract the later `MambaModule` carrier must match.
 - Limits today: the wheels are served only from a `mamba index` frozen index;

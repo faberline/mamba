@@ -4,7 +4,7 @@
 // the Mamba compiler.
 //
 // Acceptance (tests/governance/gates/pkgmgr/run/manifest.toml, schema gate
-// pkgmgr_run_fixture_2684.rs; apps/mamba/e2e/pkgmgr_run_file_venv.rs):
+// pkgmgr_run_fixture_2684.rs; e2e/pkgmgr_run_file_venv.rs):
 //
 //   - Running before sync fails with "environment is not synced".
 //   - Running after sync proceeds: the venv's own `bin` (or `Scripts`)

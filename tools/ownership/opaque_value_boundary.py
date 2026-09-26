@@ -30,7 +30,7 @@ from rust_scan import ScanError as ScanFailure, mask_non_code
 
 SCRIPT = Path(__file__).resolve()
 MAMBA = SCRIPT.parents[2]
-REPO = MAMBA.parents[1]
+REPO = MAMBA
 RUNTIME = MAMBA / "src" / "runtime"
 PRODUCTION = MAMBA / "src"
 GATE = MAMBA / "tests" / "governance" / "gates" / "t1_opaque_value_boundary"
@@ -374,7 +374,7 @@ FROZEN_PHASE_C_EXPECTATIONS = MappingProxyType({
     "seed_digest_drift": ("rejected", ["phase-c:route-digest:route_central_array","phase-c:selector-digest:selector_central_array"]),
     "derived_lock_stale": ("rejected", ["phase-c:derived-observation-digest", "phase-c:derived-source-set"]),
     "derived_lock_extra": ("rejected", ["phase-c:derived-row-content", "phase-c:derived-row-count", "phase-c:derived-source-set"]),
-    "unseeded_central_hook": ("rejected", ["phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_central_hook/runtime/value.rs::unseeded_central:0", "phase-c:unseeded-candidate"]),
+    "unseeded_central_hook": ("rejected", ["phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_central_hook/runtime/value.rs::unseeded_central:0", "phase-c:unseeded-candidate"]),
     "unseeded_public_reifier": ("rejected", ["phase-c:unseeded-candidate"]),
     "unseeded_side_table_allocator": ("rejected", ["phase-c:unseeded-candidate"]),
     "irrelevant_id_storm_no_broad_census": ("accepted", []),
@@ -420,56 +420,56 @@ FROZEN_PHASE_C_EXPECTATIONS = MappingProxyType({
     "semantic_token_change_changes_digest": ("rejected", ["phase-c:route-digest:route_central_array","phase-c:selector-digest:selector_central_array"]),
     "cross_helper_from_int": ("rejected", ["phase-c:unseeded-candidate"]),
     "cross_helper_as_int": ("rejected", ["phase-c:unseeded-candidate"]),
-    "five_hop_exhaustion": ("rejected", ["phase-c:provenance:depth:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/five_hop_exhaustion/runtime/value.rs::renamed_hop_alloc", "phase-c:unseeded-candidate"]),
-    "escaped_path_edge": ("rejected", ["phase-c:module-graph-unresolved:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/escaped_path_edge/runtime/mod.rs::escaped"]),
+    "five_hop_exhaustion": ("rejected", ["phase-c:provenance:depth:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/five_hop_exhaustion/runtime/value.rs::renamed_hop_alloc", "phase-c:unseeded-candidate"]),
+    "escaped_path_edge": ("rejected", ["phase-c:module-graph-unresolved:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/escaped_path_edge/runtime/mod.rs::escaped"]),
     "cross_helper_unrelated_return_decoy": ("accepted", []),
     "seeded_cross_helper_from_int": ("accepted", []),
     "seeded_cross_helper_as_int": ("accepted", []),
     "foreign_receiver": ("accepted", []),
-    "ambiguous_call": ("rejected", ["phase-c:provenance:ambiguous-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/ambiguous_call/runtime/value.rs::ambig_api", "phase-c:unseeded-candidate"]),
-    "multi_origin_return": ("rejected", ["phase-c:provenance:multi-origin-return:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multi_origin_return/runtime/value.rs::multi_origin_api", "phase-c:unseeded-candidate"]),
-    "transform_argument": ("rejected", ["phase-c:provenance:transformed-argument:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transform_argument/runtime/value.rs::transform_api", "phase-c:unseeded-candidate"]),
-    "six_hop_exhaustion": ("rejected", ["phase-c:provenance:depth:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/six_hop_exhaustion/runtime/value.rs::six_hop_h5", "phase-c:unseeded-candidate"]),
+    "ambiguous_call": ("rejected", ["phase-c:provenance:ambiguous-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/ambiguous_call/runtime/value.rs::ambig_api", "phase-c:unseeded-candidate"]),
+    "multi_origin_return": ("rejected", ["phase-c:provenance:multi-origin-return:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multi_origin_return/runtime/value.rs::multi_origin_api", "phase-c:unseeded-candidate"]),
+    "transform_argument": ("rejected", ["phase-c:provenance:transformed-argument:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transform_argument/runtime/value.rs::transform_api", "phase-c:unseeded-candidate"]),
+    "six_hop_exhaustion": ("rejected", ["phase-c:provenance:depth:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/six_hop_exhaustion/runtime/value.rs::six_hop_h5", "phase-c:unseeded-candidate"]),
     "literal_child_path": ("accepted", []),
-    "unsupported_include": ("rejected", ["phase-c:module-graph-include-unsupported:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unsupported_include/runtime/mod.rs"]),
-    "associated_method_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/associated_method_conversion/runtime/value.rs::associated_convert@625"]),
-    "unknown_call": ("rejected", ["phase-c:provenance:unknown-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unknown_call/runtime/value.rs::unknown_call_api", "phase-c:unseeded-candidate"]),
-    "arithmetic_rhs": ("rejected", ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/arithmetic_rhs/runtime/value.rs::arithmetic_rhs_api", "phase-c:unseeded-candidate"]),
-    "method_rhs": ("rejected", ["phase-c:provenance:method-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/method_rhs/runtime/value.rs::method_rhs_api", "phase-c:unseeded-candidate"]),
-    "tuple_rhs": ("rejected", ["phase-c:provenance:unsupported-binding:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/tuple_rhs/runtime/value.rs::tuple_rhs_api", "phase-c:unseeded-candidate"]),
-    "transformed_return": ("rejected", ["phase-c:provenance:transformed-return:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transformed_return/runtime/value.rs::transformed_return_api", "phase-c:unseeded-candidate"]),
-    "recursive_path": ("rejected", ["phase-c:provenance:recursive:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/recursive_path/runtime/value.rs::recursive_path", "phase-c:unseeded-candidate"]),
+    "unsupported_include": ("rejected", ["phase-c:module-graph-include-unsupported:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unsupported_include/runtime/mod.rs"]),
+    "associated_method_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/associated_method_conversion/runtime/value.rs::associated_convert@625"]),
+    "unknown_call": ("rejected", ["phase-c:provenance:unknown-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unknown_call/runtime/value.rs::unknown_call_api", "phase-c:unseeded-candidate"]),
+    "arithmetic_rhs": ("rejected", ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/arithmetic_rhs/runtime/value.rs::arithmetic_rhs_api", "phase-c:unseeded-candidate"]),
+    "method_rhs": ("rejected", ["phase-c:provenance:method-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/method_rhs/runtime/value.rs::method_rhs_api", "phase-c:unseeded-candidate"]),
+    "tuple_rhs": ("rejected", ["phase-c:provenance:unsupported-binding:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/tuple_rhs/runtime/value.rs::tuple_rhs_api", "phase-c:unseeded-candidate"]),
+    "transformed_return": ("rejected", ["phase-c:provenance:transformed-return:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transformed_return/runtime/value.rs::transformed_return_api", "phase-c:unseeded-candidate"]),
+    "recursive_path": ("rejected", ["phase-c:provenance:recursive:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/recursive_path/runtime/value.rs::recursive_path", "phase-c:unseeded-candidate"]),
     "static_local_shadow": ("accepted", []),
     "receiver_shadow": ("accepted", []),
     "payload_not_key": ("accepted", []),
-    "duplicate_conversion": ("rejected", ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/duplicate_conversion/runtime/value.rs::duplicate_conversion_api", "phase-c:unseeded-candidate"]),
-    "cast_rhs": ("rejected", ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/cast_rhs/runtime/value.rs::cast_rhs_api", "phase-c:unseeded-candidate"]),
-    "wrapped_call_binary": ("rejected", ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_binary/runtime/value.rs::wrapped_call_binary_api", "phase-c:unseeded-candidate"]),
-    "wrapped_call_cast": ("rejected", ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_cast/runtime/value.rs::wrapped_call_cast_api", "phase-c:unseeded-candidate"]),
-    "wrapped_call_method": ("rejected", ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_method/runtime/value.rs::wrapped_call_method_api", "phase-c:unseeded-candidate"]),
-    "wrapped_call_tuple": ("rejected", ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_tuple/runtime/value.rs::wrapped_call_tuple_api", "phase-c:unseeded-candidate"]),
-    "wrapped_call_index": ("rejected", ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_index/runtime/value.rs::wrapped_call_index_api", "phase-c:unseeded-candidate"]),
+    "duplicate_conversion": ("rejected", ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/duplicate_conversion/runtime/value.rs::duplicate_conversion_api", "phase-c:unseeded-candidate"]),
+    "cast_rhs": ("rejected", ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/cast_rhs/runtime/value.rs::cast_rhs_api", "phase-c:unseeded-candidate"]),
+    "wrapped_call_binary": ("rejected", ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_binary/runtime/value.rs::wrapped_call_binary_api", "phase-c:unseeded-candidate"]),
+    "wrapped_call_cast": ("rejected", ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_cast/runtime/value.rs::wrapped_call_cast_api", "phase-c:unseeded-candidate"]),
+    "wrapped_call_method": ("rejected", ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_method/runtime/value.rs::wrapped_call_method_api", "phase-c:unseeded-candidate"]),
+    "wrapped_call_tuple": ("rejected", ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_tuple/runtime/value.rs::wrapped_call_tuple_api", "phase-c:unseeded-candidate"]),
+    "wrapped_call_index": ("rejected", ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_index/runtime/value.rs::wrapped_call_index_api", "phase-c:unseeded-candidate"]),
     "wrapped_call_exact": ("accepted", []),
-    "inline_module_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:inline-module:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/inline_module_conversion/runtime/value.rs::inline_conversion@594"]),
-    "nested_function_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:nested-function:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/nested_function_conversion/runtime/value.rs::nested_conversion@620"]),
-    "trait_default_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:trait-default:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/trait_default_conversion/runtime/value.rs::trait_conversion@599"]),
-    "impl_method_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_method_conversion/runtime/value.rs::impl_conversion@612"]),
+    "inline_module_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:inline-module:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/inline_module_conversion/runtime/value.rs::inline_conversion@594"]),
+    "nested_function_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:nested-function:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/nested_function_conversion/runtime/value.rs::nested_conversion@620"]),
+    "trait_default_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:trait-default:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/trait_default_conversion/runtime/value.rs::trait_conversion@599"]),
+    "impl_method_conversion": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_method_conversion/runtime/value.rs::impl_conversion@612"]),
     "cfg_test_conversion_control": ("accepted", []),
     "receiver_same_name_shadow": ("rejected", ["phase-c:unseeded-candidate"]),
     "foreign_receiver_strict": ("rejected", ["phase-c:unseeded-candidate"]),
     "unbound_key": ("rejected", ["phase-c:unseeded-candidate"]),
     "transformed_key": ("rejected", ["phase-c:unseeded-candidate"]),
-    "multiple_terminal": ("rejected", ["phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_api:2", "phase-c:provenance:multiple-terminal:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_put", "phase-c:unseeded-candidate"]),
+    "multiple_terminal": ("rejected", ["phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_api:2", "phase-c:provenance:multiple-terminal:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_put", "phase-c:unseeded-candidate"]),
     "four_hop_control": ("rejected", ["phase-c:unseeded-candidate"]),
     "semantic_two_path": ("rejected", ["phase-c:semantic-conversion-cardinality:expr-semantic_two_path:2", "phase-c:semantic-edge:expr-semantic_two_path", "phase-c:semantic-path-cardinality:expr-semantic_two_path:2", "phase-c:semantic-terminal-cardinality:expr-semantic_two_path:2"]),
     "semantic_zero_terminal": ("rejected", ["phase-c:semantic-edge:expr-semantic_zero_terminal", "phase-c:semantic-terminal-cardinality:expr-semantic_zero_terminal:0"]),
     "semantic_two_terminal": ("rejected", ["phase-c:semantic-edge:expr-semantic_two_terminal", "phase-c:semantic-terminal-cardinality:expr-semantic_two_terminal:2"]),
     "semantic_later_path_digest": ("rejected", ["phase-c:semantic-edge-digest:expr-v13-stale-later-path"]),
     "unrelated_deep_static_control": ("accepted", []),
-    "unseeded_multi_path_zero_terminal": ("rejected", ["phase-c:perimeter-conversion-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2", "phase-c:perimeter-path-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2", "phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:0", "phase-c:semantic-conversion-cardinality:expr-semantic_two_path:2", "phase-c:semantic-edge:expr-semantic_two_path", "phase-c:semantic-path-cardinality:expr-semantic_two_path:2", "phase-c:semantic-terminal-cardinality:expr-semantic_two_path:2", "phase-c:unseeded-candidate"]),
-    "forward_carried_cycle": ("rejected", ["phase-c:provenance:recursive:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/forward_carried_cycle/runtime/value.rs::cycle_helper", "phase-c:unseeded-candidate"]),
+    "unseeded_multi_path_zero_terminal": ("rejected", ["phase-c:perimeter-conversion-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2", "phase-c:perimeter-path-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2", "phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:0", "phase-c:semantic-conversion-cardinality:expr-semantic_two_path:2", "phase-c:semantic-edge:expr-semantic_two_path", "phase-c:semantic-path-cardinality:expr-semantic_two_path:2", "phase-c:semantic-terminal-cardinality:expr-semantic_two_path:2", "phase-c:unseeded-candidate"]),
+    "forward_carried_cycle": ("rejected", ["phase-c:provenance:recursive:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/forward_carried_cycle/runtime/value.rs::cycle_helper", "phase-c:unseeded-candidate"]),
     "cfg_test_inline_second_function": ("accepted", []),
-    "impl_trait_second_method": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::impl_conversion@612", "phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_impl_conversion@758", "phase-c:unsupported-non-top-level-conversion:trait-default:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_trait_conversion@921"]),
+    "impl_trait_second_method": ("rejected", ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::impl_conversion@612", "phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_impl_conversion@758", "phase-c:unsupported-non-top-level-conversion:trait-default:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_trait_conversion@921"]),
     "complete_edge_matrix": ("accepted", []),
     "edge_v6_format_only_equal": ("accepted", []),
     "edge_v6_binding_key_rebind_different": ("accepted", []),
@@ -704,30 +704,30 @@ RAW_START = re.compile(r'(?:br|rb|r)(?P<hash>#{0,255})"')
 # function/category/name heuristic.  Its observations remain unmatched until
 # a bounded public-escape proof is added.
 CENTRAL_FAMILY_MODULES = frozenset({
-    "apps/mamba/src/runtime/stdlib/array_mod.rs",
-    "apps/mamba/src/runtime/stdlib/queue_mod.rs",
-    "apps/mamba/src/runtime/stdlib/hashlib_mod.rs",
-    "apps/mamba/src/runtime/stdlib/hmac_mod.rs",
-    "apps/mamba/src/runtime/stdlib/decimal_mod.rs",
-    "apps/mamba/src/runtime/stdlib/graphlib_mod.rs",
-    "apps/mamba/src/runtime/stdlib/json_mod.rs",
-    "apps/mamba/src/runtime/stdlib/uuid_mod.rs",
-    "apps/mamba/src/runtime/stdlib/fractions_mod.rs",
-    "apps/mamba/src/runtime/stdlib/random_mod.rs",
-    "apps/mamba/src/runtime/stdlib/ipaddress_mod.rs",
+    "src/runtime/stdlib/array_mod.rs",
+    "src/runtime/stdlib/queue_mod.rs",
+    "src/runtime/stdlib/hashlib_mod.rs",
+    "src/runtime/stdlib/hmac_mod.rs",
+    "src/runtime/stdlib/decimal_mod.rs",
+    "src/runtime/stdlib/graphlib_mod.rs",
+    "src/runtime/stdlib/json_mod.rs",
+    "src/runtime/stdlib/uuid_mod.rs",
+    "src/runtime/stdlib/fractions_mod.rs",
+    "src/runtime/stdlib/random_mod.rs",
+    "src/runtime/stdlib/ipaddress_mod.rs",
 })
 DIRECT_CORE_MODULES = frozenset({
-    "apps/mamba/src/runtime/iter.rs",
-    "apps/mamba/src/runtime/builtins/range_slice.rs",
-    "apps/mamba/src/runtime/closure.rs",
-    "apps/mamba/src/runtime/generator.rs",
-    "apps/mamba/src/runtime/class/cells.rs",
-    "apps/mamba/src/runtime/async_rt.rs",
-    "apps/mamba/src/runtime/async_task.rs",
-    "apps/mamba/src/runtime/file_io.rs",
+    "src/runtime/iter.rs",
+    "src/runtime/builtins/range_slice.rs",
+    "src/runtime/closure.rs",
+    "src/runtime/generator.rs",
+    "src/runtime/class/cells.rs",
+    "src/runtime/async_rt.rs",
+    "src/runtime/async_task.rs",
+    "src/runtime/file_io.rs",
 })
 DIRECT_FAMILY_MODULES = frozenset(DIRECT_CORE_MODULES - {
-    "apps/mamba/src/runtime/builtins/range_slice.rs",
+    "src/runtime/builtins/range_slice.rs",
 })
 OBSERVATION_KEYS = (
     "site_id", "path", "symbol", "normalized_digest", "category", "kind", "parent_route",
@@ -903,7 +903,7 @@ def validate_family_manifest(manifest: dict[str, object], *, strict_live: bool =
         path_ids.setdefault(str(family.get("path", "")), set()).add(str(family.get("id", "")))
     for family_path, ids in path_ids.items():
         if len(ids) > 1 and not (
-            family_path == "apps/mamba/src/runtime/iter.rs"
+            family_path == "src/runtime/iter.rs"
             and ids == {"direct_iter_store", "direct_range"}
         ):
             failures.append(f"family manifest has duplicate paths without shared-store proof: {family_path}")
@@ -6862,7 +6862,7 @@ def run_mutations() -> list[str]:
     current = scan(FIXTURES / "stale_moved")
     fake = {"schema": SCHEMA, "typed_only": False, "row_count": 1,
             "inventory_digest": "deadbeef", "sites": [{
-                "site_id": "stale-row", "path": "apps/mamba/src/runtime/moved.rs",
+                "site_id": "stale-row", "path": "src/runtime/moved.rs",
                 "symbol": "gone", "normalized_digest": "old", "category": "producer",
                 "disposition": OPAQUE_LEGACY, "kind": "producer",
                 "parent_route": "opaque-value-boundary/producer", "reason": "stale"}]}
@@ -6914,7 +6914,7 @@ def run_mutations() -> list[str]:
     expect_manifest_failure("DIRECT_CENTRAL", direct_violation, "family selector topology mismatch")
     public_reifier = {key: (list(value) if isinstance(value, list) else value) for key, value in manifest.items()}
     public_reifier["public_selectors"] = [{
-        "public_escape_id": "fixture_public_escape", "path": "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs",
+        "public_escape_id": "fixture_public_escape", "path": "tests/governance/gates/t1_opaque_value_boundary/fixtures/authority/valid.rs",
         "symbol": "barrier_id", "kind": "private_id_reification", "category": "private_metadata",
         "normalized_digest": "mutation", "disposition": ORDINARY_CONTROL,
     }]

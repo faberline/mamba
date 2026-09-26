@@ -29,7 +29,7 @@ It is a bounded decision artifact, not a prototype C-extension loader.
 
 ### README posture
 
-`apps/mamba/README.md` still states that C-extension packages cannot load
+`README.md` still states that C-extension packages cannot load
 and frames the supported treatments as `Hack`, `Bridge`, or `Native kit`.
 That remains directionally correct for package compatibility: there is still no
 CPython extension-module loader and no general-purpose emulation of the Python
@@ -38,7 +38,7 @@ C-API import boundary.
 ### Existing `ctypes` is not a C-extension ABI
 
 The runtime now has a real `ctypes` substrate in
-`apps/mamba/src/runtime/stdlib/ctypes_mod.rs`, including `CDLL`,
+`src/runtime/stdlib/ctypes_mod.rs`, including `CDLL`,
 `dlsym`-style lookup, and limited direct-call marshalling. That matters, but it
 does not solve the native-extension problem:
 
@@ -52,7 +52,7 @@ viable C-extension ABI.
 
 ### Ecosystem manifest blockers already point at loader gaps
 
-`apps/mamba/ecosystem_fixture_manifest.toml` already records native
+`ecosystem_fixture_manifest.toml` already records native
 extension blockers for:
 
 - `numpy` -> `#2526 mamba native-extension loader not ready for numpy C core`
@@ -64,7 +64,7 @@ gaps rather than ordinary stdlib parity gaps.
 
 ### Package-manager metadata already recognizes PyO3-shaped packages
 
-`apps/mamba/src/pkgmanage/pkgmgr/maturin_compat.rs` parses
+`src/pkgmanage/pkgmgr/maturin_compat.rs` parses
 `[tool.maturin]` metadata and classifies `bindings = "pyo3"` projects as
 Python extensions. This is useful for detection, diagnostics, and future
 package-manager routing, but it is not a backend: metadata awareness does not
@@ -72,7 +72,7 @@ make the runtime able to import the resulting extension module.
 
 ### Existing ecosystem accounting already leans toward native kits or bridge
 
-`apps/mamba/tests/harness/cpython/tools/third_party_readiness.py` already
+`tests/harness/cpython/tools/third_party_readiness.py` already
 classifies mandatory C-extension packages toward `mambalibs.*` replacements or
 `native_extension_bridge`, including:
 
@@ -80,7 +80,7 @@ classifies mandatory C-extension packages toward `mambalibs.*` replacements or
 - `psycopg` -> `mambalibs.pg`, `native_extension_bridge`
 - `orjson` / `grpcio` / `cryptography` -> `native_extension_bridge`
 
-`apps/mamba/tests/harness/cpython/tools/mambalibs_readiness.py` also maps
+`tests/harness/cpython/tools/mambalibs_readiness.py` also maps
 native-kit replacements such as `mambalibs.pg` for `psycopg` and
 `mambalibs.array` / `mambalibs.sci` for `numpy`.
 

@@ -113,7 +113,7 @@ or migrating before #2839.
 - Inventory count: 2.
 - Inventory digest:
   `591bf8bcd00eb318f072e8f61344223cdff3e2b91e254bbc62c6dd71b8bc1dcc`.
-- Exact source: `apps/mamba/src/runtime/closure.rs`.
+- Exact source: `src/runtime/closure.rs`.
 - Complete static inventory: 24 candidates, 2 admitted and 22 discarded.
 - Snapshot rule: #2975 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

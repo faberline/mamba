@@ -36,12 +36,12 @@ field registration, and bound model method dispatch.
   `create_model`, `add_field`, `add_fields`, bound method getters
 - Gate — behavior: `cargo test -p schema-mamba`
 - Gate: `cargo test -p schema-mamba`
-- Source: `apps/mamba/crates/schema-mamba/src/lib.rs`,
-  `apps/mamba/crates/schema-mamba/src/types.rs`,
-  `apps/mamba/crates/schema-mamba/tests/test_binding.rs`
+- Source: `crates/schema-mamba/src/lib.rs`,
+  `crates/schema-mamba/src/types.rs`,
+  `crates/schema-mamba/tests/test_binding.rs`
 - Evidence: `cargo test -p schema-mamba`;
-  apps/mamba/crates/schema-mamba/src/lib.rs; apps/mamba/crates/schema-mamba/src/types.rs;
-  apps/mamba/crates/schema-mamba/tests/test_binding.rs
+  crates/schema-mamba/src/lib.rs; crates/schema-mamba/src/types.rs;
+  crates/schema-mamba/tests/test_binding.rs
 
 ### Mamba Model Validation Dump And Schema Binding
 
@@ -57,10 +57,10 @@ models, and framework-facing validation detail helpers.
   `field_validator`
 - Gate — behavior: `cargo test -p schema-mamba`
 - Gate: `cargo test -p schema-mamba`
-- Source: `apps/mamba/crates/schema-mamba/src/methods.rs`,
-  `apps/mamba/crates/schema-mamba/src/types.rs`,
-  `apps/mamba/crates/schema-mamba/tests/test_binding.rs`
+- Source: `crates/schema-mamba/src/methods.rs`,
+  `crates/schema-mamba/src/types.rs`,
+  `crates/schema-mamba/tests/test_binding.rs`
 - Evidence: `cargo test -p schema-mamba`;
-  apps/mamba/crates/schema-mamba/src/methods.rs;
-  apps/mamba/crates/schema-mamba/src/types.rs;
-  apps/mamba/crates/schema-mamba/tests/test_binding.rs
+  crates/schema-mamba/src/methods.rs;
+  crates/schema-mamba/src/types.rs;
+  crates/schema-mamba/tests/test_binding.rs

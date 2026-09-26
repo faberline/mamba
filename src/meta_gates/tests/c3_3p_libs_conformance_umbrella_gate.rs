@@ -155,15 +155,15 @@ fn each_child_program_is_wired_to_its_own_fixture() {
     );
     assert_eq!(
         c["pytest_child_gate_relative_path"].as_str(),
-        Some("apps/mamba/tests/governance/gates/third_party/c3_pytest_runs_unmodified_gate/manifest.toml")
+        Some("tests/governance/gates/third_party/c3_pytest_runs_unmodified_gate/manifest.toml")
     );
     assert_eq!(
         c["flask_child_gate_relative_path"].as_str(),
-        Some("apps/mamba/tests/governance/gates/third_party/c3_flask_runs_unmodified_gate/manifest.toml")
+        Some("tests/governance/gates/third_party/c3_flask_runs_unmodified_gate/manifest.toml")
     );
     assert_eq!(
         c["requests_child_gate_relative_path"].as_str(),
-        Some("apps/mamba/tests/governance/gates/third_party/c3_requests_runs_unmodified_gate/manifest.toml")
+        Some("tests/governance/gates/third_party/c3_requests_runs_unmodified_gate/manifest.toml")
     );
     assert_eq!(c["pytest_child_issue"].as_integer(), Some(1234));
     assert_eq!(c["flask_child_issue"].as_integer(), Some(1257));

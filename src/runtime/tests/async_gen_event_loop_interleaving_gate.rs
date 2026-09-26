@@ -295,7 +295,7 @@ fn r5_concurrent_fixture_pins_interleave_behavior() {
     }
     assert_eq!(
         c["concurrent_fixture_relative_path"].as_str(),
-        Some("apps/mamba/tests/cpython/real_world/core/async_gen_concurrent")
+        Some("tests/cpython/real_world/core/async_gen_concurrent")
     );
     assert_eq!(
         c["concurrent_fixture_relative_path_field_name"].as_str(),

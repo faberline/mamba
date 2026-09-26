@@ -1,4 +1,4 @@
-// SPEC-MANAGED: apps/mamba/external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency
+// SPEC-MANAGED: external-contracts/efficiency/mamba-t1-to-thread-gather-efficiency.md#mamba-t1-to-thread-gather-efficiency
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec mamba-t1-to-thread-gather-efficiency

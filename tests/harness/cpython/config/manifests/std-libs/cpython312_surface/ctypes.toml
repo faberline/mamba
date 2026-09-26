@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "ARRAY"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "ArgumentError"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "Array"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "BigEndianStructure"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "BigEndianUnion"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "CDLL"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "CFUNCTYPE"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "DEFAULT_MODE"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "LibraryLoader"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "LittleEndianStructure"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "LittleEndianUnion"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "POINTER"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "PYFUNCTYPE"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "PyDLL"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "RTLD_GLOBAL"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "RTLD_LOCAL"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "SIZEOF_TIME_T"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "SetPointerType"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "Structure"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "Union"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "addressof"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "alignment"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "byref"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "c_bool"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "c_buffer"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "c_byte"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "c_char"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "c_char_p"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "c_double"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "c_float"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "c_int"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "c_int16"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "c_int32"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "c_int64"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "c_int8"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "c_long"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "c_longdouble"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "c_longlong"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "c_short"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "c_size_t"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "c_ssize_t"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "c_time_t"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "c_ubyte"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "c_uint"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "c_uint16"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "c_uint32"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "c_uint64"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "c_uint8"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "c_ulong"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "c_ulonglong"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "c_ushort"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "c_void_p"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "c_voidp"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "c_wchar"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "c_wchar_p"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "cast"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "cdll"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "create_string_buffer"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "create_unicode_buffer"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "get_errno"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "memmove"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "memset"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "pointer"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "py_object"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "pydll"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "pythonapi"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "resize"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "set_errno"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "sizeof"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "string_at"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,4 +783,4 @@ probe     = "attr"
 attr      = "wstring_at"
 expr      = "ctypes"
 module    = "ctypes"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

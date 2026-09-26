@@ -229,7 +229,7 @@ def validate_and_parse_source_sets(
 
         disp_pairs.append(pair)
 
-        if sid == "apps/mamba/tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt" and reviewer == "#2022":
+        if sid == "tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt" and reviewer == "#2022":
             multicore_2022_found = True
 
     if disp_pairs != sorted(disp_pairs) or len(disp_pairs) != len(set(disp_pairs)):
@@ -281,18 +281,18 @@ def generate_manifest_toml(
 ) -> str:
     lines = [
         "schema_version = 1",
-        'inventory_path = "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl"',
+        'inventory_path = "tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl"',
         f"inventory_sha256 = {to_toml_string(inventory_sha256)}",
         "row_count = 8",
         'required_dimensions = ["behavior", "stability", "efficiency"]',
         'required_channels = ["compile", "behavior", "concurrency", "performance"]',
         'source_sets = ["ordinary_parity_corpus", "tier1_ec_cases", "tier1_gate_denominators"]',
         "migration_inputs = [",
-        '    "apps/mamba/tests/harness/cpython/config/type_divergences.txt",',
-        '    "apps/mamba/tests/harness/cpython/config/behavior_gaps.txt",',
-        '    "apps/mamba/tests/harness/cpython/config/manifests/",',
-        '    "apps/mamba/tests/governance/gates/",',
-        '    "apps/mamba/external-contracts/"',
+        '    "tests/harness/cpython/config/type_divergences.txt",',
+        '    "tests/harness/cpython/config/behavior_gaps.txt",',
+        '    "tests/harness/cpython/config/manifests/",',
+        '    "tests/governance/gates/",',
+        '    "external-contracts/"',
         "]",
         'cpython312_executable = "/Users/chrischeng/.pyenv/versions/3.12.11/bin/python3.12"',
         'cpython312_version = "Python 3.12"',
@@ -331,21 +331,21 @@ def generate_evidence_json(
 ) -> str:
     obj = {
         "schema_version": 1,
-        "inventory_path": "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
+        "inventory_path": "tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
         "inventory_sha256": inventory_sha256,
-        "manifest_path": "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
+        "manifest_path": "tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
         "manifest_sha256": manifest_sha256,
-        "evidence_path": "apps/mamba/external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
+        "evidence_path": "external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
         "row_count": 8,
         "required_dimensions": ["behavior", "stability", "efficiency"],
         "required_channels": ["compile", "behavior", "concurrency", "performance"],
         "source_sets": ["ordinary_parity_corpus", "tier1_ec_cases", "tier1_gate_denominators"],
         "migration_inputs": [
-            "apps/mamba/tests/harness/cpython/config/type_divergences.txt",
-            "apps/mamba/tests/harness/cpython/config/behavior_gaps.txt",
-            "apps/mamba/tests/harness/cpython/config/manifests/",
-            "apps/mamba/tests/governance/gates/",
-            "apps/mamba/external-contracts/",
+            "tests/harness/cpython/config/type_divergences.txt",
+            "tests/harness/cpython/config/behavior_gaps.txt",
+            "tests/harness/cpython/config/manifests/",
+            "tests/governance/gates/",
+            "external-contracts/",
         ],
         "cpython312_executable": "/Users/chrischeng/.pyenv/versions/3.12.11/bin/python3.12",
         "cpython312_version": "Python 3.12",

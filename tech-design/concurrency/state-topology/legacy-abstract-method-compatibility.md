@@ -72,7 +72,7 @@ Exact selector:
 ```bash
 rg -n \
   'static ABSTRACT_METHODS|ABSTRACT_METHODS\.with' \
-  apps/mamba/src/runtime/class/mod.rs
+  src/runtime/class/mod.rs
 ```
 
 Exact stdout SHA-256:
@@ -96,9 +96,9 @@ The partition is `4 + 1 = 5`.
 
 This topology refines:
 
-- `apps/mamba/tech-design/concurrency/execution-context.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-definition-registry.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-conformance-domain.md`.
+- `tech-design/concurrency/execution-context.md`;
+- `tech-design/concurrency/state-topology/class-definition-registry.md`;
+- `tech-design/concurrency/state-topology/class-conformance-domain.md`.
 
 It preserves:
 
@@ -390,16 +390,16 @@ No class/member/publication guard spans Python callback or Python release.
 
 Immediate TLS removal and adapters:
 
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/symbols.rs`
-- `apps/mamba/src/runtime/stdlib/abc_mod.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/symbols.rs`
+- `src/runtime/stdlib/abc_mod.rs`
 
 Versioned class/context dependencies:
 
-- planned new `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/mod.rs`
-- `apps/mamba/src/lower/hir_to_mir.rs`
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
+- planned new `src/runtime/execution_context.rs`
+- `src/runtime/mod.rs`
+- `src/lower/hir_to_mir.rs`
+- `src/runtime/builtins/type_objects.rs`
 
 The first three paths contain the legacy owner/symbol/stdlib surfaces. The
 remaining paths provide the accepted context and active class publication

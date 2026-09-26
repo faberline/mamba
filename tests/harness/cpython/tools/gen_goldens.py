@@ -45,7 +45,7 @@ from wall_gen_core import parse_header  # shared PEP-723 [tool.mamba] header par
 
 TOOLS_DIR = Path(__file__).resolve().parent
 FIXTURES_DIR = TOOLS_DIR.parents[2] / "cpython"
-REPO_ROOT = TOOLS_DIR.parents[5]
+REPO_ROOT = TOOLS_DIR.parents[3]
 NONDET_LIST = TOOLS_DIR / "config" / "nondeterministic_goldens.txt"
 ORACLE_SKIP_LIST = TOOLS_DIR / "config" / "oracle_skip_goldens.txt"
 

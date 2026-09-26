@@ -12,7 +12,7 @@ top of the list and either finish it or supersede it with a clearer plan.
 ## MVP test profile — `docs/MVP_TEST_PROFILE.md` (#2535)
 
 Workers claiming "mamba MVP green" must walk the seven gates in
-`apps/mamba/docs/MVP_TEST_PROFILE.md`. The doc is the canonical
+`docs/MVP_TEST_PROFILE.md`. The doc is the canonical
 source for default-vs-opt-in, runtime budgets, and per-failure-mode
 meaning across smoke, CPython Lib/test, ecosystem, perf, mambalibs,
 package-manager, and debt. When a new harness lands (e.g. #2531
@@ -22,7 +22,7 @@ the same commit so workers do not run an outdated profile.
 ## MVP CPython Lib/test contract — folder convention (#3729, supersedes #2547)
 
 Per-seed outcomes are pinned by **parent directory name** under
-`apps/mamba/tests/cpython/lib_test_seeds/`:
+`tests/cpython/lib_test_seeds/`:
 
 - `pass/` → must AssertionPass (MVP-pass material)
 - `spec/` → must Fail today; encodes full CPython contract mamba is growing into
@@ -48,7 +48,7 @@ needed.
 Every mamba MVP test session must start by clearing gate 0. Run:
 
 ```
-python3 apps/mamba/scripts/gate0_list_tests.py --release
+python3 scripts/gate0_list_tests.py --release
 ```
 
 The wrapper compiles the mamba test profile and enumerates discovered

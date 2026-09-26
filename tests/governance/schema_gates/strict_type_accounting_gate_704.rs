@@ -2105,7 +2105,7 @@ fn declared_type_divergences_have_machine_owner_refs() {
             "type divergence entry lacks preceding '# owner: #<issue>' line: {line}"
         );
         assert!(
-            line.starts_with("apps/mamba/tests/cpython/"),
+            line.starts_with("tests/cpython/"),
             "type divergence must use repo-relative fixture path: {line}"
         );
         current_owner = false;

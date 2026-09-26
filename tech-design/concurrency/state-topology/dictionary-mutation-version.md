@@ -226,16 +226,16 @@ coordination. Two threads mutating two dictionaries can progress concurrently.
 
 Exact implementation paths:
 
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
   - add `MbDictState`;
   - change `ObjData::Dict` payload and dictionary constructors;
   - forward lock operations and initialize live version zero.
-- `apps/mamba/src/runtime/dict_ops.rs`
+- `src/runtime/dict_ops.rs`
   - replace the side-table helpers with object-state reads/advances;
   - migrate all ten producer edges;
   - move fast-update publication inside its write critical section;
   - remove `DICT_VERSIONS`, raw identity, `OnceLock`, and version-map imports.
-- `apps/mamba/src/runtime/iter.rs`
+- `src/runtime/iter.rs`
   - capture coherent length/version baselines from `MbDictState`;
   - fail closed on exhausted versions;
   - preserve retained-source retirement.

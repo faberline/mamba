@@ -357,4 +357,4 @@ acceptance unless the corresponding semantic oracle passes.
 - Worker start leaves the sealed native catalog byte-for-byte unchanged.
 - Missing/mismatched context or thread-state bindings fail closed.
 - Snapshot rule: #2988 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

@@ -9,7 +9,7 @@ observation_digest = "75212805f3f8e77bfab6e646cec637b6c85a7b9adc86bbef0c68771715
 
 [[observations]]
 site_id = "020cee04bd5c1846f36786ace48eeb0b614eea2332fcbb9b677ee95b9b66759e"
-path = "apps/mamba/src/runtime/file_io.rs"
+path = "src/runtime/file_io.rs"
 symbol = "mb_open_with_closefd"
 normalized_digest = "3338a1f6103b192547fabe2e373289435d738a37c14a28f5fd6d7d7f26ac52bc"
 category = "unseeded_candidate"
@@ -19,7 +19,7 @@ source_digest = "0055f41c8092d9ee260207bee118253906726f4afa1d608b14393f516de26a9
 
 [[observations]]
 site_id = "0cc87b30a026561c3dbeddd4ab76c92f597d80a324c5e1b102ed637ea572fc92"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_reversed"
 normalized_digest = "6b0b21b4302a2a509a9ca8fd7c0ad39792556301e0dfb176d7889dde7d0ccb67"
 category = "unseeded_candidate"
@@ -29,7 +29,7 @@ source_digest = "749539fa721d9866ece8119df5e447c5fe48a1883d1c03b79c960b20eaa3619
 
 [[observations]]
 site_id = "0d39e581e331df9259b762d6eb1bd8eba08a89c4fec4a577b556e8c4215008c6"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_map_n"
 normalized_digest = "e7d2e61fdfc6fdf35c0ee3a22014a604dcefc1124afc8213906938bb7b47a226"
 category = "unseeded_candidate"
@@ -39,7 +39,7 @@ source_digest = "194162227d89684cb33840699b03a2354ba4b173ff880813e96f4d840562c04
 
 [[observations]]
 site_id = "16c9f59a5bba8690e8b2f07328877c9b1f2fa08476f073b26fb30f0dd039fc59"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_next"
 normalized_digest = "77b689876a10fc9e3e16f24d7ed00826f02fed9ad0b790f309d7fbcf9fa7e446"
 category = "unseeded_candidate"
@@ -49,7 +49,7 @@ source_digest = "b06773a851677ef9a3fc4d6c0de9c5451a063e31bcc316d1be22879e68b83ac
 
 [[observations]]
 site_id = "191dab9d2cb8cb6b4ee5817f2f1cdf59ab0fb6190149aa5ba845c179726b5355"
-path = "apps/mamba/src/runtime/async_task.rs"
+path = "src/runtime/async_task.rs"
 symbol = "mb_run_until_complete"
 normalized_digest = "62a268ffed261a0c2b95e9114dda798a80cf1d4456dec3b6d861fa0003dc08d1"
 category = "unseeded_candidate"
@@ -59,7 +59,7 @@ source_digest = "efa78f997f79cfdce16ee2ed99e4f1926df8afd804486be2dcd2b4b47769d93
 
 [[observations]]
 site_id = "1b0a5e8114be12179be06a42a106e7e2ef97c930deb6801190a5dc8adf6e6c81"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_filter_iter"
 normalized_digest = "1860f93ec75db021833e51d3d6991003f31a06eb9afbe3544ca137ba4c6b8a7f"
 category = "unseeded_candidate"
@@ -69,7 +69,7 @@ source_digest = "c12c8cbcb06995f007ca0cea3888c4e12ced1618a2bfdb4d84a2bb3cea12ffe
 
 [[observations]]
 site_id = "1d7df7635c54cafd98522abd0fe60b099c459c3940f90dd4f18bd2c4a00a0610"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_enumerate"
 normalized_digest = "a7fc4f7032ea6034249db7b93c5601bda4f058a0f667951d33c865ee587b351f"
 category = "unseeded_candidate"
@@ -79,7 +79,7 @@ source_digest = "abd48f5afbeaedb02cb15cac5b0b4dc4dc1361fd7b7167771b638f918fff251
 
 [[observations]]
 site_id = "2bf7f4e9256357d5a5a260614a47bde49b206b4b3a01f02a7f50062d033b0a76"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "advance_chain_from_iterable_if_applicable"
 normalized_digest = "28b440b03356f72ae961f6ab03fce65fecb9c6d73d3fcd9c97f5b9df9c6ccfd6"
 category = "unseeded_candidate"
@@ -89,7 +89,7 @@ source_digest = "685c7b3db60250b6fc1893b2fe85344e45f0587984924bab21873097de97ee6
 
 [[observations]]
 site_id = "30af596ff16cc369b392f373784873a9d20d07f74e759f5698f270c0ed95a0fe"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_repeat_iter"
 normalized_digest = "6d3376409fd71f7895075497157b38e3ae33aae9dcd3214c55d3d21ea4d7f599"
 category = "unseeded_candidate"
@@ -99,7 +99,7 @@ source_digest = "1f460964d8fb998b5c5b52e1acd1fce20556fd44a94b1792a81d8559ea6d513
 
 [[observations]]
 site_id = "3aaf362ead98dcba88758f7a80fc82794791424e2765ac3c0eb90c7337c5a6d1"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_zip"
 normalized_digest = "17d45137b01c041baaa7f80cccbed2f82bccc7ef26e96e17f3fd94f06ce50849"
 category = "unseeded_candidate"
@@ -109,7 +109,7 @@ source_digest = "1f1714f62dd50cdc5c8d788de4cccc4e9f16b634dd520ba15420ebe24c87ac3
 
 [[observations]]
 site_id = "51820fdcf8d45f1c84e674a230bb27cbcbea8b92de9ccb549731a559614a3930"
-path = "apps/mamba/src/runtime/builtins/eval_exec.rs"
+path = "src/runtime/builtins/eval_exec.rs"
 symbol = "make_exec_function_body_value"
 normalized_digest = "907d76ce8c7c32cf2f41bb4b755868e246bee41ac3bb4400e53589a9dfc9ae04"
 category = "unseeded_candidate"
@@ -119,7 +119,7 @@ source_digest = "9d1f9219832c3c668b42c313418dcf9c7b9a2003385f53a31c360b1bcff68b0
 
 [[observations]]
 site_id = "536750b652807e9009c2fe6cf06649e59c3e7dac346769ed8d96c79672621aa9"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_count_iter"
 normalized_digest = "9260dda0601cfd999ad646f6d76a13a2a09bdd10c04172b1aa53a0b76bf4e6d5"
 category = "unseeded_candidate"
@@ -129,7 +129,7 @@ source_digest = "4827e26af064341ce678c9458c33c8972d180a9b889ac742c298337ff39df66
 
 [[observations]]
 site_id = "536ec9cd9e423dfc8f72bd004d7e31160e3f2fa3653c3baf53a3a89b7c2e3f4e"
-path = "apps/mamba/src/runtime/tokio_exec.rs"
+path = "src/runtime/tokio_exec.rs"
 symbol = "mb_tokio_spawn"
 normalized_digest = "176e398c435aac54fc107bd4c5d6964dd864f3c177a463f3f47086999b56caee"
 category = "unseeded_candidate"
@@ -139,7 +139,7 @@ source_digest = "f9caa959e313c701f634c2de05dad4b3bd404e120bcf84f5aa8cc24e7873935
 
 [[observations]]
 site_id = "599f9a375eeb3fe98487827620cc3b33f7e91de6b4d14297ae22a2981376bf49"
-path = "apps/mamba/src/runtime/async_rt.rs"
+path = "src/runtime/async_rt.rs"
 symbol = "mb_coroutine_new"
 normalized_digest = "d3d91a720e87c20f6c87d8742c2a6b49dd985eab464a3232152c8ed7835eae6b"
 category = "unseeded_candidate"
@@ -149,7 +149,7 @@ source_digest = "efbe597c6c26b0d063ade3f2d950da9ce81ec6c25bae7e41e5ab17afb4d3d2b
 
 [[observations]]
 site_id = "64f1ed7563ae1770ea66819e58d69cd991501caa9a667004046fc68bc992d996"
-path = "apps/mamba/src/runtime/async_rt.rs"
+path = "src/runtime/async_rt.rs"
 symbol = "mb_coroutine_new_with_body_impl"
 normalized_digest = "1ba9fb8b5dd34ca2669345362efce2b12d0b759cce4b97b01ef17183ed5a201a"
 category = "unseeded_candidate"
@@ -159,7 +159,7 @@ source_digest = "e20e0274ea2f190382b7c9c208afdb0530cee90da133ce65800b65c2d1fe357
 
 [[observations]]
 site_id = "6b618c103d345077cbdcb88ac755259fb5e04f1f546f30e39b73e4a16033a3ae"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_next_raise"
 normalized_digest = "e03b3979a8f4498c26068bb006d88786202276164b6ada3de442c671f9ca6ea5"
 category = "unseeded_candidate"
@@ -169,7 +169,7 @@ source_digest = "9d484be27568573bc94c70e863ee57377a6addc875e0235b3bc7f549de97dbc
 
 [[observations]]
 site_id = "7176d7fbe009c6704131e0e8eed042ce6a9e5579c12f1731bb56d98922ae403e"
-path = "apps/mamba/src/runtime/tokio_exec.rs"
+path = "src/runtime/tokio_exec.rs"
 symbol = "mb_tokio_gather"
 normalized_digest = "86b7d379c257d1ff035153131e065956dcff0607395e96768314c43c153892f8"
 category = "unseeded_candidate"
@@ -179,7 +179,7 @@ source_digest = "3fc28e3e6002b690d24e5b87add1a39da311cbc64d3c0c1452e3549425770d7
 
 [[observations]]
 site_id = "7342f9785fd64c09b47205f2c1eeff99a155875d40c0ec56f366ea746b36c9eb"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_groupby_iter"
 normalized_digest = "cd1f595673a0cee9d15b83739a4460b9641a4c2e7886b413da63938cf8e8b80e"
 category = "unseeded_candidate"
@@ -189,7 +189,7 @@ source_digest = "7887570af437d6315d0658fefa2fd49d072ecd1d193cb947f3102c2572941eb
 
 [[observations]]
 site_id = "763437e949a3e414057be027ce656ce0b88dbfc8722c898ed51443f6d8125dfd"
-path = "apps/mamba/src/runtime/async_task.rs"
+path = "src/runtime/async_task.rs"
 symbol = "mb_create_task"
 normalized_digest = "a8411128a3677823fdb76727f24606202d6c09264a15b8e10b1aa5ce28cf1590"
 category = "unseeded_candidate"
@@ -199,7 +199,7 @@ source_digest = "2d5c685878602e1d378b7ae672c52da2deb3966e25d2f9af130696512964399
 
 [[observations]]
 site_id = "9050af1776ab434bdd2b06436b2d5148b716a73584840538bf230d599b22ecfe"
-path = "apps/mamba/src/runtime/generator.rs"
+path = "src/runtime/generator.rs"
 symbol = "mb_generator_create"
 normalized_digest = "e9876aea7dee761651863b7c2020ff0f3d823f276bb01d199355997d2979fad1"
 category = "unseeded_candidate"
@@ -209,7 +209,7 @@ source_digest = "9934968becf5c74f2dc0ece019e3653e7f765420615348d004be8c74e71047d
 
 [[observations]]
 site_id = "91ff51f2f72616270ccfdc7565090177145e646d609b798702d583ad15cf21ee"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_map_iter"
 normalized_digest = "5d189f10647b5135f4675a0e42504af1a1c76ecb60a079f6361ebeb4c5dd698f"
 category = "unseeded_candidate"
@@ -219,7 +219,7 @@ source_digest = "4fc92d5c04cbc333acf58ec2228c8acbfc10914134bf331908ed2b81f78c5a4
 
 [[observations]]
 site_id = "95283689139c59a8b9745fb115e89ba5e60e35c1136a46bc6e69427eef883270"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_cycle_iter"
 normalized_digest = "36b7684d35bdc7225d9eaf189293017286bd90cf0811e82e3f10e3ee5bfa73d1"
 category = "unseeded_candidate"
@@ -229,7 +229,7 @@ source_digest = "2b4f62e5e97547bf1b4ce920256d2e20c4daeb377e169809678d96da5e7e140
 
 [[observations]]
 site_id = "a74d291285919abbbe9ab4587f1d30298f0063c1f0ee1829b3c1b1f1d7997223"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_iter"
 normalized_digest = "50ca2d3f9a71ac2d45a87d3034fb769df51569e2e0aa6854ca45d95cbf075fdf"
 category = "unseeded_candidate"
@@ -239,7 +239,7 @@ source_digest = "31aa0019a9ac74e1cc3310caa1bc09d5c49ca4dddd309b0c5383f7fcc7aa2fb
 
 [[observations]]
 site_id = "aaea2e208501ab4d9333e19616135a0497de80512c6a1a5f1ea8038d9fd44192"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_chain_from_iterable_iter"
 normalized_digest = "c126ba1b73c258c00beba716e73df504fda91aa59628c0ce22c2edb8c00f6665"
 category = "unseeded_candidate"
@@ -249,7 +249,7 @@ source_digest = "17eb8fd5edd33d4da6c9edeb1ef0dc882f26b261dee1fd5e1e3438292d8ddef
 
 [[observations]]
 site_id = "barrier-field-consumer"
-path = "apps/mamba/src/runtime/stdlib/threading_mod.rs"
+path = "src/runtime/stdlib/threading_mod.rs"
 symbol = "get_or_create_barrier"
 normalized_digest = "6486ce2cdde2441e662f3c06734729668a740363185a9af7fc5ee8c8f71fc1c6"
 category = "consumer"
@@ -262,7 +262,7 @@ expression_digest = "465a11df65929424a7e3338fa96633f9a2a7cc96c4a740cdebb9be33247
 
 [[observations]]
 site_id = "barrier-field-producer"
-path = "apps/mamba/src/runtime/stdlib/threading_mod.rs"
+path = "src/runtime/stdlib/threading_mod.rs"
 symbol = "mb_threading_barrier"
 normalized_digest = "4a29adfe2577301d49672cdaa76b3f1c5ed67d39912e3af8d02182133cbc2499"
 category = "producer"
@@ -275,7 +275,7 @@ expression_digest = "8f8f63c883a0546daf16a2a1da91f7e0a9839754d59e282cbcc04c55770
 
 [[observations]]
 site_id = "barrier-field-reifier"
-path = "apps/mamba/src/runtime/stdlib/threading_mod.rs"
+path = "src/runtime/stdlib/threading_mod.rs"
 symbol = "get_or_create_barrier"
 normalized_digest = "6486ce2cdde2441e662f3c06734729668a740363185a9af7fc5ee8c8f71fc1c6"
 category = "private_metadata"
@@ -288,7 +288,7 @@ expression_digest = "8f8f63c883a0546daf16a2a1da91f7e0a9839754d59e282cbcc04c55770
 
 [[observations]]
 site_id = "c9394f5dd5f30a8c08c2186ee9477a8deffd08c86e384c10e533cce4f45fae83"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "clone_range_iterator"
 normalized_digest = "f5e6000d42e0bfb8123c35075a63ec67bf8005b96def101e20988bfd6bf6641a"
 category = "unseeded_candidate"
@@ -298,7 +298,7 @@ source_digest = "dc9b541d1e366d8ac8816030c4f0692e0762247fffa27e26a3bbffff0dca40c
 
 [[observations]]
 site_id = "cd730843c71f9ac10ba78d461499f0bd75410f146cc8112247097554f840ecda"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "advance_groupby_if_applicable"
 normalized_digest = "9b84a4be42183daeba075d1c65f62d3f89cef664cd3a77ea23732a1b03ce42fa"
 category = "unseeded_candidate"
@@ -308,7 +308,7 @@ source_digest = "d9b5b0dbac377ee1066c99d6558289c109d5ef18e012d1835de5282357d8dcd
 
 [[observations]]
 site_id = "central-array-register"
-path = "apps/mamba/src/runtime/stdlib/array_mod.rs"
+path = "src/runtime/stdlib/array_mod.rs"
 symbol = "register"
 normalized_digest = "fe69be259bbe8acc62c528cd418172fa57e30da6c9c37c0da67231b4d8f01446"
 category = "registry"
@@ -321,7 +321,7 @@ expression_digest = "795a0868ba311f6ddd1f732c4882b0c3dafc430db7f61337a77cf164e62
 
 [[observations]]
 site_id = "d5aa94a26145615c9ef7e1a8e5d773b314aede6b23a70f6bf1b08a22fbfaef4c"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_zip_strict"
 normalized_digest = "1d1183411866bfb2b4d31bf797fa9c604ab1b15e7da7240307241c39abfbfe55"
 category = "unseeded_candidate"
@@ -331,7 +331,7 @@ source_digest = "92d9696787976e17eec2503da0945ead3e357fe352e3045712ea2e28fc8cbec
 
 [[observations]]
 site_id = "direct-iter-allocate"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "alloc_iter_id"
 normalized_digest = "a379cb1795bcbee41bf56ac63eada47996593c7a8eb2d5fef7fe318d7d9893c7"
 category = "producer"
@@ -344,7 +344,7 @@ expression_digest = "8831f5a65722c93d66a8756ec2db2020a579a99e435bd46b1ae155b88c3
 
 [[observations]]
 site_id = "direct-iter-lookup"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "is_iter_handle"
 normalized_digest = "124418023d29eb0c803ffcf6a40401c3fedf88fe2cb3dcd78143c6ee5cec9c71"
 category = "consumer"
@@ -357,7 +357,7 @@ expression_digest = "2d78f6578917d45956b285f9773476a68f7601576750aa8a8fe04f13b10
 
 [[observations]]
 site_id = "direct-range-allocate"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_range_iter"
 normalized_digest = "6937f968e21b3598b4a3a03abfc75be46da8616cecef8ae1be2801d0300bdde9"
 category = "producer"
@@ -370,7 +370,7 @@ expression_digest = "8831f5a65722c93d66a8756ec2db2020a579a99e435bd46b1ae155b88c3
 
 [[observations]]
 site_id = "direct-range-lookup"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "range_state"
 normalized_digest = "ed8cdee2fc1f7c1397bd83bda16f6a828b2b46d9eb44cb6dc81de7d03db2fbb8"
 category = "consumer"
@@ -383,7 +383,7 @@ expression_digest = "2d78f6578917d45956b285f9773476a68f7601576750aa8a8fe04f13b10
 
 [[observations]]
 site_id = "direct-range-one-arg-boundary"
-path = "apps/mamba/src/runtime/builtins/range_slice.rs"
+path = "src/runtime/builtins/range_slice.rs"
 symbol = "mb_range"
 normalized_digest = "dc4106b45c51e31af8300ad6feb4e988c4e3bd8fc5059b0540fd5f81c0b97e5f"
 category = "producer"
@@ -396,7 +396,7 @@ expression_digest = "1ceb8a2b38380f6a0b4447c785aa21782fe8563d5f0c7f411266aa107ff
 
 [[observations]]
 site_id = "direct-range-public-boundary"
-path = "apps/mamba/src/runtime/builtins/range_slice.rs"
+path = "src/runtime/builtins/range_slice.rs"
 symbol = "mb_range_3"
 normalized_digest = "e8246c96dc7011a1159db8b33da27e5d9864441660732289a1e290bcd9e5afe5"
 category = "producer"
@@ -409,7 +409,7 @@ expression_digest = "1ceb8a2b38380f6a0b4447c785aa21782fe8563d5f0c7f411266aa107ff
 
 [[observations]]
 site_id = "direct-range-two-arg-boundary"
-path = "apps/mamba/src/runtime/builtins/range_slice.rs"
+path = "src/runtime/builtins/range_slice.rs"
 symbol = "mb_range_2"
 normalized_digest = "2cdbbcff5e5543d00eb8fc203ccfb09e768af7076b27f6ebc852b5a4dcfb6f3f"
 category = "producer"
@@ -422,7 +422,7 @@ expression_digest = "1ceb8a2b38380f6a0b4447c785aa21782fe8563d5f0c7f411266aa107ff
 
 [[observations]]
 site_id = "ed4038e47b3009bf507a08f8af4a4e972181301b199fdbdf703bce6338434b2f"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_iter_sentinel"
 normalized_digest = "d9b64ff99a3d1def0041b9bbdaf7485a69d96e7dd6a6a01d17504d51045a9b4b"
 category = "unseeded_candidate"
@@ -432,7 +432,7 @@ source_digest = "9dcb9c147bc5d93a589f6b9dd34412e666dd849474947bb65352bd8c27c4970
 
 [[observations]]
 site_id = "f8141eff7c106e9953857d1d533654f4efc2cfa040644f69640202a7ad5afa51"
-path = "apps/mamba/src/runtime/iter.rs"
+path = "src/runtime/iter.rs"
 symbol = "mb_zip_n"
 normalized_digest = "aebd9c83f2bed2d8b880cec4544a7438fa58b949b45a15060bcdb3bb1149378e"
 category = "unseeded_candidate"
@@ -442,7 +442,7 @@ source_digest = "2282e6aeadb473cb450f63ecaba9f93e3296418beba982ef89562197a7e34f7
 
 [[observations]]
 site_id = "random-central-register"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "register"
 normalized_digest = "2b6bc8bc9c196599fc460f19a46135d66c256ad2827001a11a1ad6274564d60e"
 category = "registry"
@@ -455,7 +455,7 @@ expression_digest = "795a0868ba311f6ddd1f732c4882b0c3dafc430db7f61337a77cf164e62
 
 [[observations]]
 site_id = "random-handle-for-instance"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "handle_for_instance"
 normalized_digest = "078c36bed08c4537578efc784c91e2c68ab7c31c08a1205df772e9ca015bcceb"
 category = "producer"
@@ -468,7 +468,7 @@ expression_digest = "f1721d8b024d9d95cc8f75a9e8b3e7a7a2700c81d3f7a608fe73df3ce1f
 
 [[observations]]
 site_id = "random-native-allocator"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "make_handle"
 normalized_digest = "2ed0da789f2d81b7e34ff0cc20938de30b6e8d76989c3f900717186eb0be31e9"
 category = "private_metadata"
@@ -481,7 +481,7 @@ expression_digest = "4306ee530e8794cb9a8b58673984facddbc853c015ddd72d16abfdd0b84
 
 [[observations]]
 site_id = "random-public-as-int"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "mb_random_method_getstate"
 normalized_digest = "b35bfb16eb4092143053b16c7097a34b9536b1a5bb6b43f7e4d4c67117a4f1c5"
 category = "consumer"
@@ -494,7 +494,7 @@ expression_digest = "b4aa3d4e44ffb68100e07801396049d8d503d70e2bd62f6908e11a04ea4
 
 [[observations]]
 site_id = "random-public-constructor"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "dispatch_Random"
 normalized_digest = "0bcc49a077c48e704587c179fe6abea2cc6fe554e18f8f70dc538c29d32806a1"
 category = "producer"
@@ -507,7 +507,7 @@ expression_digest = "f1721d8b024d9d95cc8f75a9e8b3e7a7a2700c81d3f7a608fe73df3ce1f
 
 [[observations]]
 site_id = "random-public-from-int"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "pickle_restore"
 normalized_digest = "200f739671cc6a934c8add33de84c3471591655d601d64ea239b0450c75654db"
 category = "producer"
@@ -520,7 +520,7 @@ expression_digest = "f1721d8b024d9d95cc8f75a9e8b3e7a7a2700c81d3f7a608fe73df3ce1f
 
 [[observations]]
 site_id = "random-public-system-constructor"
-path = "apps/mamba/src/runtime/stdlib/random_mod.rs"
+path = "src/runtime/stdlib/random_mod.rs"
 symbol = "dispatch_SystemRandom"
 normalized_digest = "d0b4e5e9dd1c53fb4c7a92d9bb107bdcbc529f8289528cffb4d650f7de502d9e"
 category = "producer"

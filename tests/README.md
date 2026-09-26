@@ -2,7 +2,7 @@
 
 Canonical rules live in `../../../CONTRIBUTING.md` under "Mamba test
 architecture: DDD, boundary-first". This file is only a local index for the
-`apps/mamba/tests/` tree.
+`tests/` tree.
 
 ## Domain Map
 
@@ -17,7 +17,7 @@ tests/
 ```
 
 Cargo does not auto-discover Rust test files under subdirectories, so
-`apps/mamba/Cargo.toml` lists the domain entrypoints explicitly. Keep new
+`Cargo.toml` lists the domain entrypoints explicitly. Keep new
 Rust integration tests under a domain directory and either register a domain
 entrypoint in `Cargo.toml` or add a module to the existing umbrella runner.
 

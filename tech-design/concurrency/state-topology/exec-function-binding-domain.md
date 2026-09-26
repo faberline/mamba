@@ -57,8 +57,8 @@ allocated; it does not retain the raw Python values stored in the map.
 
 The two production state identities are:
 
-- `apps/mamba/src/runtime/builtins/eval_exec.rs::EXEC_FUNCTIONS`
-- `apps/mamba/src/runtime/builtins/eval_exec.rs::NEXT_EXEC_FUNCTION_ID`
+- `src/runtime/builtins/eval_exec.rs::EXEC_FUNCTIONS`
+- `src/runtime/builtins/eval_exec.rs::NEXT_EXEC_FUNCTION_ID`
 
 There are zero test-only state identities. The sorted newline-terminated
 identity SHA-256 is
@@ -326,15 +326,15 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - add `EvalFunctionDomain`, typed IDs and handles, operation leases, and
     ordered retirement.
-- `apps/mamba/src/runtime/builtins/eval_exec.rs`
+- `src/runtime/builtins/eval_exec.rs`
   - remove both process statics, register transactionally, resolve typed
     handles, clone Arc leases, and fail closed on lookup errors.
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
   - provide owned value/frame wrappers with balanced transfer and drain.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - route cleanup through quiescent context retirement instead of ambient
     process state.
 

@@ -136,7 +136,7 @@ phase = "scanner_codec"
 categories = []
 diagnostics = true
 diagnostic_patterns = ["opaque boundary candidate requires classification at line 1", "opaque boundary candidate requires classification at line 2"]
-expected_diagnostics = ["apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/unknown_candidate/unknown.rs: opaque boundary candidate requires classification at line 1", "apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/unknown_candidate/unknown.rs: opaque boundary candidate requires classification at line 2"]
+expected_diagnostics = ["tests/governance/gates/t1_opaque_value_boundary/fixtures/unknown_candidate/unknown.rs: opaque boundary candidate requires classification at line 1", "tests/governance/gates/t1_opaque_value_boundary/fixtures/unknown_candidate/unknown.rs: opaque boundary candidate requires classification at line 2"]
 
 [[cases]]
 name = "unparseable"
@@ -144,7 +144,7 @@ phase = "scanner_codec"
 categories = ["producer"]
 diagnostics = true
 diagnostic_patterns = ["unbalanced braces in source"]
-expected_diagnostics = ["apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/unparseable/unparseable.rs: unbalanced braces in source"]
+expected_diagnostics = ["tests/governance/gates/t1_opaque_value_boundary/fixtures/unparseable/unparseable.rs: unbalanced braces in source"]
 
 [[cases]]
 name = "test_only_masking"
@@ -479,7 +479,7 @@ name = "unseeded_central_hook"
 fixture = "fixtures/phase_c_cases/unseeded_central_hook"
 phase = "e2e"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_central_hook/runtime/value.rs::unseeded_central:0", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_central_hook/runtime/value.rs::unseeded_central:0", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "unseeded_public_reifier"
@@ -801,14 +801,14 @@ name = "five_hop_exhaustion"
 fixture = "fixtures/phase_c_cases/five_hop_exhaustion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:depth:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/five_hop_exhaustion/runtime/value.rs::renamed_hop_alloc", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:depth:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/five_hop_exhaustion/runtime/value.rs::renamed_hop_alloc", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "escaped_path_edge"
 fixture = "fixtures/phase_c_cases/escaped_path_edge"
 phase = "schema"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:module-graph-unresolved:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/escaped_path_edge/runtime/mod.rs::escaped"]
+expected_diagnostics = ["phase-c:module-graph-unresolved:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/escaped_path_edge/runtime/mod.rs::escaped"]
 
 [[phase_c_cases]]
 name = "cross_helper_unrelated_return_decoy"
@@ -843,28 +843,28 @@ name = "ambiguous_call"
 fixture = "fixtures/phase_c_cases/ambiguous_call"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:ambiguous-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/ambiguous_call/runtime/value.rs::ambig_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:ambiguous-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/ambiguous_call/runtime/value.rs::ambig_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "multi_origin_return"
 fixture = "fixtures/phase_c_cases/multi_origin_return"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:multi-origin-return:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multi_origin_return/runtime/value.rs::multi_origin_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:multi-origin-return:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multi_origin_return/runtime/value.rs::multi_origin_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "transform_argument"
 fixture = "fixtures/phase_c_cases/transform_argument"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:transformed-argument:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transform_argument/runtime/value.rs::transform_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:transformed-argument:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transform_argument/runtime/value.rs::transform_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "six_hop_exhaustion"
 fixture = "fixtures/phase_c_cases/six_hop_exhaustion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:depth:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/six_hop_exhaustion/runtime/value.rs::six_hop_h5", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:depth:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/six_hop_exhaustion/runtime/value.rs::six_hop_h5", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "literal_child_path"
@@ -878,56 +878,56 @@ name = "unsupported_include"
 fixture = "fixtures/phase_c_cases/unsupported_include"
 phase = "schema"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:module-graph-include-unsupported:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unsupported_include/runtime/mod.rs"]
+expected_diagnostics = ["phase-c:module-graph-include-unsupported:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unsupported_include/runtime/mod.rs"]
 
 [[phase_c_cases]]
 name = "associated_method_conversion"
 fixture = "fixtures/phase_c_cases/associated_method_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/associated_method_conversion/runtime/value.rs::associated_convert@625"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/associated_method_conversion/runtime/value.rs::associated_convert@625"]
 
 [[phase_c_cases]]
 name = "unknown_call"
 fixture = "fixtures/phase_c_cases/unknown_call"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:unknown-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unknown_call/runtime/value.rs::unknown_call_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:unknown-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unknown_call/runtime/value.rs::unknown_call_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "arithmetic_rhs"
 fixture = "fixtures/phase_c_cases/arithmetic_rhs"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/arithmetic_rhs/runtime/value.rs::arithmetic_rhs_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/arithmetic_rhs/runtime/value.rs::arithmetic_rhs_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "method_rhs"
 fixture = "fixtures/phase_c_cases/method_rhs"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:method-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/method_rhs/runtime/value.rs::method_rhs_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:method-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/method_rhs/runtime/value.rs::method_rhs_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "tuple_rhs"
 fixture = "fixtures/phase_c_cases/tuple_rhs"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:unsupported-binding:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/tuple_rhs/runtime/value.rs::tuple_rhs_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:unsupported-binding:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/tuple_rhs/runtime/value.rs::tuple_rhs_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "transformed_return"
 fixture = "fixtures/phase_c_cases/transformed_return"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:transformed-return:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transformed_return/runtime/value.rs::transformed_return_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:transformed-return:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/transformed_return/runtime/value.rs::transformed_return_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "recursive_path"
 fixture = "fixtures/phase_c_cases/recursive_path"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:recursive:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/recursive_path/runtime/value.rs::recursive_path", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:recursive:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/recursive_path/runtime/value.rs::recursive_path", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "static_local_shadow"
@@ -955,49 +955,49 @@ name = "duplicate_conversion"
 fixture = "fixtures/phase_c_cases/duplicate_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/duplicate_conversion/runtime/value.rs::duplicate_conversion_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/duplicate_conversion/runtime/value.rs::duplicate_conversion_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "cast_rhs"
 fixture = "fixtures/phase_c_cases/cast_rhs"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:unsupported-rhs:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/cast_rhs/runtime/value.rs::cast_rhs_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:unsupported-rhs:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/cast_rhs/runtime/value.rs::cast_rhs_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_binary"
 fixture = "fixtures/phase_c_cases/wrapped_call_binary"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_binary/runtime/value.rs::wrapped_call_binary_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_binary/runtime/value.rs::wrapped_call_binary_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_cast"
 fixture = "fixtures/phase_c_cases/wrapped_call_cast"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_cast/runtime/value.rs::wrapped_call_cast_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_cast/runtime/value.rs::wrapped_call_cast_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_method"
 fixture = "fixtures/phase_c_cases/wrapped_call_method"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_method/runtime/value.rs::wrapped_call_method_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_method/runtime/value.rs::wrapped_call_method_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_tuple"
 fixture = "fixtures/phase_c_cases/wrapped_call_tuple"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_tuple/runtime/value.rs::wrapped_call_tuple_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_tuple/runtime/value.rs::wrapped_call_tuple_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_index"
 fixture = "fixtures/phase_c_cases/wrapped_call_index"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:wrapped-call:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_index/runtime/value.rs::wrapped_call_index_api", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:wrapped-call:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/wrapped_call_index/runtime/value.rs::wrapped_call_index_api", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "wrapped_call_exact"
@@ -1011,28 +1011,28 @@ name = "inline_module_conversion"
 fixture = "fixtures/phase_c_cases/inline_module_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:inline-module:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/inline_module_conversion/runtime/value.rs::inline_conversion@594"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:inline-module:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/inline_module_conversion/runtime/value.rs::inline_conversion@594"]
 
 [[phase_c_cases]]
 name = "nested_function_conversion"
 fixture = "fixtures/phase_c_cases/nested_function_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:nested-function:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/nested_function_conversion/runtime/value.rs::nested_conversion@620"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:nested-function:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/nested_function_conversion/runtime/value.rs::nested_conversion@620"]
 
 [[phase_c_cases]]
 name = "trait_default_conversion"
 fixture = "fixtures/phase_c_cases/trait_default_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:trait-default:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/trait_default_conversion/runtime/value.rs::trait_conversion@599"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:trait-default:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/trait_default_conversion/runtime/value.rs::trait_conversion@599"]
 
 [[phase_c_cases]]
 name = "impl_method_conversion"
 fixture = "fixtures/phase_c_cases/impl_method_conversion"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_method_conversion/runtime/value.rs::impl_conversion@612"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_method_conversion/runtime/value.rs::impl_conversion@612"]
 
 [[phase_c_cases]]
 name = "cfg_test_conversion_control"
@@ -1074,7 +1074,7 @@ name = "multiple_terminal"
 fixture = "fixtures/phase_c_cases/multiple_terminal"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_api:2", "phase-c:provenance:multiple-terminal:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_put", "phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_api:2", "phase-c:provenance:multiple-terminal:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/multiple_terminal/runtime/value.rs::multi_put", "phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "four_hop_control"
@@ -1123,7 +1123,7 @@ name = "unseeded_multi_path_zero_terminal"
 fixture = "fixtures/phase_c_cases/unseeded_multi_path_zero_terminal"
 phase = "e2e"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:perimeter-conversion-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2","phase-c:perimeter-path-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2","phase-c:perimeter-terminal-cardinality:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:0","phase-c:semantic-conversion-cardinality:expr-semantic_two_path:2","phase-c:semantic-edge:expr-semantic_two_path","phase-c:semantic-path-cardinality:expr-semantic_two_path:2","phase-c:semantic-terminal-cardinality:expr-semantic_two_path:2","phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:perimeter-conversion-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2","phase-c:perimeter-path-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:2","phase-c:perimeter-terminal-cardinality:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/unseeded_multi_path_zero_terminal/runtime/value.rs::unseeded_multi_path_zero_terminal:0","phase-c:semantic-conversion-cardinality:expr-semantic_two_path:2","phase-c:semantic-edge:expr-semantic_two_path","phase-c:semantic-path-cardinality:expr-semantic_two_path:2","phase-c:semantic-terminal-cardinality:expr-semantic_two_path:2","phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "complete_edge_matrix"
@@ -1137,7 +1137,7 @@ name = "forward_carried_cycle"
 fixture = "fixtures/phase_c_cases/forward_carried_cycle"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:provenance:recursive:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/forward_carried_cycle/runtime/value.rs::cycle_helper","phase-c:unseeded-candidate"]
+expected_diagnostics = ["phase-c:provenance:recursive:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/forward_carried_cycle/runtime/value.rs::cycle_helper","phase-c:unseeded-candidate"]
 
 [[phase_c_cases]]
 name = "cfg_test_inline_second_function"
@@ -1151,7 +1151,7 @@ name = "impl_trait_second_method"
 fixture = "fixtures/phase_c_cases/impl_trait_second_method"
 phase = "logic"
 expected_result = "rejected"
-expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::impl_conversion@612","phase-c:unsupported-non-top-level-conversion:impl-method:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_impl_conversion@758","phase-c:unsupported-non-top-level-conversion:trait-default:apps/mamba/tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_trait_conversion@921"]
+expected_diagnostics = ["phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::impl_conversion@612","phase-c:unsupported-non-top-level-conversion:impl-method:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_impl_conversion@758","phase-c:unsupported-non-top-level-conversion:trait-default:tests/governance/gates/t1_opaque_value_boundary/fixtures/phase_c_cases/impl_trait_second_method/runtime/value.rs::second_trait_conversion@921"]
 
 [[phase_c_cases]]
 name = "edge_v6_format_only_equal"

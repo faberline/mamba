@@ -74,7 +74,7 @@ not by mutating an immutable record in place.
 
 The one admitted production state identity is:
 
-`apps/mamba/src/runtime/class/mod.rs::CLASS_REGISTRY`
+`src/runtime/class/mod.rs::CLASS_REGISTRY`
 
 There are zero test-only identities. Test-module occurrences refer to the same
 production registry. The sorted newline-terminated identity SHA-256 is:
@@ -472,16 +472,16 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - supply `ClassDomain`, typed keys, operation leases, publication
     coordinator, and quiescent retirement.
-- `apps/mamba/src/runtime/class/mod.rs`
+- `src/runtime/class/mod.rs`
   - replace `CLASS_REGISTRY`, snapshot/replace, raw member aliases,
     in-place lifecycle mutation, and best-effort cleanup.
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
   - supply explicit owned member and returned-alias wrappers with balanced
     transfer/drop semantics.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - order context rejection, child/call quiescence, class-domain detach, and
     value retirement.
 

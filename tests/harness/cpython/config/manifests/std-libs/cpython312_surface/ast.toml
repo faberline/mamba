@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "AST"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "Add"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "And"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "AnnAssign"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "Assert"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "Assign"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "AsyncFor"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "AsyncFunctionDef"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "AsyncWith"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "Attribute"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "AugAssign"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "AugLoad"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "AugStore"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "Await"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "BinOp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "BitAnd"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "BitOr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "BitXor"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "BoolOp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "Break"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "Call"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "ClassDef"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "Compare"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "Constant"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "Continue"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "Del"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "Delete"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "Dict"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "DictComp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "Div"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "Eq"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "ExceptHandler"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "Expr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "Expression"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "ExtSlice"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "FloorDiv"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "For"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "FormattedValue"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "FunctionDef"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "FunctionType"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "GeneratorExp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "Global"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "Gt"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "GtE"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "If"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "IfExp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "Import"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "ImportFrom"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "In"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "Index"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "IntEnum"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "Interactive"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "Invert"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "Is"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "IsNot"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "JoinedStr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "LShift"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "Lambda"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "List"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "ListComp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "Load"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "Lt"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "LtE"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "MatMult"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "Match"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "MatchAs"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "MatchClass"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "MatchMapping"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "MatchOr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "MatchSequence"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "MatchSingleton"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "MatchStar"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "MatchValue"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "Mod"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "Module"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "Mult"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "Name"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "NamedExpr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "NodeTransformer"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "NodeVisitor"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "Nonlocal"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "Not"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "NotEq"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "NotIn"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "Or"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "Param"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "ParamSpec"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "Pass"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "Pow"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "PyCF_ALLOW_TOP_LEVEL_AWAIT"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "PyCF_ONLY_AST"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "PyCF_TYPE_COMMENTS"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "RShift"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "Raise"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "Return"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "Set"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "SetComp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "Slice"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "Starred"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "Store"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "Sub"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "Subscript"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "Suite"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "Try"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "TryStar"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "Tuple"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "TypeAlias"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "TypeIgnore"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "TypeVar"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "TypeVarTuple"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "UAdd"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "USub"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "UnaryOp"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "While"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "With"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "Yield"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "YieldFrom"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "alias"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "arg"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "arguments"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "auto"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "boolop"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "cmpop"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "comprehension"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "contextmanager"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "copy_location"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "dump"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "excepthandler"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "expr"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,7 +1432,7 @@ probe     = "attr"
 attr      = "expr_context"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1443,7 +1443,7 @@ probe     = "attr"
 attr      = "fix_missing_locations"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1454,7 +1454,7 @@ probe     = "attr"
 attr      = "get_docstring"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1465,7 +1465,7 @@ probe     = "attr"
 attr      = "get_source_segment"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1476,7 +1476,7 @@ probe     = "attr"
 attr      = "increment_lineno"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1487,7 +1487,7 @@ probe     = "attr"
 attr      = "iter_child_nodes"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1498,7 +1498,7 @@ probe     = "attr"
 attr      = "iter_fields"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1509,7 +1509,7 @@ probe     = "attr"
 attr      = "keyword"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1520,7 +1520,7 @@ probe     = "attr"
 attr      = "literal_eval"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1531,7 +1531,7 @@ probe     = "attr"
 attr      = "main"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1542,7 +1542,7 @@ probe     = "attr"
 attr      = "match_case"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1553,7 +1553,7 @@ probe     = "attr"
 attr      = "mod"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1564,7 +1564,7 @@ probe     = "attr"
 attr      = "nullcontext"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1575,7 +1575,7 @@ probe     = "attr"
 attr      = "operator"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1586,7 +1586,7 @@ probe     = "attr"
 attr      = "parse"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1597,7 +1597,7 @@ probe     = "attr"
 attr      = "pattern"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1608,7 +1608,7 @@ probe     = "attr"
 attr      = "re"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1619,7 +1619,7 @@ probe     = "attr"
 attr      = "slice"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1630,7 +1630,7 @@ probe     = "attr"
 attr      = "stmt"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1641,7 +1641,7 @@ probe     = "attr"
 attr      = "sys"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1652,7 +1652,7 @@ probe     = "attr"
 attr      = "type_ignore"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1663,7 +1663,7 @@ probe     = "attr"
 attr      = "type_param"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1674,7 +1674,7 @@ probe     = "attr"
 attr      = "unaryop"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1685,7 +1685,7 @@ probe     = "attr"
 attr      = "unparse"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1696,7 +1696,7 @@ probe     = "attr"
 attr      = "walk"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1707,4 +1707,4 @@ probe     = "attr"
 attr      = "withitem"
 expr      = "ast"
 module    = "ast"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

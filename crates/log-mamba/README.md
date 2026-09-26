@@ -33,9 +33,9 @@ JSON-structured log records.
   registrar: `LogMambaModule`
 - Gate — behavior: `cargo test -p log-mamba`
 - Gate: `cargo test -p log-mamba`
-- Source: `apps/mamba/crates/log-mamba/src/lib.rs`,
-  `apps/mamba/crates/log-mamba/src/methods.rs`,
-  `apps/mamba/crates/log-mamba/tests/methods_test.rs`
-- Evidence: `cargo test -p log-mamba`; apps/mamba/crates/log-mamba/src/lib.rs;
-  apps/mamba/crates/log-mamba/src/methods.rs;
-  apps/mamba/crates/log-mamba/tests/methods_test.rs
+- Source: `crates/log-mamba/src/lib.rs`,
+  `crates/log-mamba/src/methods.rs`,
+  `crates/log-mamba/tests/methods_test.rs`
+- Evidence: `cargo test -p log-mamba`; crates/log-mamba/src/lib.rs;
+  crates/log-mamba/src/methods.rs;
+  crates/log-mamba/tests/methods_test.rs

@@ -5,13 +5,13 @@
 - **Bench harness**: `cargo bench -p mamba --bench cross_runtime_3p`, best-of-5,
   release profile, Apple M-series
 - **Headline**: **30/33 wall PASS = 91%** — crosses the 60% close-rule
-  threshold for [#2100](https://github.com/chrischeng-c4/cclab/issues/2100)
+  threshold for [#2100](https://github.com/faberline/axiom/issues/2100)
 - **Two still-wall-FAIL libs** (NOT #2100-bound, intrinsic): `fractions/arith_bulk`
-  (JIT op-overload [#2129](https://github.com/chrischeng-c4/cclab/issues/2129)),
+  (JIT op-overload [#2129](https://github.com/faberline/axiom/issues/2129)),
   `keyword/iskeyword_hot` (borderline, startup-dominated; see
   [keyword-iskeyword-borderline.md](keyword-iskeyword-borderline.md))
 - **Seven-lib internal-<1.0× cohort** (Wall PASS, Internal FAIL — filed as
-  phase-2 [#2178](https://github.com/chrischeng-c4/cclab/issues/2178)):
+  phase-2 [#2178](https://github.com/faberline/axiom/issues/2178)):
   array/typed_bulk, csv/reader_rows, colorsys/rgb_to_hls_bulk,
   functools/reduce_add, operator/forward_eq, random/randint_bulk,
   re/findall_hot
@@ -44,10 +44,10 @@ allocation in the JIT call/iter codegen path — NOT in the shim, NOT in
 GC, NOT in dispatch. The bundle eliminated the shim-side allocs (3A
 native arith) and GC-side cost (1A+2A threshold+FxHash), but the JIT
 still allocates a small box per iteration step (loop variable rebinding,
-for-loop iter handle, etc.). Filed as [#2178](https://github.com/chrischeng-c4/cclab/issues/2178).
+for-loop iter handle, etc.). Filed as [#2178](https://github.com/faberline/axiom/issues/2178).
 
 **Intrinsic wall-FAILs** (2 libs, not #2100-bound):
-- `fractions/arith_bulk` — JIT op-overload gap [#2129](https://github.com/chrischeng-c4/cclab/issues/2129);
+- `fractions/arith_bulk` — JIT op-overload gap [#2129](https://github.com/faberline/axiom/issues/2129);
   `+` `*` `-` `/` lowered to native i64 by JIT, bypass class.rs dunder
   dispatch. Workaround: module-level dispatcher fns. See
   [[project_mamba_int_handle_operator_overload_gap]] memory.
@@ -67,12 +67,12 @@ if a per-fixture audit is needed.
 
 ## Cross-links
 
-- [#2100](https://github.com/chrischeng-c4/cclab/issues/2100) (closed)
+- [#2100](https://github.com/faberline/axiom/issues/2100) (closed)
   — phase-1 GC-bound resolution; reframed diagnosis + mitigation table
   in body
-- [#2178](https://github.com/chrischeng-c4/cclab/issues/2178) (open)
+- [#2178](https://github.com/faberline/axiom/issues/2178) (open)
   — phase-2 per-iter JIT call/iter alloc; 7-lib internal-<1.0× cohort
-- [#2129](https://github.com/chrischeng-c4/cclab/issues/2129) (open)
+- [#2129](https://github.com/faberline/axiom/issues/2129) (open)
   — JIT op-overload gap; explains fractions/arith_bulk
 - [keyword-iskeyword-borderline.md](keyword-iskeyword-borderline.md)
   — keyword/iskeyword_hot 0.88× carve doc

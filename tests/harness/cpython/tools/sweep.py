@@ -81,7 +81,7 @@ CONFORMANCE_SIDECAR = FIXTURES_DIR / ".cache" / "conformance" / "last_gate.json"
 ORACLE_CACHE_DIR = (
     Path(os.environ["CARGO_TARGET_DIR"])
     if os.environ.get("CARGO_TARGET_DIR")
-    else MAMBA_DIR.parents[1] / "target"
+    else MAMBA_DIR / "target"
 ) / "cpython-oracle-cache"
 
 DEFAULT_TIMEOUT = 30  # runner.rs DEFAULT_TIMEOUT_SECS
@@ -95,7 +95,7 @@ BAD = (FAIL, DIVERGE, INVALID)
 def mamba_bin() -> str:
     if os.environ.get("MAMBA_BIN"):
         return os.environ["MAMBA_BIN"]
-    candidate = MAMBA_DIR.parents[1] / "target" / "debug" / "mamba"
+    candidate = MAMBA_DIR / "target" / "debug" / "mamba"
     if candidate.is_file():
         return str(candidate)
     return shutil.which("mamba") or "mamba"

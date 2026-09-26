@@ -130,7 +130,7 @@ treatment as `exceptions.md`'s `asyncio_exceptions`/`xml_sax__exceptions` note).
 
 ```bash
 # focused inner loop (seconds; runner-parity verdicts, shared oracle cache; set MAMBA_BIN after a
-# release build) — from apps/mamba/
+# release build) — from 
 python3 tests/harness/cpython/tools/sweep.py tests/cpython/behavior/std-libs/{int,int_literal,float,numeric_tower,internals}
 python3 tests/harness/cpython/tools/sweep.py tests/cpython/behavior/std-libs/{decimal,fractions,math,math_property,cmath,statistics,numbers,number,abstract_numbers}
 python3 tests/harness/cpython/tools/sweep.py tests/cpython/errors/std-libs/{decimal,fractions,math,cmath} tests/cpython/real_world/std-libs/{decimal,math,cmath,statistics}

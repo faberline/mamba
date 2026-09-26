@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://mamba.cclab.dev/validation/schemas/release_summary.schema.json",
   "title": "Mamba MVP release-gate summary",
-  "description": "Stable JSON schema for release-gate summaries emitted by the MVP release runner (#2821). Closes #2820 / parent #2775. The schema lives next to the per-profile manifests under apps/mamba/validation/ so workers can resolve both from one root.",
+  "description": "Stable JSON schema for release-gate summaries emitted by the MVP release runner (#2821). Closes #2820 / parent #2775. The schema lives next to the per-profile manifests under validation/ so workers can resolve both from one root.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -75,7 +75,7 @@
     "profiles": {
       "type": "object",
       "minProperties": 1,
-      "description": "Per-profile rollup keyed by profile id (matches the file stem under apps/mamba/validation/profiles/).",
+      "description": "Per-profile rollup keyed by profile id (matches the file stem under validation/profiles/).",
       "additionalProperties": {
         "type": "object",
         "required": [

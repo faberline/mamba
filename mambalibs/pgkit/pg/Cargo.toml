@@ -55,7 +55,7 @@ unicode-normalization = "0.1"
 
 [dev-dependencies]
 tokio-test = "0.4"
-qc = { package = "meter", path = "../../../../../apps/meter" }
+qc = { package = "meter", git = "https://github.com/faberline/meter", rev = "6689b38705978657eef0c3f8e12a937c416c5deb" }
 criterion = "0.5"
 tempfile = "3.8"
 serial_test = "3"

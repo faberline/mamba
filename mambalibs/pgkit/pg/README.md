@@ -116,19 +116,19 @@ Status: verified
 Required Verification: smoke
 Promise:
 pgkit includes bulk operation support and metrics hooks for tracking PostgreSQL core behavior and performance-sensitive paths.
-Gate Inventory: `cargo test -p pg test_bulk_ops`; `cargo test -p pg test_benchmark`; apps/mamba/mambalibs/pgkit/pg/benches/main.rs
+Gate Inventory: `cargo test -p pg test_bulk_ops`; `cargo test -p pg test_benchmark`; mambalibs/pgkit/pg/benches/main.rs
 
 | Work Root | Kind | WI | Impl | Verification | Maturity | Gate / Evidence |
 |---|---|---:|---|---|---|---|
-| Bulk operation behavior | epic | - | implemented | verified | smoke | `cargo test -p pg test_bulk_ops`; `cargo test -p pg test_benchmark`; apps/mamba/mambalibs/pgkit/pg/benches/main.rs |
-| Benchmark and metric evidence | epic | - | implemented | verified | smoke | `cargo test -p pg test_benchmark`; apps/mamba/mambalibs/pgkit/pg/benches/main.rs |
+| Bulk operation behavior | epic | - | implemented | verified | smoke | `cargo test -p pg test_bulk_ops`; `cargo test -p pg test_benchmark`; mambalibs/pgkit/pg/benches/main.rs |
+| Benchmark and metric evidence | epic | - | implemented | verified | smoke | `cargo test -p pg test_benchmark`; mambalibs/pgkit/pg/benches/main.rs |
 
 ## Overview
 
-`apps/mamba/mambalibs/pgkit/pg` owns pgkit's source/logic layer: PostgreSQL driver
+`mambalibs/pgkit/pg` owns pgkit's source/logic layer: PostgreSQL driver
 access, ORM/query primitives, schema migration, validation, metrics, and the
 blocking facade used by language interfaces. Mamba-facing bindings live in the
-sibling `apps/mamba/mambalibs/pgkit/binding` crate and expose this core as
+sibling `mambalibs/pgkit/binding` crate and expose this core as
 `mambalibs.pg`.
 
 - **Zero Mamba heap pressure**: SQL generation and serialization stay in Rust

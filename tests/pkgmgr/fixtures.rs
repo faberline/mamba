@@ -1,10 +1,10 @@
 //! Shared fixture for `pkgmgr` CLI integration tests.
 //!
 //! `fixture_pkg` builds a real wheel through the product's `WheelBuilder`
-//! (the same path `apps/mamba/tests/pkgmgr/pip.rs`'s `build_wheel` uses)
+//! (the same path `tests/pkgmgr/pip.rs`'s `build_wheel` uses)
 //! and stages it at `<index>/<pep503-name>/<version>/<file>.whl` beside a
 //! `metadata.toml` carrying the `requires` key `load_metadata`
-//! (`apps/mamba/src/pkgmanage/lock.rs:398`) reads today. Every case that
+//! (`src/pkgmanage/lock.rs:398`) reads today. Every case that
 //! previously resolved against a metadata-only fixture resolves
 //! identically against this one, because resolution only ever reads
 //! `metadata.toml`; the wheel is what later lets a synced environment
@@ -41,7 +41,7 @@ pub fn normalize_pep503(name: &str) -> String {
 }
 
 /// The importable module name derived from a package name — matches the
-/// convention `apps/mamba/tests/pkgmgr/pip.rs`'s `build_wheel` uses.
+/// convention `tests/pkgmgr/pip.rs`'s `build_wheel` uses.
 pub fn module_name(name: &str) -> String {
     name.replace(['-', '.'], "_").to_ascii_lowercase()
 }

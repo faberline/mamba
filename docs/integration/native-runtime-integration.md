@@ -6,7 +6,7 @@ crates and true 3rd-party vendors.
 This scoped doc replaces the retired project-root integration guide.
 
 This guide is the operational reference for capability C3 and native-module
-bring-up. The **contract** itself lives in `apps/mamba/crates/mamba-registry/`
+bring-up. The **contract** itself lives in `crates/mamba-registry/`
 (the `MambaModule` trait, `MAMBA_MODULES` slice, `rt_sym!` macro, `MbValue`
 type). `mamba` crate is the runtime that loads the bindings — do not confuse
 the two.
@@ -17,7 +17,7 @@ the two.
 mamba-registry          (thin contract: MbValue, MambaModule, MAMBA_MODULES)
         ↑
         ├── mamba             (runtime — reads MAMBA_MODULES at startup)
-        ├── <first-party>     (cclab-fetch-mamba, apps/mamba/mambalibs/httpkit/binding, ...)
+        ├── <first-party>     (cclab-fetch-mamba, mambalibs/httpkit/binding, ...)
         └── <3rd-party>       (any external Rust crate implementing MambaModule)
 ```
 
@@ -35,14 +35,14 @@ every binding must be part of the same cargo build as the mamba binary.
 ### Mode 1: First-party monorepo crate (works today)
 
 Your binding crate sits inside the mamba monorepo (e.g. `crates/acme-mamba/`).
-`apps/mamba/src/main.rs` force-links it with `use acme_mamba as _;`.
+`src/main.rs` force-links it with `use acme_mamba as _;`.
 
 Canonical example: `crates/cclab-fetch-mamba/` (async HTTP client binding).
 
 Workflow:
 1. Create `crates/acme-mamba/` inside the monorepo.
 2. Implement `MambaModule` (see template below).
-3. Add `use acme_mamba as _;` to `apps/mamba/src/main.rs`.
+3. Add `use acme_mamba as _;` to `src/main.rs`.
 4. `cargo build -p mamba --release`.
 
 Pros: zero fetch/lock machinery, fastest iteration.
@@ -127,7 +127,7 @@ Every symbol registered via `rt_sym!` must match one of these Rust signatures:
 | Variadic | `unsafe extern "C" fn(*const MbValue, usize) -> MbValue` |
 
 Variadic is used when Python-side call uses `*args` or arity is unknown. See
-`apps/mamba/src/runtime/stdlib/itertools_mod.rs::dispatch_chain` for an
+`src/runtime/stdlib/itertools_mod.rs::dispatch_chain` for an
 example.
 
 **Memory ownership**:
@@ -303,9 +303,9 @@ without pulling the compiler.
 
 ## References
 
-- Contract crate: `apps/mamba/crates/mamba-registry/src/lib.rs`
+- Contract crate: `crates/mamba-registry/src/lib.rs`
 - Canonical binding: `crates/cclab-fetch-mamba/`
-- Higher-level binding: `apps/mamba/mambalibs/httpkit/binding/` (FastAPI-style router)
-- Config schema: `apps/mamba/src/config/schema.rs`
-- Current `mamba build` entry: `apps/mamba/src/main.rs:79`
+- Higher-level binding: `mambalibs/httpkit/binding/` (FastAPI-style router)
+- Config schema: `src/config/schema.rs`
+- Current `mamba build` entry: `src/main.rs:79`
 - Ecosystem overview: `README.md`

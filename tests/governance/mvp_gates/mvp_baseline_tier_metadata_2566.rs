@@ -2,7 +2,7 @@
 //!
 //! Parent: #2530 (performance gate suite).
 //!
-//! Locks the contract of the migrated `apps/mamba/baseline.json` and
+//! Locks the contract of the migrated `baseline.json` and
 //! its companion validator `scripts/baseline_validator.py`. After
 //! migration, every benchmark entry carries a `tier ∈ {required,
 //! optional, xfail, blocker}` and the validator enforces:

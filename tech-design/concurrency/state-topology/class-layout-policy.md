@@ -67,9 +67,9 @@ Declared surface and effective enforcement serve different contracts:
 
 The three admitted production identities are:
 
-- `apps/mamba/src/runtime/class/mod.rs::DICT_SUPPRESSED`
-- `apps/mamba/src/runtime/class/mod.rs::OWN_SLOTS_REGISTRY`
-- `apps/mamba/src/runtime/class/mod.rs::SLOTS_REGISTRY`
+- `src/runtime/class/mod.rs::DICT_SUPPRESSED`
+- `src/runtime/class/mod.rs::OWN_SLOTS_REGISTRY`
+- `src/runtime/class/mod.rs::SLOTS_REGISTRY`
 
 There are zero test-only identities. Test-module occurrences refer to these
 production statics. The sorted newline-terminated identity SHA-256 is:
@@ -449,15 +449,15 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - expose context operation leases, definition owner, publication generation,
     and retirement.
-- `apps/mamba/src/runtime/class/mod.rs`
+- `src/runtime/class/mod.rs`
   - replace the three TLS collections, registration, enforcement helpers,
     snapshot/replace, and cleanup.
-- `apps/mamba/src/runtime/class/descriptors.rs`
+- `src/runtime/class/descriptors.rs`
   - derive member descriptors from one typed effective layout generation.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - order context rejection, quiescence, definition detach, and Arc drain.
 
 Forbidden changes:

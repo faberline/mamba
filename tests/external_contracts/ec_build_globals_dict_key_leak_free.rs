@@ -1,4 +1,4 @@
-// SPEC-MANAGED: apps/mamba/external-contracts/stability/build-globals-dict-key-leak-free.md#build-globals-dict-key-leak-free
+// SPEC-MANAGED: external-contracts/stability/build-globals-dict-key-leak-free.md#build-globals-dict-key-leak-free
 // CODEGEN-BEGIN
 // AW-EC-BEGIN
 // @ec build-globals-dict-key-leak-free

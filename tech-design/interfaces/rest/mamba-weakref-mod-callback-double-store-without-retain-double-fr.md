@@ -56,17 +56,17 @@ flowchart TD
 
 ```yaml
 changes:
-  - path: apps/mamba/src/runtime/stdlib/weakref_mod.rs
+  - path: src/runtime/stdlib/weakref_mod.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: register
-  - path: apps/mamba/src/runtime/stdlib/weakref_mod.rs
+  - path: src/runtime/stdlib/weakref_mod.rs
     action: modify
     section: logic
     impl_mode: hand-written
     anchor: mb_weakref_ref
-  - path: apps/mamba/src/runtime/stdlib/weakref_mod.rs
+  - path: src/runtime/stdlib/weakref_mod.rs
     action: modify
     section: logic
     impl_mode: hand-written

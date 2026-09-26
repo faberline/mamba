@@ -143,7 +143,7 @@ arming. It requires its own owner slice under #2968.
 
 Exact primary changed path:
 
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
 
 The future implementation may:
 

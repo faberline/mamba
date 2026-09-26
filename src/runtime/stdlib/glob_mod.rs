@@ -49,7 +49,7 @@
 //!   18 hit at least one of the above blockers — so the headline
 //!   `Lib/test_glob` pass-rate against the unmodified suite is 0/18
 //!   until items 1+2+3 land. Mamba's own conformance fixture
-//!   (`apps/mamba/tests/cpython/std-libs/glob/`)
+//!   (`tests/cpython/std-libs/glob/`)
 //!   covers the supported slice (literal, `*`, `?`, glob0/1,
 //!   has_magic, escape, iglob alias) at 100%.
 //! HANDWRITE-END

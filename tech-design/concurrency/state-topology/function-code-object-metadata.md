@@ -143,7 +143,7 @@ registries in one ticket.
 - Inventory count: 4.
 - Inventory digest:
   `7acc2e22758eafd8ba41b1727716f827d9ad7718715a48764752a38b7db97f67`.
-- Exact source: `apps/mamba/src/runtime/closure.rs`.
+- Exact source: `src/runtime/closure.rs`.
 - Complete static inventory: 24 candidates, 4 admitted and 20 discarded.
 - Snapshot rule: #2973 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

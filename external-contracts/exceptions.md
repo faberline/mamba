@@ -51,7 +51,7 @@ Runtime rejects (non-BaseException matcher → TypeError via `collect_matcher_ta
 ## Verification
 
 ```bash
-# inner loop (seconds; paths relative to tests/cpython) — from apps/mamba/tests/harness/cpython/
+# inner loop (seconds; paths relative to tests/cpython) — from tests/harness/cpython/
 python3 tools/sweep.py _regression/core/exceptions _regression/core/exception_chaining \
   _regression/core/exception_control_flow _regression/core/exception_group _regression/core/custom_exception \
   _regression/core/traceback_smoke behavior/core/exceptions behavior/core/exception_group \

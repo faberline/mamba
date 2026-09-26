@@ -125,7 +125,7 @@ The exact code-reference selector is:
 
 ```bash
 rg -n 'static NAMEDTUPLE_BASE_SHAPES|NAMEDTUPLE_BASE_SHAPES\.with' \
-  apps/mamba/src/runtime/class/mod.rs
+  src/runtime/class/mod.rs
 ```
 
 Its sorted-newline SHA-256 digest is:
@@ -162,9 +162,9 @@ direct cleanup, or retirement row.
 
 This topology refines, but does not replace:
 
-- `apps/mamba/tech-design/concurrency/execution-context.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-definition-registry.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-layout-policy.md`.
+- `tech-design/concurrency/execution-context.md`;
+- `tech-design/concurrency/state-topology/class-definition-registry.md`;
+- `tech-design/concurrency/state-topology/class-layout-policy.md`.
 
 `ClassDefinitionRegistry` remains the sole class-definition owner.
 `ClassLayoutPolicy` may consume shape-derived constraints but does not own a
@@ -598,19 +598,19 @@ Process or OS-thread exit is not the ordinary reclamation protocol.
 
 Required source paths:
 
-- `apps/mamba/src/hir/mod.rs`
-- `apps/mamba/src/lower/ast_to_hir.rs`
-- `apps/mamba/src/lower/hir_to_mir.rs`
-- `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/symbols.rs`
-- `apps/mamba/src/runtime/mod.rs`
+- `src/hir/mod.rs`
+- `src/lower/ast_to_hir.rs`
+- `src/lower/hir_to_mir.rs`
+- `src/runtime/execution_context.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/symbols.rs`
+- `src/runtime/mod.rs`
 
 Required test owners:
 
 - focused Rust tests in the owning HIR/lowering/runtime modules;
 - focused CPython behavior fixtures under
-  `apps/mamba/tests/cpython/behavior/std-libs/collections/`.
+  `tests/cpython/behavior/std-libs/collections/`.
 
 Implementation must stay one cohesive class-definition owner slice. It must
 not opportunistically migrate the general namedtuple factory, slots, method

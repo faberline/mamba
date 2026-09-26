@@ -142,6 +142,6 @@ migrating the function/global/module metadata registries in the same ticket.
 - Inventory count: 5.
 - Inventory digest:
   `bcac9b127c8f90f54b03e82c13074e10f539445071f139f9938f4c027f0189af`.
-- Exact source: `apps/mamba/src/runtime/closure.rs`.
+- Exact source: `src/runtime/closure.rs`.
 - Snapshot rule: #2970 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

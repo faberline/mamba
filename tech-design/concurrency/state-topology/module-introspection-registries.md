@@ -167,4 +167,4 @@ or migrating before #2839.
   `runtime/mod.rs::cleanup_all_runtime_state`, and
   `runtime/module.rs::MODULE_JIT_BACKENDS`.
 - Snapshot rule: #2978 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

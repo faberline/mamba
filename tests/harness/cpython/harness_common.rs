@@ -63,7 +63,7 @@ pub fn mamba_bin() -> PathBuf {
     option_env!("CARGO_BIN_EXE_mamba")
         .map(PathBuf::from)
         .unwrap_or_else(|| {
-            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../target/debug/mamba")
+            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("target/debug/mamba")
         })
 }
 

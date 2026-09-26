@@ -29,7 +29,7 @@ fn main() {
 }
 
 fn setup_git_rerun_directives() {
-    let dot_git = Path::new("../../.git");
+    let dot_git = Path::new(".git");
     if !dot_git.exists() {
         return;
     }

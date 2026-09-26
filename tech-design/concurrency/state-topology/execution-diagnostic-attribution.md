@@ -198,19 +198,19 @@ whole-execution `JIT_LOCK` serialization.
 
 Exact planned changed paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - define conditional `ExecutionDiagnostics`;
   - expose borrowed diagnostic lookup through a live context handle;
   - propagate/install the handle for `ExecutionChild`.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - wire the execution-context module and required crate-visible exports.
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
   - delete `CURRENT_TEST_NAME`, its setter, and its process reader;
   - resolve context attribution only inside the two panic branches.
-- `apps/mamba/tests/cpython_ported/harness.rs`
+- `tests/cpython_ported/harness.rs`
   - create the context with the outer test attribution;
   - install its handle on the JIT worker instead of setting a process string.
-- `apps/mamba/tests/execution_context_diagnostics.rs`
+- `tests/execution_context_diagnostics.rs`
   - own focused concurrent attribution and child-propagation integration tests.
 
 Forbidden changes:

@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "AF_APPLETALK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "AF_DECnet"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "AF_INET"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "AF_INET6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "AF_IPX"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "AF_LINK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "AF_ROUTE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "AF_SNA"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "AF_SYSTEM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "AF_UNIX"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "AF_UNSPEC"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "AI_ADDRCONFIG"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "AI_ALL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "AI_CANONNAME"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "AI_DEFAULT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "AI_MASK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "AI_NUMERICHOST"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "AI_NUMERICSERV"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "AI_PASSIVE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "AI_V4MAPPED"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "AI_V4MAPPED_CFG"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "AddressFamily"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "CAPI"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "CMSG_LEN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "CMSG_SPACE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "EAI_ADDRFAMILY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "EAI_AGAIN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "EAI_BADFLAGS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "EAI_BADHINTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "EAI_FAIL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "EAI_FAMILY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "EAI_MAX"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "EAI_MEMORY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "EAI_NODATA"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "EAI_NONAME"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "EAI_OVERFLOW"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "EAI_PROTOCOL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "EAI_SERVICE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "EAI_SOCKTYPE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "EAI_SYSTEM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "ETHERTYPE_ARP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "ETHERTYPE_IP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "ETHERTYPE_IPV6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "ETHERTYPE_VLAN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "INADDR_ALLHOSTS_GROUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "INADDR_ANY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "INADDR_BROADCAST"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "INADDR_LOOPBACK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "INADDR_MAX_LOCAL_GROUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "INADDR_NONE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "INADDR_UNSPEC_GROUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "IPPORT_RESERVED"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "IPPORT_USERRESERVED"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "IPPROTO_AH"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "IPPROTO_DSTOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "IPPROTO_EGP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "IPPROTO_EON"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "IPPROTO_ESP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "IPPROTO_FRAGMENT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "IPPROTO_GGP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "IPPROTO_GRE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "IPPROTO_HELLO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "IPPROTO_HOPOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "IPPROTO_ICMP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "IPPROTO_ICMPV6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "IPPROTO_IDP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "IPPROTO_IGMP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "IPPROTO_IP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "IPPROTO_IPCOMP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "IPPROTO_IPIP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "IPPROTO_IPV4"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "IPPROTO_IPV6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "IPPROTO_MAX"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "IPPROTO_ND"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "IPPROTO_NONE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "IPPROTO_PIM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "IPPROTO_PUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "IPPROTO_RAW"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "IPPROTO_ROUTING"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "IPPROTO_RSVP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "IPPROTO_SCTP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "IPPROTO_TCP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "IPPROTO_TP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "IPPROTO_UDP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "IPPROTO_XTP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "IPV6_CHECKSUM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "IPV6_DONTFRAG"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "IPV6_DSTOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "IPV6_HOPLIMIT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "IPV6_HOPOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "IPV6_JOIN_GROUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "IPV6_LEAVE_GROUP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "IPV6_MULTICAST_HOPS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "IPV6_MULTICAST_IF"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "IPV6_MULTICAST_LOOP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "IPV6_NEXTHOP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "IPV6_PATHMTU"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "IPV6_PKTINFO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "IPV6_RECVDSTOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "IPV6_RECVHOPLIMIT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "IPV6_RECVHOPOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "IPV6_RECVPATHMTU"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "IPV6_RECVPKTINFO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "IPV6_RECVRTHDR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "IPV6_RECVTCLASS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "IPV6_RTHDR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "IPV6_RTHDRDSTOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "IPV6_RTHDR_TYPE_0"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "IPV6_TCLASS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "IPV6_UNICAST_HOPS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "IPV6_USE_MIN_MTU"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "IPV6_V6ONLY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "IP_ADD_MEMBERSHIP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "IP_ADD_SOURCE_MEMBERSHIP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "IP_BLOCK_SOURCE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "IP_DEFAULT_MULTICAST_LOOP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "IP_DEFAULT_MULTICAST_TTL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "IP_DROP_MEMBERSHIP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "IP_DROP_SOURCE_MEMBERSHIP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "IP_HDRINCL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "IP_MAX_MEMBERSHIPS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "IP_MULTICAST_IF"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "IP_MULTICAST_LOOP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "IP_MULTICAST_TTL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "IP_OPTIONS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "IP_PKTINFO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "IP_RECVDSTADDR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "IP_RECVOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "IP_RECVRETOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,7 +1432,7 @@ probe     = "attr"
 attr      = "IP_RECVTOS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1443,7 +1443,7 @@ probe     = "attr"
 attr      = "IP_RETOPTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1454,7 +1454,7 @@ probe     = "attr"
 attr      = "IP_TOS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1465,7 +1465,7 @@ probe     = "attr"
 attr      = "IP_TTL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1476,7 +1476,7 @@ probe     = "attr"
 attr      = "IP_UNBLOCK_SOURCE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1487,7 +1487,7 @@ probe     = "attr"
 attr      = "LOCAL_PEERCRED"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1498,7 +1498,7 @@ probe     = "attr"
 attr      = "MSG_CTRUNC"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1509,7 +1509,7 @@ probe     = "attr"
 attr      = "MSG_DONTROUTE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1520,7 +1520,7 @@ probe     = "attr"
 attr      = "MSG_DONTWAIT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1531,7 +1531,7 @@ probe     = "attr"
 attr      = "MSG_EOF"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1542,7 +1542,7 @@ probe     = "attr"
 attr      = "MSG_EOR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1553,7 +1553,7 @@ probe     = "attr"
 attr      = "MSG_NOSIGNAL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1564,7 +1564,7 @@ probe     = "attr"
 attr      = "MSG_OOB"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1575,7 +1575,7 @@ probe     = "attr"
 attr      = "MSG_PEEK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1586,7 +1586,7 @@ probe     = "attr"
 attr      = "MSG_TRUNC"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1597,7 +1597,7 @@ probe     = "attr"
 attr      = "MSG_WAITALL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1608,7 +1608,7 @@ probe     = "attr"
 attr      = "NI_DGRAM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1619,7 +1619,7 @@ probe     = "attr"
 attr      = "NI_MAXHOST"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1630,7 +1630,7 @@ probe     = "attr"
 attr      = "NI_MAXSERV"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1641,7 +1641,7 @@ probe     = "attr"
 attr      = "NI_NAMEREQD"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1652,7 +1652,7 @@ probe     = "attr"
 attr      = "NI_NOFQDN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1663,7 +1663,7 @@ probe     = "attr"
 attr      = "NI_NUMERICHOST"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1674,7 +1674,7 @@ probe     = "attr"
 attr      = "NI_NUMERICSERV"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1685,7 +1685,7 @@ probe     = "attr"
 attr      = "PF_SYSTEM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1696,7 +1696,7 @@ probe     = "attr"
 attr      = "SCM_CREDS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1707,7 +1707,7 @@ probe     = "attr"
 attr      = "SCM_RIGHTS"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1718,7 +1718,7 @@ probe     = "attr"
 attr      = "SHUT_RD"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1729,7 +1729,7 @@ probe     = "attr"
 attr      = "SHUT_RDWR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1740,7 +1740,7 @@ probe     = "attr"
 attr      = "SHUT_WR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1751,7 +1751,7 @@ probe     = "attr"
 attr      = "SOCK_DGRAM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1762,7 +1762,7 @@ probe     = "attr"
 attr      = "SOCK_RAW"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1773,7 +1773,7 @@ probe     = "attr"
 attr      = "SOCK_RDM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1784,7 +1784,7 @@ probe     = "attr"
 attr      = "SOCK_SEQPACKET"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1795,7 +1795,7 @@ probe     = "attr"
 attr      = "SOCK_STREAM"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1806,7 +1806,7 @@ probe     = "attr"
 attr      = "SOL_IP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1817,7 +1817,7 @@ probe     = "attr"
 attr      = "SOL_SOCKET"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1828,7 +1828,7 @@ probe     = "attr"
 attr      = "SOL_TCP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1839,7 +1839,7 @@ probe     = "attr"
 attr      = "SOL_UDP"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1850,7 +1850,7 @@ probe     = "attr"
 attr      = "SOMAXCONN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1861,7 +1861,7 @@ probe     = "attr"
 attr      = "SO_ACCEPTCONN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1872,7 +1872,7 @@ probe     = "attr"
 attr      = "SO_BINDTODEVICE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1883,7 +1883,7 @@ probe     = "attr"
 attr      = "SO_BROADCAST"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1894,7 +1894,7 @@ probe     = "attr"
 attr      = "SO_DEBUG"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1905,7 +1905,7 @@ probe     = "attr"
 attr      = "SO_DONTROUTE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1916,7 +1916,7 @@ probe     = "attr"
 attr      = "SO_ERROR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1927,7 +1927,7 @@ probe     = "attr"
 attr      = "SO_KEEPALIVE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1938,7 +1938,7 @@ probe     = "attr"
 attr      = "SO_LINGER"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1949,7 +1949,7 @@ probe     = "attr"
 attr      = "SO_OOBINLINE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1960,7 +1960,7 @@ probe     = "attr"
 attr      = "SO_RCVBUF"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1971,7 +1971,7 @@ probe     = "attr"
 attr      = "SO_RCVLOWAT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1982,7 +1982,7 @@ probe     = "attr"
 attr      = "SO_RCVTIMEO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1993,7 +1993,7 @@ probe     = "attr"
 attr      = "SO_REUSEADDR"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2004,7 +2004,7 @@ probe     = "attr"
 attr      = "SO_REUSEPORT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2015,7 +2015,7 @@ probe     = "attr"
 attr      = "SO_SNDBUF"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2026,7 +2026,7 @@ probe     = "attr"
 attr      = "SO_SNDLOWAT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2037,7 +2037,7 @@ probe     = "attr"
 attr      = "SO_SNDTIMEO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2048,7 +2048,7 @@ probe     = "attr"
 attr      = "SO_TYPE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2059,7 +2059,7 @@ probe     = "attr"
 attr      = "SO_USELOOPBACK"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2070,7 +2070,7 @@ probe     = "attr"
 attr      = "SYSPROTO_CONTROL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2081,7 +2081,7 @@ probe     = "attr"
 attr      = "SocketKind"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2092,7 +2092,7 @@ probe     = "attr"
 attr      = "SocketType"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2103,7 +2103,7 @@ probe     = "attr"
 attr      = "TCP_CONNECTION_INFO"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2114,7 +2114,7 @@ probe     = "attr"
 attr      = "TCP_FASTOPEN"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2125,7 +2125,7 @@ probe     = "attr"
 attr      = "TCP_KEEPALIVE"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2136,7 +2136,7 @@ probe     = "attr"
 attr      = "TCP_KEEPCNT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2147,7 +2147,7 @@ probe     = "attr"
 attr      = "TCP_KEEPINTVL"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2158,7 +2158,7 @@ probe     = "attr"
 attr      = "TCP_MAXSEG"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2169,7 +2169,7 @@ probe     = "attr"
 attr      = "TCP_NODELAY"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2180,7 +2180,7 @@ probe     = "attr"
 attr      = "TCP_NOTSENT_LOWAT"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2191,7 +2191,7 @@ probe     = "attr"
 attr      = "close"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2202,7 +2202,7 @@ probe     = "attr"
 attr      = "create_connection"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2213,7 +2213,7 @@ probe     = "attr"
 attr      = "create_server"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2224,7 +2224,7 @@ probe     = "attr"
 attr      = "dup"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2235,7 +2235,7 @@ probe     = "attr"
 attr      = "error"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2246,7 +2246,7 @@ probe     = "attr"
 attr      = "fromfd"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2257,7 +2257,7 @@ probe     = "attr"
 attr      = "gaierror"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2268,7 +2268,7 @@ probe     = "attr"
 attr      = "getaddrinfo"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2279,7 +2279,7 @@ probe     = "attr"
 attr      = "getdefaulttimeout"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2290,7 +2290,7 @@ probe     = "attr"
 attr      = "getfqdn"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2301,7 +2301,7 @@ probe     = "attr"
 attr      = "gethostbyaddr"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2312,7 +2312,7 @@ probe     = "attr"
 attr      = "gethostbyname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2323,7 +2323,7 @@ probe     = "attr"
 attr      = "gethostbyname_ex"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2334,7 +2334,7 @@ probe     = "attr"
 attr      = "gethostname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2345,7 +2345,7 @@ probe     = "attr"
 attr      = "getnameinfo"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2356,7 +2356,7 @@ probe     = "attr"
 attr      = "getprotobyname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2367,7 +2367,7 @@ probe     = "attr"
 attr      = "getservbyname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2378,7 +2378,7 @@ probe     = "attr"
 attr      = "getservbyport"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2389,7 +2389,7 @@ probe     = "attr"
 attr      = "has_dualstack_ipv6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2400,7 +2400,7 @@ probe     = "attr"
 attr      = "has_ipv6"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2411,7 +2411,7 @@ probe     = "attr"
 attr      = "herror"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2422,7 +2422,7 @@ probe     = "attr"
 attr      = "htonl"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2433,7 +2433,7 @@ probe     = "attr"
 attr      = "htons"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2444,7 +2444,7 @@ probe     = "attr"
 attr      = "if_indextoname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2455,7 +2455,7 @@ probe     = "attr"
 attr      = "if_nameindex"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2466,7 +2466,7 @@ probe     = "attr"
 attr      = "if_nametoindex"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2477,7 +2477,7 @@ probe     = "attr"
 attr      = "inet_aton"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2488,7 +2488,7 @@ probe     = "attr"
 attr      = "inet_ntoa"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2499,7 +2499,7 @@ probe     = "attr"
 attr      = "inet_ntop"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2510,7 +2510,7 @@ probe     = "attr"
 attr      = "inet_pton"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2521,7 +2521,7 @@ probe     = "attr"
 attr      = "ntohl"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2532,7 +2532,7 @@ probe     = "attr"
 attr      = "ntohs"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2543,7 +2543,7 @@ probe     = "attr"
 attr      = "recv_fds"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2554,7 +2554,7 @@ probe     = "attr"
 attr      = "send_fds"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2565,7 +2565,7 @@ probe     = "attr"
 attr      = "setdefaulttimeout"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2576,7 +2576,7 @@ probe     = "attr"
 attr      = "sethostname"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2587,7 +2587,7 @@ probe     = "attr"
 attr      = "socket"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2598,7 +2598,7 @@ probe     = "attr"
 attr      = "socketpair"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2609,4 +2609,4 @@ probe     = "attr"
 attr      = "timeout"
 expr      = "socket"
 module    = "socket"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

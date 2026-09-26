@@ -8,7 +8,7 @@
 #   - Worker can run the canonical smoke/list commands.
 #   - Smoke summary reports total tests, fixture counts, and debt
 #     counts.
-#   - Coverage tooling points at `apps/mamba` / package `mamba`
+#   - Coverage tooling points at the repository root / package `mamba`
 #     instead of stale crate paths.
 #
 # Atomic queue: #2534 make cargo test list the first worker gate,
@@ -44,7 +44,7 @@ must_cover_canonical_list_command = true
 must_cover_smoke_summary_emission = true
 must_cover_coverage_tooling_path_repair = true
 canonical_package_name = "mamba"
-canonical_package_relative_path = "apps/mamba"
+canonical_package_relative_path = "."
 
 [atomic_queue]
 issue_2534_make_cargo_test_list_the_first_worker_gate = true
@@ -61,8 +61,8 @@ must_record_smoke_command_in_documentation = true
 must_record_list_command_in_documentation = true
 forbid_workers_inventing_ad_hoc_smoke_commands = true
 forbid_workers_inventing_ad_hoc_list_commands = true
-canonical_smoke_command = "cargo test --manifest-path apps/mamba/Cargo.toml"
-canonical_list_command = "cargo test --manifest-path apps/mamba/Cargo.toml -- --list"
+canonical_smoke_command = "cargo test --manifest-path Cargo.toml"
+canonical_list_command = "cargo test --manifest-path Cargo.toml -- --list"
 canonical_smoke_command_field_name = "canonical_smoke_command"
 canonical_list_command_field_name = "canonical_list_command"
 smoke_command_missing_failure_kind = "mvp_smoke_command_missing"
@@ -98,7 +98,7 @@ summary_missing_required_count_failure_kind = "mvp_smoke_summary_missing_require
 summary_missing_required_count_exit_code = 215
 must_distinguish_summary_freeform_from_missing_required_count = true
 
-# Acceptance: "Coverage tooling points at `apps/mamba` / package
+# Acceptance: "Coverage tooling points at the repository root / package
 # `mamba` instead of stale crate paths."
 [coverage_tooling_path_contract]
 case = "coverage_tooling_points_at_projects_mamba_and_package_mamba_not_stale_crate_paths"
@@ -106,7 +106,7 @@ must_point_coverage_tooling_at_projects_mamba = true
 must_point_coverage_tooling_at_package_mamba = true
 forbid_pointing_coverage_tooling_at_stale_crate_paths = true
 forbid_silently_skipping_coverage_when_path_is_stale = true
-required_coverage_target_path = "apps/mamba"
+required_coverage_target_path = "."
 required_coverage_target_package = "mamba"
 stale_coverage_path_field_name = "coverage_target_path"
 stale_coverage_package_field_name = "coverage_target_package"

@@ -6,7 +6,7 @@ with ``python -m pytest -p no:cacheprovider`` inside the environment it built.
 does.
 
 Every assertion below maps onto a function or type that already exists in
-``apps/mamba/mambalibs/scikit/src``. The work item freezes "existing core API
+``mambalibs/scikit/src``. The work item freezes "existing core API
 only, no scipy-parity promise", so nothing here asks for behaviour the Rust
 crate does not implement, and each expected value is derived from the Rust
 source rather than from SciPy.

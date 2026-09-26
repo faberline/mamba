@@ -38,7 +38,7 @@ class Site:
 
 def display_path(path: Path, scan_root: Path) -> str:
     try:
-        return path.resolve().relative_to(PROJECT_DIR.parent.parent.resolve()).as_posix()
+        return path.resolve().relative_to(PROJECT_DIR.resolve()).as_posix()
     except ValueError:
         if scan_root.is_file():
             return scan_root.name

@@ -7,10 +7,10 @@
 
 ## Non-negotiables
 
-1. **Scope is `apps/mamba/tests/**` only.** Editing `apps/mamba/src/**`
+1. **Scope is `tests/**` only.** Editing `src/**`
    is OUT OF SCOPE — that is the separate runtime line (`fix(mamba)` bugs;
    the `mamba-jit-worker` skill that named it is deleted). Sole exception: a `[[test]]` stanza in
-   `apps/mamba/Cargo.toml` when a new harness binary is unavoidable.
+   `Cargo.toml` when a new harness binary is unavoidable.
 2. **Test + harness authoring only — never fix runtime to go green.** A fixture
    that can only pass by changing `src/` STAYS RED.
 3. **Red is correct.** A fixture failing on today's mamba honestly records that
@@ -44,10 +44,10 @@
 - **Success metric**: only **bench** fixtures self-time. The signal is
   `perf_counter` + the `INTERNAL_TIME_NS` marker; `import time` is excluded, and
   so are **non-bench fixtures** (a behavior/surface fixture testing
-  `time.perf_counter` legitimately contains it). `apps/mamba/benches/` is
+  `time.perf_counter` legitimately contains it). `benches/` is
   outside `tests/` and also out of scope:
   ```
-  find apps/mamba/tests/cpython -path '*/bench/*.py' \
+  find tests/cpython -path '*/bench/*.py' \
     -exec grep -l 'perf_counter\|INTERNAL_TIME_NS' {} + | wc -l
   ```
   → **`0`**
@@ -63,8 +63,8 @@
   harness-controlled (env or config), not hardcoded in fixtures.
 - **Success metric**:
   ```
-  rg -l 'INTERNAL_TIME_NS' apps/mamba/tests/harness | wc -l   # → 0 (harness stops parsing fixture timing)
-  rg -n 'getrusage|maximum resident set size' apps/mamba/tests/harness/cpython/*.rs | wc -l   # → >0
+  rg -l 'INTERNAL_TIME_NS' tests/harness | wc -l   # → 0 (harness stops parsing fixture timing)
+  rg -n 'getrusage|maximum resident set size' tests/harness/cpython/*.rs | wc -l   # → >0
   ```
 - **Current**: `perf_pin.rs:101` reads `INTERNAL_TIME_NS` as the PRIMARY datum;
   external `getrusage` + `/usr/bin/time` path already half-present.
@@ -141,9 +141,9 @@
   golden-migration capstone — it stays in the tree.
 - **Success metric**:
   ```
-  find apps/mamba/tests -name 'run.py' -not -path '*/fixtures/*' | wc -l   # → 0  (MET)
-  rg -rln 'tests/cpython/run\.py' apps/mamba/CONTRIBUTING.md \
-     apps/mamba/tests/harness/cpython/conventions | wc -l                  # → 0  (MET)
+  find tests -name 'run.py' -not -path '*/fixtures/*' | wc -l   # → 0  (MET)
+  rg -rln 'tests/cpython/run\.py' CONTRIBUTING.md \
+     tests/harness/cpython/conventions | wc -l                  # → 0  (MET)
   ```
 - **Capstone DONE (option B)**: `golden_capstone.py` proved the dynamic CPython
   oracle reproduces all 668 cpython goldens (type-strict uses
@@ -167,7 +167,7 @@
 - **Success metric**:
   ```
   # every type-strict fixture carries a directive
-  find apps/mamba/tests/cpython/type -name '*.py' \
+  find tests/cpython/type -name '*.py' \
     -exec grep -L 'mamba-strict-type:\|typeerror:\|no_typeerror:' {} + | wc -l # → 0
   # collector emits the verdict pair
   <summary-cmd> --dimension D1 | rg 'STRICT_TYPE_OK|MAMBA_TYPE_LEAKED'
@@ -181,7 +181,7 @@
 - **Success metric**:
   ```
   # lang + 3p seeds present and lint-clean
-  python3.12 apps/mamba/tests/harness/cpython/tools/fixture_lint.py --bucket pep --bucket 3rd-libs   # exit 0
+  python3.12 tests/harness/cpython/tools/fixture_lint.py --bucket pep --bucket 3rd-libs   # exit 0
   aw wi list --label gate:production --state open | rg -c 'AssertionPass seed'   # → 0 (all authored)
   ```
 - **Issues**: lang #3340 / #3346–3361, 3p #3458–3472.
@@ -231,7 +231,7 @@
 
 ## Anti-cheat
 
-NEVER, to make something green: edit `apps/mamba/src/**`, weaken or delete an
+NEVER, to make something green: edit `src/**`, weaken or delete an
 assertion, hardcode a metric back into a fixture, lower a perf floor, or mark
 `xfail` / `skip` / `stub`. If a fixture looks wrong, STOP and report. Red is a
 valid, honest result.
@@ -239,8 +239,8 @@ valid, honest result.
 ## The `/goal` condition
 
 ```
-Follow apps/mamba/tests/PRODUCTION-GATE.md. Build the D1–D5 test gate;
-harness (D5) first. Scope = apps/mamba/tests/** ONLY (src/** is out of
+Follow tests/PRODUCTION-GATE.md. Build the D1–D5 test gate;
+harness (D5) first. Scope = tests/** ONLY (src/** is out of
 scope; sole exception a [[test]] stanza in Cargo.toml). TEST + HARNESS
 AUTHORING ONLY — never fix runtime to go green; a red fixture is CORRECT.
 DONE when every success metric in that file passes: D5.1 grep→0, D5.2 harness

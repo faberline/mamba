@@ -11,7 +11,7 @@
 # kind = "mechanical"
 # xfail = ""
 # mem_carveout = ""
-# source = "apps/mamba/data/cpython312_surface.json"
+# source = "data/cpython312_surface.json"
 # status = "filled"
 # ///
 """ssl.SSL_ERROR_WANT_X509_LOOKUP: api_ssl_error_want_x509_lookup_is_present (surface)."""

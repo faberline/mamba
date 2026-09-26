@@ -492,7 +492,7 @@ print(list(permutations('ab')))
 /// Reproducer for the cross-cutting "stdlib iterators ship as list-aliased"
 /// gap. In CPython, `next(chain(a, b))` consumes exactly **one** element
 /// from `a` and leaves the rest untouched; in mamba the shim at
-/// `apps/mamba/src/runtime/stdlib/itertools_mod.rs::mb_itertools_chain`
+/// `src/runtime/stdlib/itertools_mod.rs::mb_itertools_chain`
 /// (and ~20 sibling shims — `islice`, `count`, `cycle`, `repeat`,
 /// `accumulate`, `takewhile`, `dropwhile`, `filterfalse`, `compress`,
 /// `starmap`, `pairwise`, `batched`, `groupby`, `tee`, `zip_longest`,
@@ -512,7 +512,7 @@ print(list(permutations('ab')))
 /// (closure-state or `runtime::generator::GenEntry` handle) instead of a
 /// pre-allocated `Vec<MbValue>`.
 ///
-/// Companion HANDWRITE carve-out: `apps/mamba/src/runtime/rc.rs`
+/// Companion HANDWRITE carve-out: `src/runtime/rc.rs`
 /// (`ObjKind` + `ObjData` enums, #2182 reason).
 #[test]
 #[ignore = "#2182: itertools shims materialize lists eagerly; Generator runtime type not yet wired"]

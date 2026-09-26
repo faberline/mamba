@@ -20,7 +20,7 @@ The target creates no second aggregate. Immutable ordered
 Published definitions remain owned by `ClassDefinitionRegistry`; published
 type objects remain owned by `TypeObjectRegistry`.
 
-No `apps/mamba/src/**` change occurs in this slice.
+No `src/**` change occurs in this slice.
 
 ## Bounded context
 
@@ -67,11 +67,11 @@ are different ownership domains.
 
 The admitted identity is:
 
-`apps/mamba/src/runtime/class/mod.rs::KWARGS_REGISTRY`
+`src/runtime/class/mod.rs::KWARGS_REGISTRY`
 
 The exact code selector is:
 
-`rg -n 'static KWARGS_REGISTRY|KWARGS_REGISTRY\.with' apps/mamba/src/runtime/class/mod.rs`
+`rg -n 'static KWARGS_REGISTRY|KWARGS_REGISTRY\.with' src/runtime/class/mod.rs`
 
 The SHA-256 of its sorted newline-terminated output is:
 
@@ -514,13 +514,13 @@ cleanup are not substitutes.
 
 | Path | Planned responsibility |
 |---|---|
-| `apps/mamba/src/runtime/execution_context.rs` | context-owned coordinator, ids, leases, retirement |
-| `apps/mamba/src/lower/hir_to_mir.rs` | compiled producers use typed ordered staging |
-| `apps/mamba/src/runtime/builtins/eval_exec.rs` | interpreter producer uses the same normalization |
-| `apps/mamba/src/runtime/class/mod.rs` | retire side map; hook lease, TypedDict, dispatch/discard transitions |
-| `apps/mamba/src/runtime/dict_ops.rs` | detach-before-release mutation boundary |
-| `apps/mamba/src/runtime/builtins/type_objects.rs` | type/metaclass transaction propagation |
-| `apps/mamba/src/runtime/mod.rs` | context binding and compatibility surface |
+| `src/runtime/execution_context.rs` | context-owned coordinator, ids, leases, retirement |
+| `src/lower/hir_to_mir.rs` | compiled producers use typed ordered staging |
+| `src/runtime/builtins/eval_exec.rs` | interpreter producer uses the same normalization |
+| `src/runtime/class/mod.rs` | retire side map; hook lease, TypedDict, dispatch/discard transitions |
+| `src/runtime/dict_ops.rs` | detach-before-release mutation boundary |
+| `src/runtime/builtins/type_objects.rs` | type/metaclass transaction propagation |
+| `src/runtime/mod.rs` | context binding and compatibility surface |
 
 ## Planned focused tests
 
@@ -569,4 +569,4 @@ This slice is complete when:
 - `ClassDefinitionTransaction` is the sole provisional owner;
 - worker transport omits provisional kwargs;
 - rollback and context retirement are fail closed;
-- implementation remains a later AGY-owned `apps/mamba/src/**` slice.
+- implementation remains a later AGY-owned `src/**` slice.

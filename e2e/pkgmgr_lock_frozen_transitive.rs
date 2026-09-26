@@ -9,7 +9,7 @@
 //! reads a product-internal type, and never hand-writes an index file: the
 //! index is whatever `mamba index build` produces from three real wheels, so a
 //! green run proves the dependency channel is the wheel's own `METADATA` and
-//! not a fixture the case planted. `apps/mamba/tests/pkgmgr/fixtures.rs` writes
+//! not a fixture the case planted. `tests/pkgmgr/fixtures.rs` writes
 //! a `metadata.toml` by hand beside each wheel; that shortcut is exactly what
 //! this case must not take, which is why it is self-contained rather than an
 //! include of the legacy tree.
@@ -34,7 +34,7 @@
 //! - **Security (supply-chain integrity)**: every entry carries a `sha256`
 //!   equal to the digest of the artifact bytes on disk and a `path` that
 //!   resolves inside the index directory. An empty digest is the fail-open
-//!   state `apps/mamba/src/pkgmanage/sync.rs` reads as "nothing to verify", so
+//!   state `src/pkgmanage/sync.rs` reads as "nothing to verify", so
 //!   the digest assertion is the boundary this work item reaches; the
 //!   containment assertion refuses a lock that points a later install step at
 //!   an artifact outside the index it was told to use.

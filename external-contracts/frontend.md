@@ -35,7 +35,7 @@ No `type/` walls are owned here (walls = type-system; see `../tech-design/type-s
 
 ## Verification
 
-- Parser acceptance: `cargo test -p mamba --release --test conformance_cpython_grammar` — 62 fixtures, xfail manifest `apps/mamba/cpython_known_failures.toml`, xpass warns on stderr.
+- Parser acceptance: `cargo test -p mamba --release --test conformance_cpython_grammar` — 62 fixtures, xfail manifest `cpython_known_failures.toml`, xpass warns on stderr.
 - `# RUN:` pipeline: `cargo test -p mamba --release --test conformance_pipeline` — frontend slice = the 130 `# RUN: parse`; co-collected jit/typecheck fixtures belong to codegen/type-system.
 - Focused oracle slice (seconds, verdict-parity with the cargo gate; sweep SKIPs `# RUN:` files, so `_regression` dirs contribute only their record fixtures):
   `MAMBA_BIN=target/release/mamba python3.12 tests/harness/cpython/tools/sweep.py _regression/core/grammar _regression/core/parse behavior/core/grammar behavior/core/syntax behavior/core/fstring behavior/pep errors/pep errors/core surface/pep`

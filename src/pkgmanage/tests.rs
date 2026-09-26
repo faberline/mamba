@@ -5,7 +5,7 @@
 //
 // These cover the rules that are observable only inside the implementation
 // -- extra-marker filtering, marker stripping, and TOML string escaping --
-// as opposed to `apps/mamba/e2e/pkgmgr_lock_frozen_transitive.rs`, which
+// as opposed to `e2e/pkgmgr_lock_frozen_transitive.rs`, which
 // judges the externally observable `mamba.lock` shape end to end.
 
 use crate::pkgmanage::index::{clean_requires, escape_toml_string, render_metadata_toml};
@@ -83,7 +83,7 @@ fn escape_toml_string_escapes_backslash_and_double_quote() {
 // the offline stub install and the `PYTHONPATH` injection it required.
 //
 // These cover rules observable only inside the implementation -- as
-// opposed to `apps/mamba/e2e/pkgmgr_sync_real_install.rs`, which judges the
+// opposed to `e2e/pkgmgr_sync_real_install.rs`, which judges the
 // externally observable end-to-end `sync` / `run` / `sync --check` shape.
 
 mod sync_pip_run_real_install {
@@ -120,7 +120,7 @@ mod sync_pip_run_real_install {
     /// Build a real, importable wheel directly in `dir` -- a bare wheel
     /// file the way a direct-file/path lock entry names one on disk. Built
     /// through the product's own `WheelBuilder` (see
-    /// `apps/mamba/tests/pkgmgr/fixtures.rs::build_wheel_file`), not
+    /// `tests/pkgmgr/fixtures.rs::build_wheel_file`), not
     /// imported from it -- this crate's unit tests can't reach `tests/`.
     fn build_wheel_file(dir: &std::path::Path, name: &str, version: &str) -> std::path::PathBuf {
         std::fs::create_dir_all(dir).unwrap();
@@ -315,7 +315,7 @@ mod sync_pip_run_real_install {
 // `(normalized name, version)` against `mamba.lock`, and pruning exactly
 // what a distribution's own RECORD (plus the bytecode cache `import`
 // derives from it) owns -- as opposed to
-// `apps/mamba/e2e/pkgmgr_sync_prune.rs`, which judges the externally
+// `e2e/pkgmgr_sync_prune.rs`, which judges the externally
 // observable `sync` / `sync --check` / `run` shape end to end.
 mod sync_prune {
     use std::path::Path;
@@ -714,7 +714,7 @@ mod sync_prune {
 //
 // These cover the normalisation rule itself -- trim trailing slashes, strip
 // at most one trailing `/simple`, never touch anything else -- as opposed to
-// `apps/mamba/e2e/pkgmgr_index_url_simple.rs`, which judges the externally
+// `e2e/pkgmgr_index_url_simple.rs`, which judges the externally
 // observable `mamba add`/`mamba.lock` behavior end to end.
 mod index_url_simple {
     use crate::pkgmanage::pkgmgr::http::{index_client_for_url, normalize_index_url};
@@ -780,7 +780,7 @@ mod index_url_simple {
 // These cover the rules observable only inside the implementation --
 // interpreter selection per `Mode`, `PATH` resolution order, and the
 // compiler/interpreter route decision -- as opposed to
-// `apps/mamba/e2e/pkgmgr_run_file_venv.rs`, which judges the externally
+// `e2e/pkgmgr_run_file_venv.rs`, which judges the externally
 // observable end-to-end `run` shape through the real built binary.
 mod run_file {
     use std::path::{Path, PathBuf};
@@ -972,7 +972,7 @@ mod lock_artifact_pairing {
 // the requested package, and its `dependencies` naming the transitive pin.
 // The externally observable end-to-end shape (through the real binary,
 // `sync`, and `run`) is judged by
-// `apps/mamba/e2e/pkgmgr_add_registry_transitive.rs`.
+// `e2e/pkgmgr_add_registry_transitive.rs`.
 mod add_registry_transitive {
     use crate::pkgmanage::add::ManifestState;
     use crate::pkgmanage::lock::resolve_and_render_via_registry;
@@ -1287,7 +1287,7 @@ version = "1.0.0"
 //
 // These cover the pruning seam itself -- reachability from the remaining
 // manifest roots, `direct` recomputation, and replay determinism -- as
-// opposed to `apps/mamba/e2e/pkgmgr_remove_keeps_remaining_closure.rs`,
+// opposed to `e2e/pkgmgr_remove_keeps_remaining_closure.rs`,
 // which judges the externally observable `mamba remove` behavior end to end
 // against a real registry and a real `.venv`.
 mod remove_prunes_lock {

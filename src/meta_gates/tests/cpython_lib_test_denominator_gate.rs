@@ -88,7 +88,7 @@ fn denominator_source_is_vendored_cpython_lib_test() {
     );
     assert_eq!(
         c["denominator_source_relative_path"].as_str(),
-        Some("apps/mamba/conformance/cpython-lib-test")
+        Some("conformance/cpython-lib-test")
     );
     assert_eq!(
         c["denominator_source_relative_path_field_name"].as_str(),
@@ -137,7 +137,7 @@ fn runner_lives_under_projects_mamba_conformance() {
     );
     assert_eq!(
         c["runner_relative_path"].as_str(),
-        Some("apps/mamba/conformance/cpython_lib_test_runner.rs")
+        Some("conformance/cpython_lib_test_runner.rs")
     );
     assert_eq!(
         c["runner_relative_path_field_name"].as_str(),

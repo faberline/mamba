@@ -5,7 +5,7 @@
 # exported function that accepts and returns primitive values across
 # the Rust/Python boundary. The fixture is the per-family entry
 # point declared by `[families.type_roundtrip]` in
-# `apps/mamba/validation/profiles/mambalibs.toml`.
+# `validation/profiles/mambalibs.toml`.
 #
 # Acceptance (issue body):
 #

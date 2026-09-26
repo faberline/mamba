@@ -12,5 +12,5 @@ crate-type = ["rlib"]
 
 [dependencies]
 mamba-registry = { path = "../mamba-registry" }
-qc = { package = "meter", path = "../../../meter" }
+qc = { package = "meter", git = "https://github.com/faberline/meter", rev = "6689b38705978657eef0c3f8e12a937c416c5deb" }
 linkme.workspace = true

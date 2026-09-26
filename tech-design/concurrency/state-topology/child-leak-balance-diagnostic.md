@@ -209,13 +209,13 @@ known, bounded diagnostic compatibility mechanism.
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/execution_context.rs`
+- `src/runtime/execution_context.rs`
   - supply the scoped context/thread-state binding prerequisite.
-- `apps/mamba/src/runtime/execution_thread_state.rs`
+- `src/runtime/execution_thread_state.rs`
   - define the child diagnostics/state machine and terminal publication.
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/mod.rs`
   - wire the child-state module and crate-visible diagnostic seam.
-- `apps/mamba/src/runtime/rc.rs`
+- `src/runtime/rc.rs`
   - resolve the child handle in debug event hooks;
   - migrate existing lifecycle tests and delete data-bearing TLS.
 

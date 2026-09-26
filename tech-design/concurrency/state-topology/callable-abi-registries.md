@@ -191,4 +191,4 @@ ownership.
 - Dynamic-call tests for all combinations of variadic, kwargs, and boxed
   return.
 - Snapshot rule: #2981 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

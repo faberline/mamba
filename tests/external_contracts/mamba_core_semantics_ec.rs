@@ -843,7 +843,7 @@ fn type_wall_conformance_determinism() {
     );
     assert_eq!(
         baseline.manifest_path,
-        "apps/mamba/tests/governance/gates/t1_type_wall_denominator/manifest.toml",
+        "tests/governance/gates/t1_type_wall_denominator/manifest.toml",
         "Baseline manifest_path mismatch"
     );
     assert_eq!(baseline.row_count, 7407, "Baseline row_count mismatch");
@@ -3200,7 +3200,7 @@ fn discover_authoritative_source_sets(
     let mut ordinary_paths = Vec::new();
     let mut ordinary_identities = BTreeSet::new();
 
-    let manifests_dir = repo_root.join("apps/mamba/tests/harness/cpython/config/manifests");
+    let manifests_dir = repo_root.join("tests/harness/cpython/config/manifests");
     fn collect_manifest_tomls(
         dir: &std::path::Path,
         repo_root: &std::path::Path,
@@ -3269,7 +3269,7 @@ fn discover_authoritative_source_sets(
         }
     }
 
-    let gaps_path = repo_root.join("apps/mamba/tests/harness/cpython/config/behavior_gaps.txt");
+    let gaps_path = repo_root.join("tests/harness/cpython/config/behavior_gaps.txt");
     if gaps_path.is_file() {
         if let Ok(rel) = gaps_path.strip_prefix(repo_root) {
             ordinary_paths.push(rel.to_string_lossy().to_string());
@@ -3285,7 +3285,7 @@ fn discover_authoritative_source_sets(
     }
 
     let div_path =
-        repo_root.join("apps/mamba/tests/harness/cpython/config/type_divergences.txt");
+        repo_root.join("tests/harness/cpython/config/type_divergences.txt");
     if div_path.is_file() {
         if let Ok(rel) = div_path.strip_prefix(repo_root) {
             ordinary_paths.push(rel.to_string_lossy().to_string());
@@ -3321,9 +3321,9 @@ fn discover_authoritative_source_sets(
     let mut ec_identities = BTreeSet::new();
 
     let ec_dirs = [
-        repo_root.join("apps/mamba/external-contracts/behavior"),
-        repo_root.join("apps/mamba/external-contracts/stability"),
-        repo_root.join("apps/mamba/external-contracts/efficiency"),
+        repo_root.join("external-contracts/behavior"),
+        repo_root.join("external-contracts/stability"),
+        repo_root.join("external-contracts/efficiency"),
     ];
 
     for dir in &ec_dirs {
@@ -3416,7 +3416,7 @@ fn discover_authoritative_source_sets(
     let mut denom_paths = Vec::new();
     let mut denom_identities = BTreeSet::new();
 
-    let gates_dir = repo_root.join("apps/mamba/tests/governance/gates");
+    let gates_dir = repo_root.join("tests/governance/gates");
     if let Ok(entries) = std::fs::read_dir(&gates_dir) {
         for entry in entries.flatten() {
             let path = entry.path();
@@ -3426,10 +3426,10 @@ fn discover_authoritative_source_sets(
                         let manifest_path = path.join("manifest.toml");
                         let denom_txt = path.join("denominator.txt");
                         let manifest_rel = format!(
-                            "apps/mamba/tests/governance/gates/{dir_name}/manifest.toml"
+                            "tests/governance/gates/{dir_name}/manifest.toml"
                         );
                         let denom_rel = format!(
-                            "apps/mamba/tests/governance/gates/{dir_name}/denominator.txt"
+                            "tests/governance/gates/{dir_name}/denominator.txt"
                         );
 
                         denom_paths.push(manifest_rel);
@@ -3620,9 +3620,9 @@ fn reconcile_source_sets_and_inventory(
 }
 
 const ALLOWED_POST_PIN_ARTIFACT_PATHS: &[&str] = &[
-    "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
-    "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
-    "apps/mamba/external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
+    "tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
+    "tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
+    "external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
 ];
 
 fn validate_post_pin_changed_paths<S: AsRef<str>>(changed_paths: &[S]) -> Result<(), String> {
@@ -3693,22 +3693,22 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
     );
     assert!(
         validate_post_pin_changed_paths(&[
-            "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
-            "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
-            "apps/mamba/external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
+            "tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl",
+            "tests/governance/gates/t1_oracle_hierarchy_inventory/manifest.toml",
+            "external-contracts/evidence/mamba-t1-oracle-hierarchy-lock.json",
         ])
         .is_ok(),
         "Post-pin canary (three allowed paths accept) FAILED"
     );
     assert!(
         validate_post_pin_changed_paths(&[
-            "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl.bak",
+            "tests/governance/gates/t1_oracle_hierarchy_inventory/cases.jsonl.bak",
         ])
         .is_err(),
         "Post-pin canary (near-miss filename rejects) FAILED"
     );
     assert!(
-        validate_post_pin_changed_paths(&["apps/mamba/src/lib.rs",]).is_err(),
+        validate_post_pin_changed_paths(&["src/lib.rs",]).is_err(),
         "Post-pin canary (Mamba source path rejects) FAILED"
     );
     let mamba_exe = mamba_bin();
@@ -3727,7 +3727,7 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
         oracle_version: "Python 3.12".to_string(),
         oracle_command: "python3.12 dummy.py".to_string(),
         sut_command: format!(
-            "{} run apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md",
+            "{} run external-contracts/behavior/mamba-t1-to-thread-gather-results.md",
             mamba_exe.to_string_lossy()
         ),
         expected_divergence_class: "none".to_string(),
@@ -3737,7 +3737,7 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
         expected_terminal_classification: "green".to_string(),
         diagnostic_class: None,
         diagnostic_span: None,
-        fixture_or_probe_path: "apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md".to_string(),
+        fixture_or_probe_path: "external-contracts/behavior/mamba-t1-to-thread-gather-results.md".to_string(),
         mamba_binary_sha256: dummy_mamba_sha.clone(),
         mamba_git_sha: "1111111111111111111111111111111111111111".to_string(),
         platform: "aarch64-apple-darwin".to_string(),
@@ -4009,7 +4009,7 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
     // 18. Fake /mamba SUT executable canary
     let mut bad_fake_mamba = dummy_row.clone();
     bad_fake_mamba.sut_command =
-        "/tmp/fake/mamba run apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md".to_string();
+        "/tmp/fake/mamba run external-contracts/behavior/mamba-t1-to-thread-gather-results.md".to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
             &bad_fake_mamba,
@@ -4025,7 +4025,7 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
     // 19. Fixture path only in comment canary
     let mut bad_comment_fixture = dummy_row.clone();
     bad_comment_fixture.sut_command = format!(
-        "{} run other_file.py # apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md",
+        "{} run other_file.py # external-contracts/behavior/mamba-t1-to-thread-gather-results.md",
         mamba_exe.to_string_lossy()
     );
     assert!(
@@ -4043,7 +4043,7 @@ fn run_oracle_hierarchy_in_test_mutation_canaries() {
     // 20. Fixture path only as substring canary
     let mut bad_substring_fixture = dummy_row.clone();
     bad_substring_fixture.sut_command = format!(
-        "{} run apps/mamba/external-contracts/behavior/mamba-t1-to-thread-gather-results.md_extra",
+        "{} run external-contracts/behavior/mamba-t1-to-thread-gather-results.md_extra",
         mamba_exe.to_string_lossy()
     );
     assert!(
@@ -4335,12 +4335,12 @@ denominator_sha256 = "abc"
     let mock_missing_manifest_set = DiscoveredSourceSet {
         name: "tier1_gate_denominators".to_string(),
         paths: vec![
-            "apps/mamba/tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt".to_string(),
+            "tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt".to_string(),
         ],
         identity_count: 1,
         sha256_digest: "digest_missing".to_string(),
         source_identities: vec![
-            "apps/mamba/tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt".to_string(),
+            "tests/governance/gates/t1_multicore_scaling_denominator/denominator.txt".to_string(),
         ],
     };
     let mut mock_discovered_missing = BTreeMap::new();
@@ -4377,13 +4377,13 @@ denominator_sha256 = "abc"
     let mut legacy_param_types_row = dummy_row.clone();
     legacy_param_types_row.source_set = "ordinary_parity_corpus".to_string();
     legacy_param_types_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
             .to_string();
     legacy_param_types_row.fixture_or_probe_path =
-        "apps/mamba/tests/cpython/type/core/param_types/abs_rejects_str_argument.py"
+        "tests/cpython/type/core/param_types/abs_rejects_str_argument.py"
             .to_string();
     legacy_param_types_row.sut_command = format!(
-        "{} run apps/mamba/tests/cpython/type/core/param_types/abs_rejects_str_argument.py",
+        "{} run tests/cpython/type/core/param_types/abs_rejects_str_argument.py",
         mamba_exe.to_string_lossy()
     );
     assert!(
@@ -4400,7 +4400,7 @@ denominator_sha256 = "abc"
 
     let mut mismatched_param_types_row = legacy_param_types_row.clone();
     mismatched_param_types_row.fixture_or_probe_path =
-        "apps/mamba/tests/cpython/type/core/param_types/other_fixture.py".to_string();
+        "tests/cpython/type/core/param_types/other_fixture.py".to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
             &mismatched_param_types_row,
@@ -4417,7 +4417,7 @@ denominator_sha256 = "abc"
     let temp_dup_dir = tempfile::tempdir().expect("create temp dir for dup manifest canary");
     let manifest_rel_dir = temp_dup_dir
         .path()
-        .join("apps/mamba/tests/harness/cpython/config/manifests");
+        .join("tests/harness/cpython/config/manifests");
     std::fs::create_dir_all(&manifest_rel_dir).expect("create temp manifest dir");
     std::fs::write(
         manifest_rel_dir.join("dup.toml"),
@@ -4440,7 +4440,7 @@ case = [
     let temp_empty_dir = tempfile::tempdir().expect("create temp dir for empty manifest canary");
     let manifest_empty_rel_dir = temp_empty_dir
         .path()
-        .join("apps/mamba/tests/harness/cpython/config/manifests");
+        .join("tests/harness/cpython/config/manifests");
     std::fs::create_dir_all(&manifest_empty_rel_dir).expect("create temp manifest dir");
     std::fs::write(
         manifest_empty_rel_dir.join("empty.toml"),
@@ -4459,7 +4459,7 @@ case = []
     // 37. Malformed manifest identity canaries
     let mut malformed_manifest_row = legacy_param_types_row.clone();
     malformed_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml"
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4475,7 +4475,7 @@ case = []
 
     let mut empty_case_manifest_row = legacy_param_types_row.clone();
     empty_case_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case="
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml#case="
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4491,7 +4491,7 @@ case = []
 
     let mut non_toml_manifest_row = legacy_param_types_row.clone();
     non_toml_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.py#case=abs_rejects_str_argument"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.py#case=abs_rejects_str_argument"
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4537,7 +4537,7 @@ case = []
 
     let mut dup_delim_manifest_row = legacy_param_types_row.clone();
     dup_delim_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument#case=extra"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument#case=extra"
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4553,7 +4553,7 @@ case = []
 
     let mut extra_fragment_manifest_row = legacy_param_types_row.clone();
     extra_fragment_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument#extra"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument#extra"
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4569,7 +4569,7 @@ case = []
 
     let mut dot_dir_manifest_row = legacy_param_types_row.clone();
     dot_dir_manifest_row.source_identity =
-        "./apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
+        "./tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
             .to_string();
     assert!(
         validate_oracle_hierarchy_row_fields(
@@ -4586,14 +4586,14 @@ case = []
     // 38. Manifest path outside discovered ordinary-manifest set canary
     let mut mock_discovered_sets_c38 = BTreeMap::new();
     let canonical_id =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
+        "tests/harness/cpython/config/manifests/type-strict/param_types.toml#case=abs_rejects_str_argument"
             .to_string();
     mock_discovered_sets_c38.insert(
         "ordinary_parity_corpus".to_string(),
         DiscoveredSourceSet {
             name: "ordinary_parity_corpus".to_string(),
             paths: vec![
-                "apps/mamba/tests/harness/cpython/config/manifests/type-strict/param_types.toml"
+                "tests/harness/cpython/config/manifests/type-strict/param_types.toml"
                     .to_string(),
             ],
             identity_count: 1,
@@ -4628,10 +4628,10 @@ case = []
     outside_manifest_row.case_id = "outside_case".to_string();
     outside_manifest_row.probe_id = "outside_probe".to_string();
     outside_manifest_row.source_identity =
-        "apps/mamba/tests/harness/cpython/config/manifests/type-strict/outside.toml#case=abs_rejects_str_argument"
+        "tests/harness/cpython/config/manifests/type-strict/outside.toml#case=abs_rejects_str_argument"
             .to_string();
     outside_manifest_row.fixture_or_probe_path =
-        "apps/mamba/tests/cpython/type/core/param_types/abs_rejects_str_argument.py"
+        "tests/cpython/type/core/param_types/abs_rejects_str_argument.py"
             .to_string();
 
     let c38_res = reconcile_source_sets_and_inventory(
@@ -4645,7 +4645,7 @@ case = []
     );
     let c38_err = c38_res.unwrap_err();
     assert!(
-        c38_err.contains("apps/mamba/tests/harness/cpython/config/manifests/type-strict/outside.toml#case=abs_rejects_str_argument"),
+        c38_err.contains("tests/harness/cpython/config/manifests/type-strict/outside.toml#case=abs_rejects_str_argument"),
         "Canary 38 FAILED: error does not contain outside identity: {c38_err}"
     );
     assert!(
@@ -4881,7 +4881,7 @@ case = []
         .parent()
         .and_then(|p| p.parent())
         .unwrap_or_else(|| std::path::Path::new("."));
-    let rel_cmd = "test -f apps/mamba/tests/external_contracts/mamba_core_semantics_ec.rs";
+    let rel_cmd = "test -f tests/external_contracts/mamba_core_semantics_ec.rs";
     let root_ev = run_command_with_evidence(rel_cmd, repo_root, Duration::from_secs(5));
     assert_eq!(
         root_ev.exit_code,
@@ -4984,7 +4984,7 @@ case = []
     );
 
     // 55. Exact three-token repo-relative command string parser/argv shape canary
-    let sut_cmd = "target/release/mamba run apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/probes/to_thread_gather_behavior_green.py";
+    let sut_cmd = "target/release/mamba run tests/governance/gates/t1_oracle_hierarchy_inventory/probes/to_thread_gather_behavior_green.py";
     let (prog, args) = parse_command_spec(sut_cmd).expect("Canary 55 parse sut_cmd FAILED");
     assert_eq!(
         prog, "target/release/mamba",
@@ -4994,7 +4994,7 @@ case = []
         args,
         vec![
             "run",
-            "apps/mamba/tests/governance/gates/t1_oracle_hierarchy_inventory/probes/to_thread_gather_behavior_green.py"
+            "tests/governance/gates/t1_oracle_hierarchy_inventory/probes/to_thread_gather_behavior_green.py"
         ],
         "Canary 55 (argv vector match) FAILED"
     );

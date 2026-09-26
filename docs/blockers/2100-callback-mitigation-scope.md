@@ -58,13 +58,13 @@ The good news: **the dispatch ABI itself is essentially free** — `mb_call_spre
 - Wall time: 62.097s (mamba) — implies ~111 µs per reduce step
 - Samples: 58 757 across one thread
 - Symbolication: `atos -o target/release/mamba -l 0x100000000` with batch input
-- Profile artifact: `apps/mamba/docs/blockers/2100-reduce-profile.json` (1.1 MB)
+- Profile artifact: `docs/blockers/2100-reduce-profile.json` (1.1 MB)
 
 ## Top-3 cost centers (ranked by leverage)
 
 ### Center 1 — GC threshold too aggressive for callback hot loops (30% + 28% = 58% of total)
 
-**Where**: `apps/mamba/src/runtime/gc.rs:39` — `threshold: 700`. Combined with the implicit GC trigger in `gc_track` (gc.rs:91 `gc.alloc_count >= gc.threshold`), every ~700th container allocation runs a full mark-and-sweep over all tracked containers.
+**Where**: `src/runtime/gc.rs:39` — `threshold: 700`. Combined with the implicit GC trigger in `gc_track` (gc.rs:91 `gc.alloc_count >= gc.threshold`), every ~700th container allocation runs a full mark-and-sweep over all tracked containers.
 
 **Why it hurts**: The reduce loop creates a tiny 2-element `List` per call. With 500 000 such lists, GC fires hundreds of times, and each pass walks an `O(tracked.len())` set. The `mark_object` recursion (gc.rs:347-351) and `collect` body (gc.rs:212) together dominate.
 
@@ -100,7 +100,7 @@ The good news: **the dispatch ABI itself is essentially free** — `mb_call_spre
 
 ### Center 3 — list-of-2 boxing in the reduce hot path (caller-side, not runtime)
 
-**Where**: `apps/mamba/src/runtime/stdlib/functools_mod.rs:329-331`:
+**Where**: `src/runtime/stdlib/functools_mod.rs:329-331`:
 
 ```rust
 let pair = MbValue::from_ptr(MbObject::new_list(vec![acc, *item]));
@@ -168,11 +168,11 @@ Reproduce:
 CARGO_PROFILE_RELEASE_STRIP=none CARGO_PROFILE_RELEASE_DEBUG=line-tables-only \
   cargo build --release -p mamba --bin mamba
 samply record --save-only --unstable-presymbolicate --no-open \
-  --output apps/mamba/docs/blockers/2100-reduce-profile.json \
-  ./target/release/mamba run apps/mamba/tests/cpython/_regression/std-libs/functools/bench/reduce_add.py
+  --output docs/blockers/2100-reduce-profile.json \
+  ./target/release/mamba run tests/cpython/_regression/std-libs/functools/bench/reduce_add.py
 samply record --save-only --unstable-presymbolicate --no-open \
-  --output apps/mamba/docs/blockers/2100-colorsys-profile.json \
-  ./target/release/mamba run apps/mamba/tests/cpython/_regression/std-libs/colorsys/bench/rgb_to_hls_bulk.py
+  --output docs/blockers/2100-colorsys-profile.json \
+  ./target/release/mamba run tests/cpython/_regression/std-libs/colorsys/bench/rgb_to_hls_bulk.py
 ```
 
 To symbolicate hex-address leaf frames (Firefox Profiler doesn't auto-symbolicate from Mach-O):

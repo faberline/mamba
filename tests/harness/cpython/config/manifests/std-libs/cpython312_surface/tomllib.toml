@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "TOMLDecodeError"
 expr      = "tomllib"
 module    = "tomllib"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "load"
 expr      = "tomllib"
 module    = "tomllib"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,4 +35,4 @@ probe     = "attr"
 attr      = "loads"
 expr      = "tomllib"
 module    = "tomllib"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

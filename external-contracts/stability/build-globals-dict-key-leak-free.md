@@ -16,7 +16,7 @@ e2e_tests:
     claim_id: build-globals-dict-leaks-no-key-references
     contract_id: MAMBA-T1-BUILD-GLOBALS-DICT-KEY-LEAK-FREE
     category: stability
-    test_path: apps/mamba/tests/external_contracts/ec_build_globals_dict_key_leak_free.rs
+    test_path: tests/external_contracts/ec_build_globals_dict_key_leak_free.rs
     command: "cargo test -p mamba --release --test mamba_core_semantics_ec -- build_globals_dict_key_leak_free --exact"
     assertions:
       - "Comparing two mamba runs that call globals() 100 times versus 50,000 times (42 exposed names per call: 20 id_ns values, 20 func_info functions, plus the __name__ and total module globals), peak process RSS for the 50,000-call run is no greater than the 100-call run's peak RSS plus 24 MiB; unreleased per-call key allocations would instead grow roughly linearly with call count."

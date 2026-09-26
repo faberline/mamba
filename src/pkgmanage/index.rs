@@ -196,9 +196,9 @@ fn read_requires_dist(wheel_path: &Path) -> Result<Vec<String>> {
 // a wheel's `Requires-Dist:` entries down to the ones `mamba add`/`mamba
 // lock` should resolve against, and rendering the `metadata.toml` TOML body
 // written beside each staged wheel. Colocated unit tests in
-// `apps/mamba/src/pkgmanage/tests.rs` cover these directly (`pub(crate)` so
+// `src/pkgmanage/tests.rs` cover these directly (`pub(crate)` so
 // that sibling-module test file can reach them); the black-box
-// `apps/mamba/e2e/pkgmgr_lock_frozen_transitive.rs` case judges the
+// `e2e/pkgmgr_lock_frozen_transitive.rs` case judges the
 // externally observable `mamba.lock` shape these functions feed.
 
 /// Drop `extra == "..."` marker requirements entirely (they gate optional

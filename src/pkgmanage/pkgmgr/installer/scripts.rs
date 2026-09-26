@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:958acb15" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-scripts-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/scripts.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:958acb15" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-scripts-rs" reason="Existing hand-written code in src/pkgmgr/installer/scripts.rs requires tracked generator coverage."
 // group and emits `bin/<name>` files with `#!{python_exe}\nimport runpy; runpy.run_module(...)`
 // content. Sets executable bit on Unix.
 

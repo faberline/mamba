@@ -9,7 +9,7 @@ full Python frame setup, attribute writes, and a regex-import
 side-effect on first construction.
 
 Mamba dispatches directly into `mb_html_parser_new`
-(see `apps/mamba/src/runtime/stdlib/html_parser_mod.rs`) which
+(see `src/runtime/stdlib/html_parser_mod.rs`) which
 returns a single passive dict shell with one `__class__` key — no
 state initialization, no regex import, no Python-level frame setup.
 

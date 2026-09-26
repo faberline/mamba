@@ -55,11 +55,11 @@ only while the code containing that address remains mapped.
 
 The one admitted production identity is:
 
-`apps/mamba/src/runtime/registry_bridge.rs::ATTRIBUTE_GETTERS`
+`src/runtime/registry_bridge.rs::ATTRIBUTE_GETTERS`
 
 The one discarded process-immutable candidate is:
 
-`apps/mamba/src/runtime/registry_bridge.rs::REAL_OPS`
+`src/runtime/registry_bridge.rs::REAL_OPS`
 
 There are zero test-only identities. The admitted identity's sorted
 newline-terminated SHA-256 is
@@ -316,13 +316,13 @@ Prerequisites:
 
 Exact planned paths:
 
-- `apps/mamba/src/runtime/registry_bridge.rs`
+- `src/runtime/registry_bridge.rs`
   - replace `ATTRIBUTE_GETTERS` with the typed process catalog, implement
     conflict-aware registration, and return immutable records outside guards.
-- `apps/mamba/crates/mamba-registry/src/ops.rs`
+- `crates/mamba-registry/src/ops.rs`
   - expose typed registration failure and lifetime authority through
     `ObjectOps`.
-- `apps/mamba/crates/mamba-registry/src/lib.rs`
+- `crates/mamba-registry/src/lib.rs`
   - only when required to define or transport the proved module lease.
 
 Forbidden changes:

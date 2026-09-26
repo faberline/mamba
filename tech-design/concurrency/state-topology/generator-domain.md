@@ -386,4 +386,4 @@ one implementation packet.
 - Generator and ordinary output enter the same context capture.
 - JIT module retirement blocks until every dependent generator retires.
 - Snapshot rule: #2991 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

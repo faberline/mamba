@@ -26,5 +26,5 @@ test_path = "src/ec-2033.py"
 promise = "Replace this scaffold with the ec-2033 external contract."
 oracle = "replace-with-independent-oracle"
 target = "rust"
-command = "test -s apps/mamba/external-contracts/evidence/ec-2033-behavior.json"
+command = "test -s external-contracts/evidence/ec-2033-behavior.json"
 evidence_paths = ["evidence/ec-2033-behavior.json"]

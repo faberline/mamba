@@ -108,7 +108,7 @@ stdlib surface.
 
 ```bash
 # inner loop (seconds; runner-parity verdicts; set MAMBA_BIN after a release build) — from
-# apps/mamba/tests/harness/cpython/ (sweep.py resolves relative paths against tests/cpython/ already,
+# tests/harness/cpython/ (sweep.py resolves relative paths against tests/cpython/ already,
 # so args must NOT be prefixed with tests/cpython/ — doing so double-nests and hard-fails)
 python3 tools/sweep.py behavior/core/import \
   _regression/core/{circular_import,import_cache,imports,relative_import,star_import} \

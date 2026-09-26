@@ -13,7 +13,7 @@ probe     = "attr"
 attr      = "Binary"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -24,7 +24,7 @@ probe     = "attr"
 attr      = "Blob"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -35,7 +35,7 @@ probe     = "attr"
 attr      = "Connection"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -46,7 +46,7 @@ probe     = "attr"
 attr      = "Cursor"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -57,7 +57,7 @@ probe     = "attr"
 attr      = "DataError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -68,7 +68,7 @@ probe     = "attr"
 attr      = "DatabaseError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -79,7 +79,7 @@ probe     = "attr"
 attr      = "Date"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -90,7 +90,7 @@ probe     = "attr"
 attr      = "DateFromTicks"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -101,7 +101,7 @@ probe     = "attr"
 attr      = "Error"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -112,7 +112,7 @@ probe     = "attr"
 attr      = "IntegrityError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -123,7 +123,7 @@ probe     = "attr"
 attr      = "InterfaceError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -134,7 +134,7 @@ probe     = "attr"
 attr      = "InternalError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -145,7 +145,7 @@ probe     = "attr"
 attr      = "LEGACY_TRANSACTION_CONTROL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -156,7 +156,7 @@ probe     = "attr"
 attr      = "NotSupportedError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -167,7 +167,7 @@ probe     = "attr"
 attr      = "OperationalError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -178,7 +178,7 @@ probe     = "attr"
 attr      = "PARSE_COLNAMES"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -189,7 +189,7 @@ probe     = "attr"
 attr      = "PARSE_DECLTYPES"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -200,7 +200,7 @@ probe     = "attr"
 attr      = "PrepareProtocol"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -211,7 +211,7 @@ probe     = "attr"
 attr      = "ProgrammingError"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -222,7 +222,7 @@ probe     = "attr"
 attr      = "Row"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -233,7 +233,7 @@ probe     = "attr"
 attr      = "SQLITE_ABORT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -244,7 +244,7 @@ probe     = "attr"
 attr      = "SQLITE_ABORT_ROLLBACK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -255,7 +255,7 @@ probe     = "attr"
 attr      = "SQLITE_ALTER_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -266,7 +266,7 @@ probe     = "attr"
 attr      = "SQLITE_ANALYZE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -277,7 +277,7 @@ probe     = "attr"
 attr      = "SQLITE_ATTACH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -288,7 +288,7 @@ probe     = "attr"
 attr      = "SQLITE_AUTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -299,7 +299,7 @@ probe     = "attr"
 attr      = "SQLITE_AUTH_USER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -310,7 +310,7 @@ probe     = "attr"
 attr      = "SQLITE_BUSY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -321,7 +321,7 @@ probe     = "attr"
 attr      = "SQLITE_BUSY_RECOVERY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -332,7 +332,7 @@ probe     = "attr"
 attr      = "SQLITE_BUSY_SNAPSHOT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -343,7 +343,7 @@ probe     = "attr"
 attr      = "SQLITE_BUSY_TIMEOUT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -354,7 +354,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -365,7 +365,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_CONVPATH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -376,7 +376,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_DIRTYWAL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -387,7 +387,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_FULLPATH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -398,7 +398,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_ISDIR"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -409,7 +409,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_NOTEMPDIR"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -420,7 +420,7 @@ probe     = "attr"
 attr      = "SQLITE_CANTOPEN_SYMLINK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -431,7 +431,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -442,7 +442,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_CHECK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -453,7 +453,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_COMMITHOOK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -464,7 +464,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_FOREIGNKEY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -475,7 +475,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_FUNCTION"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -486,7 +486,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_NOTNULL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -497,7 +497,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_PINNED"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -508,7 +508,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_PRIMARYKEY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -519,7 +519,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_ROWID"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -530,7 +530,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -541,7 +541,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_UNIQUE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -552,7 +552,7 @@ probe     = "attr"
 attr      = "SQLITE_CONSTRAINT_VTAB"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -563,7 +563,7 @@ probe     = "attr"
 attr      = "SQLITE_CORRUPT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -574,7 +574,7 @@ probe     = "attr"
 attr      = "SQLITE_CORRUPT_INDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -585,7 +585,7 @@ probe     = "attr"
 attr      = "SQLITE_CORRUPT_SEQUENCE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -596,7 +596,7 @@ probe     = "attr"
 attr      = "SQLITE_CORRUPT_VTAB"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -607,7 +607,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_INDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -618,7 +618,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -629,7 +629,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TEMP_INDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -640,7 +640,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TEMP_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -651,7 +651,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TEMP_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -662,7 +662,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TEMP_VIEW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -673,7 +673,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -684,7 +684,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_VIEW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -695,7 +695,7 @@ probe     = "attr"
 attr      = "SQLITE_CREATE_VTABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -706,7 +706,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_DEFENSIVE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -717,7 +717,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_DQS_DDL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -728,7 +728,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_DQS_DML"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -739,7 +739,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_FKEY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -750,7 +750,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_FTS3_TOKENIZER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -761,7 +761,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_LOAD_EXTENSION"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -772,7 +772,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_QPSG"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -783,7 +783,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -794,7 +794,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_ENABLE_VIEW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -805,7 +805,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_LEGACY_ALTER_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -816,7 +816,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_LEGACY_FILE_FORMAT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -827,7 +827,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_NO_CKPT_ON_CLOSE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -838,7 +838,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_RESET_DATABASE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -849,7 +849,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_TRIGGER_EQP"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -860,7 +860,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_TRUSTED_SCHEMA"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -871,7 +871,7 @@ probe     = "attr"
 attr      = "SQLITE_DBCONFIG_WRITABLE_SCHEMA"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -882,7 +882,7 @@ probe     = "attr"
 attr      = "SQLITE_DELETE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -893,7 +893,7 @@ probe     = "attr"
 attr      = "SQLITE_DENY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -904,7 +904,7 @@ probe     = "attr"
 attr      = "SQLITE_DETACH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -915,7 +915,7 @@ probe     = "attr"
 attr      = "SQLITE_DONE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -926,7 +926,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_INDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -937,7 +937,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -948,7 +948,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TEMP_INDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -959,7 +959,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TEMP_TABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -970,7 +970,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TEMP_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -981,7 +981,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TEMP_VIEW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -992,7 +992,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_TRIGGER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1003,7 +1003,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_VIEW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1014,7 +1014,7 @@ probe     = "attr"
 attr      = "SQLITE_DROP_VTABLE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1025,7 +1025,7 @@ probe     = "attr"
 attr      = "SQLITE_EMPTY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1036,7 +1036,7 @@ probe     = "attr"
 attr      = "SQLITE_ERROR"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1047,7 +1047,7 @@ probe     = "attr"
 attr      = "SQLITE_ERROR_MISSING_COLLSEQ"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1058,7 +1058,7 @@ probe     = "attr"
 attr      = "SQLITE_ERROR_RETRY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1069,7 +1069,7 @@ probe     = "attr"
 attr      = "SQLITE_ERROR_SNAPSHOT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1080,7 +1080,7 @@ probe     = "attr"
 attr      = "SQLITE_FORMAT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1091,7 +1091,7 @@ probe     = "attr"
 attr      = "SQLITE_FULL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1102,7 +1102,7 @@ probe     = "attr"
 attr      = "SQLITE_FUNCTION"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1113,7 +1113,7 @@ probe     = "attr"
 attr      = "SQLITE_IGNORE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1124,7 +1124,7 @@ probe     = "attr"
 attr      = "SQLITE_INSERT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1135,7 +1135,7 @@ probe     = "attr"
 attr      = "SQLITE_INTERNAL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1146,7 +1146,7 @@ probe     = "attr"
 attr      = "SQLITE_INTERRUPT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1157,7 +1157,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1168,7 +1168,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_ACCESS"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1179,7 +1179,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_AUTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1190,7 +1190,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_BEGIN_ATOMIC"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1201,7 +1201,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_BLOCKED"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1212,7 +1212,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_CHECKRESERVEDLOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1223,7 +1223,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_CLOSE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1234,7 +1234,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_COMMIT_ATOMIC"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1245,7 +1245,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_CONVPATH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1256,7 +1256,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_CORRUPTFS"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1267,7 +1267,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_DATA"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1278,7 +1278,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_DELETE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1289,7 +1289,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_DELETE_NOENT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1300,7 +1300,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_DIR_CLOSE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1311,7 +1311,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_DIR_FSYNC"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1322,7 +1322,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_FSTAT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1333,7 +1333,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_FSYNC"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1344,7 +1344,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_GETTEMPPATH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1355,7 +1355,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_LOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1366,7 +1366,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_MMAP"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1377,7 +1377,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_NOMEM"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1388,7 +1388,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_RDLOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1399,7 +1399,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_READ"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1410,7 +1410,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_ROLLBACK_ATOMIC"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1421,7 +1421,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SEEK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1432,7 +1432,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SHMLOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1443,7 +1443,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SHMMAP"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1454,7 +1454,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SHMOPEN"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1465,7 +1465,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SHMSIZE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1476,7 +1476,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_SHORT_READ"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1487,7 +1487,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_TRUNCATE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1498,7 +1498,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_UNLOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1509,7 +1509,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_VNODE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1520,7 +1520,7 @@ probe     = "attr"
 attr      = "SQLITE_IOERR_WRITE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1531,7 +1531,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_ATTACHED"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1542,7 +1542,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_COLUMN"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1553,7 +1553,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_COMPOUND_SELECT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1564,7 +1564,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_EXPR_DEPTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1575,7 +1575,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_FUNCTION_ARG"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1586,7 +1586,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_LENGTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1597,7 +1597,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_LIKE_PATTERN_LENGTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1608,7 +1608,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_SQL_LENGTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1619,7 +1619,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_TRIGGER_DEPTH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1630,7 +1630,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_VARIABLE_NUMBER"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1641,7 +1641,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_VDBE_OP"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1652,7 +1652,7 @@ probe     = "attr"
 attr      = "SQLITE_LIMIT_WORKER_THREADS"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1663,7 +1663,7 @@ probe     = "attr"
 attr      = "SQLITE_LOCKED"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1674,7 +1674,7 @@ probe     = "attr"
 attr      = "SQLITE_LOCKED_SHAREDCACHE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1685,7 +1685,7 @@ probe     = "attr"
 attr      = "SQLITE_LOCKED_VTAB"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1696,7 +1696,7 @@ probe     = "attr"
 attr      = "SQLITE_MISMATCH"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1707,7 +1707,7 @@ probe     = "attr"
 attr      = "SQLITE_MISUSE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1718,7 +1718,7 @@ probe     = "attr"
 attr      = "SQLITE_NOLFS"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1729,7 +1729,7 @@ probe     = "attr"
 attr      = "SQLITE_NOMEM"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1740,7 +1740,7 @@ probe     = "attr"
 attr      = "SQLITE_NOTADB"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1751,7 +1751,7 @@ probe     = "attr"
 attr      = "SQLITE_NOTFOUND"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1762,7 +1762,7 @@ probe     = "attr"
 attr      = "SQLITE_NOTICE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1773,7 +1773,7 @@ probe     = "attr"
 attr      = "SQLITE_NOTICE_RECOVER_ROLLBACK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1784,7 +1784,7 @@ probe     = "attr"
 attr      = "SQLITE_NOTICE_RECOVER_WAL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1795,7 +1795,7 @@ probe     = "attr"
 attr      = "SQLITE_OK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1806,7 +1806,7 @@ probe     = "attr"
 attr      = "SQLITE_OK_LOAD_PERMANENTLY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1817,7 +1817,7 @@ probe     = "attr"
 attr      = "SQLITE_OK_SYMLINK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1828,7 +1828,7 @@ probe     = "attr"
 attr      = "SQLITE_PERM"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1839,7 +1839,7 @@ probe     = "attr"
 attr      = "SQLITE_PRAGMA"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1850,7 +1850,7 @@ probe     = "attr"
 attr      = "SQLITE_PROTOCOL"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1861,7 +1861,7 @@ probe     = "attr"
 attr      = "SQLITE_RANGE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1872,7 +1872,7 @@ probe     = "attr"
 attr      = "SQLITE_READ"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1883,7 +1883,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1894,7 +1894,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_CANTINIT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1905,7 +1905,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_CANTLOCK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1916,7 +1916,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_DBMOVED"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1927,7 +1927,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_DIRECTORY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1938,7 +1938,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_RECOVERY"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1949,7 +1949,7 @@ probe     = "attr"
 attr      = "SQLITE_READONLY_ROLLBACK"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1960,7 +1960,7 @@ probe     = "attr"
 attr      = "SQLITE_RECURSIVE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1971,7 +1971,7 @@ probe     = "attr"
 attr      = "SQLITE_REINDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1982,7 +1982,7 @@ probe     = "attr"
 attr      = "SQLITE_ROW"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -1993,7 +1993,7 @@ probe     = "attr"
 attr      = "SQLITE_SAVEPOINT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2004,7 +2004,7 @@ probe     = "attr"
 attr      = "SQLITE_SCHEMA"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2015,7 +2015,7 @@ probe     = "attr"
 attr      = "SQLITE_SELECT"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2026,7 +2026,7 @@ probe     = "attr"
 attr      = "SQLITE_TOOBIG"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2037,7 +2037,7 @@ probe     = "attr"
 attr      = "SQLITE_TRANSACTION"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2048,7 +2048,7 @@ probe     = "attr"
 attr      = "SQLITE_UPDATE"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2059,7 +2059,7 @@ probe     = "attr"
 attr      = "SQLITE_WARNING"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2070,7 +2070,7 @@ probe     = "attr"
 attr      = "SQLITE_WARNING_AUTOINDEX"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2081,7 +2081,7 @@ probe     = "attr"
 attr      = "Time"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2092,7 +2092,7 @@ probe     = "attr"
 attr      = "TimeFromTicks"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2103,7 +2103,7 @@ probe     = "attr"
 attr      = "Timestamp"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2114,7 +2114,7 @@ probe     = "attr"
 attr      = "TimestampFromTicks"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2125,7 +2125,7 @@ probe     = "attr"
 attr      = "Warning"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2136,7 +2136,7 @@ probe     = "attr"
 attr      = "adapt"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2147,7 +2147,7 @@ probe     = "attr"
 attr      = "adapters"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2158,7 +2158,7 @@ probe     = "attr"
 attr      = "apilevel"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2169,7 +2169,7 @@ probe     = "attr"
 attr      = "collections"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2180,7 +2180,7 @@ probe     = "attr"
 attr      = "complete_statement"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2191,7 +2191,7 @@ probe     = "attr"
 attr      = "connect"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2202,7 +2202,7 @@ probe     = "attr"
 attr      = "converters"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2213,7 +2213,7 @@ probe     = "attr"
 attr      = "datetime"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2224,7 +2224,7 @@ probe     = "attr"
 attr      = "dbapi2"
 expr      = "sqlite3"
 module    = "sqlite3.dbapi2"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2235,7 +2235,7 @@ probe     = "attr"
 attr      = "enable_callback_tracebacks"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2246,7 +2246,7 @@ probe     = "attr"
 attr      = "paramstyle"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2257,7 +2257,7 @@ probe     = "attr"
 attr      = "register_adapter"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2268,7 +2268,7 @@ probe     = "attr"
 attr      = "register_converter"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2279,7 +2279,7 @@ probe     = "attr"
 attr      = "sqlite_version"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2290,7 +2290,7 @@ probe     = "attr"
 attr      = "sqlite_version_info"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2301,7 +2301,7 @@ probe     = "attr"
 attr      = "threadsafety"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"
 
 [[case]]
 dimension = "surface"
@@ -2312,4 +2312,4 @@ probe     = "attr"
 attr      = "time"
 expr      = "sqlite3"
 module    = "sqlite3"
-source    = "apps/mamba/data/cpython312_surface.json"
+source    = "data/cpython312_surface.json"

@@ -209,4 +209,4 @@ detachment.
 - Partially initialized module cleanup.
 - Callable-address lifetime test keyed to `ModuleId`.
 - Snapshot rule: #2980 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

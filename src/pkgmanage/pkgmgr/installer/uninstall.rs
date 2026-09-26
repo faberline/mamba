@@ -1,4 +1,4 @@
-// HANDWRITE-BEGIN gap="missing-generator:hand-written:e1c4453f" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-uninstall-rs" reason="Existing hand-written code in apps/mamba/src/pkgmgr/installer/uninstall.rs requires tracked generator coverage."
+// HANDWRITE-BEGIN gap="missing-generator:hand-written:e1c4453f" tracker="standardize-gap-projects-mamba-src-pkgmgr-installer-uninstall-rs" reason="Existing hand-written code in src/pkgmgr/installer/uninstall.rs requires tracked generator coverage."
 // site_packages, deletes every listed file (idempotent on missing entries),
 // removes the dist-info directory. Errors when no dist-info matches the name.
 

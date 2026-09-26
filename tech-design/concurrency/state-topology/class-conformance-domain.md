@@ -137,7 +137,7 @@ The exact selector is:
 ```bash
 rg -n \
   'static RUNTIME_CHECKABLE_PROTOCOLS|static ABC_VIRTUAL_SUBCLASSES|static USER_ABC_OWN_ABSTRACT|RUNTIME_CHECKABLE_PROTOCOLS\.with|ABC_VIRTUAL_SUBCLASSES\.with|USER_ABC_OWN_ABSTRACT\.with' \
-  apps/mamba/src/runtime/class/mod.rs
+  src/runtime/class/mod.rs
 ```
 
 Its exact stdout has SHA-256:
@@ -185,9 +185,9 @@ The identity partition is `5 + 7 + 5 = 17`.
 
 This topology refines:
 
-- `apps/mamba/tech-design/concurrency/execution-context.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-definition-registry.md`;
-- `apps/mamba/tech-design/concurrency/state-topology/class-identity-origin-catalog.md`.
+- `tech-design/concurrency/execution-context.md`;
+- `tech-design/concurrency/state-topology/class-definition-registry.md`;
+- `tech-design/concurrency/state-topology/class-identity-origin-catalog.md`.
 
 It preserves the accepted class identity, definition version, publication, and
 operation-lease contracts.
@@ -534,14 +534,14 @@ finishes. Retirement does not make an admitted operation dangle.
 
 ## Planned implementation paths
 
-- `apps/mamba/src/runtime/execution_context.rs`
-- `apps/mamba/src/runtime/class/mod.rs`
-- `apps/mamba/src/runtime/stdlib/typing_mod.rs`
-- `apps/mamba/src/runtime/stdlib/inspect_mod.rs`
-- `apps/mamba/src/runtime/builtins/type_objects.rs`
-- `apps/mamba/src/runtime/symbols.rs`
-- `apps/mamba/src/lower/hir_to_mir.rs`
-- `apps/mamba/src/runtime/mod.rs`
+- `src/runtime/execution_context.rs`
+- `src/runtime/class/mod.rs`
+- `src/runtime/stdlib/typing_mod.rs`
+- `src/runtime/stdlib/inspect_mod.rs`
+- `src/runtime/builtins/type_objects.rs`
+- `src/runtime/symbols.rs`
+- `src/lower/hir_to_mir.rs`
+- `src/runtime/mod.rs`
 - focused Rust tests in the existing modules above
 
 `runtime/mod.rs` changes centralized per-TLS cleanup routing to context-local
@@ -588,7 +588,7 @@ Minimum structural gate:
 ```bash
 rg -n \
   'RUNTIME_CHECKABLE_PROTOCOLS|ABC_VIRTUAL_SUBCLASSES|USER_ABC_OWN_ABSTRACT' \
-  apps/mamba/src
+  src
 ```
 
 It passes only when it returns no matches.

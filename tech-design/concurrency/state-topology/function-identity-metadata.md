@@ -120,6 +120,6 @@ metadata.
 - Inventory count: 4.
 - Inventory digest:
   `a483558ff01e86c5f173ddcb7f4c75068ca363b8a64eb642374e33ccc7a94b6c`.
-- Exact source: `apps/mamba/src/runtime/closure.rs`.
+- Exact source: `src/runtime/closure.rs`.
 - Snapshot rule: #2972 permits no repository changes from AGY and no
-  `apps/mamba/src/**` changes from the controller.
+  `src/**` changes from the controller.

@@ -34,7 +34,7 @@ downstream test runner to consume.
   `QcMambaModule`
 - Gate — behavior: `cargo test -p qc-mamba`
 - Gate: `cargo test -p qc-mamba`
-- Source: `apps/mamba/crates/qc-mamba/src/lib.rs`,
-  `apps/mamba/crates/qc-mamba/src/methods.rs`
-- Evidence: `cargo test -p qc-mamba`; apps/mamba/crates/qc-mamba/src/lib.rs;
-  apps/mamba/crates/qc-mamba/src/methods.rs
+- Source: `crates/qc-mamba/src/lib.rs`,
+  `crates/qc-mamba/src/methods.rs`
+- Evidence: `cargo test -p qc-mamba`; crates/qc-mamba/src/lib.rs;
+  crates/qc-mamba/src/methods.rs

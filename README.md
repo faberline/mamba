@@ -83,7 +83,7 @@ correctness plus race, deadlock, leak, CPU, peak-RSS, and multicore evidence.
 
 - Surfaces: `mamba check|build|run`; `threading`, `concurrent.futures`,
   `asyncio`, built-in container mutation
-- Contracts: `apps/mamba/external-contracts/{type-system,concurrency}.md`
+- Contracts: `external-contracts/{type-system,concurrency}.md`
 - Exit gate: #2028 (fail-closed rollup that releases Tier 2) — **not written**
 
 
@@ -95,8 +95,8 @@ introspection, operator dispatch, compiler lowering, native codegen, and
 optimizer passes preserve CPython 3.12-visible behavior. Tier 2 never restores
 implicit `Any` or GIL-dependent execution.
 
-- Contracts: `apps/mamba/external-contracts/{frontend,codegen,name-resolution,calling-convention,object-model,exceptions,iterators,import-system}.md`
-- Oracle: `apps/mamba/tests/harness/cpython`
+- Contracts: `external-contracts/{frontend,codegen,name-resolution,calling-convention,object-model,exceptions,iterators,import-system}.md`
+- Oracle: `tests/harness/cpython`
 - Exit gate: #2035 — **not written**
 
 
@@ -107,7 +107,7 @@ iterators, reductions, reflection, codecs, and built-in errors match CPython
 3.12 except for the declared Tier 1 type divergences. Built-in operations
 retain Tier 1 single-mutation memory safety and free-threaded execution.
 
-- Contracts: `apps/mamba/external-contracts/{numbers,collections,strings,iterators}.md`
+- Contracts: `external-contracts/{numbers,collections,strings,iterators}.md`
 - Exit gate: #2056 — **not written**
 
 
@@ -118,8 +118,8 @@ through real macOS/Linux backends with explicit platform classification,
 correct resource lifetime, and blocking/cancellation behavior. No stub or mock
 success; unsupported platform rows stay visible and issue-owned.
 
-- Contract: `apps/mamba/external-contracts/stdlib.md`
-- Platform matrix: `apps/mamba/tests/harness/cpython/tools/platform_readiness.py`
+- Contract: `external-contracts/stdlib.md`
+- Platform matrix: `tests/harness/cpython/tools/platform_readiness.py`
 - Exit gate: #2061 — **not written**
 
 
@@ -132,8 +132,8 @@ they preserve complete CPython behavior **and** demonstrate module-specific
 CPU, RSS, or startup value. Unimplemented tails resolve through one proven
 vendored module identity, never a native shell or sentinel stub.
 
-- Perf config: `apps/mamba/tests/harness/cpython/config/perf`
-- Source: `apps/mamba/src/runtime/stdlib`, `.../vendor_lib.rs`
+- Perf config: `tests/harness/cpython/config/perf`
+- Source: `src/runtime/stdlib`, `.../vendor_lib.rs`
 - Exit gate: #2080 — **not written**
 
 
@@ -144,7 +144,7 @@ nontrivial user journeys through an explicit route: pure-Python, native SDK,
 replacement, bounded emulation, or unsupported. Import-only probes, sentinel
 shims, and fake modules never count as readiness.
 
-- Contract: `apps/mamba/external-contracts/third-party.md`
+- Contract: `external-contracts/third-party.md`
 - Exit gate: #2096 — **not written**
 
 
@@ -156,7 +156,7 @@ is green may a measured candidate move to a native or hybrid implementation,
 and the vendored path stays the oracle and the rollback until promotion is
 proven.
 
-- Source: `apps/mamba/src/runtime/stdlib/vendor_lib.rs`, `apps/mamba/vendor`
+- Source: `src/runtime/stdlib/vendor_lib.rs`, `vendor`
 - Exit gates: 7a #2104, 7b #2116 — **not written**
 
 ## Test Completeness — what we tested, against what authority
@@ -900,9 +900,9 @@ Mamba is an existing-project takeover under Agentic Workflow. Beyond the four us
 
 | Layer        | What it means                                                                   | Current  | Gate                                       | Epic |
 |--------------|---------------------------------------------------------------------------------|----------|--------------------------------------------|------|
-| **managed**     | Every in-scope file is marked `CODEGEN` or `HANDWRITE`. No unmarked files.       | **5.1%** (119 / 2343; 90 HANDWRITE + 29 CODEGEN + 2224 unmarked) | no gate; the reporting verb went with the `aw` binary | [#3882](https://github.com/chrischeng-c4/cclab/issues/3882) |
-| **semantic**    | Source behavior is covered by semantic TD (claim TDs do not count).              | **0.7%** (17 semantic / 2343 units) | no gate; the reporting verb went with the `aw` binary | [#3883](https://github.com/chrischeng-c4/cclab/issues/3883) |
-| **regenerable** | Every in-scope file is fully `CODEGEN`-owned (no remaining `HANDWRITE` regions). | **0.1%** maturity; 27 audit/replay drift | no gate; the reporting verb went with the `aw` binary | [#3884](https://github.com/chrischeng-c4/cclab/issues/3884) |
+| **managed**     | Every in-scope file is marked `CODEGEN` or `HANDWRITE`. No unmarked files.       | **5.1%** (119 / 2343; 90 HANDWRITE + 29 CODEGEN + 2224 unmarked) | no gate; the reporting verb went with the `aw` binary | [#3882](https://github.com/faberline/axiom/issues/3882) |
+| **semantic**    | Source behavior is covered by semantic TD (claim TDs do not count).              | **0.7%** (17 semantic / 2343 units) | no gate; the reporting verb went with the `aw` binary | [#3883](https://github.com/faberline/axiom/issues/3883) |
+| **regenerable** | Every in-scope file is fully `CODEGEN`-owned (no remaining `HANDWRITE` regions). | **0.1%** maturity; 27 audit/replay drift | no gate; the reporting verb went with the `aw` binary | [#3884](https://github.com/faberline/axiom/issues/3884) |
 
 Layer order is **managed → semantic → regenerable** — you cannot specify what to generate before you know which files are in scope, and you cannot regenerate before the spec is semantic. There is **no skip state for source ownership**: if codegen can't generate a region yet, mark it `HANDWRITE`, name the concrete generator gap, and feed the gap back into Agentic Workflow until it can become `CODEGEN`.
 
@@ -923,9 +923,9 @@ Measured numbers per axis are in **[Capability status — the four axes](#capabi
 | Capability      | C4 Package manager (uv-like)| Yes — offline uv-like workflow gates cover init/auth/index/add/remove/lock/export/tree/version/pip/venv/python/workspace/shell/sync/run/install/tool/hash/cache; `sync` installs real wheels, `lock` pins the transitive closure, `run <file>` executes on `.venv` |
 | Runtime         | core substrate stability    | **99.1%** — sound; only edge crashes (deep recursion, gen-nesting cap, MRO, async-gen hang) |
 | Ceiling         | match Golang (`mamba/go`)   | ~4× behind Go on compute today (Go ~50× vs CPython, mamba ~13×); gap = value model + codegen, not JIT-vs-AOT |
-| Standardization | managed                     | No — 5.1%; epic [#3882](https://github.com/chrischeng-c4/cclab/issues/3882) |
-| Standardization | semantic                    | No — 0.7%; epic [#3883](https://github.com/chrischeng-c4/cclab/issues/3883) |
-| Standardization | regenerable                 | No — 0.1%; epic [#3884](https://github.com/chrischeng-c4/cclab/issues/3884) |
+| Standardization | managed                     | No — 5.1%; epic [#3882](https://github.com/faberline/axiom/issues/3882) |
+| Standardization | semantic                    | No — 0.7%; epic [#3883](https://github.com/faberline/axiom/issues/3883) |
+| Standardization | regenerable                 | No — 0.1%; epic [#3884](https://github.com/faberline/axiom/issues/3884) |
 
 ## Contributing
 
@@ -933,7 +933,7 @@ Engineering doctrine, build/test/verification rules, and the working-tree
 discipline live in [CONTRIBUTING.md](CONTRIBUTING.md). The orchestration
 playbook and bootstrap prompt for agent sessions: tracker issue #1134.
 Open work is tracked exclusively in GitHub issues (`gh issue list --repo
-chrischeng-c4/axiom --label app:mamba --state open`); the tracker is the source
+faberline/mamba --label app:mamba --state open`); the tracker is the source
 of truth. The label is `app:mamba` even though the source is under `projects/`,
 which is why deriving it from the directory finds nothing.
 
@@ -967,10 +967,10 @@ manager, whose rows are in [STATUS.md](STATUS.md) and whose shipped outcome
 
 | Capability | ID | User promise | Sources |
 |---|---|---|---|
-| Py3.12 functional parity | `cpython-312-parity` | Compile a CPython 3.12 program and get the same observable result, under a stated force-typing divergence policy. | `apps/mamba` |
-| Less CPU and memory than CPython | `cpu-and-memory-under-cpython` | Run the compiled program with less CPU time and less memory than CPython 3.12 on the pinned fixtures. | `apps/mamba` |
-| mambalibs end-to-end | `mambalibs-end-to-end` | Replace C-backed stdlib and third-party modules with native mamba implementations that pass their own end-to-end cases. | `apps/mamba` |
-| uv-style package manager | `uv-style-package-manager` | Drive a project's dependencies, environment, and interpreter with `uv`-shaped verbs, offline, on the CPython already installed. | `apps/mamba`, `core/cli-std` |
+| Py3.12 functional parity | `cpython-312-parity` | Compile a CPython 3.12 program and get the same observable result, under a stated force-typing divergence policy. | `mamba` |
+| Less CPU and memory than CPython | `cpu-and-memory-under-cpython` | Run the compiled program with less CPU time and less memory than CPython 3.12 on the pinned fixtures. | `mamba` |
+| mambalibs end-to-end | `mambalibs-end-to-end` | Replace C-backed stdlib and third-party modules with native mamba implementations that pass their own end-to-end cases. | `mamba` |
+| uv-style package manager | `uv-style-package-manager` | Drive a project's dependencies, environment, and interpreter with `uv`-shaped verbs, offline, on the CPython already installed. | `mamba`, `core/cli-std` |
 
 ### Py3.12 functional parity
 
@@ -981,7 +981,7 @@ manager, whose rows are in [STATUS.md](STATUS.md) and whose shipped outcome
   `Lib/test` port, the real-world programs, and the runtime-shutdown cases are
   the measure.
 - Sources:
-  - [`apps/mamba`](./) owns the lexer, HIR/MIR lowering, Cranelift codegen,
+  - [`mamba`](./) owns the lexer, HIR/MIR lowering, Cranelift codegen,
     runtime, and the conformance harness under `tests/`.
 - Gate: `cargo test -p mamba --test conformance_contract`
 - Gate: `cargo test -p mamba --test conformance_cpython_lib_test`
@@ -996,7 +996,7 @@ manager, whose rows are in [STATUS.md](STATUS.md) and whose shipped outcome
   the bench suite under Performance data is the exploratory measurement, not
   the gate.
 - Sources:
-  - [`apps/mamba`](./) owns the perf fixtures, the perf pin harness, and the
+  - [`mamba`](./) owns the perf fixtures, the perf pin harness, and the
     runtime whose CPU time and memory are measured.
 - Gate: `cargo test -p mamba --release --test perf_pin`
 
@@ -1014,7 +1014,7 @@ manager, whose rows are in [STATUS.md](STATUS.md) and whose shipped outcome
   and imported as `mambalibs.array`, `mambalibs.sci`, `mambalibs.plot`
   ([STATUS](STATUS.md) `mambalibs-cpython-wheels`).
 - Sources:
-  - [`apps/mamba`](./) owns the `mambalibs/` workspace members, the
+  - [`mamba`](./) owns the `mambalibs/` workspace members, the
     `mambalibs` end-to-end target that drives them, and the three
     `mambalibs_*_wheel` targets that build, install, and import a wheel.
 - Gate: `cargo test -p mamba --test mambalibs`
@@ -1040,7 +1040,7 @@ manager, whose rows are in [STATUS.md](STATUS.md) and whose shipped outcome
   `mamba pkgmgr-validate --json` replays the same workflow families from a
   built binary.
 - Sources:
-  - [`apps/mamba`](./) owns every verb under `src/pkgmanage/`, the `pkgmgr`
+  - [`mamba`](./) owns every verb under `src/pkgmanage/`, the `pkgmgr`
     cases under `tests/pkgmgr/`, and the `pkgmgr_*` black-box cases under
     `e2e/`.
   - [`core/cli-std`](https://github.com/faberline/core/blob/v0.4.14/crates/cli-std/README.md) supplies the standard

@@ -4,7 +4,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: apps/mamba/build.sh <debug|release>
+Usage: ./build.sh <debug|release>
 
 debug    Build mamba and install target/debug/mamba to ~/.cargo/bin/mamba.
 release  Build/install mamba, create a release commit, and print the tag to push after git:land.
@@ -15,7 +15,7 @@ fail_hint() {
   local mode="$1"
   echo ""
   echo "Build failed."
-  echo "Retry with: apps/mamba/build.sh ${mode}"
+  echo "Retry with: ./build.sh ${mode}"
   echo "Verify with: ~/.cargo/bin/mamba --version"
 }
 

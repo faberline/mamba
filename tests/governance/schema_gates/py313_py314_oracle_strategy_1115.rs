@@ -73,7 +73,7 @@ fn py313_py314_oracle_strategy_lists_required_child_work_categories() {
         "free-threading opportunity assessment",
         "PEP 594 removed-battery gating/docs",
         "multi-version oracle lane docs and metadata gates",
-        "apps/mamba/tests/governance/schema_gates/strict_type_accounting_gate_704.rs",
+        "tests/governance/schema_gates/strict_type_accounting_gate_704.rs",
     ] {
         assert!(
             doc.contains(needle),

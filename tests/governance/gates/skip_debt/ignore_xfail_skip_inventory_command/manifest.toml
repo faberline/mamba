@@ -46,7 +46,7 @@ scanned_marker_kinds = [
     "runtime_skip_annotation",
 ]
 must_scan_only_within_projects_mamba_tests = true
-scan_root_relative_path = "apps/mamba/tests"
+scan_root_relative_path = "tests"
 
 [summary_cross_reference]
 smoke_summary_fixture_issue = 2600
@@ -95,7 +95,7 @@ link_artifact_required_fields = [
     "schema_version",
     "checksum",
 ]
-link_artifact_relative_path_within_repo = "apps/mamba/tests/governance/gates/skip_debt/ignore_xfail_skip_inventory_command/link.json"
+link_artifact_relative_path_within_repo = "tests/governance/gates/skip_debt/ignore_xfail_skip_inventory_command/link.json"
 must_be_stable_across_runs_on_identical_input = true
 must_emit_schema_version = true
 schema_version_field_name = "schema_version"

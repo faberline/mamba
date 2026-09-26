@@ -41,7 +41,7 @@
 //!
 //! # Why today's tree cannot pass
 //!
-//! `cmd_run` (`apps/mamba/src/main.rs`) enters command mode only for
+//! `cmd_run` (`src/main.rs`) enters command mode only for
 //! `run -- <cmd>`; every other file goes to `CompilerSession::run`. The `run`
 //! verb declares no `--compile` flag and no positional after `<file>`, so
 //! three of the four observations below are refused before the file is even

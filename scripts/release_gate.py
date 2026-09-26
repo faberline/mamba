@@ -4,7 +4,7 @@
 Parent: #2775 (MVP release blocking CI profiles).
 
 Orchestrates the six release-blocking MVP profiles documented in
-`apps/mamba/validation/mvp.toml`:
+`validation/mvp.toml`:
 
     smoke, correctness, performance, ecosystem, package_manager, mambalibs
 

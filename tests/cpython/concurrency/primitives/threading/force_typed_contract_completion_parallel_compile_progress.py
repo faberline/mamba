@@ -74,7 +74,7 @@ def main():
     # 1. Read baseline provenance record
     prov_path = (
         repo_root
-        / "apps/mamba/external-contracts/evidence/mamba-t1-force-typed-baseline-provenance.json"
+        / "external-contracts/evidence/mamba-t1-force-typed-baseline-provenance.json"
     )
     if not prov_path.exists():
         sys.stderr.write(f"Provenance record not found: {prov_path}\n")
@@ -105,7 +105,7 @@ def main():
     # 2. Read cases.jsonl to discover the 7 families and their expected template digests
     cases_path = (
         repo_root
-        / "apps/mamba/tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl"
+        / "tests/governance/gates/t1_implicit_any_ingress_matrix/cases.jsonl"
     )
     if not cases_path.exists():
         sys.stderr.write(f"Cases inventory file not found: {cases_path}\n")
@@ -134,12 +134,12 @@ def main():
     for family, expected_digest in family_cases.items():
         implicit_path = (
             repo_root
-            / "apps/mamba/tests/cpython/_regression/core/typecheck/implicit_any_ingress"
+            / "tests/cpython/_regression/core/typecheck/implicit_any_ingress"
             / f"{family}.py"
         )
         explicit_path = (
             repo_root
-            / "apps/mamba/tests/cpython/_regression/core/typecheck/explicit_any_acceptance"
+            / "tests/cpython/_regression/core/typecheck/explicit_any_acceptance"
             / f"{family}.py"
         )
 
@@ -204,10 +204,10 @@ def main():
     fixture_list = []
     for family in family_cases.keys():
         fixture_list.append(
-            f"apps/mamba/tests/cpython/_regression/core/typecheck/implicit_any_ingress/{family}.py"
+            f"tests/cpython/_regression/core/typecheck/implicit_any_ingress/{family}.py"
         )
         fixture_list.append(
-            f"apps/mamba/tests/cpython/_regression/core/typecheck/explicit_any_acceptance/{family}.py"
+            f"tests/cpython/_regression/core/typecheck/explicit_any_acceptance/{family}.py"
         )
 
     # 8 repetitions of the 14 fixtures = 112 work units

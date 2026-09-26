@@ -396,4 +396,4 @@ must not be one implementation packet.
 - Context cleanup never resets the process allocator or another context's
   iterators.
 - Snapshot rule: #2992 permits no AGY repository writes and no controller
-  `apps/mamba/src/**` changes.
+  `src/**` changes.

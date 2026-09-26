@@ -256,9 +256,9 @@ doesn't surface it.
 
 ## References
 
-- [#2096](https://github.com/chrischeng-c4/cclab/issues/2096) — bytes / mem regression parent
-- [#2178](https://github.com/chrischeng-c4/cclab/issues/2178) — orthogonal: per-iter JIT alloc cohort
-- [#2181](https://github.com/chrischeng-c4/cclab/issues/2181) — array handle-leak (Instance drop hook informed by §"Cross-cutting implications")
+- [#2096](https://github.com/faberline/axiom/issues/2096) — bytes / mem regression parent
+- [#2178](https://github.com/faberline/axiom/issues/2178) — orthogonal: per-iter JIT alloc cohort
+- [#2181](https://github.com/faberline/axiom/issues/2181) — array handle-leak (Instance drop hook informed by §"Cross-cutting implications")
 - [2096-bytes-layout-profile.md](2096-bytes-layout-profile.md) — sibling subset-A Phase 1
 - [2096-codecs-base64-mem-payload-bound.md](2096-codecs-base64-mem-payload-bound.md) — subset-B carve-doc (Bytes-output flavor)
 - [2096-subset-B-deferred-notes.md](2096-subset-B-deferred-notes.md) — earlier deferral stub; superseded by this Phase 1 doc

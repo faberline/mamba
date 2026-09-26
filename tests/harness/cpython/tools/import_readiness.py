@@ -385,10 +385,10 @@ def build_report(show: int, db: Path) -> dict[str, Any]:
         + unowned_gap_count,
         "blockers": blockers,
         "evidence_commands": [
-            "python3.12 apps/mamba/tests/harness/cpython/tools/import_readiness.py --json",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/results_store.py collect --bucket behavior --limit 20",
-            "python3.12 apps/mamba/tests/harness/cpython/tools/verify_cpython_oracle.py --ready-only --bucket behavior",
-            "target/debug/mamba run apps/mamba/tests/cpython/behavior/core/import/import_tests__test_import_name_binding.py",
+            "python3.12 tests/harness/cpython/tools/import_readiness.py --json",
+            "python3.12 tests/harness/cpython/tools/results_store.py collect --bucket behavior --limit 20",
+            "python3.12 tests/harness/cpython/tools/verify_cpython_oracle.py --ready-only --bucket behavior",
+            "target/debug/mamba run tests/cpython/behavior/core/import/import_tests__test_import_name_binding.py",
         ],
     }
 

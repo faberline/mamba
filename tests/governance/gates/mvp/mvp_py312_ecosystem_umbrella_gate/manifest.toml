@@ -87,7 +87,7 @@ required_canonical_3p_programs = [
     "requests_https_get",
 ]
 canonical_3p_programs_field_name = "canonical_3p_programs"
-threep_umbrella_relative_path = "apps/mamba/tests/governance/gates/third_party/c3_3p_libs_conformance_umbrella_gate/manifest.toml"
+threep_umbrella_relative_path = "tests/governance/gates/third_party/c3_3p_libs_conformance_umbrella_gate/manifest.toml"
 threep_umbrella_relative_path_field_name = "threep_umbrella_relative_path"
 canonical_3p_program_missing_failure_kind = "mvp_ecosystem_canonical_3p_program_missing"
 canonical_3p_program_missing_exit_code = 325
@@ -104,8 +104,8 @@ must_pin_typeshed_surface_denominator_under_1397 = true
 must_report_per_module_pass_fail_in_ci = true
 forbid_relying_on_implicit_denominator = true
 forbid_dropping_either_denominator_dimension = true
-cpython_lib_test_gate_relative_path = "apps/mamba/tests/governance/gates/cpython_lib_test_denominator_gate/manifest.toml"
-typeshed_surface_gate_relative_path = "apps/mamba/tests/governance/gates/typeshed_surface_gate/manifest.toml"
+cpython_lib_test_gate_relative_path = "tests/governance/gates/cpython_lib_test_denominator_gate/manifest.toml"
+typeshed_surface_gate_relative_path = "tests/governance/gates/typeshed_surface_gate/manifest.toml"
 cpython_lib_test_gate_relative_path_field_name = "cpython_lib_test_gate_relative_path"
 typeshed_surface_gate_relative_path_field_name = "typeshed_surface_gate_relative_path"
 denominator_implicit_failure_kind = "mvp_ecosystem_stdlib_denominator_is_implicit"

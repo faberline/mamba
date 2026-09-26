@@ -26,7 +26,7 @@ from typing import Any
 
 TOOLS_DIR = Path(__file__).resolve().parent
 MAMBA_DIR = TOOLS_DIR.parents[3]
-WORKSPACE_ROOT = MAMBA_DIR.parents[1]
+WORKSPACE_ROOT = MAMBA_DIR
 SRC_ROOT = MAMBA_DIR / "src"
 RUNTIME_ROOTS = (SRC_ROOT / "runtime", SRC_ROOT / "ffi")
 ROOT_CARGO_TOML = WORKSPACE_ROOT / "Cargo.toml"

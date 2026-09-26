@@ -14,7 +14,7 @@
 //!      `profile` / `fixture_id` / `kind` / `reason` per blocker.
 //!   3. Schema is documented near the release profile manifests.
 //!      Schema file lives at
-//!      `apps/mamba/validation/schemas/release_summary.schema.json`,
+//!      `validation/schemas/release_summary.schema.json`,
 //!      sibling to `validation/profiles/`.
 //!
 //! Validator is hand-rolled (no new dependency): walks the schema's
