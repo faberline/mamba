@@ -63,7 +63,7 @@ nothing reaches PyPI implicitly.
   `interpreter-management`, `build-and-version`, `tooling-and-cache`,
   `sources-and-credentials`.
 
-## uv workflow parity (Milestone #130)
+## uv workflow parity (Milestone #11)
 
 - Problem: none open as shipped; the limits below are where the next
   package-manager outcome starts.

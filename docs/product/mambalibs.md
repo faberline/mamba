@@ -6,7 +6,7 @@ one of two carriers, in this order: a PyO3 extension wheel installed into a
 CPython `.venv` first, and a `MambaModule` inside the mamba runtime second. The
 wheel's Python API is the contract the runtime carrier must match.
 
-## mambalibs CPython wheels (Milestone #129)
+## mambalibs CPython wheels (Milestone #10)
 
 - Problem: none open as shipped; the limits below are where the remaining
   kits and the runtime carrier start.
