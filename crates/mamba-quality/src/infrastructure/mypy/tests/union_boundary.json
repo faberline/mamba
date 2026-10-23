@@ -1,0 +1,1470 @@
+{
+  "schema": "mamba.quality.mypy.union-boundary-controls.v1",
+  "source_pack_artifact_sha256": "20e7cec1a769774487562c5a40fe9f4c4c6b2f870f708900abdac50b7bb29213",
+  "sources_sha256": "0a57d34418f1a2285e3aa248eff6c6c94e46cd42f69e7b466e2ab6cfb1289f50",
+  "capture_manifest_sha256": "1c81b8fee0e26cb70712ffb3f323643b018fa95c37aef4895ddb3886083ff29a",
+  "capture_verification_sha256": "42320ca3732ee0014e326010c9578b9fb4137d7c0d9ec3b66c9b0af174c939f6",
+  "targets": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "cases": [
+    "duplicate_receiver_partials",
+    "mixed_typeddict_non_typeddict_union",
+    "closed_receiver_open_source_union",
+    "readonly_requiredness_subtype_partials"
+  ],
+  "flag_state": "extra_checks_enabled",
+  "reporters": [
+    "json",
+    "text"
+  ],
+  "original_repeats_per_reporter": 2,
+  "qualified_original_calls": 48,
+  "stable_repeat_pairs": 24,
+  "cells": [
+    {
+      "case": "duplicate_receiver_partials",
+      "target": "3.12",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass FirstSource(TypedDict):\n    key: str\n\nclass SecondSource(TypedDict):\n    key: str\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstSource | SecondSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c617373204669727374536f7572636528547970656444696374293a0a202020206b65793a207374720a0a636c617373205365636f6e64536f7572636528547970656444696374293a0a202020206b65793a207374720a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a204669727374536f75726365207c205365636f6e64536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 280,
+      "source_sha256": "44f51e1ed350e97dfb209a2867d1a564415d503cad3e866e644ece05c0141315",
+      "original_json": {
+        "call_id": "312-duplicate_receiver_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "a6f4ecf434624fb4cedb0f396011789e6a530a827afbd7833f43d2772adff056",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "312-duplicate_receiver_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "187ea51d73de5407085fb304dbeb2a6261accdfc3550747035a1c3c1d7fbcb5a",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "312-duplicate_receiver_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "5834ad68e3664d1cdc4864cc55b172d7acaec596890ab21b2e63b512e7d08a0e",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "312-duplicate_receiver_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "52461e37913aec74b3c29602aa8eb3f6e298fb1ed63ff8cd47216fa1265e9468",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "duplicate_receiver_partials",
+      "target": "3.13",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass FirstSource(TypedDict):\n    key: str\n\nclass SecondSource(TypedDict):\n    key: str\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstSource | SecondSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c617373204669727374536f7572636528547970656444696374293a0a202020206b65793a207374720a0a636c617373205365636f6e64536f7572636528547970656444696374293a0a202020206b65793a207374720a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a204669727374536f75726365207c205365636f6e64536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 280,
+      "source_sha256": "44f51e1ed350e97dfb209a2867d1a564415d503cad3e866e644ece05c0141315",
+      "original_json": {
+        "call_id": "313-duplicate_receiver_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "a164e3ea4203f445a55ea7037bc2bdc999ff9ed58b30a516ec6d0d3314810f07",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "313-duplicate_receiver_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "d4a55c0053a47dc5044a395cc95d9f489bb3943d3e10bd7f4143d19c3a7cc028",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "313-duplicate_receiver_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "3e1da6d9f822b6e394a4cd88d791245e2f763cec45824622401aabd6b3d7b4d6",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "313-duplicate_receiver_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "3225ca03625141b708e0d26ae00d13c3a43e90fd6fe1a8e75aa88b948bb4a909",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "duplicate_receiver_partials",
+      "target": "3.14",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass FirstSource(TypedDict):\n    key: str\n\nclass SecondSource(TypedDict):\n    key: str\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstSource | SecondSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c617373204669727374536f7572636528547970656444696374293a0a202020206b65793a207374720a0a636c617373205365636f6e64536f7572636528547970656444696374293a0a202020206b65793a207374720a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a204669727374536f75726365207c205365636f6e64536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 280,
+      "source_sha256": "44f51e1ed350e97dfb209a2867d1a564415d503cad3e866e644ece05c0141315",
+      "original_json": {
+        "call_id": "314-duplicate_receiver_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "0ecf41be72654709aeaa6d8a12ba129b2b466ef89cdcd4e39521646663898337",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "314-duplicate_receiver_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "fbd9b936a8d69218e535a229a5f3d69de316e0db56ecd8ff628992e114f0ad39",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "314-duplicate_receiver_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c224669727374536f75726365207c205365636f6e64536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "cc91a46fcb00aa63484840941c3fc700318b4fc9c45d77e72ac51a2f65d50a35",
+        "stdout_bytes": 288,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "375a9fa8c2b2a8b2adfe1b2ba894e78b42ec0e57e5ed8a6e63e6355827f73224",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "314-duplicate_receiver_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520224669727374536f75726365207c205365636f6e64536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "f063dfc74ee5e9142d9d4b6c2b56da4dda5b507a9796a46b76932752d365afed",
+        "stdout_bytes": 171,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "faa557a0413bfd7f17198d476baee2acb16e0c9edea628d5f7e309b5c699b653",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstSource | SecondSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "mixed_typeddict_non_typeddict_union",
+      "target": "3.12",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass Source(TypedDict):\n    key: str\n\ndef probe(target: Receiver, source: Source | int) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c61737320536f7572636528547970656444696374293a0a202020206b65793a207374720a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a20536f75726365207c20696e7429202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 195,
+      "source_sha256": "a457de88976e6a4368a1f16107d42fbac1cf259a7e6d01cb7f5016d0aa39e639",
+      "original_json": {
+        "call_id": "312-mixed_typeddict_non_typeddict_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "e873c89bd441cb4d149f415f69b1baeb51e9a13a37695f4b9c11181b46681a72",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "312-mixed_typeddict_non_typeddict_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "9fa711e53d9050f6898ef494211e68baf60b7b2d5b05767d3c90576c46a7937d",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "312-mixed_typeddict_non_typeddict_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "643c15f08277a962ff97c151f6c8691c82a08bd52123bfe47ab4a8d5d0c37258",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "312-mixed_typeddict_non_typeddict_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "c165c5e1957f25f7e981cdd8618c05dad7559a4409fa9fcb9b8968d87f54cdb5",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 19,
+            "end_line": 10,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "mixed_typeddict_non_typeddict_union",
+      "target": "3.13",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass Source(TypedDict):\n    key: str\n\ndef probe(target: Receiver, source: Source | int) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c61737320536f7572636528547970656444696374293a0a202020206b65793a207374720a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a20536f75726365207c20696e7429202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 195,
+      "source_sha256": "a457de88976e6a4368a1f16107d42fbac1cf259a7e6d01cb7f5016d0aa39e639",
+      "original_json": {
+        "call_id": "313-mixed_typeddict_non_typeddict_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "73d391e46d205d3b315de9cd4575eb99051a60485e513b4b3ee068e062ba5292",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "313-mixed_typeddict_non_typeddict_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "e073588a05d6e3a59d19c1ae8d88a929a79a25bfd9837b18d0742536d37e790b",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "313-mixed_typeddict_non_typeddict_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "8b36638c5634bf6f73db9b3a7fbd60610f9a4f03de65bd3b13640b2b980245f8",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "313-mixed_typeddict_non_typeddict_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "6853e5c13fc4c3355c715e24232dedae8f1a854f02679f607b93e74fbde88f6f",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 19,
+            "end_line": 10,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "mixed_typeddict_non_typeddict_union",
+      "target": "3.14",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import TypedDict\n\nclass Receiver(TypedDict):\n    key: int\n\nclass Source(TypedDict):\n    key: str\n\ndef probe(target: Receiver, source: Source | int) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274205479706564446963740a0a636c61737320526563656976657228547970656444696374293a0a202020206b65793a20696e740a0a636c61737320536f7572636528547970656444696374293a0a202020206b65793a207374720a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a20536f75726365207c20696e7429202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 195,
+      "source_sha256": "a457de88976e6a4368a1f16107d42fbac1cf259a7e6d01cb7f5016d0aa39e639",
+      "original_json": {
+        "call_id": "314-mixed_typeddict_non_typeddict_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "0436c93d45207b70c9b69090194f4d60b5044a714fad17069d3731c880a98307",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "314-mixed_typeddict_non_typeddict_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "de3072442231f35ef34dac3926f585d51af1d50cf98e72763b1ec833ce275269",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "314-mixed_typeddict_non_typeddict_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031302c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031302c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c22536f75726365207c20696e745c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "6982c3bd8c7cf938be359cdbf08e4919a6dd29877f42e3c82664b1ebfa155964",
+        "stdout_bytes": 274,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 10,
+          "column": 18,
+          "end_line": 10,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "724a4edc131ff7ebeb248bd72a4c955a0dab5ab1d3959435a414018f765a4259",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "314-mixed_typeddict_non_typeddict_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31303a31393a31303a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c6520747970652022536f75726365207c20696e74223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "d468d8275875fc80d343877ed10f5097a09b5592bc37667a349b3a7da586885c",
+        "stdout_bytes": 157,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:10:19:10:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "78a6ff030076280d44db75e648513c3f334a89754c2dcc612668b2db9386df76",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Source | int\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 19,
+            "end_line": 10,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_receiver_open_source_union",
+      "target": "3.12",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing_extensions import TypedDict\n\nclass Receiver(TypedDict, closed=True):\n    key: int\n\nclass FirstOpenSource(TypedDict):\n    key: int\n\nclass SecondOpenSource(TypedDict):\n    key: int\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstOpenSource | SecondOpenSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373205265636569766572285479706564446963742c20636c6f7365643d54727565293a0a202020206b65793a20696e740a0a636c6173732046697273744f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a0a636c617373205365636f6e644f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a2046697273744f70656e536f75726365207c205365636f6e644f70656e536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 320,
+      "source_sha256": "0cbbe26139933c46da2feb21876ef29112f56960c7257d6a0cc3a4e36f00cb88",
+      "original_json": {
+        "call_id": "312-closed_receiver_open_source_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "bb0e8390403c1a724737613e629f0dea5ca3eb985f0e65547271ef57e842381c",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "312-closed_receiver_open_source_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "9ec6f1ea25244501786426b429058d257ade37910cba28af10741ff38cea7080",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "312-closed_receiver_open_source_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "004f09845f8c383a6b0f6a9c73fad4c2ef793607736da42a9c21471902cb428f",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "312-closed_receiver_open_source_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "91ef71c194b38057b3737ab19e11acc3c508ad75eb7cfae678da456adc83e130",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_receiver_open_source_union",
+      "target": "3.13",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing_extensions import TypedDict\n\nclass Receiver(TypedDict, closed=True):\n    key: int\n\nclass FirstOpenSource(TypedDict):\n    key: int\n\nclass SecondOpenSource(TypedDict):\n    key: int\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstOpenSource | SecondOpenSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373205265636569766572285479706564446963742c20636c6f7365643d54727565293a0a202020206b65793a20696e740a0a636c6173732046697273744f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a0a636c617373205365636f6e644f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a2046697273744f70656e536f75726365207c205365636f6e644f70656e536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 320,
+      "source_sha256": "0cbbe26139933c46da2feb21876ef29112f56960c7257d6a0cc3a4e36f00cb88",
+      "original_json": {
+        "call_id": "313-closed_receiver_open_source_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "3d2fe341260c0ce139330442910e7d4f3842110e35b6f2a5101fa14a07784f16",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "313-closed_receiver_open_source_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "4ca01728997070f8d404d090a8c558f24e4ca98e0dcbebd74e865ae301137fe9",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "313-closed_receiver_open_source_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "88556b4e7b2981a791a58d3563b30e0b010f06c82dba9e0f6679ab7b957f839f",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "313-closed_receiver_open_source_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "67f40273e68fd2960658ff0113471ec00de45e6c05344ee6bb3b568d2c26c471",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_receiver_open_source_union",
+      "target": "3.14",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing_extensions import TypedDict\n\nclass Receiver(TypedDict, closed=True):\n    key: int\n\nclass FirstOpenSource(TypedDict):\n    key: int\n\nclass SecondOpenSource(TypedDict):\n    key: int\n    unrelated: bytes\n\ndef probe(target: Receiver, source: FirstOpenSource | SecondOpenSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373205265636569766572285479706564446963742c20636c6f7365643d54727565293a0a202020206b65793a20696e740a0a636c6173732046697273744f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a0a636c617373205365636f6e644f70656e536f7572636528547970656444696374293a0a202020206b65793a20696e740a20202020756e72656c617465643a2062797465730a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a2046697273744f70656e536f75726365207c205365636f6e644f70656e536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 320,
+      "source_sha256": "0cbbe26139933c46da2feb21876ef29112f56960c7257d6a0cc3a4e36f00cb88",
+      "original_json": {
+        "call_id": "314-closed_receiver_open_source_union-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "be4cb00eaf160f01bb8630a53f1c29aa432df443b9ab425207e85cd921e93185",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "314-closed_receiver_open_source_union-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "327b87e1c4b055450d2a5e92ee2347b3d4f8e598894ba5c8eae89c5b9c6d73a6",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "314-closed_receiver_open_source_union-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c2246697273744f70656e536f75726365207c205365636f6e644f70656e536f757263655c223b206578706563746564205c22547970656444696374287b276b6579273a20696e747d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "86c8beb2cf28bb9e594aa43908d6fd2c39d5b152d74c15db525524e06b21fdbf",
+        "stdout_bytes": 296,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "f6ecc6769ecf6a7d691c414758b83236cce73bb20b1f02d1ee38bd34b230e36c",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "314-closed_receiver_open_source_union-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c652074797065202246697273744f70656e536f75726365207c205365636f6e644f70656e536f75726365223b2065787065637465642022547970656444696374287b276b6579273a20696e747d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "77e676f18af156d34cfbfe52aae72a40d000c0c11b324f1d7a5dc61eb093b236",
+        "stdout_bytes": 179,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "828002922089a759546c9753b6946bac91919bd331ba354230fadd7425e26911",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"FirstOpenSource | SecondOpenSource\"; expected \"TypedDict({'key': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "readonly_requiredness_subtype_partials",
+      "target": "3.12",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import NotRequired, TypedDict\nfrom typing_extensions import ReadOnly\n\nclass Receiver(TypedDict):\n    value: ReadOnly[str]\n\nclass RequiredSource(TypedDict):\n    value: int\n\nclass OptionalSource(TypedDict):\n    value: NotRequired[int]\n\ndef probe(target: Receiver, source: RequiredSource | OptionalSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274204e6f7452657175697265642c205479706564446963740a66726f6d20747970696e675f657874656e73696f6e7320696d706f727420526561644f6e6c790a0a636c61737320526563656976657228547970656444696374293a0a2020202076616c75653a20526561644f6e6c795b7374725d0a0a636c617373205265717569726564536f7572636528547970656444696374293a0a2020202076616c75653a20696e740a0a636c617373204f7074696f6e616c536f7572636528547970656444696374293a0a2020202076616c75653a204e6f7452657175697265645b696e745d0a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a205265717569726564536f75726365207c204f7074696f6e616c536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 350,
+      "source_sha256": "e6005fc6c793f234ad36ce7fd573c2fd5a869c253508b85169c125239c1974d2",
+      "original_json": {
+        "call_id": "312-readonly_requiredness_subtype_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "2607468bee78b4fb97b31f5baa90c19ffb4fd32f81917c718c032f079633bcec",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "312-readonly_requiredness_subtype_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "e79d084a0665b0c838074e802601ddd2bfad9cccf636532f4e86362cefdfb920",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "312-readonly_requiredness_subtype_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "1c5e3088965873143052b5e0e24b7d61476bafb0344c6b6c819d6bec001f9954",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "312-readonly_requiredness_subtype_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "414650d5990e8aa36df06d0e7293b417b0b3be549b75b72e53773031c46131c9",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "readonly_requiredness_subtype_partials",
+      "target": "3.13",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import NotRequired, TypedDict\nfrom typing_extensions import ReadOnly\n\nclass Receiver(TypedDict):\n    value: ReadOnly[str]\n\nclass RequiredSource(TypedDict):\n    value: int\n\nclass OptionalSource(TypedDict):\n    value: NotRequired[int]\n\ndef probe(target: Receiver, source: RequiredSource | OptionalSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274204e6f7452657175697265642c205479706564446963740a66726f6d20747970696e675f657874656e73696f6e7320696d706f727420526561644f6e6c790a0a636c61737320526563656976657228547970656444696374293a0a2020202076616c75653a20526561644f6e6c795b7374725d0a0a636c617373205265717569726564536f7572636528547970656444696374293a0a2020202076616c75653a20696e740a0a636c617373204f7074696f6e616c536f7572636528547970656444696374293a0a2020202076616c75653a204e6f7452657175697265645b696e745d0a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a205265717569726564536f75726365207c204f7074696f6e616c536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 350,
+      "source_sha256": "e6005fc6c793f234ad36ce7fd573c2fd5a869c253508b85169c125239c1974d2",
+      "original_json": {
+        "call_id": "313-readonly_requiredness_subtype_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "0c6a46d02d809e6e6e20d804ed5fe16372c50423c0623bea0e54b9c415b9f297",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "313-readonly_requiredness_subtype_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "207bc4a0a15ee982658f0916fc8414c2ca83a56532cfcfc89846571113c84a05",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "313-readonly_requiredness_subtype_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "d7fbd3d42bc99f58aa857faab2405aaf74b5c37a1bdb17b6eab49cdc4170c38c",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "313-readonly_requiredness_subtype_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "2c921b2830cb8256a4e843965e2df7fc794d32e36aaceb1703f2359f88065fbe",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    },
+    {
+      "case": "readonly_requiredness_subtype_partials",
+      "target": "3.14",
+      "filename": "main.py",
+      "flag_state": "extra_checks_enabled",
+      "profile_flags": [
+        "--disallow-any-generics",
+        "--disallow-subclassing-any",
+        "--disallow-untyped-calls",
+        "--disallow-untyped-defs",
+        "--disallow-incomplete-defs",
+        "--check-untyped-defs",
+        "--disallow-untyped-decorators",
+        "--warn-redundant-casts",
+        "--warn-unused-ignores",
+        "--warn-return-any",
+        "--no-implicit-reexport",
+        "--strict-equality",
+        "--extra-checks"
+      ],
+      "source": "from typing import NotRequired, TypedDict\nfrom typing_extensions import ReadOnly\n\nclass Receiver(TypedDict):\n    value: ReadOnly[str]\n\nclass RequiredSource(TypedDict):\n    value: int\n\nclass OptionalSource(TypedDict):\n    value: NotRequired[int]\n\ndef probe(target: Receiver, source: RequiredSource | OptionalSource) -> None:\n    target.update(source)\n",
+      "source_hex": "66726f6d20747970696e6720696d706f7274204e6f7452657175697265642c205479706564446963740a66726f6d20747970696e675f657874656e73696f6e7320696d706f727420526561644f6e6c790a0a636c61737320526563656976657228547970656444696374293a0a2020202076616c75653a20526561644f6e6c795b7374725d0a0a636c617373205265717569726564536f7572636528547970656444696374293a0a2020202076616c75653a20696e740a0a636c617373204f7074696f6e616c536f7572636528547970656444696374293a0a2020202076616c75653a204e6f7452657175697265645b696e745d0a0a6465662070726f6265287461726765743a2052656365697665722c20736f757263653a205265717569726564536f75726365207c204f7074696f6e616c536f7572636529202d3e204e6f6e653a0a202020207461726765742e75706461746528736f75726365290a",
+      "source_bytes": 350,
+      "source_sha256": "e6005fc6c793f234ad36ce7fd573c2fd5a869c253508b85169c125239c1974d2",
+      "original_json": {
+        "call_id": "314-readonly_requiredness_subtype_partials-extra-on-json-1",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "9b5fcfaf24cf859dd2f6c0cdcc6a0c6315e27767d38f09f61463067de6e80531",
+        "qualified": true
+      },
+      "original_text": {
+        "call_id": "314-readonly_requiredness_subtype_partials-extra-on-text-1",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "d80e40cf76538fc91039b244d2050f60bb7adc041271fa07a5f2a1c5a582f313",
+        "qualified": true
+      },
+      "json_repeat": {
+        "call_id": "314-readonly_requiredness_subtype_partials-extra-on-json-2",
+        "actual_exit": 1,
+        "stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031342c2022636f6c756d6e223a2031382c2022656e645f6c696e65223a2031342c2022656e645f636f6c756d6e223a2032342c20226d657373616765223a2022417267756d656e74203120746f205c227570646174655c22206f66205c225479706564446963745c222068617320696e636f6d70617469626c652074797065205c225265717569726564536f75726365207c204f7074696f6e616c536f757263655c223b206578706563746564205c22547970656444696374287b2776616c7565273f3d3a207374727d295c22222c202268696e74223a206e756c6c2c2022636f6465223a20227479706564646963742d6974656d222c20227365766572697479223a20226572726f72227d0a",
+        "stdout_sha256": "f4d0fbcf8f68a2ba99ea01247e6590118ac442e839f35fa2235b2c1e84396eb4",
+        "stdout_bytes": 297,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": {
+          "file": "main.py",
+          "line": 14,
+          "column": 18,
+          "end_line": 14,
+          "end_column": 24,
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        "result_json_sha256": "6bed6a48bc3b891eb6bffffb46df997793a5ca18c46924f41f82d07baf293013",
+        "qualified": true
+      },
+      "text_repeat": {
+        "call_id": "314-readonly_requiredness_subtype_partials-extra-on-text-2",
+        "actual_exit": 1,
+        "stdout_hex": "6d61696e2e70793a31343a31393a31343a32343a206572726f723a20417267756d656e74203120746f202275706461746522206f662022547970656444696374222068617320696e636f6d70617469626c65207479706520225265717569726564536f75726365207c204f7074696f6e616c536f75726365223b2065787065637465642022547970656444696374287b2776616c7565273f3d3a207374727d292220205b7479706564646963742d6974656d5d0a",
+        "stdout_sha256": "c6c075485d0ec460abe31e3f90da7a5fceac84149f74b4b8286d09f6033f46d5",
+        "stdout_bytes": 180,
+        "stderr_hex": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_bytes": 0,
+        "stderr_shape": "empty",
+        "parsed_raw": [
+          "main.py:14:19:14:24: error: Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"  [typeddict-item]"
+        ],
+        "result_json_sha256": "c3c7eae0f3b7d1cc7f22516d0120ce263fee98831b2d4b493b9b0c674cdabbcf",
+        "qualified": true
+      },
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"RequiredSource | OptionalSource\"; expected \"TypedDict({'value'?=: str})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 19,
+            "end_line": 14,
+            "end_column": 24
+          }
+        }
+      ]
+    }
+  ],
+  "native_reference_complete": false,
+  "whole_acceptance": false
+}

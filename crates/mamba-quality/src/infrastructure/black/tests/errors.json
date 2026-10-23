@@ -1,0 +1,1606 @@
+[
+  {
+    "name": "missing_function_name",
+    "source": "def (:\n    pass\n",
+    "source_sha256": "5b0c984ba41634e67b22a1d5c62ad63d7527f4cb84736641c5c176a594d88a73",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:4\n    def (:\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:4\n    def (:\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:4\n    def (:\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      }
+    ]
+  },
+  {
+    "name": "missing_colon",
+    "source": "if True\n    pass\n",
+    "source_sha256": "ac73094b89b3d9961c0c22160fe6264e1cfd1a0075085ab11f6f5f5b47d11a91",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:7\n    if True\n          ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:7\n    if True\n          ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:7\n    if True\n          ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      }
+    ]
+  },
+  {
+    "name": "unclosed_list",
+    "source": "values = [1, 2\n",
+    "source_sha256": "caf98a31b9786997c2e007e3ee7e822a5f7e2a8c24bd68a3df9d27018d5662d5",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:14\n    values = [1, 2\n                 ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 14
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:14\n    values = [1, 2\n                 ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 14
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:14\n    values = [1, 2\n                 ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 14
+        }
+      }
+    ]
+  },
+  {
+    "name": "bad_indent",
+    "source": "def consume():\n    value = 1\n  return value\n",
+    "source_sha256": "8f724e4dc77ebea63b6a6897efd939ac988b5b7cc058ac3e580dd29b49e7b8e9",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "bad_fstring",
+    "source": "value = f\"{broken\"\n",
+    "source_sha256": "1e2e210ea17021893e20d4e78d090873d35a779c7d63e03e36eeea5de5bc7e09",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:11\n    value = f\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:11\n    value = f\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:11\n    value = f\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      }
+    ]
+  },
+  {
+    "name": "bad_tstring",
+    "source": "value = t\"{broken\"\n",
+    "source_sha256": "16e10e32dcc1cfbca742cca23857e56db98f7600e8d6aaafe62123e27f102aa3",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:11\n    value = t\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:11\n    value = t\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:11\n    value = t\"{broken\"\n              ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      }
+    ]
+  },
+  {
+    "name": "template_format",
+    "source": "value=t\"hello {name}\"\n",
+    "source_sha256": "be25415ed7699870c0b3264de6bfa1f657e1b29c3baeea41558d6eb1826cb2f8",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"hello {name}\"\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 1,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "typevar_default",
+    "source": "class Data[T = int]:\n    pass\n",
+    "source_sha256": "af88abb51573d7e5031fc588cca58a28217a576125d59413dc4e82298c6f3135",
+    "expected": [
+      {
+        "kind": "unchanged",
+        "output": "class Data[T = int]:\n    pass\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "class Data[T = int]:\n    pass\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "class Data[T = int]:\n    pass\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 0,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "reused_fstring_quotes",
+    "source": "value = f\"{mapping[\"key\"]}\"\n",
+    "source_sha256": "91155faadd406788c52982ddecba219a1c0b99cc09a03ac34179b60a29d6799a",
+    "expected": [
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{mapping[\"key\"]}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{mapping[\"key\"]}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{mapping[\"key\"]}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 0,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "empty_source",
+    "source": "",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expected": [
+      {
+        "kind": "unchanged",
+        "output": "",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 0,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "formfeed",
+    "source": "value=1\f\n",
+    "source_sha256": "64efd230672b93686553eec3b35e5652db3b2b5f6d967e0e4f8a1fc7f1cb0b5a",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 1,
+        "location": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 1,
+        "location": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 1,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "eof_statement",
+    "source": "VALUE=1",
+    "source_sha256": "c6db173f0a666b3e4a5532e87cbc4391131dd7c7cfb2187182a4fc2ad4654c12",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "VALUE = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 1,
+        "location": null
+      },
+      {
+        "kind": "formatted",
+        "output": "VALUE = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 1,
+        "location": null
+      },
+      {
+        "kind": "formatted",
+        "output": "VALUE = 1\n",
+        "exception_type": null,
+        "message": null,
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 1,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "nested_unclosed_bracket",
+    "source": "values = [1,\n    2,\n",
+    "source_sha256": "5fe39b973307ba88776c22c8578d5c5d79b1629b5210f6045a6981740a0049bf",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:6\n        2,\n         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 6
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:6\n        2,\n         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 6
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:6\n        2,\n         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 6
+        }
+      }
+    ]
+  },
+  {
+    "name": "unclosed_with_comment",
+    "source": "values = [1, 2  # open\n",
+    "source_sha256": "4b0c18ede7ade9422397ca47ecb6888d3443c9d4c15f3df9b1b047fb6dfbe2bb",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:22\n    values = [1, 2  # open\n                         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 22
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:22\n    values = [1, 2  # open\n                         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 22
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:22\n    values = [1, 2  # open\n                         ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 22
+        }
+      }
+    ]
+  },
+  {
+    "name": "unclosed_after_blank_lines",
+    "source": "values = [1, 2\n\n",
+    "source_sha256": "bbdbfd26e91386ea2eab154ee8f62a9c65bbae426df856b3cac84485844a48ea",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:0\n    \n    ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:0\n    \n    ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:0\n    \n    ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "double_unclosed_bracket",
+    "source": "value = ({\"key\": 1\n",
+    "source_sha256": "dce68700b2b37316718a3b1b4f06e2e31ea1b4f178284641ee1478b41a478b4d",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:18\n    value = ({\"key\": 1\n                     ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:18\n    value = ({\"key\": 1\n                     ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:18\n    value = ({\"key\": 1\n                     ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      }
+    ]
+  },
+  {
+    "name": "fstring_unclosed_second_field",
+    "source": "value = f\"ok {item} broken {name\"\n",
+    "source_sha256": "13ff9b85febe6026a28353c1e16c62fcd8a8d3718b607e8235a8bf33e2cfd0d5",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:28\n    value = f\"ok {item} broken {name\"\n                               ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 28
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:28\n    value = f\"ok {item} broken {name\"\n                               ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 28
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:28\n    value = f\"ok {item} broken {name\"\n                               ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 28
+        }
+      }
+    ]
+  },
+  {
+    "name": "fstring_invalid_conversion",
+    "source": "value = f\"{name!x}\"\n",
+    "source_sha256": "8e33ac009e96f880e98876a2528672f92fe85e4e678e4ef6c2f159eac671028d",
+    "expected": [
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{name!x}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{name!x}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"{name!x}\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 0,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "fstring_single_brace",
+    "source": "value = f\"hello }\"\n",
+    "source_sha256": "745c15fcc10bb1214ea8b237d0dd7bcd73c48155f0d425af438d924004632803",
+    "expected": [
+      {
+        "kind": "unchanged",
+        "output": "value = f\"hello }\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"hello }\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 0,
+        "location": null
+      },
+      {
+        "kind": "unchanged",
+        "output": "value = f\"hello }\"\n",
+        "exception_type": "black.report.NothingChanged",
+        "message": "",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 0,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "fstring_multiline_unclosed",
+    "source": "value = f\"\"\"line\n{name\n",
+    "source_sha256": "80e431e5776cf9426ace5069effea10c76cb4cc1de8731caf683da310a276793",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "unclosed_ordinary_string",
+    "source": "value = \"unfinished\n",
+    "source_sha256": "057b5a286c7551973bc18d8e58c5a851fe365934ade6ef527b4c293a67289316",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:7\n    value = \"unfinished\n          ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:7\n    value = \"unfinished\n          ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:7\n    value = \"unfinished\n          ^\nTokenError: Failed to parse: UnterminatedString",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      }
+    ]
+  },
+  {
+    "name": "unclosed_triple_string",
+    "source": "value = \"\"\"unfinished\n",
+    "source_sha256": "4a676ad92a361dfae49ce0b1047520745d70f017c6743595c4e2c1cca746cefc",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:7\n    value = \"\"\"unfinished\n          ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:7\n    value = \"\"\"unfinished\n          ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:7\n    value = \"\"\"unfinished\n          ^\nTokenError: Unexpected EOF in multi-line statement",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 7
+        }
+      }
+    ]
+  },
+  {
+    "name": "unicode_missing_name",
+    "source": "def 水(:\n    pass\n",
+    "source_sha256": "c80b8d12dbc46b49c93485114c7273851e440a0493fa357132cf42bed90475e0",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:6\n    def 水(:\n         ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:6\n    def 水(:\n         ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:6\n    def 水(:\n         ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 6
+        }
+      }
+    ]
+  },
+  {
+    "name": "unicode_missing_colon",
+    "source": "if 水\n    pass\n",
+    "source_sha256": "a1fef7be6f2345b0138d95f755ab22a9f9b6c3dcd88187e1512bfb0829de1218",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:4\n    if 水\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:4\n    if 水\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:4\n    if 水\n       ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 4
+        }
+      }
+    ]
+  },
+  {
+    "name": "tab_missing_colon",
+    "source": "if True:\n\tif other\n\t\tpass\n",
+    "source_sha256": "e11cc350bbfd376da0af12496538c8d634c00a63f7f29a356aec4445b53a6645",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:9\n    \tif other\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 9
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:9\n    \tif other\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 9
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:9\n    \tif other\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 9
+        }
+      }
+    ]
+  },
+  {
+    "name": "mixed_indentation",
+    "source": "def consume():\n\tvalue = 1\n    return value\n",
+    "source_sha256": "8744d5bc686a5653e264d5a7eb7fce1172172c5efe383ea8585fcc063057846c",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      }
+    ]
+  },
+  {
+    "name": "top_level_indent",
+    "source": "  value=1\n",
+    "source_sha256": "fdedf5fd8537e51e9936830be3121796ec2032f41c55b22f486cf227e9e701f8",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "colon_without_body",
+    "source": "if True:\n",
+    "source_sha256": "6993dd9d143824d04aaa6200294cbd2a31d67f81187cf2f35c79d568d737b1be",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "unexpected_closing_bracket",
+    "source": "value = 1]\n",
+    "source_sha256": "b01057db8d2d1fe2e4af33d6460eff072f554e07d6ced159e4954173bfec0fbd",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:9\n    value = 1]\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 9
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:9\n    value = 1]\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 9
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:9\n    value = 1]\n            ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 9
+        }
+      }
+    ]
+  },
+  {
+    "name": "trailing_operator",
+    "source": "value = 1 +\n",
+    "source_sha256": "caa48aaee656868fbbd4d653a94c8fb9e6d469ae98d1474964f1d333554586a2",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:11\n    value = 1 +\n              ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:11\n    value = 1 +\n              ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:11\n    value = 1 +\n              ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 1,
+          "column": 11
+        }
+      }
+    ]
+  },
+  {
+    "name": "line_continuation_eof",
+    "source": "value = 1 \\",
+    "source_sha256": "2496f94508fe7cf2599edb294bf8fc4e49704c566f04e4317943406b07e71c62",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 3:0\n    <line number missing in source>\n    ^\nParseError: bad input",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 3,
+          "column": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "conversion_requires_format",
+    "source": "value=f\"{name!x}\"\n",
+    "source_sha256": "806f7136b44951c7e9abb9551a93f99df7ef40938975e78fd849da040df0b32c",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'x': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'x': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'x': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "single_brace_requires_format",
+    "source": "value=f\"hello }\"\n",
+    "source_sha256": "2ed1fd832ce766352e96fd781c8275053ae255868e7fd8fc7a6a2f52af0589ff",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: single '}' is not allowed (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: single '}' is not allowed (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: single '}' is not allowed (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "tconversion_requires_format",
+    "source": "value=t\"{name!x}\"\n",
+    "source_sha256": "6a62881f1ed92e933d63294bef6b549734eba52bb7d2a6165391a34da644720e",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: t-string: invalid conversion character 'x': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "tsingle_brace_requires_format",
+    "source": "value=t\"hello }\"\n",
+    "source_sha256": "8e83ed1e9bb566525e6bf66baa639efced7ef81e47b838e56813348a14ba0b07",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: t-string: single '}' is not allowed (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "unindent_already_spaced",
+    "source": "def consume():\n    value = 1\n  return value\n",
+    "source_sha256": "8f724e4dc77ebea63b6a6897efd939ac988b5b7cc058ac3e580dd29b49e7b8e9",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unindent does not match any outer indentation level (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "top_level_indent_spaced",
+    "source": "  value = 1\n",
+    "source_sha256": "6e628cd5ba814fcbd1659be60d3c0f7b886c763c994dc5400ddd68f5ccbf8bb6",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": null
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unexpected indent (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": null
+      }
+    ]
+  },
+  {
+    "name": "mixed_indent_spaced",
+    "source": "def consume():\n\tvalue = 1\n    return value\n",
+    "source_sha256": "8744d5bc686a5653e264d5a7eb7fce1172172c5efe383ea8585fcc063057846c",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.12",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.13",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 2:10\n    \tvalue = 1\n             ^\nTokenError: Failed to parse: InconsistentUseOfTabsAndSpaces",
+        "version": "26.10.0",
+        "python": "3.14",
+        "reference_exit": 123,
+        "location": {
+          "line": 2,
+          "column": 10
+        }
+      }
+    ]
+  }
+]

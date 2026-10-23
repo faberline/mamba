@@ -1,0 +1,637 @@
+[
+  {
+    "name": "empty",
+    "source": "# isort: list\nx = ",
+    "source_sha256": "caf36a2525321caf5831ecac1ad637313562385eb916c1326c55679efd45116b",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = . It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 0).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = . It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 0).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = . It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 0).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "trailing_assignment",
+    "source": "# isort: list\nx = [1]\ny = 2",
+    "source_sha256": "b62b96bc16d3d74373d70be1f90ef0b6706de34c2897d6b73f5e0fc66b2fa8d7",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\ny = 2. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\ny = 2. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\ny = 2. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "closing_paren",
+    "source": "# isort: list\nx = [1)\n",
+    "source_sha256": "b74414dd509026cc317880005899350ed45f3c39caeb348f8d24f45c484771b2",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of closing parenthesis ')' does not match opening parenthesis '[' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of closing parenthesis ')' does not match opening parenthesis '[' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of closing parenthesis ')' does not match opening parenthesis '[' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "stray_close",
+    "source": "# isort: list\nx = ]\n",
+    "source_sha256": "88bd15b86a3e41bd70153d6ad946deffa255f10fdb859cbf428c01722c7743da",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = ]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unmatched ']' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = ]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unmatched ']' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = ]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unmatched ']' (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "missing_comma",
+    "source": "# isort: list\nx = [1 2]\n",
+    "source_sha256": "fd6fa643b6177b5c26b97173a945f193319606a941384172467e05ef1d242ae3",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "multiline_unclosed",
+    "source": "# isort: list\nx = [\n 1,\n 2\n",
+    "source_sha256": "9efd43740362fc19ffcb341236508ca4f0318634c8c088c534203d2f2f3f05f7",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n 1,\n 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n 1,\n 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n 1,\n 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "multiple_unclosed",
+    "source": "# isort: list\nx = [1, (2, 3\n",
+    "source_sha256": "4d7788ba96cd469e7e8bcf3ef757fc59cc9b51e04c73ee678fc407ac3599e2dc",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, (2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, (2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, (2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unterminated_string",
+    "source": "# isort: list\nx = [\"abc]\n",
+    "source_sha256": "18c2e154a0343549d737a9ec14dfe9d9fe8dbaae8ad247d11cbb28e15ac9b987",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      }
+    ]
+  },
+  {
+    "name": "unterminated_triple",
+    "source": "# isort: list\nx = [\"\"\"abc]\n",
+    "source_sha256": "6370062691b83bef324f49dca4189c5c62ab9c64f1448f2a72c5cd640781d157",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [\"\"\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [\"\"\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [\"\"\"abc]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      }
+    ]
+  },
+  {
+    "name": "invalid_number",
+    "source": "# isort: list\nx = [01]\n",
+    "source_sha256": "429d26816fa6793ebeb71627453fdbbcef745ce7571c1d9e8afc76424db75b97",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [01]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [01]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [01]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "invalid_unicode_escape",
+    "source": "# isort: list\nx = [\"\\uZZZZ\"]\n",
+    "source_sha256": "2e09901677a842b354995c50b957135c1f8bb764966cf668a00d5915742de1cd",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\"\\uZZZZ\"]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of (unicode error) 'unicodeescape' codec can't decode bytes in position 0-1: truncated \\uXXXX escape (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\"\\uZZZZ\"]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of (unicode error) 'unicodeescape' codec can't decode bytes in position 0-1: truncated \\uXXXX escape (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\"\\uZZZZ\"]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of (unicode error) 'unicodeescape' codec can't decode bytes in position 0-1: truncated \\uXXXX escape (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "backslash_end",
+    "source": "# isort: list\nx = [1]\\",
+    "source_sha256": "8cad591d01643b95d3167677bb1da679acf71e7d27bcf0000598da409f4a5519",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\\. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected character after line continuation character (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\\. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected character after line continuation character (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\\. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected character after line continuation character (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "assignment_expr",
+    "source": "# isort: list\nx = [1] = [2]\n",
+    "source_sha256": "7f154a1b464ca5c12d6daab08065319bd3eb7e018bdfa724cb4ed096356d3ad3",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1] = [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1] = [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1] = [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "leading_indent",
+    "source": "# isort: list\nx = [1]\n  [2]\n",
+    "source_sha256": "91b1676ce6f586105be4560c83d23447bd4d4e6b3bf03c3610f2c39428448e0c",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n  [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected indent (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n  [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected indent (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n  [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unexpected indent (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "extra_expression",
+    "source": "# isort: list\nx = [1]\n[2]\n",
+    "source_sha256": "ed637b503c97024d1620cfd3aee71055c3724711727d906ea044f7a6ccc320eb",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n[2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n[2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]\n[2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "semicolon_extra",
+    "source": "# isort: list\nx = [1]; [2]\n",
+    "source_sha256": "1f0078206e06fb5b2bcc3de815e6cb26525e154e151530d47aec396f27c602c3",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]; [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]; [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1]; [2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "comments_only",
+    "source": "# isort: list\nx = # note\n",
+    "source_sha256": "03db398b0eb759e86b0160cbeae007c25325c5ea340640d44a67f150f19e40c2",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = # note\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = # note\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = # note\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "ellipsis",
+    "source": "# isort: list\nx = ...\n",
+    "source_sha256": "70f9fd13400379cdf63fc6c950a62660882b2c7890ec8af25902c14472b6ce83",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'ellipsis'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'ellipsis'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'ellipsis'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "float_mixed",
+    "source": "# isort: list\nx = [1.0, \"a\"]\n",
+    "source_sha256": "feb198fd63404dde184fa12a86aba4a1ba9b548124ccf9970846680f18f4962b",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'float'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'float'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'float'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "bool_mixed",
+    "source": "# isort: list\nx = [True, \"a\"]\n",
+    "source_sha256": "b32708be800b5180784bda1c099ab83431f6a053e331ba366d812634b7fb3069",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'bool'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'bool'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'bool'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "nested_mixed",
+    "source": "# isort: list\nx = [[1], [\"a\"]]\n",
+    "source_sha256": "157bfcb97767493b8aeba67f2a64c16cf1150df2bbaf289d91104c9bfa53d2f6",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "nested_tuple_unhashable",
+    "source": "# isort: unique-tuple\nx = ([1],)\n",
+    "source_sha256": "e8282e90f929410def26859072ee797a9f2dd309e660149c3894351aae7d6237",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "unhashable type: 'list'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "unhashable type: 'list'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "cannot use 'list' as a set element (unhashable type: 'list')",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "invalid_dict_key",
+    "source": "# isort: dict\nx = {[1]: 2}\n",
+    "source_sha256": "176d4c1b584db0087c9562070d1932f20d9b0bf0a7133eacdba26d83051293d5",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unhashable type: 'list'.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unhashable type: 'list'.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of cannot use 'list' as a dict key (unhashable type: 'list').",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "complex_binary",
+    "source": "# isort: list\nx = [1 + 2j]\n",
+    "source_sha256": "98462c9f2ef05df7f9508ce1d7982d5c99ceeff268b398230259f5c820730ccf",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [(1+2j)]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [(1+2j)]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [(1+2j)]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_multiline",
+    "source": "# isort: list\nx = [\n 2,\n 1,\n]\n",
+    "source_sha256": "7d971584b1302c55d72dedfd0d07f197db3594d828df01420ec6082352fd6d8e",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [\n    1,\n    2,\n]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [\n    1,\n    2,\n]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [\n    1,\n    2,\n]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_comments",
+    "source": "# isort: list\nx = [2, 1]  # exports\n",
+    "source_sha256": "386e82b4ce62bc5a4a1670d1b7d189b01383bf2dce662eb594b9e8eee6ca7ab1",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [1, 2]  # exports\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [1, 2]  # exports\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [1, 2]  # exports\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  }
+]

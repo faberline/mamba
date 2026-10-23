@@ -1,0 +1,2993 @@
+[
+  {
+    "name": "json_loads_callable",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8d67fe7cf50ed2e183b6df573387c8fb5764ce4459f9dc32e1e3bcfac36eb5e1"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "json_dumps_callable",
+    "files": {
+      "main.py": "import json\nreveal_type(json.dumps)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4e996bbb320a06a59823a387982cb559abc864e162a436493aefefef583d0d0b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "math_sqrt_callable",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sqrt)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5ff6810a06ed0dc8eaf171b688041a4e18b8cb5726f5cc606895df3613934f02"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_str",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads(\"{}\"))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "af4028946f36857d7a2044da6a57b7a27af69b108754f011d2e7d0d15a202673"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_bytes",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads(b\"{}\"))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "91bf4ad573261d158c302c56ab8317106840091ea3860de1f5a87a8cd9bbebf9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_bytearray",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads(bytearray(b\"{}\")))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4dedce59e8dbf4a54026fa1c213b2e4e31807d70038fc234b87ff31b0d8a44c4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_int",
+    "files": {
+      "main.py": "import json\njson.loads(1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7bce2b4beae931776928bfd0e0fd63c8f3eb0d81a77231014d16de37c75a3ead"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"int\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"int\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"int\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_list",
+    "files": {
+      "main.py": "import json\njson.loads([\"{}\"])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8cf3101add4c9f94129b7ea30de4cf8c9c1d7eca797b2513e8c6ee3a394992be"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"list[str]\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"list[str]\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"loads\" has incompatible type \"list[str]\"; expected \"str | bytes | bytearray\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_missing",
+    "files": {
+      "main.py": "import json\njson.loads()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e3c3e8013febedf6126155b4a64b8edb41855bedf4701a7960212fe6e453e89f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"s\" in call to \"loads\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"s\" in call to \"loads\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"s\" in call to \"loads\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_extra_positional",
+    "files": {
+      "main.py": "import json\njson.loads(\"{}\", None)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "02348e2bb9aca14745ff73d22587e68fc019e72c83e883ba5b81b3543b6b5c21"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"loads\"",
+          "hint": "\"loads\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"loads\"",
+          "hint": "\"loads\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"loads\"",
+          "hint": "\"loads\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_unknown_keyword",
+    "files": {
+      "main.py": "import json\njson.loads(\"{}\", missing=True)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "37fbd37e1dedde11f1fe57ce4edbccd59aa4b130280425dbf084625e61ab907b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_parse_int_bad",
+    "files": {
+      "main.py": "import json\njson.loads(\"{}\", parse_int=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "eb5924b4545a208d8a24b38a2c974bf18387f0392d03f6530819603119f5d7b0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"loads\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"loads\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"loads\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "loads_keyword_s",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads(s=\"{}\"))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3025b720cc9a39f6e01b7782f669bc2d94aa91b9045a90a38b54ee4ec0f944f2"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_result",
+    "files": {
+      "main.py": "import json\nreveal_type(json.dumps({\"a\": 1}))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "42d0e93f1b8d28f89e5a6b53480e3fd2e03d232a74639c6411bbd2a0a2ad52b4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_missing",
+    "files": {
+      "main.py": "import json\njson.dumps()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "976f063cbc304218bceea629a6ef5402c8ec9e1f13272594ad00eb107f8e8cc0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"obj\" in call to \"dumps\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"obj\" in call to \"dumps\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"obj\" in call to \"dumps\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_extra_positional",
+    "files": {
+      "main.py": "import json\njson.dumps({}, True)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "cde4287c349fd645da8a051cfde1dfd609bd86f0438e918f2dd548624af8f6cf"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"dumps\"",
+          "hint": "\"dumps\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"dumps\"",
+          "hint": "\"dumps\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"dumps\"",
+          "hint": "\"dumps\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_sort_keys_bad",
+    "files": {
+      "main.py": "import json\njson.dumps({}, sort_keys=\"yes\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "931eea6ba9a5523fc51ee5cb1f3c1c2e734a6a67123040b0d3e16dcfe51e76e0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"sort_keys\" to \"dumps\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 26,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"sort_keys\" to \"dumps\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 26,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"sort_keys\" to \"dumps\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 26,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_indent_bad",
+    "files": {
+      "main.py": "import json\njson.dumps({}, indent=[])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0551fe2295baa16876794a492ecc0087f55c292ba3625ea1515d2929cd6738b5"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dumps\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dumps\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dumps\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_separators_bad",
+    "files": {
+      "main.py": "import json\njson.dumps({}, separators=(\",\", 1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "527a4c9e2843c9536d4006c947de4c3bc0702759db5309b9a599fcff42c31fb3"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dumps\" has incompatible type \"tuple[str, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 27,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dumps\" has incompatible type \"tuple[str, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 27,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dumps\" has incompatible type \"tuple[str, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 27,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dumps_unknown_keyword",
+    "files": {
+      "main.py": "import json\njson.dumps({}, missing=True)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e92eb4c216619f9f512de6862d5db653016cd75fa79f179f05c2d524b34a0b34"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_int",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sqrt(4))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "df913e139c020b9b2f7734e3e21ff0b9e8b9581a8485fcca2389f92c29ac7e61"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_float",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sqrt(4.0))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e7432b17978d8d5f958283803730831c36b0198b0a4d129023a00df18f1cfd4a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_str",
+    "files": {
+      "main.py": "import math\nmath.sqrt(\"4\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f850f3ce78a28a531a949a2a3297ae5b611f381d5d62989e68d59ba325656256"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_list",
+    "files": {
+      "main.py": "import math\nmath.sqrt([4])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "2c04a339d85d672fa22b1a080e14fbfec7da9c739c12a5be6cbcc5c9368b022c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"list[int]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"list[int]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sqrt\" has incompatible type \"list[int]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_missing",
+    "files": {
+      "main.py": "import math\nmath.sqrt()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "893daea7657d52fd2ed82dd17732bfef743812832ed8479652f1d4cc616a5def"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_extra",
+    "files": {
+      "main.py": "import math\nmath.sqrt(4, 5)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f3fd3b8b3ea4b92e9f23e05b9f0c94cda11005b0c7e2e9e15a476f423bd3ae4b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"sqrt\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_keyword",
+    "files": {
+      "main.py": "import math\nmath.sqrt(x=4)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "25acc7d52572d85a38992aacf3b1cc74fbc90c78a6db7eb9d3c9e54c552fd401"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sqrt\"",
+          "hint": "\"sqrt\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sqrt\"",
+          "hint": "\"sqrt\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sqrt\"",
+          "hint": "\"sqrt\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_dunder_float",
+    "files": {
+      "main.py": "import math\nclass Number:\n    def __float__(self) -> float:\n        return 4.0\nreveal_type(math.sqrt(Number()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a0f3eb5ecb97f36bb037fe4cb127cf6b5dde752cac6af8be49d3ca10ce2e8516"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sqrt_dunder_index",
+    "files": {
+      "main.py": "import math\nclass Index:\n    def __index__(self) -> int:\n        return 4\nreveal_type(math.sqrt(Index()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "87cd3cf2b54229e0170295941e947aa5a961dad84cd90737b29baab2667a675e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "import_aliases",
+    "files": {
+      "main.py": "import json as j\nimport math as m\nreveal_type(j.dumps({}))\nreveal_type(m.sqrt(4))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5e35235f8e6da817d138891f23e977bd780a77625bad162cb0f88290a532efdb"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "from_import_alias",
+    "files": {
+      "main.py": "from json import loads as read_json, dumps as write_json\nfrom math import sqrt as root\nreveal_type(read_json)\nreveal_type(write_json)\nreveal_type(root)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5e67358300c006a1727fd4680f10f716e632e2c65e52a3ef7bb1d09410fdc1b9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (s: str | bytes | bytearray, *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (typing.SupportsFloat | typing.SupportsIndex) -> float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "function_values",
+    "files": {
+      "main.py": "import json\nimport math\nload = json.loads\ndump = json.dumps\nroot = math.sqrt\nreveal_type(load(\"{}\"))\nreveal_type(dump({}))\nreveal_type(root(4))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4769be3171497a42ae4ee521a39b615d40f15e6da1b3039754362ac6310262ff"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "typed_return_dumps",
+    "files": {
+      "main.py": "import json\nfrom typing import Any\ndef encode(value: Any) -> str:\n    return json.dumps(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d1fb86b927f7f2dc9d2dc8239c8a8c3fc91e6946b91715424bc76bb0c7933a52"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "typed_return_sqrt",
+    "files": {
+      "main.py": "import math\ndef root(value: float) -> float:\n    return math.sqrt(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3b11366537a6c7c7cafc5d3cec1f01e02d6a833b153306de39e91116f72f5544"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "strict_any_loads_return",
+    "files": {
+      "main.py": "import json\ndef decode(value: str) -> dict[str, int]:\n    return json.loads(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "66c9775038cf5275b2a1771f0823c2dd47336ba6c3c9f25992a4b65ded48e6c8"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"dict[str, int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"dict[str, int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"dict[str, int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "callable_assignment",
+    "files": {
+      "main.py": "import json\nimport math\nfrom typing import Any, Callable\nencode: Callable[[Any], str] = json.dumps\nroot: Callable[[float], float] = math.sqrt\nreveal_type(encode({}))\nreveal_type(root(4.0))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0b6179e37fca216f3f57964f694087b25c982871a342f9a93c6f2a29e5a5ff6f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "callable_assignment_bad",
+    "files": {
+      "main.py": "import json\nimport math\nfrom typing import Callable\nencode: Callable[[int], int] = json.dumps\nroot: Callable[[str], str] = math.sqrt\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8f8a48e83a128ca5a70fe9ce7fbcd1fc63b8ad959b8aa0ad8d0604a59c28f807"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"def dumps(obj: Any, *, skipkeys: bool = ..., ensure_ascii: bool = ..., check_circular: bool = ..., allow_nan: bool = ..., cls: type[JSONEncoder] | None = ..., indent: int | str | None = ..., separators: tuple[str, str] | None = ..., default: Callable[[Any], Any] | None = ..., sort_keys: bool = ..., **kwds: Any) -> str\", variable has type \"Callable[[int], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 32,
+            "end_line": 4,
+            "end_column": 41
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[SupportsFloat | SupportsIndex], float]\", variable has type \"Callable[[str], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 30,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"def dumps(obj: Any, *, skipkeys: bool = ..., ensure_ascii: bool = ..., check_circular: bool = ..., allow_nan: bool = ..., cls: type[JSONEncoder] | None = ..., indent: int | str | None = ..., separators: tuple[str, str] | None = ..., default: Callable[[Any], Any] | None = ..., sort_keys: bool = ..., **kwds: Any) -> str\", variable has type \"Callable[[int], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 32,
+            "end_line": 4,
+            "end_column": 41
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[SupportsFloat | SupportsIndex], float]\", variable has type \"Callable[[str], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 30,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"def dumps(obj: Any, *, skipkeys: bool = ..., ensure_ascii: bool = ..., check_circular: bool = ..., allow_nan: bool = ..., cls: type[JSONEncoder] | None = ..., indent: int | str | None = ..., separators: tuple[str, str] | None = ..., default: Callable[[Any], Any] | None = ..., sort_keys: bool = ..., **kwds: Any) -> str\", variable has type \"Callable[[int], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 32,
+            "end_line": 4,
+            "end_column": 41
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[SupportsFloat | SupportsIndex], float]\", variable has type \"Callable[[str], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 30,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "callable_argument",
+    "files": {
+      "main.py": "import json\nimport math\nfrom typing import Any, Callable\ndef encode_with(fn: Callable[[Any], str]) -> str:\n    return fn({})\ndef root_with(fn: Callable[[float], float]) -> float:\n    return fn(4.0)\nreveal_type(encode_with(json.dumps))\nreveal_type(root_with(math.sqrt))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "be391c096d8d621bfd1f9cf6ecbccb5810a8e21dac315863e8520d0e67e277c8"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "local_json_precedence",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads(\"{}\"))\nreveal_type(json.dumps(1))\n"
+    },
+    "local": {
+      "json.py": "def loads(value: str) -> int:\n    return 1\ndef dumps(value: int) -> bytes:\n    return b\"1\"\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4172417da2f3e7945cfa921efac485bbc1f72fafa1ad5362e321eef293223329"
+    },
+    "local_sha256": {
+      "json.py": "88aa66f544ac67ff9a8d5a871d8da3d3b740e3311e4eec4abdbcd96d23b9fe35"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "local_math_precedence",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sqrt(\"4\"))\n"
+    },
+    "local": {
+      "math.py": "def sqrt(value: str) -> str:\n    return value\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4fb7fa99789beefe9750b350c3d97a4749ad01c68f93f7182d64002df520f4dd"
+    },
+    "local_sha256": {
+      "math.py": "80af5910ea2e86e95b5e6148e432898cf2f8d7b7bc2e6f7239b9cdc0950d8cd8"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

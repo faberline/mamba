@@ -1,0 +1,536 @@
+[
+  {
+    "name": "ascii_upper",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# FIXME: later\n",
+    "source_sha256": "12a96c95a852b4e8be4bddb1a8a723710ef6af731766839220e44ec155659c5c",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "FIXME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "FIXME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "FIXME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "ascii_lower",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# fixme: later\n",
+    "source_sha256": "7aa02ba591b42840cbb29dde1542315cba995e2ed5583819612b182789a51a9e",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "fixme: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "fixme: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "fixme: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "dotted_i",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0130XME: later\n",
+    "source_sha256": "7f8e1b24a9e6e17071898d08e9598dcaf89e9e6de4eeee9932971268432517ee",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME: later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "dotless_i",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0131XME later\n",
+    "source_sha256": "d7e57fd89f6e647ae557f602392f9d5d089ba6c049adc768f420a0ad671c6d98",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME later",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "dotted_i_end",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0130XME\n",
+    "source_sha256": "950cecd0ea74a892fb64d86a184c8f0855a805854a28871c6b4daa63ec1ffd12",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0130XME",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "accented_i",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u00cdXME: later\n",
+    "source_sha256": "95b195614056e9075cf5660c03f36f9d508538674647576c837b1fe68a60c06c",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "fullwidth",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# \uff26\uff29\uff38\uff2d\uff25: later\n",
+    "source_sha256": "bbc2e3a9d7d6a4739fdaca1596cbd46cba701c4e2f3d86fdd183742a8ad87878",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "invalid_tail",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0130XMExtra\n",
+    "source_sha256": "1e6550f24f580e207d2a3af6005a920281f1b00547381f2897306afce1020c1c",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "punctuation_tail",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0130XME! later\n",
+    "source_sha256": "260141904ed233e2cc5d0f66d5298ee4e2248e87b14c24ab3539b73089dc4ebc",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "prefix_boundary",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# NOTF\u0130XME: later\n",
+    "source_sha256": "0e405bfef6b03da290d49677086b102f4b4f243b6ed07bf6570c080db9f55421",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "string_control",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\nvalue = \"F\u0130XME: later\"\n",
+    "source_sha256": "1d79e57ec4c2a1ae517e9d2fe742805d6edb3d5b2b4ce7744434e43576328c74",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ]
+  },
+  {
+    "name": "docstring_control",
+    "filename": "main.py",
+    "source": "\"\"\"F\u0130XME: later\"\"\"\n",
+    "source_sha256": "4be8d86117d5b23b9a7f546b5bc805c8939c9a7ef6a40d06a937265eb2960000",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "inline_disable",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# F\u0130XME: muted  # pylint: disable=fixme\n",
+    "source_sha256": "28b263cebc10c7a544e0efeb514449eb752d59285848dfa4263f7cdfb005edd5",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "disable_reenable",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\n# pylint: disable=fixme\n# F\u0130XME: muted\n# pylint: enable=fixme\n# F\u0131XME: live\n",
+    "source_sha256": "b327c700885d6a2d6edb8727d0199c165796dc117d38f443ff198208e09881fe",
+    "expected": [
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME: live",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME: live",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "W0511",
+          "message": "F\u0131XME: live",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "name": "string_control_v2",
+    "filename": "main.py",
+    "source": "\"\"\"Token layout fixture.\"\"\"\nVALUE = \"F\u0130XME: later\"\n",
+    "source_sha256": "b6891ae1e24174e8a591629c1929fb0dbc8798af6b01b5ab539034316b8b726b",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

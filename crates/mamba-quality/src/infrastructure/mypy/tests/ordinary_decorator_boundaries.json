@@ -1,0 +1,592 @@
+[
+  {
+    "name": "ordinary_untyped_on_typed",
+    "filename": "ordinary_untyped_on_typed.py",
+    "source": "def deco(func):\n    return func\n\n@deco\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "a2c307b179cbe6ceaa91cf3762d00f268339503db5f5086d146c660ee9fa59f0",
+    "expected": [
+      [
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_typed.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 5
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "ddc79909ad175d76b6383405a6c797591c02315ba781ce6436a5cddc2aae5d12",
+      "ddc79909ad175d76b6383405a6c797591c02315ba781ce6436a5cddc2aae5d12",
+      "ddc79909ad175d76b6383405a6c797591c02315ba781ce6436a5cddc2aae5d12"
+    ],
+    "original_text_sha256": [
+      "43b99d57e41a246e8865424cd211784f44d4ed18b7d290126a72b7deeaed62b2",
+      "43b99d57e41a246e8865424cd211784f44d4ed18b7d290126a72b7deeaed62b2",
+      "43b99d57e41a246e8865424cd211784f44d4ed18b7d290126a72b7deeaed62b2"
+    ]
+  },
+  {
+    "name": "ordinary_typed_on_typed",
+    "filename": "ordinary_typed_on_typed.py",
+    "source": "from typing import Callable\n\ndef typed(func: Callable[[int], int]) -> Callable[[int], int]:\n    return func\n@typed\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "7b012f7bdb127d294ffc4ad968364c176f93cd233add9a926e4dc548111afff0",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "original_json_sha256": [
+      "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    ],
+    "original_text_sha256": [
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ]
+  },
+  {
+    "name": "ordinary_untyped_on_untyped",
+    "filename": "ordinary_untyped_on_untyped.py",
+    "source": "def deco(func):\n    return func\n\n@deco\ndef target(value):\n    return value\n",
+    "source_sha256": "f44f8f455c580e11a10fd8cd48be86ec5975f0237f413d225387a0fc78e1d6ab",
+    "expected": [
+      [
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_untyped_on_untyped.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "8653f441afabb5ff4769c1eb45421910759f9546b90d41d1a9d580756f5b866f",
+      "8653f441afabb5ff4769c1eb45421910759f9546b90d41d1a9d580756f5b866f",
+      "8653f441afabb5ff4769c1eb45421910759f9546b90d41d1a9d580756f5b866f"
+    ],
+    "original_text_sha256": [
+      "5558a581ccb0722269a7bc2768b7fa01ef6940b0b9046347c14b97f0e9bf87a2",
+      "5558a581ccb0722269a7bc2768b7fa01ef6940b0b9046347c14b97f0e9bf87a2",
+      "5558a581ccb0722269a7bc2768b7fa01ef6940b0b9046347c14b97f0e9bf87a2"
+    ]
+  },
+  {
+    "name": "ordinary_stack_untyped_outer",
+    "filename": "ordinary_stack_untyped_outer.py",
+    "source": "from typing import Callable\n\ndef typed(func: Callable[[int], int]) -> Callable[[int], int]:\n    return func\ndef deco(func):\n    return func\n\n@deco\n@typed\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "fbd5ce2db5cdc49709c6e454d097ed2a283683d459e4f2a78ef54f8e10d6a465",
+    "expected": [
+      [
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 2,
+            "end_line": 8,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 2,
+            "end_line": 8,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_outer.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 2,
+            "end_line": 8,
+            "end_column": 5
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "7e26b572a034ee92d45089883167c57d98fc3325ef70108d56ea94a2e753dc7f",
+      "7e26b572a034ee92d45089883167c57d98fc3325ef70108d56ea94a2e753dc7f",
+      "7e26b572a034ee92d45089883167c57d98fc3325ef70108d56ea94a2e753dc7f"
+    ],
+    "original_text_sha256": [
+      "2990626c7b10f65ab0aaa02d49e66ca205259c9cef9b5be11853887554caad8a",
+      "2990626c7b10f65ab0aaa02d49e66ca205259c9cef9b5be11853887554caad8a",
+      "2990626c7b10f65ab0aaa02d49e66ca205259c9cef9b5be11853887554caad8a"
+    ]
+  },
+  {
+    "name": "ordinary_stack_untyped_inner",
+    "filename": "ordinary_stack_untyped_inner.py",
+    "source": "from typing import Callable\n\ndef typed(func: Callable[[int], int]) -> Callable[[int], int]:\n    return func\ndef deco(func):\n    return func\n\n@typed\n@deco\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "caa2dfd7163996017682a80509ded9b54b27d8947938a0c4629c2de9c17641e2",
+    "expected": [
+      [
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "path": "ordinary_stack_untyped_inner.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 5
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "7525576a84b9617018af535646bb68d6c79c7dbfdab680b4033bfb8f836300bd",
+      "7525576a84b9617018af535646bb68d6c79c7dbfdab680b4033bfb8f836300bd",
+      "7525576a84b9617018af535646bb68d6c79c7dbfdab680b4033bfb8f836300bd"
+    ],
+    "original_text_sha256": [
+      "aa42b0603bc2510cf28f42ef4cae63b9889e881c33fd5e67d56189aa8d745450",
+      "aa42b0603bc2510cf28f42ef4cae63b9889e881c33fd5e67d56189aa8d745450",
+      "aa42b0603bc2510cf28f42ef4cae63b9889e881c33fd5e67d56189aa8d745450"
+    ]
+  },
+  {
+    "name": "ordinary_untyped_ignore_used",
+    "filename": "ordinary_untyped_ignore_used.py",
+    "source": "def deco(func):\n    return func\n\n@deco  # type: ignore[untyped-decorator]\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "a14cd6aaedf6630ecf4df18ef838a6f9f62db8716e83be5342919e9bdb9b169b",
+    "expected": [
+      [
+        {
+          "path": "ordinary_untyped_ignore_used.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_ignore_used.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_untyped_ignore_used.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "a7088c6f976d0139b8b5cf86fa6651e6189ca2f271e7be960201b86e4edcfe93",
+      "a7088c6f976d0139b8b5cf86fa6651e6189ca2f271e7be960201b86e4edcfe93",
+      "a7088c6f976d0139b8b5cf86fa6651e6189ca2f271e7be960201b86e4edcfe93"
+    ],
+    "original_text_sha256": [
+      "44dbeadced52e2b3ad8512ecf6539c7f7a5bb37d0a26656917b3bd83c7b37205",
+      "44dbeadced52e2b3ad8512ecf6539c7f7a5bb37d0a26656917b3bd83c7b37205",
+      "44dbeadced52e2b3ad8512ecf6539c7f7a5bb37d0a26656917b3bd83c7b37205"
+    ]
+  },
+  {
+    "name": "ordinary_typed_ignore_unused",
+    "filename": "ordinary_typed_ignore_unused.py",
+    "source": "from typing import Callable\n\ndef typed(func: Callable[[int], int]) -> Callable[[int], int]:\n    return func\n@typed  # type: ignore[untyped-decorator]\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "a2685088fa2d661b9f07ca740fd7ccc0bd5a88113c69452bf66f6270e20f57a7",
+    "expected": [
+      [
+        {
+          "path": "ordinary_typed_ignore_unused.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_typed_ignore_unused.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "path": "ordinary_typed_ignore_unused.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "original_json_sha256": [
+      "5d9f4db813ad993ec2fa36a737f5cebb52aa11aa16e708c7f9db5cff269552aa",
+      "5d9f4db813ad993ec2fa36a737f5cebb52aa11aa16e708c7f9db5cff269552aa",
+      "5d9f4db813ad993ec2fa36a737f5cebb52aa11aa16e708c7f9db5cff269552aa"
+    ],
+    "original_text_sha256": [
+      "6c8e8fb60bd46d57e9f6dd75270084aa585be30072e65b5dfe846055a298f5a2",
+      "6c8e8fb60bd46d57e9f6dd75270084aa585be30072e65b5dfe846055a298f5a2",
+      "6c8e8fb60bd46d57e9f6dd75270084aa585be30072e65b5dfe846055a298f5a2"
+    ]
+  }
+]

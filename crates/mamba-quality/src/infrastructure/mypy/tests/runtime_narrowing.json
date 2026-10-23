@@ -1,0 +1,3729 @@
+[
+  {
+    "name": "isinstance_attribute",
+    "files": {
+      "main.py": "class Container:\n    value: int | str\ndef consume(item: Container) -> None:\n    if isinstance(item.value, str):\n        reveal_type(item.value)\n    else:\n        reveal_type(item.value)\n"
+    },
+    "source_sha256": {
+      "main.py": "62e4d5b44c2e19fd7b0a92f2abf1f683cf223ac953309ee1d6169a5e0c3e1a5d"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_builtin_module",
+    "files": {
+      "main.py": "import builtins\ndef consume(value: int | str) -> None:\n    if builtins.isinstance(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "efa476e9b8e278c5192ecda0061fe5524c8ea2f88308664d129ae351a5757c33"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_import_alias",
+    "files": {
+      "main.py": "from builtins import isinstance as check\ndef consume(value: int | str) -> None:\n    if check(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "833588bb3fa72559f27af54f73f3e990419bb47b25802f675ab9b794991775d0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_union_target",
+    "files": {
+      "main.py": "def consume(value: int | str | bytes) -> None:\n    if isinstance(value, int | str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7961d5dcd3213022dddc8a49be19e42f504eae2989573778e2aefba05e51b16c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_any",
+    "files": {
+      "main.py": "from typing import Any\ndef consume(value: Any) -> None:\n    if isinstance(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b381063b4d27199887bbfab568da7efe25d4d7559215487b9eb6bdac320a1b9d"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_nominal_intersection",
+    "files": {
+      "main.py": "class A: pass\nclass B: pass\ndef consume(value: A) -> None:\n    if isinstance(value, B):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8eee05558ed0b257957a1994d05d246af696fac7165b8afee45ff5e9ea6cf4fe"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_final",
+    "files": {
+      "main.py": "from typing import final\n@final\nclass A: pass\nclass B: pass\ndef consume(value: A) -> None:\n    if isinstance(value, B):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "bdeee9dd4045137102956bd8bcb08046744f90ce455c8b0f2d05f39082e7d897"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_numeric",
+    "files": {
+      "main.py": "def consume(value: float) -> None:\n    if isinstance(value, int):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "549177a060bc59c699d5e757b71c582eec49a58325cc4169bdc5872cf4b2964e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_shadowed",
+    "files": {
+      "main.py": "def isinstance(value: object, target: type[str]) -> bool:\n    return True\ndef consume(value: int | str) -> None:\n    if isinstance(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "85077b8096494c1d85559454f1b5939de8a3d91aaaf93112803ac2ee2bcf9257"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_protocol",
+    "files": {
+      "main.py": "from typing import Protocol, runtime_checkable\n@runtime_checkable\nclass HasValue(Protocol):\n    value: int\ndef consume(value: object) -> None:\n    if isinstance(value, HasValue):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "1891e6ba55086eaa8eb0e07a8de947ff5e2d2d74b41eb99fa35572fe6fccd988"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.HasValue\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.HasValue\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.HasValue\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_union",
+    "files": {
+      "main.py": "def consume(value: type[int] | type[str]) -> None:\n    if issubclass(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ecd2df16e24653c82c70c3faf5796ffd7dbedf14d8fc35328a3e6bbcabac64ab"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_walrus",
+    "files": {
+      "main.py": "def consume(value: int | str) -> None:\n    if isinstance(other := value, str):\n        reveal_type(other)\n        reveal_type(value)\n    else:\n        reveal_type(other)\n"
+    },
+    "source_sha256": {
+      "main.py": "2d981a5a44470eeb588987cd122df60cf74fb326fe783f2dc4cae609b889ade1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_keyword_rejected",
+    "files": {
+      "main.py": "def consume(value: int | str) -> None:\n    if isinstance(value, class_or_tuple=str):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3d25924751e0370e5853bf82d4ce706995384e60009670150c119cddf19807fb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"class_or_tuple\" for \"isinstance\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 44
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"class_or_tuple\" for \"isinstance\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 44
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"class_or_tuple\" for \"isinstance\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 44
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_variable_class",
+    "files": {
+      "main.py": "def consume(value: int | str, kind: type[str]) -> None:\n    if isinstance(value, kind):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "60490e2dae93aa48aee5cba8992042d6e2578b30587bda4150067dc16f63c1bb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_tuple_alias",
+    "files": {
+      "main.py": "KINDS = (int, str)\ndef consume(value: int | str | bytes) -> None:\n    if isinstance(value, KINDS):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "39798f46f9b5a942d98ed2a98ff112bafce4c62f78c232089972e5f2d93b1075"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_parameterized",
+    "files": {
+      "main.py": "def consume(value: object) -> None:\n    if isinstance(value, list[int]):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "244838c81a1f86acec4c339d0d8c04b10b9d560fce5d0d7b6d1cbf5a97745857"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Parameterized generics cannot be used with class or instance checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Parameterized generics cannot be used with class or instance checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Parameterized generics cannot be used with class or instance checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_nonruntime_protocol",
+    "files": {
+      "main.py": "from typing import Protocol\nclass P(Protocol):\n    def method(self) -> int: ...\ndef consume(value: object) -> None:\n    if isinstance(value, P):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3343d923a3e6beb921eb922768e3fac6310710f2f9140339d45cea46e6d846bf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_nonmethod_protocol",
+    "files": {
+      "main.py": "from typing import Protocol, runtime_checkable\n@runtime_checkable\nclass P(Protocol):\n    value: int\ndef consume(value: type[object]) -> None:\n    if issubclass(value, P):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "85f8f3542484576125ea80c4cb8008915980a3a074807746dafad7ef5fdfbc0f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_builtin_alias_value",
+    "files": {
+      "main.py": "check = isinstance\ndef consume(value: int | str) -> None:\n    if check(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "10578781fb8d16492634d96ff4dabdbc0a0013503d9baefa8d8e6f7609412439"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_builtin_module",
+    "files": {
+      "main.py": "import builtins\ndef consume(value: type[int] | type[str]) -> None:\n    if builtins.issubclass(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "80eb6950277194ba07c3ea65bce66d0bd7f5703ff9b871a49c61ddc0008c046c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_disjoint",
+    "files": {
+      "main.py": "from typing_extensions import disjoint_base\n@disjoint_base\nclass A: pass\n@disjoint_base\nclass B: pass\ndef consume(value: A) -> None:\n    if isinstance(value, B):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3d11cbfd5f890659802b457ee51fa7cab891bbff9cf13ee00792c42369e3fcf5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_typevar",
+    "files": {
+      "main.py": "from typing import TypeVar\nT = TypeVar(\"T\", bound=int | str)\ndef consume(value: T) -> None:\n    if isinstance(value, str):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "48fbea7c5d24c2c3c29f1a32c426d77831e3d6b8d7b6c6c348d021d3573dd272"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_qualified_parameterized",
+    "files": {
+      "main.py": "import builtins\ndef consume(value: object) -> None:\n    if builtins.isinstance(value, list[int]):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8a88ce76cccd9e4f7e5e23701919ca20bef76cb368f5b66321862c4db5f54e3f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_qualified_nonruntime_protocol",
+    "files": {
+      "main.py": "import builtins\nfrom typing import Protocol\nclass P(Protocol):\n    def method(self) -> int: ...\ndef consume(value: object) -> None:\n    if builtins.isinstance(value, P):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "68a289b78950f91a6916e0b4eb8e5e96968d0f55cbb9538955a02c954ac2b69b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only @runtime_checkable protocols can be used with instance and class checks",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.P\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_qualified_nonmethod_protocol",
+    "files": {
+      "main.py": "import builtins\nfrom typing import Protocol, runtime_checkable\n@runtime_checkable\nclass P(Protocol):\n    value: int\ndef consume(value: type[object]) -> None:\n    if builtins.issubclass(value, P):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "4e5dad6ec8db643ef0c31c33e80443d12ab27a4e8136df11dae03141b7130034"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 8,
+            "end_line": 7,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 8,
+            "end_line": 7,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Only protocols that don't have non-method members can be used with issubclass()",
+          "hint": "Protocol \"P\" has non-method member(s): value",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 8,
+            "end_line": 7,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.P]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_invalid_instance",
+    "files": {
+      "main.py": "def consume(value: int) -> None:\n    if issubclass(value, str):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "fbc85c36133c9f4812d7470ca0bc09002cb4d9c760c42694a96bee21257c5ba8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"issubclass\" has incompatible type \"int\"; expected \"type\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 19,
+            "end_line": 2,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"issubclass\" has incompatible type \"int\"; expected \"type\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 19,
+            "end_line": 2,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"issubclass\" has incompatible type \"int\"; expected \"type\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 19,
+            "end_line": 2,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_none_union",
+    "files": {
+      "main.py": "def consume(value: int | None) -> None:\n    if isinstance(value, str | None):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "cf77c531483a7923f2746feaa78986b17fd318fcf7366e2be6ab21d55e64e4d9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_empty_tuple",
+    "files": {
+      "main.py": "def consume(value: int | str) -> None:\n    if isinstance(value, ()):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "5daa7a0e7b8f6a49bef544314db8f601d49581e03e47d34bfc7b0de2fb69e504"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_nested_tuple",
+    "files": {
+      "main.py": "def consume(value: int | str | bytes) -> None:\n    if isinstance(value, ((str,), (bytes,))):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b6f2ce063c0729027087e8bd7cd3a92e90ab4d8602b9a356e2d23c718addc677"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_literal_boolean",
+    "files": {
+      "main.py": "from typing import Literal\ndef consume(value: Literal[True, False]) -> None:\n    if isinstance(value, bool):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "920eb63044ab3914c464c3d719749a2fd727425bb9366086b3b673d3ec9ff69e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_parent_child",
+    "files": {
+      "main.py": "class A: pass\nclass B(A): pass\ndef consume(value: A) -> None:\n    if isinstance(value, B):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "f4616ebba54a4f866597f867d1f3f33e3100bf8afac0c45b1dcea39550b95c98"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_same_subtype",
+    "files": {
+      "main.py": "class A: pass\nclass B(A): pass\ndef consume(value: B) -> None:\n    if isinstance(value, A):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b8f08ee54afa542ca58c4d67742701ce1331c6fd0155049da3749fd78d632364"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.B\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_nominal",
+    "files": {
+      "main.py": "class A: pass\nclass B(A): pass\ndef consume(value: type[A]) -> None:\n    if issubclass(value, B):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "925418abff269ce225a42912630935785a25796932196d2871722c2a0593cd13"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.B]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.A]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.B]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.A]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.B]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[main.A]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_literal_int",
+    "files": {
+      "main.py": "from typing import Literal\ndef consume(value: Literal[1, 2] | str) -> None:\n    if isinstance(value, int):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "2fb707514ecc5a22204d6c86bb7f8f4e0b024456e55852f2d771f69ff85fd748"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_protocol_existing",
+    "files": {
+      "main.py": "from typing import Protocol, runtime_checkable\n@runtime_checkable\nclass P(Protocol):\n    def method(self) -> int: ...\nclass A:\n    def method(self) -> int:\n        return 1\ndef consume(value: A) -> None:\n    if isinstance(value, P):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "06ca5d7bf21d072587859ab29cc4920775a51e04511536a47c8b82995ae25563"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_numeric_int_float",
+    "files": {
+      "main.py": "def consume(value: int) -> None:\n    if isinstance(value, float):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "491f40cf5fcb7315801fcdce4ed6a455d00e1a61f20885ad0c2b74f136c8b3f6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_bool_int",
+    "files": {
+      "main.py": "def consume(value: int) -> None:\n    if isinstance(value, bool):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "c6d87c811cab692c1845a55f4695ecff3522c138b3d26381e863ea49e5b91a27"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_any_type_target",
+    "files": {
+      "main.py": "from typing import Any\ndef consume(value: int | str, target: Any) -> None:\n    if isinstance(value, target):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a1272102e2a39ba850786eb2250479b5c575367a3832524dafc995cbebaff063"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "issubclass_variable_target",
+    "files": {
+      "main.py": "def consume(value: type[int] | type[str], target: type[str]) -> None:\n    if issubclass(value, target):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "1b704a9763d2a6e636a7f4d2f3ba01b7a950971634175bc6f60fab3b400c3f6f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int] | type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int] | type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[int] | type[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "isinstance_or",
+    "files": {
+      "main.py": "def consume(value: int | str | bytes) -> None:\n    if isinstance(value, str) or isinstance(value, bytes):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a4687b09cf79e01a9fc45549b81521a1733c959ce61adad14e6cadf50c7ffdc1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

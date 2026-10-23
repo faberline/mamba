@@ -1,0 +1,2606 @@
+{
+  "schema": "mamba.quality.pydantic-model-types.v1",
+  "mypy": "2.4.0",
+  "pydantic": "2.13.5",
+  "targets": {
+    "3.12": {
+      "model_types": {
+        "base_model": {
+          "fullname": "pydantic.main.BaseModel",
+          "init_type": {
+            ".class": "CallableType",
+            "arg_types": [
+              "pydantic.main.BaseModel",
+              {
+                ".class": "AnyType",
+                "type_of_any": 2,
+                "source_any": null,
+                "missing_import_name": null
+              }
+            ],
+            "arg_kinds": [
+              0,
+              4
+            ],
+            "arg_names": [
+              null,
+              "data"
+            ],
+            "ret_type": {
+              ".class": "NoneType"
+            },
+            "fallback": "builtins.function",
+            "name": "__init__ of BaseModel",
+            "variables": [],
+            "is_ellipsis_args": false,
+            "implicit": false,
+            "is_bound": false,
+            "type_guard": null,
+            "type_is": null,
+            "from_concatenate": false,
+            "imprecise_arg_kinds": false,
+            "unpack_kwargs": false,
+            "instance_type": null
+          },
+          "bases": [
+            "builtins.object"
+          ]
+        },
+        "config_dict": {
+          "fullname": "pydantic.config.ConfigDict",
+          "type": {
+            ".class": "TypedDictType",
+            "items": [
+              [
+                "title",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "model_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.type"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "field_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str",
+                        {
+                          ".class": "UnionType",
+                          "items": [
+                            "pydantic.fields.FieldInfo",
+                            "pydantic.fields.ComputedFieldInfo"
+                          ],
+                          "uses_pep604_syntax": true
+                        }
+                      ],
+                      "arg_kinds": [
+                        0,
+                        0
+                      ],
+                      "arg_names": [
+                        null,
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "str_to_lower",
+                "builtins.bool"
+              ],
+              [
+                "str_to_upper",
+                "builtins.bool"
+              ],
+              [
+                "str_strip_whitespace",
+                "builtins.bool"
+              ],
+              [
+                "str_min_length",
+                "builtins.int"
+              ],
+              [
+                "str_max_length",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.int",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.ExtraValues",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "frozen",
+                "builtins.bool"
+              ],
+              [
+                "populate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "use_enum_values",
+                "builtins.bool"
+              ],
+              [
+                "validate_assignment",
+                "builtins.bool"
+              ],
+              [
+                "arbitrary_types_allowed",
+                "builtins.bool"
+              ],
+              [
+                "from_attributes",
+                "builtins.bool"
+              ],
+              [
+                "loc_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "alias_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    "pydantic.aliases.AliasGenerator",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "ignored_types",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    "builtins.type"
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "allow_inf_nan",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonDict",
+                      "args": []
+                    },
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonSchemaExtraCallable",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_encoders",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        {
+                          ".class": "TypeType",
+                          "item": "builtins.object",
+                          "is_type_form": false
+                        },
+                        {
+                          ".class": "TypeAliasType",
+                          "type_ref": "pydantic.config.JsonEncoder",
+                          "args": []
+                        }
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "strict",
+                "builtins.bool"
+              ],
+              [
+                "revalidate_instances",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "always",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "never",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "subclass-instances",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_timedelta",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "float",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_temporal",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_temporal_unit",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "infer",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_inf_nan",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "null",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "constants",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "strings",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validate_default",
+                "builtins.bool"
+              ],
+              [
+                "validate_return",
+                "builtins.bool"
+              ],
+              [
+                "protected_namespaces",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    {
+                      ".class": "UnionType",
+                      "items": [
+                        "builtins.str",
+                        {
+                          ".class": "Instance",
+                          "type_ref": "re.Pattern",
+                          "args": [
+                            "builtins.str"
+                          ],
+                          "extra_attrs": null
+                        }
+                      ],
+                      "uses_pep604_syntax": true
+                    }
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "hide_input_in_errors",
+                "builtins.bool"
+              ],
+              [
+                "defer_build",
+                "builtins.bool"
+              ],
+              [
+                "plugin_settings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        "builtins.str",
+                        "builtins.object"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "schema_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeType",
+                      "item": "pydantic._internal._generate_schema.GenerateSchema",
+                      "is_type_form": false
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_schema_serialization_defaults_required",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_mode_override",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "validation",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "serialization",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "coerce_numbers_to_str",
+                "builtins.bool"
+              ],
+              [
+                "regex_engine",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "rust-regex",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "python-re",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validation_error_cause",
+                "builtins.bool"
+              ],
+              [
+                "use_attribute_docstrings",
+                "builtins.bool"
+              ],
+              [
+                "cache_strings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.bool",
+                    {
+                      ".class": "LiteralType",
+                      "value": "all",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "keys",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "none",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "validate_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "validate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "serialize_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "url_preserve_empty_path",
+                "builtins.bool"
+              ],
+              [
+                "polymorphic_serialization",
+                "builtins.bool"
+              ]
+            ],
+            "required_keys": [],
+            "readonly_keys": [],
+            "fallback": "typing._TypedDict",
+            "is_closed": false
+          }
+        }
+      },
+      "aliases": {
+        "pydantic.config.JsonDict": {
+          ".class": "Instance",
+          "type_ref": "builtins.dict",
+          "args": [
+            "builtins.str",
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonValue",
+              "args": []
+            }
+          ],
+          "extra_attrs": null
+        },
+        "pydantic.config.JsonValue": {
+          ".class": "UnionType",
+          "items": [
+            "builtins.int",
+            "builtins.float",
+            "builtins.str",
+            "builtins.bool",
+            {
+              ".class": "NoneType"
+            },
+            {
+              ".class": "Instance",
+              "type_ref": "builtins.list",
+              "args": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonValue",
+                  "args": []
+                }
+              ],
+              "extra_attrs": null
+            },
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonDict",
+              "args": []
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.ExtraValues": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "LiteralType",
+              "value": "allow",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "ignore",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "forbid",
+              "fallback": "builtins.str"
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonSchemaExtraCallable": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                }
+              ],
+              "arg_kinds": [
+                0
+              ],
+              "arg_names": [
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                },
+                {
+                  ".class": "TypeType",
+                  "item": {
+                    ".class": "AnyType",
+                    "type_of_any": 6,
+                    "source_any": null,
+                    "missing_import_name": null
+                  },
+                  "is_type_form": false
+                }
+              ],
+              "arg_kinds": [
+                0,
+                0
+              ],
+              "arg_names": [
+                null,
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonEncoder": {
+          ".class": "CallableType",
+          "arg_types": [
+            {
+              ".class": "AnyType",
+              "type_of_any": 6,
+              "source_any": null,
+              "missing_import_name": null
+            }
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            null
+          ],
+          "ret_type": {
+            ".class": "AnyType",
+            "type_of_any": 6,
+            "source_any": null,
+            "missing_import_name": null
+          },
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    },
+    "3.13": {
+      "model_types": {
+        "base_model": {
+          "fullname": "pydantic.main.BaseModel",
+          "init_type": {
+            ".class": "CallableType",
+            "arg_types": [
+              "pydantic.main.BaseModel",
+              {
+                ".class": "AnyType",
+                "type_of_any": 2,
+                "source_any": null,
+                "missing_import_name": null
+              }
+            ],
+            "arg_kinds": [
+              0,
+              4
+            ],
+            "arg_names": [
+              null,
+              "data"
+            ],
+            "ret_type": {
+              ".class": "NoneType"
+            },
+            "fallback": "builtins.function",
+            "name": "__init__ of BaseModel",
+            "variables": [],
+            "is_ellipsis_args": false,
+            "implicit": false,
+            "is_bound": false,
+            "type_guard": null,
+            "type_is": null,
+            "from_concatenate": false,
+            "imprecise_arg_kinds": false,
+            "unpack_kwargs": false,
+            "instance_type": null
+          },
+          "bases": [
+            "builtins.object"
+          ]
+        },
+        "config_dict": {
+          "fullname": "pydantic.config.ConfigDict",
+          "type": {
+            ".class": "TypedDictType",
+            "items": [
+              [
+                "title",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "model_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.type"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "field_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str",
+                        {
+                          ".class": "UnionType",
+                          "items": [
+                            "pydantic.fields.FieldInfo",
+                            "pydantic.fields.ComputedFieldInfo"
+                          ],
+                          "uses_pep604_syntax": true
+                        }
+                      ],
+                      "arg_kinds": [
+                        0,
+                        0
+                      ],
+                      "arg_names": [
+                        null,
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "str_to_lower",
+                "builtins.bool"
+              ],
+              [
+                "str_to_upper",
+                "builtins.bool"
+              ],
+              [
+                "str_strip_whitespace",
+                "builtins.bool"
+              ],
+              [
+                "str_min_length",
+                "builtins.int"
+              ],
+              [
+                "str_max_length",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.int",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.ExtraValues",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "frozen",
+                "builtins.bool"
+              ],
+              [
+                "populate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "use_enum_values",
+                "builtins.bool"
+              ],
+              [
+                "validate_assignment",
+                "builtins.bool"
+              ],
+              [
+                "arbitrary_types_allowed",
+                "builtins.bool"
+              ],
+              [
+                "from_attributes",
+                "builtins.bool"
+              ],
+              [
+                "loc_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "alias_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    "pydantic.aliases.AliasGenerator",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "ignored_types",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    "builtins.type"
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "allow_inf_nan",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonDict",
+                      "args": []
+                    },
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonSchemaExtraCallable",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_encoders",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        {
+                          ".class": "TypeType",
+                          "item": "builtins.object",
+                          "is_type_form": false
+                        },
+                        {
+                          ".class": "TypeAliasType",
+                          "type_ref": "pydantic.config.JsonEncoder",
+                          "args": []
+                        }
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "strict",
+                "builtins.bool"
+              ],
+              [
+                "revalidate_instances",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "always",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "never",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "subclass-instances",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_timedelta",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "float",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_temporal",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_temporal_unit",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "infer",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_inf_nan",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "null",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "constants",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "strings",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validate_default",
+                "builtins.bool"
+              ],
+              [
+                "validate_return",
+                "builtins.bool"
+              ],
+              [
+                "protected_namespaces",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    {
+                      ".class": "UnionType",
+                      "items": [
+                        "builtins.str",
+                        {
+                          ".class": "Instance",
+                          "type_ref": "re.Pattern",
+                          "args": [
+                            "builtins.str"
+                          ],
+                          "extra_attrs": null
+                        }
+                      ],
+                      "uses_pep604_syntax": true
+                    }
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "hide_input_in_errors",
+                "builtins.bool"
+              ],
+              [
+                "defer_build",
+                "builtins.bool"
+              ],
+              [
+                "plugin_settings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        "builtins.str",
+                        "builtins.object"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "schema_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeType",
+                      "item": "pydantic._internal._generate_schema.GenerateSchema",
+                      "is_type_form": false
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_schema_serialization_defaults_required",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_mode_override",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "validation",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "serialization",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "coerce_numbers_to_str",
+                "builtins.bool"
+              ],
+              [
+                "regex_engine",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "rust-regex",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "python-re",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validation_error_cause",
+                "builtins.bool"
+              ],
+              [
+                "use_attribute_docstrings",
+                "builtins.bool"
+              ],
+              [
+                "cache_strings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.bool",
+                    {
+                      ".class": "LiteralType",
+                      "value": "all",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "keys",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "none",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "validate_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "validate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "serialize_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "url_preserve_empty_path",
+                "builtins.bool"
+              ],
+              [
+                "polymorphic_serialization",
+                "builtins.bool"
+              ]
+            ],
+            "required_keys": [],
+            "readonly_keys": [],
+            "fallback": "typing._TypedDict",
+            "is_closed": false
+          }
+        }
+      },
+      "aliases": {
+        "pydantic.fields.Deprecated": {
+          ".class": "UnionType",
+          "items": [
+            "warnings.deprecated",
+            "warnings.deprecated"
+          ],
+          "uses_pep604_syntax": true
+        },
+        "pydantic.config.JsonDict": {
+          ".class": "Instance",
+          "type_ref": "builtins.dict",
+          "args": [
+            "builtins.str",
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonValue",
+              "args": []
+            }
+          ],
+          "extra_attrs": null
+        },
+        "pydantic.config.JsonValue": {
+          ".class": "UnionType",
+          "items": [
+            "builtins.int",
+            "builtins.float",
+            "builtins.str",
+            "builtins.bool",
+            {
+              ".class": "NoneType"
+            },
+            {
+              ".class": "Instance",
+              "type_ref": "builtins.list",
+              "args": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonValue",
+                  "args": []
+                }
+              ],
+              "extra_attrs": null
+            },
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonDict",
+              "args": []
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.ExtraValues": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "LiteralType",
+              "value": "allow",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "ignore",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "forbid",
+              "fallback": "builtins.str"
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonSchemaExtraCallable": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                }
+              ],
+              "arg_kinds": [
+                0
+              ],
+              "arg_names": [
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                },
+                {
+                  ".class": "TypeType",
+                  "item": {
+                    ".class": "AnyType",
+                    "type_of_any": 6,
+                    "source_any": null,
+                    "missing_import_name": null
+                  },
+                  "is_type_form": false
+                }
+              ],
+              "arg_kinds": [
+                0,
+                0
+              ],
+              "arg_names": [
+                null,
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonEncoder": {
+          ".class": "CallableType",
+          "arg_types": [
+            {
+              ".class": "AnyType",
+              "type_of_any": 6,
+              "source_any": null,
+              "missing_import_name": null
+            }
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            null
+          ],
+          "ret_type": {
+            ".class": "AnyType",
+            "type_of_any": 6,
+            "source_any": null,
+            "missing_import_name": null
+          },
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    },
+    "3.14": {
+      "model_types": {
+        "base_model": {
+          "fullname": "pydantic.main.BaseModel",
+          "init_type": {
+            ".class": "CallableType",
+            "arg_types": [
+              "pydantic.main.BaseModel",
+              {
+                ".class": "AnyType",
+                "type_of_any": 2,
+                "source_any": null,
+                "missing_import_name": null
+              }
+            ],
+            "arg_kinds": [
+              0,
+              4
+            ],
+            "arg_names": [
+              null,
+              "data"
+            ],
+            "ret_type": {
+              ".class": "NoneType"
+            },
+            "fallback": "builtins.function",
+            "name": "__init__ of BaseModel",
+            "variables": [],
+            "is_ellipsis_args": false,
+            "implicit": false,
+            "is_bound": false,
+            "type_guard": null,
+            "type_is": null,
+            "from_concatenate": false,
+            "imprecise_arg_kinds": false,
+            "unpack_kwargs": false,
+            "instance_type": null
+          },
+          "bases": [
+            "builtins.object"
+          ]
+        },
+        "config_dict": {
+          "fullname": "pydantic.config.ConfigDict",
+          "type": {
+            ".class": "TypedDictType",
+            "items": [
+              [
+                "title",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "model_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.type"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "field_title_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str",
+                        {
+                          ".class": "UnionType",
+                          "items": [
+                            "pydantic.fields.FieldInfo",
+                            "pydantic.fields.ComputedFieldInfo"
+                          ],
+                          "uses_pep604_syntax": true
+                        }
+                      ],
+                      "arg_kinds": [
+                        0,
+                        0
+                      ],
+                      "arg_names": [
+                        null,
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "str_to_lower",
+                "builtins.bool"
+              ],
+              [
+                "str_to_upper",
+                "builtins.bool"
+              ],
+              [
+                "str_strip_whitespace",
+                "builtins.bool"
+              ],
+              [
+                "str_min_length",
+                "builtins.int"
+              ],
+              [
+                "str_max_length",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.int",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.ExtraValues",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "frozen",
+                "builtins.bool"
+              ],
+              [
+                "populate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "use_enum_values",
+                "builtins.bool"
+              ],
+              [
+                "validate_assignment",
+                "builtins.bool"
+              ],
+              [
+                "arbitrary_types_allowed",
+                "builtins.bool"
+              ],
+              [
+                "from_attributes",
+                "builtins.bool"
+              ],
+              [
+                "loc_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "alias_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "CallableType",
+                      "arg_types": [
+                        "builtins.str"
+                      ],
+                      "arg_kinds": [
+                        0
+                      ],
+                      "arg_names": [
+                        null
+                      ],
+                      "ret_type": "builtins.str",
+                      "fallback": "builtins.function",
+                      "name": null,
+                      "variables": [],
+                      "is_ellipsis_args": false,
+                      "implicit": false,
+                      "is_bound": false,
+                      "type_guard": null,
+                      "type_is": null,
+                      "from_concatenate": false,
+                      "imprecise_arg_kinds": false,
+                      "unpack_kwargs": false,
+                      "instance_type": null
+                    },
+                    "pydantic.aliases.AliasGenerator",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "ignored_types",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    "builtins.type"
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "allow_inf_nan",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_extra",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonDict",
+                      "args": []
+                    },
+                    {
+                      ".class": "TypeAliasType",
+                      "type_ref": "pydantic.config.JsonSchemaExtraCallable",
+                      "args": []
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_encoders",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        {
+                          ".class": "TypeType",
+                          "item": "builtins.object",
+                          "is_type_form": false
+                        },
+                        {
+                          ".class": "TypeAliasType",
+                          "type_ref": "pydantic.config.JsonEncoder",
+                          "args": []
+                        }
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "strict",
+                "builtins.bool"
+              ],
+              [
+                "revalidate_instances",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "always",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "never",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "subclass-instances",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_timedelta",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "float",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_temporal",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "iso8601",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_temporal_unit",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "seconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "milliseconds",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "infer",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "val_json_bytes",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "utf8",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "base64",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "hex",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "ser_json_inf_nan",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "null",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "constants",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "strings",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validate_default",
+                "builtins.bool"
+              ],
+              [
+                "validate_return",
+                "builtins.bool"
+              ],
+              [
+                "protected_namespaces",
+                {
+                  ".class": "Instance",
+                  "type_ref": "builtins.tuple",
+                  "args": [
+                    {
+                      ".class": "UnionType",
+                      "items": [
+                        "builtins.str",
+                        {
+                          ".class": "Instance",
+                          "type_ref": "re.Pattern",
+                          "args": [
+                            "builtins.str"
+                          ],
+                          "extra_attrs": null
+                        }
+                      ],
+                      "uses_pep604_syntax": true
+                    }
+                  ],
+                  "extra_attrs": null
+                }
+              ],
+              [
+                "hide_input_in_errors",
+                "builtins.bool"
+              ],
+              [
+                "defer_build",
+                "builtins.bool"
+              ],
+              [
+                "plugin_settings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins.dict",
+                      "args": [
+                        "builtins.str",
+                        "builtins.object"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "schema_generator",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "TypeType",
+                      "item": "pydantic._internal._generate_schema.GenerateSchema",
+                      "is_type_form": false
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "json_schema_serialization_defaults_required",
+                "builtins.bool"
+              ],
+              [
+                "json_schema_mode_override",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "validation",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "serialization",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "coerce_numbers_to_str",
+                "builtins.bool"
+              ],
+              [
+                "regex_engine",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "LiteralType",
+                      "value": "rust-regex",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "python-re",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": false
+                }
+              ],
+              [
+                "validation_error_cause",
+                "builtins.bool"
+              ],
+              [
+                "use_attribute_docstrings",
+                "builtins.bool"
+              ],
+              [
+                "cache_strings",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.bool",
+                    {
+                      ".class": "LiteralType",
+                      "value": "all",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "keys",
+                      "fallback": "builtins.str"
+                    },
+                    {
+                      ".class": "LiteralType",
+                      "value": "none",
+                      "fallback": "builtins.str"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                }
+              ],
+              [
+                "validate_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "validate_by_name",
+                "builtins.bool"
+              ],
+              [
+                "serialize_by_alias",
+                "builtins.bool"
+              ],
+              [
+                "url_preserve_empty_path",
+                "builtins.bool"
+              ],
+              [
+                "polymorphic_serialization",
+                "builtins.bool"
+              ]
+            ],
+            "required_keys": [],
+            "readonly_keys": [],
+            "fallback": "typing._TypedDict",
+            "is_closed": false
+          }
+        }
+      },
+      "aliases": {
+        "pydantic.fields.Deprecated": {
+          ".class": "UnionType",
+          "items": [
+            "warnings.deprecated",
+            "warnings.deprecated"
+          ],
+          "uses_pep604_syntax": true
+        },
+        "pydantic.config.JsonDict": {
+          ".class": "Instance",
+          "type_ref": "builtins.dict",
+          "args": [
+            "builtins.str",
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonValue",
+              "args": []
+            }
+          ],
+          "extra_attrs": null
+        },
+        "pydantic.config.JsonValue": {
+          ".class": "UnionType",
+          "items": [
+            "builtins.int",
+            "builtins.float",
+            "builtins.str",
+            "builtins.bool",
+            {
+              ".class": "NoneType"
+            },
+            {
+              ".class": "Instance",
+              "type_ref": "builtins.list",
+              "args": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonValue",
+                  "args": []
+                }
+              ],
+              "extra_attrs": null
+            },
+            {
+              ".class": "TypeAliasType",
+              "type_ref": "pydantic.config.JsonDict",
+              "args": []
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.ExtraValues": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "LiteralType",
+              "value": "allow",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "ignore",
+              "fallback": "builtins.str"
+            },
+            {
+              ".class": "LiteralType",
+              "value": "forbid",
+              "fallback": "builtins.str"
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonSchemaExtraCallable": {
+          ".class": "UnionType",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                }
+              ],
+              "arg_kinds": [
+                0
+              ],
+              "arg_names": [
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                {
+                  ".class": "TypeAliasType",
+                  "type_ref": "pydantic.config.JsonDict",
+                  "args": []
+                },
+                {
+                  ".class": "TypeType",
+                  "item": {
+                    ".class": "AnyType",
+                    "type_of_any": 6,
+                    "source_any": null,
+                    "missing_import_name": null
+                  },
+                  "is_type_form": false
+                }
+              ],
+              "arg_kinds": [
+                0,
+                0
+              ],
+              "arg_names": [
+                null,
+                null
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": null,
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ],
+          "uses_pep604_syntax": false
+        },
+        "pydantic.config.JsonEncoder": {
+          ".class": "CallableType",
+          "arg_types": [
+            {
+              ".class": "AnyType",
+              "type_of_any": 6,
+              "source_any": null,
+              "missing_import_name": null
+            }
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            null
+          ],
+          "ret_type": {
+            ".class": "AnyType",
+            "type_of_any": 6,
+            "source_any": null,
+            "missing_import_name": null
+          },
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    }
+  }
+}

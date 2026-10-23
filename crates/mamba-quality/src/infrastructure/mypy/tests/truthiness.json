@@ -1,0 +1,4385 @@
+[
+  {
+    "name": "optional_int",
+    "files": {
+      "main.py": "def consume(value: int | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "2996eda1b457697db3be35c87c2777a1f8a8804332e65adc7d70c5999351e105"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "optional_str",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    if not value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "9daaed33e2d1305ec1b1af725d6ad3e9a9e4c01e0d5b67bbc4befbf8cbb6954c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bool_branches",
+    "files": {
+      "main.py": "def consume(value: bool) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "e914a9adca768ce5ed4b5290bdbcc0539f0132a9a6354201b803fb6d922d0545"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "literal_values",
+    "files": {
+      "main.py": "from typing import Literal\ndef consume(value: Literal[0, 1, \"\", \"text\", False, True]) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8b834869b3b5d77f46a115855a175b47c0dafdff5b9a5c5d2940b993881c2f47"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal['text'] | Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | Literal[''] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal['text'] | Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | Literal[''] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal['text'] | Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | Literal[''] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "tuple_nonempty",
+    "files": {
+      "main.py": "def consume(value: tuple[int]) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "5de2cce177c80df48eaaad7c6339ce2b2c7174597e3f780529e6efa2fd846954"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "tuple_empty",
+    "files": {
+      "main.py": "def consume(value: tuple[()]) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "f80af04453b65641d1530052f6b34470da733fa811e972df1069c1693117ab7f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[()]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[()]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[()]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "list_branches",
+    "files": {
+      "main.py": "def consume(value: list[int]) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "41be8ea7ff98db440829deef591b23859627a4997dddd9a0fd60013c83e7381e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "false_branch_repeat",
+    "files": {
+      "main.py": "def consume(value: int | None) -> None:\n    if not value:\n        if value:\n            reveal_type(value)\n        else:\n            reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "6be4d74ec08db1b015bf26051504e9d98b32b89bcd4e21eac7f09d0426a85124"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "true_branch_repeat",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    if value:\n        if not value:\n            reveal_type(value)\n        else:\n            reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7f14b4997be262d166d3dfed0f1e3b56714b4d202d13b287448009d668ef35db"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 25,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "and_condition",
+    "files": {
+      "main.py": "def consume(left: int | None, right: str | None) -> None:\n    if left and right:\n        reveal_type(left)\n        reveal_type(right)\n    else:\n        reveal_type(left)\n        reveal_type(right)\n"
+    },
+    "source_sha256": {
+      "main.py": "ce4bdf9adfb7c8439e42ebdfa5c9748017429c3f94ec2e7b2a6248a47fc749d8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "or_condition",
+    "files": {
+      "main.py": "def consume(left: int | None, right: str | None) -> None:\n    if left or right:\n        reveal_type(left)\n        reveal_type(right)\n    else:\n        reveal_type(left)\n        reveal_type(right)\n"
+    },
+    "source_sha256": {
+      "main.py": "909dd51c773f9ab5fd470cbdb90c82bab69eefaa9a8b0ecd24fa39b06656bb4b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bool_always_true",
+    "files": {
+      "main.py": "from typing import Literal\nclass Always:\n    def __bool__(self) -> Literal[True]:\n        return True\ndef consume(value: Always | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "bdfc6e3d210345be57b98e5b40d6a232782584932f2b5ad719b16224ac289781"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Always\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Always\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Always\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bool_always_false",
+    "files": {
+      "main.py": "from typing import Literal\nclass Never:\n    def __bool__(self) -> Literal[False]:\n        return False\ndef consume(value: Never | int) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "c368b6be3f1ced5d64cc0033825f6a4eddfbe0b1105fefb73a05d8ea0393f737"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Never | Literal[0]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Never | Literal[0]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Never | Literal[0]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "len_always_zero",
+    "files": {
+      "main.py": "from typing import Literal\nclass Empty:\n    def __len__(self) -> Literal[0]:\n        return 0\ndef consume(value: Empty | str) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "837afe58d6631227a973aad543b66152965927ebfbb82e238b8da58cd04fa43e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Empty | Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Empty | Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Empty | Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "normal_class_true",
+    "files": {
+      "main.py": "class Data:\n    pass\ndef consume(value: Data | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "dd37e8c98502e514d53fca16c8040d2e3317ad96a61a9548b941dd6b7c3da8c1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "attribute_optional",
+    "files": {
+      "main.py": "class Data:\n    value: str | None\ndef consume(data: Data) -> None:\n    if data.value:\n        reveal_type(data.value)\n    else:\n        reveal_type(data.value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a6906480b935c092065b5322ea23e5516e4eac576ff5d2f91fc8cb084a4fbfd7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typevar_optional",
+    "files": {
+      "main.py": "def consume[T](value: T | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "24a9e74feca1653a1fa7ff24361d54ce528d2a449b89e8a9ce37f28c59a74634"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "any_branches",
+    "files": {
+      "main.py": "from typing import Any\ndef consume(value: Any) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3ced45d5c70d454bd979d7ab4ef18cecd80dbc1b928e430daf9d2ba692b8f1e4"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "object_branches",
+    "files": {
+      "main.py": "def consume(value: object) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7cdca83023415b176371eede8fea88766138f304923b1d686f15d88c73e5a123"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "callable_branches",
+    "files": {
+      "main.py": "from collections.abc import Callable\ndef consume(value: Callable[[], int] | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "1d67c8b134e4f9f0f04118c40430f9b53b74ccb3f252fc492005bee5463a343a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "walrus_condition",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    if (item := value):\n        reveal_type(item)\n        reveal_type(value)\n    else:\n        reveal_type(item)\n"
+    },
+    "source_sha256": {
+      "main.py": "6b7b4a7e9d03acf296d3616b8ec98e9915b82803b36c0e8de3dfa8244110b55c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "assert_condition",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    assert value\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "71dcfeb84042b22530fdcd919112174f4cbb2bf3a0fb9ad437b8abbabcddca3e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "sequence_condition",
+    "files": {
+      "main.py": "from collections.abc import Sequence\ndef consume(value: Sequence[int] | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3bcdae6882aa45d2f43b1ba1a3ca7f76d9ed73806b2d0a61e9f1031204ec4465"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Sequence[int] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "nested_assignment",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    if not value:\n        value = \"new\"\n        if value:\n            reveal_type(value)\n        else:\n            reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "560982ad51fd571c4f0d74193d170f6a4966820aceb1a9184b97e797c303a728"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 25,
+            "end_line": 5,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 25,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 25,
+            "end_line": 5,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 25,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 25,
+            "end_line": 5,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['']\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 25,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "optional_bytes",
+    "files": {
+      "main.py": "def consume(value: bytes | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b78245e6fe8af9c224480486bada9692a66018e20ecb74527b2151cf721f136f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[b''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[b''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bytes\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[b''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "optional_float",
+    "files": {
+      "main.py": "def consume(value: float | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "658e5de9deda957b4b3c43faf976af1e1a02d0bdbc1bbcd235c75d632a9c5d48"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "final_class",
+    "files": {
+      "main.py": "from typing import final\n@final\nclass Data:\n    pass\ndef consume(value: Data | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8fe38a83bb790829d2fd0b0c55391cf720a5c61a789fa4d926d8b7bade5898cd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "len_always_one",
+    "files": {
+      "main.py": "from typing import Literal\nclass Data:\n    def __len__(self) -> Literal[1]:\n        return 1\ndef consume(value: Data | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "737d4b499bfc83a43bcfecddfd60976c5ffb5d7d745f5ad5896a3fcfdca6a7e0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bool_over_len",
+    "files": {
+      "main.py": "from typing import Literal\nclass Data:\n    def __bool__(self) -> bool:\n        return False\n    def __len__(self) -> Literal[1]:\n        return 1\ndef consume(value: Data | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "54c6afe4098129c54ca95b94a2cd2f802a34a37c4a909a304a400b36277610ae"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "subscript_optional",
+    "files": {
+      "main.py": "def consume(values: list[str | None]) -> None:\n    if values[0]:\n        reveal_type(values[0])\n    else:\n        reveal_type(values[0])\n"
+    },
+    "source_sha256": {
+      "main.py": "e866dafed37ee8d4dca6d18bc1600d7cdfc84079bfc8a0deeec247864bf352d2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[''] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "ternary_optional",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    reveal_type(value if value else \"fallback\")\n"
+    },
+    "source_sha256": {
+      "main.py": "4ab8c19d345bd8bac2e6e366f070012b7d96120685e19a86b66fa09604e8fd76"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 46
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 46
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 46
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "or_result",
+    "files": {
+      "main.py": "def consume(value: str | None) -> None:\n    reveal_type(value or \"fallback\")\n"
+    },
+    "source_sha256": {
+      "main.py": "44be731addef01024344e6765edc924da03f36626b795edd869e24d5a5db1654"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "and_result",
+    "files": {
+      "main.py": "def consume(value: int | None) -> None:\n    reveal_type(value and \"suffix\")\n"
+    },
+    "source_sha256": {
+      "main.py": "afd0fcaf30556c0306bfd3b25cb0e9cb32d68c309a8819f6909b12142341702a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None | Literal['suffix']?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None | Literal['suffix']?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[0] | None | Literal['suffix']?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "function_condition",
+    "files": {
+      "main.py": "def condition() -> bool:\n    return True\ndef consume() -> None:\n    if condition:\n        reveal_type(condition)\n    else:\n        reveal_type(condition)\n"
+    },
+    "source_sha256": {
+      "main.py": "a166f7ef810fe273ba88c8ad34a9561b98e819aca347d13a80db496dae81723c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"condition\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"condition\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"condition\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "class_condition",
+    "files": {
+      "main.py": "class Data:\n    pass\ndef consume() -> None:\n    if Data:\n        reveal_type(Data)\n    else:\n        reveal_type(Data)\n"
+    },
+    "source_sha256": {
+      "main.py": "3061a278a6c6369ef38dc6c4e571a44960578d6cb411cc662209de988dfd9c2e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"Data\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"Data\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"Data\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> main.Data\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "literal_call_condition",
+    "files": {
+      "main.py": "from typing import Literal\ndef condition() -> Literal[True]:\n    return True\ndef consume() -> None:\n    if condition():\n        reveal_type(condition())\n    else:\n        reveal_type(condition())\n"
+    },
+    "source_sha256": {
+      "main.py": "3abd90dad51a56545cc9e219d0adffea6dcfce177287807b01183acabadf8606"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "function_alias_condition",
+    "files": {
+      "main.py": "def condition() -> bool:\n    return True\nreference = condition\ndef consume() -> None:\n    if reference:\n        reveal_type(reference)\n    else:\n        reveal_type(reference)\n"
+    },
+    "source_sha256": {
+      "main.py": "389dabade1fcdc89fd2f3102bbab8681990dd866facbf6c3f2664435d0f379fd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"reference\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"reference\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"reference\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 8,
+            "end_line": 5,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "callable_parameter_condition",
+    "files": {
+      "main.py": "from collections.abc import Callable\ndef consume(callback: Callable[[], int]) -> None:\n    if callback:\n        reveal_type(callback)\n    else:\n        reveal_type(callback)\n"
+    },
+    "source_sha256": {
+      "main.py": "d1a49319b5faa43546cea0e63e3462f668b152fe6eea9753d03770a7b19f0db8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_condition",
+    "files": {
+      "main.py": "def consume() -> None:\n    callback = lambda: 1\n    if callback:\n        reveal_type(callback)\n    else:\n        reveal_type(callback)\n"
+    },
+    "source_sha256": {
+      "main.py": "0ea22ede31205cb4c62387c38d09011327a41b21db2d5eefd1e2b97fd70021c3"
+    },
+    "expected": [
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "truthy-function",
+          "message": "Function \"callback\" could always be true in boolean context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bool_after_merge",
+    "files": {
+      "main.py": "from typing import Literal\ndef consume(value: Literal[True, False]) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "2279ae7892b1ad28e3131cbad6105e84d4a0e308609e44bb731cfc3c4ff30260"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[True] | Literal[False]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "attribute_and_condition",
+    "files": {
+      "main.py": "class Data:\n    value: int | None\ndef consume(data: Data, other: str | None) -> None:\n    if data.value and other:\n        reveal_type(data.value)\n    else:\n        reveal_type(data.value)\n"
+    },
+    "source_sha256": {
+      "main.py": "12a652d7f2f81b768ed6f8c6baff6291aa7497521faddf1102d18c5de1c29903"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "subscript_assignment",
+    "files": {
+      "main.py": "def consume(values: list[str | None]) -> None:\n    if values[0]:\n        reveal_type(values[0])\n        values[0] = None\n        reveal_type(values[0])\n"
+    },
+    "source_sha256": {
+      "main.py": "a21adfab9804dbccfc8721a40d9b9ec9977a83a6453b25f56fc9534c56b2d88f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "optional_type_condition",
+    "files": {
+      "main.py": "def consume(value: type[object] | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "74ff53ef04b9a003d5bf188d06aeac617cc5edc39201ab513c45553898fcbecd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 21,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"type[object] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "generic_bool_method",
+    "files": {
+      "main.py": "from typing import Literal\nclass Data[T]:\n    def __bool__(self) -> Literal[True]:\n        return True\ndef consume(value: Data[int] | None) -> None:\n    if value:\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "39bc6c8aa9706d32aaf049c83760d949fa629083b139c986d85e581b30a99aa3"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Data[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "attribute_none_guard_root_reassignment",
+    "files": {
+      "main.py": "class Data:\n    value: str | None\n\ndef consume(data: Data, replacement: Data) -> str:\n    if data.value is None:\n        raise ValueError(\"missing\")\n    data = replacement\n    return data.value\n"
+    },
+    "source_sha256": {
+      "main.py": "2b32beaebf82993e946ea6483987259408bd9984013129a4350c983c50d9f87f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str | None\", expected \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 12,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str | None\", expected \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 12,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str | None\", expected \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 12,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

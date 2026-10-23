@@ -1,0 +1,620 @@
+[
+  {
+    "name": "01_any_valued_variable_from_typed_identity",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\nfrom typing import Any\n\ndef identity(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\ndecorator: Any = identity\n\n@decorator\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "a255cc1731ae596ee4aaf54fc2ff40a6e9c3e237cbfb37806f9484b54e8cee69",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A decorator variable explicitly typed Any and assigned a normally typed identity decorator."
+  },
+  {
+    "name": "02_any_valued_variable_ignored",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\nfrom typing import Any\n\ndef identity(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\ndecorator: Any = identity\n\n@decorator  # type: ignore[untyped-decorator]\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "9f4d146487e4e0efd52d01559e24ebb86ed7fc0d93ae855c57e5c78238a23a1b",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "purpose": "The same Any-valued decorator variable with a named ignore on its decorator line."
+  },
+  {
+    "name": "03_callable_ellipsis_any_decorator_function",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\nfrom typing import Any\n\ndef identity(fn: Callable[..., Any]) -> Callable[..., Any]:\n    return fn\n\n@identity\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "bfca8f148c67626887db7a4c780bf71f470134aba8b945225eb07ca89ee778b8",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "purpose": "A normally typed decorator function whose input and output are Callable[..., Any]."
+  },
+  {
+    "name": "04_pure_any_cast_decorator_variable",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\nfrom typing import Any, cast\n\ndef identity(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\ndecorator = cast(Any, identity)\n\n@decorator\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "d62f551672332cd3f042df798f3b8ac0511f8b9ab217467abd93abbecac322ea",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A decorator variable made Any with cast, as a direct pure-Any control."
+  },
+  {
+    "name": "05_no_type_check_decorator_function",
+    "filename": "main.py",
+    "source": "from typing import no_type_check\n\n@no_type_check\ndef identity(fn):\n    return fn\n\n@identity\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "ff282b50b73dac086322871bcc175f30ac5ba58e8ef5cdafb5c417cc6b425fb6",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 2,
+            "end_line": 7,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 2,
+            "end_line": 7,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 2,
+            "end_line": 7,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A function used as a decorator and marked with typing.no_type_check."
+  },
+  {
+    "name": "06_stacked_untyped_outer_typed_inner",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef untyped(fn):\n    return fn\n\ndef typed(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@untyped\n@typed\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "d266b375901834e9456938593c6c7df9e5ada11fdcbd3cb34c626898276935c9",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "An untyped decorator applied outside a typed decorator."
+  },
+  {
+    "name": "07_stacked_typed_outer_untyped_inner",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef untyped(fn):\n    return fn\n\ndef typed(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@typed\n@untyped\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "1236b9d38ffe45bd8b6833d669bf29743abae41fc0f57e55b774a8b1684d0676",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 2,
+            "end_line": 10,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 2,
+            "end_line": 10,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 2,
+            "end_line": 10,
+            "end_column": 8
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A typed decorator applied outside an untyped decorator; reverse order control for case 06."
+  },
+  {
+    "name": "08_untyped_function_typed_decorator",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef typed(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@typed\ndef target(value):\n    return value\n",
+    "source_sha256": "e40f43f475ce642d1326d5603e98dce9d370ac92523ed3a95790804b6121e9e4",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 8,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 8,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 8,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A typed decorator applied to a function with an untyped parameter and return."
+  },
+  {
+    "name": "09_overload_partially_annotated_variant",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value) -> str: ...\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "c96b1efe78e840e980266b80d4df6c820cc6d71802e3c5d0959d24e0ed956593",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "An overload set with one partially annotated variant and a fully annotated implementation."
+  },
+  {
+    "name": "10_typed_generic_identity_decorator",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\nfrom typing import TypeVar\n\nF = TypeVar(\"F\", bound=Callable[..., object])\n\ndef identity(fn: F) -> F:\n    return fn\n\n@identity\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "0210c63a001a332dc8edecdd735f6a7bb839e6c31dfa54f4e22063950a585048",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "purpose": "A regular typed generic identity decorator using TypeVar and Callable, without ParamSpec."
+  },
+  {
+    "name": "11_typed_decorator_factory",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef factory(label: str) -> Callable[[Callable[[int], int]], Callable[[int], int]]:\n    def decorate(fn: Callable[[int], int]) -> Callable[[int], int]:\n        return fn\n    return decorate\n\n@factory(\"tag\")\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "c4fec56a3970b55e51728c0291421b0a4c5c8de348f6feaa4f1e04fbfcdd63b5",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "purpose": "A decorator factory with a fully typed callable return."
+  },
+  {
+    "name": "12_any_returning_decorator_factory",
+    "filename": "main.py",
+    "source": "from typing import Any\n\ndef factory(label: str) -> Any:\n    return lambda fn: fn\n\n@factory(\"tag\")\ndef target(value: int) -> int:\n    return value\n",
+    "source_sha256": "7bf788448512e54d04de75c54ef61ef396c255972bb9a1223edb925464faf60b",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"target\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "purpose": "A decorator factory with an explicit Any return, paired with the typed factory control."
+  }
+]

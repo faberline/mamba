@@ -1,0 +1,869 @@
+[
+  {
+    "name": "read_protocol_callable_and_load",
+    "files": {
+      "main.py": "from typing import Any\nfrom _typeshed import SupportsRead\nimport json\ndef take(value: SupportsRead[str]) -> Any:\n    reveal_type(value)\n    return json.load(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f5df39c84f4645afd02e802e7cf55a7f698395109af76f4faa3c6b42a5b321a3"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "write_protocol_callable_and_dump",
+    "files": {
+      "main.py": "from _typeshed import SupportsWrite\nimport json\ndef take(value: SupportsWrite[str]) -> None:\n    reveal_type(value)\n    json.dump({}, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "53d1aae81f3302a21ca3d09c5d6b9f06b38c0c21b360cc031cd16a37a80a7af5"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "read_protocol_after_load",
+    "files": {
+      "main.py": "import json\nfrom _typeshed import SupportsRead\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\njson.load(Reader())\nvalue: SupportsRead[str] = Reader()\nreveal_type(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "47d92cf4c2a1afe25784a55862a00fbd8e294647111ebe47c27844fd46462744"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsRead[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "write_protocol_after_dump",
+    "files": {
+      "main.py": "import json\nfrom _typeshed import SupportsWrite\nclass Writer:\n    def write(self, value: str) -> int:\n        return len(value)\njson.dump({}, Writer())\nvalue: SupportsWrite[str] = Writer()\nreveal_type(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "65990d0e9b973d176429533f482dd270fe4b28b120f65df11836562a52b8b30c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_typeshed.SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "read_protocol_missing_generic",
+    "files": {
+      "main.py": "from _typeshed import SupportsRead\ndef take(value: SupportsRead) -> None:\n    pass\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4692efd6d52b373a09f2317acc26e1fd078f144c69ad3327ea30cf5a84b1add3"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsRead\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsRead\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsRead\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "write_protocol_missing_generic",
+    "files": {
+      "main.py": "from _typeshed import SupportsWrite\ndef take(value: SupportsWrite) -> None:\n    pass\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "230c18b717fc6198b7c232de3cce9a3632d3f384a2a528d4f81b16cbb63b5277"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsWrite\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsWrite\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"SupportsWrite\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "writer_generic_text",
+    "files": {
+      "main.py": "import json\nfrom typing import Generic, TypeVar\nT = TypeVar(\"T\")\nclass Writer(Generic[T]):\n    def write(self, value: T) -> int:\n        return 1\nreveal_type(json.dump({}, Writer[str]()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "86ee47987540083c51f233aa57653f01d37ed7676e8ae550dc9f71d2ecfa594e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 40
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "writer_generic_integer",
+    "files": {
+      "main.py": "import json\nfrom typing import Generic, TypeVar\nT = TypeVar(\"T\")\nclass Writer(Generic[T]):\n    def write(self, value: T) -> int:\n        return 1\njson.dump({}, Writer[int]())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "552e3c43d00c545ab15200c67a62ed517eebdb3847fd8aa03503aa3fa04c62f1"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer[int]\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 15,
+            "end_line": 7,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer[int]\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 15,
+            "end_line": 7,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer[int]\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 15,
+            "end_line": 7,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_named_protocol",
+    "files": {
+      "main.py": "from typing import Any, Protocol\nimport json\nclass Reader(Protocol):\n    def read(self, size: int = -1, /) -> str: ...\ndef take(value: Reader) -> Any:\n    return json.load(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "68e40ace6ea2ffd113b8ae011dfc479ac65a2d3c228bc1b7175bee1584e8a06b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_named_protocol",
+    "files": {
+      "main.py": "from typing import Protocol\nimport json\nclass Writer(Protocol):\n    def write(self, value: str) -> int: ...\ndef take(value: Writer) -> None:\n    json.dump({}, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "cac8f00df54e42b3a52622b611aa2024ffeeb34fcb4c68b666436d930d2df65c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_size_with_wrong_keyword_kind",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, *, size: int = -1) -> str:\n        return \"{}\"\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e03ea0deabdc1985b5bfc0e4144f49ccd12183d1cc98c775115148dc91388927"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, *, size: int = ...) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, *, size: int = ...) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, *, size: int = ...) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_text_keyword_only",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, *, value: str) -> int:\n        return 1\njson.dump({}, Writer())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "56af4c6dc6e1ba3f7109adc545829048db13faac7e1c135624ec4aad882ed0dd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, *, value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, *, value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, *, value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cross_file_read_write_protocols",
+    "files": {
+      "main.py": "import json\nfrom handlers import Reader, Writer\nreveal_type(json.load(Reader()))\nreveal_type(json.dump({}, Writer()))\n",
+      "handlers.py": "class Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nclass Writer:\n    def write(self, value: str) -> int:\n        return len(value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "25e2625bcef3d9c00408c6f5abfd373e2ec27d9c6fe1e281fa9a17b48027a8d6",
+      "handlers.py": "4427f8b7181875d1b793872cca4971dbd5391ada7a4096eb6334a3cee9f413d5"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "namespace_model_parent": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "models/base.py": "1f7fdbd911ffcd1dbc2b852c4d934bf107ec52dc558383bfc1a432b37e414f5b",
+      "main.py": "da4057fca2cce942c1a8cbcd0a70ad1b04d82fab762e993f81813a738962e4c9"
+    }
+  },
+  "nested_namespace_model": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "ns/models/base.py": "19a8912358db84711f943ee5ca628971b1985383718674e23044e1b83f8773c0",
+      "main.py": "2aab202dfcc8c6f5b57bfc0ac47d945fa50a31d9f2dbc00711cb4f8f056a0e08"
+    }
+  },
+  "regular_package_inside_namespace": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "ns/pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ns/pkg/models.py": "19a8912358db84711f943ee5ca628971b1985383718674e23044e1b83f8773c0",
+      "main.py": "5f5456dab58e94790d3938095f7db2af9e38cb61841ef1bf594859efa1073c91"
+    }
+  },
+  "namespace_regular_relative_import": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "ns/pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ns/pkg/base.py": "7c058040f767bc3984b3c110961611c60c46bc4aaa5fa4dfea573a724b8012b2",
+      "ns/pkg/models.py": "ebbb44f71ece735f2d5aa8af7011ead64b7b5917197da11740bb5a48bb884f69",
+      "main.py": "734eddf3e4ae179159ff8ee332c325ca1630a4c4f81e1841e6ccc8bdcaafb350"
+    }
+  },
+  "same_named_namespace_models": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "left/models.py": "ac909e31cb2802b3c2788246b100139f13d39997be78a8152b42f0f56b69d974",
+      "right/models.py": "a70bddf95282b343d1b0dff1b16ef9b622be9ff4f9ff8ae6d9110dc0bbfe40a8",
+      "main.py": "f05cc6880a3d2394a23a4738479e8c4c53e634b6238ae114dba78f90129c49b3"
+    }
+  },
+  "namespace_stub_model": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "ns/models.pyi": "19a8912358db84711f943ee5ca628971b1985383718674e23044e1b83f8773c0",
+      "main.py": "5f09d675d7e24ec8a9a078af471c9b4a95057bec071d6f20b14217644a4f45ac"
+    }
+  },
+  "namespace_package_reexport": {
+    "entrypoints": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "ns/pkg/__init__.py": "1b21e3e39bba11ecda4de1fb8d516fef5ea8b3cfcf782e052160be5bb56ae54a",
+      "ns/pkg/base.py": "1f7fdbd911ffcd1dbc2b852c4d934bf107ec52dc558383bfc1a432b37e414f5b",
+      "main.py": "4ccaf0ef9bfcb7d1c0ff03a02af37c6bd2598384f0b61e7b84a1dd82683ba6ba"
+    }
+  }
+}

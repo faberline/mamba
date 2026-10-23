@@ -28,6 +28,7 @@ use mamba::pkgmanage::venv as pkg_venv;
 use mamba::pkgmanage::version as pkg_version;
 use mamba::pkgmanage::workspace as pkg_workspace;
 
+mod quality_command;
 mod standard_cli;
 
 // Force-link Mamba native binding crates so their #[distributed_slice(MAMBA_MODULES)]
@@ -53,6 +54,7 @@ fn cli() -> Command {
         .subcommand(standard_cli::llm_command())
         .subcommand(standard_cli::upgrade_command())
         .subcommand(standard_cli::report_issue_command())
+        .subcommand(quality_command::command_quality())
         .subcommand(
             Command::new("build")
                 .about("Compile a Mamba source file or project")
@@ -650,6 +652,19 @@ fn cli() -> Command {
 }
 
 fn main() -> Result<()> {
+    // Quality uses its own Rust service and does not need the compiler runtime.
+    if std::env::args_os()
+        .nth(1)
+        .is_some_and(|argument| argument == "quality")
+    {
+        let matches = cli().get_matches();
+        return quality_command::cmd_quality(
+            matches
+                .subcommand_matches("quality")
+                .expect("quality command"),
+        );
+    }
+
     // Install the ObjectOps callback table before any binding code can fire.
     // Bindings that depend only on mamba-registry call through
     // `registry::ops()` to allocate / inspect mamba objects and to raise
@@ -685,6 +700,7 @@ fn main() -> Result<()> {
     let matches = cli().get_matches();
 
     match matches.subcommand() {
+        Some(("quality", sub)) => quality_command::cmd_quality(sub),
         Some(("llm", sub)) => standard_cli::run_llm(sub),
         Some(("upgrade", sub)) => standard_cli::run_upgrade(sub),
         Some(("report-issue", sub)) => standard_cli::run_report_issue(sub),

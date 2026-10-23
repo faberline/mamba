@@ -1,0 +1,3742 @@
+[
+  {
+    "name": "plain_plain",
+    "source": "name = \"N\"\nvalue= 'left' 'right'\n",
+    "source_sha256": "650bd9ca2bb8ff027e7207d055376a92a6e21f837b48cb45b425f61a2efff549",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "650bd9ca2bb8ff027e7207d055376a92a6e21f837b48cb45b425f61a2efff549",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "650bd9ca2bb8ff027e7207d055376a92a6e21f837b48cb45b425f61a2efff549",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "650bd9ca2bb8ff027e7207d055376a92a6e21f837b48cb45b425f61a2efff549",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_skip",
+    "source": "name = \"N\"\nvalue= 'left' 'right'  # fmt: skip\nother= 1\n",
+    "source_sha256": "da92fb776685aace77094258645b2d96d573bb2730ca64b6cd408f3e7835881c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "da92fb776685aace77094258645b2d96d573bb2730ca64b6cd408f3e7835881c",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          },
+          {
+            "input_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "da92fb776685aace77094258645b2d96d573bb2730ca64b6cd408f3e7835881c",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          },
+          {
+            "input_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "da92fb776685aace77094258645b2d96d573bb2730ca64b6cd408f3e7835881c",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          },
+          {
+            "input_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7",
+            "output_sha256": "985d1ed04c9ccb06cc2a51fe47cc3bb913b0ec0e43fdc2b32b029625d50518a7"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother= 'left' 'right'\n",
+    "source_sha256": "39086a1dbf77a53b438b0cb0c245f7e83b1947c0ac2e7f06c931169714fe15b5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "39086a1dbf77a53b438b0cb0c245f7e83b1947c0ac2e7f06c931169714fe15b5",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          },
+          {
+            "input_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "39086a1dbf77a53b438b0cb0c245f7e83b1947c0ac2e7f06c931169714fe15b5",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          },
+          {
+            "input_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "39086a1dbf77a53b438b0cb0c245f7e83b1947c0ac2e7f06c931169714fe15b5",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          },
+          {
+            "input_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d",
+            "output_sha256": "92a985491e7b2ac7504a7f5c856edbee26315968d197a72bff1d13e902aa914d"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= ('left' 'right')  # fmt: skip\nother= 1\n",
+    "source_sha256": "fd3289b1aa8897589af201a26b564747a93fbf8c2a50928abb8070a3083e6a34",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fd3289b1aa8897589af201a26b564747a93fbf8c2a50928abb8070a3083e6a34",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          },
+          {
+            "input_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fd3289b1aa8897589af201a26b564747a93fbf8c2a50928abb8070a3083e6a34",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          },
+          {
+            "input_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fd3289b1aa8897589af201a26b564747a93fbf8c2a50928abb8070a3083e6a34",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          },
+          {
+            "input_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930",
+            "output_sha256": "84857916fa32cb14f06ce7e44013636d77d1a1ced56c3babe69896a111208930"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "escaped_plain",
+    "source": "name = \"N\"\nvalue= 'left\\n' 'right\\t'\n",
+    "source_sha256": "e0ecc05c991f270becb1e07fc1832c12fa317fbfb3086aa39c2a25a122e231b9",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0ecc05c991f270becb1e07fc1832c12fa317fbfb3086aa39c2a25a122e231b9",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          },
+          {
+            "input_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0ecc05c991f270becb1e07fc1832c12fa317fbfb3086aa39c2a25a122e231b9",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          },
+          {
+            "input_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0ecc05c991f270becb1e07fc1832c12fa317fbfb3086aa39c2a25a122e231b9",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          },
+          {
+            "input_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf",
+            "output_sha256": "544a76dd3469f43cf1a134420f1e0c9c85c94afd845d3b0fe03f90d4288571bf"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "escaped_skip",
+    "source": "name = \"N\"\nvalue= 'left\\n' 'right\\t'  # fmt: skip\nother= 1\n",
+    "source_sha256": "07dc5c98e60e17c030874306544b09ff72b28b801013d26cd579021374a0bb09",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left\\n' 'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07dc5c98e60e17c030874306544b09ff72b28b801013d26cd579021374a0bb09",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          },
+          {
+            "input_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left\\n' 'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07dc5c98e60e17c030874306544b09ff72b28b801013d26cd579021374a0bb09",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          },
+          {
+            "input_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= 'left\\n' 'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07dc5c98e60e17c030874306544b09ff72b28b801013d26cd579021374a0bb09",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          },
+          {
+            "input_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2",
+            "output_sha256": "b6ae92226c27e19c0cf17ac429d520b9dc46dd9ecbf4ae19f3a2d90f5bf756c2"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "escaped_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= 'left\\n' 'right\\t'\n# fmt: on\nother= 'left\\n' 'right\\t'\n",
+    "source_sha256": "e0787b3de884ae6b065d631897513d11ee4fc13ae760ffa398435b1d89e20305",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left\\n' 'right\\t'\n# fmt: on\nother = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0787b3de884ae6b065d631897513d11ee4fc13ae760ffa398435b1d89e20305",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          },
+          {
+            "input_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left\\n' 'right\\t'\n# fmt: on\nother = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0787b3de884ae6b065d631897513d11ee4fc13ae760ffa398435b1d89e20305",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          },
+          {
+            "input_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= 'left\\n' 'right\\t'\n# fmt: on\nother = \"left\\n\" \"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e0787b3de884ae6b065d631897513d11ee4fc13ae760ffa398435b1d89e20305",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          },
+          {
+            "input_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381",
+            "output_sha256": "d9110d8b4e983b50cf64e3a4108e7faa0ac40559938266d38e0779bbf792e381"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "escaped_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= ('left\\n' 'right\\t')  # fmt: skip\nother= 1\n",
+    "source_sha256": "8a0ccc1e30e08cff8e39649a04ed69fb1941ccbeefda8db8300034a22a4762f2",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left\\n' 'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8a0ccc1e30e08cff8e39649a04ed69fb1941ccbeefda8db8300034a22a4762f2",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          },
+          {
+            "input_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left\\n' 'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8a0ccc1e30e08cff8e39649a04ed69fb1941ccbeefda8db8300034a22a4762f2",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          },
+          {
+            "input_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= ('left\\n' 'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8a0ccc1e30e08cff8e39649a04ed69fb1941ccbeefda8db8300034a22a4762f2",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          },
+          {
+            "input_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45",
+            "output_sha256": "1f700b2d4249ff77bb486a831761d5e62045a041f96dcf6b1694a6a7153cae45"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_plain",
+    "source": "name = \"N\"\nvalue= r'left\\n' r'right\\t'\n",
+    "source_sha256": "5687fb96ee059c7fccc3f781da7068c1e2245b73faf8f8c692ad6dd9efdff77f",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5687fb96ee059c7fccc3f781da7068c1e2245b73faf8f8c692ad6dd9efdff77f",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          },
+          {
+            "input_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5687fb96ee059c7fccc3f781da7068c1e2245b73faf8f8c692ad6dd9efdff77f",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          },
+          {
+            "input_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5687fb96ee059c7fccc3f781da7068c1e2245b73faf8f8c692ad6dd9efdff77f",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          },
+          {
+            "input_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf",
+            "output_sha256": "9bc62ffa8a41b4ac40c10a78f2bd1edc85c7c0c9b390e388a6e9273a9e1369bf"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_skip",
+    "source": "name = \"N\"\nvalue= r'left\\n' r'right\\t'  # fmt: skip\nother= 1\n",
+    "source_sha256": "24baf4f53cecc24979e6552d0776a4eca9c699df8b6f803c9be307ea15dd1e41",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= r'left\\n' r'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "24baf4f53cecc24979e6552d0776a4eca9c699df8b6f803c9be307ea15dd1e41",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          },
+          {
+            "input_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= r'left\\n' r'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "24baf4f53cecc24979e6552d0776a4eca9c699df8b6f803c9be307ea15dd1e41",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          },
+          {
+            "input_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= r'left\\n' r'right\\t'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "24baf4f53cecc24979e6552d0776a4eca9c699df8b6f803c9be307ea15dd1e41",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          },
+          {
+            "input_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c",
+            "output_sha256": "17a0557bcbb6830cfa9fffc05b0afe89cd3997133fd2d2b5b217b646469e272c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= r'left\\n' r'right\\t'\n# fmt: on\nother= r'left\\n' r'right\\t'\n",
+    "source_sha256": "66160d690fbb289460f9422dc5e2cc906427b270c62cd0649ead8553b95bb136",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= r'left\\n' r'right\\t'\n# fmt: on\nother = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "66160d690fbb289460f9422dc5e2cc906427b270c62cd0649ead8553b95bb136",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          },
+          {
+            "input_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= r'left\\n' r'right\\t'\n# fmt: on\nother = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "66160d690fbb289460f9422dc5e2cc906427b270c62cd0649ead8553b95bb136",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          },
+          {
+            "input_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= r'left\\n' r'right\\t'\n# fmt: on\nother = r\"left\\n\" r\"right\\t\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "66160d690fbb289460f9422dc5e2cc906427b270c62cd0649ead8553b95bb136",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          },
+          {
+            "input_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d",
+            "output_sha256": "3414e572aaeb7272345b660a273bb9def903edcddbcf81cff050df642463df0d"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (r'left\\n' r'right\\t')  # fmt: skip\nother= 1\n",
+    "source_sha256": "8ad1d65aa0bfada35fd148d7d9d62dba8fedfffbb1c8bd69a568f5a3b1ba1e00",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (r'left\\n' r'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8ad1d65aa0bfada35fd148d7d9d62dba8fedfffbb1c8bd69a568f5a3b1ba1e00",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          },
+          {
+            "input_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (r'left\\n' r'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8ad1d65aa0bfada35fd148d7d9d62dba8fedfffbb1c8bd69a568f5a3b1ba1e00",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          },
+          {
+            "input_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (r'left\\n' r'right\\t')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8ad1d65aa0bfada35fd148d7d9d62dba8fedfffbb1c8bd69a568f5a3b1ba1e00",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          },
+          {
+            "input_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613",
+            "output_sha256": "974318a38fadee03e94f2cb353466db8b814b2559f6b2bbfebc12a51db313613"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unicode_plain",
+    "source": "name = \"N\"\nvalue= u'left' 'right'\n",
+    "source_sha256": "e490e7183ed36889f000e4b2fbc6b20d8e5a5afb581edd43547bb81d5b0861e0",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e490e7183ed36889f000e4b2fbc6b20d8e5a5afb581edd43547bb81d5b0861e0",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e490e7183ed36889f000e4b2fbc6b20d8e5a5afb581edd43547bb81d5b0861e0",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e490e7183ed36889f000e4b2fbc6b20d8e5a5afb581edd43547bb81d5b0861e0",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          },
+          {
+            "input_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a",
+            "output_sha256": "24601985546b12d7c0163d8e07626fe3d34fd709c9e2efa74b82fa907ca9522a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unicode_skip",
+    "source": "name = \"N\"\nvalue= u'left' 'right'  # fmt: skip\nother= 1\n",
+    "source_sha256": "36f8a9c4b3ef788a6e560a78fc38afdf0d174e96a03138bda544f6ced0116e1c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= u'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "36f8a9c4b3ef788a6e560a78fc38afdf0d174e96a03138bda544f6ced0116e1c",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          },
+          {
+            "input_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= u'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "36f8a9c4b3ef788a6e560a78fc38afdf0d174e96a03138bda544f6ced0116e1c",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          },
+          {
+            "input_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= u'left' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "36f8a9c4b3ef788a6e560a78fc38afdf0d174e96a03138bda544f6ced0116e1c",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          },
+          {
+            "input_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759",
+            "output_sha256": "c2a359e24d6dbad5f3d3678689ae1411f586ba073571170cd635636dd3835759"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unicode_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= u'left' 'right'\n# fmt: on\nother= u'left' 'right'\n",
+    "source_sha256": "b6c865a413d71e653d53c538721d80d1d5d4125e75a2debf4c89aec855308a53",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= u'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b6c865a413d71e653d53c538721d80d1d5d4125e75a2debf4c89aec855308a53",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          },
+          {
+            "input_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= u'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b6c865a413d71e653d53c538721d80d1d5d4125e75a2debf4c89aec855308a53",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          },
+          {
+            "input_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= u'left' 'right'\n# fmt: on\nother = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b6c865a413d71e653d53c538721d80d1d5d4125e75a2debf4c89aec855308a53",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          },
+          {
+            "input_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450",
+            "output_sha256": "1e9d5b33a67f3aba266dfb8a05c9c5efe4250dba52a6db1eda90356c7f008450"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unicode_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (u'left' 'right')  # fmt: skip\nother= 1\n",
+    "source_sha256": "31bac67df49b9d7a66bd246a4e1f204a403d917f8f29eea477a4d7cd81b0428f",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (u'left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31bac67df49b9d7a66bd246a4e1f204a403d917f8f29eea477a4d7cd81b0428f",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          },
+          {
+            "input_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (u'left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31bac67df49b9d7a66bd246a4e1f204a403d917f8f29eea477a4d7cd81b0428f",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          },
+          {
+            "input_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (u'left' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31bac67df49b9d7a66bd246a4e1f204a403d917f8f29eea477a4d7cd81b0428f",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          },
+          {
+            "input_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2",
+            "output_sha256": "2ed2f35566ad0216e75f83d05f1296ccfe8b0e76495ab2b55bdfac2190a78fe2"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_plain",
+    "source": "name = \"N\"\nvalue= b'left' b'right'\n",
+    "source_sha256": "07f00a4a116fc96d6865f217cfd9221f444c49e83729c8e6a49f4526adb14af6",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07f00a4a116fc96d6865f217cfd9221f444c49e83729c8e6a49f4526adb14af6",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          },
+          {
+            "input_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07f00a4a116fc96d6865f217cfd9221f444c49e83729c8e6a49f4526adb14af6",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          },
+          {
+            "input_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "07f00a4a116fc96d6865f217cfd9221f444c49e83729c8e6a49f4526adb14af6",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          },
+          {
+            "input_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd",
+            "output_sha256": "1b70521b816374745236f872d8c387f5c2de2b64361788715f636668f93000fd"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_skip",
+    "source": "name = \"N\"\nvalue= b'left' b'right'  # fmt: skip\nother= 1\n",
+    "source_sha256": "b4d6da23383491e50db9bd63cb93b89c4dda940433c74c69f2d3a1151eda6727",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= b'left' b'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b4d6da23383491e50db9bd63cb93b89c4dda940433c74c69f2d3a1151eda6727",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          },
+          {
+            "input_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= b'left' b'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b4d6da23383491e50db9bd63cb93b89c4dda940433c74c69f2d3a1151eda6727",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          },
+          {
+            "input_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= b'left' b'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b4d6da23383491e50db9bd63cb93b89c4dda940433c74c69f2d3a1151eda6727",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          },
+          {
+            "input_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0",
+            "output_sha256": "d95d97ce8f71d5e357949ce2a75f1ae650e0aa56e94a5ee2aaf9d84d6b5af0d0"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= b'left' b'right'\n# fmt: on\nother= b'left' b'right'\n",
+    "source_sha256": "6ff86f7fb809a0bbe96a64d2d416bf42219a57efa00f7e6e55488089beeb7357",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= b'left' b'right'\n# fmt: on\nother = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6ff86f7fb809a0bbe96a64d2d416bf42219a57efa00f7e6e55488089beeb7357",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          },
+          {
+            "input_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= b'left' b'right'\n# fmt: on\nother = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6ff86f7fb809a0bbe96a64d2d416bf42219a57efa00f7e6e55488089beeb7357",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          },
+          {
+            "input_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= b'left' b'right'\n# fmt: on\nother = b\"left\" b\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6ff86f7fb809a0bbe96a64d2d416bf42219a57efa00f7e6e55488089beeb7357",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          },
+          {
+            "input_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708",
+            "output_sha256": "0cd417756b098b14741a27c039be618af06033a6985f53cd60a4e3e4f26f7708"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (b'left' b'right')  # fmt: skip\nother= 1\n",
+    "source_sha256": "45c2efa58e725c70a6b7a2cbc1337e112b2277b95e9c66b36e2069745631fe00",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (b'left' b'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "45c2efa58e725c70a6b7a2cbc1337e112b2277b95e9c66b36e2069745631fe00",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          },
+          {
+            "input_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (b'left' b'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "45c2efa58e725c70a6b7a2cbc1337e112b2277b95e9c66b36e2069745631fe00",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          },
+          {
+            "input_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (b'left' b'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "45c2efa58e725c70a6b7a2cbc1337e112b2277b95e9c66b36e2069745631fe00",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          },
+          {
+            "input_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6",
+            "output_sha256": "bc54880b029286f437bc0d896a0f258a23de25a99adfaf63b3f2036e6f5841f6"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_plain",
+    "source": "name = \"N\"\nvalue= f'left {name}' 'right'\n",
+    "source_sha256": "8b715bc32b9b1abac79c960ada33934586b6cdd02103f97b28d1375cc6907daf",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8b715bc32b9b1abac79c960ada33934586b6cdd02103f97b28d1375cc6907daf",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          },
+          {
+            "input_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8b715bc32b9b1abac79c960ada33934586b6cdd02103f97b28d1375cc6907daf",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          },
+          {
+            "input_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8b715bc32b9b1abac79c960ada33934586b6cdd02103f97b28d1375cc6907daf",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          },
+          {
+            "input_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217",
+            "output_sha256": "9b078e6bf8790ddbcb696e7f5c3c5eb79924ac45a2de3126692b8f2542fd7217"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_skip",
+    "source": "name = \"N\"\nvalue= f'left {name}' 'right'  # fmt: skip\nother= 1\n",
+    "source_sha256": "37978becbd3c807debb5b3ce6dd88448d762650559bdf2a05b63616e347d3791",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "37978becbd3c807debb5b3ce6dd88448d762650559bdf2a05b63616e347d3791",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          },
+          {
+            "input_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "37978becbd3c807debb5b3ce6dd88448d762650559bdf2a05b63616e347d3791",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          },
+          {
+            "input_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' 'right'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "37978becbd3c807debb5b3ce6dd88448d762650559bdf2a05b63616e347d3791",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          },
+          {
+            "input_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23",
+            "output_sha256": "82ed70dbc8617a77df4d1f16d5296fd4229ca1ce1efe8db49833e16359b7cb23"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' 'right'\n# fmt: on\nother= f'left {name}' 'right'\n",
+    "source_sha256": "91cd4d87ad0878dc84ab99a4f0659bef978fafd5191e1776dcdadc8bde9a66f5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' 'right'\n# fmt: on\nother = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "91cd4d87ad0878dc84ab99a4f0659bef978fafd5191e1776dcdadc8bde9a66f5",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          },
+          {
+            "input_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' 'right'\n# fmt: on\nother = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "91cd4d87ad0878dc84ab99a4f0659bef978fafd5191e1776dcdadc8bde9a66f5",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          },
+          {
+            "input_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' 'right'\n# fmt: on\nother = f\"left {name}\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "91cd4d87ad0878dc84ab99a4f0659bef978fafd5191e1776dcdadc8bde9a66f5",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          },
+          {
+            "input_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af",
+            "output_sha256": "0b1f42744607cb3cbdf5c646114891a11944b27e7dae8963ba350b1a20ebe4af"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (f'left {name}' 'right')  # fmt: skip\nother= 1\n",
+    "source_sha256": "fe00ea33bee5fff7287f79161296b2b308633c0d74af5287095d0471da950ac0",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fe00ea33bee5fff7287f79161296b2b308633c0d74af5287095d0471da950ac0",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          },
+          {
+            "input_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fe00ea33bee5fff7287f79161296b2b308633c0d74af5287095d0471da950ac0",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          },
+          {
+            "input_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' 'right')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fe00ea33bee5fff7287f79161296b2b308633c0d74af5287095d0471da950ac0",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          },
+          {
+            "input_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc",
+            "output_sha256": "72ce1fbec8ca5ccebf216dd321878e3cd7979273203f712f38d7f6178b703dbc"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_pair_plain",
+    "source": "name = \"N\"\nvalue= f'left {name}' f'right {name}'\n",
+    "source_sha256": "292b68daa6121b57c0a8cf4440d2df8ff92f9ecbc174b5582a5884a1bd70f076",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "292b68daa6121b57c0a8cf4440d2df8ff92f9ecbc174b5582a5884a1bd70f076",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          },
+          {
+            "input_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "292b68daa6121b57c0a8cf4440d2df8ff92f9ecbc174b5582a5884a1bd70f076",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          },
+          {
+            "input_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "292b68daa6121b57c0a8cf4440d2df8ff92f9ecbc174b5582a5884a1bd70f076",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          },
+          {
+            "input_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a",
+            "output_sha256": "9c587a1442ef4c106f5c1516f40fb674e698054330ae883a87e659fb05140e0a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_pair_skip",
+    "source": "name = \"N\"\nvalue= f'left {name}' f'right {name}'  # fmt: skip\nother= 1\n",
+    "source_sha256": "5defc5d6d2acf88744179c8b7474a34ff30ca18efac70b64ebf774b6b0f570c3",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' f'right {name}'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5defc5d6d2acf88744179c8b7474a34ff30ca18efac70b64ebf774b6b0f570c3",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          },
+          {
+            "input_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' f'right {name}'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5defc5d6d2acf88744179c8b7474a34ff30ca18efac70b64ebf774b6b0f570c3",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          },
+          {
+            "input_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= f'left {name}' f'right {name}'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5defc5d6d2acf88744179c8b7474a34ff30ca18efac70b64ebf774b6b0f570c3",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          },
+          {
+            "input_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c",
+            "output_sha256": "aa9501726a4f8c1f78ea4bd5504c8089663b1f7bf73622723f7b7e5ff0178d5c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_pair_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' f'right {name}'\n# fmt: on\nother= f'left {name}' f'right {name}'\n",
+    "source_sha256": "cfbedb082a2883f4f40c99c4e1397a7d602e5d48846863b30337bedf5bb8d3c5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' f'right {name}'\n# fmt: on\nother = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cfbedb082a2883f4f40c99c4e1397a7d602e5d48846863b30337bedf5bb8d3c5",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          },
+          {
+            "input_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' f'right {name}'\n# fmt: on\nother = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cfbedb082a2883f4f40c99c4e1397a7d602e5d48846863b30337bedf5bb8d3c5",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          },
+          {
+            "input_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= f'left {name}' f'right {name}'\n# fmt: on\nother = f\"left {name}\" f\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cfbedb082a2883f4f40c99c4e1397a7d602e5d48846863b30337bedf5bb8d3c5",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          },
+          {
+            "input_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04",
+            "output_sha256": "e4c765da99522e88e54b44fa102d8aa4efbe549c65dc306cde023acad3b23b04"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_pair_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (f'left {name}' f'right {name}')  # fmt: skip\nother= 1\n",
+    "source_sha256": "6a270c9ba0a88584648ad0f1c070fde4b9f20bc63ada16dada537a7e967e39f4",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' f'right {name}')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6a270c9ba0a88584648ad0f1c070fde4b9f20bc63ada16dada537a7e967e39f4",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          },
+          {
+            "input_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' f'right {name}')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6a270c9ba0a88584648ad0f1c070fde4b9f20bc63ada16dada537a7e967e39f4",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          },
+          {
+            "input_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (f'left {name}' f'right {name}')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6a270c9ba0a88584648ad0f1c070fde4b9f20bc63ada16dada537a7e967e39f4",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          },
+          {
+            "input_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3",
+            "output_sha256": "5374c27949d9da7443e47ccea5584d0bcc4334cc3e15cfebf645d6c6794fd7c3"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_plain",
+    "source": "name = \"N\"\nvalue= t'left {name}' t'right {name}'\n",
+    "source_sha256": "014df07e7a15821d4c312498ca06122acf8810ded59666a081d649acd2b4982a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = t\"left {name}\" t\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "014df07e7a15821d4c312498ca06122acf8810ded59666a081d649acd2b4982a",
+            "output_sha256": "2240a9811e57256566f53101c5b4ed612f380c02ce0f269ba5ad5e88f9d10e0c"
+          },
+          {
+            "input_sha256": "2240a9811e57256566f53101c5b4ed612f380c02ce0f269ba5ad5e88f9d10e0c",
+            "output_sha256": "2240a9811e57256566f53101c5b4ed612f380c02ce0f269ba5ad5e88f9d10e0c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_skip",
+    "source": "name = \"N\"\nvalue= t'left {name}' t'right {name}'  # fmt: skip\nother= 1\n",
+    "source_sha256": "9ee9f2bd96009f6b4a70981e8a51ff84bc7bfacc1d95d0d2015b14f3f60873eb",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= t'left {name}' t'right {name}'  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "9ee9f2bd96009f6b4a70981e8a51ff84bc7bfacc1d95d0d2015b14f3f60873eb",
+            "output_sha256": "0b72402538f3003763ebc6f795a1e0ea2e35ecad4080706aec0e34a0d2101133"
+          },
+          {
+            "input_sha256": "0b72402538f3003763ebc6f795a1e0ea2e35ecad4080706aec0e34a0d2101133",
+            "output_sha256": "0b72402538f3003763ebc6f795a1e0ea2e35ecad4080706aec0e34a0d2101133"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_off_on",
+    "source": "name = \"N\"\n# fmt: off\nvalue= t'left {name}' t'right {name}'\n# fmt: on\nother= t'left {name}' t'right {name}'\n",
+    "source_sha256": "a8e5ef815f067ae5ad3be05b543bafe64db588936a4e049ec8ced119908c0d96",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\n# fmt: off\nvalue= t'left {name}' t'right {name}'\n# fmt: on\nother = t\"left {name}\" t\"right {name}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a8e5ef815f067ae5ad3be05b543bafe64db588936a4e049ec8ced119908c0d96",
+            "output_sha256": "4de26926e4106bbbeacc64a298a5e40a8e35207653e45686fb470670a4c6bebb"
+          },
+          {
+            "input_sha256": "4de26926e4106bbbeacc64a298a5e40a8e35207653e45686fb470670a4c6bebb",
+            "output_sha256": "4de26926e4106bbbeacc64a298a5e40a8e35207653e45686fb470670a4c6bebb"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_parenthesized_skip",
+    "source": "name = \"N\"\nvalue= (t'left {name}' t'right {name}')  # fmt: skip\nother= 1\n",
+    "source_sha256": "b4b37556f3d821a6086fffa46867e6f9edceb0ec2993301a1c68a1b19c33ec0d",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue= (t'left {name}' t'right {name}')  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b4b37556f3d821a6086fffa46867e6f9edceb0ec2993301a1c68a1b19c33ec0d",
+            "output_sha256": "3dd637370b5d40e8af3c02980ce048c380ad207cd277205f51e2be2bf81941d1"
+          },
+          {
+            "input_sha256": "3dd637370b5d40e8af3c02980ce048c380ad207cd277205f51e2be2bf81941d1",
+            "output_sha256": "3dd637370b5d40e8af3c02980ce048c380ad207cd277205f51e2be2bf81941d1"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_comment_between",
+    "source": "name = \"N\"\nvalue = (\n    'left'  # first\n    'right'  # second\n)\n",
+    "source_sha256": "498371b6f10a4724a48ad139eaa112ebb7834b52e302be68378c1d00af6b1896",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    \"left\"  # first\n    \"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "498371b6f10a4724a48ad139eaa112ebb7834b52e302be68378c1d00af6b1896",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          },
+          {
+            "input_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    \"left\"  # first\n    \"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "498371b6f10a4724a48ad139eaa112ebb7834b52e302be68378c1d00af6b1896",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          },
+          {
+            "input_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    \"left\"  # first\n    \"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "498371b6f10a4724a48ad139eaa112ebb7834b52e302be68378c1d00af6b1896",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          },
+          {
+            "input_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef",
+            "output_sha256": "9dd236f9d3af2290eb265e44987d3d01b2ba15926e94e6c0929b9fd7363b50ef"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_skip_inside",
+    "source": "name = \"N\"\nvalue = (\n    'left'  # fmt: skip\n    'right'\n)\n",
+    "source_sha256": "7bb4324ff717c8313fd3d665f77b7de5e083226892de2d26504cd42cbe91d85d",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'  # fmt: skip\n    \"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7bb4324ff717c8313fd3d665f77b7de5e083226892de2d26504cd42cbe91d85d",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          },
+          {
+            "input_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'  # fmt: skip\n    \"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7bb4324ff717c8313fd3d665f77b7de5e083226892de2d26504cd42cbe91d85d",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          },
+          {
+            "input_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'  # fmt: skip\n    \"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7bb4324ff717c8313fd3d665f77b7de5e083226892de2d26504cd42cbe91d85d",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          },
+          {
+            "input_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612",
+            "output_sha256": "4d0ebe8bafb73532c144049b27ed69c3c86c3a77a8e87c70e47a845e85de9612"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_off_inside",
+    "source": "name = \"N\"\nvalue = (\n    # fmt: off\n    'left'\n    'right'\n    # fmt: on\n)\nother=1\n",
+    "source_sha256": "1f778fca36d8fcc2de2a756bcf1f9be89fcd2d02941af7f8915c241ed360ae51",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    'left'\n    'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1f778fca36d8fcc2de2a756bcf1f9be89fcd2d02941af7f8915c241ed360ae51",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          },
+          {
+            "input_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    'left'\n    'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1f778fca36d8fcc2de2a756bcf1f9be89fcd2d02941af7f8915c241ed360ae51",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          },
+          {
+            "input_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    'left'\n    'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1f778fca36d8fcc2de2a756bcf1f9be89fcd2d02941af7f8915c241ed360ae51",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          },
+          {
+            "input_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8",
+            "output_sha256": "1657421f70ddd53a0cf8974e821f43f9b4083d3644893547dc5f936e33a899a8"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_skip_end",
+    "source": "name = \"N\"\nvalue = (\n    'left'\n    'right'\n)  # fmt: skip\nother=1\n",
+    "source_sha256": "0ea85c3b0ffe8de1116f65650b745c8201d9678d63c84a7b2905f6dd42de0edf",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'\n    'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0ea85c3b0ffe8de1116f65650b745c8201d9678d63c84a7b2905f6dd42de0edf",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          },
+          {
+            "input_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'\n    'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0ea85c3b0ffe8de1116f65650b745c8201d9678d63c84a7b2905f6dd42de0edf",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          },
+          {
+            "input_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    'left'\n    'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0ea85c3b0ffe8de1116f65650b745c8201d9678d63c84a7b2905f6dd42de0edf",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          },
+          {
+            "input_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8",
+            "output_sha256": "f9fd6277ddcc54d3d2ba40c4bfd213d2bbdbefba2870d2ee7600d25a7499dce8"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_comment_between",
+    "source": "name = \"N\"\nvalue = (\n    r'left\\n'  # first\n    r'right\\t'  # second\n)\n",
+    "source_sha256": "c17d8c5ce4595c36cc85564ec2fe138b83169ffd95240e758c08a48cfbe58da7",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r\"left\\n\"  # first\n    r\"right\\t\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c17d8c5ce4595c36cc85564ec2fe138b83169ffd95240e758c08a48cfbe58da7",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          },
+          {
+            "input_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r\"left\\n\"  # first\n    r\"right\\t\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c17d8c5ce4595c36cc85564ec2fe138b83169ffd95240e758c08a48cfbe58da7",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          },
+          {
+            "input_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r\"left\\n\"  # first\n    r\"right\\t\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c17d8c5ce4595c36cc85564ec2fe138b83169ffd95240e758c08a48cfbe58da7",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          },
+          {
+            "input_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56",
+            "output_sha256": "0e9f7a92d718bb25cc12d0e402c85d308f13dfe12d64626c175a5ce40f23ee56"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_skip_inside",
+    "source": "name = \"N\"\nvalue = (\n    r'left\\n'  # fmt: skip\n    r'right\\t'\n)\n",
+    "source_sha256": "f3be5fa5a9a646a371be77f520a40158897fe9eb0d2a67aeab5792e7a0046077",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'  # fmt: skip\n    r\"right\\t\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f3be5fa5a9a646a371be77f520a40158897fe9eb0d2a67aeab5792e7a0046077",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          },
+          {
+            "input_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'  # fmt: skip\n    r\"right\\t\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f3be5fa5a9a646a371be77f520a40158897fe9eb0d2a67aeab5792e7a0046077",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          },
+          {
+            "input_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'  # fmt: skip\n    r\"right\\t\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f3be5fa5a9a646a371be77f520a40158897fe9eb0d2a67aeab5792e7a0046077",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          },
+          {
+            "input_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf",
+            "output_sha256": "26ddc70f77b44f6f14a4a1e2e6bb25afbd4f978bf907de6b574f576cf13bedbf"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_off_inside",
+    "source": "name = \"N\"\nvalue = (\n    # fmt: off\n    r'left\\n'\n    r'right\\t'\n    # fmt: on\n)\nother=1\n",
+    "source_sha256": "a1bca22276a894ac3a1298145dd3e6ce246309a0ad5c2b3b84a6f93fcf1dc194",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    r'left\\n'\n    r'right\\t'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1bca22276a894ac3a1298145dd3e6ce246309a0ad5c2b3b84a6f93fcf1dc194",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          },
+          {
+            "input_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    r'left\\n'\n    r'right\\t'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1bca22276a894ac3a1298145dd3e6ce246309a0ad5c2b3b84a6f93fcf1dc194",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          },
+          {
+            "input_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    r'left\\n'\n    r'right\\t'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1bca22276a894ac3a1298145dd3e6ce246309a0ad5c2b3b84a6f93fcf1dc194",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          },
+          {
+            "input_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398",
+            "output_sha256": "43df91a1071a542743ae76a0db617a2407f2915f4681a5d44367c3d478d69398"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_skip_end",
+    "source": "name = \"N\"\nvalue = (\n    r'left\\n'\n    r'right\\t'\n)  # fmt: skip\nother=1\n",
+    "source_sha256": "5d5738a10094d68029f8576f977a13652cb26878105d0eed88c0109e5f4cf08c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'\n    r'right\\t'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d5738a10094d68029f8576f977a13652cb26878105d0eed88c0109e5f4cf08c",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          },
+          {
+            "input_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'\n    r'right\\t'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d5738a10094d68029f8576f977a13652cb26878105d0eed88c0109e5f4cf08c",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          },
+          {
+            "input_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    r'left\\n'\n    r'right\\t'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d5738a10094d68029f8576f977a13652cb26878105d0eed88c0109e5f4cf08c",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          },
+          {
+            "input_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be",
+            "output_sha256": "e4683ebdba4d35536f9784e7b7d3169002155555a5ff66c7c2c92c8b4f2419be"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_comment_between",
+    "source": "name = \"N\"\nvalue = (\n    b'left'  # first\n    b'right'  # second\n)\n",
+    "source_sha256": "dbd0349b9e5d34633d46f590eaad5a390ab8015cc743fb56bed77f7935666c39",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b\"left\"  # first\n    b\"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "dbd0349b9e5d34633d46f590eaad5a390ab8015cc743fb56bed77f7935666c39",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          },
+          {
+            "input_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b\"left\"  # first\n    b\"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "dbd0349b9e5d34633d46f590eaad5a390ab8015cc743fb56bed77f7935666c39",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          },
+          {
+            "input_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b\"left\"  # first\n    b\"right\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "dbd0349b9e5d34633d46f590eaad5a390ab8015cc743fb56bed77f7935666c39",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          },
+          {
+            "input_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111",
+            "output_sha256": "8e84a24538032304018b432edf757dca3ad0e8084d2a8207bcd4c7fab8ad3111"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_skip_inside",
+    "source": "name = \"N\"\nvalue = (\n    b'left'  # fmt: skip\n    b'right'\n)\n",
+    "source_sha256": "cf6a1a3113f53780a8a54bcdeaf0b5ff4520296cf9b99feb3e0076ab781da741",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'  # fmt: skip\n    b\"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cf6a1a3113f53780a8a54bcdeaf0b5ff4520296cf9b99feb3e0076ab781da741",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          },
+          {
+            "input_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'  # fmt: skip\n    b\"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cf6a1a3113f53780a8a54bcdeaf0b5ff4520296cf9b99feb3e0076ab781da741",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          },
+          {
+            "input_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'  # fmt: skip\n    b\"right\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "cf6a1a3113f53780a8a54bcdeaf0b5ff4520296cf9b99feb3e0076ab781da741",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          },
+          {
+            "input_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7",
+            "output_sha256": "41e1d88f93c2f3f04fff3af0d2fc6622114b3d0daa461235bce04483b14d80e7"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_off_inside",
+    "source": "name = \"N\"\nvalue = (\n    # fmt: off\n    b'left'\n    b'right'\n    # fmt: on\n)\nother=1\n",
+    "source_sha256": "57488bfc0bea2ca9509d46b9e2adfd918d0e1093612ad759c85f693fc32c4628",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    b'left'\n    b'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "57488bfc0bea2ca9509d46b9e2adfd918d0e1093612ad759c85f693fc32c4628",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          },
+          {
+            "input_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    b'left'\n    b'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "57488bfc0bea2ca9509d46b9e2adfd918d0e1093612ad759c85f693fc32c4628",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          },
+          {
+            "input_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    b'left'\n    b'right'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "57488bfc0bea2ca9509d46b9e2adfd918d0e1093612ad759c85f693fc32c4628",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          },
+          {
+            "input_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe",
+            "output_sha256": "9ec26514f990f552ab6655c25890f7a62a3c3e960dcf8938f1f2caf1a6290fbe"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_skip_end",
+    "source": "name = \"N\"\nvalue = (\n    b'left'\n    b'right'\n)  # fmt: skip\nother=1\n",
+    "source_sha256": "3d0fe87a2890b65b7bf09228306f14ed275359feedbd8c7b1fd1483230eb7b62",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'\n    b'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d0fe87a2890b65b7bf09228306f14ed275359feedbd8c7b1fd1483230eb7b62",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          },
+          {
+            "input_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'\n    b'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d0fe87a2890b65b7bf09228306f14ed275359feedbd8c7b1fd1483230eb7b62",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          },
+          {
+            "input_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    b'left'\n    b'right'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d0fe87a2890b65b7bf09228306f14ed275359feedbd8c7b1fd1483230eb7b62",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          },
+          {
+            "input_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7",
+            "output_sha256": "2fccab9e70d9cce6e5316dd183ca86cab76a635d35bb610e5e7ecfefb1518bd7"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_comment_between",
+    "source": "name = \"N\"\nvalue = (\n    f'left {name}'  # first\n    f'right {name}'  # second\n)\n",
+    "source_sha256": "5cf249fc5b5de4a2a71da623d4f7a9b1bff63976935109d9ef04f31fc92b4e70",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f\"left {name}\"  # first\n    f\"right {name}\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5cf249fc5b5de4a2a71da623d4f7a9b1bff63976935109d9ef04f31fc92b4e70",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          },
+          {
+            "input_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f\"left {name}\"  # first\n    f\"right {name}\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5cf249fc5b5de4a2a71da623d4f7a9b1bff63976935109d9ef04f31fc92b4e70",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          },
+          {
+            "input_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f\"left {name}\"  # first\n    f\"right {name}\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5cf249fc5b5de4a2a71da623d4f7a9b1bff63976935109d9ef04f31fc92b4e70",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          },
+          {
+            "input_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a",
+            "output_sha256": "1a1598fca8ae73e0c21e71fd92a55e34ef7b908bc46cb6d324ea4def98469a3a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_skip_inside",
+    "source": "name = \"N\"\nvalue = (\n    f'left {name}'  # fmt: skip\n    f'right {name}'\n)\n",
+    "source_sha256": "6cb07a32dad99a05aed86113ac0fabec380f1476bdfe5a2d3bdef02e8d3a7a5c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'  # fmt: skip\n    f\"right {name}\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6cb07a32dad99a05aed86113ac0fabec380f1476bdfe5a2d3bdef02e8d3a7a5c",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          },
+          {
+            "input_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'  # fmt: skip\n    f\"right {name}\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6cb07a32dad99a05aed86113ac0fabec380f1476bdfe5a2d3bdef02e8d3a7a5c",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          },
+          {
+            "input_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'  # fmt: skip\n    f\"right {name}\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6cb07a32dad99a05aed86113ac0fabec380f1476bdfe5a2d3bdef02e8d3a7a5c",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          },
+          {
+            "input_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d",
+            "output_sha256": "ce9bca8aedeeffcefc2a2659c8a2b74d794bf38e60a0a809fed79db34360586d"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_off_inside",
+    "source": "name = \"N\"\nvalue = (\n    # fmt: off\n    f'left {name}'\n    f'right {name}'\n    # fmt: on\n)\nother=1\n",
+    "source_sha256": "ff15f405d32e816fd58b2fe87ef12db074f6279db210a495c8c252119ef2a773",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    f'left {name}'\n    f'right {name}'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ff15f405d32e816fd58b2fe87ef12db074f6279db210a495c8c252119ef2a773",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          },
+          {
+            "input_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    f'left {name}'\n    f'right {name}'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ff15f405d32e816fd58b2fe87ef12db074f6279db210a495c8c252119ef2a773",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          },
+          {
+            "input_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    f'left {name}'\n    f'right {name}'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ff15f405d32e816fd58b2fe87ef12db074f6279db210a495c8c252119ef2a773",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          },
+          {
+            "input_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f",
+            "output_sha256": "893ce3ebc1b7de56dba40b4dc772d12c12e63a6ab862876298e822eb1100085f"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "fstring_skip_end",
+    "source": "name = \"N\"\nvalue = (\n    f'left {name}'\n    f'right {name}'\n)  # fmt: skip\nother=1\n",
+    "source_sha256": "c84552c10868f64c91fd2c67cb76eb99eb02b94bdc5b12e5da74adb2966156af",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'\n    f'right {name}'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c84552c10868f64c91fd2c67cb76eb99eb02b94bdc5b12e5da74adb2966156af",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          },
+          {
+            "input_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'\n    f'right {name}'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c84552c10868f64c91fd2c67cb76eb99eb02b94bdc5b12e5da74adb2966156af",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          },
+          {
+            "input_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    f'left {name}'\n    f'right {name}'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c84552c10868f64c91fd2c67cb76eb99eb02b94bdc5b12e5da74adb2966156af",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          },
+          {
+            "input_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6",
+            "output_sha256": "e146140ce6cc56dc0761fa21a6ded6d0053eb6f2e1dd39488fa895272df042d6"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_comment_between",
+    "source": "name = \"N\"\nvalue = (\n    t'left {name}'  # first\n    t'right {name}'  # second\n)\n",
+    "source_sha256": "ad634ddf4a9d1375679fe63da9aba58d68816ee17b96171435b0c592066cb013",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    t\"left {name}\"  # first\n    t\"right {name}\"  # second\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ad634ddf4a9d1375679fe63da9aba58d68816ee17b96171435b0c592066cb013",
+            "output_sha256": "8f01b72295dd3c388429486a562038531cc92078fcd228333a8776e805d1669f"
+          },
+          {
+            "input_sha256": "8f01b72295dd3c388429486a562038531cc92078fcd228333a8776e805d1669f",
+            "output_sha256": "8f01b72295dd3c388429486a562038531cc92078fcd228333a8776e805d1669f"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_skip_inside",
+    "source": "name = \"N\"\nvalue = (\n    t'left {name}'  # fmt: skip\n    t'right {name}'\n)\n",
+    "source_sha256": "01ce155e4250bcef175e93a1173fe0e945cea00048e563753cdcb052d8aa0155",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    t'left {name}'  # fmt: skip\n    t\"right {name}\"\n)\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "01ce155e4250bcef175e93a1173fe0e945cea00048e563753cdcb052d8aa0155",
+            "output_sha256": "34ac76d0875e893ab7c49c382716e9c1a061d2fbbfa6b98077b224ac492d4b84"
+          },
+          {
+            "input_sha256": "34ac76d0875e893ab7c49c382716e9c1a061d2fbbfa6b98077b224ac492d4b84",
+            "output_sha256": "34ac76d0875e893ab7c49c382716e9c1a061d2fbbfa6b98077b224ac492d4b84"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_off_inside",
+    "source": "name = \"N\"\nvalue = (\n    # fmt: off\n    t'left {name}'\n    t'right {name}'\n    # fmt: on\n)\nother=1\n",
+    "source_sha256": "c47d571d97ebb0af7624591bbbfd59b4713ebf9c144cd9bb2c0dc0d97c1028c5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 4)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 4)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    # fmt: off\n    t'left {name}'\n    t'right {name}'\n    # fmt: on\n)\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c47d571d97ebb0af7624591bbbfd59b4713ebf9c144cd9bb2c0dc0d97c1028c5",
+            "output_sha256": "e0bac4dfbd43f5f4e0ec44516bf6cdbae8e1c38204bac02871f6ec9862fdd017"
+          },
+          {
+            "input_sha256": "e0bac4dfbd43f5f4e0ec44516bf6cdbae8e1c38204bac02871f6ec9862fdd017",
+            "output_sha256": "e0bac4dfbd43f5f4e0ec44516bf6cdbae8e1c38204bac02871f6ec9862fdd017"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_skip_end",
+    "source": "name = \"N\"\nvalue = (\n    t'left {name}'\n    t'right {name}'\n)  # fmt: skip\nother=1\n",
+    "source_sha256": "52f21432ce91a486a2ce65c829e58140e9a8870d69aba3f356c9922dfb9847f7",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = (\n    t'left {name}'\n    t'right {name}'\n)  # fmt: skip\nother = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "52f21432ce91a486a2ce65c829e58140e9a8870d69aba3f356c9922dfb9847f7",
+            "output_sha256": "0be02cd5deb27947c939409620a037e8d64d3e3367a98dcb621d9709972a4b37"
+          },
+          {
+            "input_sha256": "0be02cd5deb27947c939409620a037e8d64d3e3367a98dcb621d9709972a4b37",
+            "output_sha256": "0be02cd5deb27947c939409620a037e8d64d3e3367a98dcb621d9709972a4b37"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "skip_semicolon",
+    "source": "value='left' 'right'; other= 'one' 'two'  # fmt: skip\nthird= 'three' 'four'\n",
+    "source_sha256": "352eb4dc5f3d3674b429eb81939f9fd136db67a7315c4fd50fb00f65654c8dd8",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value='left' 'right'; other= 'one' 'two'  # fmt: skip\nthird = \"three\" \"four\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "352eb4dc5f3d3674b429eb81939f9fd136db67a7315c4fd50fb00f65654c8dd8",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          },
+          {
+            "input_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value='left' 'right'; other= 'one' 'two'  # fmt: skip\nthird = \"three\" \"four\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "352eb4dc5f3d3674b429eb81939f9fd136db67a7315c4fd50fb00f65654c8dd8",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          },
+          {
+            "input_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value='left' 'right'; other= 'one' 'two'  # fmt: skip\nthird = \"three\" \"four\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "352eb4dc5f3d3674b429eb81939f9fd136db67a7315c4fd50fb00f65654c8dd8",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          },
+          {
+            "input_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e",
+            "output_sha256": "ef5b5c2145d6385792fa7baeb023c078cb641677de18f9e3eeb8e65de588555e"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "skip_function",
+    "source": "def f(name: str) -> str:\n    value= f'left {name}' 'right'  # fmt: skip\n    return 'one' 'two'\n",
+    "source_sha256": "5727a740c1d412f0e458f3794484e2b2e83f23aad3e4f2c7503abb4625b98b6a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    value= f'left {name}' 'right'  # fmt: skip\n    return \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5727a740c1d412f0e458f3794484e2b2e83f23aad3e4f2c7503abb4625b98b6a",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          },
+          {
+            "input_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    value= f'left {name}' 'right'  # fmt: skip\n    return \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5727a740c1d412f0e458f3794484e2b2e83f23aad3e4f2c7503abb4625b98b6a",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          },
+          {
+            "input_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    value= f'left {name}' 'right'  # fmt: skip\n    return \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5727a740c1d412f0e458f3794484e2b2e83f23aad3e4f2c7503abb4625b98b6a",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          },
+          {
+            "input_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee",
+            "output_sha256": "6951f93503bfd051c97b579a15ae3ae35f4da76739edcf0c55e04dab2bc435ee"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "off_function",
+    "source": "def f(name: str) -> str:\n    # fmt: off\n    value= f'left {name}' 'right'\n    # fmt: on\n    return f'one {name}' 'two'\n",
+    "source_sha256": "20fe7ee825dc0aef3b4c7e813ec7586c66b4c9bf75b452cfad74fc3e4aab9826",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    # fmt: off\n    value= f'left {name}' 'right'\n    # fmt: on\n    return f\"one {name}\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "20fe7ee825dc0aef3b4c7e813ec7586c66b4c9bf75b452cfad74fc3e4aab9826",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          },
+          {
+            "input_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    # fmt: off\n    value= f'left {name}' 'right'\n    # fmt: on\n    return f\"one {name}\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "20fe7ee825dc0aef3b4c7e813ec7586c66b4c9bf75b452cfad74fc3e4aab9826",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          },
+          {
+            "input_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def f(name: str) -> str:\n    # fmt: off\n    value= f'left {name}' 'right'\n    # fmt: on\n    return f\"one {name}\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "20fe7ee825dc0aef3b4c7e813ec7586c66b4c9bf75b452cfad74fc3e4aab9826",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          },
+          {
+            "input_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839",
+            "output_sha256": "e55331c9f6ca7abd5156164d27348c01adf04fbca95e5e89c440af9d81537839"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "quoted_braces",
+    "source": "name = 'N'\nvalue = f'{{left}} {name}' '{right}'\nother= f'one {name}' 'two'  # fmt: skip\n",
+    "source_sha256": "be15fe180c6bc9416de69b627b779403a3c6fb421816d2cbc73deb38fe82339d",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"{{left}} {name}\" \"{right}\"\nother= f'one {name}' 'two'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "be15fe180c6bc9416de69b627b779403a3c6fb421816d2cbc73deb38fe82339d",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          },
+          {
+            "input_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"{{left}} {name}\" \"{right}\"\nother= f'one {name}' 'two'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "be15fe180c6bc9416de69b627b779403a3c6fb421816d2cbc73deb38fe82339d",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          },
+          {
+            "input_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "name = \"N\"\nvalue = f\"{{left}} {name}\" \"{right}\"\nother= f'one {name}' 'two'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "be15fe180c6bc9416de69b627b779403a3c6fb421816d2cbc73deb38fe82339d",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          },
+          {
+            "input_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82",
+            "output_sha256": "292ec427ef602903c342c9dcd269fb51d463586bd3e776c489b33c0d6c7f0f82"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unicode_width",
+    "source": "value = ('\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587' 'suffix')\nother= '\u4e2d\u6587' 'next'  # fmt: skip\n",
+    "source_sha256": "26690e077980b7b53ef0c1bdfb0723474190695ed77040eb821cf81498d5ff12",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    \"\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\"\n    \"suffix\"\n)\nother= '\u4e2d\u6587' 'next'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "26690e077980b7b53ef0c1bdfb0723474190695ed77040eb821cf81498d5ff12",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          },
+          {
+            "input_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    \"\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\"\n    \"suffix\"\n)\nother= '\u4e2d\u6587' 'next'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "26690e077980b7b53ef0c1bdfb0723474190695ed77040eb821cf81498d5ff12",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          },
+          {
+            "input_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    \"\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\u4e2d\u6587\"\n    \"suffix\"\n)\nother= '\u4e2d\u6587' 'next'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "26690e077980b7b53ef0c1bdfb0723474190695ed77040eb821cf81498d5ff12",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          },
+          {
+            "input_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc",
+            "output_sha256": "1d3f47c3cad9384748be2778775c4cbb5bb83d056b60f81c7481d190269200cc"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "crlf_skip",
+    "source": "value= 'left' 'right'  # fmt: skip\r\nother= 'one' 'two'\r\n",
+    "source_sha256": "f94d4915a20e10f64822efbb42cb062c9295048581918701c45ebe3ca4356519",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\r\nother = \"one\" \"two\"\r\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f94d4915a20e10f64822efbb42cb062c9295048581918701c45ebe3ca4356519",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          },
+          {
+            "input_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\r\nother = \"one\" \"two\"\r\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f94d4915a20e10f64822efbb42cb062c9295048581918701c45ebe3ca4356519",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          },
+          {
+            "input_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\r\nother = \"one\" \"two\"\r\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "f94d4915a20e10f64822efbb42cb062c9295048581918701c45ebe3ca4356519",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          },
+          {
+            "input_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5",
+            "output_sha256": "5d826f331da40d9032d0d0dbf1f7deb467f72d439804eff750b34c9c4103a4a5"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "skip_no_newline",
+    "source": "value= 'left' 'right'  # fmt: skip",
+    "source_sha256": "89dbc4be7592fe8b5b1d4b27be04972d1c6d2680e3e72c36486e6de40cf1320c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "89dbc4be7592fe8b5b1d4b27be04972d1c6d2680e3e72c36486e6de40cf1320c",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          },
+          {
+            "input_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "89dbc4be7592fe8b5b1d4b27be04972d1c6d2680e3e72c36486e6de40cf1320c",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          },
+          {
+            "input_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value= 'left' 'right'  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "89dbc4be7592fe8b5b1d4b27be04972d1c6d2680e3e72c36486e6de40cf1320c",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          },
+          {
+            "input_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675",
+            "output_sha256": "d9d7cad36b490c3cb227ca79df71c323e6d9e0b645b167db9f2609076ebf8675"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "skip_off_on_eof",
+    "source": "# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother= 'one' 'two'",
+    "source_sha256": "4e2395d5d8f57ac33aeff4d2fe3083ee98d668ae79b6f88b666029e42734c9d3",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4e2395d5d8f57ac33aeff4d2fe3083ee98d668ae79b6f88b666029e42734c9d3",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          },
+          {
+            "input_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4e2395d5d8f57ac33aeff4d2fe3083ee98d668ae79b6f88b666029e42734c9d3",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          },
+          {
+            "input_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue= 'left' 'right'\n# fmt: on\nother = \"one\" \"two\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4e2395d5d8f57ac33aeff4d2fe3083ee98d668ae79b6f88b666029e42734c9d3",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          },
+          {
+            "input_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96",
+            "output_sha256": "f4cbca702a344b0a49d7e4f34e55bd6c9c9d35620cf58f8c2fbc2a7a1316be96"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,218 @@
+{
+  "schema": "mamba.quality.mypy-tuple-assignment-edges.v1",
+  "source_definition_sha256": "2055fe320314d488a04389eb3a7ded27794ff9a49b9e75ba78730416e3711914",
+  "original_oracles_sha256": "558c43dde7fd48c793a23cd6470a1dd667e1b752316cdc40f09f7fbe9b866ba1",
+  "original_proof_sha256": "bd00c5b339b3d5ba8bc5c0c81c1417e16cb52423c908c0e82c79bf13dcd22cdd",
+  "captured_original_calls": 24,
+  "original_repeat_pairs": 12,
+  "cases": [
+    {
+      "target": "3.12",
+      "case": "chained_target",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: object = \"s\"\n    a = (b, c) = (1, a)\n    reveal_type(c)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a206f626a656374203d202273220a2020202061203d2028622c206329203d2028312c2061290a2020202072657665616c5f747970652863290a",
+      "source_bytes": 86,
+      "source_sha256": "cb718b339305ffde7053a358a0856c7c1c04ed88c10d2c8a2a969ad6005933ec",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "8c154f5015ca8a43c3501e149fce1a56c5f9bd787948a6b3fd277956ac7c7a9e",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "70e5acfd411b0d051250a7b2ef9768976abe8fa893634109dcaa7a5b0e9fe7bc"
+    },
+    {
+      "target": "3.12",
+      "case": "repeated_leaf",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    x, x = (1, \"s\")\n    reveal_type(x)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020782c2078203d2028312c20227322290a2020202072657665616c5f747970652878290a",
+      "source_bytes": 62,
+      "source_sha256": "352905596899034fabb0cc0df9b449469d9b27c8f545dce6e92f1026cafa8774",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1411a884c8fc4a51a8018a9f42fc9418b2340556fa7cf9f4cc976ccacd844572",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd8445d43c33c7170cab5136ece9c1d2826a41efa53fca94e71210d29570d117"
+    },
+    {
+      "target": "3.13",
+      "case": "chained_target",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: object = \"s\"\n    a = (b, c) = (1, a)\n    reveal_type(c)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a206f626a656374203d202273220a2020202061203d2028622c206329203d2028312c2061290a2020202072657665616c5f747970652863290a",
+      "source_bytes": 86,
+      "source_sha256": "cb718b339305ffde7053a358a0856c7c1c04ed88c10d2c8a2a969ad6005933ec",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "8c154f5015ca8a43c3501e149fce1a56c5f9bd787948a6b3fd277956ac7c7a9e",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "70e5acfd411b0d051250a7b2ef9768976abe8fa893634109dcaa7a5b0e9fe7bc"
+    },
+    {
+      "target": "3.13",
+      "case": "repeated_leaf",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    x, x = (1, \"s\")\n    reveal_type(x)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020782c2078203d2028312c20227322290a2020202072657665616c5f747970652878290a",
+      "source_bytes": 62,
+      "source_sha256": "352905596899034fabb0cc0df9b449469d9b27c8f545dce6e92f1026cafa8774",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1411a884c8fc4a51a8018a9f42fc9418b2340556fa7cf9f4cc976ccacd844572",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd8445d43c33c7170cab5136ece9c1d2826a41efa53fca94e71210d29570d117"
+    },
+    {
+      "target": "3.14",
+      "case": "chained_target",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: object = \"s\"\n    a = (b, c) = (1, a)\n    reveal_type(c)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a206f626a656374203d202273220a2020202061203d2028622c206329203d2028312c2061290a2020202072657665616c5f747970652863290a",
+      "source_bytes": 86,
+      "source_sha256": "cb718b339305ffde7053a358a0856c7c1c04ed88c10d2c8a2a969ad6005933ec",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "8c154f5015ca8a43c3501e149fce1a56c5f9bd787948a6b3fd277956ac7c7a9e",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "70e5acfd411b0d051250a7b2ef9768976abe8fa893634109dcaa7a5b0e9fe7bc"
+    },
+    {
+      "target": "3.14",
+      "case": "repeated_leaf",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    x, x = (1, \"s\")\n    reveal_type(x)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020782c2078203d2028312c20227322290a2020202072657665616c5f747970652878290a",
+      "source_bytes": 62,
+      "source_sha256": "352905596899034fabb0cc0df9b449469d9b27c8f545dce6e92f1026cafa8774",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1411a884c8fc4a51a8018a9f42fc9418b2340556fa7cf9f4cc976ccacd844572",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd8445d43c33c7170cab5136ece9c1d2826a41efa53fca94e71210d29570d117"
+    }
+  ],
+  "whole_acceptance": false
+}

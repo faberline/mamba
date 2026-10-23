@@ -1,0 +1,794 @@
+[
+  {
+    "name": "bytes_braces_unchanged",
+    "source": "value = t\"{name}\" b\"{literal}\"\n",
+    "source_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93",
+            "output_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93",
+            "output_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93",
+            "output_sha256": "3d28a957b0648b510b729e03eccee9512d9ca65590e0a00dc62b3f152dee3a93"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_closing_brace_unchanged",
+    "source": "value = t\"{name}\" b\"}\"\n",
+    "source_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec",
+            "output_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec",
+            "output_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec",
+            "output_sha256": "0fbca2f0f8ce650f6cdba509613347bc8b39150794517a1e3e7b6ca4b2ca3aec"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_double_braces_unchanged",
+    "source": "value = t\"{name}\" b\"{{literal}}\"\n",
+    "source_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{{literal}}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b",
+            "output_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{{literal}}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b",
+            "output_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{name}\" b\"{{literal}}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b",
+            "output_sha256": "6d84bf68aa394aa17ec10b480eab5b40ee3e5165292ac8f92db324dc4cb71e9b"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_before_template_unchanged",
+    "source": "value = b\"{literal}\" t\"{name}\"\n",
+    "source_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = b\"{literal}\" t\"{name}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01",
+            "output_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = b\"{literal}\" t\"{name}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01",
+            "output_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = b\"{literal}\" t\"{name}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01",
+            "output_sha256": "60392cadfcde3d4ad8105cff606eda8876549e284f59b75a58bec1e052790b01"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "raw_template_bytes_unchanged",
+    "source": "value = rt\"{name}\" rb\"{literal}\"\n",
+    "source_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{name}\" rb\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a",
+            "output_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{name}\" rb\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a",
+            "output_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{name}\" rb\"{literal}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a",
+            "output_sha256": "a089007111f5c28af239ac1ab7222c6224f6529cee2d5f9af83b6cf84247439a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "reverse_raw_template_bytes_unchanged",
+    "source": "value = tr\"{name}\" br\"{literal}\"\n",
+    "source_sha256": "7d4058a2f68b18f6c4d376a6fa5fae331c0d7a6da652cffbb601d8b041d8915f",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_braces_format",
+    "source": "value=t\"{name}\" b\"{literal}\"\n",
+    "source_sha256": "0d7636bb607eb76ec2b9dbf4634e7fd72d3314548807f2b53e39fee2b2cf1fed",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_closing_brace_format",
+    "source": "value=t\"{name}\" b\"}\"\n",
+    "source_sha256": "08c2faf422d34e0128741b056832290658989d25cd8c9ba1241f1b668d16b0aa",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_before_template_format",
+    "source": "value=b\"{literal}\" t\"{name}\"\n",
+    "source_sha256": "1cd666d3daa1a85cca36702e7cae8c7a576a90d00bad3e0cbd164fb6f9bb5040",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "bytes_escape_format",
+    "source": "value=t\"{name}\" b\"\\xff{literal}\"\n",
+    "source_sha256": "17dc272ee990db230b9b5b69f9f72353179b9565dc39daa9860c6fa9f42608d7",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "raw_bytes_escape_format",
+    "source": "value=rt\"{name}\" rb\"\\xff{literal}\"\n",
+    "source_sha256": "b9b35b98ba36352680c75a3381c57cabed4e4031ba7e11ad96b5bda17c44f195",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "byte_hash_then_real_comment",
+    "source": "value=t\"{name}\" b\"#{literal}\"  # keep\n",
+    "source_sha256": "36960c34176855509b6452f773c9783d1aee575cbbfe28a5426db80e22b3b50a",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "byte_braces_newline",
+    "source": "value=(t\"{name}\"\n b\"{literal}\")\n",
+    "source_sha256": "7eddb9de03b5685434b4711b4e5bc5be0827b3af7164d67195f6673a646c71ad",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "byte_triple_quoted",
+    "source": "value=t\"{name}\" b\"\"\"{literal}\nend\"\"\"\n",
+    "source_sha256": "4aa349368279195860c2693cc3bb0abd002c256150b5f1fe539b7fa82ced8277",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "byte_raw_quoted",
+    "source": "value=tr\"{name}\" br'{\"literal\"}'\n",
+    "source_sha256": "e9576300fa026b1981826c25ae88d650261486b3336756ed80e92a141fc1c908",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "ordinary_template_brace_control",
+    "source": "value=t\"{name}\" \"{literal}\"\n",
+    "source_sha256": "b399e98eb8aa46a4ae6ca33a9b718ffcfc8594fa035c68f8a001a60dc2085d23",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "ordinary_fstring_byte_brace_control",
+    "source": "value=f\"{name}\" b\"{literal}\"\n",
+    "source_sha256": "f95eb3cf191173a6e791959865c7909d382bfb43d447e508c3335c6d5e5ae53f",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "template_with_fmt_off",
+    "source": "\n# fmt: off\nvalue=t\"{name}\" b\"{literal}\"\n# fmt: on\n",
+    "source_sha256": "188f2eef95b7f1cfaf1fb496cb54114dac49be65fd6587caa730fc3c356a6916",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  }
+]

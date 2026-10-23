@@ -1,0 +1,374 @@
+[
+  {
+    "name": "bad_utf8_after_cookie",
+    "source_hex": "2320636f64696e673a207574662d380a56414c5545203d2022ff220a",
+    "source_sha256": "b45c580a4fe9d548e655beec90da3aee0bf037dc99ab81f2270da956ebb66463",
+    "expected": [
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-000/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-000/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-000/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-000"
+    ]
+  },
+  {
+    "name": "bad_ascii_after_cookie",
+    "source_hex": "2320636f64696e673a2061736369690a56414c5545203d2022ff220a",
+    "source_sha256": "87006fba3e619125faa0d8151dc66992a536bee2d2367567e5dc3b3e4254cebd",
+    "expected": [
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-001/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-001/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-001/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-001"
+    ]
+  },
+  {
+    "name": "bad_utf8_after_first_code",
+    "source_hex": "56414c5545203d20310a2320ff0a",
+    "source_sha256": "389e4740b585fd1f020994f06a7e92afa91aa2b62e3dd34a486667d4cb6c48a8",
+    "expected": [
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-002/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-002/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-002/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-002"
+    ]
+  },
+  {
+    "name": "bad_utf8_after_two_comments",
+    "source_hex": "232066697273740a23207365636f6e640a2320ff0a",
+    "source_sha256": "2baf506e84a12d47131f4ae64404c849672f581aa0991075f44b077285e63e26",
+    "expected": [
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-003/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-003/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0010",
+          "message": "error while code parsing: Wrong or no encoding specified for /Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-003/main.py.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-003"
+    ]
+  },
+  {
+    "name": "unknown_encoding_cookie",
+    "source_hex": "2320636f64696e673a206e6f745f615f636f6465630a706173730a",
+    "source_sha256": "5aab831e91b6a35984b3a1206f10caff2be2e9fa2685e3850237f86c66ab7af8",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'unknown encoding for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-004/main.py': not_a_codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'unknown encoding for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-004/main.py': not_a_codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'unknown encoding for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-004/main.py': not_a_codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-004"
+    ]
+  },
+  {
+    "name": "utf8_bom_cookie_conflict",
+    "source_hex": "efbbbf2320636f64696e673a206c6174696e2d310a706173730a",
+    "source_sha256": "4c988b0bc8e93f5cea20b04a5555eef71851a2fed07ac869ae77b1f81c576185",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'encoding problem for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-005/main.py': utf-8'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'encoding problem for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-005/main.py': utf-8'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'encoding problem for '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-005/main.py': utf-8'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python312/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python313/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-encoding-declaration-controls-reference-1/original-1/python314/case-005"
+    ]
+  }
+]

@@ -1,0 +1,360 @@
+[
+  {
+    "name": "bytes_then_template",
+    "source": "first = (b\"x\"\n \"y\")\nsecond = (t\"{value}\"\n \"z\")\n",
+    "source_sha256": "a5280c12a80c3cbc43279c339fbac45348eacac2d9a03645b0adf353c40e7857",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "template_then_bytes",
+    "source": "first = (t\"{value}\"\n \"z\")\nsecond = (b\"x\"\n \"y\")\n",
+    "source_sha256": "351dd5b137700c52e15a2f1baa007aed45c883692352969e59e4a9227910bd3f",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "bytes_then_invalid_conversion",
+    "source": "first = (b\"x\"\n f\"{value}\")\nsecond = f\"{value!z}\"\n",
+    "source_sha256": "e14fa05f516fd13e1341c8a9d1330554fc9d47564f029cacfa9b60de128655ce",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "invalid_conversion_then_bytes",
+    "source": "first = f\"{value!z}\"\nsecond = (b\"x\"\n \"y\")\n",
+    "source_sha256": "2792838d1ed57256a005877b3ea8ca1a4d68178977d1fcc7ace63416659d8e52",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'z': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'z': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: f-string: invalid conversion character 'z': expected 's', 'r', or 'a' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "ordinary_template_then_byte_template",
+    "source": "first = (\"x\"\n t\"{value}\")\nsecond = (b\"x\"\n t\"{value}\")\n",
+    "source_sha256": "0eed4bd447d4e7a849846aed27f1618fbe3601ffc63a9d8eb214e178d2689029",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "byte_template_then_ordinary_template",
+    "source": "first = (b\"x\"\n t\"{value}\")\nsecond = (\"x\"\n t\"{value}\")\n",
+    "source_sha256": "10b242d1515ff06e029aeff13435119183b951233e572a4413eb970e16baf75d",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "byte_group_then_missing_value",
+    "source": "first = (b\"x\"\n \"y\")\nsecond =\n",
+    "source_sha256": "77cb20c4ddbec69d206738715f606e83c9b23970f722dd635359c3b8aa0d48e6",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 3:8\n    second =\n           ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 3:8\n    second =\n           ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 3:8\n    second =\n           ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "missing_value_then_byte_group",
+    "source": "first =\nsecond = (b\"x\"\n \"y\")\n",
+    "source_sha256": "fa441ee7fd91d6859ae4a9a2a679ec7c7574f2e91c7e9d6083f602736e7f1746",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.12: 1:7\n    first =\n          ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.13: 1:7\n    first =\n          ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "cannot parse for target version Python 3.14: 1:7\n    first =\n          ^\nParseError: bad input",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "separate_bytes_groups",
+    "source": "first = (b\"x\"\n \"y\")\nsecond = (\"z\"\n b\"x\")\n",
+    "source_sha256": "72c7d6000ac59649bfec83c5a633a606aa35938698748577bef11eed65d94f7a",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "format_off_error_priority",
+    "source": "# fmt: off\nfirst = (b\"x\"\n \"y\")\nsecond = (t\"{value}\"\n \"z\")\n# fmt: on\n",
+    "source_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nfirst = (b\"x\"\n \"y\")\nsecond = (t\"{value}\"\n \"z\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5",
+            "output_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nfirst = (b\"x\"\n \"y\")\nsecond = (t\"{value}\"\n \"z\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5",
+            "output_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nfirst = (b\"x\"\n \"y\")\nsecond = (t\"{value}\"\n \"z\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5",
+            "output_sha256": "2adcc0359f605657ab16da3d3442739019dc4091e34af53c493c9bbfd05482f5"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,341 @@
+{
+  "schema": "mamba.quality.mypy-tuple-binding-controls.v1",
+  "source_definition_sha256": "2a11823fd7dc02f601a6175c117c3965cd7302d83fa7aa35c2f173798727ed6c",
+  "original_oracles_sha256": "dc6f2d32900cebb80671994c9e394ab2ac49882145f7fc69e9a4cab7010b868f",
+  "original_proof_sha256": "15f61aa7c41c5358ea2e5a7c1299182db9d55952b096bf6fac466f3497b0a57b",
+  "captured_original_calls": 36,
+  "original_repeat_pairs": 18,
+  "cases": [
+    {
+      "target": "3.12",
+      "case": "hetero",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    first, second = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273742c207365636f6e64203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 131,
+      "source_sha256": "2ea4eede6599e6f666b0b063bae5e860d804b182551ebf8ea9475363645bf0e5",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    },
+    {
+      "target": "3.12",
+      "case": "typed",
+      "filename": "main.py",
+      "source_utf8": "def inspect() -> None:\n    first: int\n    second: str\n    first, second = (1, 2)\n",
+      "source_bytes_hex": "64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273743a20696e740a202020207365636f6e643a207374720a2020202066697273742c207365636f6e64203d2028312c2032290a",
+      "source_bytes": 81,
+      "source_sha256": "30ef31adec3c40a50e21fed077d36b0341ed41325e2f0c3662edff4b513190fd",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1e67f70a55fc1aada10cdca95a015e305bbd85b391cf0cb481e13cc452b0f6b9",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd20b40d54c466951b0de339089da4906e684c75e885944d2ef15856ce620797"
+    },
+    {
+      "target": "3.12",
+      "case": "list_target",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    [first, second] = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a202020205b66697273742c207365636f6e645d203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 133,
+      "source_sha256": "1f94693bc21153d5c882f260181a198b1a3afcffc4e09c65ed8586542fd29506",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    },
+    {
+      "target": "3.13",
+      "case": "hetero",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    first, second = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273742c207365636f6e64203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 131,
+      "source_sha256": "2ea4eede6599e6f666b0b063bae5e860d804b182551ebf8ea9475363645bf0e5",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    },
+    {
+      "target": "3.13",
+      "case": "typed",
+      "filename": "main.py",
+      "source_utf8": "def inspect() -> None:\n    first: int\n    second: str\n    first, second = (1, 2)\n",
+      "source_bytes_hex": "64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273743a20696e740a202020207365636f6e643a207374720a2020202066697273742c207365636f6e64203d2028312c2032290a",
+      "source_bytes": 81,
+      "source_sha256": "30ef31adec3c40a50e21fed077d36b0341ed41325e2f0c3662edff4b513190fd",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1e67f70a55fc1aada10cdca95a015e305bbd85b391cf0cb481e13cc452b0f6b9",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd20b40d54c466951b0de339089da4906e684c75e885944d2ef15856ce620797"
+    },
+    {
+      "target": "3.13",
+      "case": "list_target",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    [first, second] = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a202020205b66697273742c207365636f6e645d203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 133,
+      "source_sha256": "1f94693bc21153d5c882f260181a198b1a3afcffc4e09c65ed8586542fd29506",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    },
+    {
+      "target": "3.14",
+      "case": "hetero",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    first, second = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273742c207365636f6e64203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 131,
+      "source_sha256": "2ea4eede6599e6f666b0b063bae5e860d804b182551ebf8ea9475363645bf0e5",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    },
+    {
+      "target": "3.14",
+      "case": "typed",
+      "filename": "main.py",
+      "source_utf8": "def inspect() -> None:\n    first: int\n    second: str\n    first, second = (1, 2)\n",
+      "source_bytes_hex": "64656620696e73706563742829202d3e204e6f6e653a0a2020202066697273743a20696e740a202020207365636f6e643a207374720a2020202066697273742c207365636f6e64203d2028312c2032290a",
+      "source_bytes": 81,
+      "source_sha256": "30ef31adec3c40a50e21fed077d36b0341ed41325e2f0c3662edff4b513190fd",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "1e67f70a55fc1aada10cdca95a015e305bbd85b391cf0cb481e13cc452b0f6b9",
+      "text_original_exit": 1,
+      "text_raw_stdout_sha256": "dd20b40d54c466951b0de339089da4906e684c75e885944d2ef15856ce620797"
+    },
+    {
+      "target": "3.14",
+      "case": "list_target",
+      "filename": "main.py",
+      "source_utf8": "from typing import reveal_type\n\ndef inspect() -> None:\n    [first, second] = (1, \"x\")\n    reveal_type(first)\n    reveal_type(second)\n",
+      "source_bytes_hex": "66726f6d20747970696e6720696d706f72742072657665616c5f747970650a0a64656620696e73706563742829202d3e204e6f6e653a0a202020205b66697273742c207365636f6e645d203d2028312c20227822290a2020202072657665616c5f74797065286669727374290a2020202072657665616c5f74797065287365636f6e64290a",
+      "source_bytes": 133,
+      "source_sha256": "1f94693bc21153d5c882f260181a198b1a3afcffc4e09c65ed8586542fd29506",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 22
+          }
+        }
+      ],
+      "json_original_exit": 1,
+      "json_raw_stdout_sha256": "a2ad0eb62070e09816a72b41202f0db9862a05200ebc7c546742a006ebf1e77d",
+      "text_original_exit": 0,
+      "text_raw_stdout_sha256": "adb01936a6d4b668dcd62bffbc874669e22d0693276d0b50972250d585ee2e1d"
+    }
+  ],
+  "whole_acceptance": false
+}

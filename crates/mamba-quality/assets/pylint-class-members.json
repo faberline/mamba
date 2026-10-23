@@ -1,0 +1,1744 @@
+[
+  {
+    "python": [
+      3,
+      12,
+      11
+    ],
+    "pylint": "4.1.2",
+    "astroid": "4.3.3",
+    "objects": {
+      "class": {
+        "special_attributes": [
+          "__annotations__",
+          "__bases__",
+          "__call__",
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__mro__",
+          "__name__",
+          "__ne__",
+          "__new__",
+          "__qualname__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasses__",
+          "__subclasshook__",
+          "mro"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown",
+              "UninferableBase"
+            ]
+          },
+          "__bases__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__call__": {
+            "available": true,
+            "nodes": [
+              "Instance"
+            ]
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef",
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode",
+              "Instance",
+              "Instance"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__name__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__subclasses__": {
+            "available": true,
+            "nodes": [
+              "SubclassesBoundMethod"
+            ]
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__type_params__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": true,
+            "nodes": [
+              "MroBoundMethod"
+            ]
+          }
+        }
+      },
+      "instance": {
+        "special_attributes": [
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__ne__",
+          "__new__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasshook__"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown"
+            ]
+          },
+          "__bases__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__call__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__name__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__subclasses__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__type_params__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          }
+        }
+      }
+    },
+    "implicit_class_locals": [
+      "__annotations__",
+      "__module__",
+      "__qualname__"
+    ],
+    "source_sha256": {
+      "astroid/interpreter/objectmodel.py": "001a15ba59150162f18e6f108c40489f8f1834f3c2cc48b0fd7a70f68174f911",
+      "astroid/nodes/scoped_nodes/scoped_nodes.py": "68763422d75553b2377ec05939f940fb61cb61e6b8e9126f53794d04adf371ef",
+      "astroid/bases.py": "257e12f0b368ee99f4ae32cb12c784857430432b61d53198d46c5f3bf9f5c592"
+    },
+    "python_executable": "/Users/chrischeng/.pyenv/versions/3.12.11/bin/python3.12",
+    "python_executable_sha256": "537e4e3d73c895177c3999838977667bcadea9fbbc4df74bcf9e52c3816eb2bb"
+  },
+  {
+    "python": [
+      3,
+      13,
+      5
+    ],
+    "pylint": "4.1.2",
+    "astroid": "4.3.3",
+    "objects": {
+      "class": {
+        "special_attributes": [
+          "__annotations__",
+          "__bases__",
+          "__call__",
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__mro__",
+          "__name__",
+          "__ne__",
+          "__new__",
+          "__qualname__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasses__",
+          "__subclasshook__",
+          "mro"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown",
+              "UninferableBase"
+            ]
+          },
+          "__bases__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__call__": {
+            "available": true,
+            "nodes": [
+              "Instance"
+            ]
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef",
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode",
+              "Instance",
+              "Instance"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__name__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__subclasses__": {
+            "available": true,
+            "nodes": [
+              "SubclassesBoundMethod"
+            ]
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__type_params__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": true,
+            "nodes": [
+              "MroBoundMethod"
+            ]
+          }
+        }
+      },
+      "instance": {
+        "special_attributes": [
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__ne__",
+          "__new__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasshook__"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown"
+            ]
+          },
+          "__bases__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__call__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__name__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__subclasses__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__type_params__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          }
+        }
+      }
+    },
+    "implicit_class_locals": [
+      "__annotations__",
+      "__module__",
+      "__qualname__"
+    ],
+    "source_sha256": {
+      "astroid/interpreter/objectmodel.py": "001a15ba59150162f18e6f108c40489f8f1834f3c2cc48b0fd7a70f68174f911",
+      "astroid/nodes/scoped_nodes/scoped_nodes.py": "68763422d75553b2377ec05939f940fb61cb61e6b8e9126f53794d04adf371ef",
+      "astroid/bases.py": "257e12f0b368ee99f4ae32cb12c784857430432b61d53198d46c5f3bf9f5c592"
+    },
+    "python_executable": "/Users/chrischeng/.pyenv/versions/3.13.5/bin/python3.13",
+    "python_executable_sha256": "793ec75d7f852b020faf4f2c70b5411cdb1a8fdc62eb61c82cb3191e5e943d9d"
+  },
+  {
+    "python": [
+      3,
+      14,
+      0
+    ],
+    "pylint": "4.1.2",
+    "astroid": "4.3.3",
+    "objects": {
+      "class": {
+        "special_attributes": [
+          "__annotations__",
+          "__bases__",
+          "__call__",
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__mro__",
+          "__name__",
+          "__ne__",
+          "__new__",
+          "__qualname__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasses__",
+          "__subclasshook__",
+          "mro"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": true,
+            "nodes": [
+              "UninferableBase"
+            ]
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown",
+              "UninferableBase"
+            ]
+          },
+          "__bases__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__call__": {
+            "available": true,
+            "nodes": [
+              "Instance"
+            ]
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef",
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode",
+              "Instance",
+              "Instance"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__name__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const",
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__subclasses__": {
+            "available": true,
+            "nodes": [
+              "SubclassesBoundMethod"
+            ]
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef",
+              "BoundMethod",
+              "BoundMethod"
+            ]
+          },
+          "__type_params__": {
+            "available": true,
+            "nodes": [
+              "Tuple"
+            ]
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": true,
+            "nodes": [
+              "MroBoundMethod"
+            ]
+          }
+        }
+      },
+      "instance": {
+        "special_attributes": [
+          "__class__",
+          "__delattr__",
+          "__dict__",
+          "__dir__",
+          "__doc__",
+          "__eq__",
+          "__format__",
+          "__ge__",
+          "__getattribute__",
+          "__getstate__",
+          "__gt__",
+          "__hash__",
+          "__init__",
+          "__init_subclass__",
+          "__le__",
+          "__lt__",
+          "__module__",
+          "__ne__",
+          "__new__",
+          "__reduce__",
+          "__reduce_ex__",
+          "__repr__",
+          "__setattr__",
+          "__sizeof__",
+          "__str__",
+          "__subclasshook__"
+        ],
+        "attributes": {
+          "__annotate__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__annotations__": {
+            "available": true,
+            "nodes": [
+              "Unknown",
+              "Unknown"
+            ]
+          },
+          "__bases__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__call__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__class__": {
+            "available": true,
+            "nodes": [
+              "ClassDef"
+            ]
+          },
+          "__delattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__dict__": {
+            "available": true,
+            "nodes": [
+              "Dict"
+            ]
+          },
+          "__dir__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__doc__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__eq__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__format__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__ge__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getattribute__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__getstate__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__gt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__hash__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__init__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__init_subclass__": {
+            "available": true,
+            "nodes": [
+              "EmptyNode"
+            ]
+          },
+          "__le__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__lt__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__module__": {
+            "available": true,
+            "nodes": [
+              "Const"
+            ]
+          },
+          "__mro__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__name__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__ne__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__new__": {
+            "available": true,
+            "nodes": [
+              "BoundMethod"
+            ]
+          },
+          "__qualname__": {
+            "available": true,
+            "nodes": [
+              "Const",
+              "Const"
+            ]
+          },
+          "__reduce__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__reduce_ex__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__repr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__setattr__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__sizeof__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__slots__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__str__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__subclasses__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__subclasshook__": {
+            "available": true,
+            "nodes": [
+              "FunctionDef"
+            ]
+          },
+          "__type_params__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "__weakref__": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          },
+          "mro": {
+            "available": false,
+            "error": "AttributeInferenceError"
+          }
+        }
+      }
+    },
+    "implicit_class_locals": [
+      "__annotations__",
+      "__module__",
+      "__qualname__"
+    ],
+    "source_sha256": {
+      "astroid/interpreter/objectmodel.py": "001a15ba59150162f18e6f108c40489f8f1834f3c2cc48b0fd7a70f68174f911",
+      "astroid/nodes/scoped_nodes/scoped_nodes.py": "68763422d75553b2377ec05939f940fb61cb61e6b8e9126f53794d04adf371ef",
+      "astroid/bases.py": "257e12f0b368ee99f4ae32cb12c784857430432b61d53198d46c5f3bf9f5c592"
+    },
+    "python_executable": "/private/tmp/mamba-quality-20261006/python/cpython-3.14.0-macos-aarch64-none/bin/python3.14",
+    "python_executable_sha256": "ec27e4f62976a76da9adb1e889ed7330f86cfc7f20e38710461212e435ce8234"
+  }
+]

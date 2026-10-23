@@ -1,0 +1,506 @@
+[
+  {
+    "python": "3.12",
+    "name": "relative",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "nested",
+    "absolute_inputs": false,
+    "inputs": [
+      "nested/missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named nested/missing.py",
+        "path": "nested/missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "absolute",
+    "absolute_inputs": true,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "dotted",
+    "absolute_inputs": false,
+    "inputs": [
+      "absent.module"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named absent.module",
+        "path": "absent.module",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "multiple",
+    "absolute_inputs": false,
+    "inputs": [
+      "first.py",
+      "second.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named first.py",
+        "path": "first.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "F0001",
+        "message": "No module named second.py",
+        "path": "second.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "directory",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing_directory"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing_directory",
+        "path": "missing_directory",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "existing_and_missing",
+    "absolute_inputs": false,
+    "inputs": [
+      "main.py",
+      "missing.py"
+    ],
+    "files": {
+      "main.py": "\"\"\"Existing input fixture.\"\"\"\n"
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "relative",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "nested",
+    "absolute_inputs": false,
+    "inputs": [
+      "nested/missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named nested/missing.py",
+        "path": "nested/missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "absolute",
+    "absolute_inputs": true,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "dotted",
+    "absolute_inputs": false,
+    "inputs": [
+      "absent.module"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named absent.module",
+        "path": "absent.module",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "multiple",
+    "absolute_inputs": false,
+    "inputs": [
+      "first.py",
+      "second.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named first.py",
+        "path": "first.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "F0001",
+        "message": "No module named second.py",
+        "path": "second.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "directory",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing_directory"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing_directory",
+        "path": "missing_directory",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "existing_and_missing",
+    "absolute_inputs": false,
+    "inputs": [
+      "main.py",
+      "missing.py"
+    ],
+    "files": {
+      "main.py": "\"\"\"Existing input fixture.\"\"\"\n"
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "relative",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "nested",
+    "absolute_inputs": false,
+    "inputs": [
+      "nested/missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named nested/missing.py",
+        "path": "nested/missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "absolute",
+    "absolute_inputs": true,
+    "inputs": [
+      "missing.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "dotted",
+    "absolute_inputs": false,
+    "inputs": [
+      "absent.module"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named absent.module",
+        "path": "absent.module",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "multiple",
+    "absolute_inputs": false,
+    "inputs": [
+      "first.py",
+      "second.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named first.py",
+        "path": "first.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "F0001",
+        "message": "No module named second.py",
+        "path": "second.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "directory",
+    "absolute_inputs": false,
+    "inputs": [
+      "missing_directory"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing_directory",
+        "path": "missing_directory",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "existing_and_missing",
+    "absolute_inputs": false,
+    "inputs": [
+      "main.py",
+      "missing.py"
+    ],
+    "files": {
+      "main.py": "\"\"\"Existing input fixture.\"\"\"\n"
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named missing.py",
+        "path": "missing.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  }
+]

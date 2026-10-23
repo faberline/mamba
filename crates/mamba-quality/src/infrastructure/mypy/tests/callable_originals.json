@@ -1,0 +1,1188 @@
+{
+  "schema": "mamba.quality.callable-native-test-corpus.v1",
+  "evidence": {
+    "fixture_manifest_path": "/private/tmp/mamba-quality-15-som-callable-identity-fix-1/fixtures-manifest-1.json",
+    "fixture_manifest_sha256": "8b0b8d609be1fbf6b7b9e2e555d4aa61b4a58c09cdc1ba83a121b9232d13810a",
+    "original_run_manifest_path": "/private/tmp/mamba-quality-15-callable-originals-2/run-manifest.json",
+    "original_run_manifest_sha256": "96a6770fcb3d7ef698ec5453454ed4bf2c73718d5fdc138243136fbf72f9cf8d",
+    "original_frozen_inputs_path": "/private/tmp/mamba-quality-15-callable-originals-2/frozen-inputs.json",
+    "original_frozen_inputs_sha256": "dd6728de025c8c97b3154384279546c32d2bf7aa4129c7e834ba61b88aa14339",
+    "reporter_observations_path": "/private/tmp/mamba-quality-15-callable-originals-2/reporter-observations.json",
+    "reporter_observations_sha256": "7d4e35268a2fd2f0cb09493cfb27e87f687b2d13cec258fd87908475d6fc1ce5",
+    "reporter_contract": "Public diagnostic rule and hint are bound to original JSON; public message and full position are bound to original text. Raw JSON messages and complete original stdout lines are preserved in original_reporter_refs. Reporter process exits remain separate."
+  },
+  "targets": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "cases": [
+    {
+      "name": "alias-cycle",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Any, Callable, TypeAlias, TypeVar\n\nclass Command:\n    pass\n\nCallback: TypeAlias = Callable[..., Any]\nF = TypeVar(\"F\", bound=\"Callback | Command\")\n\ndef preserve(value: F) -> F:\n    return value\n\ndef identity(value: int) -> int:\n    return value\n\nreveal_type(preserve(identity))\n",
+      "source_sha256": "eede0a534a74e1f8c624721278c142c69881edd4bde39ee5e67f46d0ae47ff95",
+      "expected": [
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (value: int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 17,
+              "column": 13,
+              "end_line": 17,
+              "end_column": 30
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (value: int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 17,
+              "column": 13,
+              "end_line": 17,
+              "end_column": 30
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (value: int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 17,
+              "column": 13,
+              "end_line": 17,
+              "end_column": 30
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        0,
+        0,
+        0
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "9714574009766ff0e2b4eb6d154c0cd607c91c67488f45a872793b94ca6d9fce",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-alias-cycle-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (value: int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "65436e76672b5e97bb48c2cb333b12774d8c14bc780e683410c05b3ee871740d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-alias-cycle-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:17:13:17:30: note: Revealed type is \"def (value: int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "9714574009766ff0e2b4eb6d154c0cd607c91c67488f45a872793b94ca6d9fce",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-alias-cycle-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (value: int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "65436e76672b5e97bb48c2cb333b12774d8c14bc780e683410c05b3ee871740d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-alias-cycle-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:17:13:17:30: note: Revealed type is \"def (value: int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "9714574009766ff0e2b4eb6d154c0cd607c91c67488f45a872793b94ca6d9fce",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-alias-cycle-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (value: int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "65436e76672b5e97bb48c2cb333b12774d8c14bc780e683410c05b3ee871740d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-alias-cycle-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:17:13:17:30: note: Revealed type is \"def (value: int) -> int\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "alias-recursive-signatures",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Callable, TypeAlias\n\nTree: TypeAlias = int | tuple[\"Tree\", ...]\nProducer: TypeAlias = Callable[[], Tree]\nRecursive: TypeAlias = Callable[[], \"Recursive\"]\n\ndef leaf() -> Tree:\n    return 1\n\nproducer: Producer = leaf\nreveal_type(producer())\n\ndef keep_recursive(value: Recursive) -> Recursive:\n    return value\n",
+      "source_sha256": "698dd564e98c48dc0e2ff5d7dee891b6d516255dcc3df8fae5badfea3079a4d0",
+      "expected": [
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 13,
+              "column": 13,
+              "end_line": 13,
+              "end_column": 22
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 13,
+              "column": 13,
+              "end_line": 13,
+              "end_column": 22
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 13,
+              "column": 13,
+              "end_line": 13,
+              "end_column": 22
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        0,
+        0,
+        0
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "c7505dfd28f40fe4995ef299ee095fa8254615edd9774b876fc12bd65c259509",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-alias-recursive-signatures-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "380c9109667e2d45ef36f9da1ba6edc17d7f054c5b5befe9e28d969aa7e741d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-alias-recursive-signatures-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:13:13:13:22: note: Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "c7505dfd28f40fe4995ef299ee095fa8254615edd9774b876fc12bd65c259509",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-alias-recursive-signatures-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "380c9109667e2d45ef36f9da1ba6edc17d7f054c5b5befe9e28d969aa7e741d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-alias-recursive-signatures-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:13:13:13:22: note: Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "c7505dfd28f40fe4995ef299ee095fa8254615edd9774b876fc12bd65c259509",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-alias-recursive-signatures-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "380c9109667e2d45ef36f9da1ba6edc17d7f054c5b5befe9e28d969aa7e741d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-alias-recursive-signatures-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:13:13:13:22: note: Revealed type is \"int | tuple[int | tuple[..., ...], ...]\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "generic-forwarding",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Callable, Concatenate, ParamSpec, TypeVar, TypeVarTuple, Unpack\n\nP = ParamSpec(\"P\")\nT = TypeVar(\"T\")\nTs = TypeVarTuple(\"Ts\")\n\ndef relay(callback: Callable[P, T]) -> Callable[P, T]:\n    def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:\n        return callback(*args, **kwargs)\n    return wrapper\n\ndef prepend(callback: Callable[Concatenate[int, P], T]) -> Callable[P, T]:\n    def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:\n        return callback(1, *args, **kwargs)\n    return wrapper\n\ndef pack(*values: Unpack[Ts]) -> tuple[Unpack[Ts]]:\n    return values\n\ndef outer[T](callback: \"Callable[[T], T]\", value: T) -> T:\n    def inner(item: T) -> T:\n        return callback(item)\n    return inner(value)\n\nclass Holder[T]:\n    def __init__(self, value: T) -> None:\n        self.value: T = value\n\n    def map(self, callback: \"Callable[[T], T]\") -> T:\n        return callback(self.value)\n\ndef integer(value: int) -> int:\n    return value\n\nreveal_type(relay(integer)(1))\nreveal_type(pack(1, \"x\"))\nreveal_type(outer(integer, 1))\nreveal_type(Holder(1).map(integer))\n",
+      "source_sha256": "72e0e9a936583c965e63cf9affbaaf27aea0eec336d3fd3dd4c9b28a55c61fe5",
+      "expected": [
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 37,
+              "column": 13,
+              "end_line": 37,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 13,
+              "end_line": 38,
+              "end_column": 24
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 39,
+              "column": 13,
+              "end_line": 39,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 13,
+              "end_line": 40,
+              "end_column": 34
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 37,
+              "column": 13,
+              "end_line": 37,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 13,
+              "end_line": 38,
+              "end_column": 24
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 39,
+              "column": 13,
+              "end_line": 39,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 13,
+              "end_line": 40,
+              "end_column": 34
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 37,
+              "column": 13,
+              "end_line": 37,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 13,
+              "end_line": 38,
+              "end_column": 24
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 39,
+              "column": 13,
+              "end_line": 39,
+              "end_column": 29
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 13,
+              "end_line": 40,
+              "end_column": 34
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        0,
+        0,
+        0
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "df90f653d76eaa9165b99e951970253afdd4cf07dc44fd32f61f4db9b0d3d13d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-generic-forwarding-json/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_json_messages": [
+              "Revealed type is \"int\"",
+              "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "24cccd699f6cbf0c723c9b643df12c2e462392254f3e0494ed3c5941633997d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-generic-forwarding-text/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_lines": [
+              "candidate.py:37:13:37:29: note: Revealed type is \"int\"",
+              "candidate.py:38:13:38:24: note: Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "candidate.py:39:13:39:29: note: Revealed type is \"int\"",
+              "candidate.py:40:13:40:34: note: Revealed type is \"int\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "df90f653d76eaa9165b99e951970253afdd4cf07dc44fd32f61f4db9b0d3d13d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-generic-forwarding-json/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_json_messages": [
+              "Revealed type is \"int\"",
+              "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "24cccd699f6cbf0c723c9b643df12c2e462392254f3e0494ed3c5941633997d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-generic-forwarding-text/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_lines": [
+              "candidate.py:37:13:37:29: note: Revealed type is \"int\"",
+              "candidate.py:38:13:38:24: note: Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "candidate.py:39:13:39:29: note: Revealed type is \"int\"",
+              "candidate.py:40:13:40:34: note: Revealed type is \"int\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "df90f653d76eaa9165b99e951970253afdd4cf07dc44fd32f61f4db9b0d3d13d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-generic-forwarding-json/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_json_messages": [
+              "Revealed type is \"int\"",
+              "Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "24cccd699f6cbf0c723c9b643df12c2e462392254f3e0494ed3c5941633997d3",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-generic-forwarding-text/stdout.raw",
+            "diagnostics_count": 4,
+            "raw_lines": [
+              "candidate.py:37:13:37:29: note: Revealed type is \"int\"",
+              "candidate.py:38:13:38:24: note: Revealed type is \"tuple[Literal[1]?, Literal['x']?]\"",
+              "candidate.py:39:13:39:29: note: Revealed type is \"int\"",
+              "candidate.py:40:13:40:34: note: Revealed type is \"int\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "semantic-negative-controls",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Callable, TypeGuard\nfrom typing_extensions import TypeIs\n\ndef accepts_int(value: int) -> int:\n    return value\n\ndef accepts_str(value: str) -> int:\n    return len(value)\n\ndef returns_str(value: int) -> str:\n    return str(value)\n\ncorrect: Callable[[int], int] = accepts_int\nbad_parameter: Callable[[int], int] = accepts_str\nbad_return: Callable[[int], int] = returns_str\n\ndef is_integer(value: object) -> TypeGuard[int]:\n    return isinstance(value, int)\n\ndef is_text(value: object) -> TypeGuard[str]:\n    return isinstance(value, str)\n\ndef is_exact_integer(value: object) -> TypeIs[int]:\n    return isinstance(value, int)\n\ndef is_exact_text(value: object) -> TypeIs[str]:\n    return isinstance(value, str)\n\nguard: Callable[[object], TypeGuard[int]] = is_integer\nbad_guard: Callable[[object], TypeGuard[int]] = is_text\nexact: Callable[[object], TypeIs[int]] = is_exact_integer\nbad_exact: Callable[[object], TypeIs[int]] = is_exact_text\n\ndef inspect(value: object) -> None:\n    if guard(value):\n        reveal_type(value)\n    if exact(value):\n        reveal_type(value)\n",
+      "source_sha256": "dff96155ee374bcaaf5ac95c92cac0dac369683f5dfd9d14a04724e45faa5fd5",
+      "expected": [
+        [
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 16,
+              "column": 39,
+              "end_line": 16,
+              "end_column": 49
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 17,
+              "column": 36,
+              "end_line": 17,
+              "end_column": 46
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 32,
+              "column": 49,
+              "end_line": 32,
+              "end_column": 55
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 34,
+              "column": 46,
+              "end_line": 34,
+              "end_column": 58
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 21,
+              "end_line": 38,
+              "end_column": 25
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 21,
+              "end_line": 40,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 16,
+              "column": 39,
+              "end_line": 16,
+              "end_column": 49
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 17,
+              "column": 36,
+              "end_line": 17,
+              "end_column": 46
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 32,
+              "column": 49,
+              "end_line": 32,
+              "end_column": 55
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 34,
+              "column": 46,
+              "end_line": 34,
+              "end_column": 58
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 21,
+              "end_line": 38,
+              "end_column": 25
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 21,
+              "end_line": 40,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 16,
+              "column": 39,
+              "end_line": 16,
+              "end_column": 49
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 17,
+              "column": 36,
+              "end_line": 17,
+              "end_column": 46
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 32,
+              "column": 49,
+              "end_line": 32,
+              "end_column": 55
+            }
+          },
+          {
+            "rule": "assignment",
+            "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "error",
+            "location": {
+              "line": 34,
+              "column": 46,
+              "end_line": 34,
+              "end_column": 58
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 38,
+              "column": 21,
+              "end_line": 38,
+              "end_column": 25
+            }
+          },
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 40,
+              "column": 21,
+              "end_line": 40,
+              "end_column": 25
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "63dcd66076dd04162c2470b96bd69a4dde7fc72b67e818495fc5cbae00e978bc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-semantic-negative-controls-json/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_json_messages": [
+              "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 1,
+            "stdout_sha256": "2152057e53b0bbb5484d0391b49ca2cb13f19ce20a58bd73476bf530ccdc4697",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-semantic-negative-controls-text/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_lines": [
+              "candidate.py:16:39:16:49: error: Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:17:36:17:46: error: Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:32:49:32:55: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")  [assignment]",
+              "candidate.py:34:46:34:58: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")  [assignment]",
+              "candidate.py:38:21:38:25: note: Revealed type is \"int\"",
+              "candidate.py:40:21:40:25: note: Revealed type is \"int\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "63dcd66076dd04162c2470b96bd69a4dde7fc72b67e818495fc5cbae00e978bc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-semantic-negative-controls-json/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_json_messages": [
+              "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 1,
+            "stdout_sha256": "2152057e53b0bbb5484d0391b49ca2cb13f19ce20a58bd73476bf530ccdc4697",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-semantic-negative-controls-text/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_lines": [
+              "candidate.py:16:39:16:49: error: Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:17:36:17:46: error: Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:32:49:32:55: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")  [assignment]",
+              "candidate.py:34:46:34:58: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")  [assignment]",
+              "candidate.py:38:21:38:25: note: Revealed type is \"int\"",
+              "candidate.py:40:21:40:25: note: Revealed type is \"int\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "63dcd66076dd04162c2470b96bd69a4dde7fc72b67e818495fc5cbae00e978bc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-semantic-negative-controls-json/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_json_messages": [
+              "Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")",
+              "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")",
+              "Revealed type is \"int\"",
+              "Revealed type is \"int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 1,
+            "stdout_sha256": "2152057e53b0bbb5484d0391b49ca2cb13f19ce20a58bd73476bf530ccdc4697",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-semantic-negative-controls-text/stdout.raw",
+            "diagnostics_count": 6,
+            "raw_lines": [
+              "candidate.py:16:39:16:49: error: Incompatible types in assignment (expression has type \"Callable[[str], int]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:17:36:17:46: error: Incompatible types in assignment (expression has type \"Callable[[int], str]\", variable has type \"Callable[[int], int]\")  [assignment]",
+              "candidate.py:32:49:32:55: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[str]]\", variable has type \"Callable[[object], TypeGuard[int]]\")  [assignment]",
+              "candidate.py:34:46:34:58: error: Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[str]]\", variable has type \"Callable[[object], TypeIs[int]]\")  [assignment]",
+              "candidate.py:38:21:38:25: note: Revealed type is \"int\"",
+              "candidate.py:40:21:40:25: note: Revealed type is \"int\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "unrelated-noise-after",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Callable, TypeAlias, TypeVar\n\nNoise: TypeAlias = str\nT = TypeVar(\"T\")\n\ndef keep(callback: \"Callable[[T], T]\") -> Callable[[T], T]:\n    return callback\n\ndef integer(value: int) -> int:\n    return value\n\nreveal_type(keep(integer))\n",
+      "source_sha256": "7bd85b64e02fb1b1587fae4c96f3f60bcb6fb253b1edce5567a44472e7ec46af",
+      "expected": [
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        0,
+        0,
+        0
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-unrelated-noise-after-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-unrelated-noise-after-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-unrelated-noise-after-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-unrelated-noise-after-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-unrelated-noise-after-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-unrelated-noise-after-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "unrelated-noise-before",
+      "filename": "candidate.py",
+      "source": "from __future__ import annotations\n\nfrom typing import Callable, TypeAlias, TypeVar\n\nNoise: TypeAlias = int\nT = TypeVar(\"T\")\n\ndef keep(callback: \"Callable[[T], T]\") -> Callable[[T], T]:\n    return callback\n\ndef integer(value: int) -> int:\n    return value\n\nreveal_type(keep(integer))\n",
+      "source_sha256": "e1d1c483fd2d93c2cb7171d61394e2150477e236abd7329964bfbd49e19e230b",
+      "expected": [
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ],
+        [
+          {
+            "rule": "misc",
+            "message": "Revealed type is \"def (int) -> int\"",
+            "hint": null,
+            "path": "candidate.py",
+            "severity": "note",
+            "location": {
+              "line": 14,
+              "column": 13,
+              "end_line": 14,
+              "end_column": 25
+            }
+          }
+        ]
+      ],
+      "reference_text_process_exits": [
+        0,
+        0,
+        0
+      ],
+      "original_json_process_exits": [
+        1,
+        1,
+        1
+      ],
+      "original_reporter_refs": [
+        {
+          "target": "3.12",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-unrelated-noise-before-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/312-unrelated-noise-before-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.13",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-unrelated-noise-before-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/313-unrelated-noise-before-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        },
+        {
+          "target": "3.14",
+          "json": {
+            "actual_exit": 1,
+            "stdout_sha256": "7005fdbdb55cf55fedc4a6deb3d6488dfbc53ecd73e8937ef4df3fc59d2eebdc",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-unrelated-noise-before-json/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_json_messages": [
+              "Revealed type is \"def (int) -> int\""
+            ]
+          },
+          "text": {
+            "actual_exit": 0,
+            "stdout_sha256": "7f2bdc72f576c9ec672af709ab83608a125e46b606c21f70a07bf31d88ccd30d",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_path_from_originals2": "cells/314-unrelated-noise-before-text/stdout.raw",
+            "diagnostics_count": 1,
+            "raw_lines": [
+              "candidate.py:14:13:14:25: note: Revealed type is \"def (int) -> int\""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "native_execution": "unrun",
+  "acceptance": false,
+  "whole_som_accepted": false
+}

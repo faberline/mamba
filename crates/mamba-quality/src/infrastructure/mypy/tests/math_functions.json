@@ -1,0 +1,2923 @@
+[
+  {
+    "name": "sin_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sin(0))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a949f2d66092c53ce21efb2b7e4282f0a62f4059cd5187b2f32c57b45bbfca5c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sin_bad_argument",
+    "files": {
+      "main.py": "import math\nmath.sin(\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3aab2ffadb6201e45ac709d81d7e2316b457b16ee2c99249528da2f374fa4144"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sin_missing",
+    "files": {
+      "main.py": "import math\nmath.sin()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f0438575c266e2b9d6a32db87ba24b5df1bb09fd371cccd54e7b5a3458ab4abe"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sin\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sin\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"sin\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sin_keyword",
+    "files": {
+      "main.py": "import math\nmath.sin(x=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8c2afac3046a555a361d6b7b87ff0c2752df001ce65f611fb341f5863391b76b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sin\"",
+          "hint": "\"sin\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sin\"",
+          "hint": "\"sin\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"sin\"",
+          "hint": "\"sin\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "log_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.log(1, 2))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "9a0525d6b1226a864949664f96085a26e4f594c0be1497ddb87961467cf4fa52"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "log_bad_value",
+    "files": {
+      "main.py": "import math\nmath.log(\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e7ef857bde18f5b038d319778dad75941dc5633bb6d2a8d870167773d09ac088"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "log_bad_base",
+    "files": {
+      "main.py": "import math\nmath.log(1, \"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "1bdaf8f21a3535bcd7a6a8aac217b1660131245d0251fcaed1ce963246f108b8"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"log\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "log_extra",
+    "files": {
+      "main.py": "import math\nmath.log(1, 2, 3)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "1618021488363090cfebc2a4f4e5f328014c7387616a124bfb36cf0cb3921703"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "log_missing",
+    "files": {
+      "main.py": "import math\nmath.log()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "dae661053c50eca86315b7a4a61f7184cf529f3717699800fec967e5ad59d7dc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"log\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "hypot_results",
+    "files": {
+      "main.py": "import math\nreveal_type(math.hypot())\nreveal_type(math.hypot(1, 2.0, 3))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "fcb0bc1cb964f8d8f0add6363060711e232d46fca5ae5d3f04ae66e6556ebccd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "hypot_bad_argument",
+    "files": {
+      "main.py": "import math\nmath.hypot(1, \"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "bf39bb825e2e7b566b66cebb20ef21fd43b954555228744c9c23da8c12ac0465"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"hypot\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"hypot\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"hypot\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "hypot_keyword",
+    "files": {
+      "main.py": "import math\nmath.hypot(x=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "9a83cf4832c8c715019d1b30ca04c35aa7eaae16d2419fbe173dbddaade44204"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"hypot\"",
+          "hint": "\"hypot\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"hypot\"",
+          "hint": "\"hypot\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"hypot\"",
+          "hint": "\"hypot\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "hypot_bad_star",
+    "files": {
+      "main.py": "import math\nvalues: list[str] = [\"value\"]\nmath.hypot(*values)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "596a24e117810d36f28ef760eac29c8871f09749c66a03617bcf5e8441fedf2a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"hypot\" has incompatible type \"*list[str]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"hypot\" has incompatible type \"*list[str]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"hypot\" has incompatible type \"*list[str]\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "isclose_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.isclose(1, 2, rel_tol=0.1, abs_tol=0.0))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "83de70cc688741e5d14ac11c565004b666f52bc91850ceb52a2f0b37f0cb54e4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 56
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 56
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 56
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "isclose_bad_argument",
+    "files": {
+      "main.py": "import math\nmath.isclose(1, \"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "13a55c2a4dd62b198d1639f951a50cef075d7df1a962a3a739f70a93df1a0ceb"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 17,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "isclose_bad_tolerance",
+    "files": {
+      "main.py": "import math\nmath.isclose(1, 2, rel_tol=\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "75cce25a77a1f321d8391b5a66e1c7c40d5756f202a737cc2c22f6f31cc7dbd5"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"rel_tol\" to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"rel_tol\" to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"rel_tol\" to \"isclose\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "isclose_extra_positional",
+    "files": {
+      "main.py": "import math\nmath.isclose(1, 2, 0.1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "324bf6f9c9e4bc714a5e1cebd3d0134023cc5f67f0c020b3c300cf3d59605e09"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"isclose\"",
+          "hint": "\"isclose\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"isclose\"",
+          "hint": "\"isclose\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"isclose\"",
+          "hint": "\"isclose\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "isclose_missing",
+    "files": {
+      "main.py": "import math\nmath.isclose(1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7e9c80beed9166a067ddafb6699a7e718360f42fbb901e0e94b95b6a582a1062"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"b\" in call to \"isclose\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"b\" in call to \"isclose\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"b\" in call to \"isclose\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "factorial_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.factorial(3))\nreveal_type(math.factorial(True))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "de49dc46086fb5b4ee2590dcbe4678a35a5adadb43a4d60fe17539403324ccc7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "factorial_float",
+    "files": {
+      "main.py": "import math\nmath.factorial(3.0)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "21e5e059e7d0ede83c5cee307d3bb4705a91bf42dea822286e0d93953b8fecc5"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "factorial_str",
+    "files": {
+      "main.py": "import math\nmath.factorial(\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0c54e09b8003ddd5795fdf1e780ca8d7534c724719af7ead1b30c78e13c35d6b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"factorial\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 16,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "factorial_keyword",
+    "files": {
+      "main.py": "import math\nmath.factorial(n=3)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "24c7b3a6716a0343c277275be8ff0ad5b9433ae02e6cdae49a8cd44add2d79c1"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"n\" for \"factorial\"",
+          "hint": "\"factorial\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"n\" for \"factorial\"",
+          "hint": "\"factorial\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"n\" for \"factorial\"",
+          "hint": "\"factorial\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "gcd_results",
+    "files": {
+      "main.py": "import math\nreveal_type(math.gcd())\nreveal_type(math.gcd(1, 2, 3))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7ab20aacb42cbeb5fb278f3d3341f784a0a175f08c6634a4c632d1f90ae817c4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "gcd_float",
+    "files": {
+      "main.py": "import math\nmath.gcd(1, 2.0)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "33e91bb10bea3348a8b413b7b74d2130b53c93043f30c4918174cb1359cc25fa"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"gcd\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"gcd\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"gcd\" has incompatible type \"float\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "gcd_str",
+    "files": {
+      "main.py": "import math\nmath.gcd(\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "80ecc17642b427c8d263e4ddd9dd497d101e04b485060b6f3e1299c1652885ce"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"gcd\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"gcd\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"gcd\" has incompatible type \"str\"; expected \"SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "gcd_keyword",
+    "files": {
+      "main.py": "import math\nmath.gcd(x=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0e8c358e8e6a80c5207f4afef57018afd5d9df08e255d091992374d871cf1bf1"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"gcd\"",
+          "hint": "\"gcd\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"gcd\"",
+          "hint": "\"gcd\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"x\" for \"gcd\"",
+          "hint": "\"gcd\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_integer_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.prod([1, 2]))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "aae4dd8eea4588e2e1dc1c334e2bb91ea6e29f36a32547ccb4a0495da59dbbc7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_float_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.prod([1.0, 2.0]))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "757b110d9f49e3979db79e5875fb2493eaa5b13b83bf665c1d934372381464ac"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_typed_empty",
+    "files": {
+      "main.py": "import math\nvalues: list[float] = []\nreveal_type(math.prod(values))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "fb444a29eac4a927dad3063c2e4083cbf1a7e6c000bf19ce7345b6cc5b644965"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float | Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_float_start",
+    "files": {
+      "main.py": "import math\nreveal_type(math.prod([1, 2], start=1.0))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b246daa96a50dd5e2b9b50bf19cd5078e25b7a772f7b042e61cc82a888954470"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 40
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_extra_positional",
+    "files": {
+      "main.py": "import math\nmath.prod([1, 2], 1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d145661f64d9bdcf2316907994ecacd9efaf22fb730bb4fb30c51b5ff131cbf9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument types \"list[int]\", \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument types \"list[int]\", \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument types \"list[int]\", \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "prod_non_iterable",
+    "files": {
+      "main.py": "import math\nmath.prod(1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "bd035c090bb2327e4c8934016dc2eaa7954c1e9a530caeb2e9cacb5de54f5cbd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument type \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument type \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"prod\" matches argument type \"int\"",
+          "hint": "Possible overload variants:\n    def prod(Iterable[bool | Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25] | Literal[-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20] | Literal[0]], /, *, start: int = ...) -> int\n    def [_SupportsProdNoDefaultT: _SupportsProdWithNoDefaultGiven] prod(Iterable[_SupportsProdNoDefaultT], /) -> _SupportsProdNoDefaultT | Literal[1]\n    def [_MultiplicableT1: SupportsMul[Any, Any], _MultiplicableT2: SupportsMul[Any, Any]] prod(Iterable[_MultiplicableT1], /, *, start: _MultiplicableT2) -> _MultiplicableT1 | _MultiplicableT2",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "fsum_result",
+    "files": {
+      "main.py": "import math\nreveal_type(math.fsum([1, 2.0]))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6df1c2ee95d70da4962225d4ea18fde08572606fdb6c9a68fd133281d2a8b69c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "fsum_str",
+    "files": {
+      "main.py": "import math\nmath.fsum([\"value\"])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d6f9df5376c2b13c5863fb8aa974ea203a374553ae9cfd24667bc0c4c87e888b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "list-item",
+          "message": "List item 0 has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "list-item",
+          "message": "List item 0 has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "list-item",
+          "message": "List item 0 has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "fsum_non_iterable",
+    "files": {
+      "main.py": "import math\nmath.fsum(1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d6559c6121ca72d9833d69ffafd60c466b201f78be06ba3acba9f2e9c40d2902"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"fsum\" has incompatible type \"int\"; expected \"Iterable[SupportsFloat | SupportsIndex]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"fsum\" has incompatible type \"int\"; expected \"Iterable[SupportsFloat | SupportsIndex]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"fsum\" has incompatible type \"int\"; expected \"Iterable[SupportsFloat | SupportsIndex]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "fsum_keyword",
+    "files": {
+      "main.py": "import math\nmath.fsum(seq=[1])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "c9218aab4548b2ecb5de653a5303744e1d757847f2feaadd8b5bba04a8119abd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"seq\" for \"fsum\"",
+          "hint": "\"fsum\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"seq\" for \"fsum\"",
+          "hint": "\"fsum\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"seq\" for \"fsum\"",
+          "hint": "\"fsum\" defined in \"math\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "sin_float_protocol",
+    "files": {
+      "main.py": "import math\nclass Number:\n    def __float__(self) -> float:\n        return 1.0\nreveal_type(math.sin(Number()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b0fbf8179c4af0d70f618286c611896d04b97627824ec193e51a6e0ff79f3090"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "factorial_index_protocol",
+    "files": {
+      "main.py": "import math\nclass Number:\n    def __index__(self) -> int:\n        return 1\nreveal_type(math.factorial(Number()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5178a8c5c559e3ca0d97b946abbf01452b1418f6962c8328d6914325c3a6d030"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 36
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "renamed_import_error",
+    "files": {
+      "main.py": "import math\nfrom math import sin as sine\nsine(\"value\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "9fb04fb6c6ceffaf4984b52a803f05fe51fc50c9f500a6506b924bb4d665b4bd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"sin\" has incompatible type \"str\"; expected \"SupportsFloat | SupportsIndex\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "local_math_priority",
+    "files": {
+      "main.py": "import math\nreveal_type(math.sin(\"value\"))\n"
+    },
+    "local": {
+      "math.py": "def sin(value: str) -> str:\n    return value\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "cecab633802862ce7f446a0553a653eb16229b6ac0896dc76c3cad6bc27a22f6"
+    },
+    "local_sha256": {
+      "math.py": "f22f8b48e7e4e0bbceb967b826d6cb3c0658065ebc449ff8ac43658f00c251c8"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "name": "t_bytes_unchanged",
+    "source": "value = t\"{1}\" b\"tail\"\n",
+    "source_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" b\"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243",
+            "output_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" b\"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243",
+            "output_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" b\"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243",
+            "output_sha256": "fa781dd8b94e0a71a5eb6e8c01a03f65ff34fb3b600a24038d776b3b3165e243"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_bytes_fmt_skip",
+    "source": "value = (\n    t\"{(\n        1  # fmt: skip\n    )}\"\n    b\"tail\"\n)\n",
+    "source_sha256": "d4a9a76e9f016fd1e974e7011f73e7abb80ed0073a15462c37e5161e0de55992",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:37\n            1  # fmt: skip    )}\" b\"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_739dcqi0.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:37\n            1  # fmt: skip    )}\" b\"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_9s_uh4pi.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:37\n            1  # fmt: skip    )}\" b\"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_rgrro5dx.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "e4f75ff46ef5a200f1b73a7912f04547ff447cd6ef3a03faab84ff885aa7a268",
+      "e4f75ff46ef5a200f1b73a7912f04547ff447cd6ef3a03faab84ff885aa7a268",
+      "e4f75ff46ef5a200f1b73a7912f04547ff447cd6ef3a03faab84ff885aa7a268"
+    ]
+  },
+  {
+    "name": "raw_rt_unchanged",
+    "source": "value = rt\"{1}\" \"tail\"\n",
+    "source_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb",
+            "output_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb",
+            "output_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rt\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb",
+            "output_sha256": "518cbbfb217a5078a171d5b828e50e2363f05d338f69519619a75707fb0279eb"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_rt_changed",
+    "source": "value=rt'{1}' 'tail'\n",
+    "source_sha256": "c8be7f931bcbdbc9bce0e4e1ee9eef07fdb3328bd7fde2e6772cdce4e454b297",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_tr_unchanged",
+    "source": "value = tr\"{1}\" \"tail\"\n",
+    "source_sha256": "99f4b9613198748f2b753db256f5c5d9660b2b83d55c2e7838d7e235d62f8963",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "raw_rt_fmt_skip",
+    "source": "value = (\n    rt\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "60db647d07f39abcf4d0e1535c4cb14fc54ebcfd04985834260e8173e743aad7",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_4_bhpgpo.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_6cruas1l.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_affhtus1.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "c590f6e0c366181a2fc529c321957b40f3fb74371def09fd69547791be74662a",
+      "c590f6e0c366181a2fc529c321957b40f3fb74371def09fd69547791be74662a",
+      "c590f6e0c366181a2fc529c321957b40f3fb74371def09fd69547791be74662a"
+    ]
+  }
+]

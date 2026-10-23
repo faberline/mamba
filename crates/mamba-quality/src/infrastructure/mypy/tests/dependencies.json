@@ -1,0 +1,2742 @@
+[
+  {
+    "name": "typed_package_variable",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\nvalue: str = VALUE\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "6125c050ae6462a2d2e856d5cc5a3c550d3af10d25b6b8bb9f8e1a9b6a3cb790"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_package_callable",
+    "files": {
+      "main.py": "from pkg import repeat\nreveal_type(repeat(1))\nrepeat(\"bad\")\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "def repeat(value: int) -> str:\n    return str(value)\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "ff3f4a0015e49c9810a9696df0a8ec7f55cb3894e5dcfd27ecb7aac513a101e8"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e55bed9f20e67466a5bbd3c0862d40a6fedd46386e4a9495e7697891e99c136c",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "stub_package",
+    "files": {
+      "main.py": "from pkg import VALUE, repeat\nreveal_type(VALUE)\nrepeat(\"bad\")\n"
+    },
+    "packages": {
+      "pkg/__init__.pyi": "VALUE: str\ndef repeat(value: int) -> str: ...\n"
+    },
+    "source_sha256": {
+      "main.py": "59004d74d11fa97d919f2608a1595a0076e16336f5bf7e27c3b0cffb8482cbae"
+    },
+    "package_sha256": {
+      "pkg/__init__.pyi": "eec1993941d96c52638bef92f6aa1aa0d5693d55cf8dfea5f75095b4542524af"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "standalone_stub",
+    "files": {
+      "main.py": "import pkg\nreveal_type(pkg.VALUE)\nvalue: str = pkg.VALUE\n"
+    },
+    "packages": {
+      "pkg.pyi": "VALUE: int\n"
+    },
+    "source_sha256": {
+      "main.py": "f77588b1dc677d21de6c93ef4b008435a021377eb5c6f9eb0930f64033ccc3db"
+    },
+    "package_sha256": {
+      "pkg.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"pkg\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"pkg\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"pkg\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_package",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "namespace_package",
+    "files": {
+      "main.py": "from pkg.nested import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/nested/__init__.pyi": "VALUE: int\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "3294fefe6f20d343d11860976899302eca5681379169ee95ddf4254d9b221d6a"
+    },
+    "package_sha256": {
+      "pkg/nested/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_relative_import",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "from .child import VALUE as VALUE\n",
+      "pkg/child.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "c31cbba966914bf5b877e4c8a414bcb14e9043ac75edf339eec959e95dd661e6",
+      "pkg/child.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_missing_member",
+    "files": {
+      "main.py": "from pkg import MISSING\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "f627873460f4479ac8af2d0269ad046acf916dd0eb5bdad01d03dbe710bd9038"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_missing_dependency",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "from missing_dependency import VALUE as VALUE\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "a61ff4c6fe93c8c31c207a5110130dac6d6d93e181024e4a70755c6390bc30ac",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "stub_precedes_python",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE: str = \"one\"\n",
+      "pkg/__init__.pyi": "VALUE: int\n"
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "b2f1f20231d7c56c6586a0468891c11ce7b244a9eb11d954a4adaded88a2506a",
+      "pkg/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_stub_package",
+    "files": {
+      "main.py": "from pkg import VALUE, repeat\nreveal_type(VALUE)\nrepeat(\"bad\")\n"
+    },
+    "packages": {
+      "pkg/__init__.pyi": "VALUE: str\ndef repeat(value: int) -> str: ...\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "59004d74d11fa97d919f2608a1595a0076e16336f5bf7e27c3b0cffb8482cbae"
+    },
+    "package_sha256": {
+      "pkg/__init__.pyi": "eec1993941d96c52638bef92f6aa1aa0d5693d55cf8dfea5f75095b4542524af",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_stub_precedes_python",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE: str = \"one\"\n",
+      "pkg/__init__.pyi": "VALUE: int\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "b2f1f20231d7c56c6586a0468891c11ce7b244a9eb11d954a4adaded88a2506a",
+      "pkg/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_generic_export",
+    "files": {
+      "main.py": "from pkg import first\nreveal_type(first([1]))\nvalue: str = first([1])\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "def first[T](values: list[T]) -> T:\n    return values[0]\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d9815db8571cde62cee20213050098a70f3fb1e4cb294b086ba761f42833b57f"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "52b3acd5d714ccd9d69b1b4c891c497e753199548c111674415f23f67a0fa609",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_class_member",
+    "files": {
+      "main.py": "from pkg import Model\nmodel = Model(1)\nreveal_type(model.name)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "class Model:\n    name: str\n    def __init__(self, name: str) -> None:\n        self.name = name\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "30c4a1057f40034e1e5c4a65481f784b55c2bceed93789779fe6fa1eea9b28ee"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "ba781f88606bef7e8a20ce088c157a8fa9321496222d9be2c5dd397d5481cf65",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_namespace_child",
+    "files": {
+      "main.py": "from pkg.nested.mod import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/nested/mod.py": "VALUE: str = \"one\"\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "0094c4f772fc69292d6fec22e64b65f964de1dd15b990dbdfd495402e857cea9"
+    },
+    "package_sha256": {
+      "pkg/nested/mod.py": "b2f1f20231d7c56c6586a0468891c11ce7b244a9eb11d954a4adaded88a2506a",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "stub_distribution",
+    "files": {
+      "main.py": "from pkg import VALUE, repeat\nreveal_type(VALUE)\nrepeat(\"bad\")\n"
+    },
+    "packages": {
+      "pkg-stubs/__init__.pyi": "VALUE: int\ndef repeat(value: int) -> str: ...\n"
+    },
+    "source_sha256": {
+      "main.py": "59004d74d11fa97d919f2608a1595a0076e16336f5bf7e27c3b0cffb8482cbae"
+    },
+    "package_sha256": {
+      "pkg-stubs/__init__.pyi": "2d442c6615cb40c74781576d9adeefa20fa2bf35c8fb57f43cf4603481d8f503"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"repeat\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 8,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "stub_distribution_precedence",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg-stubs/__init__.pyi": "VALUE: int\n",
+      "pkg/__init__.py": "VALUE: str = \"value\"\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg-stubs/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754",
+      "pkg/__init__.py": "d2e4f988eeebab57b6728adec03369fadf805cd87231304e7cf4baa2e798432c",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "partial_stub_fallback",
+    "files": {
+      "main.py": "from pkg import VALUE\nfrom pkg.child import NAME\nreveal_type(VALUE)\nreveal_type(NAME)\n"
+    },
+    "packages": {
+      "pkg-stubs/__init__.pyi": "VALUE: int\n",
+      "pkg-stubs/py.typed": "partial\n",
+      "pkg/__init__.py": "VALUE: str = \"value\"\n",
+      "pkg/child.py": "NAME: str = \"name\"\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "0afb381ae71451e23e57e46d3ee36a05586232f2993c2d2b4648972eea6adfce"
+    },
+    "package_sha256": {
+      "pkg-stubs/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754",
+      "pkg-stubs/py.typed": "95aebb28195b8d737effe0df18d71d39c8d8ba6569286fd3930fbc9f9767181e",
+      "pkg/__init__.py": "d2e4f988eeebab57b6728adec03369fadf805cd87231304e7cf4baa2e798432c",
+      "pkg/child.py": "85a4e6aa49de02bdab625b3932156275cda86530db9be7bd3c68eec9da45b027",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_module",
+    "files": {
+      "main.py": "import pkg\nreveal_type(pkg.VALUE)\n"
+    },
+    "packages": {
+      "pkg.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "cdc369e53a455e99e568873a976f59f3b36f99547b12d16ae4b88ba8c2871561"
+    },
+    "package_sha256": {
+      "pkg.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_namespace_module",
+    "files": {
+      "main.py": "from pkg.child import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/child.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "41eee9c2784ea6ecb86e3d70603a9cb1fa16456dc4bfd099a601fd7c5e8d9d6f"
+    },
+    "package_sha256": {
+      "pkg/child.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg.child\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg.child\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg.child\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "nested_typed_namespace",
+    "files": {
+      "main.py": "from pkg.child import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/child/__init__.py": "VALUE: int = 1\n",
+      "pkg/child/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "41eee9c2784ea6ecb86e3d70603a9cb1fa16456dc4bfd099a601fd7c5e8d9d6f"
+    },
+    "package_sha256": {
+      "pkg/child/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/child/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "nested_typed_namespace_child",
+    "files": {
+      "main.py": "from pkg.child.leaf import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/child/py.typed": "",
+      "pkg/child/leaf.py": "VALUE: str = \"leaf\"\n"
+    },
+    "source_sha256": {
+      "main.py": "25295cd4675b81e849b1ab37572868d9f147e8d7aab1299f70437da16a12a806"
+    },
+    "package_sha256": {
+      "pkg/child/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pkg/child/leaf.py": "6cb200b67a52f50f3b5096ce4db623fb3747aba7c3e478777a24c01dfd2e4711"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_explicit_submodule",
+    "files": {
+      "main.py": "import pkg.child\nreveal_type(pkg.child.VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "",
+      "pkg/child.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "3a7b73a54f02967e55ea2e56463f07cfdd5e4d0c54363645c6f483c6b4575c12"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pkg/child.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_from_submodule",
+    "files": {
+      "main.py": "from pkg import child\nreveal_type(child.VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "",
+      "pkg/child.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "b4f4b9e0d8552e55adc2d00ca82390c8ca901e611d70e3f8c096e373f19de367"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pkg/child.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_circular_reexport",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "from .child import VALUE as VALUE\n",
+      "pkg/child.py": "from . import VALUE as ROOT\nVALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "c31cbba966914bf5b877e4c8a414bcb14e9043ac75edf339eec959e95dd661e6",
+      "pkg/child.py": "fe23ed75baf9c672a71f11915f0fdfd1a4bead324168fbf84d49d60a44c435fa",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_protocol",
+    "files": {
+      "main.py": "from pkg import NeedsName, check\nclass Model:\n    name: str = \"model\"\ncheck(Model())\ncheck(1)\n"
+    },
+    "packages": {
+      "pkg/__init__.pyi": "from typing import Protocol\nclass NeedsName(Protocol):\n    name: str\ndef check(value: NeedsName) -> None: ...\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "05f8fb41e709450820403073c538ac8b208c5cc384bf0298f2b210e04fe2445b"
+    },
+    "package_sha256": {
+      "pkg/__init__.pyi": "8c9d7712089e7e8b83758235163e46869be9933e023456115fe8f1de42f4654a",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"check\" has incompatible type \"int\"; expected \"NeedsName\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 7
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"check\" has incompatible type \"int\"; expected \"NeedsName\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 7
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"check\" has incompatible type \"int\"; expected \"NeedsName\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 7
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_typed_dict",
+    "files": {
+      "main.py": "from pkg import Row\nvalue: Row = {\"name\": 1}\n"
+    },
+    "packages": {
+      "pkg/__init__.pyi": "from typing import TypedDict\nclass Row(TypedDict):\n    name: str\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "4aa04ae7eee9e013bad64fe6c7ff0da5cef6fd06a5ebd3b662d1197d332fa2c1"
+    },
+    "package_sha256": {
+      "pkg/__init__.pyi": "84e25a85771eb85a92ad2e33db1e1105e9d9d18d604a78d8201d0115239b8e9d",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"name\" has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"name\" has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"name\" has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_overload",
+    "files": {
+      "main.py": "from pkg import choose\nreveal_type(choose(1))\nreveal_type(choose(\"value\"))\nchoose([])\n"
+    },
+    "packages": {
+      "pkg/__init__.pyi": "from typing import overload\n@overload\ndef choose(value: int) -> str: ...\n@overload\ndef choose(value: str) -> int: ...\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "ef4bdd5d345cd6c9b4ede555817ea061ad72cb878de0112c390d11750263c0c0"
+    },
+    "package_sha256": {
+      "pkg/__init__.pyi": "e53057fc5dda2d8b5b58e0f41a2b408d7b5291764674625be4405d9af3628428",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"choose\" matches argument type \"list[Never]\"",
+          "hint": "Possible overload variants:\n    def choose(value: int) -> str\n    def choose(value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"choose\" matches argument type \"list[Never]\"",
+          "hint": "Possible overload variants:\n    def choose(value: int) -> str\n    def choose(value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"choose\" matches argument type \"list[Never]\"",
+          "hint": "Possible overload variants:\n    def choose(value: int) -> str\n    def choose(value: str) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_dataclass",
+    "files": {
+      "main.py": "from pkg import Model\nModel(\"bad\")\nreveal_type(Model(1).value)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "from dataclasses import dataclass\n@dataclass\nclass Model:\n    value: int\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "c0ae013116562d4252ea0c85191faf6e9290713fad1b17ddd4455526b6612111"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "97a7f470b95db7e3110f2d7e599d0dff5711c5dc3eb34dce5b2ad198be0d0350",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_pydantic",
+    "files": {
+      "main.py": "from pkg import Model\nModel(value=\"bad\")\nreveal_type(Model(value=1).value)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "from pydantic import BaseModel\nclass Model(BaseModel):\n    value: int\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "c4e8828664f3a27a74b3eb1cb6d0a0ede42298a284fe40d10b1dd122241ee444"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "8e80cb640243b78561768c4457b0c0968d5c7a1ad39ebceb183fbf6c9b84727c",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"value\" to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"value\" to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"value\" to \"Model\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "reference_data": "locked Pydantic 2.13.5 and its fixed dependency type data are present; builtin Rust model data supplies the same symbols"
+  }
+]

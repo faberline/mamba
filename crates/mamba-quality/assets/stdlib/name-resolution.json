@@ -1,0 +1,1223 @@
+{
+  "schema": "mamba.quality.name-resolution.v1",
+  "mypy": "2.4.0",
+  "targets": {
+    "3.12": {
+      "builtin_names": [
+        "ArithmeticError",
+        "AssertionError",
+        "AttributeError",
+        "BaseException",
+        "BaseExceptionGroup",
+        "BlockingIOError",
+        "BrokenPipeError",
+        "BufferError",
+        "BytesWarning",
+        "ChildProcessError",
+        "ConnectionAbortedError",
+        "ConnectionError",
+        "ConnectionRefusedError",
+        "ConnectionResetError",
+        "DeprecationWarning",
+        "EOFError",
+        "Ellipsis",
+        "EncodingWarning",
+        "EnvironmentError",
+        "Exception",
+        "ExceptionGroup",
+        "False",
+        "FileExistsError",
+        "FileNotFoundError",
+        "FloatingPointError",
+        "FutureWarning",
+        "GeneratorExit",
+        "IOError",
+        "ImportError",
+        "ImportWarning",
+        "IndentationError",
+        "IndexError",
+        "InterruptedError",
+        "IsADirectoryError",
+        "KeyError",
+        "KeyboardInterrupt",
+        "LookupError",
+        "MemoryError",
+        "ModuleNotFoundError",
+        "NameError",
+        "None",
+        "NotADirectoryError",
+        "NotImplemented",
+        "NotImplementedError",
+        "OSError",
+        "OverflowError",
+        "PendingDeprecationWarning",
+        "PermissionError",
+        "ProcessLookupError",
+        "RecursionError",
+        "ReferenceError",
+        "ResourceWarning",
+        "RuntimeError",
+        "RuntimeWarning",
+        "StopAsyncIteration",
+        "StopIteration",
+        "SyntaxError",
+        "SyntaxWarning",
+        "SystemError",
+        "SystemExit",
+        "TabError",
+        "TimeoutError",
+        "True",
+        "TypeError",
+        "UnboundLocalError",
+        "UnicodeDecodeError",
+        "UnicodeEncodeError",
+        "UnicodeError",
+        "UnicodeTranslateError",
+        "UnicodeWarning",
+        "UserWarning",
+        "ValueError",
+        "Warning",
+        "ZeroDivisionError",
+        "_AddableT1",
+        "_AddableT2",
+        "_AwaitableT",
+        "_AwaitableT_co",
+        "_BaseExceptionT",
+        "_BaseExceptionT_co",
+        "_ClassInfo",
+        "_E_contra",
+        "_ExceptionT",
+        "_ExceptionT_co",
+        "_FormatMapMapping",
+        "_GetItemIterable",
+        "_I",
+        "_IntegerFormats",
+        "_KT",
+        "_LiteralInteger",
+        "_M_contra",
+        "_NegativeInteger",
+        "_Opener",
+        "_P",
+        "_PositiveInteger",
+        "_R_co",
+        "_S",
+        "_StartT_co",
+        "_StepT_co",
+        "_StopT_co",
+        "_SupportsAnextT_co",
+        "_SupportsNextT_co",
+        "_SupportsPow2",
+        "_SupportsPow3",
+        "_SupportsPow3NoneOnly",
+        "_SupportsReversed",
+        "_SupportsRound1",
+        "_SupportsRound2",
+        "_SupportsSomeKindOfPow",
+        "_SupportsSumNoDefaultT",
+        "_SupportsSumWithNoDefaultGiven",
+        "_SupportsSynchronousAnext",
+        "_SupportsWriteAndFlush",
+        "_T",
+        "_T1",
+        "_T2",
+        "_T3",
+        "_T4",
+        "_T5",
+        "_T_co",
+        "_T_contra",
+        "_TranslateTable",
+        "_VT",
+        "__annotations__",
+        "__build_class__",
+        "__debug__",
+        "__doc__",
+        "__file__",
+        "__import__",
+        "__name__",
+        "__package__",
+        "__spec__",
+        "abs",
+        "aiter",
+        "all",
+        "anext",
+        "any",
+        "ascii",
+        "bin",
+        "bool",
+        "breakpoint",
+        "bytearray",
+        "bytes",
+        "callable",
+        "chr",
+        "classmethod",
+        "compile",
+        "complex",
+        "copyright",
+        "credits",
+        "delattr",
+        "dict",
+        "dir",
+        "divmod",
+        "ellipsis",
+        "enumerate",
+        "eval",
+        "exec",
+        "exit",
+        "filter",
+        "float",
+        "format",
+        "frozenset",
+        "function",
+        "getattr",
+        "globals",
+        "hasattr",
+        "hash",
+        "help",
+        "hex",
+        "id",
+        "input",
+        "int",
+        "isinstance",
+        "issubclass",
+        "iter",
+        "len",
+        "license",
+        "list",
+        "locals",
+        "map",
+        "max",
+        "memoryview",
+        "min",
+        "next",
+        "object",
+        "oct",
+        "open",
+        "ord",
+        "pow",
+        "print",
+        "property",
+        "quit",
+        "range",
+        "repr",
+        "reveal_locals",
+        "reveal_type",
+        "reversed",
+        "round",
+        "set",
+        "setattr",
+        "slice",
+        "sorted",
+        "staticmethod",
+        "str",
+        "sum",
+        "super",
+        "tuple",
+        "type",
+        "vars",
+        "zip"
+      ],
+      "unimported_hints": [
+        "typing.Any",
+        "typing.Callable",
+        "typing.Dict",
+        "typing.Iterable",
+        "typing.Iterator",
+        "typing.List",
+        "typing.Optional",
+        "typing.Set",
+        "typing.Tuple",
+        "typing.TypeVar",
+        "typing.Union",
+        "typing.cast"
+      ],
+      "typing_any_value": {
+        ".class": "CallableType",
+        "arg_types": [],
+        "arg_kinds": [],
+        "arg_names": [],
+        "ret_type": "typing.Any",
+        "fallback": "builtins.type",
+        "name": "Any",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": true,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": "typing.Any"
+      },
+      "builtin_functions": {
+        "print": {
+          ".class": "Overloaded",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "_typeshed.SupportsWrite",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "LiteralType",
+                  "value": false,
+                  "fallback": "builtins.bool"
+                }
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                5
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins._SupportsWriteAndFlush",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                "builtins.bool"
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                3
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ]
+        }
+      }
+    },
+    "3.13": {
+      "builtin_names": [
+        "ArithmeticError",
+        "AssertionError",
+        "AttributeError",
+        "BaseException",
+        "BaseExceptionGroup",
+        "BlockingIOError",
+        "BrokenPipeError",
+        "BufferError",
+        "BytesWarning",
+        "ChildProcessError",
+        "ConnectionAbortedError",
+        "ConnectionError",
+        "ConnectionRefusedError",
+        "ConnectionResetError",
+        "DeprecationWarning",
+        "EOFError",
+        "Ellipsis",
+        "EncodingWarning",
+        "EnvironmentError",
+        "Exception",
+        "ExceptionGroup",
+        "False",
+        "FileExistsError",
+        "FileNotFoundError",
+        "FloatingPointError",
+        "FutureWarning",
+        "GeneratorExit",
+        "IOError",
+        "ImportError",
+        "ImportWarning",
+        "IndentationError",
+        "IndexError",
+        "InterruptedError",
+        "IsADirectoryError",
+        "KeyError",
+        "KeyboardInterrupt",
+        "LookupError",
+        "MemoryError",
+        "ModuleNotFoundError",
+        "NameError",
+        "None",
+        "NotADirectoryError",
+        "NotImplemented",
+        "NotImplementedError",
+        "OSError",
+        "OverflowError",
+        "PendingDeprecationWarning",
+        "PermissionError",
+        "ProcessLookupError",
+        "PythonFinalizationError",
+        "RecursionError",
+        "ReferenceError",
+        "ResourceWarning",
+        "RuntimeError",
+        "RuntimeWarning",
+        "StopAsyncIteration",
+        "StopIteration",
+        "SyntaxError",
+        "SyntaxWarning",
+        "SystemError",
+        "SystemExit",
+        "TabError",
+        "TimeoutError",
+        "True",
+        "TypeError",
+        "UnboundLocalError",
+        "UnicodeDecodeError",
+        "UnicodeEncodeError",
+        "UnicodeError",
+        "UnicodeTranslateError",
+        "UnicodeWarning",
+        "UserWarning",
+        "ValueError",
+        "Warning",
+        "ZeroDivisionError",
+        "_AddableT1",
+        "_AddableT2",
+        "_AwaitableT",
+        "_AwaitableT_co",
+        "_BaseExceptionT",
+        "_BaseExceptionT_co",
+        "_ClassInfo",
+        "_E_contra",
+        "_ExceptionT",
+        "_ExceptionT_co",
+        "_FormatMapMapping",
+        "_GetItemIterable",
+        "_I",
+        "_IntegerFormats",
+        "_KT",
+        "_LiteralInteger",
+        "_M_contra",
+        "_NegativeInteger",
+        "_Opener",
+        "_P",
+        "_PositiveInteger",
+        "_R_co",
+        "_S",
+        "_StartT_co",
+        "_StepT_co",
+        "_StopT_co",
+        "_SupportsAnextT_co",
+        "_SupportsNextT_co",
+        "_SupportsPow2",
+        "_SupportsPow3",
+        "_SupportsPow3NoneOnly",
+        "_SupportsReversed",
+        "_SupportsRound1",
+        "_SupportsRound2",
+        "_SupportsSomeKindOfPow",
+        "_SupportsSumNoDefaultT",
+        "_SupportsSumWithNoDefaultGiven",
+        "_SupportsSynchronousAnext",
+        "_SupportsWriteAndFlush",
+        "_T",
+        "_T1",
+        "_T2",
+        "_T3",
+        "_T4",
+        "_T5",
+        "_T_co",
+        "_T_contra",
+        "_TranslateTable",
+        "_VT",
+        "__annotations__",
+        "__build_class__",
+        "__debug__",
+        "__doc__",
+        "__file__",
+        "__import__",
+        "__name__",
+        "__package__",
+        "__spec__",
+        "abs",
+        "aiter",
+        "all",
+        "anext",
+        "any",
+        "ascii",
+        "bin",
+        "bool",
+        "breakpoint",
+        "bytearray",
+        "bytes",
+        "callable",
+        "chr",
+        "classmethod",
+        "compile",
+        "complex",
+        "copyright",
+        "credits",
+        "delattr",
+        "dict",
+        "dir",
+        "divmod",
+        "ellipsis",
+        "enumerate",
+        "eval",
+        "exec",
+        "exit",
+        "filter",
+        "float",
+        "format",
+        "frozenset",
+        "function",
+        "getattr",
+        "globals",
+        "hasattr",
+        "hash",
+        "help",
+        "hex",
+        "id",
+        "input",
+        "int",
+        "isinstance",
+        "issubclass",
+        "iter",
+        "len",
+        "license",
+        "list",
+        "locals",
+        "map",
+        "max",
+        "memoryview",
+        "min",
+        "next",
+        "object",
+        "oct",
+        "open",
+        "ord",
+        "pow",
+        "print",
+        "property",
+        "quit",
+        "range",
+        "repr",
+        "reveal_locals",
+        "reveal_type",
+        "reversed",
+        "round",
+        "set",
+        "setattr",
+        "slice",
+        "sorted",
+        "staticmethod",
+        "str",
+        "sum",
+        "super",
+        "tuple",
+        "type",
+        "vars",
+        "zip"
+      ],
+      "unimported_hints": [
+        "typing.Any",
+        "typing.Callable",
+        "typing.Dict",
+        "typing.Iterable",
+        "typing.Iterator",
+        "typing.List",
+        "typing.Optional",
+        "typing.Set",
+        "typing.Tuple",
+        "typing.TypeVar",
+        "typing.Union",
+        "typing.cast"
+      ],
+      "typing_any_value": {
+        ".class": "CallableType",
+        "arg_types": [],
+        "arg_kinds": [],
+        "arg_names": [],
+        "ret_type": "typing.Any",
+        "fallback": "builtins.type",
+        "name": "Any",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": true,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": "typing.Any"
+      },
+      "builtin_functions": {
+        "print": {
+          ".class": "Overloaded",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "_typeshed.SupportsWrite",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "LiteralType",
+                  "value": false,
+                  "fallback": "builtins.bool"
+                }
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                5
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins._SupportsWriteAndFlush",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                "builtins.bool"
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                3
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ]
+        }
+      }
+    },
+    "3.14": {
+      "builtin_names": [
+        "ArithmeticError",
+        "AssertionError",
+        "AttributeError",
+        "BaseException",
+        "BaseExceptionGroup",
+        "BlockingIOError",
+        "BrokenPipeError",
+        "BufferError",
+        "BytesWarning",
+        "ChildProcessError",
+        "ConnectionAbortedError",
+        "ConnectionError",
+        "ConnectionRefusedError",
+        "ConnectionResetError",
+        "DeprecationWarning",
+        "EOFError",
+        "Ellipsis",
+        "EncodingWarning",
+        "EnvironmentError",
+        "Exception",
+        "ExceptionGroup",
+        "False",
+        "FileExistsError",
+        "FileNotFoundError",
+        "FloatingPointError",
+        "FutureWarning",
+        "GeneratorExit",
+        "IOError",
+        "ImportError",
+        "ImportWarning",
+        "IndentationError",
+        "IndexError",
+        "InterruptedError",
+        "IsADirectoryError",
+        "KeyError",
+        "KeyboardInterrupt",
+        "LookupError",
+        "MemoryError",
+        "ModuleNotFoundError",
+        "NameError",
+        "None",
+        "NotADirectoryError",
+        "NotImplemented",
+        "NotImplementedError",
+        "OSError",
+        "OverflowError",
+        "PendingDeprecationWarning",
+        "PermissionError",
+        "ProcessLookupError",
+        "PythonFinalizationError",
+        "RecursionError",
+        "ReferenceError",
+        "ResourceWarning",
+        "RuntimeError",
+        "RuntimeWarning",
+        "StopAsyncIteration",
+        "StopIteration",
+        "SyntaxError",
+        "SyntaxWarning",
+        "SystemError",
+        "SystemExit",
+        "TabError",
+        "TimeoutError",
+        "True",
+        "TypeError",
+        "UnboundLocalError",
+        "UnicodeDecodeError",
+        "UnicodeEncodeError",
+        "UnicodeError",
+        "UnicodeTranslateError",
+        "UnicodeWarning",
+        "UserWarning",
+        "ValueError",
+        "Warning",
+        "ZeroDivisionError",
+        "_AddableT1",
+        "_AddableT2",
+        "_AwaitableT",
+        "_AwaitableT_co",
+        "_BaseExceptionT",
+        "_BaseExceptionT_co",
+        "_ClassInfo",
+        "_E_contra",
+        "_ExceptionT",
+        "_ExceptionT_co",
+        "_FormatMapMapping",
+        "_GetItemIterable",
+        "_I",
+        "_IntegerFormats",
+        "_KT",
+        "_LiteralInteger",
+        "_M_contra",
+        "_NegativeInteger",
+        "_Opener",
+        "_P",
+        "_PositiveInteger",
+        "_R_co",
+        "_S",
+        "_StartT_co",
+        "_StepT_co",
+        "_StopT_co",
+        "_SupportsAnextT_co",
+        "_SupportsNextT_co",
+        "_SupportsPow2",
+        "_SupportsPow3",
+        "_SupportsPow3NoneOnly",
+        "_SupportsReversed",
+        "_SupportsRound1",
+        "_SupportsRound2",
+        "_SupportsSomeKindOfPow",
+        "_SupportsSumNoDefaultT",
+        "_SupportsSumWithNoDefaultGiven",
+        "_SupportsSynchronousAnext",
+        "_SupportsWriteAndFlush",
+        "_T",
+        "_T1",
+        "_T2",
+        "_T3",
+        "_T4",
+        "_T5",
+        "_T_co",
+        "_T_contra",
+        "_TranslateTable",
+        "_VT",
+        "__annotations__",
+        "__build_class__",
+        "__debug__",
+        "__doc__",
+        "__file__",
+        "__import__",
+        "__name__",
+        "__package__",
+        "__spec__",
+        "abs",
+        "aiter",
+        "all",
+        "anext",
+        "any",
+        "ascii",
+        "bin",
+        "bool",
+        "breakpoint",
+        "bytearray",
+        "bytes",
+        "callable",
+        "chr",
+        "classmethod",
+        "compile",
+        "complex",
+        "copyright",
+        "credits",
+        "delattr",
+        "dict",
+        "dir",
+        "divmod",
+        "ellipsis",
+        "enumerate",
+        "eval",
+        "exec",
+        "exit",
+        "filter",
+        "float",
+        "format",
+        "frozenset",
+        "function",
+        "getattr",
+        "globals",
+        "hasattr",
+        "hash",
+        "help",
+        "hex",
+        "id",
+        "input",
+        "int",
+        "isinstance",
+        "issubclass",
+        "iter",
+        "len",
+        "license",
+        "list",
+        "locals",
+        "map",
+        "max",
+        "memoryview",
+        "min",
+        "next",
+        "object",
+        "oct",
+        "open",
+        "ord",
+        "pow",
+        "print",
+        "property",
+        "quit",
+        "range",
+        "repr",
+        "reveal_locals",
+        "reveal_type",
+        "reversed",
+        "round",
+        "set",
+        "setattr",
+        "slice",
+        "sorted",
+        "staticmethod",
+        "str",
+        "sum",
+        "super",
+        "tuple",
+        "type",
+        "vars",
+        "zip"
+      ],
+      "unimported_hints": [
+        "typing.Any",
+        "typing.Callable",
+        "typing.Dict",
+        "typing.Iterable",
+        "typing.Iterator",
+        "typing.List",
+        "typing.Optional",
+        "typing.Set",
+        "typing.Tuple",
+        "typing.TypeVar",
+        "typing.Union",
+        "typing.cast"
+      ],
+      "typing_any_value": {
+        ".class": "CallableType",
+        "arg_types": [],
+        "arg_kinds": [],
+        "arg_names": [],
+        "ret_type": "typing.Any",
+        "fallback": "builtins.type",
+        "name": "Any",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": true,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": "typing.Any"
+      },
+      "builtin_functions": {
+        "print": {
+          ".class": "Overloaded",
+          "items": [
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "_typeshed.SupportsWrite",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "LiteralType",
+                  "value": false,
+                  "fallback": "builtins.bool"
+                }
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                5
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            },
+            {
+              ".class": "CallableType",
+              "arg_types": [
+                "builtins.object",
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    "builtins.str",
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                {
+                  ".class": "UnionType",
+                  "items": [
+                    {
+                      ".class": "Instance",
+                      "type_ref": "builtins._SupportsWriteAndFlush",
+                      "args": [
+                        "builtins.str"
+                      ],
+                      "extra_attrs": null
+                    },
+                    {
+                      ".class": "NoneType"
+                    }
+                  ],
+                  "uses_pep604_syntax": true
+                },
+                "builtins.bool"
+              ],
+              "arg_kinds": [
+                2,
+                5,
+                5,
+                5,
+                3
+              ],
+              "arg_names": [
+                "values",
+                "sep",
+                "end",
+                "file",
+                "flush"
+              ],
+              "ret_type": {
+                ".class": "NoneType"
+              },
+              "fallback": "builtins.function",
+              "name": "print",
+              "variables": [],
+              "is_ellipsis_args": false,
+              "implicit": false,
+              "is_bound": false,
+              "type_guard": null,
+              "type_is": null,
+              "from_concatenate": false,
+              "imprecise_arg_kinds": false,
+              "unpack_kwargs": false,
+              "instance_type": null
+            }
+          ]
+        }
+      }
+    }
+  }
+}

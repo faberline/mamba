@@ -1,0 +1,2702 @@
+[
+  {
+    "name": "self_growing",
+    "source_hex": "22222253656c662d7265666572656e636520636f6e74726f6c2e2222220a64656620696e766f6b652876616c7565293a0a2020202022222243616c6c2061206d656d626572206f66207468652070726576696f75732076616c75652e2222220a2020202076616c7565203d2076616c75652e63616c6c0a2020202072657475726e2076616c756528290a",
+    "source_sha256": "582c434480bb1cd22c310dac00854bc7cd4a771332ba39714de41e2cb3118c03",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-000"
+    ]
+  },
+  {
+    "name": "module_self_growing",
+    "source_hex": "2222224d6f64756c6520616c69617320636f6e74726f6c2e2222220a696d706f7274207379730a737973203d207379732e657869740a73797328290a",
+    "source_sha256": "ebc9720d89c05226259d15c5e3bfa3a2a95bed93b6c0c08ccea4baaa489338e5",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-001"
+    ]
+  },
+  {
+    "name": "mutual_growing",
+    "source_hex": "2222224d757475616c2d7265666572656e636520636f6e74726f6c2e2222220a64656620696e766f6b65286c6566742c207269676874293a0a2020202022222243616c6c2061206d656d626572206f66207468652070726576696f75732076616c75652e2222220a202020206c656674203d2072696768742e63616c6c0a202020207269676874203d206c6566742e63616c6c0a2020202072657475726e206c65667428290a",
+    "source_sha256": "632b8b408208e629c9841b8a3fcc0fc9615d5237b73ad4f0bd0151214314903f",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-002"
+    ]
+  },
+  {
+    "name": "ordinary_member_call",
+    "source_hex": "2222224f7264696e617279206d656d6265722063616c6c20636f6e74726f6c2e2222220a64656620696e766f6b652876616c7565293a0a2020202022222243616c6c20616e20756e6368616e676564206d656d6265722e2222220a2020202072657475726e2076616c75652e63616c6c28290a",
+    "source_sha256": "5ad9691e6ea5043b15e180b4b4734b0e36b04ca64be39bb95b8c15f974096445",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-003"
+    ]
+  },
+  {
+    "name": "terminal_alias",
+    "source_hex": "2222225465726d696e616c20616c69617320636f6e74726f6c2e2222220a696d706f7274207379730a53544f50203d207379732e657869740a53544f5028290a",
+    "source_sha256": "816d067c52abcc46284d90249db64fa44cc9bb8a19ed370152fddf4f4027ca0e",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-004"
+    ]
+  },
+  {
+    "name": "long_terminal_alias",
+    "source_hex": "2222224c6f6e67207465726d696e616c20616c69617320636f6e74726f6c2e2222220a696d706f7274207379730a53544f5030203d207379732e657869740a53544f5031203d2053544f50300a53544f5032203d2053544f50310a53544f5033203d2053544f50320a53544f5034203d2053544f50330a53544f5035203d2053544f50340a53544f5036203d2053544f50350a53544f5037203d2053544f50360a53544f5038203d2053544f50370a53544f5039203d2053544f50380a53544f503130203d2053544f50390a53544f503131203d2053544f5031300a53544f503132203d2053544f5031310a53544f503133203d2053544f5031320a53544f503134203d2053544f5031330a53544f503135203d2053544f5031340a53544f503136203d2053544f5031350a53544f503137203d2053544f5031360a53544f503138203d2053544f5031370a53544f503139203d2053544f5031380a53544f503230203d2053544f5031390a53544f503231203d2053544f5032300a53544f503232203d2053544f5032310a53544f503233203d2053544f5032320a53544f503234203d2053544f5032330a53544f503235203d2053544f5032340a53544f503236203d2053544f5032350a53544f503237203d2053544f5032360a53544f503238203d2053544f5032370a53544f503239203d2053544f5032380a53544f503330203d2053544f5032390a53544f503331203d2053544f5033300a53544f503332203d2053544f5033310a53544f503333203d2053544f5033320a53544f503334203d2053544f5033330a53544f503335203d2053544f5033340a53544f503336203d2053544f5033350a53544f503337203d2053544f5033360a53544f503338203d2053544f5033370a53544f503339203d2053544f5033380a53544f503430203d2053544f5033390a53544f503431203d2053544f5034300a53544f503432203d2053544f5034310a53544f503433203d2053544f5034320a53544f503434203d2053544f5034330a53544f503435203d2053544f5034340a53544f503436203d2053544f5034350a53544f503437203d2053544f5034360a53544f503438203d2053544f5034370a53544f503439203d2053544f5034380a53544f503530203d2053544f5034390a53544f503531203d2053544f5035300a53544f503532203d2053544f5035310a53544f503533203d2053544f5035320a53544f503534203d2053544f5035330a53544f503535203d2053544f5035340a53544f503536203d2053544f5035350a53544f503537203d2053544f5035360a53544f503538203d2053544f5035370a53544f503539203d2053544f5035380a53544f503630203d2053544f5035390a53544f503631203d2053544f5036300a53544f503632203d2053544f5036310a53544f503633203d2053544f5036320a53544f503634203d2053544f5036330a53544f50363428290a",
+    "source_sha256": "163b0f0e3d01c19117fe5d0c87730d52ac2f0cfcab4d3f982d6ba4ddf2afe785",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP0\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP1\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP2\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP3\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP4\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP5\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 8,
+            "column": 0,
+            "end_line": 8,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP6\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 9,
+            "column": 0,
+            "end_line": 9,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP7\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 10,
+            "column": 0,
+            "end_line": 10,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP8\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 11,
+            "column": 0,
+            "end_line": 11,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP9\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 12,
+            "column": 0,
+            "end_line": 12,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP10\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 13,
+            "column": 0,
+            "end_line": 13,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP11\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 14,
+            "column": 0,
+            "end_line": 14,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP12\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 15,
+            "column": 0,
+            "end_line": 15,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP13\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 16,
+            "column": 0,
+            "end_line": 16,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP14\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 17,
+            "column": 0,
+            "end_line": 17,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP15\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 18,
+            "column": 0,
+            "end_line": 18,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP16\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 19,
+            "column": 0,
+            "end_line": 19,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP17\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 20,
+            "column": 0,
+            "end_line": 20,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP18\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 21,
+            "column": 0,
+            "end_line": 21,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP19\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 22,
+            "column": 0,
+            "end_line": 22,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP20\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 23,
+            "column": 0,
+            "end_line": 23,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP21\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 24,
+            "column": 0,
+            "end_line": 24,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP22\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 25,
+            "column": 0,
+            "end_line": 25,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP23\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 26,
+            "column": 0,
+            "end_line": 26,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP24\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 27,
+            "column": 0,
+            "end_line": 27,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP25\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 28,
+            "column": 0,
+            "end_line": 28,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP26\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 29,
+            "column": 0,
+            "end_line": 29,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP27\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 30,
+            "column": 0,
+            "end_line": 30,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP28\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 31,
+            "column": 0,
+            "end_line": 31,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP29\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 32,
+            "column": 0,
+            "end_line": 32,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP30\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 33,
+            "column": 0,
+            "end_line": 33,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP31\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 34,
+            "column": 0,
+            "end_line": 34,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP32\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 35,
+            "column": 0,
+            "end_line": 35,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP33\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 36,
+            "column": 0,
+            "end_line": 36,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP34\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 37,
+            "column": 0,
+            "end_line": 37,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP35\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 38,
+            "column": 0,
+            "end_line": 38,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP36\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 39,
+            "column": 0,
+            "end_line": 39,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP37\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 40,
+            "column": 0,
+            "end_line": 40,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP38\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 41,
+            "column": 0,
+            "end_line": 41,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP39\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 42,
+            "column": 0,
+            "end_line": 42,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP40\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 43,
+            "column": 0,
+            "end_line": 43,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP41\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 44,
+            "column": 0,
+            "end_line": 44,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP42\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 45,
+            "column": 0,
+            "end_line": 45,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP43\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 46,
+            "column": 0,
+            "end_line": 46,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP44\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 47,
+            "column": 0,
+            "end_line": 47,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP45\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 48,
+            "column": 0,
+            "end_line": 48,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP46\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 49,
+            "column": 0,
+            "end_line": 49,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP47\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 50,
+            "column": 0,
+            "end_line": 50,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP48\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 51,
+            "column": 0,
+            "end_line": 51,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP49\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 52,
+            "column": 0,
+            "end_line": 52,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP50\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 53,
+            "column": 0,
+            "end_line": 53,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP51\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 54,
+            "column": 0,
+            "end_line": 54,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP52\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 55,
+            "column": 0,
+            "end_line": 55,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP53\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 56,
+            "column": 0,
+            "end_line": 56,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP54\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 57,
+            "column": 0,
+            "end_line": 57,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP55\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 58,
+            "column": 0,
+            "end_line": 58,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP56\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 59,
+            "column": 0,
+            "end_line": 59,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP57\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 60,
+            "column": 0,
+            "end_line": 60,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP58\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 61,
+            "column": 0,
+            "end_line": 61,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP59\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 62,
+            "column": 0,
+            "end_line": 62,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP60\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 63,
+            "column": 0,
+            "end_line": 63,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP61\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 64,
+            "column": 0,
+            "end_line": 64,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP62\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 65,
+            "column": 0,
+            "end_line": 65,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP63\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 66,
+            "column": 0,
+            "end_line": 66,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP64\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 67,
+            "column": 0,
+            "end_line": 67,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP0\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP1\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP2\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP3\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP4\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP5\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 8,
+            "column": 0,
+            "end_line": 8,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP6\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 9,
+            "column": 0,
+            "end_line": 9,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP7\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 10,
+            "column": 0,
+            "end_line": 10,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP8\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 11,
+            "column": 0,
+            "end_line": 11,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP9\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 12,
+            "column": 0,
+            "end_line": 12,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP10\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 13,
+            "column": 0,
+            "end_line": 13,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP11\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 14,
+            "column": 0,
+            "end_line": 14,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP12\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 15,
+            "column": 0,
+            "end_line": 15,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP13\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 16,
+            "column": 0,
+            "end_line": 16,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP14\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 17,
+            "column": 0,
+            "end_line": 17,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP15\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 18,
+            "column": 0,
+            "end_line": 18,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP16\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 19,
+            "column": 0,
+            "end_line": 19,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP17\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 20,
+            "column": 0,
+            "end_line": 20,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP18\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 21,
+            "column": 0,
+            "end_line": 21,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP19\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 22,
+            "column": 0,
+            "end_line": 22,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP20\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 23,
+            "column": 0,
+            "end_line": 23,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP21\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 24,
+            "column": 0,
+            "end_line": 24,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP22\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 25,
+            "column": 0,
+            "end_line": 25,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP23\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 26,
+            "column": 0,
+            "end_line": 26,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP24\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 27,
+            "column": 0,
+            "end_line": 27,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP25\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 28,
+            "column": 0,
+            "end_line": 28,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP26\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 29,
+            "column": 0,
+            "end_line": 29,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP27\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 30,
+            "column": 0,
+            "end_line": 30,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP28\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 31,
+            "column": 0,
+            "end_line": 31,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP29\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 32,
+            "column": 0,
+            "end_line": 32,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP30\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 33,
+            "column": 0,
+            "end_line": 33,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP31\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 34,
+            "column": 0,
+            "end_line": 34,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP32\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 35,
+            "column": 0,
+            "end_line": 35,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP33\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 36,
+            "column": 0,
+            "end_line": 36,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP34\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 37,
+            "column": 0,
+            "end_line": 37,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP35\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 38,
+            "column": 0,
+            "end_line": 38,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP36\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 39,
+            "column": 0,
+            "end_line": 39,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP37\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 40,
+            "column": 0,
+            "end_line": 40,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP38\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 41,
+            "column": 0,
+            "end_line": 41,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP39\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 42,
+            "column": 0,
+            "end_line": 42,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP40\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 43,
+            "column": 0,
+            "end_line": 43,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP41\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 44,
+            "column": 0,
+            "end_line": 44,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP42\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 45,
+            "column": 0,
+            "end_line": 45,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP43\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 46,
+            "column": 0,
+            "end_line": 46,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP44\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 47,
+            "column": 0,
+            "end_line": 47,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP45\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 48,
+            "column": 0,
+            "end_line": 48,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP46\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 49,
+            "column": 0,
+            "end_line": 49,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP47\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 50,
+            "column": 0,
+            "end_line": 50,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP48\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 51,
+            "column": 0,
+            "end_line": 51,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP49\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 52,
+            "column": 0,
+            "end_line": 52,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP50\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 53,
+            "column": 0,
+            "end_line": 53,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP51\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 54,
+            "column": 0,
+            "end_line": 54,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP52\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 55,
+            "column": 0,
+            "end_line": 55,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP53\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 56,
+            "column": 0,
+            "end_line": 56,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP54\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 57,
+            "column": 0,
+            "end_line": 57,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP55\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 58,
+            "column": 0,
+            "end_line": 58,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP56\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 59,
+            "column": 0,
+            "end_line": 59,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP57\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 60,
+            "column": 0,
+            "end_line": 60,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP58\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 61,
+            "column": 0,
+            "end_line": 61,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP59\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 62,
+            "column": 0,
+            "end_line": 62,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP60\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 63,
+            "column": 0,
+            "end_line": 63,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP61\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 64,
+            "column": 0,
+            "end_line": 64,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP62\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 65,
+            "column": 0,
+            "end_line": 65,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP63\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 66,
+            "column": 0,
+            "end_line": 66,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP64\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 67,
+            "column": 0,
+            "end_line": 67,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP0\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP1\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP2\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP3\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP4\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP5\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 8,
+            "column": 0,
+            "end_line": 8,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP6\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 9,
+            "column": 0,
+            "end_line": 9,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP7\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 10,
+            "column": 0,
+            "end_line": 10,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP8\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 11,
+            "column": 0,
+            "end_line": 11,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP9\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 12,
+            "column": 0,
+            "end_line": 12,
+            "end_column": 5
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP10\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 13,
+            "column": 0,
+            "end_line": 13,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP11\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 14,
+            "column": 0,
+            "end_line": 14,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP12\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 15,
+            "column": 0,
+            "end_line": 15,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP13\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 16,
+            "column": 0,
+            "end_line": 16,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP14\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 17,
+            "column": 0,
+            "end_line": 17,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP15\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 18,
+            "column": 0,
+            "end_line": 18,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP16\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 19,
+            "column": 0,
+            "end_line": 19,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP17\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 20,
+            "column": 0,
+            "end_line": 20,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP18\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 21,
+            "column": 0,
+            "end_line": 21,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP19\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 22,
+            "column": 0,
+            "end_line": 22,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP20\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 23,
+            "column": 0,
+            "end_line": 23,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP21\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 24,
+            "column": 0,
+            "end_line": 24,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP22\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 25,
+            "column": 0,
+            "end_line": 25,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP23\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 26,
+            "column": 0,
+            "end_line": 26,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP24\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 27,
+            "column": 0,
+            "end_line": 27,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP25\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 28,
+            "column": 0,
+            "end_line": 28,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP26\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 29,
+            "column": 0,
+            "end_line": 29,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP27\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 30,
+            "column": 0,
+            "end_line": 30,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP28\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 31,
+            "column": 0,
+            "end_line": 31,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP29\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 32,
+            "column": 0,
+            "end_line": 32,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP30\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 33,
+            "column": 0,
+            "end_line": 33,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP31\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 34,
+            "column": 0,
+            "end_line": 34,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP32\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 35,
+            "column": 0,
+            "end_line": 35,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP33\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 36,
+            "column": 0,
+            "end_line": 36,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP34\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 37,
+            "column": 0,
+            "end_line": 37,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP35\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 38,
+            "column": 0,
+            "end_line": 38,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP36\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 39,
+            "column": 0,
+            "end_line": 39,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP37\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 40,
+            "column": 0,
+            "end_line": 40,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP38\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 41,
+            "column": 0,
+            "end_line": 41,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP39\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 42,
+            "column": 0,
+            "end_line": 42,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP40\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 43,
+            "column": 0,
+            "end_line": 43,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP41\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 44,
+            "column": 0,
+            "end_line": 44,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP42\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 45,
+            "column": 0,
+            "end_line": 45,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP43\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 46,
+            "column": 0,
+            "end_line": 46,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP44\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 47,
+            "column": 0,
+            "end_line": 47,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP45\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 48,
+            "column": 0,
+            "end_line": 48,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP46\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 49,
+            "column": 0,
+            "end_line": 49,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP47\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 50,
+            "column": 0,
+            "end_line": 50,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP48\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 51,
+            "column": 0,
+            "end_line": 51,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP49\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 52,
+            "column": 0,
+            "end_line": 52,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP50\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 53,
+            "column": 0,
+            "end_line": 53,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP51\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 54,
+            "column": 0,
+            "end_line": 54,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP52\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 55,
+            "column": 0,
+            "end_line": 55,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP53\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 56,
+            "column": 0,
+            "end_line": 56,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP54\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 57,
+            "column": 0,
+            "end_line": 57,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP55\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 58,
+            "column": 0,
+            "end_line": 58,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP56\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 59,
+            "column": 0,
+            "end_line": 59,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP57\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 60,
+            "column": 0,
+            "end_line": 60,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP58\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 61,
+            "column": 0,
+            "end_line": 61,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP59\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 62,
+            "column": 0,
+            "end_line": 62,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP60\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 63,
+            "column": 0,
+            "end_line": 63,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP61\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 64,
+            "column": 0,
+            "end_line": 64,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP62\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 65,
+            "column": 0,
+            "end_line": 65,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP63\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 66,
+            "column": 0,
+            "end_line": 66,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP64\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 67,
+            "column": 0,
+            "end_line": 67,
+            "end_column": 6
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python312/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python313/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-terminal-reference-cycle-controls-reference-1/original-1/python314/case-005"
+    ]
+  }
+]

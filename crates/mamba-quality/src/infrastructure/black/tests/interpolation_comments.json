@@ -1,0 +1,1440 @@
+[
+  {
+    "name": "f_comment_before_adjacent",
+    "source": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "a1604fad4047bbafff58cd243fd3c20fcac9911d707b1bc7bfd1d7e87efb19b8",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1604fad4047bbafff58cd243fd3c20fcac9911d707b1bc7bfd1d7e87efb19b8",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          },
+          {
+            "input_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1604fad4047bbafff58cd243fd3c20fcac9911d707b1bc7bfd1d7e87efb19b8",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          },
+          {
+            "input_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a1604fad4047bbafff58cd243fd3c20fcac9911d707b1bc7bfd1d7e87efb19b8",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          },
+          {
+            "input_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce",
+            "output_sha256": "2d6f7f5a9232f8af83cf4e72808b64df43075adf53b704bb910633611d9550ce"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_comment_after_adjacent",
+    "source": "value = (\n    \"head\"\n    f\"{(\n        1  # inside expression\n    )}\"\n)\n",
+    "source_sha256": "8717111859761d1f077cde4d1d4084821689059ea75494f36673a20f2508fd6b",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = \"head\" f\"{(\n        1  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8717111859761d1f077cde4d1d4084821689059ea75494f36673a20f2508fd6b",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          },
+          {
+            "input_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = \"head\" f\"{(\n        1  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8717111859761d1f077cde4d1d4084821689059ea75494f36673a20f2508fd6b",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          },
+          {
+            "input_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = \"head\" f\"{(\n        1  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8717111859761d1f077cde4d1d4084821689059ea75494f36673a20f2508fd6b",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          },
+          {
+            "input_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0",
+            "output_sha256": "ef2abc5b2960ec48acfbc02fe6fb2f8018bd422b3bf8e996e2dc7cbb36bdfdf0"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_two_commented_parts",
+    "source": "value = (\n    f\"{(\n        1  # first expression\n    )}\"\n    f\"{(\n        2  # second expression\n    )}\"\n)\n",
+    "source_sha256": "2f8ae59f979db1f0ce644897b58cdb85a44960cd538b3d850f459616ba60ba7a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # first expression\n    )}\" f\"{(\n        2  # second expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2f8ae59f979db1f0ce644897b58cdb85a44960cd538b3d850f459616ba60ba7a",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          },
+          {
+            "input_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # first expression\n    )}\" f\"{(\n        2  # second expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2f8ae59f979db1f0ce644897b58cdb85a44960cd538b3d850f459616ba60ba7a",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          },
+          {
+            "input_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # first expression\n    )}\" f\"{(\n        2  # second expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2f8ae59f979db1f0ce644897b58cdb85a44960cd538b3d850f459616ba60ba7a",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          },
+          {
+            "input_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b",
+            "output_sha256": "9da5049b17252945a60e90df62e7ab17752ff710ccef8052b93723dc9230912b"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_inner_and_boundary_comments",
+    "source": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"  # after parts\n)\n",
+    "source_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"  # after parts\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c",
+            "output_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"  # after parts\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c",
+            "output_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"  # after parts\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c",
+            "output_sha256": "94258eb875b6247cb553b823d9b75c13c6efd74f74b261bcb60815b70c0a019c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_ownline_boundary_after_inner",
+    "source": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    # between parts\n    \"tail\"\n)\n",
+    "source_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a",
+            "output_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a",
+            "output_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a",
+            "output_sha256": "98e0d810bc278cc84abac49a0070907d89190ced26e71242f396cfca30d77b0a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_single_inner_comment",
+    "source": "value = f\"{(\n    1  # inside expression\n)}\"\n",
+    "source_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n    1  # inside expression\n)}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049",
+            "output_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n    1  # inside expression\n)}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049",
+            "output_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n    1  # inside expression\n)}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049",
+            "output_sha256": "2ae6d2899575563482585647fec7d48a3f4f6f53729d8d9994877b25484e0049"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_multiline_string_part",
+    "source": "value = (\n    f\"\"\"{(\n        1  # inside expression\n    )}\"\"\"\n    \"tail\"\n)\n",
+    "source_sha256": "47b3cd3c14a108d440ef0b433fb7b6b90a0ec6a27a2bb480d65adce42257a09c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{(\n        1  # inside expression\n    )}\"\"\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47b3cd3c14a108d440ef0b433fb7b6b90a0ec6a27a2bb480d65adce42257a09c",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          },
+          {
+            "input_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{(\n        1  # inside expression\n    )}\"\"\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47b3cd3c14a108d440ef0b433fb7b6b90a0ec6a27a2bb480d65adce42257a09c",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          },
+          {
+            "input_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{(\n        1  # inside expression\n    )}\"\"\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47b3cd3c14a108d440ef0b433fb7b6b90a0ec6a27a2bb480d65adce42257a09c",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          },
+          {
+            "input_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc",
+            "output_sha256": "b223225798536c230b5fe0460ee1fc1e07ff53680476162bf752a8124c97f2cc"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_dict_comment_expression",
+    "source": "value = (\n    f\"{ {\n        'a': 1,  # dictionary entry\n    } }\"\n    \"tail\"\n)\n",
+    "source_sha256": "23efafa19859ebf786e96e56c53294e9dd006198f90123659b0eb228f839fa1d",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{ {\n        'a': 1,  # dictionary entry\n    } }\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "23efafa19859ebf786e96e56c53294e9dd006198f90123659b0eb228f839fa1d",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          },
+          {
+            "input_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{ {\n        'a': 1,  # dictionary entry\n    } }\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "23efafa19859ebf786e96e56c53294e9dd006198f90123659b0eb228f839fa1d",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          },
+          {
+            "input_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{ {\n        'a': 1,  # dictionary entry\n    } }\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "23efafa19859ebf786e96e56c53294e9dd006198f90123659b0eb228f839fa1d",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          },
+          {
+            "input_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2",
+            "output_sha256": "7a066a640e52627acc7fd3f71a7c9c6adfbfae46f0e2706a1bf4482b8509cdb2"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_format_spec_comment",
+    "source": "value = (\n    f\"{1:{(\n        2  # format width\n    )}}\"\n    \"tail\"\n)\n",
+    "source_sha256": "5d104ed6a48124abfde8f198bb55a9edcd949fb833abd58e869abd6e73ef9af6",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{1:{(\n        2  # format width\n    )}}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d104ed6a48124abfde8f198bb55a9edcd949fb833abd58e869abd6e73ef9af6",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          },
+          {
+            "input_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{1:{(\n        2  # format width\n    )}}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d104ed6a48124abfde8f198bb55a9edcd949fb833abd58e869abd6e73ef9af6",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          },
+          {
+            "input_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{1:{(\n        2  # format width\n    )}}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5d104ed6a48124abfde8f198bb55a9edcd949fb833abd58e869abd6e73ef9af6",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          },
+          {
+            "input_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa",
+            "output_sha256": "9af575b00e7edfe933cca370d7be97729506788758594c9f166fa4acbd23defa"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_inner_comment_fmt_skip",
+    "source": "value = (\n    f\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "761bab92f3601e0262a50ff9fa565fa9e3dd25e100e13a62ee6068eabfb3bfbd",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_fe6m_7cu.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_7sffbsfk.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_1_unet35.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed",
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed",
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed"
+    ]
+  },
+  {
+    "name": "f_inner_comment_fmt_off",
+    "source": "value = (\n    f\"{(\n        1  # fmt: off\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "5b992ab44c6dc8a88ae0bfe93335da5c2c06ae8182977ebfbce47091c749843d",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # fmt: off\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5b992ab44c6dc8a88ae0bfe93335da5c2c06ae8182977ebfbce47091c749843d",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          },
+          {
+            "input_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # fmt: off\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5b992ab44c6dc8a88ae0bfe93335da5c2c06ae8182977ebfbce47091c749843d",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          },
+          {
+            "input_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # fmt: off\n    )}\" \"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "5b992ab44c6dc8a88ae0bfe93335da5c2c06ae8182977ebfbce47091c749843d",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          },
+          {
+            "input_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8",
+            "output_sha256": "40c57cceb46cca91c4b3aa55af1c6336522bfbf2fb92e3133aea4faaee4e7ca8"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "raw_f_inner_comment",
+    "source": "value = (\n    rf\"{(\n        1  # inside expression\n    )}\"\n    r\"\\tail\"\n)\n",
+    "source_sha256": "e9106b3dab7382e1206c4d6f009b59e34913c4d27983322ec003e19d357d246c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = rf\"{(\n        1  # inside expression\n    )}\" r\"\\tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e9106b3dab7382e1206c4d6f009b59e34913c4d27983322ec003e19d357d246c",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          },
+          {
+            "input_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rf\"{(\n        1  # inside expression\n    )}\" r\"\\tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e9106b3dab7382e1206c4d6f009b59e34913c4d27983322ec003e19d357d246c",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          },
+          {
+            "input_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rf\"{(\n        1  # inside expression\n    )}\" r\"\\tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e9106b3dab7382e1206c4d6f009b59e34913c4d27983322ec003e19d357d246c",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          },
+          {
+            "input_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309",
+            "output_sha256": "8ea74c962524bca4570d57210c49f8489c80f7f25eff56177ec9e8ec8df86309"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "t_comment_before_adjacent",
+    "source": "value = (\n    t\"{(\n        1  # inside expression\n    )}\"\n    t\"tail\"\n)\n",
+    "source_sha256": "1bad69aeec1353fb07fab40f6c6d19418be6a88ca41b4ac74abc22df57d3455c",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unterminated string literal (detected at line 2) (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: unterminated string literal (detected at line 2) (<unknown>, line 2)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{(\n        1  # inside expression\n    )}\" t\"tail\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1bad69aeec1353fb07fab40f6c6d19418be6a88ca41b4ac74abc22df57d3455c",
+            "output_sha256": "e8c944d7d8630c3bfe4363cee41e7fe99328b58fd88182301759479caaf8d648"
+          },
+          {
+            "input_sha256": "e8c944d7d8630c3bfe4363cee41e7fe99328b58fd88182301759479caaf8d648",
+            "output_sha256": "e8c944d7d8630c3bfe4363cee41e7fe99328b58fd88182301759479caaf8d648"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "t_inner_and_boundary_comments",
+    "source": "value = (\n    t\"{(\n        1  # inside expression\n    )}\"  # between parts\n    t\"tail\"\n)\n",
+    "source_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    t\"{(\n        1  # inside expression\n    )}\"  # between parts\n    t\"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711",
+            "output_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    t\"{(\n        1  # inside expression\n    )}\"  # between parts\n    t\"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711",
+            "output_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    t\"{(\n        1  # inside expression\n    )}\"  # between parts\n    t\"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711",
+            "output_sha256": "3415412c8e2fd97112e051d767b1abe1e583172382b918274d6836233977f711"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "ordinary_between_f_comments",
+    "source": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"middle\"\n    f\"{(\n        2  # inside expression\n    )}\"\n)\n",
+    "source_sha256": "82b9b5f7f8f08fb67729b7a9d74c885b94fdec0f91e851d15c6630a1e6c7f503",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"middle\" f\"{(\n        2  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "82b9b5f7f8f08fb67729b7a9d74c885b94fdec0f91e851d15c6630a1e6c7f503",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          },
+          {
+            "input_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"middle\" f\"{(\n        2  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "82b9b5f7f8f08fb67729b7a9d74c885b94fdec0f91e851d15c6630a1e6c7f503",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          },
+          {
+            "input_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"{(\n        1  # inside expression\n    )}\" \"middle\" f\"{(\n        2  # inside expression\n    )}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "82b9b5f7f8f08fb67729b7a9d74c885b94fdec0f91e851d15c6630a1e6c7f503",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          },
+          {
+            "input_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c",
+            "output_sha256": "b3333bdd00330d9a1f8430e001835b540c03bb97c202b8e192c3046f603cfb7c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_boundary_comment_in_call",
+    "source": "print(\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"\n)\n",
+    "source_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "print(\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b",
+            "output_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b",
+            "output_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b",
+            "output_sha256": "bf45fe9f220b76f76d26938fede8711851d043dcfee04536275c5dd41810075b"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_boundary_comment_in_list",
+    "source": "values = [\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\",\n]\n",
+    "source_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "values = [\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\",\n]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a",
+            "output_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "values = [\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\",\n]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a",
+            "output_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "values = [\n    f\"{(\n        1  # inside expression\n    )}\"  # between parts\n    \"tail\",\n]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a",
+            "output_sha256": "4cff14c2cb97b25bce7342fbbbe1bcdb2e35c1a5e95534595614b3e5c105693a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "f_fmt_skip_whole_statement",
+    "source": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"tail\"\n)  # fmt: skip\n",
+    "source_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"tail\"\n)  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99",
+            "output_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"tail\"\n)  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99",
+            "output_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"{(\n        1  # inside expression\n    )}\"\n    \"tail\"\n)  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99",
+            "output_sha256": "ec868f9d58f6af167e54a1099ca8534432cbb375229c81a7da054a355a4bed99"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "long_identifier",
+    "source": "answer_value = (\n    f\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "37db483b81093bb7536602c5b5036f74ad9999e5fda8afbfca25fd5593aba4d1",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_76xlck2h.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_d5jzlvmh.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_53b8o55o.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "bac970962add994edac0685f1f42e217b34956c81ff8d30528d4f60e723de803",
+      "bac970962add994edac0685f1f42e217b34956c81ff8d30528d4f60e723de803",
+      "bac970962add994edac0685f1f42e217b34956c81ff8d30528d4f60e723de803"
+    ]
+  },
+  {
+    "name": "leading_comment",
+    "source": "# a leading comment\nvalue = (\n    f\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "0e55b566defe41572026a5576556a799c7274be67fbb6b616e81c58144b26fde",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_bggpl3d0.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_xc4v6fw5.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_mk73j9uj.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "6dd327aaf05b6865e97e0c10334e7b1130096a75717f8b838a9255491126ec46",
+      "6dd327aaf05b6865e97e0c10334e7b1130096a75717f8b838a9255491126ec46",
+      "6dd327aaf05b6865e97e0c10334e7b1130096a75717f8b838a9255491126ec46"
+    ]
+  },
+  {
+    "name": "named_expression",
+    "source": "value = (\n    f\"{(\n        amount  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "f630ff20b8e7c18d3fa38aa598b24e1598d46f76d50ee79c896e74daa178ee02",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:41\n            amount  # fmt: skip    )}\" \"tail\"\n                                            ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_z705v85b.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:41\n            amount  # fmt: skip    )}\" \"tail\"\n                                            ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_ai0kk66e.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:41\n            amount  # fmt: skip    )}\" \"tail\"\n                                            ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_2y7ws1ql.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "a3086b5f5df7e167d221160ce7cff688a273072fc80c47b2205d0104165731b2",
+      "a3086b5f5df7e167d221160ce7cff688a273072fc80c47b2205d0104165731b2",
+      "a3086b5f5df7e167d221160ce7cff688a273072fc80c47b2205d0104165731b2"
+    ]
+  },
+  {
+    "name": "two_tail_parts",
+    "source": "value = (\n    f\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n    \"end\"\n)\n",
+    "source_sha256": "195f5517d3986d6dacadb7da22bb78f53b9f5ab5f1f391a3f266e61b580d6828",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:42\n            1  # fmt: skip    )}\" \"tail\" \"end\"\n                                             ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_ncxbqbp0.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:42\n            1  # fmt: skip    )}\" \"tail\" \"end\"\n                                             ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_odtkppfy.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:42\n            1  # fmt: skip    )}\" \"tail\" \"end\"\n                                             ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_qii7aubb.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "b1d72f6f3270a26023b281e519aa46ff24579ff5967d391c1bd83aeb145822ae",
+      "b1d72f6f3270a26023b281e519aa46ff24579ff5967d391c1bd83aeb145822ae",
+      "b1d72f6f3270a26023b281e519aa46ff24579ff5967d391c1bd83aeb145822ae"
+    ]
+  },
+  {
+    "name": "unicode_identifier",
+    "source": "\u7d50\u679c = (\n    f\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "3c02bbcb4dd7c637099082fc6fd947c4d103dabdbbece09744594610d9ded673",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_u21yujum.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_3v56w_t4.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_9n28xni7.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "6b436871a237dc126b7c8157c7cce94981290a569b2772e1c3b55cae288e5b5a",
+      "6b436871a237dc126b7c8157c7cce94981290a569b2772e1c3b55cae288e5b5a",
+      "6b436871a237dc126b7c8157c7cce94981290a569b2772e1c3b55cae288e5b5a"
+    ]
+  },
+  {
+    "name": "crlf_source",
+    "source": "value = (\r\n    f\"{(\r\n        1  # fmt: skip\r\n    )}\"\r\n    \"tail\"\r\n)\r\n",
+    "source_sha256": "51d9b51794439d56b616d53b7d2e345722bfce3fe96eaf0a8d6a4a57d50e336e",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_42x92awb.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_gs8iaodd.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_43rdjrv6.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed",
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed",
+      "941a8d71f6521a57279b17ac5f9670490d941f672190b715cb7bd600b33fd9ed"
+    ]
+  },
+  {
+    "name": "unicode_inner_expression",
+    "source": "value = (\n    f\"{(\n        \u91d1\u984d  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "73b97c0cd3e3aabadb2aa77807ceafc9837b443aa3690b0db9b45c2e05e72e8c",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:37\n            \u91d1\u984d  # fmt: skip    )}\" \"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_v28s9vj_.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:37\n            \u91d1\u984d  # fmt: skip    )}\" \"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_bf_psgen.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:37\n            \u91d1\u984d  # fmt: skip    )}\" \"tail\"\n                                        ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_pk2zkrog.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "bf04c46619f5e7fb0f44cb078cd4c3f0fb3c91054b5f2bf2b7968c5fe4deffb8",
+      "bf04c46619f5e7fb0f44cb078cd4c3f0fb3c91054b5f2bf2b7968c5fe4deffb8",
+      "bf04c46619f5e7fb0f44cb078cd4c3f0fb3c91054b5f2bf2b7968c5fe4deffb8"
+    ]
+  },
+  {
+    "name": "non_bmp_inner_expression",
+    "source": "value = (\n    f\"{(\n        \ud801\udc00  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "67ef34c2a96ff0a2b03cf51648351681fddc226c6059dcc9df8d6adfee25a338",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            \ud801\udc00  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_futa04k8.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            \ud801\udc00  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_tdnwrw0p.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            \ud801\udc00  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_e1peeo_c.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "d2fb073f7ee5ef3cc0dd70ca3a8e9be30c8e9100ab0a7edde3edd62bb978c0cf",
+      "d2fb073f7ee5ef3cc0dd70ca3a8e9be30c8e9100ab0a7edde3edd62bb978c0cf",
+      "d2fb073f7ee5ef3cc0dd70ca3a8e9be30c8e9100ab0a7edde3edd62bb978c0cf"
+    ]
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {
+    "name": "top_relative_named",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .pkg import VALUE\nprint(VALUE)\n",
+      "pkg.py": "\"\"\"Module.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "5ebbd9ff7d61136e70607d0b0e94dbaa60261252246ac18a96a49d807f0cd709",
+      "pkg.py": "b4d3784d4389802c31b536d358951d2ce31ff516c213d01ed42f5649c2e5f50e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "top_relative_empty",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom . import pkg\nprint(pkg.VALUE)\n",
+      "pkg.py": "\"\"\"Module.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "0ba06511756ddda10a6fa69116b910fd6a4350b15d7a2f3666d6b9f94aca3120",
+      "pkg.py": "b4d3784d4389802c31b536d358951d2ce31ff516c213d01ed42f5649c2e5f50e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'pkg' in module ''",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'pkg' in module ''",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'pkg' in module ''",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "package_relative_named",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/main.py": "\"\"\"Reader.\"\"\"\nfrom .other import VALUE\nprint(VALUE)\n",
+      "pkg/other.py": "\"\"\"Module.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "pkg/main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/main.py": "30c4966f5189f0292219fcdde041b050244b15ab27b0e92be756b82cebca7de1",
+      "pkg/other.py": "b4d3784d4389802c31b536d358951d2ce31ff516c213d01ed42f5649c2e5f50e"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "top_relative_named_unknown",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .missing import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "d9da043401312fa1032d151445fce61492859116171bdd75397393ae61876377"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "top_relative_package_explicit_main",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .pkg import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "5ebbd9ff7d61136e70607d0b0e94dbaa60261252246ac18a96a49d807f0cd709",
+      "pkg/__init__.py": "b4cfd405d6a095bd5de837758e72e9af9dd3de3bd8914503a2912821d084977a"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "top_relative_package_selected",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .pkg import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py",
+      "pkg/__init__.py"
+    ],
+    "source_sha256": {
+      "main.py": "5ebbd9ff7d61136e70607d0b0e94dbaa60261252246ac18a96a49d807f0cd709",
+      "pkg/__init__.py": "b4cfd405d6a095bd5de837758e72e9af9dd3de3bd8914503a2912821d084977a"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "top_relative_package_scanned",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .pkg import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "5ebbd9ff7d61136e70607d0b0e94dbaa60261252246ac18a96a49d807f0cd709",
+      "pkg/__init__.py": "b4cfd405d6a095bd5de837758e72e9af9dd3de3bd8914503a2912821d084977a"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

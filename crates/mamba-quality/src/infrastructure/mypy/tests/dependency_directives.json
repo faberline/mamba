@@ -1,0 +1,495 @@
+[
+  {
+    "name": "untyped_import_ignored",
+    "files": {
+      "main.py": "from pkg import VALUE  # type: ignore[import-untyped]\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "4631d26fc7a9ae3687cd93c00a4a831562856e02344f894737dfa9ae745e789b"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_import_bare_ignore",
+    "files": {
+      "main.py": "import pkg  # type: ignore\nreveal_type(pkg.VALUE)\n"
+    },
+    "packages": {
+      "pkg.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "df783b08fb2b80d91bddc0edc19481ef09c66e426335b3b502df82082059ff18"
+    },
+    "package_sha256": {
+      "pkg.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_import_unused_ignore",
+    "files": {
+      "main.py": "from pkg import VALUE  # type: ignore[import-untyped]\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE: int = 1\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "4631d26fc7a9ae3687cd93c00a4a831562856e02344f894737dfa9ae745e789b"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_import_wrong_ignore",
+    "files": {
+      "main.py": "from pkg import VALUE  # type: ignore[import-not-found]\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "49c35b2e54f4c247445f92e09114c23de2383d0c2f6d96109bdf046a65842553"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "Error code \"import-untyped\" not covered by \"type: ignore[import-not-found]\" comment\nSee https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "Error code \"import-untyped\" not covered by \"type: ignore[import-not-found]\" comment\nSee https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "Error code \"import-untyped\" not covered by \"type: ignore[import-not-found]\" comment\nSee https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "untyped_import_mixed_ignore",
+    "files": {
+      "main.py": "from pkg import VALUE  # type: ignore[import-untyped, assignment]\nreveal_type(VALUE)\n"
+    },
+    "packages": {
+      "pkg/__init__.py": "VALUE = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "ee50a2f04deae2cbd5b143dd96904921094c5c9122d984a0fb9ea802ea2f7c5f"
+    },
+    "package_sha256": {
+      "pkg/__init__.py": "e13df8c44af5dea1e412403910b99cc5a48f2ccbf68a66b3374d6ab9cef9fc65"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

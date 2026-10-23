@@ -1,0 +1,2911 @@
+[
+  {
+    "name": "package_precedes_same_root_module",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "choice/__init__.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "39165a0f656df85a674c55445a148cb3c89201510dc01e07daa42d267949a98d",
+      "choice.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "choice/__init__.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "module_precedes_namespace_directory",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice.models import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "choice/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "f320fef2b1a680e06342f1c7e806eade5fff9def1340441815c58d8e1628e5ce",
+      "choice.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "choice/models.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "package_restricts_submodule_search",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice.models import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "src/choice/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "f320fef2b1a680e06342f1c7e806eade5fff9def1340441815c58d8e1628e5ce",
+      "choice/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "src/choice/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "namespace_yields_to_later_package",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "src/choice/__init__.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "39165a0f656df85a674c55445a148cb3c89201510dc01e07daa42d267949a98d",
+      "choice/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "src/choice/__init__.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "namespace_portions_merge",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice.models import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/unused.py": "\"\"\"Unused module.\"\"\"\n",
+      "src/choice/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "f320fef2b1a680e06342f1c7e806eade5fff9def1340441815c58d8e1628e5ce",
+      "choice/unused.py": "9c8c8d911bd9f28df9d018da604dbfb2aed26d070638c7e0025cddbc53a89107",
+      "src/choice/models.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "first_regular_module_wins",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "src/choice.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "39165a0f656df85a674c55445a148cb3c89201510dc01e07daa42d267949a98d",
+      "choice.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "src/choice.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "first_regular_package_wins",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/__init__.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "src/choice/__init__.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "39165a0f656df85a674c55445a148cb3c89201510dc01e07daa42d267949a98d",
+      "choice/__init__.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "src/choice/__init__.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "nested_package_precedes_module",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.choice import Model\nModel.value = 1\nprint(Model.value)\n",
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/choice.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "pkg/choice/__init__.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "cf33956d97631f9d3a36b57e98a90d06f6361c30aeffeb1108aff4712f2b053f",
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/choice.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "pkg/choice/__init__.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "later_namespace_module_child",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice.models import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/unused.py": "\"\"\"Unused module.\"\"\"\n",
+      "src/choice.py": "\"\"\"Module fixture.\"\"\"\n",
+      "src/choice/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "f320fef2b1a680e06342f1c7e806eade5fff9def1340441815c58d8e1628e5ce",
+      "choice/unused.py": "9c8c8d911bd9f28df9d018da604dbfb2aed26d070638c7e0025cddbc53a89107",
+      "src/choice.py": "a3009093964f91947d85dd67f4c38eff003b32f67d968cae0f436f7dd648a92f",
+      "src/choice/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "nested_namespace_portions_merge",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom choice.sub.models import Model\nModel.value = 1\nprint(Model.value)\n",
+      "choice/sub/unused.py": "\"\"\"Unused module.\"\"\"\n",
+      "src/choice/sub/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"other\",)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "21daae94dbb43ab5666a69249f0586bd0968f9106af423ccec8132d977c2eb57",
+      "choice/sub/unused.py": "9c8c8d911bd9f28df9d018da604dbfb2aed26d070638c7e0025cddbc53a89107",
+      "src/choice/sub/models.py": "deb5f9b2dc0b1a463d9e9d406008a41c2369765a0397c030a5f3f751427205a1"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "package_precedes_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice.py": "\"\"\"Wrong module.\"\"\"\nOTHER = 1\n",
+      "choice/__init__.py": "\"\"\"Chosen package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice.py": "33852b7548447f85b10bec8725554a6ca4e461d32b813762d99c51fdff52ae3a",
+      "choice/__init__.py": "aff70542006d4fcf13b404460fe88cd82b7ce47a7b287b08f9b29d6b3c3812d9"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "first_module_blocks_later_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice.py": "\"\"\"First module.\"\"\"\nOTHER = 1\n",
+      "src/choice.py": "\"\"\"Later module.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice.py": "72b829638a2a013ec28da094a928cfa32b35e55545296e33e9cda73c88cb593a",
+      "src/choice.py": "f77395569e247d090946dda5eeb00f9a3aaea2cb0b9cbdc8813bb21f770545e2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "first_package_blocks_later_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice/__init__.py": "\"\"\"First package.\"\"\"\nOTHER = 1\n",
+      "src/choice/__init__.py": "\"\"\"Later package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice/__init__.py": "b57a373bd2834065d0d82818a7662c8c728eeae3a60d7b3f2aade8e63972394b",
+      "src/choice/__init__.py": "8a086b57f0e3eae7960c8e594c8fa9bf613f4e28dd3062c11bb72dca89f8dbe6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "namespace_later_package_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice/unused.py": "\"\"\"Namespace.\"\"\"\n",
+      "src/choice/__init__.py": "\"\"\"Chosen package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice/unused.py": "330838ab3e253de682e2ef54c750d743358b466e570aa50300d4f87adef6c770",
+      "src/choice/__init__.py": "aff70542006d4fcf13b404460fe88cd82b7ce47a7b287b08f9b29d6b3c3812d9"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "first_namespace_child_blocks_later_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice.models\nprint(choice.models.CHOSEN)\n",
+      "choice/models.py": "\"\"\"First child.\"\"\"\nOTHER = 1\n",
+      "src/choice/models.py": "\"\"\"Later child.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "6b5e779a059a30c157ec31618412b9701263e5b4a5de6d8930193f17ab6621c5",
+      "choice/models.py": "24a83c95ca0f7c6e7884cfa63245262ab353b8a21c436158f02bd18ac8a11c44",
+      "src/choice/models.py": "50c3a246caa1c89d0992bd21cefc586d9cbaa922109822f8a919b0f134b45af8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice.models' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice.models' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice.models' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "nested_package_precedes_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport pkg.choice\nprint(pkg.choice.CHOSEN)\n",
+      "pkg/__init__.py": "\"\"\"Root package.\"\"\"\n",
+      "pkg/choice.py": "\"\"\"Wrong module.\"\"\"\nOTHER = 1\n",
+      "pkg/choice/__init__.py": "\"\"\"Chosen package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "867a234a96087048ee7a342bd1eeee96411982111a695f4fec15ea150c12bf4a",
+      "pkg/__init__.py": "751e3e5c20cf2ea91319c0549767d0cc1b798b8772ff4c83cd2a995b9d8cdd4e",
+      "pkg/choice.py": "33852b7548447f85b10bec8725554a6ca4e461d32b813762d99c51fdff52ae3a",
+      "pkg/choice/__init__.py": "aff70542006d4fcf13b404460fe88cd82b7ce47a7b287b08f9b29d6b3c3812d9"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "package_absent_child_does_not_merge_namespace",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice.models\nprint(choice.models.CHOSEN)\n",
+      "choice/__init__.py": "\"\"\"First package.\"\"\"\n",
+      "src/choice/models.py": "\"\"\"Wrong namespace child.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "6b5e779a059a30c157ec31618412b9701263e5b4a5de6d8930193f17ab6621c5",
+      "choice/__init__.py": "b2ce9ac7dc1b36a3114ae5b7b582599678d1796bd764e34b3bc8c12379d450d8",
+      "src/choice/models.py": "761114b1b86d9be0a5f51ad583f691f6956542881fbb89adb979cc1780c4c143"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'models' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'models' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'choice.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'choice'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'models' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "package_precedes_module_member_scan",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice.py": "\"\"\"Wrong module.\"\"\"\nOTHER = 1\n",
+      "choice/__init__.py": "\"\"\"Chosen package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice.py": "33852b7548447f85b10bec8725554a6ca4e461d32b813762d99c51fdff52ae3a",
+      "choice/__init__.py": "aff70542006d4fcf13b404460fe88cd82b7ce47a7b287b08f9b29d6b3c3812d9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "first_module_blocks_later_member_scan",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice.py": "\"\"\"First module.\"\"\"\nOTHER = 1\n",
+      "src/choice.py": "\"\"\"Later module.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice.py": "72b829638a2a013ec28da094a928cfa32b35e55545296e33e9cda73c88cb593a",
+      "src/choice.py": "f77395569e247d090946dda5eeb00f9a3aaea2cb0b9cbdc8813bb21f770545e2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "first_package_blocks_later_member_scan",
+    "files": {
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport choice\nprint(choice.CHOSEN)\n",
+      "choice/__init__.py": "\"\"\"First package.\"\"\"\nOTHER = 1\n",
+      "src/choice/__init__.py": "\"\"\"Later package.\"\"\"\nCHOSEN = 1\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "main.py": "e2069f23d51c9f96cb8c1c6e03c9ed1d8d2cf60379b76b9f1156508526de71ce",
+      "choice/__init__.py": "b57a373bd2834065d0d82818a7662c8c728eeae3a60d7b3f2aade8e63972394b",
+      "src/choice/__init__.py": "8a086b57f0e3eae7960c8e594c8fa9bf613f4e28dd3062c11bb72dca89f8dbe6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'choice' has no 'CHOSEN' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_child_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.missing\nprint(pkg.missing)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "f8036ec4898864747c8eab2a7527aad0e599df59c8002ff09c1b714967ea0cec",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_child_alias_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.missing as alias\nprint(alias.VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "0e8ce45c9d044c80b7910384de718562fa4ae0d537068303aa6da89601ac64bc",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "invalid_child_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.broken\nprint(pkg.broken)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "60e4db3b14d63546aefd5db59f223d93733dc1735ab2ef394e8c373f8a8acad7",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_namespace_child_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.missing\nprint(pkg.missing)\n",
+      "pkg/unused.py": "\"\"\"Namespace.\"\"\"\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "f8036ec4898864747c8eab2a7527aad0e599df59c8002ff09c1b714967ea0cec",
+      "pkg/unused.py": "330838ab3e253de682e2ef54c750d743358b466e570aa50300d4f87adef6c770"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'missing' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'missing' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'missing' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_stdlib_child_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport json.missing\nprint(json.missing)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "2ad1a255285634b4e7e96f892875456c0dec21dce8111fcfc9ff350da4c45603"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'json.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'json'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'json' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'json.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'json'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'json' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'json.missing'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'json'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'json' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_root_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport qmissing_fixture\nprint(qmissing_fixture.VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "5a09f1c99e3dba974d5b47417963cfa72be88ccb8c1a1a69e90a1e03ee5e52bb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'qmissing_fixture'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'qmissing_fixture'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'qmissing_fixture'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_from_child_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg import missing\nprint(missing.VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "8944aeb5a69e0098be8adae3aa55477c100ab9b2f935a29a29d2b52680f98636",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'missing' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "namespace_missing_direct_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg\nprint(pkg.MISSING)\n",
+      "pkg/unused.py": "\"\"\"Namespace.\"\"\"\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "6885284377174858b70e478b7ab92a76961c3cf53373ae236339f41118b88e12",
+      "pkg/unused.py": "330838ab3e253de682e2ef54c750d743358b466e570aa50300d4f87adef6c770"
+    },
+    "expected": [
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "namespace_child_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg\nprint(pkg.child.VALUE)\n",
+      "pkg/child.py": "\"\"\"Child.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "d88e9d4551130f301e23eeb8fbab19ddbba0b09f3797845faf1f206ac885eaf2",
+      "pkg/child.py": "fc86fd11d0ea43a6f75c495d439d79fb8d207691ace2cc0053e52ec91a94322f"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "namespace_valid_child_missing_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.child\nprint(pkg.child.MISSING)\n",
+      "pkg/child.py": "\"\"\"Child.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "a67181fbdf07df92387478421fc30a49f1820959ff23c49f1ef81688b4a23753",
+      "pkg/child.py": "fc86fd11d0ea43a6f75c495d439d79fb8d207691ace2cc0053e52ec91a94322f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg.child' has no 'MISSING' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg.child' has no 'MISSING' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg.child' has no 'MISSING' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "namespace_missing_member_scan",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg\nprint(pkg.MISSING)\n",
+      "pkg/unused.py": "\"\"\"Namespace.\"\"\"\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "6885284377174858b70e478b7ab92a76961c3cf53373ae236339f41118b88e12",
+      "pkg/unused.py": "330838ab3e253de682e2ef54c750d743358b466e570aa50300d4f87adef6c770"
+    },
+    "expected": [
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'MISSING' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "syntax_import_cascade_twice",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.broken\nfrom pkg.broken import VALUE\nprint(pkg.broken, VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "745460e02a4ef64e93f359ac9e944d558176351491f132ae476eba150e5bb426",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Module 'pkg' has no 'broken' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "relative_invalid_child_import",
+    "files": {
+      "pkg/main.py": "\"\"\"Reader.\"\"\"\nfrom . import broken\nprint(broken.VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "pkg/main.py"
+    ],
+    "source_sha256": {
+      "pkg/main.py": "c9e25eb649ad7dfed0201a2a7b81c8b0da7704d470e3b18469c42e56e276a8a3",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "relative_invalid_child_from",
+    "files": {
+      "pkg/main.py": "\"\"\"Reader.\"\"\"\nfrom .broken import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "pkg/main.py"
+    ],
+    "source_sha256": {
+      "pkg/main.py": "027e0ae489afb0e9db7f93f0710ba9676530297931b8cc58bd17932f04c8ead3",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "absolute_invalid_child_from",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg.broken import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "42c72987aaa108b3119bfe9758882020b263b28e3bc19a8e825e11d46b0059dc",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "absolute_invalid_child_module_only",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.broken\n",
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/broken.py": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "753dcaa6d758dcc4ef6f7ff206b67bac31654873f95c86411997c7c2fcc349a5",
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "W0611",
+          "message": "Unused import pkg.broken",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "W0611",
+          "message": "Unused import pkg.broken",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'pkg.broken' due to ''(' was never closed (pkg.broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'broken' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "W0611",
+          "message": "Unused import pkg.broken",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      6,
+      6,
+      6
+    ]
+  },
+  {
+    "name": "syntax_root_member_import",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom broken import VALUE\nprint(VALUE)\n",
+      "broken.py": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "8b2123b4d5b9e940705133f92c723048e813c387816b5f7102d90e1520bb6971",
+      "broken.py": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'broken' due to ''(' was never closed (broken, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

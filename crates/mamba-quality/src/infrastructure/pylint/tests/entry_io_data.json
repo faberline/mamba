@@ -1,0 +1,731 @@
+[
+  {
+    "python": "3.12",
+    "name": "unreadable_file",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {
+      "main.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/main.py:\n[Errno 13] Permission denied: '<project>/main.py'",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "unsearchable_parent",
+    "inputs": [
+      "locked/main.py"
+    ],
+    "files": {
+      "locked/main.py": {
+        "text": "\"\"\"Unsearchable source fixture.\"\"\"\n",
+        "sha256": "a40b4b7c6067122c4e1883bf95c4ed32bcbe3f2a53ab9d3845979ef6a7de5d95"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named locked/main.py",
+        "path": "locked/main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "broken_symlink",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named main.py",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "empty_directory",
+    "inputs": [
+      "empty"
+    ],
+    "files": {},
+    "expected": [],
+    "reference_exit": 0
+  },
+  {
+    "python": "3.13",
+    "name": "unreadable_file",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {
+      "main.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/main.py:\n[Errno 13] Permission denied: '<project>/main.py'",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "unsearchable_parent",
+    "inputs": [
+      "locked/main.py"
+    ],
+    "files": {
+      "locked/main.py": {
+        "text": "\"\"\"Unsearchable source fixture.\"\"\"\n",
+        "sha256": "a40b4b7c6067122c4e1883bf95c4ed32bcbe3f2a53ab9d3845979ef6a7de5d95"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named locked/main.py",
+        "path": "locked/main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "broken_symlink",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named main.py",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "empty_directory",
+    "inputs": [
+      "empty"
+    ],
+    "files": {},
+    "expected": [],
+    "reference_exit": 0
+  },
+  {
+    "python": "3.14",
+    "name": "unreadable_file",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {
+      "main.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/main.py:\n[Errno 13] Permission denied: '<project>/main.py'",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "unsearchable_parent",
+    "inputs": [
+      "locked/main.py"
+    ],
+    "files": {
+      "locked/main.py": {
+        "text": "\"\"\"Unsearchable source fixture.\"\"\"\n",
+        "sha256": "a40b4b7c6067122c4e1883bf95c4ed32bcbe3f2a53ab9d3845979ef6a7de5d95"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named locked/main.py",
+        "path": "locked/main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "broken_symlink",
+    "inputs": [
+      "main.py"
+    ],
+    "files": {},
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named main.py",
+        "path": "main.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "empty_directory",
+    "inputs": [
+      "empty"
+    ],
+    "files": {},
+    "expected": [],
+    "reference_exit": 0
+  },
+  {
+    "python": "3.12",
+    "name": "unreadable_first",
+    "inputs": [
+      "unreadable.py",
+      "valid.py"
+    ],
+    "files": {
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      },
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.12",
+    "name": "unreadable_last",
+    "inputs": [
+      "valid.py",
+      "unreadable.py"
+    ],
+    "files": {
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      },
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.12",
+    "name": "quoted_path",
+    "inputs": [
+      "it's.py"
+    ],
+    "files": {
+      "it's.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/it's.py:\n[Errno 13] Permission denied: \"<project>/it's.py\"",
+        "path": "it's.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "backslash_path",
+    "inputs": [
+      "back\\slash.py"
+    ],
+    "files": {
+      "back\\slash.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/back\\slash.py:\n[Errno 13] Permission denied: '<project>/back\\\\slash.py'",
+        "path": "back\\slash.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "unicode_path",
+    "inputs": [
+      "\u4e2d\u6587.py"
+    ],
+    "files": {
+      "\u4e2d\u6587.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/\u4e2d\u6587.py:\n[Errno 13] Permission denied: '<project>/\u4e2d\u6587.py'",
+        "path": "\u4e2d\u6587.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "unreadable_first",
+    "inputs": [
+      "unreadable.py",
+      "valid.py"
+    ],
+    "files": {
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      },
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.13",
+    "name": "unreadable_last",
+    "inputs": [
+      "valid.py",
+      "unreadable.py"
+    ],
+    "files": {
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      },
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.13",
+    "name": "quoted_path",
+    "inputs": [
+      "it's.py"
+    ],
+    "files": {
+      "it's.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/it's.py:\n[Errno 13] Permission denied: \"<project>/it's.py\"",
+        "path": "it's.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "backslash_path",
+    "inputs": [
+      "back\\slash.py"
+    ],
+    "files": {
+      "back\\slash.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/back\\slash.py:\n[Errno 13] Permission denied: '<project>/back\\\\slash.py'",
+        "path": "back\\slash.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "unicode_path",
+    "inputs": [
+      "\u4e2d\u6587.py"
+    ],
+    "files": {
+      "\u4e2d\u6587.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/\u4e2d\u6587.py:\n[Errno 13] Permission denied: '<project>/\u4e2d\u6587.py'",
+        "path": "\u4e2d\u6587.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "unreadable_first",
+    "inputs": [
+      "unreadable.py",
+      "valid.py"
+    ],
+    "files": {
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      },
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.14",
+    "name": "unreadable_last",
+    "inputs": [
+      "valid.py",
+      "unreadable.py"
+    ],
+    "files": {
+      "valid.py": {
+        "text": "\"\"\"Existing source fixture.\"\"\"\nVALUE = missing\n",
+        "sha256": "98e56235efca0a21cca54a2edc3d8e9599652e3e578026b3c11d2f38211175f2"
+      },
+      "unreadable.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/unreadable.py:\n[Errno 13] Permission denied: '<project>/unreadable.py'",
+        "path": "unreadable.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      },
+      {
+        "rule": "E0602",
+        "message": "Undefined variable 'missing'",
+        "path": "valid.py",
+        "severity": "error",
+        "line": 2,
+        "column": 8,
+        "end_line": 2,
+        "end_column": 15
+      }
+    ],
+    "reference_exit": 3
+  },
+  {
+    "python": "3.14",
+    "name": "quoted_path",
+    "inputs": [
+      "it's.py"
+    ],
+    "files": {
+      "it's.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/it's.py:\n[Errno 13] Permission denied: \"<project>/it's.py\"",
+        "path": "it's.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "backslash_path",
+    "inputs": [
+      "back\\slash.py"
+    ],
+    "files": {
+      "back\\slash.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/back\\slash.py:\n[Errno 13] Permission denied: '<project>/back\\\\slash.py'",
+        "path": "back\\slash.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "unicode_path",
+    "inputs": [
+      "\u4e2d\u6587.py"
+    ],
+    "files": {
+      "\u4e2d\u6587.py": {
+        "text": "\"\"\"Unreadable source fixture.\"\"\"\n",
+        "sha256": "bdf526f93ac3a5c92b35fd14bb5c55476340a94ee9a15269b66dffb8eda5689e"
+      }
+    },
+    "expected": [
+      {
+        "rule": "F0010",
+        "message": "error while code parsing: Unable to load file <project>/\u4e2d\u6587.py:\n[Errno 13] Permission denied: '<project>/\u4e2d\u6587.py'",
+        "path": "\u4e2d\u6587.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  }
+]

@@ -1,0 +1,2313 @@
+[
+  {
+    "name": "installed_package_syntax",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {},
+    "packages": {
+      "pkg/__init__.py": "VALUE =\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "pkg/__init__.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.12/site-packages/pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.13/site-packages/pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.14/site-packages/pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "installed_package_invalid_stub",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {},
+    "packages": {
+      "pkg/__init__.pyi": "VALUE: list[\n",
+      "pkg/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "pkg/__init__.pyi": "abc7e03af1ccaedce2b5665e5063f6347da6331d4f82ddb58454af35b886bb89",
+      "pkg/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": ".venv/lib/python3.12/site-packages/pkg/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": ".venv/lib/python3.13/site-packages/pkg/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": ".venv/lib/python3.14/site-packages/pkg/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "installed_stub_distribution_syntax",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {},
+    "packages": {
+      "pkg-stubs/__init__.pyi": "VALUE =\n"
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "pkg-stubs/__init__.pyi": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.12/site-packages/pkg-stubs/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.13/site-packages/pkg-stubs/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": ".venv/lib/python3.14/site-packages/pkg-stubs/__init__.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "installed_invalid_untyped_implementation",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {},
+    "packages": {
+      "pkg/__init__.py": "VALUE =\n"
+    },
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "pkg/__init__.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-untyped",
+          "message": "Skipping analyzing \"pkg\": module is installed, but missing library stubs or py.typed marker",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_invalid_stub_over_valid_implementation",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE: int = 1\n",
+      "pkg.pyi": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg.pyi": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_valid_stub_over_invalid_implementation",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n",
+      "pkg.pyi": "VALUE: int\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "pkg.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_invalid_unimported_file",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "core_shadow_local_stub",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {
+      "typing.pyi": "VALUE: int\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {
+      "typing.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.pyi",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.pyi",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.pyi",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "core_shadow_local_package",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {
+      "typing/__init__.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {
+      "typing/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "core_shadow_namespace_without_init",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {
+      "typing/extra.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {
+      "typing/extra.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_typed_package",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing/__init__.py": "VALUE: int = 1\n",
+      "typing/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "typing/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_untyped_package",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing/__init__.py": "VALUE: int = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_standalone_stub",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing.pyi": "VALUE: int\n"
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_stub_distribution",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing-stubs/__init__.pyi": "VALUE: int\n"
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing-stubs/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_runtime_module",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing.py": "VALUE: int = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "installed_core_typed_extensions",
+    "files": {
+      "main.py": "VALUE: int = 1\n"
+    },
+    "local": {},
+    "packages": {
+      "typing_extensions/__init__.py": "VALUE: int = 1\n",
+      "typing_extensions/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "typing_extensions/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "typing_extensions/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "two_local_parse_failures",
+    "files": {
+      "main.py": "from alpha import VALUE\nfrom beta import OTHER\n"
+    },
+    "local": {
+      "alpha.py": "VALUE =\n",
+      "beta.py": "OTHER =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3f584907c23f6a44ee0fb24dd164926874f4a9a7f64d90c7ae3cda06f294b9ee"
+    },
+    "local_sha256": {
+      "alpha.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_parse_error_after_semantic_dependency",
+    "files": {
+      "main.py": "from alpha import VALUE\nfrom beta import OTHER\n"
+    },
+    "local": {
+      "alpha.py": "VALUE: int = \"bad\"\n",
+      "beta.py": "OTHER =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3f584907c23f6a44ee0fb24dd164926874f4a9a7f64d90c7ae3cda06f294b9ee"
+    },
+    "local_sha256": {
+      "alpha.py": "fd8e41e69435a3429157dcbc22f50105515f37b6a47ecfca4ee4a38a35e1b606",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "selected_and_local_parse_errors",
+    "files": {
+      "main.py": "from pkg import VALUE\nvalue =\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "87a2e94ae164f674929d6a4d63fd29532fa05259954c79033b2cacd81dc050fe"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "core_shadow_and_parse_error",
+    "files": {
+      "main.py": "from pkg import VALUE\n"
+    },
+    "local": {
+      "typing.py": "VALUE: int = 1\n",
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4dc13ce9658bd48977678ab101b0df52252e104d915a2bae26e067520411c5af"
+    },
+    "local_sha256": {
+      "typing.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_crlf",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\r\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "a09b0193ab620b8642a06a2a25e4732fabb8681f369cba393ee211b27ccc1af0"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_no_final_newline",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = ("
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "875489cf65e6cbc8b5c6a7789850dad1010246deb1c8294a7234516851746f5c"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_tab_indentation",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "if True:\n\tVALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "d191a16e69a03519c6378b485ecfb82461eeb6fad4c5097d68a9de760db685f5"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_utf8_bom",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "﻿VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "355bd952034270d406891e16fd00f9a71a6437c8de94574dc94cd4b77f3b8a40"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "two_parse_failures_reversed",
+    "files": {
+      "main.py": "from beta import OTHER\nfrom alpha import VALUE\n"
+    },
+    "local": {
+      "alpha.py": "VALUE =\n",
+      "beta.py": "OTHER =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "1f76fd4634eb5676d2a01cb2e9693ffa379d24697a562560fdd8d2ae16961fd9"
+    },
+    "local_sha256": {
+      "alpha.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "two_parse_failures_single_import",
+    "files": {
+      "main.py": "import beta, alpha\n"
+    },
+    "local": {
+      "alpha.py": "VALUE =\n",
+      "beta.py": "OTHER =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5ea302563a6b80cf30fd937716556a3e2f8a2c1f3e6b8d90b41220219c4dc18d"
+    },
+    "local_sha256": {
+      "alpha.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "nested_parse_failure_breadth_first",
+    "files": {
+      "main.py": "import alpha\nimport beta\n"
+    },
+    "local": {
+      "alpha.py": "import deep\n",
+      "beta.py": "OTHER =\n",
+      "deep.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "711e9d60a57417910b3fd6cb0b654ebd06abbe912bdddb92d150bb8ef3cf41e3"
+    },
+    "local_sha256": {
+      "alpha.py": "eb773f666082285cef7eba660c73509cea28b7c2b267db4f0641571b3eeb0af3",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9",
+      "deep.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "nested_parse_failure_breadth_first_reversed",
+    "files": {
+      "main.py": "import beta\nimport alpha\n"
+    },
+    "local": {
+      "alpha.py": "import deep\n",
+      "beta.py": "OTHER =\n",
+      "deep.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "c72ec7326829c07ae7300d18ae4c5339cbf8c4e091c8c772e34372cb348eb1ed"
+    },
+    "local_sha256": {
+      "alpha.py": "eb773f666082285cef7eba660c73509cea28b7c2b267db4f0641571b3eeb0af3",
+      "beta.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9",
+      "deep.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "beta.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "package_and_child_parse_failure",
+    "files": {
+      "main.py": "from pkg.child import VALUE\n"
+    },
+    "local": {
+      "pkg/__init__.py": "OTHER =\n",
+      "pkg/child.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ecc3c999948c1d71df2553090949d8da207caa36eb7ea8ee2597e59e0fe5bebe"
+    },
+    "local_sha256": {
+      "pkg/__init__.py": "89c42b609efa8474145110ec18666da39b44a420c2d9365ff447709874ccdba9",
+      "pkg/child.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg/child.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg/child.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg/child.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "invalid_selected_from_dependency",
+    "files": {
+      "main.py": "from pkg import VALUE\nvalue =\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "87a2e94ae164f674929d6a4d63fd29532fa05259954c79033b2cacd81dc050fe"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "dependency_invalid_with_valid_main_ignore",
+    "files": {
+      "main.py": "from pkg import VALUE  # type: ignore\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b27845b793c4c8945900a9758108a9fae32d706b01a4f8e32c788c429c79fb69"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "dependency_invalid_reachable_after_condition",
+    "files": {
+      "main.py": "if False:\n    import pkg\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "1ec9b472f65c2ed67fd743ae3c3c23fd66306b7db1f2db1fff3536a4cd7c7aa7"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "dependency_invalid_reachable_after_version",
+    "files": {
+      "main.py": "import sys\nif sys.version_info >= (3, 14):\n    import pkg\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6668e10958aa8e6511d01961c6689f7676ed09f655618e622039edecf7c64ad1"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      0,
+      0,
+      2
+    ]
+  },
+  {
+    "name": "two_invalid_selected",
+    "files": {
+      "alpha.py": "VALUE =\n",
+      "beta.py": "VALUE =\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "alpha.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7",
+      "beta.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "alpha.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "invalid_stub_selected",
+    "files": {
+      "main.pyi": "VALUE: list[\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.pyi": "abc7e03af1ccaedce2b5665e5063f6347da6331d4f82ddb58454af35b886bb89"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "main.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "main.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "main.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unicode_selected_syntax",
+    "files": {
+      "main.py": "中文 =\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "801164e706b3e8a6a4bb6b1967f004db9eac1e8851278b056e93c73f08c167aa"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "template_selected_syntax",
+    "files": {
+      "main.py": "VALUE = t\"text\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7ddcbee3683a21d4cedd9485e5389bced03faf23b4d2191fbc1c3674fb1d2376"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

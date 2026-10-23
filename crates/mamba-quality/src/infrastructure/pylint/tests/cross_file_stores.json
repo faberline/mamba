@@ -1,0 +1,1967 @@
+[
+  {
+    "name": "plain_instance",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "07cf3b1320eaf70dfdc3af8672029960fba82e9e488d27808f2c40783daed560"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "plain_class",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nModel.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "b2904e0a923b75402a52caf1010b95947eeb8e43db895585745eb38ec77e4248"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "plain_augmented",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value += 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "103c6c4569cba1fcc0509ca35dbbb8469d90cbb66aa7ad6c836f7788323a3905"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "named_slots_instance",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value',)\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "2f4725bd20bf143339890b5987def0fa9c99b15cde8742f32be2aaa636ff1833",
+      "main.py": "07cf3b1320eaf70dfdc3af8672029960fba82e9e488d27808f2c40783daed560"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "named_slots_class",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value',)\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nModel.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "2f4725bd20bf143339890b5987def0fa9c99b15cde8742f32be2aaa636ff1833",
+      "main.py": "b2904e0a923b75402a52caf1010b95947eeb8e43db895585745eb38ec77e4248"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "named_slots_augmented",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value',)\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value += 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "2f4725bd20bf143339890b5987def0fa9c99b15cde8742f32be2aaa636ff1833",
+      "main.py": "103c6c4569cba1fcc0509ca35dbbb8469d90cbb66aa7ad6c836f7788323a3905"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "empty_slots_instance",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ()\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "14889312f0e162f31ef4d9797207459083960b2c7c572d2293d1a543aef3268c",
+      "main.py": "07cf3b1320eaf70dfdc3af8672029960fba82e9e488d27808f2c40783daed560"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "empty_slots_class",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ()\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nModel.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "14889312f0e162f31ef4d9797207459083960b2c7c572d2293d1a543aef3268c",
+      "main.py": "b2904e0a923b75402a52caf1010b95947eeb8e43db895585745eb38ec77e4248"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "empty_slots_augmented",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ()\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value += 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "14889312f0e162f31ef4d9797207459083960b2c7c572d2293d1a543aef3268c",
+      "main.py": "103c6c4569cba1fcc0509ca35dbbb8469d90cbb66aa7ad6c836f7788323a3905"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0237",
+          "message": "Assigning to attribute 'value' not defined in class slots",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "mixed_slots_instance",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value', b'other')\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "b407467b5cdd67733fee18cbe5a402006353ef83a5453d8758beb1ddc304cc01",
+      "main.py": "07cf3b1320eaf70dfdc3af8672029960fba82e9e488d27808f2c40783daed560"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "mixed_slots_class",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value', b'other')\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nModel.value = 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "b407467b5cdd67733fee18cbe5a402006353ef83a5453d8758beb1ddc304cc01",
+      "main.py": "b2904e0a923b75402a52caf1010b95947eeb8e43db895585745eb38ec77e4248"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "mixed_slots_augmented",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = ('value', b'other')\n",
+      "main.py": "\"\"\"Store fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.value += 1\n\nprint(Model.value)\n"
+    },
+    "source_sha256": {
+      "models.py": "b407467b5cdd67733fee18cbe5a402006353ef83a5453d8758beb1ddc304cc01",
+      "main.py": "103c6c4569cba1fcc0509ca35dbbb8469d90cbb66aa7ad6c836f7788323a3905"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "E1101",
+          "message": "Class 'Model' has no 'value' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 6,
+            "end_line": 6,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0236",
+          "message": "Invalid object \"b'other'\" in __slots__, must contain only non empty strings",
+          "hint": null,
+          "path": "models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 26,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  }
+]

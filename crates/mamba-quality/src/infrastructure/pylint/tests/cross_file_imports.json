@@ -1,0 +1,723 @@
+[
+  {
+    "name": "only_main_package_module",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.models import Model\nModel.value = 1\nprint(Model.value)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "09f1d2265e91764021320c6fb55bdddda863863cba6bac72d3f0fcaaf5c68380"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "only_main_package_reexport",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\nfrom .models import Model\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg import Model\nModel.value = 1\nprint(Model.value)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "aa05fdc8c99249f6c8edfdd5977136540fd225c557d93405f6aa9d805977d564",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "098ffd4cecbbd453a2796e40eabe1d592abfe127b80f8a1ee81dcb0956996f3a"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "only_main_namespace_module",
+    "files": {
+      "namespace/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom namespace.models import Model\nModel.value = 1\nprint(Model.value)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "namespace/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "adab7b0ad7723edff831fbeb979b2882e305e40513f493efa42b4bd9fd9e02fa"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "only_main_nested_package",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/sub/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/sub/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.sub.models import Model\nModel.value = 1\nprint(Model.value)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/sub/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/sub/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "0ebe86bbc6629368d6da89bb08316fdd122de9ee48d1ae48a742124803189228"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "only_main_cycle",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nimport bridge\nclass Model:\n    __slots__ = (\"value\",)\nprint(bridge)\n",
+      "bridge.py": "\"\"\"Bridge fixture.\"\"\"\nfrom models import Model\nModel.value = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom bridge import Model\nprint(Model.value)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "models.py": "19d3f418da61ccad2611af8440f82bf0d00cb2c24ff46fcd634faf749cc807c2",
+      "bridge.py": "64d6f8bb5416218ea530839f04a7ec19c427a6b08589d51f61960090ee92773e",
+      "main.py": "7b302bf18dfd4d205eb347ddd617d7d01f8e5c4028f9b8985a96485d1e98ba5f"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "external_name_disable_owner",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\n# pylint: disable=invalid-name\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Mutator fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.BadAttr = 1\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "c0245d09fc984c611ce5158245b9996b57780c62c224f12f051c22b8b6510b95",
+      "main.py": "818bfb127231b58a17c3d87bc6f01856ad23fa9438190b8e0cd384c73d6939c5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "external_name_disable_mutator",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Mutator fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.BadAttr = 1  # pylint: disable=invalid-name\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "aa3cbe1a40b4684e4aa66f4d770153d80dbbf25c58c9727eb263d15eed681dbe"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "member_value_only_main_package_module",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "ee45d5d6f4b98749e47a6a98d69c90b02a71a9677b557867f93fb60cdd08aeb8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "member_value_only_main_package_reexport",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\nfrom .models import Model\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "aa05fdc8c99249f6c8edfdd5977136540fd225c557d93405f6aa9d805977d564",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "5710dfa59df93c1eb3e0558ad542d00df8ce9bb1226c3af8a89f4d69a7bfb68c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "member_value_only_main_namespace_module",
+    "files": {
+      "namespace/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom namespace.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "namespace/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "5b69519aa5ea7016fa39b1e328070f7f1323a505aaa43f1e1c2eab0d22d9b61e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "member_value_only_main_nested_package",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/sub/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/sub/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.sub.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/sub/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/sub/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "4955590e4951db0aa7406dafe697b2395a867a13688f6fdf6d58132d903467af"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "member_value_only_main_cycle",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nimport bridge\nclass Model:\n    __slots__ = (\"value\",)\nprint(bridge)\n",
+      "bridge.py": "\"\"\"Bridge fixture.\"\"\"\nfrom models import Model\nModel.value = \"text\"\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom bridge import Model\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "models.py": "19d3f418da61ccad2611af8440f82bf0d00cb2c24ff46fcd634faf749cc807c2",
+      "bridge.py": "52bef65c5d3661f9b747e278e37e365a985ecada9edd859b8961175313114faf",
+      "main.py": "d9b64b144eb7bf2b786895a0df24e1b0c4c7649ecf2ef0749dc7ebfc9e0f7a4a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

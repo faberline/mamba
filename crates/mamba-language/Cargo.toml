@@ -1,0 +1,20 @@
+[package]
+name = "mamba-language"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Mamba lexical, parsing, and shared syntax services"
+
+[dependencies]
+mamba-shared-kernel = { path = "../mamba-shared-kernel" }
+logos = "0.15"
+unicode-xid = "0.2"
+ruff_python_ast = "=0.0.16"
+ruff_python_parser = "=0.0.16"
+ruff_text_size = "=0.0.16"
+ruff_source_file = "=0.0.16"
+
+[lints]
+workspace = true

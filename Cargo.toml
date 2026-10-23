@@ -1,11 +1,13 @@
 [workspace]
 resolver = "2"
-members = ["mambalibs/mongokit", "mambalibs/mongokit/binding", "mambalibs/pgkit/pg", "crates/core", "mambalibs/queuekit", "crates/schema", "mambalibs/agentkit/core", "mambalibs/agentkit/derive", "mambalibs/agentkit/graph", "mambalibs/agentkit/llm", "mambalibs/agentkit/tools", "mambalibs/agentkit/frontend", "mambalibs/agentkit/backend", "mambalibs/httpkit", "mambalibs/httpkit/binding", "mambalibs/arraykit", "mambalibs/arraykit/binding", "mambalibs/arraykit/pyo3", "crates/frame", "mambalibs/scikit", "mambalibs/scikit/binding", "mambalibs/scikit/pyo3", "mambalibs/plotkit", "mambalibs/plotkit/binding", "mambalibs/plotkit/pyo3", "mambalibs/mediakit", "mambalibs/mediakit/binding", "mambalibs/cryptokit", "mambalibs/cryptokit/binding", ".", "crates/mamba-registry", "crates/schema-mamba", "mambalibs/pgkit/binding", "crates/log-mamba", "mambalibs/agentkit/binding", "mambalibs/dikit", "mambalibs/dikit/binding", "crates/qc-mamba", "mambalibs/pgkit/pg-cli", "crates/mcp-mamba", "crates/log"]
+members = ["mambalibs/mongokit", "mambalibs/mongokit/binding", "mambalibs/pgkit/pg", "crates/core", "mambalibs/queuekit", "crates/schema", "mambalibs/agentkit/core", "mambalibs/agentkit/derive", "mambalibs/agentkit/graph", "mambalibs/agentkit/llm", "mambalibs/agentkit/tools", "mambalibs/agentkit/frontend", "mambalibs/agentkit/backend", "mambalibs/httpkit", "mambalibs/httpkit/binding", "mambalibs/arraykit", "mambalibs/arraykit/binding", "mambalibs/arraykit/pyo3", "crates/frame", "mambalibs/scikit", "mambalibs/scikit/binding", "mambalibs/scikit/pyo3", "mambalibs/plotkit", "mambalibs/plotkit/binding", "mambalibs/plotkit/pyo3", "mambalibs/mediakit", "mambalibs/mediakit/binding", "mambalibs/cryptokit", "mambalibs/cryptokit/binding", "crates/mamba-registry", "crates/schema-mamba", "mambalibs/pgkit/binding", "crates/log-mamba", "mambalibs/agentkit/binding", "mambalibs/dikit", "mambalibs/dikit/binding", "crates/qc-mamba", "mambalibs/pgkit/pg-cli", "crates/mcp-mamba", "crates/log", "crates/mamba-shared-kernel", "crates/mamba-language", "crates/mamba-quality"]
+exclude = ["vendor/mamba-black-layout", "vendor/mamba-document-layout"]
 
 [workspace.package]
 version = "0.4.13"
 authors = ["Chris Cheng <chris.cheng.c4@gmail.com>"]
 edition = "2021"
+rust-version = "1.97"
 license = "MIT"
 repository = "https://github.com/faberline/mamba"
 
@@ -53,6 +55,9 @@ opt-level = 2
 
 [profile.test]
 opt-level = 1
+
+[profile.test.package.mamba-quality]
+debug = 1
 
 # Vendor patch: cranelift-jit memory allocator enforces a 256 MB minimum
 # chunk so all JIT'd functions stay within ±128 MB of each other on
@@ -115,6 +120,7 @@ native-modules = [
 ]
 
 [dependencies]
+mamba-quality = { path = "crates/mamba-quality" }
 # Lexer generator (compile-time DFA)
 logos = "0.15"
 
@@ -529,3 +535,10 @@ path = "e2e/mambalibs_sci_wheel.rs"
 [[test]]
 name = "mambalibs_plot_wheel"
 path = "e2e/mambalibs_plot_wheel.rs"
+
+[workspace.lints.clippy]
+mod_module_files = "deny"
+
+[[test]]
+name = "quality_command"
+path = "tests/quality_command.rs"

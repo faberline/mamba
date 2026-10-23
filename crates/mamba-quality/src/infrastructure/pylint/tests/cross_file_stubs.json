@@ -1,0 +1,814 @@
+[
+  {
+    "name": "only_stub_module_member",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "source_precedes_stub",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.py": "\"\"\"Source.\"\"\"\nOTHER = 1\n",
+      "dependency.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.py": "c58f5773cd9d272c0ca1de6e82dcf8eca0c260b1a573b8f3d765eae25143b60d",
+      "dependency.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_package_precedes_source_module",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.py": "\"\"\"Source.\"\"\"\nOTHER = 1\n",
+      "dependency/__init__.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.py": "c58f5773cd9d272c0ca1de6e82dcf8eca0c260b1a573b8f3d765eae25143b60d",
+      "dependency/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "source_package_precedes_stub_init",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency/__init__.py": "\"\"\"Package.\"\"\"\nOTHER = 1\n",
+      "dependency/__init__.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency/__init__.py": "7dc94ca6e36a3ba6eda339c962c45f33bc5c25c24b83c33e2c3f4959524ce832",
+      "dependency/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_class_call",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency import Model\nitem = Model(1)\nprint(item.value)\n",
+      "dependency.pyi": "class Model:\n    value: int\n    def __init__(self, value: int) -> None: ...\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "a0d2e754584200f146979aa8f6de4d8f522dfe45e7e235be7dd63ef4503fe136",
+      "dependency.pyi": "61d52bd02a14b52229651a19883913fa0bdbc4350d1f40c358a1eb481f3b8a00"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_namespace_child",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency.models import Model\nitem = Model(1)\nprint(item.value)\n",
+      "dependency/models.pyi": "class Model:\n    value: int\n    def __init__(self, value: int) -> None: ...\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4863d08509e767999a25dd3fe82fce3a78f61cd71383422f3752081c8d3b0168",
+      "dependency/models.pyi": "61d52bd02a14b52229651a19883913fa0bdbc4350d1f40c358a1eb481f3b8a00"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency.models'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'models' in module 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_selected_with_source",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.py": "\"\"\"Source.\"\"\"\nOTHER = 1\n",
+      "dependency.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "main.py",
+      "dependency.py"
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.py": "c58f5773cd9d272c0ca1de6e82dcf8eca0c260b1a573b8f3d765eae25143b60d",
+      "dependency.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_and_source_directory_scan",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.py": "\"\"\"Source.\"\"\"\nOTHER = 1\n",
+      "dependency.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.py": "c58f5773cd9d272c0ca1de6e82dcf8eca0c260b1a573b8f3d765eae25143b60d",
+      "dependency.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_package_class_call",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency import Model\nitem = Model(1)\nprint(item.value)\n",
+      "dependency/__init__.pyi": "class Model:\n    value: int\n    def __init__(self, value: int) -> None: ...\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "a0d2e754584200f146979aa8f6de4d8f522dfe45e7e235be7dd63ef4503fe136",
+      "dependency/__init__.pyi": "61d52bd02a14b52229651a19883913fa0bdbc4350d1f40c358a1eb481f3b8a00"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "stub_package_then_source_child",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency.models import Model\nitem = Model(1)\nprint(item.value)\n",
+      "dependency/__init__.pyi": "VALUE: int\n",
+      "dependency/models.py": "\"\"\"Models.\"\"\"\nclass Model:\n    \"\"\"Model.\"\"\"\n    def __init__(self, value):\n        self.value = value\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "4863d08509e767999a25dd3fe82fce3a78f61cd71383422f3752081c8d3b0168",
+      "dependency/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754",
+      "dependency/models.py": "bbe03be0d280dfd093b9058d8a54a682662cc8de2c7879dfbcc3b38e4daeceec"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "stub_init_precedes_same_root_module_scan",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.py": "\"\"\"Source.\"\"\"\nOTHER = 1\n",
+      "dependency/__init__.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.py": "c58f5773cd9d272c0ca1de6e82dcf8eca0c260b1a573b8f3d765eae25143b60d",
+      "dependency/__init__.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Module 'dependency' has no 'VALUE' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "only_stub_module_scan",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nimport dependency\nprint(dependency.VALUE)\n",
+      "dependency.pyi": "VALUE: int\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "main.py": "4cf3fc88d123da290a4c56f586e5f8595d1a9356d5defaa5d693e35a4b10a214",
+      "dependency.pyi": "612ae781fafe812f3721b7d13d96ec66cbd3240e5fad40db7b16cd0b5809e754"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'dependency'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "stub_init_reexport_stub_child",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency import Model\nprint(Model)\n",
+      "dependency/__init__.pyi": "from .models import Model\n",
+      "dependency/models.pyi": "class Model: ...\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "b11aced8f8f8b74c4b62c689b08528eb672a685c247af95984690cdf9b0b0ea9",
+      "dependency/__init__.pyi": "cefda6aaad832ef8a1f10ca655637ba1056f5836b7e8dcfa931ba162319df04f",
+      "dependency/models.pyi": "8ccaaa7970298fa26b165e32229213c3bae14cd6072dd90c8f92def01f1bc198"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "invalid_stub_initializer",
+    "files": {
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom dependency import VALUE\nprint(VALUE)\n",
+      "dependency/__init__.pyi": "value = (\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "main.py": "e94ff747e69b17acf84c8c1512b7ffebe0533854e44abb2a8345024d5f858c3a",
+      "dependency/__init__.pyi": "c1bb3e61e8eef01e55df2114c52005f4eb5ad4be2836b6d44aa645e4c40cfbe8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'dependency' due to ''(' was never closed (dependency, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'dependency' due to ''(' was never closed (dependency, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'dependency' due to ''(' was never closed (dependency, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

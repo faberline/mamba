@@ -1,0 +1,3436 @@
+[
+  {
+    "name": "undefined_global_value",
+    "files": {
+      "main.py": "value = missing\n"
+    },
+    "source_sha256": {
+      "main.py": "d57983f494bb5d9e6cbc081884f89cdbb2141221509e7e8b8ec3c70328462f41"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_function_return",
+    "files": {
+      "main.py": "def value() -> int:\n    return missing\n"
+    },
+    "source_sha256": {
+      "main.py": "b928eeef57ce7e7f37147fce88f49d0124f425f4f43c62cf0f1eeebc1db58795"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_reveal",
+    "files": {
+      "main.py": "reveal_type(missing)\n"
+    },
+    "source_sha256": {
+      "main.py": "28212479538e9520de2ccda9ad4b256f9eb1443534d7176e3831d3d37ce1806b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_call",
+    "files": {
+      "main.py": "def value() -> int:\n    return missing()\n"
+    },
+    "source_sha256": {
+      "main.py": "69f9502e228ae5525a600777b2541a73b152494f8174e91b59e16cc410efb37c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "bound_global_value",
+    "files": {
+      "main.py": "value = 3\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "24d0e77aad48e36e96c48e6a9f37ad89f2ba75111fb24e60ee5aa1e6a7070488"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "valid_builtin_calls",
+    "files": {
+      "main.py": "print(len([1]))\nvalue = Exception(\"x\")\nreveal_type(str(3))\n"
+    },
+    "source_sha256": {
+      "main.py": "97021c143e665aa00a5c47feb97a5fd6d26df4ba927324ceb6b5f1c556b11307"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "implicit_module_values",
+    "files": {
+      "main.py": "reveal_type(__name__)\nreveal_type(__file__)\nreveal_type(__package__)\nreveal_type(__doc__)\nreveal_type(__annotations__)\nreveal_type(__spec__)\n"
+    },
+    "source_sha256": {
+      "main.py": "1ce519a019f68a8a11a2071d63b524f367aaa85080d1c12943dc698250cd0f64"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"dict[str, Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_frozen_importlib.ModuleSpec\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"dict[str, Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_frozen_importlib.ModuleSpec\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"dict[str, Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"_frozen_importlib.ModuleSpec\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "forward_module_function",
+    "files": {
+      "main.py": "def first() -> int:\n    return second()\ndef second() -> int:\n    return 1\n"
+    },
+    "source_sha256": {
+      "main.py": "63cc5b0a6ac1821824bdb8dd74f843a514f5dc8dd4e78dbda7cf71cce792cda0"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "class_namespace_not_function_scope",
+    "files": {
+      "main.py": "class Model:\n    value = 1\n    def method(self) -> int:\n        return value\n"
+    },
+    "source_sha256": {
+      "main.py": "d0d193f1af55b33ec137b6d58bc615406ca54d11e7ead6856d27a8f0a6cacf98"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 16,
+            "end_line": 4,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 16,
+            "end_line": 4,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 16,
+            "end_line": 4,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "class_body_binding",
+    "files": {
+      "main.py": "class Model:\n    first = 1\n    second = first\n"
+    },
+    "source_sha256": {
+      "main.py": "824451889639310914b6f5a85d640fffdd76d6648268cbdacb7e0bb6e63bf0c2"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "list_comprehension_names",
+    "files": {
+      "main.py": "values = [item for item in [1, 2] if item > 0]\nreveal_type(values)\n"
+    },
+    "source_sha256": {
+      "main.py": "c10509e9209ba41667552c20fe93d1482bf3097df2fd0672df750758ddd0649a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "generator_names",
+    "files": {
+      "main.py": "values = (item for item in [1, 2])\nreveal_type(values)\n"
+    },
+    "source_sha256": {
+      "main.py": "05451214290acbe93ceb72c01f880ed9619e1193846873d2e825be8604dc17c8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Generator[int, None, None]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Generator[int, None, None]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"typing.Generator[int, None, None]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_names",
+    "files": {
+      "main.py": "value = lambda item: item\nreveal_type(value(1))\n"
+    },
+    "source_sha256": {
+      "main.py": "75c98ffff65d70f3a41d149d46c083ecf274ca9573f9c50bc33ba6c16969ccfb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "loop_names",
+    "files": {
+      "main.py": "for item in [1, 2]:\n    print(item)\n"
+    },
+    "source_sha256": {
+      "main.py": "72cdada94601a16f05eae1829792e528197f35120e01e52441dd54a3d8a94484"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "global_statement_names",
+    "files": {
+      "main.py": "value = 1\ndef update() -> None:\n    global value\n    value = 2\n"
+    },
+    "source_sha256": {
+      "main.py": "2695c586bf84217588c9ef851d43c8f4101550ac7f96c48d6363b56b01c5971f"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "nonlocal_names",
+    "files": {
+      "main.py": "def outer() -> None:\n    value = 1\n    def inner() -> None:\n        nonlocal value\n        value = 2\n    inner()\n"
+    },
+    "source_sha256": {
+      "main.py": "11a2ed257609c73aeb9b14011dee9268ea45e2a011eef4fed265438acc518172"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "undefined_name_ignore",
+    "files": {
+      "main.py": "value = missing  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "2220e2fee947868a22ad4cc680ec6e690afc4ecd52db9dc924373156b4fd01e5"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "undefined_twice",
+    "files": {
+      "main.py": "value = missing\nother = missing\n"
+    },
+    "source_sha256": {
+      "main.py": "7d9265db3e637ebaa2a60950039b44adb47a66028b3e81c05a296cc3bcec6f3a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_attribute_return",
+    "files": {
+      "main.py": "def value() -> int:\n    return missing.value\n"
+    },
+    "source_sha256": {
+      "main.py": "a162f415fdb6b198a254b5d89a58bb6d2d2961c276a00965b94ec8efdb6f5392"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "builtin_shadow",
+    "files": {
+      "main.py": "len = 3\nreveal_type(len)\n"
+    },
+    "source_sha256": {
+      "main.py": "7b33de9de18096d8d7e4e7efde9539db76c1fda9fa70e3275409c11c3bb83a40"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "module_global_shadow",
+    "files": {
+      "main.py": "__name__ = 3\nreveal_type(__name__)\n"
+    },
+    "source_sha256": {
+      "main.py": "d2d96c56b173fce1982cec6903bd0069139c2e5666f5aa094c3bd54cd7adfd35"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "ordinary_path",
+    "files": {
+      "main.py": "reveal_type(__path__)\n"
+    },
+    "source_sha256": {
+      "main.py": "de464b1881b229dab886c40fe92f740aa60ba34cb936d0173ec9e5ac159ff7d7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"__path__\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"__path__\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"__path__\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_does_not_leak",
+    "files": {
+      "main.py": "value = [item for item in [1]]\nreveal_type(item)\n"
+    },
+    "source_sha256": {
+      "main.py": "043f8dbab70b9d54d5b6341af2c9734aeafe049fa1598e49b7383af0e346a1aa"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_unknown_filter",
+    "files": {
+      "main.py": "value = [item for item in [1] if missing]\n"
+    },
+    "source_sha256": {
+      "main.py": "03e19e1823592a7229ed768fe15539939c33a3379c350168b9cefec132468af3"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 34,
+            "end_line": 1,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 34,
+            "end_line": 1,
+            "end_column": 40
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 34,
+            "end_line": 1,
+            "end_column": 40
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_unknown_item",
+    "files": {
+      "main.py": "value = [missing for item in [1]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7cd9003eeed1abd94ff7e56fb1ff679096f408af696d59b4172edf3282b3d613"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_multiple",
+    "files": {
+      "main.py": "value = [left + right for left in [1] for right in [2]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "5656c92c8439af5af514bfbbee4aa4c67d98f501706c119854403a50061665f8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_unpack",
+    "files": {
+      "main.py": "value = [left for left, right in [(1, \"a\")]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "4104e2e129ef3c80ca3d69ce2debc85c9292674908c19ebfb3bba25cf0f36f97"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "comprehension_nested",
+    "files": {
+      "main.py": "value = [[right for right in [left]] for left in [1]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7b73d714000b654a9b2ed458fc5b5d2d9dcb1683dc680ddf5cd9ef4cdbb02fe6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[list[int]]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[list[int]]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[list[int]]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_does_not_leak",
+    "files": {
+      "main.py": "value = lambda item: item\nreveal_type(item)\n"
+    },
+    "source_sha256": {
+      "main.py": "59a07d991bf76d4b49d6e987d94d6ddcdd4e4eb83b1eca4eaca0f5237d4ffddb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"item\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_default_unknown",
+    "files": {
+      "main.py": "value = lambda item=missing: item\n"
+    },
+    "source_sha256": {
+      "main.py": "89851226228ce9193f0fdb116a7e3e20f63220c0aadb962f8181d83c6cc9980f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 21,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 21,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 21,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_body_unknown",
+    "files": {
+      "main.py": "value = lambda item: missing\n"
+    },
+    "source_sha256": {
+      "main.py": "591b9b0ac4c8120b92f5a8f4af57746d45b9e0f85c44548e5921709bc88b7661"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 22,
+            "end_line": 1,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 22,
+            "end_line": 1,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 22,
+            "end_line": 1,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_closure",
+    "files": {
+      "main.py": "value = 3\nfunction = lambda: value\nreveal_type(function())\n"
+    },
+    "source_sha256": {
+      "main.py": "a6d00dd8df03aea871feda7df748bb7061719fb97e866add0a456abe76c139d3"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"int\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"int\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function (unknown) in typed context",
+          "hint": "Revealed type is \"int\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "lambda_context",
+    "files": {
+      "main.py": "from typing import Callable\nvalue: Callable[[int], int] = lambda item: item\nreveal_type(value(1))\n"
+    },
+    "source_sha256": {
+      "main.py": "702a6d723f0d176956a10a3fe0434e540f6387d04d8ea0062f27043e664824c1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "class_comprehension_iterator",
+    "files": {
+      "main.py": "class Value:\n    values = [1]\n    other = [item for item in values]\n"
+    },
+    "source_sha256": {
+      "main.py": "bbfb787363da53d42d489fd43dd498ea32fb16cadacea1ef7e236b38f69d7692"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "class_comprehension_body",
+    "files": {
+      "main.py": "class Value:\n    value = 1\n    other = [value for item in [1]]\n"
+    },
+    "source_sha256": {
+      "main.py": "42cfd326063ddb41236abe94ba4705f3834d8d147f91e3126324153c5a362ba1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined; did you mean \"Value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined; did you mean \"Value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"value\" is not defined; did you mean \"Value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 14,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "closure_local",
+    "files": {
+      "main.py": "def outer() -> int:\n    value = 1\n    def inner() -> int:\n        return value\n    return inner()\n"
+    },
+    "source_sha256": {
+      "main.py": "171fc02d296ef8727c6bcaead32ce9dd7c4c6d7519e283108c55214ca1748185"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "typing_unimported",
+    "files": {
+      "main.py": "reveal_type(Any)\n"
+    },
+    "source_sha256": {
+      "main.py": "035ccba5d39f29b1a8edde29595fb7cca0f22a43b704d14f9f89347be87e01b0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"Any\" is not defined",
+          "hint": "Did you forget to import it from \"typing\"? (Suggestion: \"from typing import Any\")\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"Any\" is not defined",
+          "hint": "Did you forget to import it from \"typing\"? (Suggestion: \"from typing import Any\")\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"Any\" is not defined",
+          "hint": "Did you forget to import it from \"typing\"? (Suggestion: \"from typing import Any\")\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typing_imported",
+    "files": {
+      "main.py": "from typing import Any\nreveal_type(Any)\n"
+    },
+    "source_sha256": {
+      "main.py": "756eaf9f3e82ed6a9a2302205590c3997210bee8e3a8c6e3a23060932325369a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "deleted_name",
+    "files": {
+      "main.py": "value = 1\ndel value\nprint(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "58cf2042e9d92a21e220df517492c43383f57eb972132d8504226fab9a477f61"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "package_path",
+    "files": {
+      "package/__init__.py": "reveal_type(__path__)\n"
+    },
+    "source_sha256": {
+      "package/__init__.py": "de464b1881b229dab886c40fe92f740aa60ba34cb936d0173ec9e5ac159ff7d7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "package/__init__.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "package/__init__.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "package/__init__.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "delete_undefined",
+    "files": {
+      "main.py": "del missing\n"
+    },
+    "source_sha256": {
+      "main.py": "db03c0cc0284a47cb5f4a844eae82013024dce15c56a32295bcf144d857e9fcf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "delete_reassign",
+    "files": {
+      "main.py": "value = 1\ndel value\nvalue = 2\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3f05fe4f57844ac7d7ad2956df6209f42b8ee509268fd905e981afbc6b6c1202"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "delete_twice",
+    "files": {
+      "main.py": "value = 1\ndel value\ndel value\n"
+    },
+    "source_sha256": {
+      "main.py": "5a8fd72114cbd5a30e45b5649faad14a352015ca451fe0a2ed15b828bf91be1e"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "delete_return",
+    "files": {
+      "main.py": "def value() -> int:\n    result = 1\n    del result\n    return result\n"
+    },
+    "source_sha256": {
+      "main.py": "399ea8924d2749170d5bab309fe3a064376e9f2f2f9e049a5fec362e40503c58"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "delete_conditional",
+    "files": {
+      "main.py": "def value(flag: bool) -> None:\n    result = 1\n    if flag:\n        del result\n    print(result)\n"
+    },
+    "source_sha256": {
+      "main.py": "4ea8f9286c1b467a158eb034c2a4e3e54ab34e083ace5221439895bd48c3a4d6"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "delete_tuple",
+    "files": {
+      "main.py": "left = 1\nright = \"a\"\ndel left, right\nprint(left, right)\n"
+    },
+    "source_sha256": {
+      "main.py": "7c2b0ae876c8e3249044c96b4155d2844be2c1535124a40e04d9420792e8eee5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"left\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"right\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"left\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"right\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"left\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 10
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Trying to read deleted variable \"right\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "any_constructor",
+    "files": {
+      "main.py": "from typing import Any\nreveal_type(Any())\n"
+    },
+    "source_sha256": {
+      "main.py": "ab95396d60d4501a5920e06491a0f331166212a9a765a8a87f906b2b3d114dd5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": "Revealed type is \"typing.Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": "Revealed type is \"typing.Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": "Revealed type is \"typing.Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "any_constructor_argument",
+    "files": {
+      "main.py": "from typing import Any\nAny(1)\n"
+    },
+    "source_sha256": {
+      "main.py": "4bca04e409a29ece92e6fa99bd13bd53edb268dd26c503323b49cde004fc98c1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Any(...) is no longer supported. Use cast(Any, ...) instead",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        },
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "any_alias",
+    "files": {
+      "main.py": "from typing import Any as Dynamic\nvalue: Dynamic = 1\nreveal_type(Dynamic)\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "cbacc8ca4084bf2442e7fa7ee68edb420352894bb543aeb54739c95d315c7afe"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> typing.Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "module_global_annotation",
+    "files": {
+      "main.py": "__name__: int = 1\nreveal_type(__name__)\n"
+    },
+    "source_sha256": {
+      "main.py": "5209f102771e2c7c9f6923f82c1976600784256ebde63aefd55b585c03b345bf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-redef",
+          "message": "Name \"__name__\" already defined (possibly by an import)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-redef",
+          "message": "Name \"__name__\" already defined (possibly by an import)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-redef",
+          "message": "Name \"__name__\" already defined (possibly by an import)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "builtin_private_import",
+    "files": {
+      "main.py": "reveal_type(_AnyStr)\n"
+    },
+    "source_sha256": {
+      "main.py": "4f23fc46fa6c981131279bcfd95b56eb3dc2543326543a2f1878aabb9e6d30fd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"_AnyStr\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"_AnyStr\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"_AnyStr\" is not defined",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_suggestion",
+    "files": {
+      "main.py": "value = 1\nprint(vaule)\n"
+    },
+    "source_sha256": {
+      "main.py": "a04620c1db95e15ba3a20026eca0a00774496b84b302ad2c2bb6a4131f49df8f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"vaule\" is not defined; did you mean \"value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"vaule\" is not defined; did you mean \"value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"vaule\" is not defined; did you mean \"value\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "undefined_ignore_hint",
+    "files": {
+      "main.py": "reveal_type(Any)  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "d273daf47f2c83f79554bf24e681e79fa0a47b4cef033f9b0d9dfb1fa4c05954"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": null,
+          "message": "Error code \"misc\" not covered by \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": null,
+          "message": "Error code \"misc\" not covered by \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": null,
+          "message": "Error code \"misc\" not covered by \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

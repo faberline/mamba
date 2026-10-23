@@ -1,0 +1,5604 @@
+[
+  {
+    "name": "template_constant_reveal",
+    "files": {
+      "main.py": "reveal_type(t\"hello\")\n"
+    },
+    "source_sha256": {
+      "main.py": "8c027b2bc54e6e4a1d1e52d7cf2e397dc817cb12c5397fd4ff870899af51dd7b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_interpolation_reveal",
+    "files": {
+      "main.py": "value = 3\nreveal_type(t\"value {value}\")\n"
+    },
+    "source_sha256": {
+      "main.py": "a9d7c0cd79783a338e607008f022479b146417c2ecbf7bbc74982d6ecea673cb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_str_return",
+    "files": {
+      "main.py": "def message() -> str:\n    return t\"hello\"\n"
+    },
+    "source_sha256": {
+      "main.py": "27fdaf07d268cce4b8fa9e13dc7ca56d0c6291d8d980a553862a53e2f07e8c29"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"Template\", expected \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_annotated_return",
+    "files": {
+      "main.py": "from string.templatelib import Template\ndef message() -> Template:\n    return t\"hello\"\n"
+    },
+    "source_sha256": {
+      "main.py": "f9e548285a8e31f8c31de6438ce8c200ba2c894c4165d21c5e9a31a603d934c4"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 12,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 12,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "name": "template_expression_missing_name",
+    "files": {
+      "main.py": "value = t\"{missing}\"\n"
+    },
+    "source_sha256": {
+      "main.py": "b958da0d2846a23ca97faa22cb04c78e3fddd849018a04e09fc24ba8a82fc9e9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_members",
+    "files": {
+      "main.py": "value = t\"hello {1}\"\nreveal_type(value.strings)\nreveal_type(value.interpolations)\nreveal_type(value.values)\n"
+    },
+    "source_sha256": {
+      "main.py": "9362941661e3624c64359156489ecb9731788e437abe6e590ad022852eb62ce8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[string.templatelib.Interpolation[Any], ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[Any, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + t\"world\")\n"
+    },
+    "source_sha256": {
+      "main.py": "9c86ac4866499d1bdbb1453273d96626f8747eee7b2865d82ed68b596e3d61bd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_string",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + \"world\")\n"
+    },
+    "source_sha256": {
+      "main.py": "2b2b02b8423f38940cec866f6455dcdc5148089805cd9d7c5b134b54a862c047"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_model_field",
+    "files": {
+      "main.py": "from string.templatelib import Template\nfrom pydantic import BaseModel\nclass Model(BaseModel):\n    value: Template\nModel(value=t\"hello\")\nModel(value=\"hello\")\n"
+    },
+    "source_sha256": {
+      "main.py": "072e9c0af1bfea667f8566c99b7de6c2b8c972367501dad51bd173173c670b0f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"value\" to \"Model\" has incompatible type \"str\"; expected \"Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_interpolation_format",
+    "files": {
+      "main.py": "value = 3\nreveal_type(t\"{value!r:03d}\")\n"
+    },
+    "source_sha256": {
+      "main.py": "698bb7bb2672849aa9106464b0c1c000ae34773a257d93473e6c8118544becbc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_nested_expression",
+    "files": {
+      "main.py": "value = t\"{1 + 'x'}\"\n"
+    },
+    "source_sha256": {
+      "main.py": "7d22d4662fe9ba2beac42f2ff24a1be5b7483207af1e695058c1063061801977"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"int\" and \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"int\" and \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"int\" and \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_readonly_member",
+    "files": {
+      "main.py": "value = t\"{1}\"\nvalue.values = ()\n"
+    },
+    "source_sha256": {
+      "main.py": "cf88a9ee32776fa5d8eca6109e0652f03966768ee3af84f226949bc294208589"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Property \"values\" defined in \"Template\" is read-only",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_constructor_valid",
+    "files": {
+      "main.py": "from string.templatelib import Template\nreveal_type(Template(\"hello\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "47a49b7b66610b56a07b75a8158c4f0049c497b4eba5787c94099cdbd90c25cc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_constructor_bad_item",
+    "files": {
+      "main.py": "from string.templatelib import Template\nTemplate(1)\n"
+    },
+    "source_sha256": {
+      "main.py": "18f6e5542d25a7990f39f15daf40d9d091107eb49a212070d70dac39a03cafcc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Template\" has incompatible type \"int\"; expected \"str | Interpolation[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 10,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_module_alias",
+    "files": {
+      "main.py": "import string.templatelib as templates\nreveal_type(templates.Template(\"hello\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "ed321d756ae8879cf77727111727a6b0142764b49818a3af99c412185b54ec87"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_constructor_interpolation",
+    "files": {
+      "main.py": "from string.templatelib import Template, Interpolation\nreveal_type(Template(\"hello\", Interpolation(1)))\n"
+    },
+    "source_sha256": {
+      "main.py": "2d333b86501d8b93cf6d67c36d75b25caf795358bb1034ab8221d8226da7efb7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_constructor_keyword",
+    "files": {
+      "main.py": "from string.templatelib import Template\nTemplate(value=\"hello\")\n"
+    },
+    "source_sha256": {
+      "main.py": "28d89ab909f775656814121e0c33b2debe228bcbf2a2e2472d0ca3aa5d3b9c12"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"value\" for \"Template\"",
+          "hint": "\"Template\" defined in \"string.templatelib\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_iterator",
+    "files": {
+      "main.py": "value = t\"hello {3}\"\nfor item in value:\n    reveal_type(item)\n"
+    },
+    "source_sha256": {
+      "main.py": "fca0e7b61f55b72409c00f3b03dec0cdc401018d1c1857539f7ad6046677257b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str | string.templatelib.Interpolation[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_integer",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + 1)\n"
+    },
+    "source_sha256": {
+      "main.py": "02506bea6a9b135a3afb8e197f0cb9e4b32d6ebecbf7a9f4a885800b63fe4f88"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_reverse_add",
+    "files": {
+      "main.py": "reveal_type(\"hello\" + t\"world\")\n"
+    },
+    "source_sha256": {
+      "main.py": "1deaead669792ae91b61ca084e4e7e568a427749879a827cf33a3b8458878763"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 23,
+            "end_line": 1,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 23,
+            "end_line": 1,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"str\" and \"Template\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 23,
+            "end_line": 1,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_method_valid",
+    "files": {
+      "main.py": "value = t\"hello\"\nreveal_type(value.__add__(t\"world\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "607b3f524658cf485789a6041dc426d918a88ca0dd0a2690c6c9a554b0fcdca6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 27,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 27,
+            "end_line": 2,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_method_bad",
+    "files": {
+      "main.py": "value = t\"hello\"\nvalue.__add__(\"world\")\n"
+    },
+    "source_sha256": {
+      "main.py": "3d35cabf0279b9c10a91f76e4e910d9896940b64d499abed4e956a99057bb806"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_method_keyword",
+    "files": {
+      "main.py": "value = t\"hello\"\nvalue.__add__(other=t\"world\")\n"
+    },
+    "source_sha256": {
+      "main.py": "3cc5ee1c0639f754656509463fb7ecf8c08bbf6dba639da74aefc6af096570de"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"__add__\" of \"Template\"",
+          "hint": "\"__add__\" defined in \"string.templatelib\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_strings_mutable",
+    "files": {
+      "main.py": "value = t\"hello\"\nvalue.strings = (\"a\", \"b\")\nvalue.strings = (1,)\n"
+    },
+    "source_sha256": {
+      "main.py": "bc3aa350420fcff2bde057bd4dd6828d86fcdb1e27b6e50d6a54eb05ac557b87"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"tuple[int]\", variable has type \"tuple[str, ...]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_final_class",
+    "files": {
+      "main.py": "from string.templatelib import Template\nclass Custom(Template):\n    pass\n"
+    },
+    "source_sha256": {
+      "main.py": "7037de8efcc8e5ea57cf156e1306b9a2aeda9eec720f9b398a2a2d92bf9e8d37"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Class cannot subclass \"Template\" (has type \"Any\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Class cannot subclass \"Template\" (has type \"Any\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Cannot inherit from final class \"Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 8
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_default_argument",
+    "files": {
+      "main.py": "from string.templatelib import Template\ndef message(value: Template = t\"hello\") -> Template:\n    return value\n"
+    },
+    "source_sha256": {
+      "main.py": "bcd25d3a5a12f653170be56b54db4a46544c6fdb9bbf25da4efbf91e9442b073"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 31,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 31,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "name": "template_builtin_names",
+    "files": {
+      "main.py": "reveal_type(t\"{__name__} {len([1])} {print} {Exception}\")\n"
+    },
+    "source_sha256": {
+      "main.py": "d1ac5207cb79a4b0da08d59da7ae9859f0d6a8ea4f58bbd98903f2be6fb102a6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 56
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_concat_lines",
+    "files": {
+      "main.py": "reveal_type((t\"hello\"\n             t\"world\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "bb8232461b586b6fe798a4b9d4ce9aa4bd6892742e90bc198f819466f717b752"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_constructor",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nvalue = Interpolation(1)\nreveal_type(value)\nreveal_type(value.value)\nreveal_type(value.expression)\nreveal_type(value.conversion)\nreveal_type(value.format_spec)\n"
+    },
+    "source_sha256": {
+      "main.py": "6d5340617309b3ba27e1333bad104fd48c2fe7899253b4abd5a482895b640337"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Interpolation[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal['a'] | Literal['r'] | Literal['s'] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_generic_annotation",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nvalue: Interpolation[int] = Interpolation(1)\nreveal_type(value.value)\nbad: Interpolation[str] = Interpolation(1)\n"
+    },
+    "source_sha256": {
+      "main.py": "51a2c9545a196550446867c851204441d18ad1901b94e9c50b5a8198ba75f76a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"Interpolation\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 41,
+            "end_line": 4,
+            "end_column": 41
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_missing_type_argument",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nvalue: Interpolation = Interpolation(1)\n"
+    },
+    "source_sha256": {
+      "main.py": "5bdceba7ad2a835bce5b5983252cfa80697960878caf895b5994a0205d08893f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-arg",
+          "message": "Missing type arguments for generic type \"Interpolation\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 8,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_conversion_bad",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nInterpolation(1, conversion=\"x\")\n"
+    },
+    "source_sha256": {
+      "main.py": "ed0a8e65bfb21a56751496b5b50480cd6f5df325e793a8a5331e9f89e11d99e1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"conversion\" to \"Interpolation\" has incompatible type \"Literal['x']\"; expected \"Literal['a', 'r', 's'] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 29,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_format_bad",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nInterpolation(1, expression=2, format_spec=3)\n"
+    },
+    "source_sha256": {
+      "main.py": "be589dbafe524c4f2c04a34f62e5731bd46e7eb66c725497a004c82738ad2e36"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"expression\" to \"Interpolation\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 29,
+            "end_line": 2,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"format_spec\" to \"Interpolation\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 44,
+            "end_line": 2,
+            "end_column": 44
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_missing_value",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nInterpolation()\n"
+    },
+    "source_sha256": {
+      "main.py": "8a0e29357c01d9bcd5b6799fc15efff5cdc44d219b4d80e67b527ea1e20f4549"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"value\" in call to \"Interpolation\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_final_class",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nclass Custom(Interpolation[int]):\n    pass\n"
+    },
+    "source_sha256": {
+      "main.py": "c54659c0e63f2637f462743cbf21f13cedbb26743d3979965a572983bb10121d"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Class cannot subclass value of type \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Class cannot subclass value of type \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Cannot inherit from final class \"Interpolation\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 8
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "convert_no_conversion",
+    "files": {
+      "main.py": "from string.templatelib import convert\nreveal_type(convert(1, conversion=None))\n"
+    },
+    "source_sha256": {
+      "main.py": "36536b8e746c2d3c5b1d4ef7ac9a91ebcadb0745410f3e24269e2e552f42bc34"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 39
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "convert_repr",
+    "files": {
+      "main.py": "from string.templatelib import convert\nreveal_type(convert(1, conversion=\"r\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "db43443e813c6c51bbd1968546735aa8fc97efd87357108605c40766c08fb4cd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 38
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "convert_bad_conversion",
+    "files": {
+      "main.py": "from string.templatelib import convert\nconvert(1, conversion=\"x\")\n"
+    },
+    "source_sha256": {
+      "main.py": "a4056c89dc4bafae3d0cc9faf8896c0a2f9f62e18e0575325a046ab03600b165"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"convert\" matches argument types \"int\", \"str\"",
+          "hint": "Possible overload variants:\n    def [_T] convert(_T, /, conversion: None) -> _T\n    def convert(object, /, conversion: Literal['r', 's', 'a']) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "convert_positional_only",
+    "files": {
+      "main.py": "from string.templatelib import convert\nconvert(obj=1, conversion=\"r\")\n"
+    },
+    "source_sha256": {
+      "main.py": "687219f76d7f8117128c04e3b396d9cd08f9dd32d5c02fa338bcf9057b6fddfd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-overload",
+          "message": "Unexpected keyword argument \"obj\" for overloaded function \"convert\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"convert\" matches argument types \"int\", \"str\"",
+          "hint": "Possible overload variants:\n    def [_T] convert(_T, /, conversion: None) -> _T\n    def convert(object, /, conversion: Literal['r', 's', 'a']) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_bound_names",
+    "files": {
+      "main.py": "from string.templatelib import Template\ndef message(value: int) -> Template:\n    return t\"{value}\"\n"
+    },
+    "source_sha256": {
+      "main.py": "cdca37579633123acd38354e023a3c73d542614ecf26aa32176ca6bdeaa350ed"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 12,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 12,
+            "end_line": 3,
+            "end_column": 12
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "name": "template_add_bool",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + True)\n"
+    },
+    "source_sha256": {
+      "main.py": "fc06d23cbbe359d7952212f422e1033aefe9afaa1c288df76429a49918ecbb48"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"bool\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_float",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + 1.0)\n"
+    },
+    "source_sha256": {
+      "main.py": "a2c255fc7e91a20b044fc72c65fe6ce67a39dad95e72a3727e61470ea6cbc85e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"float\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_complex",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + 1j)\n"
+    },
+    "source_sha256": {
+      "main.py": "23987ce85a124d5f5f2600328f3198222de49c8e752d8dc8e9cac3d96806e4f6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"complex\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_bytes",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + b\"x\")\n"
+    },
+    "source_sha256": {
+      "main.py": "5f352bb35ab23bd2bf62be7b7d92773ca9fca0699c045b8cd5dd823f136e0a48"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"bytes\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_none",
+    "files": {
+      "main.py": "reveal_type(t\"hello\" + None)\n"
+    },
+    "source_sha256": {
+      "main.py": "35779ff7850744f61e2049db1fbfbf3b723ff5191ed334ccf24e05a7d669a89a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"Template\" and \"None\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 24,
+            "end_line": 1,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_add_any",
+    "files": {
+      "main.py": "from typing import Any\ndef message(value: Any) -> None:\n    reveal_type(t\"hello\" + value)\n"
+    },
+    "source_sha256": {
+      "main.py": "da944deea83670f35074879ce204fe3929b1e4b7643dd71d020eb5958d1c01b1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_reverse_integer",
+    "files": {
+      "main.py": "reveal_type(1 + t\"hello\")\n"
+    },
+    "source_sha256": {
+      "main.py": "90b4d9bf173a2f723771f8e3b071ff7cedadfe8473e6f3c611948522c0070048"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "operator",
+          "message": "Unsupported operand types for + (\"int\" and \"Template\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_custom_reverse_add",
+    "files": {
+      "main.py": "from string.templatelib import Template\nclass Reverse:\n    def __radd__(self, value: Template) -> int:\n        return 3\nreveal_type(t\"hello\" + Reverse())\n"
+    },
+    "source_sha256": {
+      "main.py": "41c1e365db0c651eabe63dd0ec83d7333b78789f5fd1feb43cc4860425f2f40e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_unbound_add",
+    "files": {
+      "main.py": "from string.templatelib import Template\nreveal_type(Template.__add__(t\"hello\", t\"world\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "7cee72d7e69126ffd480b72e8b824f82801ecc46ddb9a62bbe2a3df4a6fbf523"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 48
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 30,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 48
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 30,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 48
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_direct_allocation",
+    "files": {
+      "main.py": "from string.templatelib import Template\nreveal_type(Template.__new__(Template, \"hello\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "0c8d01940f74bc5d51f619682ea27fcb45de84f6a3336b99c6a640f0b288bedd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 47
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_object_methods",
+    "files": {
+      "main.py": "value = t\"hello\"\nreveal_type(value.__str__())\nreveal_type(value.__repr__())\n"
+    },
+    "source_sha256": {
+      "main.py": "1dc168f383f17fc9d83d83864193209f636acba49cc5cba85691739a8a74f1fc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_class_getitem",
+    "files": {
+      "main.py": "from string.templatelib import Template\nreveal_type(Template.__class_getitem__(int))\n"
+    },
+    "source_sha256": {
+      "main.py": "bc497073f53cf59773960994578ffbd5b26ab9d7dfaaa9ebc8b0c80fcf90f4f9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 43
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 43
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"types.GenericAlias\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 43
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_writable_fields",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nvalue = Interpolation(1)\nvalue.value = 2\nvalue.value = \"x\"\nvalue.expression = 1\n"
+    },
+    "source_sha256": {
+      "main.py": "54ee7a20242eb085edbcbc2046308fc75b5370d148c12320ceb93ba6b1f9d7eb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 15,
+            "end_line": 4,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 20,
+            "end_line": 5,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "interpolation_bound_allocation",
+    "files": {
+      "main.py": "from string.templatelib import Interpolation\nreveal_type(Interpolation.__new__(Interpolation, 1))\n"
+    },
+    "source_sha256": {
+      "main.py": "b7fbb5daf866c140014c64fc99969940fea88d8debe96a548ddc02dd13cfcf3e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 51
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 51
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Interpolation[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 51
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_root_import",
+    "files": {
+      "main.py": "import string.templatelib\nreveal_type(string.templatelib.Template(\"x\"))\n"
+    },
+    "source_sha256": {
+      "main.py": "29a612c5ccc6beb16cd5c9f38a31a5ad416a9572f7aa4c3a352d51d2380026de"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 44
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_type_ignore",
+    "files": {
+      "main.py": "value = t\"hello\"  # type: ignore[syntax, import-not-found]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "6e985315a315be2ec475259181d65024468cb46ec11a36a760665da2aff09d37"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[syntax]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[syntax]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[syntax, import-not-found]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_nested_missing_name",
+    "files": {
+      "main.py": "reveal_type(t\"{1:{missing}}\")\n"
+    },
+    "source_sha256": {
+      "main.py": "6d33e4f0df448fa56fd61a104e09cf63d4d1726826c22b13ffb86a5b559a455a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 19,
+            "end_line": 1,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 19,
+            "end_line": 1,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "name-defined",
+          "message": "Name \"missing\" is not defined",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 19,
+            "end_line": 1,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "template_package_names",
+    "files": {
+      "pkg/__init__.py": "reveal_type(t\"{__path__} {__spec__} {__doc__} {__package__}\")\n"
+    },
+    "source_sha256": {
+      "pkg/__init__.py": "a5a69c0fb607f13d3108d4b3a1fae018572ead44eb15ead83c0ccba5da30fc0a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"string.templatelib\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": "Revealed type is \"Any\"",
+          "path": "pkg/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"string.templatelib.Template\"",
+          "hint": null,
+          "path": "pkg/__init__.py",
+          "severity": "note",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 60
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

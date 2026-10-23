@@ -1,0 +1,647 @@
+[
+  {
+    "name": "01_case09_partially_annotated_baseline",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value) -> str: ...\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "c96b1efe78e840e980266b80d4df6c820cc6d71802e3c5d0959d24e0ed956593",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "02_explicit_any_parameter_same_return",
+    "filename": "main.py",
+    "source": "from typing import Any, overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value: Any) -> int: ...\n\ndef choose(value: object) -> int:\n    return 0\n",
+    "source_sha256": "89c7fe4db9fd72758989da5d2c11d4c295062957f981e7588de718564f3cf115",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "03_later_variant_both_parameters_untyped",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value, label) -> str: ...\n\ndef choose(value: int | str, label: object = ...) -> int | str:\n    return value\n",
+    "source_sha256": "972779a9101a31664e1f7b62348291a7eb187965e921c04027539a54e067b5ec",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 36
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "04_earlier_variant_untyped",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value) -> int: ...\n\n@overload\ndef choose(value: str) -> str: ...\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "dcd5a1ba98cc09636b0f49878dd6bc364e21b7eb206d880bfd100b4463f421d5",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "05_both_variants_untyped",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value) -> int: ...\n\n@overload\ndef choose(value) -> str: ...\n\ndef choose(value: object) -> object:\n    return value\n",
+    "source_sha256": "c3fd594092c708cb18b4547b88715c4d165503e195687b8156621fffa0b8be9a",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation for one or more parameters",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "06_int_then_object_safe_returns",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value: object) -> object: ...\n\ndef choose(value: object) -> object:\n    return value\n",
+    "source_sha256": "3c30dcde58c66a71176ebcf0d1ad62c1a02de92f8283b9e02980385c8f2db858",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "07_object_then_int_safe_returns",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: object) -> object: ...\n\n@overload\ndef choose(value: int) -> int: ...\n\ndef choose(value: object) -> object:\n    return value\n",
+    "source_sha256": "ed7ff8e950a9a89a0fb82ce29534bf2c5dc98606b0d0fbdf9b7e611f5915275c",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "08_int_then_object_unsafe_returns",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value: object) -> str: ...\n\ndef choose(value: object) -> int | str:\n    return 0\n",
+    "source_sha256": "38f57ed5c7eae97a5e01227c09f51318bf8aa221997b1a9e6c29294071dd9796",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-overlap",
+          "message": "Overloaded function signatures 1 and 2 overlap with incompatible return types",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-overlap",
+          "message": "Overloaded function signatures 1 and 2 overlap with incompatible return types",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-overlap",
+          "message": "Overloaded function signatures 1 and 2 overlap with incompatible return types",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "09_object_then_int_unsafe_returns",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: object) -> str: ...\n\n@overload\ndef choose(value: int) -> int: ...\n\ndef choose(value: object) -> int | str:\n    return 0\n",
+    "source_sha256": "c95851b3f9fccca1a05e0770bfdaba7f5ae1d3f253de86ec1a6517b3eee74389",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "overload-cannot-match",
+          "message": "Overloaded function signature 2 will never be matched: signature 1's parameter type(s) are the same or broader",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 7,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "10_missing_return_only",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int): ...\n\n@overload\ndef choose(value: str) -> str: ...\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "bfcfbc7f6b020db9fa0287f0e7041da0c40937e5775fe4373c0ffccd9552eeb3",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a return type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a return type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a return type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "11_ignore_no_untyped_def",
+    "filename": "main.py",
+    "source": "from typing import overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value) -> str: ...  # type: ignore[no-untyped-def]\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "a21a7fa3eeb01d0bf874185dfbaef2c1bed9e3e81ea979a4aabca6fbcba108eb",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "12_explicit_any_return_disjoint",
+    "filename": "main.py",
+    "source": "from typing import Any, overload\n\n@overload\ndef choose(value: int) -> int: ...\n\n@overload\ndef choose(value: str) -> Any: ...\n\ndef choose(value: int | str) -> int | str:\n    return value\n",
+    "source_sha256": "de8e8b9c90bb35481da3ed30490c3620f570f210bd959e00acb4ba8ac374161a",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

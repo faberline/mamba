@@ -1,0 +1,584 @@
+[
+  {
+    "name": "selected_namespace_sources",
+    "files": {
+      "namespace/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom namespace.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py",
+      "namespace/models.py"
+    ],
+    "source_sha256": {
+      "namespace/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "5b69519aa5ea7016fa39b1e328070f7f1323a505aaa43f1e1c2eab0d22d9b61e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "selected_namespace_directory",
+    "files": {
+      "namespace/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom namespace.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "."
+    ],
+    "source_sha256": {
+      "namespace/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "5b69519aa5ea7016fa39b1e328070f7f1323a505aaa43f1e1c2eab0d22d9b61e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "namespace/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "selected_package_sources",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.models import Model\nModel.value = \"text\"\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py",
+      "pkg/models.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "ee45d5d6f4b98749e47a6a98d69c90b02a71a9677b557867f93fb60cdd08aeb8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "E0242",
+          "message": "Value 'value' in slots conflicts with class variable",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 17,
+            "end_line": 3,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "pkg/models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      26,
+      26,
+      26
+    ]
+  },
+  {
+    "name": "package_parent_side_effect",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\nfrom .models import Model\nModel.value = \"text\"\n",
+      "pkg/models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    __slots__ = (\"value\",)\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.models import Model\nprint(Model.value.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "549fcc895b052eb9f8a121678fe6da289134cd0b93206a539313b009ae1c2510",
+      "pkg/models.py": "047e58d18dcc71e17f855ff75c50b138f9c7e54a2c35696cc5efa730bc865ddc",
+      "main.py": "6891f692956459325655a15964f28a410dc20ab04ae2e9867965cc2b593d4daa"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

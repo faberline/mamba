@@ -1,0 +1,13 @@
+[package]
+name = "mamba-shared-kernel"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Pure source, syntax, and ABI contracts shared by Mamba components"
+
+[dependencies]
+thiserror.workspace = true
+
+[lints]
+workspace = true

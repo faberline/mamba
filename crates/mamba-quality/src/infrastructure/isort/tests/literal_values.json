@@ -1,0 +1,418 @@
+[
+  {
+    "name": "set_empty",
+    "source": "# isort: set\nx = set()\n",
+    "source_sha256": "60955f8852d7289cffea03f8a84e1e2abb5415eea0e76a00a97af418d7f6e47f",
+    "expected": [
+      {
+        "output": "# isort: set\nx = {}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: set\nx = {}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: set\nx = {}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_nested",
+    "source": "# isort: list\nx = [set()]\n",
+    "source_sha256": "0bb3215272e52ddfb597d65e2acf216c099116b03d8d9aaaf658cf9b8c57e045",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [set()]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [set()]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: list\nx = [set()]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      }
+    ]
+  },
+  {
+    "name": "ellipsis",
+    "source": "# isort: list\nx = [...]\n",
+    "source_sha256": "51450c331a3aee13ef5727d90f0a278cad1fef5d1c5fb6bfcd3c32d284ad377c",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [Ellipsis]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [Ellipsis]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [Ellipsis]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "lambda_defaults",
+    "source": "# isort: list\nx = lambda a=1, /, b=2, *args, flag=False, **kwargs: a\n",
+    "source_sha256": "4df325ce95fc57b3071550c0cc28f4cae16c630247a8df9188f6d54cd848b63a",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda a=1, /, b=2, *args, flag=False, **kwargs: a\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x1063d7290>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda a=1, /, b=2, *args, flag=False, **kwargs: a\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x105f31210>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda a=1, /, b=2, *args, flag=False, **kwargs: a\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Lambda(args=arguments(posonlyargs=[arg(arg='a', annotation=None, type_comment=None)], args=[arg(arg='b', annotation=None, type_comment=None)], vararg=arg(arg='args', annotation=None, type_comment=None), kwonlyargs=[arg(arg='flag', annotation=None, type_comment=None)], kw_defaults=[Constant(value=False, kind=None)], kwarg=arg(arg='kwargs', annotation=None, type_comment=None), defaults=[Constant(value=1, kind=None), Constant(value=2, kind=None)]), body=Name(id='a', ctx=Load())).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "name_multiline",
+    "source": "# isort: list\nx = [\n    name\n]\n",
+    "source_sha256": "823e1408b6c361b2f745d7d6e49fa7c26a856183affb540c77420b11e5ed0198",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n    name\n]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 2: <ast.Name object at 0x10a27b750>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n    name\n]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 2: <ast.Name object at 0x109697ed0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [\n    name\n]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 2: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "nested_unary",
+    "source": "# isort: list\nx = [+-1]\n",
+    "source_sha256": "f24f1193a249ab1502a71c828ac71036bc8c17cb6997f39f2a9bb1caa2455e59",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [+-1]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.UnaryOp object at 0x10833b7d0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [+-1]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.UnaryOp object at 0x1085a4650>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [+-1]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: UnaryOp(op=USub(), operand=Constant(value=1, kind=None)).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unary_bool",
+    "source": "# isort: list\nx = [-True]\n",
+    "source_sha256": "154f5db07e396846829fb06ac951f919ca6fc8599c29d5f9068670adb561ff39",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [-True]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Constant object at 0x109b4b2d0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [-True]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Constant object at 0x109f24090>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [-True]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Constant(value=True, kind=None).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "binary_real",
+    "source": "# isort: list\nx = [1 + 2]\n",
+    "source_sha256": "ca5b9cbf4236af8d585fdcb556aeec9d2dea35c8e5b46641f4b0767c8f57e9c8",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 + 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.BinOp object at 0x10659f6d0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 + 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.BinOp object at 0x10a57e350>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1 + 2]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: BinOp(left=Constant(value=1, kind=None), op=Add(), right=Constant(value=2, kind=None)).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "binary_complex_left",
+    "source": "# isort: list\nx = [1j + 2j]\n",
+    "source_sha256": "925d170912b05bb1d8e693eeaa7d36c5cb6d05f9743fc103188227a697bdc3d5",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1j + 2j]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.BinOp object at 0x105e876d0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1j + 2j]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.BinOp object at 0x108462950>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1j + 2j]\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: BinOp(left=Constant(value=1j, kind=None), op=Add(), right=Constant(value=2j, kind=None)).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_expansion",
+    "source": "# isort: dict\nx = {**items}\n",
+    "source_sha256": "d2260d61fa0fca81fa3426a8fecda890f4401d07a00e4245f0e3b661e816e516",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {**items}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string: None.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {**items}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string: None.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {**items}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string: None.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "nested_dict_order",
+    "source": "# isort: dict\nx = {1: name, bad: 2}\n",
+    "source_sha256": "b2dd0ed0506fcb3a5eafdec07cf2c6d2cf0df18248e0a5cabc63486b06b7566f",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {1: name, bad: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x109ddf710>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {1: name, bad: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x107e89290>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {1: name, bad: 2}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_name",
+    "source": "# isort: tuple\nx = (1, name)\n",
+    "source_sha256": "23b50bd4194167c226823cae94e5a17cac2b19b93282cd94da64de6d86ae7ca4",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, name)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x109c87210>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, name)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x1080e8fd0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, name)\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_member",
+    "source": "# isort: dict\nx = {\"x\": name}\n",
+    "source_sha256": "4d7b1f4d0869460c2dfaa5ded71b717ef4c400e1164b1a46d9a6c64a9bd5ee62",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"x\": name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x1088ab650>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"x\": name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x100e6b850>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"x\": name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_name",
+    "source": "# isort: set\nx = {name}\n",
+    "source_sha256": "e0975a5d0b4948d084f1e940e1afcc4ac84a4dd82d7d4016b570c514e33e36f5",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x10676b210>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x108888bd0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {name}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "name_root",
+    "source": "# isort: list\nx = name\n",
+    "source_sha256": "90dbe78b662fc0898fc5ad6373f0461813d68da4baa97cd31fc276def55fe863",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = name\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x109ae7c50>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = name\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Name object at 0x1086dd290>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = name\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Name(id='name', ctx=Load()).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "lambda_empty",
+    "source": "# isort: list\nx = lambda: 1\n",
+    "source_sha256": "dc23b3f599607005cc80649cd386e199d5a6db98535718c8f562fb5620794019",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda: 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x109df7410>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda: 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x108017510>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda: 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Lambda(args=arguments(posonlyargs=[], args=[], vararg=None, kwonlyargs=[], kw_defaults=[], kwarg=None, defaults=[]), body=Constant(value=1, kind=None)).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "lambda_body_signed",
+    "source": "# isort: list\nx = lambda x: -x\n",
+    "source_sha256": "b4aebec2b6bf752690027852ea68c00365f79a509abec676a249397e358435cd",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda x: -x\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x10a89b4d0>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda x: -x\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: <ast.Lambda object at 0x108032910>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = lambda x: -x\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of malformed node or string on line 1: Lambda(args=arguments(posonlyargs=[], args=[arg(arg='x', annotation=None, type_comment=None)], vararg=None, kwonlyargs=[], kw_defaults=[], kwarg=None, defaults=[]), body=UnaryOp(op=USub(), operand=Name(id='x', ctx=Load(...)))).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  }
+]

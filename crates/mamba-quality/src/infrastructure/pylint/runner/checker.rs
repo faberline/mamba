@@ -1,0 +1,81 @@
+//! Checker setup is shared by source builds and diagnostic traversal.
+use super::*;
+use crate::{
+    domain::source::SourceSnapshot,
+    infrastructure::project::{Module, ProjectIndex},
+};
+use mamba_language::application::quality_syntax::python_ast::Stmt;
+
+pub(super) fn new<'a>(
+    source: &'a SourceSnapshot,
+    index: &'a ProjectIndex<'a>,
+    snapshots: &'a [SourceSnapshot],
+    module: &'a Module<'a>,
+    modules: &'a modules::Modules,
+    body: &[Stmt],
+) -> Checker<'a> {
+    Checker {
+        resources: resource_calls::Resources::default(),
+        ignored_messages: suppression_information::Ignored::default(),
+        generic_names: Vec::new(),
+        source,
+        index,
+        cleanup_inferred: BTreeSet::new(),
+        stop_sites: stop_sites::Sites::new(body),
+        dataclass_sites: dataclass_sites::Sites::new(body),
+        repeated_iterators: repeated_iterator::State::new(body),
+        snapshots,
+        diagnostics: Vec::new(),
+        declaration_locations: declaration_locations::Locations::new(body, &source.text),
+        native_member_guards: native_member_guards::Guards::new(body),
+        directives: module
+            .document
+            .as_ref()
+            .map(instructions)
+            .unwrap_or_default(),
+        modules,
+        scopes: scopes::Scopes::new(body, &module.name, module.is_package),
+        module_name: &module.name,
+        is_package: module.is_package,
+        guarded_imports: false,
+        type_checking: false,
+        initializing: BTreeSet::new(),
+        initializing_tuple: BTreeSet::new(),
+        late_imports: local_rules::late_imports(body),
+        class_stack: Vec::new(),
+        method_context: None,
+        method_kind: None,
+        mandatory_receiver: None,
+        annotation_context: false,
+        augmented_assignment: false,
+        property_assignment: false,
+        assigned_attributes: slot_assignments::collect(body),
+        build_attributes: super::super::build_attributes::Stores::default(),
+        checked_slot_stores: BTreeSet::new(),
+        initialized_methods: std::collections::BTreeMap::new(),
+        resolving: std::cell::RefCell::new(BTreeSet::new()),
+        logging_names: BTreeSet::new(),
+        failed_imports: BTreeSet::new(),
+        reported_statement_lines: BTreeSet::new(),
+        reassigned_names: reassignments::reassigned_names(body, &source.text),
+        statements: statements::Statements::new(body, &source.text),
+        flow: flow_context::Contexts::new(body, &source.text),
+        lambda_mutations: lambda_rules::Mutations::new(body, &source.text),
+        definitions: redefinitions::Definitions::new(body, modules.target()),
+        dictionary_iterations: dictionary_iteration::contexts(body),
+        split_subscripts: recommendation_context::subscripts(body),
+        comparison_conditions: comparison_context::conditions(body),
+        simplifiable_conditions: simplifiable_context::conditions(body),
+        implicit_conditions: implicit_context::conditions(body),
+        function_metrics: function_metrics::Metrics::new(body),
+        loop_variables: loop_variables::Loops::new(body),
+        loop_closures: loop_closures::uses(body),
+        yield_from_ranges: recommendation_generators::yield_from_ranges(body),
+        join_assignments: recommendation_containers::joins(body),
+        nested_blocks: nested_blocks::Blocks::new(body),
+        get_blocks: recommendation_get::Blocks::new(body),
+        dunder_exemptions: dunder_calls::Exemptions::new(body),
+        swaps: swap_variables::swaps(body),
+        invalid_awaits: async_context::invalid_awaits(body),
+    }
+}

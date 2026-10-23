@@ -1,0 +1,1640 @@
+[
+  {
+    "name": "type_default_before_tstring",
+    "source": "type Alias[T = int] = T\nvalue = (t\"left\" t\"right\")\n",
+    "source_sha256": "e11a757f2680b678dcb27fd316ffd63742a87e5b7964ab35ca786bba109a4361",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = t\"left\" t\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e11a757f2680b678dcb27fd316ffd63742a87e5b7964ab35ca786bba109a4361",
+            "output_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b"
+          },
+          {
+            "input_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b",
+            "output_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "function_default_before_tstring",
+    "source": "def ident[T = int](value: T) -> T:\n    return value\nvalue = (t\"left\" t\"right\")\n",
+    "source_sha256": "8751a0c81ea73a791005ca2914f715af37cfe3527334650dff7e0f2c748f3f4e",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: expected '(' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 3)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n\n\nvalue = t\"left\" t\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "8751a0c81ea73a791005ca2914f715af37cfe3527334650dff7e0f2c748f3f4e",
+            "output_sha256": "0965fe8856cf7a3e23f5669c3ea0a5c77516d805544cdd7feb75422217cb1428"
+          },
+          {
+            "input_sha256": "0965fe8856cf7a3e23f5669c3ea0a5c77516d805544cdd7feb75422217cb1428",
+            "output_sha256": "0965fe8856cf7a3e23f5669c3ea0a5c77516d805544cdd7feb75422217cb1428"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "tstring_before_type_default",
+    "source": "value = (t\"left\" t\"right\")\ntype Alias[T = int] = T\n",
+    "source_sha256": "737e019ee6481823e63767fb8e40cdabe0386b5ba6e242f11551b40c747fcdf5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"left\" t\"right\"\ntype Alias[T = int] = T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "737e019ee6481823e63767fb8e40cdabe0386b5ba6e242f11551b40c747fcdf5",
+            "output_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18"
+          },
+          {
+            "input_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18",
+            "output_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "single_tstring_parenthesized",
+    "source": "value = (t\"left\")\n",
+    "source_sha256": "d945781d6a059da6724e91b59b09765002b6558f21340d8c2683c554ec5815f9",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"left\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "d945781d6a059da6724e91b59b09765002b6558f21340d8c2683c554ec5815f9",
+            "output_sha256": "29709dd4c4d32431d93251c034032d0c71eb66eb21215d1509b80bcc8a2786bf"
+          },
+          {
+            "input_sha256": "29709dd4c4d32431d93251c034032d0c71eb66eb21215d1509b80bcc8a2786bf",
+            "output_sha256": "29709dd4c4d32431d93251c034032d0c71eb66eb21215d1509b80bcc8a2786bf"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "single_tstring_call",
+    "source": "print(t\"left\")\n",
+    "source_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7",
+            "output_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7",
+            "output_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7",
+            "output_sha256": "47e217e202394c4990e25e9587b9e8eb7831bd495255a174a7b20452b92e03f7"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "concatenated_tstring_call",
+    "source": "print(t\"left\" t\"right\")\n",
+    "source_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\" t\"right\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb",
+            "output_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\" t\"right\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb",
+            "output_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "print(t\"left\" t\"right\")\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb",
+            "output_sha256": "10fb0469e9ebc84a7ce6bfcb88cf671a34dbad1de3e2a68479bfee0f9dfc15eb"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "concatenated_tstring_list",
+    "source": "value = [t\"left\" t\"right\"]\n",
+    "source_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = [t\"left\" t\"right\"]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f",
+            "output_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = [t\"left\" t\"right\"]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f",
+            "output_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = [t\"left\" t\"right\"]\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f",
+            "output_sha256": "d6f03a37197316e7e46db7f4e332ab5548b0e892ae53d488dcd9bdc9fe19be7f"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "concatenated_tstring_dict",
+    "source": "value = {\"key\": t\"left\" t\"right\"}\n",
+    "source_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = {\"key\": t\"left\" t\"right\"}\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684",
+            "output_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = {\"key\": t\"left\" t\"right\"}\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684",
+            "output_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = {\"key\": t\"left\" t\"right\"}\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684",
+            "output_sha256": "353e08691d9f1dcf9b9a050357419b3099e7a5e4c2013004348c3927e690b684"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_unsupported_before_concat",
+    "source": "value = t\"plain\"\nother = (t\"left\" t\"right\")\n",
+    "source_sha256": "b38e713f780e0b34509adb7a64ae16904c573faf21929a410af1a4c2a65b6d0b",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"plain\"\nother = t\"left\" t\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b38e713f780e0b34509adb7a64ae16904c573faf21929a410af1a4c2a65b6d0b",
+            "output_sha256": "32b5b0e472ff14dd4e81c8ecc4f954bb75accda945b241a068b736dbc94969d4"
+          },
+          {
+            "input_sha256": "32b5b0e472ff14dd4e81c8ecc4f954bb75accda945b241a068b736dbc94969d4",
+            "output_sha256": "32b5b0e472ff14dd4e81c8ecc4f954bb75accda945b241a068b736dbc94969d4"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "concat_before_plain_unsupported",
+    "source": "value = (t\"left\" t\"right\")\nother = t\"plain\"\n",
+    "source_sha256": "7f1c278e366922284b9472b6ff28f02e705d55a0b30a6e705f08442a037f6d36",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"left\" t\"right\"\nother = t\"plain\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7f1c278e366922284b9472b6ff28f02e705d55a0b30a6e705f08442a037f6d36",
+            "output_sha256": "fc46a044a208370ca0712f9cf03d32827556c3cddc7ee9b29de4fb95203ec63c"
+          },
+          {
+            "input_sha256": "fc46a044a208370ca0712f9cf03d32827556c3cddc7ee9b29de4fb95203ec63c",
+            "output_sha256": "fc46a044a208370ca0712f9cf03d32827556c3cddc7ee9b29de4fb95203ec63c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unchanged_off_tstring",
+    "source": "# fmt: off\nvalue = (t\"left\" t\"right\")\n# fmt: on\n",
+    "source_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue = (t\"left\" t\"right\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15",
+            "output_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue = (t\"left\" t\"right\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15",
+            "output_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue = (t\"left\" t\"right\")\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15",
+            "output_sha256": "ba6859b251ba0501593108e77a39b6910a0836075646f7ba43983f8c934f8e15"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "unchanged_skip_tstring",
+    "source": "value = (t\"left\" t\"right\")  # fmt: skip\n",
+    "source_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (t\"left\" t\"right\")  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a",
+            "output_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (t\"left\" t\"right\")  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a",
+            "output_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (t\"left\" t\"right\")  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a",
+            "output_sha256": "b3bfba08e227b4dd319921afdd846aac8b1cb9c4bc5f10e69a40412175d3ee6a"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_changed",
+    "source": "type Alias[T = int]=T\n",
+    "source_sha256": "1f8b7fadadb118ae8622baf7fd4f7f0a174c2a93a8ee1bf48b1a1da9c09455a2",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1f8b7fadadb118ae8622baf7fd4f7f0a174c2a93a8ee1bf48b1a1da9c09455a2",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          },
+          {
+            "input_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1f8b7fadadb118ae8622baf7fd4f7f0a174c2a93a8ee1bf48b1a1da9c09455a2",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          },
+          {
+            "input_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_unchanged",
+    "source": "type Alias[T = int] = T\n",
+    "source_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e",
+            "output_sha256": "6e5ff2bb2bf56a6af414a9676e9d378aa2e1a3af43da86bdd4bbcccc4a31b60e"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_layout_elsewhere",
+    "source": "type Alias[T = int] = T\nvalue=1\n",
+    "source_sha256": "ab37d6f850f22a4aeeb242f55b5e23a7df5e60794cfeb30c31748cda29a6b0a4",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ab37d6f850f22a4aeeb242f55b5e23a7df5e60794cfeb30c31748cda29a6b0a4",
+            "output_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916"
+          },
+          {
+            "input_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916",
+            "output_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = 1\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "ab37d6f850f22a4aeeb242f55b5e23a7df5e60794cfeb30c31748cda29a6b0a4",
+            "output_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916"
+          },
+          {
+            "input_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916",
+            "output_sha256": "d659b9b59de13b76d3994e6ab948ef1a515173929908885690538ec024fa9916"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_two_parameters",
+    "source": "type Alias[T = int, U = str]=tuple[T,U]\n",
+    "source_sha256": "575b09a63c85741e687f9438128665c384fff1254c46ce0769ebec7928b7f387",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int, U = str] = tuple[T, U]\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "575b09a63c85741e687f9438128665c384fff1254c46ce0769ebec7928b7f387",
+            "output_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf"
+          },
+          {
+            "input_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf",
+            "output_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int, U = str] = tuple[T, U]\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "575b09a63c85741e687f9438128665c384fff1254c46ce0769ebec7928b7f387",
+            "output_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf"
+          },
+          {
+            "input_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf",
+            "output_sha256": "5d736e9064b6aa815dc8e0548878c7096423fc974f1b2d43859662a4546f26cf"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_tuple_default_changed",
+    "source": "type Alias[*Ts = *tuple[int, str]]=tuple[*Ts]\n",
+    "source_sha256": "0f7da3525326ff071fa2991f3f037e783a96dc4dc849e6b88945fb788695f5f1",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[*Ts = *tuple[int, str]] = tuple[*Ts]\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0f7da3525326ff071fa2991f3f037e783a96dc4dc849e6b88945fb788695f5f1",
+            "output_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15"
+          },
+          {
+            "input_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15",
+            "output_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[*Ts = *tuple[int, str]] = tuple[*Ts]\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0f7da3525326ff071fa2991f3f037e783a96dc4dc849e6b88945fb788695f5f1",
+            "output_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15"
+          },
+          {
+            "input_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15",
+            "output_sha256": "30972670362d1ff396977388be81c19dcc0bee7c3d0a262a093b83f269b7ed15"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_paramspec_default_changed",
+    "source": "type Alias[**P = [int,str]]=int\n",
+    "source_sha256": "eadb2a6e91559d7657263747408c02e62f3eca7764135749826c357da95b80df",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[**P = [int, str]] = int\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "eadb2a6e91559d7657263747408c02e62f3eca7764135749826c357da95b80df",
+            "output_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063"
+          },
+          {
+            "input_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063",
+            "output_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[**P = [int, str]] = int\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "eadb2a6e91559d7657263747408c02e62f3eca7764135749826c357da95b80df",
+            "output_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063"
+          },
+          {
+            "input_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063",
+            "output_sha256": "7b78099285ed8e8ccf9649e4ff7db31a29eb4a41aad3f26d67d36146e3d6d063"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_no_tstring_comment",
+    "source": "type Alias[T = int]=T  # t\"only a comment\"\n",
+    "source_sha256": "7a6202adde16169e446d4cec1477451c7644eef30622b85834fb7029b98fc3b2",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T  # t\"only a comment\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7a6202adde16169e446d4cec1477451c7644eef30622b85834fb7029b98fc3b2",
+            "output_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd"
+          },
+          {
+            "input_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd",
+            "output_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T  # t\"only a comment\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7a6202adde16169e446d4cec1477451c7644eef30622b85834fb7029b98fc3b2",
+            "output_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd"
+          },
+          {
+            "input_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd",
+            "output_sha256": "4848f5ff08f3a0dd1ff2f2500fc74996838c0b69da79b64ae2fee336e1d400fd"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_literal_text",
+    "source": "type Alias[T = int]=T\nvalue=\"t\\\"text\\\"\"\n",
+    "source_sha256": "86f5233e3e056adf8a3ad2c2cc3e5be1bdfd5c5aed969740fee9bb0a18c83fd6",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = 't\"text\"'\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "86f5233e3e056adf8a3ad2c2cc3e5be1bdfd5c5aed969740fee9bb0a18c83fd6",
+            "output_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4"
+          },
+          {
+            "input_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4",
+            "output_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = 't\"text\"'\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "86f5233e3e056adf8a3ad2c2cc3e5be1bdfd5c5aed969740fee9bb0a18c83fd6",
+            "output_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4"
+          },
+          {
+            "input_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4",
+            "output_sha256": "1aded9cfe7069266c9dfed465119a7c4132647be0269eb336eb894b89eb054f4"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_ordinary_literals",
+    "source": "type Alias[T = int]=T\nvalue=(\"left\" \"right\")\n",
+    "source_sha256": "31890ef63de62e9598c6b0a8d8495b4186fd3c4f40aa59100c7c728490fd95d2",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31890ef63de62e9598c6b0a8d8495b4186fd3c4f40aa59100c7c728490fd95d2",
+            "output_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e"
+          },
+          {
+            "input_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e",
+            "output_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = \"left\" \"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31890ef63de62e9598c6b0a8d8495b4186fd3c4f40aa59100c7c728490fd95d2",
+            "output_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e"
+          },
+          {
+            "input_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e",
+            "output_sha256": "adf6497c2d0a0536fb5f93b616b78fc4343e548c6da342736c75fafed46ce63e"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_regular_fstrings",
+    "source": "type Alias[T = int]=T\nvalue=(f\"left\" f\"right\")\n",
+    "source_sha256": "95746c1af95c7bbecdd828ad060e54bec999703306ddffc5b3867ab18a71cf6f",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = f\"left\" f\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "95746c1af95c7bbecdd828ad060e54bec999703306ddffc5b3867ab18a71cf6f",
+            "output_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4"
+          },
+          {
+            "input_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4",
+            "output_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = f\"left\" f\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "95746c1af95c7bbecdd828ad060e54bec999703306ddffc5b3867ab18a71cf6f",
+            "output_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4"
+          },
+          {
+            "input_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4",
+            "output_sha256": "96368c8b16560a21588e19b94f9aa8c6ad98951297844f275703e375a022a2d4"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "function_default_changed",
+    "source": "def ident[T = int](value:T)->T:\n return value\n",
+    "source_sha256": "c79498786232272ced9cb66d8b005216b0d77b969527d947036398740c7172b6",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: expected '(' (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c79498786232272ced9cb66d8b005216b0d77b969527d947036398740c7172b6",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          },
+          {
+            "input_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "c79498786232272ced9cb66d8b005216b0d77b969527d947036398740c7172b6",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          },
+          {
+            "input_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "function_default_unchanged",
+    "source": "def ident[T = int](value: T) -> T:\n    return value\n",
+    "source_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "def ident[T = int](value: T) -> T:\n    return value\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5",
+            "output_sha256": "7aa50102be2968945dc605d3a169e106c972d233381c6f47390bf425ced1bec5"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "class_default_changed",
+    "source": "class Box[T = int]:\n value:T\n",
+    "source_sha256": "bae7fcb4a1ce7fa1d06af7298edbee4f61648df4634d3522e95b854495ecc1a2",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "class Box[T = int]:\n    value: T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "bae7fcb4a1ce7fa1d06af7298edbee4f61648df4634d3522e95b854495ecc1a2",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          },
+          {
+            "input_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "class Box[T = int]:\n    value: T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "bae7fcb4a1ce7fa1d06af7298edbee4f61648df4634d3522e95b854495ecc1a2",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          },
+          {
+            "input_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "class_default_unchanged",
+    "source": "class Box[T = int]:\n    value: T\n",
+    "source_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "class Box[T = int]:\n    value: T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "class Box[T = int]:\n    value: T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "class Box[T = int]:\n    value: T\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803",
+            "output_sha256": "821431a82a6163f279075c5120e70b89d70bb54c15f442ac02e53be777590803"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_before_plain_tstring",
+    "source": "type Alias[T = int]=T\nvalue=t\"plain\"\n",
+    "source_sha256": "772f17d636b182fb2c67e84fb79b522603f9df1c4ce6cfee507b60d0d47c4651",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = t\"plain\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "772f17d636b182fb2c67e84fb79b522603f9df1c4ce6cfee507b60d0d47c4651",
+            "output_sha256": "e1200593614ee6555f9581432010e8872df6744147d0f88c262b8e9426f7307f"
+          },
+          {
+            "input_sha256": "e1200593614ee6555f9581432010e8872df6744147d0f88c262b8e9426f7307f",
+            "output_sha256": "e1200593614ee6555f9581432010e8872df6744147d0f88c262b8e9426f7307f"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "plain_tstring_before_alias_default",
+    "source": "value=t\"plain\"\ntype Alias[T = int]=T\n",
+    "source_sha256": "31997b90f41efc11887990f348cfd118e47243c21be0ecae0b3680a03c0745b1",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"plain\"\ntype Alias[T = int] = T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "31997b90f41efc11887990f348cfd118e47243c21be0ecae0b3680a03c0745b1",
+            "output_sha256": "6a5d5e3fe11ae43e06df3889cea4cb7aaa8a394ec63fb481e6cc543dd7fde9f3"
+          },
+          {
+            "input_sha256": "6a5d5e3fe11ae43e06df3889cea4cb7aaa8a394ec63fb481e6cc543dd7fde9f3",
+            "output_sha256": "6a5d5e3fe11ae43e06df3889cea4cb7aaa8a394ec63fb481e6cc543dd7fde9f3"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_before_concat_tstring",
+    "source": "type Alias[T = int]=T\nvalue=(t\"left\" t\"right\")\n",
+    "source_sha256": "0d999c2a28b3250db172bff40180f56c0255ad210d3d489e8441b6aa1b317808",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Maybe you meant '==' or ':=' instead of '='? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int] = T\nvalue = t\"left\" t\"right\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0d999c2a28b3250db172bff40180f56c0255ad210d3d489e8441b6aa1b317808",
+            "output_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b"
+          },
+          {
+            "input_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b",
+            "output_sha256": "307e940abf2735452ea079a4ada9f790c72dfd08328b7e5413948a9b2b1bb94b"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "concat_tstring_before_alias_default",
+    "source": "value=(t\"left\" t\"right\")\ntype Alias[T = int]=T\n",
+    "source_sha256": "d2ca13f2ab9e85b623de4a7ba1d075d2473bdb87da99af1d172f8ce217210280",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax. Perhaps you forgot a comma? (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"left\" t\"right\"\ntype Alias[T = int] = T\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "d2ca13f2ab9e85b623de4a7ba1d075d2473bdb87da99af1d172f8ce217210280",
+            "output_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18"
+          },
+          {
+            "input_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18",
+            "output_sha256": "393b169d95d2c1d528a96bce90e418966f055c2c3a560402f250abab61a8aa18"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_fmt_off",
+    "source": "# fmt: off\ntype Alias[T = int]=T\n# fmt: on\n",
+    "source_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\ntype Alias[T = int]=T\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186",
+            "output_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\ntype Alias[T = int]=T\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186",
+            "output_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\ntype Alias[T = int]=T\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186",
+            "output_sha256": "2695b0edaeedeb1ac8ad198c8220c0805db0db328d67fd843a9543f81b4ed186"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "alias_default_fmt_skip",
+    "source": "type Alias[T = int]=T  # fmt: skip\n",
+    "source_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327",
+    "extension": "py",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int]=T  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327",
+            "output_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int]=T  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327",
+            "output_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "type Alias[T = int]=T  # fmt: skip\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327",
+            "output_sha256": "7c31f7bf4a02ba1783009d321cdb7d3dd2d6291deb7ed6f088f705a283bfa327"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  }
+]

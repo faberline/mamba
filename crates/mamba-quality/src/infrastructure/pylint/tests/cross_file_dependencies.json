@@ -1,0 +1,1150 @@
+[
+  {
+    "name": "dependency_syntax_error",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = (\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "26e2358058c28df648c1688771a1c0c7c049729b80fd4973bda7dfcd8746529a",
+      "main.py": "5926c088f387a24f8d6b8ac957b1f12f4b9be61cc43303a9a9bf88df6872afab"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "dependency_encoding_error",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\n# coding: unknown-codec\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "3515095fd29d62c9811de669a335a19064d23947f38fb771029b379e309704b4",
+      "main.py": "5926c088f387a24f8d6b8ac957b1f12f4b9be61cc43303a9a9bf88df6872afab"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'int' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'int' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'int' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "dependency_member_value",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = \"text\"\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE.missing())\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "e0db090e004d51a898a9117d1cd462bd7ad820be2df8bff7672afbfe5f2071f9",
+      "main.py": "5926c088f387a24f8d6b8ac957b1f12f4b9be61cc43303a9a9bf88df6872afab"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E1101",
+          "message": "Instance of 'str' has no 'missing' member",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 19
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unknown_dependency_codec",
+    "files": {
+      "module.py": "# coding: unknown-codec\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "9af18d0bb51ddc3ac469ab8f51b0e5b5f6fe09854fa25d7e0f5f76ba511dad4d",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'unknown encoding for '<project>/module.py': unknown-codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'unknown encoding for '<project>/module.py': unknown-codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'unknown encoding for '<project>/module.py': unknown-codec'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "invalid_dependency_source",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = (\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport module\nprint(module.VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "26e2358058c28df648c1688771a1c0c7c049729b80fd4973bda7dfcd8746529a",
+      "main.py": "b5f86f56e53a9b68bfd5ea14a07d5d0d2ecf9ed48fbcdb35537d70ec9e881aae"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "missing_dependency_member",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nOTHER = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "9a624b65af5f2410e018a46cc16c80a3cf0443faa9e85f200cf6b92197042039",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'VALUE' in module 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'VALUE' in module 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0611",
+          "message": "No name 'VALUE' in module 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_0",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = [\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "aa4ae8023e1c7fcc82c958c5e93f6964e16e6652b58f1f5e2c7954e8f4527d2a",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_1",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = {\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "f684553aced1200a49fad1a3b16a62682610ea34f1e387a94f98381cfeb79a88",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''{' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''{' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''{' was never closed (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_2",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\ndef inspect()\n    pass\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "16a8f66d8ea1845179c1365f854ed52105ba78d8911c43ce911d0220c59cec16",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'expected ':' (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'expected ':' (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'expected ':' (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_3",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\ndef inspect(value):\n    assert value,\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "006ec638ec6bcf14b02acfa9c17e369c4e1c84ae700c323c926979dfaf6d70b4",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_4",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = lambda\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "b597e0ca83629f27960a62a7ff7bebc188b56d24212a17242f5be9eab3ccf6c9",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid syntax (module, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "syntax_import_5",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = \"é\"\nother = ​\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "43f89939cedcff151cbf9387c50edcae1588445e3790627290dca94efff6f43f",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid non-printable character U+200B (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid non-printable character U+200B (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'invalid non-printable character U+200B (module, line 3)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "guarded_syntax_import",
+    "files": {
+      "module.py": "VALUE = (\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\ntry:\n    import module\nexcept ImportError:\n    module = None\nprint(module)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "3efdafcaebabcfdcd2d532fbf06805d51ffaa550c15e53122cf861251796120b",
+      "main.py": "06a12e93ac30fc3fb1dd13e7090e30819954d8a252b1ce6618000bb8fda6fa5c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "disabled_syntax_import",
+    "files": {
+      "module.py": "VALUE = (\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\n# pylint: disable=syntax-error\nimport module\nprint(module)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "3efdafcaebabcfdcd2d532fbf06805d51ffaa550c15e53122cf861251796120b",
+      "main.py": "2d507cc64e93d2b2d6dbbc549eaf636ecd42e267a719c96ca8498298969c7f6f"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "type_checking_syntax_import",
+    "files": {
+      "module.py": "VALUE = (\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom typing import TYPE_CHECKING\nif TYPE_CHECKING:\n    import module\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "3efdafcaebabcfdcd2d532fbf06805d51ffaa550c15e53122cf861251796120b",
+      "main.py": "75b5b287681731c6b3804d15a606bd0be3c4fc2d2eb5ef345380a8e76b3d6fa6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "nested_unclosed_delimiters",
+    "files": {
+      "module.py": "VALUE = ([\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport module\nprint(module)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "38945c3b44c1b06d4c54dae7772560898f4b8a80ded770867763d43210fc0cdc",
+      "main.py": "1ab0dca0afee47d4c5babc1d77d99ba69dd7bceb84a339eb3a073a6c2575da3f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''[' was never closed (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "mismatched_delimiters",
+    "files": {
+      "module.py": "VALUE = (]\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport module\nprint(module)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "module.py": "1e269facf22882731ae084d75dcf08a0338cc44e6944e8bc6e658a40e3546394",
+      "main.py": "1ab0dca0afee47d4c5babc1d77d99ba69dd7bceb84a339eb3a073a6c2575da3f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'closing parenthesis ']' does not match opening parenthesis '(' (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'closing parenthesis ']' does not match opening parenthesis '(' (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to 'closing parenthesis ']' does not match opening parenthesis '(' (module, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "relative_package_syntax_import",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/module.py": "VALUE = (\n",
+      "pkg/main.py": "\"\"\"Reader fixture.\"\"\"\nfrom .module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "pkg/main.py"
+    ],
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/module.py": "3efdafcaebabcfdcd2d532fbf06805d51ffaa550c15e53122cf861251796120b",
+      "pkg/main.py": "2439292f6e66baa767606e0d864f6fbbca379284b01f85caf3ce52a2595bc803"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (pkg.module, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (pkg.module, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Cannot import 'module' due to ''(' was never closed (pkg.module, line 1)'",
+          "hint": null,
+          "path": "pkg/main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

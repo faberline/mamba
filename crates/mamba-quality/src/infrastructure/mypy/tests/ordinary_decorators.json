@@ -1,0 +1,627 @@
+[
+  {
+    "name": "01_untyped_identity_typed_function",
+    "filename": "main.py",
+    "source": "from typing import Any\n\ndef identity(fn):\n    return fn\n\n@identity\ndef parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "b6b96305862604466f7c2504d4f6e4327ae0b652713aa9dfe4e771f465d77b80",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 2,
+            "end_line": 6,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "02_typed_callable_identity_typed_function",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef identity(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@identity\ndef parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "0a8e0442f1ce66328ab5a3c5da5165a455c6e90d2d7052b300bb31983bd9120b",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "03_untyped_identity_untyped_function",
+    "filename": "main.py",
+    "source": "def identity(fn):\n    return fn\n\n@identity\ndef parse(value):\n    return value\n",
+    "source_sha256": "a6a7a30d8f5638645674513f7c818a8195592a973ba0498bc35b2dd9638c488e",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "04_untyped_identity_typed_async_function",
+    "filename": "main.py",
+    "source": "def identity(fn):\n    return fn\n\n@identity\nasync def parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "530e726b3e52d50c04882cc64baa374ea72960ccade575b57319bef4f4a84a49",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 2,
+            "end_line": 4,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "06_ignore_untyped_decorator",
+    "filename": "main.py",
+    "source": "def identity(fn):\n    return fn\n\n@identity  # type: ignore[untyped-decorator]\ndef parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "2e7a4f199c0910b8169cf0e69aa3a2126b45c10c652b6c093310ec6b796a4a63",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "07_typed_decorator_unused_ignore",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef identity(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@identity  # type: ignore[untyped-decorator]\ndef parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "46d65f65b01bf395ab95c3983243f6faa59b4fe2b8e41d6b38aeeb3e1e7a4529",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 0,
+            "end_line": 6,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "08_stacked_untyped_and_typed",
+    "filename": "main.py",
+    "source": "from collections.abc import Callable\n\ndef untyped(fn):\n    return fn\n\ndef typed(fn: Callable[[int], int]) -> Callable[[int], int]:\n    return fn\n\n@untyped\n@typed\ndef parse(value: int) -> int:\n    return value\n",
+    "source_sha256": "aefc073123daa74b2783a76fcb83c023e8ed1ff71829ce73f2207cb4753bbd44",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 2,
+            "end_line": 9,
+            "end_column": 8
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  },
+  {
+    "name": "05b_module_identity_typed_method",
+    "filename": "main.py",
+    "source": "def identity(fn):\n    return fn\n\nclass Parser:\n    @identity\n    def parse(self, value: int) -> int:\n        return value\n",
+    "source_sha256": "7319951b22fe37e95eda2b78c6f3e41caf69f7ad5fa50872ee92c1217fdf3777",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 6,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 6,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "path": "main.py",
+          "rule": "untyped-decorator",
+          "message": "Untyped decorator makes function \"parse\" untyped",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 6,
+            "end_line": 5,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "in_atomic_decorator_slice": true
+  }
+]

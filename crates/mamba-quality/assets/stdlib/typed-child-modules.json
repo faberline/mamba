@@ -1,0 +1,270 @@
+{
+  "schema": "mamba.quality.typed-child-modules.v2",
+  "mypy": "2.4.0",
+  "platforms": {
+    "darwin": {
+      "3.12": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      },
+      "3.13": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      },
+      "3.14": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__all__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      }
+    },
+    "linux": {
+      "3.12": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      },
+      "3.13": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      },
+      "3.14": {
+        "module": "importlib.util",
+        "functions": {
+          "module_from_spec": {".class": "CallableType", "arg_kinds": [0], "arg_names": ["spec"], "arg_types": ["_frozen_importlib.ModuleSpec"], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "module_from_spec", "ret_type": "types.ModuleType", "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []},
+          "spec_from_file_location": {".class": "CallableType", "arg_kinds": [0, 1, 5, 5], "arg_names": ["name", "location", "loader", "submodule_search_locations"], "arg_types": ["builtins.str", {".class": "UnionType", "items": [{".class": "TypeAliasType", "args": [], "type_ref": "_typeshed.StrOrBytesPath"}, {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": ["_typeshed.importlib.LoaderProtocol", {".class": "NoneType"}], "uses_pep604_syntax": true}, {".class": "UnionType", "items": [{".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "builtins.list"}, {".class": "NoneType"}], "uses_pep604_syntax": true}], "fallback": "builtins.function", "from_concatenate": false, "implicit": false, "imprecise_arg_kinds": false, "instance_type": null, "is_bound": false, "is_ellipsis_args": false, "name": "spec_from_file_location", "ret_type": {".class": "UnionType", "items": ["_frozen_importlib.ModuleSpec", {".class": "NoneType"}], "uses_pep604_syntax": true}, "type_guard": null, "type_is": null, "unpack_kwargs": false, "variables": []}
+        },
+        "aliases": {
+          "_typeshed.StrOrBytesPath": {".class": "UnionType", "items": ["builtins.str", "builtins.bytes", {".class": "Instance", "args": ["builtins.str"], "extra_attrs": null, "type_ref": "os.PathLike"}, {".class": "Instance", "args": ["builtins.bytes"], "extra_attrs": null, "type_ref": "os.PathLike"}], "uses_pep604_syntax": true}
+        },
+        "symbols": {
+          "Callable": {"explicit": false, "module": null, "node_kind": "Var"},
+          "LazyLoader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "Literal": {"explicit": false, "module": null, "node_kind": "Var"},
+          "Loader": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "MAGIC_NUMBER": {"explicit": true, "module": null, "node_kind": "Var"},
+          "ParamSpec": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "ReadableBuffer": {"explicit": false, "module": null, "node_kind": "TypeAlias"},
+          "Self": {"explicit": false, "module": null, "node_kind": "Var"},
+          "TracebackType": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "_P": {"explicit": true, "module": null, "node_kind": "ParamSpecExpr"},
+          "__all__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__annotations__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__builtins__": {"explicit": true, "module": "builtins", "node_kind": "MypyFile"},
+          "__doc__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__file__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__name__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__package__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "__spec__": {"explicit": true, "module": null, "node_kind": "Var"},
+          "_incompatible_extension_module_restrictions": {"explicit": true, "module": null, "node_kind": "TypeInfo"},
+          "cache_from_source": {"explicit": true, "module": null, "node_kind": "OverloadedFuncDef"},
+          "decode_source": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "deprecated": {"explicit": false, "module": null, "node_kind": "TypeInfo"},
+          "find_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "importlib": {"explicit": false, "module": "importlib", "node_kind": "MypyFile"},
+          "module_from_spec": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "resolve_name": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_from_cache": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "source_hash": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_file_location": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "spec_from_loader": {"explicit": true, "module": null, "node_kind": "FuncDef"},
+          "sys": {"explicit": false, "module": "sys", "node_kind": "MypyFile"},
+          "types": {"explicit": false, "module": "types", "node_kind": "MypyFile"}
+        }
+      }
+    }
+  }
+}
