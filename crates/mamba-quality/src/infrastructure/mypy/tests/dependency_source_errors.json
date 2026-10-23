@@ -1,0 +1,2557 @@
+[
+  {
+    "name": "local_syntax_error",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "def broken(:\n    pass\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "6b8c8a725c23dc076d9a2c185ce4e02435746bc3b4f99906d13de360e56898c7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 13,
+            "end_line": 1,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_invalid_stub",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.pyi": "VALUE: list[\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.pyi": "abc7e03af1ccaedce2b5665e5063f6347da6331d4f82ddb58454af35b886bb89"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.pyi",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_shadow_json",
+    "files": {
+      "main.py": "from json import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "48e17c94da08be772f13e6005fd9cf46375285d5207d1a8067b4b442d4538c9a"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_shadow_typing",
+    "files": {
+      "main.py": "from typing import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "typing.py": "VALUE: str = \"value\"\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "81e343dde52af5e2421b0efbe6dae29561da1008655058a1d93ab5fe4aa3c15d"
+    },
+    "local_sha256": {
+      "typing.py": "d2e4f988eeebab57b6728adec03369fadf805cd87231304e7cf4baa2e798432c"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing\"",
+          "hint": "A user-defined top-level module with name \"typing\" is not supported",
+          "path": "typing.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_shadow_pydantic",
+    "files": {
+      "main.py": "from pydantic import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pydantic.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "740ddfb86b66c6d41c3599a315a63a8e05d4ab004bb290c64c178163440f12d3"
+    },
+    "local_sha256": {
+      "pydantic.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_type_ignore_dependency",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE: int = \"bad\"  # type: ignore[assignment]\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "88e586c3e53f034ed586eb4f3fedd7f00eff4543528645a41108060b3b9b0c58"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_missing_dependency",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "from missing import VALUE\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "734d2a556398b08139998b8e62ac51744e89646c1c67864d7c59e61f935d89f4"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"missing\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"missing\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "import-not-found",
+          "message": "Cannot find implementation or library stub for module named \"missing\"",
+          "hint": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_untyped_callable",
+    "files": {
+      "main.py": "from pkg import read\nread(1)\n"
+    },
+    "local": {
+      "pkg.py": "def read(value):\n    return value\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "c248d0278ed213d945ea961f0ba5e60d036eb2726eb1f2b4cd054e0ba4b7f75f"
+    },
+    "local_sha256": {
+      "pkg.py": "8d207ca5b6a9873601ba25719bdbef7b6893177e8efb58cc31e543c5650741fd"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function \"read\" in typed context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 7
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function \"read\" in typed context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 7
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-untyped-def",
+          "message": "Function is missing a type annotation",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 16
+          }
+        },
+        {
+          "rule": "no-untyped-call",
+          "message": "Call to untyped function \"read\" in typed context",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 7
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_package_reexport",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg/__init__.py": "from .child import VALUE\n",
+      "pkg/child.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg/__init__.py": "c368bd54833ed5043d0123073f82abf33c8a192ed4f3ca6ad865aab731f0cdac",
+      "pkg/child.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"pkg\" does not explicitly export attribute \"VALUE\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "unimported_shadow_builtins",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "builtins.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "builtins.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"builtins\"",
+          "hint": "A user-defined top-level module with name \"builtins\" is not supported",
+          "path": "builtins.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"builtins\"",
+          "hint": "A user-defined top-level module with name \"builtins\" is not supported",
+          "path": "builtins.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"builtins\"",
+          "hint": "A user-defined top-level module with name \"builtins\" is not supported",
+          "path": "builtins.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_types",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "types.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "types.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"types\"",
+          "hint": "A user-defined top-level module with name \"types\" is not supported",
+          "path": "types.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"types\"",
+          "hint": "A user-defined top-level module with name \"types\" is not supported",
+          "path": "types.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"types\"",
+          "hint": "A user-defined top-level module with name \"types\" is not supported",
+          "path": "types.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_typing_extensions",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "typing_extensions.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "typing_extensions.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing_extensions\"",
+          "hint": "A user-defined top-level module with name \"typing_extensions\" is not supported",
+          "path": "typing_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing_extensions\"",
+          "hint": "A user-defined top-level module with name \"typing_extensions\" is not supported",
+          "path": "typing_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"typing_extensions\"",
+          "hint": "A user-defined top-level module with name \"typing_extensions\" is not supported",
+          "path": "typing_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_mypy_extensions",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "mypy_extensions.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "mypy_extensions.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"mypy_extensions\"",
+          "hint": "A user-defined top-level module with name \"mypy_extensions\" is not supported",
+          "path": "mypy_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"mypy_extensions\"",
+          "hint": "A user-defined top-level module with name \"mypy_extensions\" is not supported",
+          "path": "mypy_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"mypy_extensions\"",
+          "hint": "A user-defined top-level module with name \"mypy_extensions\" is not supported",
+          "path": "mypy_extensions.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow__typeshed",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "_typeshed.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "_typeshed.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_typeshed\"",
+          "hint": "A user-defined top-level module with name \"_typeshed\" is not supported",
+          "path": "_typeshed.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_typeshed\"",
+          "hint": "A user-defined top-level module with name \"_typeshed\" is not supported",
+          "path": "_typeshed.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_typeshed\"",
+          "hint": "A user-defined top-level module with name \"_typeshed\" is not supported",
+          "path": "_typeshed.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow__collections_abc",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "_collections_abc.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "_collections_abc.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_collections_abc\"",
+          "hint": "A user-defined top-level module with name \"_collections_abc\" is not supported",
+          "path": "_collections_abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_collections_abc\"",
+          "hint": "A user-defined top-level module with name \"_collections_abc\" is not supported",
+          "path": "_collections_abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"_collections_abc\"",
+          "hint": "A user-defined top-level module with name \"_collections_abc\" is not supported",
+          "path": "_collections_abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_collections",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "collections.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "collections.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "path": "collections.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "path": "collections.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "path": "collections.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_collections_abc",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "collections/abc.py": "VALUE: int = 1\n",
+      "collections/__init__.py": ""
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "collections/abc.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+      "collections/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "path": "collections/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "path": "collections/__init__.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"collections.abc\"",
+          "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+          "path": "collections/abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "authorized_variants": [
+      [
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections\"",
+            "hint": "A user-defined top-level module with name \"collections\" is not supported",
+            "path": "collections/__init__.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections.abc\"",
+            "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+            "path": "collections/abc.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections.abc\"",
+            "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+            "path": "collections/abc.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections\"",
+            "hint": "A user-defined top-level module with name \"collections\" is not supported",
+            "path": "collections/__init__.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections\"",
+            "hint": "A user-defined top-level module with name \"collections\" is not supported",
+            "path": "collections/__init__.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections\"",
+            "hint": "A user-defined top-level module with name \"collections\" is not supported",
+            "path": "collections/__init__.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections.abc\"",
+            "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+            "path": "collections/abc.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections.abc\"",
+            "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+            "path": "collections/abc.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ],
+        [
+          {
+            "rule": null,
+            "message": "This file shadows library module \"collections\"",
+            "hint": "A user-defined top-level module with name \"collections\" is not supported",
+            "path": "collections/__init__.py",
+            "severity": "error",
+            "location": {
+              "line": -1,
+              "column": 0,
+              "end_line": -1,
+              "end_column": 0
+            }
+          }
+        ]
+      ]
+    ]
+  },
+  {
+    "name": "unimported_shadow_sys",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "sys.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "sys.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"sys\"",
+          "hint": "A user-defined top-level module with name \"sys\" is not supported",
+          "path": "sys.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"sys\"",
+          "hint": "A user-defined top-level module with name \"sys\" is not supported",
+          "path": "sys.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"sys\"",
+          "hint": "A user-defined top-level module with name \"sys\" is not supported",
+          "path": "sys.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "unimported_shadow_abc",
+    "files": {
+      "main.py": "value: int = 1\n"
+    },
+    "local": {
+      "abc.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693"
+    },
+    "local_sha256": {
+      "abc.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"abc\"",
+          "hint": "A user-defined top-level module with name \"abc\" is not supported",
+          "path": "abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"abc\"",
+          "hint": "A user-defined top-level module with name \"abc\" is not supported",
+          "path": "abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ],
+      [
+        {
+          "rule": null,
+          "message": "This file shadows library module \"abc\"",
+          "hint": "A user-defined top-level module with name \"abc\" is not supported",
+          "path": "abc.py",
+          "severity": "error",
+          "location": {
+            "line": -1,
+            "column": 0,
+            "end_line": -1,
+            "end_column": 0
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_invalid_assignment",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_invalid_unicode_parameter",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "value = \"\u4e2d\u6587\"\ndef broken(:\n    pass\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "ada8cd6a9ece34be35d46a15e93e63b1a5ef720f0483fad9973bd661b80f8726"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected a parameter or the end of the parameter list",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 13
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `)`, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 14,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_unicode_syntax_line",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "\u4e2d\u6587 =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "801164e706b3e8a6a4bb6b1967f004db9eac1e8851278b056e93c73f08c167aa"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": 1,
+            "end_column": 6
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_missing_indent",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "if True:\nVALUE = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "c111ccc548a5dda1fe89848b70b91b9e808f2e466f39b72b6c3233c7ba7c75d8"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an indented block after `if` statement",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an indented block after `if` statement",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an indented block after `if` statement",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_unterminated_string",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = \"text\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "8f349f600d9cf530f27f1a108c4a4be85af9fc4810b1c061d56aa77bcc3835ff"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Missing closing quote in string literal",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Missing closing quote in string literal",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Missing closing quote in string literal",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 10,
+            "end_line": 1,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_unclosed_parenthesis",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = (1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "948528ada36dfb8a020c3c8d278812637dbd64cedcc8ec8a684a24b7163e2794"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_unclosed_dictionary",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = {\"name\": 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "01a21dcc4b2ccce246937258d88da562cd9401d6114ffd083dbce2fbc00be6b5"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Unexpected EOF while parsing",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_mismatched_bracket",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = [1)\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "ea6a8198b450375f70f9ee9218d91b3b9bc496cb9203014232ca2444139dea19"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression or a ']'",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `]`, found end of file",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression or a ']'",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `]`, found end of file",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression or a ']'",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected `]`, found end of file",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 2,
+            "end_line": 2,
+            "end_column": 2
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_invalid_template",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE = t\"text\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "7ddcbee3683a21d4cedd9485e5389bced03faf23b4d2191fbc1c3674fb1d2376"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.12)",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "T-string: unterminated string",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 12,
+            "end_line": 1,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "syntax",
+          "message": "Expected TStringEnd, found newline",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 16,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_syntax_ignore",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "VALUE =  # type: ignore[syntax]\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "386f9ecbf98cc6a0789b28d8eaf97a28b40f91036b7910dd1ee45790c7813a77"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 33,
+            "end_line": 1,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 33,
+            "end_line": 1,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 33,
+            "end_line": 1,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "local_ignore_errors_directive",
+    "files": {
+      "main.py": "from pkg import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pkg.py": "# mypy: ignore-errors\nVALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d2f4dd0a3e84248f36bfa1e1aa8d31e6984f18eeac179d5698e54a508d062aa4"
+    },
+    "local_sha256": {
+      "pkg.py": "974bda8ac155ce7acefb534a4505201b11ec64d652d3b7cbf548067f2574e16b"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pkg.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  }
+]

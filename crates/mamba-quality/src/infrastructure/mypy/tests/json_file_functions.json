@@ -1,0 +1,3356 @@
+[
+  {
+    "name": "load_callable",
+    "files": {
+      "main.py": "import json\nreveal_type(json.load)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "648efa7406326ffa79405d36d67b33ada0a8e042f7573be072afbffd6e378de2"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_callable",
+    "files": {
+      "main.py": "import json\nreveal_type(json.dump)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "808035a11e729a9c05a2cf710a118b4796f533756ab51a0e79edd956908258a7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "from_imports",
+    "files": {
+      "main.py": "from json import load as reader, dump as writer\nreveal_type(reader)\nreveal_type(writer)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "98a3d07d293b165e99a875df06542e4e912f963df2c536ef5faab12c91894eeb"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (fp: _typeshed.SupportsRead[str | bytes], *, cls: type[json.decoder.JSONDecoder] | None =, object_hook: (def (dict[Any, Any]) -> Any) | None =, parse_float: (def (str) -> Any) | None =, parse_int: (def (str) -> Any) | None =, parse_constant: (def (str) -> Any) | None =, object_pairs_hook: (def (list[tuple[Any, Any]]) -> Any) | None =, **kwds: Any) -> Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (obj: Any, fp: _typeshed.SupportsWrite[str], *, skipkeys: bool =, ensure_ascii: bool =, check_circular: bool =, allow_nan: bool =, cls: type[json.encoder.JSONEncoder] | None =, indent: None | int | str =, separators: tuple[str, str] | None =, default: (def (Any) -> Any) | None =, sort_keys: bool =, **kwds: Any)\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_text_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "47b59c5bd6e53ca955b3030f922f5a181e82d6e79db5ddc57b587446d61dcfde"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_bytes_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> bytes:\n        return b\"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a7ac611d8045ca31f8d9cb8c88886c2cd2e273d01ff9ccc9377c896c3fac8b45"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_union_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str | bytes:\n        return \"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e76364c9ec3719b6dae941f807c740cf612429adf1423d17da0a19b33476fa04"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str | bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str | bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str | bytes",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_wrong_return",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> int:\n        return 0\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a0f8015eb988c434cb912d9dc9776de76ae3bb36d020dbb3acde928f3fd27f59"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_read_requires_argument",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int) -> str:\n        return \"{}\"\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f6857c0a58fd932358452149eb5554dcc86cf647ddda572620578d3d6b4cd7e9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, size: int) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, size: int) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, size: int) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_wrong_string",
+    "files": {
+      "main.py": "import json\njson.load(\"{}\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3114e3b9e391b822e75cffcdea15e702d015a090c7a5a59779ddcfd4cc30c130"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"str\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"str\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"str\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 11,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_missing_argument",
+    "files": {
+      "main.py": "import json\njson.load()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f3e50fb82cd968a6efbb0f2a42324d19e67951d5de00cac00d2b70e90a644afe"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_extra_positional",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\njson.load(Reader(), 1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e8e085f28dfe32bf211ba07deb0ae12ddc7d0e7a209d35cb1c344dc5eee9b5b9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"load\"",
+          "hint": "\"load\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"load\" has incompatible type \"int\"; expected \"type[JSONDecoder] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"load\"",
+          "hint": "\"load\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"load\" has incompatible type \"int\"; expected \"type[JSONDecoder] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many positional arguments for \"load\"",
+          "hint": "\"load\" defined in \"json\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"load\" has incompatible type \"int\"; expected \"type[JSONDecoder] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 21,
+            "end_line": 5,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_keyword_fp",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\nreveal_type(json.load(fp=Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "012d4d0b838f330e9f64bf0e38361ab1fe43fd2bbb842c273575cc2e9fff00dd"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"fp\" to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 26,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"fp\" to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 26,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"fp\" to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 26,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_hook_wrong",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\njson.load(Reader(), parse_int=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6554f7d5ec7c55476c2a29ec84e36346aae055efbea9879713485f76db7f4e62"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_allow_any_keywords",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\nreveal_type(json.load(Reader(), application_option=1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "30415d50e8e1b234efc662c12ebccf8454b86f6c950ab83d1c494b139743d430"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 23,
+            "end_line": 5,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_text_writer",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\nreveal_type(json.dump({\"a\": 1}, Writer()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a5861f9a819e0ce9899af2ec6d9e4ec820048612e59c8e765c57cf1e6cc3b7f7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_bytes_writer",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: bytes) -> int:\n        return len(text)\njson.dump({}, Writer())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "cf2278d28a3b2b2d470a6a91bee49c67edf921ee95375ab6383bdfff7926d120"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: bytes) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: bytes) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: bytes) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_object_writer",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: object) -> None:\n        pass\nreveal_type(json.dump({}, Writer()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7905459c46213dfd0bdc6cc4e871a578eba2969731940d78d8ea8c1e15d736ac"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_write_requires_extra",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str, count: int) -> None:\n        pass\njson.dump({}, Writer())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "989e9ed6312665b7320699a8ff7fac892b3479df83899264e62942e083ac0781"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: str, count: int) -> None",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: str, count: int) -> None",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"Writer\"; expected \"SupportsWrite[str]\"",
+          "hint": "Following member(s) of \"Writer\" have conflicts:\n    Expected:\n        def write(self, str, /) -> object\n    Got:\n        def write(self, text: str, count: int) -> None",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 15,
+            "end_line": 5,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_wrong_string",
+    "files": {
+      "main.py": "import json\njson.dump({}, \"output\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "507a4093bf20b6929ccf9c24246e675fe9f52a08642f000e13ebfa5b37dfd70f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"str\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"str\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"dump\" has incompatible type \"str\"; expected \"SupportsWrite[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 15,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_missing_fp",
+    "files": {
+      "main.py": "import json\njson.dump({})\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "bf5b3c585206fddd9276d3b7b87047d7a8c818beb53e03628242727e207adcc4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional argument \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_missing_all",
+    "files": {
+      "main.py": "import json\njson.dump()\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "12b49923fb4952875506419fbb39d245c6597033a427cb2276bbccc2fb6b68d2"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional arguments \"obj\", \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional arguments \"obj\", \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing positional arguments \"obj\", \"fp\" in call to \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_keyword_fp",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\nreveal_type(json.dump(obj={}, fp=Writer()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4b5f67572a9ad3f165d5b79c1eb06c4b3216225aca06b0c1cf9a6cf68d785322"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 42
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 42
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 42
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_bad_indent",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\njson.dump({}, Writer(), indent=[])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3e38b6e742f9f777940bdeb69b7b86933f81376998b684a38fb178f027512cb2"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dump\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 32,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dump\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 32,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"indent\" to \"dump\" has incompatible type \"list[Never]\"; expected \"int | str | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 32,
+            "end_line": 5,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_bad_separator",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\njson.dump({}, Writer(), separators=(1, 2))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e8fb81284c0b42742d7bbb6af97012d2216c57a0f5a798de8d3bf6f971c1ba51"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dump\" has incompatible type \"tuple[int, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 36,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dump\" has incompatible type \"tuple[int, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 36,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"separators\" to \"dump\" has incompatible type \"tuple[int, int]\"; expected \"tuple[str, str] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 36,
+            "end_line": 5,
+            "end_column": 41
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_unknown_keyword",
+    "files": {
+      "main.py": "import json\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\nreveal_type(json.dump({}, Writer(), application_option=1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "303f1b7cfc0bcde9bbc579422c267bf14fa064472d3820ceb2840753cd7bd1e4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 57
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 57
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 57
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "dump_paired_load",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self) -> str:\n        return \"{}\"\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\nvalue = json.load(Reader())\nreveal_type(value)\nreveal_type(json.dump(value, Writer()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8e0eb71f2df14fad2ad8ff881851ab53212071426ca939b48f8f2481688f00d0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 19,
+            "end_line": 8,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 19,
+            "end_line": 8,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 19,
+            "end_line": 8,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "local_json_file_functions",
+    "files": {
+      "main.py": "import json\nreveal_type(json.load(1))\nreveal_type(json.dump(1, 2))\n"
+    },
+    "local": {
+      "json.py": "def load(value: int) -> str:\n    return str(value)\ndef dump(value: int, destination: int) -> int:\n    return destination\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5b9f38e10f8badf6e20394aaac3b0ed106a9a041ca79d0719b519ca4ae35e30e"
+    },
+    "local_sha256": {
+      "json.py": "fc8d304a4e92dec738b36ef4d3d2488945d10c2f9fad72c75c9bc2a8db800ea2"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "local_json_missing_file_functions",
+    "files": {
+      "main.py": "import json\njson.load(1)\njson.dump(1, 2)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5e7ca8fdac8a22a3665f1dad36af0589e5ff35b4c4d5c1670e98506199209108"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"load\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"dump\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_valid_text_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "2ebd636cacdc5310b43fcc7cac49523af8783c5d5160427e75bad4e42bff95c0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_valid_bytes_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> bytes:\n        return b\"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3f56de66f22ec8139454197209915a9b9edc54774ab8dea5b9ae02d0eb2e24b4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_valid_union_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str | bytes:\n        return \"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a2aca36fa525427f2c40814c003de0d4e995cf3c499629fd360bf991d180a4b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_optional_keyword_reader",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1) -> str:\n        return \"{}\"\nreveal_type(json.load(Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4f9706b911f38c1cc1c1e77d700755a9a29ff22f93ce41c495f2f6d4c171640e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_required_size",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int, /) -> str:\n        return \"{}\"\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "9839170e1bc6b9ce1fe1e371210957682635140438889c1de5f0a34370534646"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int, /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int, /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int, /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_wrong_size",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: str = \"\", /) -> str:\n        return \"{}\"\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e7d3899336e0af670bc3dd3be546c7d7f71099a49f90b815db0a0b764ac83d96"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, str = ..., /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, str = ..., /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, str = ..., /) -> str",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_wrong_result",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> int:\n        return 0\njson.load(Reader())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "13bf7fa353a925d1453a9d2262aaceafc8f5b3dee515caf9aac5615a001d237d"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int = ..., /) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int = ..., /) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"load\" has incompatible type \"Reader\"; expected \"SupportsRead[str | bytes]\"",
+          "hint": "Following member(s) of \"Reader\" have conflicts:\n    Expected:\n        def read(self, int = ..., /) -> str | bytes\n    Got:\n        def read(self, int = ..., /) -> int",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 11,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_hook_type",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\njson.load(Reader(), parse_int=1)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d8761f53ed042ca63548b4080b5621e49af5dc914a546086fd08f0a480606190"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"parse_int\" to \"load\" has incompatible type \"int\"; expected \"Callable[[str], Any] | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 31,
+            "end_line": 5,
+            "end_column": 31
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_valid_keyword_fp",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nreveal_type(json.load(fp=Reader()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8944745d50fe47291778a202a66ea910358f2b7e3af1e153601c467798baef10"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 34
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_valid_extra_kw",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nreveal_type(json.load(Reader(), application_option=1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3be6e0070e1202a43cd2a884b62b6af6c1d4ca188a4a21d9ec90f4b980883e7b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_reader_inherited",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nclass Child(Reader):\n    pass\nreveal_type(json.load(Child()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "adda092eb3e58346cebeb9a2c7d33c9e53d1f462ea8490fe4f56d07bb8f8ffca"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "load_dump_valid_pair",
+    "files": {
+      "main.py": "import json\nclass Reader:\n    def read(self, size: int = -1, /) -> str:\n        return \"{}\"\nclass Writer:\n    def write(self, text: str) -> int:\n        return len(text)\nvalue=json.load(Reader())\nreveal_type(value)\nreveal_type(json.dump(value, Writer()))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f96b391ee26919c10acf9121a986d841066d76a8b89d98953f3fb0d212c9d455"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 13,
+            "end_line": 10,
+            "end_column": 38
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

@@ -1,0 +1,1887 @@
+[
+  {
+    "name": "list_given_tuple",
+    "source": "# isort: list\nx = (2, 1)\n",
+    "source_sha256": "a507a0d6b56e2bc1df18c7fabb5640c51623a3958ae86e84aed050244d9f394d",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_dict",
+    "source": "# isort: list\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "fd2f223eb0d759cbe0be7c527872fc01132d18638a6ae927f7daafcf0bd347a3",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_set",
+    "source": "# isort: list\nx = {2, 1}\n",
+    "source_sha256": "347ddf0254c8e3ea83cd1fa776c37738b5784f4ef48a97eb3bc8951f8ac8ea78",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_int",
+    "source": "# isort: list\nx = 7\n",
+    "source_sha256": "1b9510c1547886d52c4c5cca5deb06eba5e8630b0b60ccfbdf746e6eec23a186",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_str",
+    "source": "# isort: list\nx = \"a\"\n",
+    "source_sha256": "51020b28d8d9897ecee8feb771b0e46934a5e89e99357ce37832f1c9bff1a215",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_bool",
+    "source": "# isort: list\nx = True\n",
+    "source_sha256": "993409d4da966a0a5de37bb72c15b78da869b53d04a094f8b3ea603379f66206",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_none",
+    "source": "# isort: list\nx = None\n",
+    "source_sha256": "18f217e2257f56314060baf6ae3db7842518d01b5afc2dd9ff23d26690209427",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_bytes",
+    "source": "# isort: list\nx = b\"a\"\n",
+    "source_sha256": "110cb777c8e938964935f5e8f2fb734002a6ae0f173237d4f05036c1c45ce93a",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_float",
+    "source": "# isort: list\nx = 1.5\n",
+    "source_sha256": "e0e24b53c47c2878d7934cd2d9bd8761ba142d7c825cabd26d56223ac6dbe88a",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "list_given_complex",
+    "source": "# isort: list\nx = 1j\n",
+    "source_sha256": "d7e4cb78a90e6796ce194e0d83699fa60cbb76167af14fad480a419a03751ee2",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_tuple",
+    "source": "# isort: unique-list\nx = (2, 1)\n",
+    "source_sha256": "fa41dfe67a51f37751fe473930ac92050dc70a7535edadcaade7d93daf2d295e",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_dict",
+    "source": "# isort: unique-list\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "9db2a6483ac03548bf7c606e41edb5503bf4c28ae6d812efb1adf4b8f73d60b0",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_set",
+    "source": "# isort: unique-list\nx = {2, 1}\n",
+    "source_sha256": "ae3c335857e27b4df58b69ae8dc97afee27fb511815cbd6d876cc0f2bc276283",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_int",
+    "source": "# isort: unique-list\nx = 7\n",
+    "source_sha256": "ab456dcd8f65a5b6f2a070d692299ad4166a79066524f9c71db00dd6937a1135",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_str",
+    "source": "# isort: unique-list\nx = \"a\"\n",
+    "source_sha256": "e9485a317460cb33303f6d1a2ca5c314ed3f5224edc9544b723d0c3375d6b8b5",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_bool",
+    "source": "# isort: unique-list\nx = True\n",
+    "source_sha256": "b26d01a5c0d410c54a965530dfea14c30730bab567615fe21ed8f30c2e972e2c",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_none",
+    "source": "# isort: unique-list\nx = None\n",
+    "source_sha256": "4519f0f35a4a060baf97c3c62c550e7bf05d5c46a75150dadcda2e96d8fda70d",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_bytes",
+    "source": "# isort: unique-list\nx = b\"a\"\n",
+    "source_sha256": "b7a366d64e518eae3738e9355c8678e2d4e2b098ab8df21934222e17142f8b31",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_float",
+    "source": "# isort: unique-list\nx = 1.5\n",
+    "source_sha256": "4ba7cadf8a866091eef63a19139c8b37b5144a9976617296a821c1d80b954c6f",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-list_given_complex",
+    "source": "# isort: unique-list\nx = 1j\n",
+    "source_sha256": "5dc6fd9ecb04bd35ec7536c897b3d6b24b5576989c86fcbec656a031c175574d",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'list'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_list",
+    "source": "# isort: tuple\nx = [2, 1]\n",
+    "source_sha256": "576260f60cc63262b1f54f34ed64c34165aeaf953e52f2904c971fc593e48078",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_dict",
+    "source": "# isort: tuple\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "84e6d59a03496349dd0db6809e30b095ae9a6e71c148fe6222641fc384dd7030",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_set",
+    "source": "# isort: tuple\nx = {2, 1}\n",
+    "source_sha256": "b100205af755df814d3cf7f287bba42f38c374b6892e1deabe17ebcb416ecc75",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_int",
+    "source": "# isort: tuple\nx = 7\n",
+    "source_sha256": "51b4f8a938a0433cda6ccc7137c6190128195bdba16907c6a1e63a0a5c934f8f",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_str",
+    "source": "# isort: tuple\nx = \"a\"\n",
+    "source_sha256": "111add05963cd4dbc0dd583b9c6db158179df40ae1723b72c6735861529742c2",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_bool",
+    "source": "# isort: tuple\nx = True\n",
+    "source_sha256": "49fb0aa63eadd48a2117e4c3037a3bb07b88232fa9b34ba2897d88930a9719e5",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_none",
+    "source": "# isort: tuple\nx = None\n",
+    "source_sha256": "9fd8dea8f6701a9577f98f73292c5cbedd9c1ee2eb7229c9447ee361c04ecaec",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_bytes",
+    "source": "# isort: tuple\nx = b\"a\"\n",
+    "source_sha256": "b2c207819c300fe2342055581d154e4fa3a742c9e15f1dbfb72f9c9781bc3dbc",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_float",
+    "source": "# isort: tuple\nx = 1.5\n",
+    "source_sha256": "1d8a02e6c54cc2c7ad6e80428aaff3521314a59ba94ca952b18cea11194a3472",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "tuple_given_complex",
+    "source": "# isort: tuple\nx = 1j\n",
+    "source_sha256": "485f2684867c67735e0a304466b1fbfcd0ae1a4bf819fcd49eb811c693379909",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_list",
+    "source": "# isort: unique-tuple\nx = [2, 1]\n",
+    "source_sha256": "a9c742f86c09ba81389237b45069459c1f550d01b98a57e5447e8b5238b6d3dc",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_dict",
+    "source": "# isort: unique-tuple\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "409fc6c47865f6ae1c28f51eaab30e1ad4f761752d512288ccb36759ab4db063",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_set",
+    "source": "# isort: unique-tuple\nx = {2, 1}\n",
+    "source_sha256": "1f6c9c114002fd0d955587c71a29a519fe3c6fad8a207d91e0422d5ac3856369",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_int",
+    "source": "# isort: unique-tuple\nx = 7\n",
+    "source_sha256": "d6b2e46348d8ede72b6ebbcb3d7bb3fb84acdc98032516cc0bd09005d4cd94df",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_str",
+    "source": "# isort: unique-tuple\nx = \"a\"\n",
+    "source_sha256": "c1db8c7ca887857786af15363c5bd1b85dde2ee10af1b170debb0f7251beb46e",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_bool",
+    "source": "# isort: unique-tuple\nx = True\n",
+    "source_sha256": "e52e0be24f1f5d99cf37776007c94e93e18b5481fa639daef7adf04b61924f1c",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_none",
+    "source": "# isort: unique-tuple\nx = None\n",
+    "source_sha256": "0c39fcec5c34e1c164663382dd49a70cbe07c700f30614347c99cabf1eb9c1c4",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_bytes",
+    "source": "# isort: unique-tuple\nx = b\"a\"\n",
+    "source_sha256": "af4e837e0b59af7e03093047bcbce964cebb111f50a2aa6e22580cac380809ef",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_float",
+    "source": "# isort: unique-tuple\nx = 1.5\n",
+    "source_sha256": "d806f5fcd3ca306de7f170c780be2e6196cf304b19ec22171eaa2a0fddfb88fe",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique-tuple_given_complex",
+    "source": "# isort: unique-tuple\nx = 1j\n",
+    "source_sha256": "2010f197ad2f6dd24c7d75ade8168685d1b6acafdc264001aec832c60b4bc500",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'tuple'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_list",
+    "source": "# isort: dict\nx = [2, 1]\n",
+    "source_sha256": "f81fd0eef0334a8421b06977d8ec98c15926cb6adcbe52b64d4d46e170e2be24",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_tuple",
+    "source": "# isort: dict\nx = (2, 1)\n",
+    "source_sha256": "bd22182f561aa7befd29ac6a67e4b028bfabc420859d025db851ee16841dc35f",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_set",
+    "source": "# isort: dict\nx = {2, 1}\n",
+    "source_sha256": "3a8713ed3b2466fe7846eb014985a8420d490e4943aaefe68375b2a4dbef11b9",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'set'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_int",
+    "source": "# isort: dict\nx = 7\n",
+    "source_sha256": "5eb4dede87094e8809b124667e5c489bd8ae24be083b21145b6df0fe813ec51e",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_str",
+    "source": "# isort: dict\nx = \"a\"\n",
+    "source_sha256": "ccede36f657530b8d889ff99c1673dd8af63fa8ee84b0afbef1f50e7cc8c10b8",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_bool",
+    "source": "# isort: dict\nx = True\n",
+    "source_sha256": "7de5d3890c23c0c05617290fc990ca429d648aecf2e0c1aed61855bae5249242",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_none",
+    "source": "# isort: dict\nx = None\n",
+    "source_sha256": "b84a3c41d09644f98f7ebf0514408912e5329233ea78bc2d44d388a8f0eb1556",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_bytes",
+    "source": "# isort: dict\nx = b\"a\"\n",
+    "source_sha256": "bfe902590d6092c0e38e8b617187ce8fb0a50f8cc6ac50989d39e134f8949343",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_float",
+    "source": "# isort: dict\nx = 1.5\n",
+    "source_sha256": "a724839a9e1241660c028fe9a2eaa07ecb9a0d5641a371d5ac2339ef567304de",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "dict_given_complex",
+    "source": "# isort: dict\nx = 1j\n",
+    "source_sha256": "94928f341a4575cced341337d0cc9a0e409f56a70a1af2624089bdbb1871ddf6",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'dict'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_list",
+    "source": "# isort: set\nx = [2, 1]\n",
+    "source_sha256": "da32eac2eb60ac8ca22f8b97819ddc9c85b0cbc22c1a1cd057333687e1786689",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'list'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_tuple",
+    "source": "# isort: set\nx = (2, 1)\n",
+    "source_sha256": "83918a3c9e4d84d8bdb44a6f1eacd592de766777f5e968465a53d42cd2a5e1ef",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'tuple'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_dict",
+    "source": "# isort: set\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "1e08399ff43a998f7e5989167d8323dfd3b79247fd0884156841d0e19ffc39d4",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'dict'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_int",
+    "source": "# isort: set\nx = 7\n",
+    "source_sha256": "6f5f9e2340da318acec2177ebf4fb2f14d92f5de0c5c4f7e6f0f35c7ff2d2ebb",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'int'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_str",
+    "source": "# isort: set\nx = \"a\"\n",
+    "source_sha256": "8f5bdbed4842c8c8547c93299063db8c8da97476bf86640a47ddde2184c2139d",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'str'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_bool",
+    "source": "# isort: set\nx = True\n",
+    "source_sha256": "ec65d663b8861d551e7c205c506cc2f3ae26a67742757b99b157f3f3e8c31faf",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bool'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_none",
+    "source": "# isort: set\nx = None\n",
+    "source_sha256": "d2b7b3c4963a86c2a9bfc1708c3bdb7a2def231937652801b409f1fa0f820b2b",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'NoneType'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_bytes",
+    "source": "# isort: set\nx = b\"a\"\n",
+    "source_sha256": "57742bdad9fefc83b1da2c259aa12ae2a06474143302641b8d4e7944657fb751",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'bytes'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_float",
+    "source": "# isort: set\nx = 1.5\n",
+    "source_sha256": "fa2ff403955fb42905004707224081e3054765f0ffeb84ceb1a5c6794a2b1fae",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'float'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_given_complex",
+    "source": "# isort: set\nx = 1j\n",
+    "source_sha256": "c7ae64a0b2a6e1005551b14888f2cc6700b6d712a35bd9704da3fa18002f40bf",
+    "expected": [
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralSortTypeMismatch",
+        "message": "isort was told to sort a literal of type <class 'set'> but was given a literal of type <class 'complex'>.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "invalid_assignments",
+    "source": "# isort: assignments\nx=1\n",
+    "source_sha256": "185a71ea6f4f9841cf79371068b6b05b137434501cc4a941f6acb37d528e6b06",
+    "expected": [
+      {
+        "error_class": "AssignmentsFormatMismatch",
+        "message": "isort was told to sort a section of assignments, however the given code:\n\nx=1\n\n\nDoes not match isort's strict single line formatting requirement for assignment sorting:\n\n{variable_name} = {value}\n{variable_name2} = {value2}\n...\n\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "AssignmentsFormatMismatch",
+        "message": "isort was told to sort a section of assignments, however the given code:\n\nx=1\n\n\nDoes not match isort's strict single line formatting requirement for assignment sorting:\n\n{variable_name} = {value}\n{variable_name2} = {value2}\n...\n\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "AssignmentsFormatMismatch",
+        "message": "isort was told to sort a section of assignments, however the given code:\n\nx=1\n\n\nDoes not match isort's strict single line formatting requirement for assignment sorting:\n\n{variable_name} = {value}\n{variable_name2} = {value2}\n...\n\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "missing_assignment",
+    "source": "# isort: list\n[2, 1]\n",
+    "source_sha256": "442a376d8aa9c619b57f06cefa7493f0835866e6686ab8daef58f325b21f9e9b",
+    "expected": [
+      {
+        "error_class": "ValueError",
+        "message": "not enough values to unpack (expected 2, got 1)",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "error_class": "ValueError",
+        "message": "not enough values to unpack (expected 2, got 1)",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "error_class": "ValueError",
+        "message": "not enough values to unpack (expected 2, got 1)",
+        "version": "9.0.2",
+        "reference_exit": 0
+      }
+    ]
+  },
+  {
+    "name": "unclosed_list",
+    "source": "# isort: list\nx = [1, 2, 3\n",
+    "source_sha256": "21779bb81022a37d906bd13b3563d1d3be0c3f6e70b9c42bbceda8a0a4dc6e68",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, 2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, 2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [1, 2, 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '[' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unclosed_dict",
+    "source": "# isort: dict\nx = {\"a\": 1\n",
+    "source_sha256": "3d2dd2d104ca24d0a0e23133b527ad4ed5389ec89aea4d8381ec0963128b028a",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"a\": 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '{' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"a\": 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '{' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {\"a\": 1\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '{' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unclosed_tuple",
+    "source": "# isort: tuple\nx = (1, 2\n",
+    "source_sha256": "3de714d587f6d1ed2d3cb63ef96e09aecd86c8b9764c418cb59e0cb825b359da",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = (1, 2\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of '(' was never closed (<unknown>, line 1).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "mixed_list",
+    "source": "# isort: list\nx = [1, \"a\"]\n",
+    "source_sha256": "b77ea4554d8d52863a0a7f8d7bdf449e829594e36db8da5d2266dc0521663e74",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'str' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "mixed_list_reverse",
+    "source": "# isort: list\nx = [\"a\", 1]\n",
+    "source_sha256": "3cb32a2c9582255fdfab4669e11961c0dd627bcd62b9763e8d0b3dbe6959f2f0",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'int' and 'str'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'int' and 'str'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'int' and 'str'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "mixed_none",
+    "source": "# isort: list\nx = [1, None]\n",
+    "source_sha256": "b9ef74d54b34fa65bfb20c6c40c69b1d8c335616a09805b195ab0768e991d720",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'NoneType' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'NoneType' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "'<' not supported between instances of 'NoneType' and 'int'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "unique_unhashable",
+    "source": "# isort: unique-list\nx = [[1], [2]]\n",
+    "source_sha256": "9c686b8eadbc41573a6c89b4395200988f3f45cd3be2ec66b141a8bef2fe062a",
+    "expected": [
+      {
+        "error_class": "TypeError",
+        "message": "unhashable type: 'list'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "unhashable type: 'list'",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "TypeError",
+        "message": "cannot use 'list' as a set element (unhashable type: 'list')",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "set_unhashable",
+    "source": "# isort: set\nx = {[1]}\n",
+    "source_sha256": "e22ce6adb0eeedeab9400857202e007460561734439c77e820eb9a99eced4f64",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unhashable type: 'list'.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of unhashable type: 'list'.",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = {[1]}\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of cannot use 'list' as a set element (unhashable type: 'list').",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "extra_statement",
+    "source": "# isort: list\nx = [2, 1]\ny = 3\n",
+    "source_sha256": "250960d77ec9ec52f98fb8a4cabd212dc402aede40a57c851eb33c9a94a94afc",
+    "expected": [
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [2, 1]\ny = 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [2, 1]\ny = 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "error_class": "LiteralParsingFailure",
+        "message": "isort failed to parse the given literal x = [2, 1]\ny = 3\n. It's important to note that isort literal sorting only supports simple literals parsable by ast.literal_eval which gave the exception of invalid syntax (<unknown>, line 2).",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_list",
+    "source": "# isort: list\nx = [2, 1]\n",
+    "source_sha256": "e0af2421db7d9ee4d10794084d93c88a4ad1a5275e6db426afe50e4fab8ce5e7",
+    "expected": [
+      {
+        "output": "# isort: list\nx = [1, 2]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [1, 2]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: list\nx = [1, 2]\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_tuple",
+    "source": "# isort: tuple\nx = (2, 1)\n",
+    "source_sha256": "53ce5ad60f77555aaadb6d333bcd744cedecc5ca21d5452550612078fc48b470",
+    "expected": [
+      {
+        "output": "# isort: tuple\nx = (1, 2)\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: tuple\nx = (1, 2)\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: tuple\nx = (1, 2)\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_dict",
+    "source": "# isort: dict\nx = {\"b\": 2, \"a\": 1}\n",
+    "source_sha256": "6d415bc779f9e36d547ed640ccaf15bcc6ac458c0ab98739104787248f5a8169",
+    "expected": [
+      {
+        "output": "# isort: dict\nx = {\"a\": 1, \"b\": 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: dict\nx = {\"a\": 1, \"b\": 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: dict\nx = {\"a\": 1, \"b\": 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "valid_set",
+    "source": "# isort: set\nx = {2, 1}\n",
+    "source_sha256": "a6bfdee2d597ee01df034fb8d0872cc28dded21b107784eca2a5d8992afd5598",
+    "expected": [
+      {
+        "output": "# isort: set\nx = {1, 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: set\nx = {1, 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      },
+      {
+        "output": "# isort: set\nx = {1, 2}\n",
+        "version": "9.0.2",
+        "reference_exit": 1
+      }
+    ]
+  },
+  {
+    "name": "off_error",
+    "source": "# isort: off\n# isort: set\nx = [1]\n",
+    "source_sha256": "461aec7e230e3c5b741acf11bb8e35d30656b0488cf317e473cd81a09aa4d7d3",
+    "expected": [
+      {
+        "output": "# isort: off\n# isort: set\nx = [1]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: off\n# isort: set\nx = [1]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      },
+      {
+        "output": "# isort: off\n# isort: set\nx = [1]\n",
+        "version": "9.0.2",
+        "reference_exit": 0
+      }
+    ]
+  }
+]

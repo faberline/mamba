@@ -1,0 +1,49 @@
+{
+  "schema": "mamba.quality.atomic-next-assignment-proposal.v1",
+  "objective": "Infer synchronous set-comprehension result types for typed iterable inputs and propagate those types to assignment and generic-call constraints",
+  "basis_quality_source_sha256": "e3656b2d0653fe9733464f821bfe58c93d4ed45f2292945001e89df4a7afca94",
+  "product_paths": [
+    "crates/mamba-quality/src/infrastructure/mypy/types.rs",
+    "crates/mamba-quality/src/infrastructure/mypy/scopes/generics.rs"
+  ],
+  "optional_new_helper": "crates/mamba-quality/src/infrastructure/mypy/scopes/generics/comprehensions.rs",
+  "inputs": [
+    {
+      "name": "typed-result-controls",
+      "source": "from typing import Iterable, reveal_type\n\ndef inspect(values: Iterable[int]) -> None:\n    result = {x for x in values}\n    reveal_type(result)\n    reveal_type([x for x in values])\n    reveal_type({1, 2})\n"
+    },
+    {
+      "name": "assignment-propagation",
+      "source": "from typing import Iterable\n\ndef inspect(values: Iterable[int]) -> None:\n    good: set[int] = {x for x in values}\n    bad: set[str] = {x for x in values}\n"
+    },
+    {
+      "name": "generic-argument-propagation",
+      "source": "from typing import Iterable, TypeVar, reveal_type\n\nT = TypeVar('T')\n\ndef identity(values: set[T]) -> set[T]:\n    return values\n\ndef inspect(values: Iterable[int]) -> None:\n    reveal_type(identity({x for x in values}))\n"
+    },
+    {
+      "name": "dependent-generators-and-isolation",
+      "source": "from typing import Iterable, reveal_type\n\ndef inspect(values: Iterable[tuple[int, str]]) -> None:\n    item = 'outer'\n    result = {item for row in values for item in row}\n    reveal_type(result)\n    reveal_type(item)\n"
+    }
+  ],
+  "original_contract": {
+    "mypy_version": "2.4.0",
+    "python_targets": ["3.12", "3.13", "3.14"],
+    "reporters": ["json", "full-position-text"],
+    "repeats": 2,
+    "raw_capture_denominator": 48,
+    "expected_diagnostics": null,
+    "expected_reporter_exits": null,
+    "expected_derivation": "Fresh admitted original captures only; preserve exact raw stdout, stderr, process exit, imports, runtime/pin/source/argv/environment identities and pre/post source bytes",
+    "python314": "Root-reviewed fresh capture on admitted reconstructed runtime; do not reuse historical runtime identity or replace provenance with semantic match"
+  },
+  "native_contract": {
+    "baseline": "Root must retain native failures before applying product changes",
+    "semantic_output": "Set container with typed element; propagate to assignments and generic calls without leaking comprehension bindings",
+    "comparison": "All diagnostic fields, positions, hints, checked-file counts and reporter exits against fresh originals",
+    "public_completion": "Preserve Incomplete/null for nonblocking cases; do not close the broader complete contract"
+  },
+  "explicit_unvalidated_domains": ["async comprehensions", "filter narrowing", "starred elements", "empty iterable inference", "full expected-context inference", "dictionary comprehensions"],
+  "forbidden": ["completion flips", "remaining weakening", "module/type identity edits", "queue/iteration changes", "source white lists", "oracle/expected row edits"],
+  "status": "PROPOSAL_UNRUN",
+  "whole_acceptance": false
+}

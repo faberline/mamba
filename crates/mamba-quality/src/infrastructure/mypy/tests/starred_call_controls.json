@@ -1,0 +1,1468 @@
+[
+  {
+    "name": "remaining_fixed_list_int",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[int] = [1, 2]\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e43f010a1ece886363f1b47883cbe47ca4247916d1dd32d48aaafac5426b0f35"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "first_fixed_list_str",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[str] = [\"one\", \"two\"]\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "308fdcc403e1aebda551e0c25488461bfc4e8c16f5e1ec401544fb541b4f0363"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "ordinary_before_star_bad",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[str] = [\"two\"]\npair(\"one\", *items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d9deb3c968d13673d4c9a3728cf9f047705a4aff1d6ea041628fb2d41d2ac550"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 6,
+            "end_line": 4,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "ordinary_before_star_good",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[str] = [\"two\"]\npair(1, *items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e92f523dd24bed1482c8137443bbf9a25c17a85e7a049ebdda528e2c1c11db37"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "ordinary_after_star_bad",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[int] = [1]\npair(*items, 2)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b1f5c32fa074f788abe803a33aa903a02fd47d890176b4e69523dcd47036fcf6"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "ordinary_after_star_good",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[int] = [1]\npair(*items, \"two\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "939dfc7e0aa9eb382e98ae126415d3ed4de9ba434925004a96bd2d15645104dc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"pair\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 19
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "remaining_fixed_tuple_int",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: tuple[int, ...] = (1, 2)\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "98364fc8e93ec3755b2378ae7cb335fd15d3cde7ba1f01c3039d797462abf34a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[int, ...]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[int, ...]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[int, ...]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "remaining_fixed_sequence_int",
+    "files": {
+      "main.py": "from collections.abc import Sequence\ndef pair(first: int, second: str) -> None:\n    pass\nitems: Sequence[int] = [1, 2]\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "77cf02d0d54331f35e226b9befc37e1af32d464d6c8d114b3085687c9c7b5232"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Sequence[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Sequence[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Sequence[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "remaining_fixed_iterable_int",
+    "files": {
+      "main.py": "from collections.abc import Iterable\ndef pair(first: int, second: str) -> None:\n    pass\nitems: Iterable[int] = [1, 2]\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f3789d9af45d73816f8cde274e6ac6e2d3c68cefff3f975aa2161ebe5e5356f4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Iterable[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Iterable[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*Iterable[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "remaining_fixed_union_item",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[int | str] = [1, \"two\"]\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "721a0c8a55a20f42fe8caac60933e5cbb4b302beed43003924ba943fb551da24"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int | str]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "keyword_after_star_bad",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: list[int] = [1]\npair(*items, second=2)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "286f82ef3e0b945439b6d5e37e31f9a67bc7101a66643628606c0423bcad45f9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"pair\" gets multiple values for keyword argument \"second\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"second\" to \"pair\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"pair\" gets multiple values for keyword argument \"second\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"second\" to \"pair\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"pair\" gets multiple values for keyword argument \"second\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 22
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument \"second\" to \"pair\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 21,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "keyword_only_after_star_bad",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\nflagged(*items, enabled=\"bad\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b6f9c82b53b9c688c769643e3f6c4fcbe1400b31e921ce937541f5438a899e6a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"enabled\" to \"flagged\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"enabled\" to \"flagged\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument \"enabled\" to \"flagged\" has incompatible type \"str\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 25,
+            "end_line": 4,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "keyword_only_after_star_good",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\nflagged(*items, enabled=True)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ab30e052a6a7b5f75fc4bd56e84399fc25d2316a38de7b514b5a18da24c59887"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "keyword_only_after_star_missing",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\nflagged(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5bb700ee372085d73cab28490734be990bec144af3affb6a75c7e1e57e78bd1f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing named argument \"enabled\" for \"flagged\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing named argument \"enabled\" for \"flagged\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Missing named argument \"enabled\" for \"flagged\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "homogeneous_three_fixed_bad",
+    "files": {
+      "main.py": "def three(first: int, second: int, third: int) -> None:\n    pass\nitems: list[str] = [\"bad\"]\nthree(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5ecc633d9a4060508158dfc81d4a84e83acb21e4554417185e0dbf70f386ad56"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"three\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"three\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 12
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"three\" has incompatible type \"*list[str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 12
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "homogeneous_three_fixed_good",
+    "files": {
+      "main.py": "def three(first: int, second: int, third: int) -> None:\n    pass\nitems: list[int] = [1, 2, 3]\nthree(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8237af603be781c93162d9cb14512afc324e6834d9fc8699577164c0a0704d09"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "variadic_after_fixed_bad",
+    "files": {
+      "main.py": "def variadic(first: int, *remaining: str) -> None:\n    pass\nitems: list[int] = [1, 2]\nvariadic(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6758734e9063a82dbd646f721cddf21d833552d2261bd9e489f6c02e6cca6e4e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 11,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 11,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"*list[int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 11,
+            "end_line": 4,
+            "end_column": 15
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "variadic_plain_before_star_bad",
+    "files": {
+      "main.py": "def variadic(first: int, *remaining: str) -> None:\n    pass\nitems: list[str] = [\"two\"]\nvariadic(\"one\", *items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4108750a63657397d7210f02f23affb97a4c0d176cfc706f0a5bc393f7a80578"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"variadic\" has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "tuple_expansion_valid_control",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: tuple[int, str] = (1, \"two\")\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d9b23f6e189610c9709c6424a19bc2b841f4b9378464d2d67f8e8c83d0914b5c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "tuple_expansion_bad_control",
+    "files": {
+      "main.py": "def pair(first: int, second: str) -> None:\n    pass\nitems: tuple[str, int] = (\"one\", 2)\npair(*items)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f0f64ddc292f22112ca3c91cc1bf7a3d8745714923751a89c0ee96591553351e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"pair\" has incompatible type \"*tuple[str, int]\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

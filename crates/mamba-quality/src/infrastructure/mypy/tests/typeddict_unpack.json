@@ -1,0 +1,182 @@
+[
+  {
+    "name": "open_missing_optional",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\nclass Target(TypedDict):\n    x: int\n    y: NotRequired[str]\ns: Source = {\"x\": 1}\nresult: Target = {**s}\n",
+    "source_sha256": "0f3b8ad51c3efe7726ee8bdfccd5fc99581140b8e4e290d39dc83cf942f444ed",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Non-required key \"y\" not explicitly found in any ** item",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Non-required key \"y\" not explicitly found in any ** item",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Non-required key \"y\" not explicitly found in any ** item",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "explicit_optional_after_unpack",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\nclass Target(TypedDict):\n    x: int\n    y: NotRequired[str]\ns: Source = {\"x\": 1}\nresult: Target = {**s, \"y\": \"ok\"}\n",
+    "source_sha256": "5cbccf6e6b5167e9620dbfe5c9d84d256a660587c095c7e9d3733bc33550fccc",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "bad_explicit_after_unpack",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\nclass Target(TypedDict):\n    x: int\n    y: NotRequired[str]\ns: Source = {\"x\": 1}\nresult: Target = {**s, \"y\": 1}\n",
+    "source_sha256": "819d66d6b10425af427313c9b9fdb747bd0041ad04a2b9cd74ac029e532e3920",
+    "expected": [
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"y\" has type \"str\")",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 29,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"y\" has type \"str\")",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 29,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "path": "main.py",
+          "rule": "typeddict-item",
+          "message": "Incompatible types (expression has type \"int\", TypedDict item \"y\" has type \"str\")",
+          "hint": null,
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 29,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "required_only_target",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\nclass Target(TypedDict):\n    x: int\ns: Source = {\"x\": 1}\nresult: Target = {**s}\n",
+    "source_sha256": "9c7338f393cc03e42a115b5f46445d67c6bce03c2090666e8e88acca327974d1",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "declared_optional_in_source",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\n    y: NotRequired[str]\nclass Target(TypedDict):\n    x: int\n    y: NotRequired[str]\ns: Source = {\"x\": 1}\nresult: Target = {**s}\n",
+    "source_sha256": "1bc70bee2e1b38c60e9627d82fdaf348a39d5d3df7047bdfb4097f83e4119051",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "named_ignore",
+    "filename": "main.py",
+    "source": "from typing import TypedDict, NotRequired\nclass Source(TypedDict):\n    x: int\nclass Target(TypedDict):\n    x: int\n    y: NotRequired[str]\ns: Source = {\"x\": 1}\nresult: Target = {**s}  # type: ignore[typeddict-item]\n",
+    "source_sha256": "a1d9fdc03b006511e30ef30f23c42b38b58b1ce7af0098aae6aec9e89e0aa2ac",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

@@ -1,0 +1,6215 @@
+{
+  "black": {
+    "magic_trailing_comma": true,
+    "preview": false,
+    "string_normalization": true
+  },
+  "default_python": "3.12",
+  "isort": {
+    "profile": "black",
+    "settings": {
+      "ensure_newline_before_comments": true,
+      "force_grid_wrap": 0,
+      "include_trailing_comma": true,
+      "line_length": 88,
+      "multi_line_output": 3,
+      "split_on_trailing_comma": true,
+      "use_parentheses": true
+    }
+  },
+  "line_width": 88,
+  "mypy": {
+    "strict_flags": [
+      "--disallow-any-generics",
+      "--disallow-subclassing-any",
+      "--disallow-untyped-calls",
+      "--disallow-untyped-defs",
+      "--disallow-incomplete-defs",
+      "--check-untyped-defs",
+      "--disallow-untyped-decorators",
+      "--warn-redundant-casts",
+      "--warn-unused-ignores",
+      "--warn-return-any",
+      "--no-implicit-reexport",
+      "--strict-equality",
+      "--extra-checks"
+    ]
+  },
+  "pydantic": {
+    "init_forbid_extra": true,
+    "init_typed": true,
+    "warn_required_dynamic_aliases": true
+  },
+  "pylint": {
+    "rules": [
+      {
+        "code": "C0103",
+        "maximum_python": null,
+        "message": "%s name \"%s\" doesn't conform to %s",
+        "minimum_python": null,
+        "name": "invalid-name"
+      },
+      {
+        "code": "C0104",
+        "maximum_python": null,
+        "message": "Disallowed name \"%s\"",
+        "minimum_python": null,
+        "name": "disallowed-name"
+      },
+      {
+        "code": "C0105",
+        "maximum_python": null,
+        "message": "Type variable name does not reflect variance%s",
+        "minimum_python": null,
+        "name": "typevar-name-incorrect-variance"
+      },
+      {
+        "code": "C0112",
+        "maximum_python": null,
+        "message": "Empty %s docstring",
+        "minimum_python": null,
+        "name": "empty-docstring"
+      },
+      {
+        "code": "C0114",
+        "maximum_python": null,
+        "message": "Missing module docstring",
+        "minimum_python": null,
+        "name": "missing-module-docstring"
+      },
+      {
+        "code": "C0115",
+        "maximum_python": null,
+        "message": "Missing class docstring",
+        "minimum_python": null,
+        "name": "missing-class-docstring"
+      },
+      {
+        "code": "C0116",
+        "maximum_python": null,
+        "message": "Missing function or method docstring",
+        "minimum_python": null,
+        "name": "missing-function-docstring"
+      },
+      {
+        "code": "C0117",
+        "maximum_python": null,
+        "message": "Consider changing \"%s\" to \"%s\"",
+        "minimum_python": null,
+        "name": "unnecessary-negation"
+      },
+      {
+        "code": "C0121",
+        "maximum_python": null,
+        "message": "Comparison %s should be %s",
+        "minimum_python": null,
+        "name": "singleton-comparison"
+      },
+      {
+        "code": "C0123",
+        "maximum_python": null,
+        "message": "Use isinstance() rather than type() for a typecheck.",
+        "minimum_python": null,
+        "name": "unidiomatic-typecheck"
+      },
+      {
+        "code": "C0131",
+        "maximum_python": null,
+        "message": "TypeVar cannot be both covariant and contravariant",
+        "minimum_python": null,
+        "name": "typevar-double-variance"
+      },
+      {
+        "code": "C0132",
+        "maximum_python": null,
+        "message": "TypeVar name \"%s\" does not match assigned variable name \"%s\"",
+        "minimum_python": null,
+        "name": "typevar-name-mismatch"
+      },
+      {
+        "code": "C0200",
+        "maximum_python": null,
+        "message": "Consider using enumerate instead of iterating with range and len",
+        "minimum_python": null,
+        "name": "consider-using-enumerate"
+      },
+      {
+        "code": "C0201",
+        "maximum_python": null,
+        "message": "Consider iterating the dictionary directly instead of calling .keys()",
+        "minimum_python": null,
+        "name": "consider-iterating-dictionary"
+      },
+      {
+        "code": "C0202",
+        "maximum_python": null,
+        "message": "Class method %s should have %s as first argument",
+        "minimum_python": null,
+        "name": "bad-classmethod-argument"
+      },
+      {
+        "code": "C0203",
+        "maximum_python": null,
+        "message": "Metaclass method %s should have %s as first argument",
+        "minimum_python": null,
+        "name": "bad-mcs-method-argument"
+      },
+      {
+        "code": "C0204",
+        "maximum_python": null,
+        "message": "Metaclass class method %s should have %s as first argument",
+        "minimum_python": null,
+        "name": "bad-mcs-classmethod-argument"
+      },
+      {
+        "code": "C0205",
+        "maximum_python": null,
+        "message": "Class __slots__ should be a non-string iterable",
+        "minimum_python": null,
+        "name": "single-string-used-for-slots"
+      },
+      {
+        "code": "C0206",
+        "maximum_python": null,
+        "message": "Consider iterating with .items()",
+        "minimum_python": null,
+        "name": "consider-using-dict-items"
+      },
+      {
+        "code": "C0207",
+        "maximum_python": null,
+        "message": "Use %s instead",
+        "minimum_python": null,
+        "name": "use-maxsplit-arg"
+      },
+      {
+        "code": "C0208",
+        "maximum_python": null,
+        "message": "Use a sequence type when iterating over values",
+        "minimum_python": null,
+        "name": "use-sequence-for-iteration"
+      },
+      {
+        "code": "C0209",
+        "maximum_python": null,
+        "message": "Formatting a regular string which could be an f-string",
+        "minimum_python": null,
+        "name": "consider-using-f-string"
+      },
+      {
+        "code": "C0301",
+        "maximum_python": null,
+        "message": "Line too long (%s/%s)",
+        "minimum_python": null,
+        "name": "line-too-long"
+      },
+      {
+        "code": "C0302",
+        "maximum_python": null,
+        "message": "Too many lines in module (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-lines"
+      },
+      {
+        "code": "C0303",
+        "maximum_python": null,
+        "message": "Trailing whitespace",
+        "minimum_python": null,
+        "name": "trailing-whitespace"
+      },
+      {
+        "code": "C0304",
+        "maximum_python": null,
+        "message": "Final newline missing",
+        "minimum_python": null,
+        "name": "missing-final-newline"
+      },
+      {
+        "code": "C0305",
+        "maximum_python": null,
+        "message": "Trailing newlines",
+        "minimum_python": null,
+        "name": "trailing-newlines"
+      },
+      {
+        "code": "C0321",
+        "maximum_python": null,
+        "message": "More than one statement on a single line",
+        "minimum_python": null,
+        "name": "multiple-statements"
+      },
+      {
+        "code": "C0325",
+        "maximum_python": null,
+        "message": "Unnecessary parens after %r keyword",
+        "minimum_python": null,
+        "name": "superfluous-parens"
+      },
+      {
+        "code": "C0327",
+        "maximum_python": null,
+        "message": "Mixed line endings LF and CRLF",
+        "minimum_python": null,
+        "name": "mixed-line-endings"
+      },
+      {
+        "code": "C0328",
+        "maximum_python": null,
+        "message": "Unexpected line ending format. There is '%s' while it should be '%s'.",
+        "minimum_python": null,
+        "name": "unexpected-line-ending-format"
+      },
+      {
+        "code": "C0401",
+        "maximum_python": null,
+        "message": "Wrong spelling of a word '%s' in a comment:\n%s\n%s\nDid you mean: '%s'?",
+        "minimum_python": null,
+        "name": "wrong-spelling-in-comment"
+      },
+      {
+        "code": "C0402",
+        "maximum_python": null,
+        "message": "Wrong spelling of a word '%s' in a docstring:\n%s\n%s\nDid you mean: '%s'?",
+        "minimum_python": null,
+        "name": "wrong-spelling-in-docstring"
+      },
+      {
+        "code": "C0403",
+        "maximum_python": null,
+        "message": "Invalid characters %r in a docstring",
+        "minimum_python": null,
+        "name": "invalid-characters-in-docstring"
+      },
+      {
+        "code": "C0410",
+        "maximum_python": null,
+        "message": "Multiple imports on one line (%s)",
+        "minimum_python": null,
+        "name": "multiple-imports"
+      },
+      {
+        "code": "C0411",
+        "maximum_python": null,
+        "message": "%s should be placed before %s",
+        "minimum_python": null,
+        "name": "wrong-import-order"
+      },
+      {
+        "code": "C0412",
+        "maximum_python": null,
+        "message": "Imports from package %s are not grouped",
+        "minimum_python": null,
+        "name": "ungrouped-imports"
+      },
+      {
+        "code": "C0413",
+        "maximum_python": null,
+        "message": "Import \"%s\" should be placed at the top of the module",
+        "minimum_python": null,
+        "name": "wrong-import-position"
+      },
+      {
+        "code": "C0414",
+        "maximum_python": null,
+        "message": "Import alias does not rename original package",
+        "minimum_python": null,
+        "name": "useless-import-alias"
+      },
+      {
+        "code": "C0415",
+        "maximum_python": null,
+        "message": "Import outside toplevel (%s)",
+        "minimum_python": null,
+        "name": "import-outside-toplevel"
+      },
+      {
+        "code": "C1802",
+        "maximum_python": null,
+        "message": "Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty",
+        "minimum_python": null,
+        "name": "use-implicit-booleaness-not-len"
+      },
+      {
+        "code": "C1803",
+        "maximum_python": null,
+        "message": "\"%s\" can be simplified to \"%s\", if it is strictly a sequence, as an empty %s is falsey",
+        "minimum_python": null,
+        "name": "use-implicit-booleaness-not-comparison"
+      },
+      {
+        "code": "C2401",
+        "maximum_python": null,
+        "message": "%s name \"%s\" contains a non-ASCII character, consider renaming it.",
+        "minimum_python": null,
+        "name": "non-ascii-name"
+      },
+      {
+        "code": "C2403",
+        "maximum_python": null,
+        "message": "%s name \"%s\" contains a non-ASCII character, use an ASCII-only alias for import.",
+        "minimum_python": null,
+        "name": "non-ascii-module-import"
+      },
+      {
+        "code": "C2503",
+        "maximum_python": null,
+        "message": "PEP8 recommends UTF-8 as encoding for Python files",
+        "minimum_python": null,
+        "name": "bad-file-encoding"
+      },
+      {
+        "code": "C2801",
+        "maximum_python": null,
+        "message": "Unnecessarily calls dunder method %s. %s.",
+        "minimum_python": null,
+        "name": "unnecessary-dunder-call"
+      },
+      {
+        "code": "C3001",
+        "maximum_python": null,
+        "message": "Lambda expression assigned to a variable. Define a function using the \"def\" keyword instead.",
+        "minimum_python": null,
+        "name": "unnecessary-lambda-assignment"
+      },
+      {
+        "code": "C3002",
+        "maximum_python": null,
+        "message": "Lambda expression called directly. Execute the expression inline instead.",
+        "minimum_python": null,
+        "name": "unnecessary-direct-lambda-call"
+      },
+      {
+        "code": "E0001",
+        "maximum_python": null,
+        "message": "%s",
+        "minimum_python": null,
+        "name": "syntax-error"
+      },
+      {
+        "code": "E0011",
+        "maximum_python": null,
+        "message": "Unrecognized file option %r",
+        "minimum_python": null,
+        "name": "unrecognized-inline-option"
+      },
+      {
+        "code": "E0013",
+        "maximum_python": null,
+        "message": "Plugin '%s' is impossible to load, is it installed ? ('%s')",
+        "minimum_python": null,
+        "name": "bad-plugin-value"
+      },
+      {
+        "code": "E0014",
+        "maximum_python": null,
+        "message": "Out-of-place setting encountered in top level configuration-section '%s' : '%s'",
+        "minimum_python": null,
+        "name": "bad-configuration-section"
+      },
+      {
+        "code": "E0015",
+        "maximum_python": null,
+        "message": "Unrecognized option found: %s",
+        "minimum_python": null,
+        "name": "unrecognized-option"
+      },
+      {
+        "code": "E0100",
+        "maximum_python": null,
+        "message": "__init__ method is a generator",
+        "minimum_python": null,
+        "name": "init-is-generator"
+      },
+      {
+        "code": "E0101",
+        "maximum_python": null,
+        "message": "Explicit return in __init__",
+        "minimum_python": null,
+        "name": "return-in-init"
+      },
+      {
+        "code": "E0102",
+        "maximum_python": null,
+        "message": "%s already defined line %s",
+        "minimum_python": null,
+        "name": "function-redefined"
+      },
+      {
+        "code": "E0103",
+        "maximum_python": null,
+        "message": "%r not properly in loop",
+        "minimum_python": null,
+        "name": "not-in-loop"
+      },
+      {
+        "code": "E0104",
+        "maximum_python": null,
+        "message": "Return outside function",
+        "minimum_python": null,
+        "name": "return-outside-function"
+      },
+      {
+        "code": "E0105",
+        "maximum_python": null,
+        "message": "Yield outside function",
+        "minimum_python": null,
+        "name": "yield-outside-function"
+      },
+      {
+        "code": "E0106",
+        "maximum_python": [
+          3,
+          3
+        ],
+        "message": "Return with argument inside generator",
+        "minimum_python": null,
+        "name": "return-arg-in-generator"
+      },
+      {
+        "code": "E0107",
+        "maximum_python": null,
+        "message": "Use of the non-existent %s operator",
+        "minimum_python": null,
+        "name": "nonexistent-operator"
+      },
+      {
+        "code": "E0108",
+        "maximum_python": null,
+        "message": "Duplicate argument name %r in function definition",
+        "minimum_python": null,
+        "name": "duplicate-argument-name"
+      },
+      {
+        "code": "E0110",
+        "maximum_python": null,
+        "message": "Abstract class %r with abstract methods instantiated",
+        "minimum_python": null,
+        "name": "abstract-class-instantiated"
+      },
+      {
+        "code": "E0111",
+        "maximum_python": null,
+        "message": "The first reversed() argument is not a sequence",
+        "minimum_python": null,
+        "name": "bad-reversed-sequence"
+      },
+      {
+        "code": "E0112",
+        "maximum_python": null,
+        "message": "More than one starred expression in assignment",
+        "minimum_python": null,
+        "name": "too-many-star-expressions"
+      },
+      {
+        "code": "E0113",
+        "maximum_python": null,
+        "message": "Starred assignment target must be in a list or tuple",
+        "minimum_python": null,
+        "name": "invalid-star-assignment-target"
+      },
+      {
+        "code": "E0114",
+        "maximum_python": null,
+        "message": "Can use starred expression only in assignment target",
+        "minimum_python": null,
+        "name": "star-needs-assignment-target"
+      },
+      {
+        "code": "E0115",
+        "maximum_python": null,
+        "message": "Name %r is nonlocal and global",
+        "minimum_python": null,
+        "name": "nonlocal-and-global"
+      },
+      {
+        "code": "E0117",
+        "maximum_python": null,
+        "message": "nonlocal name %s found without binding",
+        "minimum_python": null,
+        "name": "nonlocal-without-binding"
+      },
+      {
+        "code": "E0118",
+        "maximum_python": null,
+        "message": "Name %r is used prior to global declaration",
+        "minimum_python": [
+          3,
+          6
+        ],
+        "name": "used-prior-global-declaration"
+      },
+      {
+        "code": "E0119",
+        "maximum_python": null,
+        "message": "format function is not called on str",
+        "minimum_python": null,
+        "name": "misplaced-format-function"
+      },
+      {
+        "code": "E0202",
+        "maximum_python": null,
+        "message": "An attribute defined in %s line %s hides this method",
+        "minimum_python": null,
+        "name": "method-hidden"
+      },
+      {
+        "code": "E0203",
+        "maximum_python": null,
+        "message": "Access to member %r before its definition line %s",
+        "minimum_python": null,
+        "name": "access-member-before-definition"
+      },
+      {
+        "code": "E0211",
+        "maximum_python": null,
+        "message": "Method %r has no argument",
+        "minimum_python": null,
+        "name": "no-method-argument"
+      },
+      {
+        "code": "E0213",
+        "maximum_python": null,
+        "message": "Method %r should have \"self\" as first argument",
+        "minimum_python": null,
+        "name": "no-self-argument"
+      },
+      {
+        "code": "E0236",
+        "maximum_python": null,
+        "message": "Invalid object %r in __slots__, must contain only non empty strings",
+        "minimum_python": null,
+        "name": "invalid-slots-object"
+      },
+      {
+        "code": "E0237",
+        "maximum_python": null,
+        "message": "Assigning to attribute %r not defined in class slots",
+        "minimum_python": null,
+        "name": "assigning-non-slot"
+      },
+      {
+        "code": "E0238",
+        "maximum_python": null,
+        "message": "Invalid __slots__ object",
+        "minimum_python": null,
+        "name": "invalid-slots"
+      },
+      {
+        "code": "E0239",
+        "maximum_python": null,
+        "message": "Inheriting %r, which is not a class.",
+        "minimum_python": null,
+        "name": "inherit-non-class"
+      },
+      {
+        "code": "E0240",
+        "maximum_python": null,
+        "message": "Inconsistent method resolution order for class %r",
+        "minimum_python": null,
+        "name": "inconsistent-mro"
+      },
+      {
+        "code": "E0241",
+        "maximum_python": null,
+        "message": "Duplicate bases for class %r",
+        "minimum_python": null,
+        "name": "duplicate-bases"
+      },
+      {
+        "code": "E0242",
+        "maximum_python": null,
+        "message": "Value %r in slots conflicts with class variable",
+        "minimum_python": null,
+        "name": "class-variable-slots-conflict"
+      },
+      {
+        "code": "E0243",
+        "maximum_python": null,
+        "message": "Invalid assignment to '__class__'. Should be a class definition but got a '%s'",
+        "minimum_python": null,
+        "name": "invalid-class-object"
+      },
+      {
+        "code": "E0244",
+        "maximum_python": null,
+        "message": "Extending inherited Enum class \"%s\"",
+        "minimum_python": null,
+        "name": "invalid-enum-extension"
+      },
+      {
+        "code": "E0245",
+        "maximum_python": null,
+        "message": "No such name %r in __slots__",
+        "minimum_python": null,
+        "name": "declare-non-slot"
+      },
+      {
+        "code": "E0301",
+        "maximum_python": null,
+        "message": "__iter__ returns non-iterator",
+        "minimum_python": null,
+        "name": "non-iterator-returned"
+      },
+      {
+        "code": "E0302",
+        "maximum_python": null,
+        "message": "The special method %r expects %s param(s), %d %s given",
+        "minimum_python": null,
+        "name": "unexpected-special-method-signature"
+      },
+      {
+        "code": "E0303",
+        "maximum_python": null,
+        "message": "__len__ does not return non-negative integer",
+        "minimum_python": null,
+        "name": "invalid-length-returned"
+      },
+      {
+        "code": "E0304",
+        "maximum_python": null,
+        "message": "__bool__ does not return bool",
+        "minimum_python": null,
+        "name": "invalid-bool-returned"
+      },
+      {
+        "code": "E0305",
+        "maximum_python": null,
+        "message": "__index__ does not return int",
+        "minimum_python": null,
+        "name": "invalid-index-returned"
+      },
+      {
+        "code": "E0306",
+        "maximum_python": null,
+        "message": "__repr__ does not return str",
+        "minimum_python": null,
+        "name": "invalid-repr-returned"
+      },
+      {
+        "code": "E0307",
+        "maximum_python": null,
+        "message": "__str__ does not return str",
+        "minimum_python": null,
+        "name": "invalid-str-returned"
+      },
+      {
+        "code": "E0308",
+        "maximum_python": null,
+        "message": "__bytes__ does not return bytes",
+        "minimum_python": null,
+        "name": "invalid-bytes-returned"
+      },
+      {
+        "code": "E0309",
+        "maximum_python": null,
+        "message": "__hash__ does not return int",
+        "minimum_python": null,
+        "name": "invalid-hash-returned"
+      },
+      {
+        "code": "E0310",
+        "maximum_python": null,
+        "message": "__length_hint__ does not return non-negative integer",
+        "minimum_python": null,
+        "name": "invalid-length-hint-returned"
+      },
+      {
+        "code": "E0311",
+        "maximum_python": null,
+        "message": "__format__ does not return str",
+        "minimum_python": null,
+        "name": "invalid-format-returned"
+      },
+      {
+        "code": "E0312",
+        "maximum_python": null,
+        "message": "__getnewargs__ does not return a tuple",
+        "minimum_python": null,
+        "name": "invalid-getnewargs-returned"
+      },
+      {
+        "code": "E0313",
+        "maximum_python": null,
+        "message": "__getnewargs_ex__ does not return a tuple containing (tuple, dict)",
+        "minimum_python": null,
+        "name": "invalid-getnewargs-ex-returned"
+      },
+      {
+        "code": "E0401",
+        "maximum_python": null,
+        "message": "Unable to import %s",
+        "minimum_python": null,
+        "name": "import-error"
+      },
+      {
+        "code": "E0402",
+        "maximum_python": null,
+        "message": "Attempted relative import beyond top-level package",
+        "minimum_python": null,
+        "name": "relative-beyond-top-level"
+      },
+      {
+        "code": "E0601",
+        "maximum_python": null,
+        "message": "Using variable %r before assignment",
+        "minimum_python": null,
+        "name": "used-before-assignment"
+      },
+      {
+        "code": "E0602",
+        "maximum_python": null,
+        "message": "Undefined variable %r",
+        "minimum_python": null,
+        "name": "undefined-variable"
+      },
+      {
+        "code": "E0603",
+        "maximum_python": null,
+        "message": "Undefined variable name %r in __all__",
+        "minimum_python": null,
+        "name": "undefined-all-variable"
+      },
+      {
+        "code": "E0604",
+        "maximum_python": null,
+        "message": "Invalid object %r in __all__, must contain only strings",
+        "minimum_python": null,
+        "name": "invalid-all-object"
+      },
+      {
+        "code": "E0605",
+        "maximum_python": null,
+        "message": "Invalid format for __all__, must be tuple or list",
+        "minimum_python": null,
+        "name": "invalid-all-format"
+      },
+      {
+        "code": "E0606",
+        "maximum_python": null,
+        "message": "Possibly using variable %r before assignment",
+        "minimum_python": null,
+        "name": "possibly-used-before-assignment"
+      },
+      {
+        "code": "E0611",
+        "maximum_python": null,
+        "message": "No name %r in module %r",
+        "minimum_python": null,
+        "name": "no-name-in-module"
+      },
+      {
+        "code": "E0633",
+        "maximum_python": null,
+        "message": "Attempting to unpack a non-sequence%s",
+        "minimum_python": null,
+        "name": "unpacking-non-sequence"
+      },
+      {
+        "code": "E0643",
+        "maximum_python": null,
+        "message": "Invalid index for iterable length",
+        "minimum_python": null,
+        "name": "potential-index-error"
+      },
+      {
+        "code": "E0701",
+        "maximum_python": null,
+        "message": "Bad except clauses order (%s)",
+        "minimum_python": null,
+        "name": "bad-except-order"
+      },
+      {
+        "code": "E0702",
+        "maximum_python": null,
+        "message": "Raising %s while only classes or instances are allowed",
+        "minimum_python": null,
+        "name": "raising-bad-type"
+      },
+      {
+        "code": "E0704",
+        "maximum_python": null,
+        "message": "The raise statement is not inside an except clause",
+        "minimum_python": null,
+        "name": "misplaced-bare-raise"
+      },
+      {
+        "code": "E0705",
+        "maximum_python": null,
+        "message": "Exception cause set to something which is not an exception, nor None",
+        "minimum_python": null,
+        "name": "bad-exception-cause"
+      },
+      {
+        "code": "E0710",
+        "maximum_python": null,
+        "message": "Raising a class which doesn't inherit from BaseException",
+        "minimum_python": null,
+        "name": "raising-non-exception"
+      },
+      {
+        "code": "E0711",
+        "maximum_python": null,
+        "message": "NotImplemented raised - should raise NotImplementedError",
+        "minimum_python": null,
+        "name": "notimplemented-raised"
+      },
+      {
+        "code": "E0712",
+        "maximum_python": null,
+        "message": "Catching an exception which doesn't inherit from Exception: %s",
+        "minimum_python": null,
+        "name": "catching-non-exception"
+      },
+      {
+        "code": "E1003",
+        "maximum_python": null,
+        "message": "Bad first argument %r given to super()",
+        "minimum_python": null,
+        "name": "bad-super-call"
+      },
+      {
+        "code": "E1101",
+        "maximum_python": null,
+        "message": "%s %r has no %r member%s",
+        "minimum_python": null,
+        "name": "no-member"
+      },
+      {
+        "code": "E1102",
+        "maximum_python": null,
+        "message": "%s is not callable",
+        "minimum_python": null,
+        "name": "not-callable"
+      },
+      {
+        "code": "E1111",
+        "maximum_python": null,
+        "message": "Assigning result of a function call, but %r returns None%s",
+        "minimum_python": null,
+        "name": "assignment-from-no-return"
+      },
+      {
+        "code": "E1120",
+        "maximum_python": null,
+        "message": "No value for argument %s in %s call",
+        "minimum_python": null,
+        "name": "no-value-for-parameter"
+      },
+      {
+        "code": "E1121",
+        "maximum_python": null,
+        "message": "Too many positional arguments for %s call",
+        "minimum_python": null,
+        "name": "too-many-function-args"
+      },
+      {
+        "code": "E1123",
+        "maximum_python": null,
+        "message": "Unexpected keyword argument %r in %s call",
+        "minimum_python": null,
+        "name": "unexpected-keyword-arg"
+      },
+      {
+        "code": "E1124",
+        "maximum_python": null,
+        "message": "Argument %r passed by position and keyword in %s call",
+        "minimum_python": null,
+        "name": "redundant-keyword-arg"
+      },
+      {
+        "code": "E1125",
+        "maximum_python": null,
+        "message": "Missing mandatory keyword argument %r in %s call",
+        "minimum_python": null,
+        "name": "missing-kwoa"
+      },
+      {
+        "code": "E1126",
+        "maximum_python": null,
+        "message": "Sequence index is not an int, slice, or instance with __index__",
+        "minimum_python": null,
+        "name": "invalid-sequence-index"
+      },
+      {
+        "code": "E1127",
+        "maximum_python": null,
+        "message": "Slice index is not an int, None, or instance with __index__",
+        "minimum_python": null,
+        "name": "invalid-slice-index"
+      },
+      {
+        "code": "E1128",
+        "maximum_python": null,
+        "message": "Assigning result of a function call, where the function returns None",
+        "minimum_python": null,
+        "name": "assignment-from-none"
+      },
+      {
+        "code": "E1129",
+        "maximum_python": null,
+        "message": "Context manager '%s' doesn't implement __enter__ and __exit__.",
+        "minimum_python": null,
+        "name": "not-context-manager"
+      },
+      {
+        "code": "E1130",
+        "maximum_python": null,
+        "message": "%s",
+        "minimum_python": null,
+        "name": "invalid-unary-operand-type"
+      },
+      {
+        "code": "E1131",
+        "maximum_python": null,
+        "message": "%s",
+        "minimum_python": null,
+        "name": "unsupported-binary-operation"
+      },
+      {
+        "code": "E1132",
+        "maximum_python": null,
+        "message": "Got multiple values for keyword argument %r in function call",
+        "minimum_python": null,
+        "name": "repeated-keyword"
+      },
+      {
+        "code": "E1133",
+        "maximum_python": null,
+        "message": "Non-iterable value %s is used in an iterating context",
+        "minimum_python": null,
+        "name": "not-an-iterable"
+      },
+      {
+        "code": "E1134",
+        "maximum_python": null,
+        "message": "Non-mapping value %s is used in a mapping context",
+        "minimum_python": null,
+        "name": "not-a-mapping"
+      },
+      {
+        "code": "E1135",
+        "maximum_python": null,
+        "message": "Value '%s' doesn't support membership test",
+        "minimum_python": null,
+        "name": "unsupported-membership-test"
+      },
+      {
+        "code": "E1136",
+        "maximum_python": null,
+        "message": "Value '%s' is unsubscriptable",
+        "minimum_python": null,
+        "name": "unsubscriptable-object"
+      },
+      {
+        "code": "E1137",
+        "maximum_python": null,
+        "message": "%r does not support item assignment",
+        "minimum_python": null,
+        "name": "unsupported-assignment-operation"
+      },
+      {
+        "code": "E1138",
+        "maximum_python": null,
+        "message": "%r does not support item deletion",
+        "minimum_python": null,
+        "name": "unsupported-delete-operation"
+      },
+      {
+        "code": "E1139",
+        "maximum_python": null,
+        "message": "Invalid metaclass %r used",
+        "minimum_python": null,
+        "name": "invalid-metaclass"
+      },
+      {
+        "code": "E1141",
+        "maximum_python": null,
+        "message": "Unpacking a dictionary in iteration without calling .items()",
+        "minimum_python": null,
+        "name": "dict-iter-missing-items"
+      },
+      {
+        "code": "E1142",
+        "maximum_python": null,
+        "message": "'await' should be used within an async function",
+        "minimum_python": null,
+        "name": "await-outside-async"
+      },
+      {
+        "code": "E1143",
+        "maximum_python": null,
+        "message": "'%s' is unhashable and can't be used as a %s in a %s",
+        "minimum_python": null,
+        "name": "unhashable-member"
+      },
+      {
+        "code": "E1144",
+        "maximum_python": null,
+        "message": "Slice step cannot be 0",
+        "minimum_python": null,
+        "name": "invalid-slice-step"
+      },
+      {
+        "code": "E1145",
+        "maximum_python": null,
+        "message": "Context manager '%s' is async and should be used with 'async with'.",
+        "minimum_python": null,
+        "name": "async-context-manager-with-regular-with"
+      },
+      {
+        "code": "E1200",
+        "maximum_python": null,
+        "message": "Unsupported logging format character %r (%#02x) at index %d",
+        "minimum_python": null,
+        "name": "logging-unsupported-format"
+      },
+      {
+        "code": "E1201",
+        "maximum_python": null,
+        "message": "Logging format string ends in middle of conversion specifier",
+        "minimum_python": null,
+        "name": "logging-format-truncated"
+      },
+      {
+        "code": "E1205",
+        "maximum_python": null,
+        "message": "Too many arguments for logging format string",
+        "minimum_python": null,
+        "name": "logging-too-many-args"
+      },
+      {
+        "code": "E1206",
+        "maximum_python": null,
+        "message": "Not enough arguments for logging format string",
+        "minimum_python": null,
+        "name": "logging-too-few-args"
+      },
+      {
+        "code": "E1300",
+        "maximum_python": null,
+        "message": "Unsupported format character %r (%#02x) at index %d",
+        "minimum_python": null,
+        "name": "bad-format-character"
+      },
+      {
+        "code": "E1301",
+        "maximum_python": null,
+        "message": "Format string ends in middle of conversion specifier",
+        "minimum_python": null,
+        "name": "truncated-format-string"
+      },
+      {
+        "code": "E1302",
+        "maximum_python": null,
+        "message": "Mixing named and unnamed conversion specifiers in format string",
+        "minimum_python": null,
+        "name": "mixed-format-string"
+      },
+      {
+        "code": "E1303",
+        "maximum_python": null,
+        "message": "Expected mapping for format string, not %s",
+        "minimum_python": null,
+        "name": "format-needs-mapping"
+      },
+      {
+        "code": "E1304",
+        "maximum_python": null,
+        "message": "Missing key %r in format string dictionary",
+        "minimum_python": null,
+        "name": "missing-format-string-key"
+      },
+      {
+        "code": "E1305",
+        "maximum_python": null,
+        "message": "Too many arguments for format string",
+        "minimum_python": null,
+        "name": "too-many-format-args"
+      },
+      {
+        "code": "E1306",
+        "maximum_python": null,
+        "message": "Not enough arguments for format string",
+        "minimum_python": null,
+        "name": "too-few-format-args"
+      },
+      {
+        "code": "E1307",
+        "maximum_python": null,
+        "message": "Argument %r does not match format type %r",
+        "minimum_python": null,
+        "name": "bad-string-format-type"
+      },
+      {
+        "code": "E1310",
+        "maximum_python": null,
+        "message": "Suspicious argument in %s.%s call",
+        "minimum_python": null,
+        "name": "bad-str-strip-call"
+      },
+      {
+        "code": "E1507",
+        "maximum_python": null,
+        "message": "%s does not support %s type argument",
+        "minimum_python": null,
+        "name": "invalid-envvar-value"
+      },
+      {
+        "code": "E1519",
+        "maximum_python": null,
+        "message": "singledispatch decorator should not be used with methods, use singledispatchmethod instead.",
+        "minimum_python": null,
+        "name": "singledispatch-method"
+      },
+      {
+        "code": "E1520",
+        "maximum_python": null,
+        "message": "singledispatchmethod decorator should not be used with functions, use singledispatch instead.",
+        "minimum_python": null,
+        "name": "singledispatchmethod-function"
+      },
+      {
+        "code": "E1700",
+        "maximum_python": null,
+        "message": "Yield inside async function",
+        "minimum_python": [
+          3,
+          5
+        ],
+        "name": "yield-inside-async-function"
+      },
+      {
+        "code": "E1701",
+        "maximum_python": null,
+        "message": "Async context manager '%s' doesn't implement __aenter__ and __aexit__.",
+        "minimum_python": [
+          3,
+          5
+        ],
+        "name": "not-async-context-manager"
+      },
+      {
+        "code": "E1901",
+        "maximum_python": null,
+        "message": "The name capture `case %s` makes the remaining patterns unreachable. Use a dotted name (for example an enum) to fix this.",
+        "minimum_python": null,
+        "name": "bare-name-capture-pattern"
+      },
+      {
+        "code": "E1902",
+        "maximum_python": null,
+        "message": "`__match_args__` must be a tuple of strings.",
+        "minimum_python": null,
+        "name": "invalid-match-args-definition"
+      },
+      {
+        "code": "E1903",
+        "maximum_python": null,
+        "message": "%s expects %d positional sub-patterns (given %d)",
+        "minimum_python": null,
+        "name": "too-many-positional-sub-patterns"
+      },
+      {
+        "code": "E1904",
+        "maximum_python": null,
+        "message": "Multiple sub-patterns for attribute %s",
+        "minimum_python": null,
+        "name": "multiple-class-sub-patterns"
+      },
+      {
+        "code": "E2501",
+        "maximum_python": null,
+        "message": "UTF-16 and UTF-32 aren't backward compatible. Use UTF-8 instead",
+        "minimum_python": null,
+        "name": "invalid-unicode-codec"
+      },
+      {
+        "code": "E2502",
+        "maximum_python": null,
+        "message": "Contains control characters that can permit obfuscated code executed differently than displayed",
+        "minimum_python": null,
+        "name": "bidirectional-unicode"
+      },
+      {
+        "code": "E2510",
+        "maximum_python": null,
+        "message": "Invalid unescaped character backspace, use \"\\b\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-backspace"
+      },
+      {
+        "code": "E2511",
+        "maximum_python": null,
+        "message": "Invalid unescaped character carriage-return, use \"\\r\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-carriage-return"
+      },
+      {
+        "code": "E2512",
+        "maximum_python": null,
+        "message": "Invalid unescaped character sub, use \"\\x1A\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-sub"
+      },
+      {
+        "code": "E2513",
+        "maximum_python": null,
+        "message": "Invalid unescaped character esc, use \"\\x1B\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-esc"
+      },
+      {
+        "code": "E2514",
+        "maximum_python": null,
+        "message": "Invalid unescaped character nul, use \"\\0\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-nul"
+      },
+      {
+        "code": "E2515",
+        "maximum_python": null,
+        "message": "Invalid unescaped character zero-width-space, use \"\\u200B\" instead.",
+        "minimum_python": null,
+        "name": "invalid-character-zero-width-space"
+      },
+      {
+        "code": "E3102",
+        "maximum_python": null,
+        "message": "`%s()` got some positional-only arguments passed as keyword arguments: %s",
+        "minimum_python": null,
+        "name": "positional-only-arguments-expected"
+      },
+      {
+        "code": "E3701",
+        "maximum_python": null,
+        "message": "Invalid usage of field(), %s",
+        "minimum_python": null,
+        "name": "invalid-field-call"
+      },
+      {
+        "code": "E4702",
+        "maximum_python": null,
+        "message": "Iterated dict '%s' is being modified inside for loop body, iterate through a copy of it instead.",
+        "minimum_python": null,
+        "name": "modified-iterating-dict"
+      },
+      {
+        "code": "E4703",
+        "maximum_python": null,
+        "message": "Iterated set '%s' is being modified inside for loop body, iterate through a copy of it instead.",
+        "minimum_python": null,
+        "name": "modified-iterating-set"
+      },
+      {
+        "code": "F0001",
+        "maximum_python": null,
+        "message": "%s",
+        "minimum_python": null,
+        "name": "fatal"
+      },
+      {
+        "code": "F0002",
+        "maximum_python": null,
+        "message": "%s: %s",
+        "minimum_python": null,
+        "name": "astroid-error"
+      },
+      {
+        "code": "F0010",
+        "maximum_python": null,
+        "message": "error while code parsing: %s",
+        "minimum_python": null,
+        "name": "parse-error"
+      },
+      {
+        "code": "F0011",
+        "maximum_python": null,
+        "message": "error while parsing the configuration: %s",
+        "minimum_python": null,
+        "name": "config-parse-error"
+      },
+      {
+        "code": "F0202",
+        "maximum_python": null,
+        "message": "Unable to check methods signature (%s / %s)",
+        "minimum_python": null,
+        "name": "method-check-failed"
+      },
+      {
+        "code": "I1101",
+        "maximum_python": null,
+        "message": "%s %r has no %r member%s, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+        "minimum_python": null,
+        "name": "c-extension-no-member"
+      },
+      {
+        "code": "R0022",
+        "maximum_python": null,
+        "message": "Useless option value for '%s', %s",
+        "minimum_python": null,
+        "name": "useless-option-value"
+      },
+      {
+        "code": "R0123",
+        "maximum_python": null,
+        "message": "In '%s', use '%s' when comparing constant literals not '%s' ('%s')",
+        "minimum_python": null,
+        "name": "literal-comparison"
+      },
+      {
+        "code": "R0124",
+        "maximum_python": null,
+        "message": "Redundant comparison - %s",
+        "minimum_python": null,
+        "name": "comparison-with-itself"
+      },
+      {
+        "code": "R0133",
+        "maximum_python": null,
+        "message": "Comparison between constants: \"%s %s %s\" has a constant value",
+        "minimum_python": null,
+        "name": "comparison-of-constants"
+      },
+      {
+        "code": "R0202",
+        "maximum_python": null,
+        "message": "Consider using a decorator instead of calling classmethod",
+        "minimum_python": null,
+        "name": "no-classmethod-decorator"
+      },
+      {
+        "code": "R0203",
+        "maximum_python": null,
+        "message": "Consider using a decorator instead of calling staticmethod",
+        "minimum_python": null,
+        "name": "no-staticmethod-decorator"
+      },
+      {
+        "code": "R0205",
+        "maximum_python": null,
+        "message": "Class %r inherits from object, can be safely removed from bases in python3",
+        "minimum_python": null,
+        "name": "useless-object-inheritance"
+      },
+      {
+        "code": "R0206",
+        "maximum_python": null,
+        "message": "Cannot have defined parameters for properties",
+        "minimum_python": null,
+        "name": "property-with-parameters"
+      },
+      {
+        "code": "R0401",
+        "maximum_python": null,
+        "message": "Cyclic import (%s)",
+        "minimum_python": null,
+        "name": "cyclic-import"
+      },
+      {
+        "code": "R0402",
+        "maximum_python": null,
+        "message": "Use 'from %s import %s' instead",
+        "minimum_python": null,
+        "name": "consider-using-from-import"
+      },
+      {
+        "code": "R0801",
+        "maximum_python": null,
+        "message": "Similar lines in %s files\n%s",
+        "minimum_python": null,
+        "name": "duplicate-code"
+      },
+      {
+        "code": "R0901",
+        "maximum_python": null,
+        "message": "Too many ancestors (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-ancestors"
+      },
+      {
+        "code": "R0902",
+        "maximum_python": null,
+        "message": "Too many instance attributes (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-instance-attributes"
+      },
+      {
+        "code": "R0903",
+        "maximum_python": null,
+        "message": "Too few public methods (%s/%s)",
+        "minimum_python": null,
+        "name": "too-few-public-methods"
+      },
+      {
+        "code": "R0904",
+        "maximum_python": null,
+        "message": "Too many public methods (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-public-methods"
+      },
+      {
+        "code": "R0911",
+        "maximum_python": null,
+        "message": "Too many return statements (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-return-statements"
+      },
+      {
+        "code": "R0912",
+        "maximum_python": null,
+        "message": "Too many branches (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-branches"
+      },
+      {
+        "code": "R0913",
+        "maximum_python": null,
+        "message": "Too many arguments (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-arguments"
+      },
+      {
+        "code": "R0914",
+        "maximum_python": null,
+        "message": "Too many local variables (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-locals"
+      },
+      {
+        "code": "R0915",
+        "maximum_python": null,
+        "message": "Too many statements (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-statements"
+      },
+      {
+        "code": "R0916",
+        "maximum_python": null,
+        "message": "Too many boolean expressions in if statement (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-boolean-expressions"
+      },
+      {
+        "code": "R0917",
+        "maximum_python": null,
+        "message": "Too many positional arguments (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-positional-arguments"
+      },
+      {
+        "code": "R1701",
+        "maximum_python": null,
+        "message": "Consider merging these isinstance calls to isinstance(%s, (%s))",
+        "minimum_python": null,
+        "name": "consider-merging-isinstance"
+      },
+      {
+        "code": "R1702",
+        "maximum_python": null,
+        "message": "Too many nested blocks (%s/%s)",
+        "minimum_python": null,
+        "name": "too-many-nested-blocks"
+      },
+      {
+        "code": "R1703",
+        "maximum_python": null,
+        "message": "The if statement can be replaced with %s",
+        "minimum_python": null,
+        "name": "simplifiable-if-statement"
+      },
+      {
+        "code": "R1704",
+        "maximum_python": null,
+        "message": "Redefining argument with the local name %r",
+        "minimum_python": null,
+        "name": "redefined-argument-from-local"
+      },
+      {
+        "code": "R1705",
+        "maximum_python": null,
+        "message": "Unnecessary \"%s\" after \"return\", %s",
+        "minimum_python": null,
+        "name": "no-else-return"
+      },
+      {
+        "code": "R1706",
+        "maximum_python": null,
+        "message": "Consider using ternary (%s)",
+        "minimum_python": null,
+        "name": "consider-using-ternary"
+      },
+      {
+        "code": "R1707",
+        "maximum_python": null,
+        "message": "Disallow trailing comma tuple",
+        "minimum_python": null,
+        "name": "trailing-comma-tuple"
+      },
+      {
+        "code": "R1708",
+        "maximum_python": null,
+        "message": "Do not raise StopIteration in generator, use return statement instead",
+        "minimum_python": null,
+        "name": "stop-iteration-return"
+      },
+      {
+        "code": "R1709",
+        "maximum_python": null,
+        "message": "Boolean expression may be simplified to %s",
+        "minimum_python": null,
+        "name": "simplify-boolean-expression"
+      },
+      {
+        "code": "R1710",
+        "maximum_python": null,
+        "message": "Either all return statements in a function should return an expression, or none of them should.",
+        "minimum_python": null,
+        "name": "inconsistent-return-statements"
+      },
+      {
+        "code": "R1711",
+        "maximum_python": null,
+        "message": "Useless return at end of function or method",
+        "minimum_python": null,
+        "name": "useless-return"
+      },
+      {
+        "code": "R1712",
+        "maximum_python": null,
+        "message": "Consider using tuple unpacking for swapping variables",
+        "minimum_python": null,
+        "name": "consider-swap-variables"
+      },
+      {
+        "code": "R1713",
+        "maximum_python": null,
+        "message": "Consider using str.join(sequence) for concatenating strings from an iterable",
+        "minimum_python": null,
+        "name": "consider-using-join"
+      },
+      {
+        "code": "R1714",
+        "maximum_python": null,
+        "message": "Consider merging these comparisons with 'in' by using '%s %sin (%s)'. Use a set instead if elements are hashable.",
+        "minimum_python": null,
+        "name": "consider-using-in"
+      },
+      {
+        "code": "R1715",
+        "maximum_python": null,
+        "message": "Consider using dict.get for getting values from a dict if a key is present or a default if not",
+        "minimum_python": null,
+        "name": "consider-using-get"
+      },
+      {
+        "code": "R1716",
+        "maximum_python": null,
+        "message": "Simplify chained comparison between the operands: %s",
+        "minimum_python": null,
+        "name": "chained-comparison"
+      },
+      {
+        "code": "R1717",
+        "maximum_python": null,
+        "message": "Consider using a dictionary comprehension",
+        "minimum_python": null,
+        "name": "consider-using-dict-comprehension"
+      },
+      {
+        "code": "R1718",
+        "maximum_python": null,
+        "message": "Consider using a set comprehension",
+        "minimum_python": null,
+        "name": "consider-using-set-comprehension"
+      },
+      {
+        "code": "R1719",
+        "maximum_python": null,
+        "message": "The if expression can be replaced with %s",
+        "minimum_python": null,
+        "name": "simplifiable-if-expression"
+      },
+      {
+        "code": "R1720",
+        "maximum_python": null,
+        "message": "Unnecessary \"%s\" after \"raise\", %s",
+        "minimum_python": null,
+        "name": "no-else-raise"
+      },
+      {
+        "code": "R1721",
+        "maximum_python": null,
+        "message": "Unnecessary use of a comprehension, use %s instead.",
+        "minimum_python": null,
+        "name": "unnecessary-comprehension"
+      },
+      {
+        "code": "R1722",
+        "maximum_python": null,
+        "message": "Consider using 'sys.exit' instead",
+        "minimum_python": null,
+        "name": "consider-using-sys-exit"
+      },
+      {
+        "code": "R1723",
+        "maximum_python": null,
+        "message": "Unnecessary \"%s\" after \"break\", %s",
+        "minimum_python": null,
+        "name": "no-else-break"
+      },
+      {
+        "code": "R1724",
+        "maximum_python": null,
+        "message": "Unnecessary \"%s\" after \"continue\", %s",
+        "minimum_python": null,
+        "name": "no-else-continue"
+      },
+      {
+        "code": "R1725",
+        "maximum_python": null,
+        "message": "Consider using Python 3 style super() without arguments",
+        "minimum_python": null,
+        "name": "super-with-arguments"
+      },
+      {
+        "code": "R1726",
+        "maximum_python": null,
+        "message": "Boolean condition \"%s\" may be simplified to \"%s\"",
+        "minimum_python": null,
+        "name": "simplifiable-condition"
+      },
+      {
+        "code": "R1727",
+        "maximum_python": null,
+        "message": "Boolean condition '%s' will always evaluate to '%s'",
+        "minimum_python": null,
+        "name": "condition-evals-to-constant"
+      },
+      {
+        "code": "R1728",
+        "maximum_python": null,
+        "message": "Consider using a generator instead '%s(%s)'",
+        "minimum_python": null,
+        "name": "consider-using-generator"
+      },
+      {
+        "code": "R1729",
+        "maximum_python": null,
+        "message": "Use a generator instead '%s(%s)'",
+        "minimum_python": null,
+        "name": "use-a-generator"
+      },
+      {
+        "code": "R1730",
+        "maximum_python": null,
+        "message": "Consider using '%s' instead of unnecessary if block",
+        "minimum_python": null,
+        "name": "consider-using-min-builtin"
+      },
+      {
+        "code": "R1731",
+        "maximum_python": null,
+        "message": "Consider using '%s' instead of unnecessary if block",
+        "minimum_python": null,
+        "name": "consider-using-max-builtin"
+      },
+      {
+        "code": "R1732",
+        "maximum_python": null,
+        "message": "Consider using 'with' for resource-allocating operations",
+        "minimum_python": null,
+        "name": "consider-using-with"
+      },
+      {
+        "code": "R1733",
+        "maximum_python": null,
+        "message": "Unnecessary dictionary index lookup, use '%s' instead",
+        "minimum_python": null,
+        "name": "unnecessary-dict-index-lookup"
+      },
+      {
+        "code": "R1734",
+        "maximum_python": null,
+        "message": "Consider using [] instead of list()",
+        "minimum_python": null,
+        "name": "use-list-literal"
+      },
+      {
+        "code": "R1735",
+        "maximum_python": null,
+        "message": "Consider using '%s' instead of a call to 'dict'.",
+        "minimum_python": null,
+        "name": "use-dict-literal"
+      },
+      {
+        "code": "R1736",
+        "maximum_python": null,
+        "message": "Unnecessary list index lookup, use '%s' instead",
+        "minimum_python": null,
+        "name": "unnecessary-list-index-lookup"
+      },
+      {
+        "code": "R1737",
+        "maximum_python": null,
+        "message": "Use 'yield from' directly instead of yielding each element one by one",
+        "minimum_python": null,
+        "name": "use-yield-from"
+      },
+      {
+        "code": "R1738",
+        "maximum_python": null,
+        "message": "Simplify chained comparison cycle to equality between the operands: %s",
+        "minimum_python": null,
+        "name": "chained-comparison-all-equal"
+      },
+      {
+        "code": "R1739",
+        "maximum_python": null,
+        "message": "This comparison always evaluates to False",
+        "minimum_python": null,
+        "name": "impossible-comparison"
+      },
+      {
+        "code": "R1905",
+        "maximum_python": null,
+        "message": "Use '%s() as %s' instead",
+        "minimum_python": null,
+        "name": "match-class-bind-self"
+      },
+      {
+        "code": "R1906",
+        "maximum_python": null,
+        "message": "Use keyword attributes instead of positional ones (%s)",
+        "minimum_python": null,
+        "name": "match-class-positional-attributes"
+      },
+      {
+        "code": "W0012",
+        "maximum_python": null,
+        "message": "Unknown option value for '%s', expected a valid pylint message and got '%s'",
+        "minimum_python": null,
+        "name": "unknown-option-value"
+      },
+      {
+        "code": "W0101",
+        "maximum_python": null,
+        "message": "Unreachable code",
+        "minimum_python": null,
+        "name": "unreachable"
+      },
+      {
+        "code": "W0102",
+        "maximum_python": null,
+        "message": "Dangerous default value %s as argument",
+        "minimum_python": null,
+        "name": "dangerous-default-value"
+      },
+      {
+        "code": "W0104",
+        "maximum_python": null,
+        "message": "Statement seems to have no effect",
+        "minimum_python": null,
+        "name": "pointless-statement"
+      },
+      {
+        "code": "W0105",
+        "maximum_python": null,
+        "message": "String statement has no effect",
+        "minimum_python": null,
+        "name": "pointless-string-statement"
+      },
+      {
+        "code": "W0106",
+        "maximum_python": null,
+        "message": "Expression \"%s\" is assigned to nothing",
+        "minimum_python": null,
+        "name": "expression-not-assigned"
+      },
+      {
+        "code": "W0107",
+        "maximum_python": null,
+        "message": "Unnecessary pass statement",
+        "minimum_python": null,
+        "name": "unnecessary-pass"
+      },
+      {
+        "code": "W0108",
+        "maximum_python": null,
+        "message": "Lambda may not be necessary",
+        "minimum_python": null,
+        "name": "unnecessary-lambda"
+      },
+      {
+        "code": "W0109",
+        "maximum_python": null,
+        "message": "Duplicate key %r in dictionary",
+        "minimum_python": null,
+        "name": "duplicate-key"
+      },
+      {
+        "code": "W0120",
+        "maximum_python": null,
+        "message": "Else clause on loop without a break statement, remove the else and de-indent all the code inside it",
+        "minimum_python": null,
+        "name": "useless-else-on-loop"
+      },
+      {
+        "code": "W0122",
+        "maximum_python": null,
+        "message": "Use of exec",
+        "minimum_python": null,
+        "name": "exec-used"
+      },
+      {
+        "code": "W0123",
+        "maximum_python": null,
+        "message": "Use of eval",
+        "minimum_python": null,
+        "name": "eval-used"
+      },
+      {
+        "code": "W0124",
+        "maximum_python": null,
+        "message": "Following \"as\" with another context manager looks like a tuple.",
+        "minimum_python": null,
+        "name": "confusing-with-statement"
+      },
+      {
+        "code": "W0125",
+        "maximum_python": null,
+        "message": "Using a conditional statement with a constant value",
+        "minimum_python": null,
+        "name": "using-constant-test"
+      },
+      {
+        "code": "W0126",
+        "maximum_python": null,
+        "message": "Using a conditional statement with potentially wrong function or method call due to missing parentheses",
+        "minimum_python": null,
+        "name": "missing-parentheses-for-call-in-test"
+      },
+      {
+        "code": "W0127",
+        "maximum_python": null,
+        "message": "Assigning the same variable %r to itself",
+        "minimum_python": null,
+        "name": "self-assigning-variable"
+      },
+      {
+        "code": "W0128",
+        "maximum_python": null,
+        "message": "Redeclared variable %r in assignment",
+        "minimum_python": null,
+        "name": "redeclared-assigned-name"
+      },
+      {
+        "code": "W0129",
+        "maximum_python": null,
+        "message": "Assert statement has a string literal as its first argument. The assert will %s fail.",
+        "minimum_python": null,
+        "name": "assert-on-string-literal"
+      },
+      {
+        "code": "W0130",
+        "maximum_python": null,
+        "message": "Duplicate value %r in set",
+        "minimum_python": null,
+        "name": "duplicate-value"
+      },
+      {
+        "code": "W0131",
+        "maximum_python": null,
+        "message": "Named expression used without context",
+        "minimum_python": null,
+        "name": "named-expr-without-context"
+      },
+      {
+        "code": "W0133",
+        "maximum_python": null,
+        "message": "Exception statement has no effect",
+        "minimum_python": null,
+        "name": "pointless-exception-statement"
+      },
+      {
+        "code": "W0134",
+        "maximum_python": null,
+        "message": "'return' shadowed by the 'finally' clause.",
+        "minimum_python": null,
+        "name": "return-in-finally"
+      },
+      {
+        "code": "W0135",
+        "maximum_python": null,
+        "message": "The context used in function %r will not be exited.",
+        "minimum_python": null,
+        "name": "contextmanager-generator-missing-cleanup"
+      },
+      {
+        "code": "W0136",
+        "maximum_python": null,
+        "message": "'continue' discouraged inside 'finally' clause",
+        "minimum_python": null,
+        "name": "continue-in-finally"
+      },
+      {
+        "code": "W0137",
+        "maximum_python": null,
+        "message": "'break' discouraged inside 'finally' clause",
+        "minimum_python": null,
+        "name": "break-in-finally"
+      },
+      {
+        "code": "W0143",
+        "maximum_python": null,
+        "message": "Comparing against a callable, did you omit the parenthesis?",
+        "minimum_python": null,
+        "name": "comparison-with-callable"
+      },
+      {
+        "code": "W0150",
+        "maximum_python": null,
+        "message": "%s statement in finally block may swallow exception",
+        "minimum_python": null,
+        "name": "lost-exception"
+      },
+      {
+        "code": "W0177",
+        "maximum_python": null,
+        "message": "Comparison %s should be %s",
+        "minimum_python": null,
+        "name": "nan-comparison"
+      },
+      {
+        "code": "W0199",
+        "maximum_python": null,
+        "message": "Assert called on a populated tuple. Did you mean 'assert x,y'?",
+        "minimum_python": null,
+        "name": "assert-on-tuple"
+      },
+      {
+        "code": "W0201",
+        "maximum_python": null,
+        "message": "Attribute %r defined outside __init__",
+        "minimum_python": null,
+        "name": "attribute-defined-outside-init"
+      },
+      {
+        "code": "W0211",
+        "maximum_python": null,
+        "message": "Static method with %r as first argument",
+        "minimum_python": null,
+        "name": "bad-staticmethod-argument"
+      },
+      {
+        "code": "W0212",
+        "maximum_python": null,
+        "message": "Access to a protected member %s of a client class",
+        "minimum_python": null,
+        "name": "protected-access"
+      },
+      {
+        "code": "W0213",
+        "maximum_python": null,
+        "message": "Flag member %(overlap)s shares bit positions with %(sources)s",
+        "minimum_python": null,
+        "name": "implicit-flag-alias"
+      },
+      {
+        "code": "W0221",
+        "maximum_python": null,
+        "message": "%s %s %r method",
+        "minimum_python": null,
+        "name": "arguments-differ"
+      },
+      {
+        "code": "W0222",
+        "maximum_python": null,
+        "message": "Signature differs from %s %r method",
+        "minimum_python": null,
+        "name": "signature-differs"
+      },
+      {
+        "code": "W0223",
+        "maximum_python": null,
+        "message": "Method %r is abstract in class %r but is not overridden in child class %r",
+        "minimum_python": null,
+        "name": "abstract-method"
+      },
+      {
+        "code": "W0231",
+        "maximum_python": null,
+        "message": "__init__ method from base class %r is not called",
+        "minimum_python": null,
+        "name": "super-init-not-called"
+      },
+      {
+        "code": "W0233",
+        "maximum_python": null,
+        "message": "__init__ method from a non direct base class %r is called",
+        "minimum_python": null,
+        "name": "non-parent-init-called"
+      },
+      {
+        "code": "W0236",
+        "maximum_python": null,
+        "message": "Method %r was expected to be %r, found it instead as %r",
+        "minimum_python": null,
+        "name": "invalid-overridden-method"
+      },
+      {
+        "code": "W0237",
+        "maximum_python": null,
+        "message": "%s %s %r method",
+        "minimum_python": null,
+        "name": "arguments-renamed"
+      },
+      {
+        "code": "W0238",
+        "maximum_python": null,
+        "message": "Unused private member `%s.%s`",
+        "minimum_python": null,
+        "name": "unused-private-member"
+      },
+      {
+        "code": "W0239",
+        "maximum_python": null,
+        "message": "Method %r overrides a method decorated with typing.final which is defined in class %r",
+        "minimum_python": null,
+        "name": "overridden-final-method"
+      },
+      {
+        "code": "W0240",
+        "maximum_python": null,
+        "message": "Class %r is a subclass of a class decorated with typing.final: %r",
+        "minimum_python": null,
+        "name": "subclassed-final-class"
+      },
+      {
+        "code": "W0244",
+        "maximum_python": null,
+        "message": "Redefined slots %r in subclass",
+        "minimum_python": null,
+        "name": "redefined-slots-in-subclass"
+      },
+      {
+        "code": "W0245",
+        "maximum_python": null,
+        "message": "Super call without brackets",
+        "minimum_python": null,
+        "name": "super-without-brackets"
+      },
+      {
+        "code": "W0246",
+        "maximum_python": null,
+        "message": "Useless parent or super() delegation in method %r",
+        "minimum_python": null,
+        "name": "useless-parent-delegation"
+      },
+      {
+        "code": "W0301",
+        "maximum_python": null,
+        "message": "Unnecessary semicolon",
+        "minimum_python": null,
+        "name": "unnecessary-semicolon"
+      },
+      {
+        "code": "W0311",
+        "maximum_python": null,
+        "message": "Bad indentation. Found %s %s, expected %s",
+        "minimum_python": null,
+        "name": "bad-indentation"
+      },
+      {
+        "code": "W0401",
+        "maximum_python": null,
+        "message": "Wildcard import %s",
+        "minimum_python": null,
+        "name": "wildcard-import"
+      },
+      {
+        "code": "W0404",
+        "maximum_python": null,
+        "message": "Reimport %r (imported line %s)",
+        "minimum_python": null,
+        "name": "reimported"
+      },
+      {
+        "code": "W0406",
+        "maximum_python": null,
+        "message": "Module import itself",
+        "minimum_python": null,
+        "name": "import-self"
+      },
+      {
+        "code": "W0407",
+        "maximum_python": null,
+        "message": "Prefer importing %r instead of %r",
+        "minimum_python": null,
+        "name": "preferred-module"
+      },
+      {
+        "code": "W0410",
+        "maximum_python": null,
+        "message": "__future__ import is not the first non docstring statement",
+        "minimum_python": null,
+        "name": "misplaced-future"
+      },
+      {
+        "code": "W0416",
+        "maximum_python": null,
+        "message": "Shadowed %r (imported line %s)",
+        "minimum_python": null,
+        "name": "shadowed-import"
+      },
+      {
+        "code": "W0511",
+        "maximum_python": null,
+        "message": "%s",
+        "minimum_python": null,
+        "name": "fixme"
+      },
+      {
+        "code": "W0601",
+        "maximum_python": null,
+        "message": "Global variable %r undefined at the module level",
+        "minimum_python": null,
+        "name": "global-variable-undefined"
+      },
+      {
+        "code": "W0602",
+        "maximum_python": null,
+        "message": "Using global for %r but no assignment is done",
+        "minimum_python": null,
+        "name": "global-variable-not-assigned"
+      },
+      {
+        "code": "W0603",
+        "maximum_python": null,
+        "message": "Using the global statement",
+        "minimum_python": null,
+        "name": "global-statement"
+      },
+      {
+        "code": "W0604",
+        "maximum_python": null,
+        "message": "Using the global statement at the module level",
+        "minimum_python": null,
+        "name": "global-at-module-level"
+      },
+      {
+        "code": "W0611",
+        "maximum_python": null,
+        "message": "Unused %s",
+        "minimum_python": null,
+        "name": "unused-import"
+      },
+      {
+        "code": "W0612",
+        "maximum_python": null,
+        "message": "Unused variable %r",
+        "minimum_python": null,
+        "name": "unused-variable"
+      },
+      {
+        "code": "W0613",
+        "maximum_python": null,
+        "message": "Unused argument %r",
+        "minimum_python": null,
+        "name": "unused-argument"
+      },
+      {
+        "code": "W0614",
+        "maximum_python": null,
+        "message": "Unused import(s) %s from wildcard import of %s",
+        "minimum_python": null,
+        "name": "unused-wildcard-import"
+      },
+      {
+        "code": "W0621",
+        "maximum_python": null,
+        "message": "Redefining name %r from outer scope (line %s)",
+        "minimum_python": null,
+        "name": "redefined-outer-name"
+      },
+      {
+        "code": "W0622",
+        "maximum_python": null,
+        "message": "Redefining built-in %r",
+        "minimum_python": null,
+        "name": "redefined-builtin"
+      },
+      {
+        "code": "W0631",
+        "maximum_python": null,
+        "message": "Using possibly undefined loop variable %r",
+        "minimum_python": null,
+        "name": "undefined-loop-variable"
+      },
+      {
+        "code": "W0632",
+        "maximum_python": null,
+        "message": "Possible unbalanced tuple unpacking with sequence %s: left side has %d label%s, right side has %d value%s",
+        "minimum_python": null,
+        "name": "unbalanced-tuple-unpacking"
+      },
+      {
+        "code": "W0640",
+        "maximum_python": null,
+        "message": "Cell variable %s defined in loop",
+        "minimum_python": null,
+        "name": "cell-var-from-loop"
+      },
+      {
+        "code": "W0641",
+        "maximum_python": null,
+        "message": "Possibly unused variable %r",
+        "minimum_python": null,
+        "name": "possibly-unused-variable"
+      },
+      {
+        "code": "W0642",
+        "maximum_python": null,
+        "message": "Invalid assignment to %s in method",
+        "minimum_python": null,
+        "name": "self-cls-assignment"
+      },
+      {
+        "code": "W0644",
+        "maximum_python": null,
+        "message": "Possible unbalanced dict unpacking with %s: left side has %d label%s, right side has %d value%s",
+        "minimum_python": null,
+        "name": "unbalanced-dict-unpacking"
+      },
+      {
+        "code": "W0702",
+        "maximum_python": null,
+        "message": "No exception type(s) specified",
+        "minimum_python": null,
+        "name": "bare-except"
+      },
+      {
+        "code": "W0705",
+        "maximum_python": null,
+        "message": "Catching previously caught exception type %s",
+        "minimum_python": null,
+        "name": "duplicate-except"
+      },
+      {
+        "code": "W0706",
+        "maximum_python": null,
+        "message": "The except handler raises immediately",
+        "minimum_python": null,
+        "name": "try-except-raise"
+      },
+      {
+        "code": "W0707",
+        "maximum_python": null,
+        "message": "Consider explicitly re-raising using %s'%s from %s'",
+        "minimum_python": null,
+        "name": "raise-missing-from"
+      },
+      {
+        "code": "W0711",
+        "maximum_python": null,
+        "message": "Exception to catch is the result of a binary \"%s\" operation",
+        "minimum_python": null,
+        "name": "binary-op-exception"
+      },
+      {
+        "code": "W0715",
+        "maximum_python": null,
+        "message": "Exception arguments suggest string formatting might be intended",
+        "minimum_python": null,
+        "name": "raising-format-tuple"
+      },
+      {
+        "code": "W0716",
+        "maximum_python": null,
+        "message": "Invalid exception operation. %s",
+        "minimum_python": null,
+        "name": "wrong-exception-operation"
+      },
+      {
+        "code": "W0718",
+        "maximum_python": null,
+        "message": "Catching too general exception %s",
+        "minimum_python": null,
+        "name": "broad-exception-caught"
+      },
+      {
+        "code": "W0719",
+        "maximum_python": null,
+        "message": "Raising too general exception: %s",
+        "minimum_python": null,
+        "name": "broad-exception-raised"
+      },
+      {
+        "code": "W1113",
+        "maximum_python": null,
+        "message": "Keyword argument before variable positional arguments list in the definition of %s function",
+        "minimum_python": null,
+        "name": "keyword-arg-before-vararg"
+      },
+      {
+        "code": "W1114",
+        "maximum_python": null,
+        "message": "Positional arguments appear to be out of order",
+        "minimum_python": null,
+        "name": "arguments-out-of-order"
+      },
+      {
+        "code": "W1115",
+        "maximum_python": null,
+        "message": "Non-string value assigned to __name__",
+        "minimum_python": null,
+        "name": "non-str-assignment-to-dunder-name"
+      },
+      {
+        "code": "W1116",
+        "maximum_python": null,
+        "message": "Second argument of isinstance is not a type",
+        "minimum_python": null,
+        "name": "isinstance-second-argument-not-valid-type"
+      },
+      {
+        "code": "W1117",
+        "maximum_python": null,
+        "message": "%r will be included in %r since a positional-only parameter with this name already exists",
+        "minimum_python": null,
+        "name": "kwarg-superseded-by-positional-arg"
+      },
+      {
+        "code": "W1201",
+        "maximum_python": null,
+        "message": "Use %s formatting in logging functions",
+        "minimum_python": null,
+        "name": "logging-not-lazy"
+      },
+      {
+        "code": "W1202",
+        "maximum_python": null,
+        "message": "Use %s formatting in logging functions",
+        "minimum_python": null,
+        "name": "logging-format-interpolation"
+      },
+      {
+        "code": "W1203",
+        "maximum_python": null,
+        "message": "Use %s formatting in logging functions",
+        "minimum_python": null,
+        "name": "logging-fstring-interpolation"
+      },
+      {
+        "code": "W1300",
+        "maximum_python": null,
+        "message": "Format string dictionary key should be a string, not %s",
+        "minimum_python": null,
+        "name": "bad-format-string-key"
+      },
+      {
+        "code": "W1301",
+        "maximum_python": null,
+        "message": "Unused key %r in format string dictionary",
+        "minimum_python": null,
+        "name": "unused-format-string-key"
+      },
+      {
+        "code": "W1302",
+        "maximum_python": null,
+        "message": "Invalid format string",
+        "minimum_python": null,
+        "name": "bad-format-string"
+      },
+      {
+        "code": "W1303",
+        "maximum_python": null,
+        "message": "Missing keyword argument %r for format string",
+        "minimum_python": null,
+        "name": "missing-format-argument-key"
+      },
+      {
+        "code": "W1304",
+        "maximum_python": null,
+        "message": "Unused format argument %r",
+        "minimum_python": null,
+        "name": "unused-format-string-argument"
+      },
+      {
+        "code": "W1305",
+        "maximum_python": null,
+        "message": "Format string contains both automatic field numbering and manual field specification",
+        "minimum_python": null,
+        "name": "format-combined-specification"
+      },
+      {
+        "code": "W1306",
+        "maximum_python": null,
+        "message": "Missing format attribute %r in format specifier %r",
+        "minimum_python": null,
+        "name": "missing-format-attribute"
+      },
+      {
+        "code": "W1307",
+        "maximum_python": null,
+        "message": "Using invalid lookup key %r in format specifier %r",
+        "minimum_python": null,
+        "name": "invalid-format-index"
+      },
+      {
+        "code": "W1308",
+        "maximum_python": null,
+        "message": "Duplicate string formatting argument %r, consider passing as named argument",
+        "minimum_python": null,
+        "name": "duplicate-string-formatting-argument"
+      },
+      {
+        "code": "W1309",
+        "maximum_python": null,
+        "message": "Using an f-string that does not have any interpolated variables",
+        "minimum_python": null,
+        "name": "f-string-without-interpolation"
+      },
+      {
+        "code": "W1310",
+        "maximum_python": null,
+        "message": "Using formatting for a string that does not have any interpolated variables",
+        "minimum_python": null,
+        "name": "format-string-without-interpolation"
+      },
+      {
+        "code": "W1401",
+        "maximum_python": null,
+        "message": "Anomalous backslash in string: '%s'. String constant might be missing an r prefix.",
+        "minimum_python": null,
+        "name": "anomalous-backslash-in-string"
+      },
+      {
+        "code": "W1402",
+        "maximum_python": null,
+        "message": "Anomalous Unicode escape in byte string: '%s'. String constant might be missing an r or u prefix.",
+        "minimum_python": null,
+        "name": "anomalous-unicode-escape-in-string"
+      },
+      {
+        "code": "W1404",
+        "maximum_python": null,
+        "message": "Implicit string concatenation found in %s",
+        "minimum_python": null,
+        "name": "implicit-str-concat"
+      },
+      {
+        "code": "W1405",
+        "maximum_python": null,
+        "message": "Quote delimiter %s is inconsistent with the rest of the file",
+        "minimum_python": null,
+        "name": "inconsistent-quotes"
+      },
+      {
+        "code": "W1406",
+        "maximum_python": null,
+        "message": "The u prefix for strings is no longer necessary in Python >=3.0",
+        "minimum_python": null,
+        "name": "redundant-u-string-prefix"
+      },
+      {
+        "code": "W1501",
+        "maximum_python": null,
+        "message": "\"%s\" is not a valid mode for open.",
+        "minimum_python": null,
+        "name": "bad-open-mode"
+      },
+      {
+        "code": "W1502",
+        "maximum_python": [
+          3,
+          5
+        ],
+        "message": "Using datetime.time in a boolean context.",
+        "minimum_python": null,
+        "name": "boolean-datetime"
+      },
+      {
+        "code": "W1503",
+        "maximum_python": null,
+        "message": "Redundant use of %s with constant value %r",
+        "minimum_python": null,
+        "name": "redundant-unittest-assert"
+      },
+      {
+        "code": "W1506",
+        "maximum_python": null,
+        "message": "threading.Thread needs the target function",
+        "minimum_python": null,
+        "name": "bad-thread-instantiation"
+      },
+      {
+        "code": "W1507",
+        "maximum_python": null,
+        "message": "Using copy.copy(os.environ). Use os.environ.copy() instead.",
+        "minimum_python": null,
+        "name": "shallow-copy-environ"
+      },
+      {
+        "code": "W1508",
+        "maximum_python": null,
+        "message": "%s default type is %s. Expected str or None.",
+        "minimum_python": null,
+        "name": "invalid-envvar-default"
+      },
+      {
+        "code": "W1509",
+        "maximum_python": null,
+        "message": "Using preexec_fn keyword which may be unsafe in the presence of threads",
+        "minimum_python": null,
+        "name": "subprocess-popen-preexec-fn"
+      },
+      {
+        "code": "W1510",
+        "maximum_python": null,
+        "message": "'subprocess.run' used without explicitly defining the value for 'check'.",
+        "minimum_python": null,
+        "name": "subprocess-run-check"
+      },
+      {
+        "code": "W1514",
+        "maximum_python": [
+          3,
+          15
+        ],
+        "message": "Using open without explicitly specifying an encoding",
+        "minimum_python": null,
+        "name": "unspecified-encoding"
+      },
+      {
+        "code": "W1515",
+        "maximum_python": null,
+        "message": "Leaving functions creating breakpoints in production code is not recommended",
+        "minimum_python": null,
+        "name": "forgotten-debug-statement"
+      },
+      {
+        "code": "W1518",
+        "maximum_python": null,
+        "message": "'lru_cache(maxsize=None)' or 'cache' will keep all method args alive indefinitely, including 'self'",
+        "minimum_python": null,
+        "name": "method-cache-max-size-none"
+      },
+      {
+        "code": "W2101",
+        "maximum_python": null,
+        "message": "'%s()' directly created in 'with' has no effect",
+        "minimum_python": null,
+        "name": "useless-with-lock"
+      },
+      {
+        "code": "W2301",
+        "maximum_python": null,
+        "message": "Unnecessary ellipsis constant",
+        "minimum_python": null,
+        "name": "unnecessary-ellipsis"
+      },
+      {
+        "code": "W2402",
+        "maximum_python": null,
+        "message": "%s name \"%s\" contains a non-ASCII character.",
+        "minimum_python": null,
+        "name": "non-ascii-file-name"
+      },
+      {
+        "code": "W2601",
+        "maximum_python": null,
+        "message": "F-strings are not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-f-string-in-unsupported-version"
+      },
+      {
+        "code": "W2602",
+        "maximum_python": null,
+        "message": "typing.final is not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-final-decorator-in-unsupported-version"
+      },
+      {
+        "code": "W2603",
+        "maximum_python": null,
+        "message": "Exception groups are not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-exception-groups-in-unsupported-version"
+      },
+      {
+        "code": "W2604",
+        "maximum_python": null,
+        "message": "Generic type syntax (PEP 695) is not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-generic-type-syntax-in-unsupported-version"
+      },
+      {
+        "code": "W2605",
+        "maximum_python": null,
+        "message": "Assignment expression is not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-assignment-expression-in-unsupported-version"
+      },
+      {
+        "code": "W2606",
+        "maximum_python": null,
+        "message": "Positional-only arguments are not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-positional-only-args-in-unsupported-version"
+      },
+      {
+        "code": "W2607",
+        "maximum_python": null,
+        "message": "Unpacking in comprehensions is not supported by all versions included in the py-version setting",
+        "minimum_python": null,
+        "name": "using-comprehension-unpacking-in-unsupported-version"
+      },
+      {
+        "code": "W3101",
+        "maximum_python": null,
+        "message": "Missing timeout argument for method '%s' can cause your program to hang indefinitely",
+        "minimum_python": null,
+        "name": "missing-timeout"
+      },
+      {
+        "code": "W3301",
+        "maximum_python": null,
+        "message": "Do not use nested call of '%s'; it's possible to do '%s' instead",
+        "minimum_python": null,
+        "name": "nested-min-max"
+      },
+      {
+        "code": "W3601",
+        "maximum_python": null,
+        "message": "Suspicious %s-part chained comparison using semantically incompatible operators (%s)",
+        "minimum_python": null,
+        "name": "bad-chained-comparison"
+      },
+      {
+        "code": "W4701",
+        "maximum_python": null,
+        "message": "Iterated list '%s' is being modified inside for loop body, consider iterating through a copy of it instead.",
+        "minimum_python": null,
+        "name": "modified-iterating-list"
+      },
+      {
+        "code": "W4801",
+        "maximum_python": null,
+        "message": "Iterator '%s' from an outer scope is reused or consumed in a nested loop.",
+        "minimum_python": null,
+        "name": "looping-through-iterator"
+      },
+      {
+        "code": "W4901",
+        "maximum_python": null,
+        "message": "Deprecated module %r",
+        "minimum_python": null,
+        "name": "deprecated-module"
+      },
+      {
+        "code": "W4902",
+        "maximum_python": null,
+        "message": "Using deprecated method %s()",
+        "minimum_python": null,
+        "name": "deprecated-method"
+      },
+      {
+        "code": "W4903",
+        "maximum_python": null,
+        "message": "Using deprecated argument %s of method %s()",
+        "minimum_python": null,
+        "name": "deprecated-argument"
+      },
+      {
+        "code": "W4904",
+        "maximum_python": null,
+        "message": "Using deprecated class %s of module %s",
+        "minimum_python": null,
+        "name": "deprecated-class"
+      },
+      {
+        "code": "W4905",
+        "maximum_python": null,
+        "message": "Using deprecated decorator %s()",
+        "minimum_python": null,
+        "name": "deprecated-decorator"
+      },
+      {
+        "code": "W4906",
+        "maximum_python": null,
+        "message": "Using deprecated attribute %r",
+        "minimum_python": null,
+        "name": "deprecated-attribute"
+      }
+    ]
+  },
+  "python_versions": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "ruff": {
+    "preview": false,
+    "rules": [
+      {
+        "code": "B002",
+        "fix_availability": "None",
+        "message_formats": [
+          "Python does not support the unary prefix increment operator (`++`)",
+          "Python does not support the unary prefix decrement operator (`--`)"
+        ],
+        "name": "unary-prefix-increment-decrement",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.83"
+          }
+        }
+      },
+      {
+        "code": "B003",
+        "fix_availability": "None",
+        "message_formats": [
+          "Assigning to `os.environ` doesn't clear the environment"
+        ],
+        "name": "assignment-to-os-environ",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.102"
+          }
+        }
+      },
+      {
+        "code": "B004",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Using `hasattr(x, \"__call__\")` to test if x is callable is unreliable. Use `callable(x)` for consistent results."
+        ],
+        "name": "unreliable-callable-check",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.106"
+          }
+        }
+      },
+      {
+        "code": "B005",
+        "fix_availability": "None",
+        "message_formats": [
+          "Using `.strip()` with multi-character strings is misleading"
+        ],
+        "name": "strip-with-multi-characters",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.106"
+          }
+        }
+      },
+      {
+        "code": "B006",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Do not use mutable data structures for argument defaults"
+        ],
+        "name": "mutable-argument-default",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.92"
+          }
+        }
+      },
+      {
+        "code": "B007",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Loop control variable `{name}` not used within loop body",
+          "Loop control variable `{name}` may not be used within loop body"
+        ],
+        "name": "unused-loop-control-variable",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.84"
+          }
+        }
+      },
+      {
+        "code": "B008",
+        "fix_availability": "None",
+        "message_formats": [
+          "Do not perform function call `{name}` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable",
+          "Do not perform function call in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable"
+        ],
+        "name": "function-call-in-default-argument",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.102"
+          }
+        }
+      },
+      {
+        "code": "B009",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Do not call `getattr` with a constant attribute value. It is not any safer than normal property access."
+        ],
+        "name": "get-attr-with-constant",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.110"
+          }
+        }
+      },
+      {
+        "code": "B010",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Do not call `setattr` with a constant attribute value. It is not any safer than normal property access."
+        ],
+        "name": "set-attr-with-constant",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.111"
+          }
+        }
+      },
+      {
+        "code": "B011",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Do not `assert False` (`python -O` removes these calls), raise `AssertionError()`"
+        ],
+        "name": "assert-false",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.67"
+          }
+        }
+      },
+      {
+        "code": "B012",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{name}` inside `finally` blocks cause exceptions to be silenced"
+        ],
+        "name": "jump-statement-in-finally",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.116"
+          }
+        }
+      },
+      {
+        "code": "B013",
+        "fix_availability": "Always",
+        "message_formats": [
+          "A length-one tuple literal is redundant in exception handlers"
+        ],
+        "name": "redundant-tuple-in-exception-handler",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.89"
+          }
+        }
+      },
+      {
+        "code": "B014",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Exception handler with duplicate exception: `{name}`",
+          "Exception handler with duplicate exceptions: {names}"
+        ],
+        "name": "duplicate-handler-exception",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.67"
+          }
+        }
+      },
+      {
+        "code": "B015",
+        "fix_availability": "None",
+        "message_formats": [
+          "Pointless comparison. Did you mean to assign a value? Otherwise, prepend `assert` or remove it.",
+          "Pointless comparison at end of function scope. Did you mean to return the expression result?"
+        ],
+        "name": "useless-comparison",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.102"
+          }
+        }
+      },
+      {
+        "code": "B016",
+        "fix_availability": "None",
+        "message_formats": [
+          "Cannot raise a literal. Did you intend to return it or raise an Exception?"
+        ],
+        "name": "raise-literal",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.102"
+          }
+        }
+      },
+      {
+        "code": "B017",
+        "fix_availability": "None",
+        "message_formats": [
+          "Do not assert blind exception: `{exception}`"
+        ],
+        "name": "assert-raises-exception",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.83"
+          }
+        }
+      },
+      {
+        "code": "B018",
+        "fix_availability": "None",
+        "message_formats": [
+          "Found useless expression. Either assign it to a variable or remove it.",
+          "Found useless attribute access. Either assign it to a variable or remove it."
+        ],
+        "name": "useless-expression",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.100"
+          }
+        }
+      },
+      {
+        "code": "B019",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use of `functools.lru_cache` or `functools.cache` on methods can lead to memory leaks"
+        ],
+        "name": "cached-instance-method",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.114"
+          }
+        }
+      },
+      {
+        "code": "B020",
+        "fix_availability": "None",
+        "message_formats": [
+          "Loop control variable `{name}` overrides iterable it iterates"
+        ],
+        "name": "loop-variable-overrides-iterator",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.121"
+          }
+        }
+      },
+      {
+        "code": "B021",
+        "fix_availability": "None",
+        "message_formats": [
+          "f-string used as docstring. Python will interpret this as a joined string, rather than a docstring."
+        ],
+        "name": "f-string-docstring",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.116"
+          }
+        }
+      },
+      {
+        "code": "B022",
+        "fix_availability": "None",
+        "message_formats": [
+          "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant"
+        ],
+        "name": "useless-contextlib-suppress",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.118"
+          }
+        }
+      },
+      {
+        "code": "B023",
+        "fix_availability": "None",
+        "message_formats": [
+          "Function definition does not bind loop variable `{name}`"
+        ],
+        "name": "function-uses-loop-variable",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.139"
+          }
+        }
+      },
+      {
+        "code": "B024",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{name}` is an abstract base class, but it has no abstract methods or properties"
+        ],
+        "name": "abstract-base-class-without-abstract-method",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.118"
+          }
+        }
+      },
+      {
+        "code": "B025",
+        "fix_availability": "None",
+        "message_formats": [
+          "try-except* block with duplicate exception `{name}`",
+          "try-except block with duplicate exception `{name}`"
+        ],
+        "name": "duplicate-try-block-exception",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.67"
+          }
+        }
+      },
+      {
+        "code": "B026",
+        "fix_availability": "None",
+        "message_formats": [
+          "Star-arg unpacking after a keyword argument is strongly discouraged"
+        ],
+        "name": "star-arg-unpacking-after-keyword-arg",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.109"
+          }
+        }
+      },
+      {
+        "code": "B027",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{name}` is an empty method in an abstract base class, but has no abstract decorator"
+        ],
+        "name": "empty-method-without-abstract-decorator",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.118"
+          }
+        }
+      },
+      {
+        "code": "B028",
+        "fix_availability": "Always",
+        "message_formats": [
+          "No explicit `stacklevel` keyword argument found"
+        ],
+        "name": "no-explicit-stacklevel",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.257"
+          }
+        }
+      },
+      {
+        "code": "B029",
+        "fix_availability": "None",
+        "message_formats": [
+          "Using `except* ():` with an empty tuple does not catch anything; add exceptions to handle",
+          "Using `except ():` with an empty tuple does not catch anything; add exceptions to handle"
+        ],
+        "name": "except-with-empty-tuple",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.250"
+          }
+        }
+      },
+      {
+        "code": "B030",
+        "fix_availability": "None",
+        "message_formats": [
+          "`except*` handlers should only be exception classes or tuples of exception classes",
+          "`except` handlers should only be exception classes or tuples of exception classes"
+        ],
+        "name": "except-with-non-exception-classes",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.255"
+          }
+        }
+      },
+      {
+        "code": "B031",
+        "fix_availability": "None",
+        "message_formats": [
+          "Using the generator returned from `itertools.groupby()` more than once will do nothing on the second usage"
+        ],
+        "name": "reuse-of-groupby-generator",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.260"
+          }
+        }
+      },
+      {
+        "code": "B032",
+        "fix_availability": "None",
+        "message_formats": [
+          "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?"
+        ],
+        "name": "unintentional-type-annotation",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.250"
+          }
+        }
+      },
+      {
+        "code": "B033",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Sets should not contain duplicate item `{value}`",
+          "Sets should not contain duplicate items, but `{existing}` and `{value}` has the same value"
+        ],
+        "name": "duplicate-value",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.271"
+          }
+        }
+      },
+      {
+        "code": "B034",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{method}` should pass `{param_name}` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions"
+        ],
+        "name": "re-sub-positional-args",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.278"
+          }
+        }
+      },
+      {
+        "code": "B035",
+        "fix_availability": "None",
+        "message_formats": [
+          "Dictionary comprehension uses static key: `{key}`",
+          "Dictionary comprehension uses static key"
+        ],
+        "name": "static-key-dict-comprehension",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.2.0"
+          }
+        }
+      },
+      {
+        "code": "B039",
+        "fix_availability": "None",
+        "message_formats": [
+          "Do not use mutable data structures for `ContextVar` defaults"
+        ],
+        "name": "mutable-contextvar-default",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.8.0"
+          }
+        }
+      },
+      {
+        "code": "B904",
+        "fix_availability": "None",
+        "message_formats": [
+          "Within an `except*` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling",
+          "Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling"
+        ],
+        "name": "raise-without-from-inside-except",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.138"
+          }
+        }
+      },
+      {
+        "code": "B905",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`zip()` without an explicit `strict=` parameter"
+        ],
+        "name": "zip-without-explicit-strict",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.167"
+          }
+        }
+      },
+      {
+        "code": "B911",
+        "fix_availability": "None",
+        "message_formats": [
+          "`itertools.batched()` without an explicit `strict` parameter"
+        ],
+        "name": "batched-without-explicit-strict",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.10.0"
+          }
+        }
+      },
+      {
+        "code": "B912",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`map()` without an explicit `strict=` parameter"
+        ],
+        "name": "map-without-explicit-strict",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.15.0"
+          }
+        }
+      },
+      {
+        "code": "SIM101",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Multiple `isinstance` calls for `{name}`, merge into a single call",
+          "Multiple `isinstance` calls for expression, merge into a single call"
+        ],
+        "name": "duplicate-isinstance-call",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.212"
+          }
+        }
+      },
+      {
+        "code": "SIM102",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use a single `if` statement instead of nested `if` statements"
+        ],
+        "name": "collapsible-if",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM103",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Return the condition `{condition}` directly",
+          "Return the negated condition directly",
+          "Return the condition directly"
+        ],
+        "name": "needless-bool",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.214"
+          }
+        }
+      },
+      {
+        "code": "SIM105",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `contextlib.suppress({exception})` instead of `try`-`except`-`pass`"
+        ],
+        "name": "suppressible-exception",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM107",
+        "fix_availability": "None",
+        "message_formats": [
+          "Don't use `return` in `try`-`except` and `finally`"
+        ],
+        "name": "return-in-try-except-finally",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM108",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use ternary operator `{contents}` instead of `if`-`else`-block",
+          "Use binary operator `{contents}` instead of `if`-`else`-block"
+        ],
+        "name": "if-else-block-instead-of-if-exp",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.213"
+          }
+        }
+      },
+      {
+        "code": "SIM109",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{replacement}` instead of multiple equality comparisons"
+        ],
+        "name": "compare-with-tuple",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.213"
+          }
+        }
+      },
+      {
+        "code": "SIM110",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `{replacement}` instead of `for` loop"
+        ],
+        "name": "reimplemented-builtin",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM112",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use capitalized environment variable `{expected}` instead of `{actual}`",
+          "Use capitalized environment variable"
+        ],
+        "name": "uncapitalized-environment-variables",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.218"
+          }
+        }
+      },
+      {
+        "code": "SIM113",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use `enumerate()` for index variable `{index}` in `for` loop"
+        ],
+        "name": "enumerate-for-loop",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.2.0"
+          }
+        }
+      },
+      {
+        "code": "SIM114",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Combine `if` branches using logical `or` operator"
+        ],
+        "name": "if-with-same-arms",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.246"
+          }
+        }
+      },
+      {
+        "code": "SIM115",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use a context manager for opening files"
+        ],
+        "name": "open-file-with-context-handler",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.219"
+          }
+        }
+      },
+      {
+        "code": "SIM116",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use a dictionary instead of consecutive `if` statements"
+        ],
+        "name": "if-else-block-instead-of-dict-lookup",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.250"
+          }
+        }
+      },
+      {
+        "code": "SIM117",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use a single `with` statement with multiple contexts instead of nested `with` statements"
+        ],
+        "name": "multiple-with-statements",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM118",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `key {operator} dict` instead of `key {operator} dict.keys()`"
+        ],
+        "name": "in-dict-keys",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.176"
+          }
+        }
+      },
+      {
+        "code": "SIM201",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{left} != {right}` instead of `not {left} == {right}`"
+        ],
+        "name": "negate-equal-op",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.213"
+          }
+        }
+      },
+      {
+        "code": "SIM202",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{left} == {right}` instead of `not {left} != {right}`"
+        ],
+        "name": "negate-not-equal-op",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.213"
+          }
+        }
+      },
+      {
+        "code": "SIM208",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expr}` instead of `not (not {expr})`"
+        ],
+        "name": "double-negation",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.213"
+          }
+        }
+      },
+      {
+        "code": "SIM210",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Remove unnecessary `True if ... else False`",
+          "Use `bool(...)` instead of `True if ... else False`"
+        ],
+        "name": "if-expr-with-true-false",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.214"
+          }
+        }
+      },
+      {
+        "code": "SIM211",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `not ...` instead of `False if ... else True`"
+        ],
+        "name": "if-expr-with-false-true",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.214"
+          }
+        }
+      },
+      {
+        "code": "SIM212",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expr_else} if {expr_else} else {expr_body}` instead of `{expr_body} if not {expr_else} else {expr_else}`"
+        ],
+        "name": "if-expr-with-twisted-arms",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.214"
+          }
+        }
+      },
+      {
+        "code": "SIM220",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `False` instead of `{name} and not {name}`"
+        ],
+        "name": "expr-and-not-expr",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM221",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `True` instead of `{name} or not {name}`"
+        ],
+        "name": "expr-or-not-expr",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "SIM222",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expr}` instead of `{replaced}`"
+        ],
+        "name": "expr-or-true",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.208"
+          }
+        }
+      },
+      {
+        "code": "SIM223",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expr}` instead of `{replaced}`"
+        ],
+        "name": "expr-and-false",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.208"
+          }
+        }
+      },
+      {
+        "code": "SIM300",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Yoda condition detected"
+        ],
+        "name": "yoda-conditions",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.207"
+          }
+        }
+      },
+      {
+        "code": "SIM401",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `{contents}` instead of an `if` block"
+        ],
+        "name": "if-else-block-instead-of-dict-get",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.219"
+          }
+        }
+      },
+      {
+        "code": "SIM905",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Consider using a list literal instead of `str.{}`"
+        ],
+        "name": "split-static-string",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.10.0"
+          }
+        }
+      },
+      {
+        "code": "SIM910",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expected}` instead of `{actual}`",
+          "Use `dict.get()` without default value"
+        ],
+        "name": "dict-get-with-none-default",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.261"
+          }
+        }
+      },
+      {
+        "code": "SIM911",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `{expected}` instead of `{actual}`",
+          "Use `dict.items()` instead of `zip(dict.keys(), dict.values())`"
+        ],
+        "name": "zip-dict-keys-and-values",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.2.0"
+          }
+        }
+      },
+      {
+        "code": "E401",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Multiple imports on one line"
+        ],
+        "name": "multiple-imports-on-one-line",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.191"
+          }
+        }
+      },
+      {
+        "code": "E402",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Module level import not at top of cell",
+          "Module level import not at top of file"
+        ],
+        "name": "module-import-not-at-top-of-file",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E701",
+        "fix_availability": "None",
+        "message_formats": [
+          "Multiple statements on one line (colon)"
+        ],
+        "name": "multiple-statements-on-one-line-colon",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.245"
+          }
+        }
+      },
+      {
+        "code": "E702",
+        "fix_availability": "None",
+        "message_formats": [
+          "Multiple statements on one line (semicolon)"
+        ],
+        "name": "multiple-statements-on-one-line-semicolon",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.245"
+          }
+        }
+      },
+      {
+        "code": "E703",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Statement ends with an unnecessary semicolon"
+        ],
+        "name": "useless-semicolon",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.245"
+          }
+        }
+      },
+      {
+        "code": "E711",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Comparison to `None` should be `cond is None`",
+          "Comparison to `None` should be `cond is not None`"
+        ],
+        "name": "none-comparison",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E712",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Avoid equality comparisons to `True`; use `{cond}:` for truth checks",
+          "Avoid inequality comparisons to `True`; use `not {cond}:` for false checks",
+          "Avoid equality comparisons to `False`; use `not {cond}:` for false checks",
+          "Avoid inequality comparisons to `False`; use `{cond}:` for truth checks"
+        ],
+        "name": "true-false-comparison",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E713",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Test for membership should be `not in`"
+        ],
+        "name": "not-in-test",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E714",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Test for object identity should be `is not`"
+        ],
+        "name": "not-is-test",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E721",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use `is` and `is not` for type comparisons, or `isinstance()` for isinstance checks"
+        ],
+        "name": "type-comparison",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.39"
+          }
+        }
+      },
+      {
+        "code": "E722",
+        "fix_availability": "None",
+        "message_formats": [
+          "Do not use bare `except`"
+        ],
+        "name": "bare-except",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.36"
+          }
+        }
+      },
+      {
+        "code": "E731",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Do not assign a `lambda` expression, use a `def`"
+        ],
+        "name": "lambda-assignment",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "E741",
+        "fix_availability": "None",
+        "message_formats": [
+          "Ambiguous variable name: `{name}`"
+        ],
+        "name": "ambiguous-variable-name",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.34"
+          }
+        }
+      },
+      {
+        "code": "E742",
+        "fix_availability": "None",
+        "message_formats": [
+          "Ambiguous class name: `{name}`"
+        ],
+        "name": "ambiguous-class-name",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.35"
+          }
+        }
+      },
+      {
+        "code": "E743",
+        "fix_availability": "None",
+        "message_formats": [
+          "Ambiguous function name: `{name}`"
+        ],
+        "name": "ambiguous-function-name",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.35"
+          }
+        }
+      },
+      {
+        "code": "E902",
+        "fix_availability": "None",
+        "message_formats": [
+          "{message}"
+        ],
+        "name": "io-error",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "F401",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`{name}` imported but unused; consider using `importlib.util.find_spec` to test for availability",
+          "`{name}` imported but unused; consider removing, adding to `__all__`, or using a redundant alias",
+          "`{name}` imported but unused"
+        ],
+        "name": "unused-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "F402",
+        "fix_availability": "None",
+        "message_formats": [
+          "Import `{name}` from {row} shadowed by loop variable"
+        ],
+        "name": "import-shadowed-by-loop-var",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.44"
+          }
+        }
+      },
+      {
+        "code": "F403",
+        "fix_availability": "None",
+        "message_formats": [
+          "`from {name} import *` used; unable to detect undefined names"
+        ],
+        "name": "undefined-local-with-import-star",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "F404",
+        "fix_availability": "None",
+        "message_formats": [
+          "`from __future__` imports must occur at the beginning of the file"
+        ],
+        "name": "late-future-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.34"
+          }
+        }
+      },
+      {
+        "code": "F405",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{name}` may be undefined, or defined from star imports"
+        ],
+        "name": "undefined-local-with-import-star-usage",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.44"
+          }
+        }
+      },
+      {
+        "code": "F406",
+        "fix_availability": "None",
+        "message_formats": [
+          "`from {name} import *` only allowed at module level"
+        ],
+        "name": "undefined-local-with-nested-import-star-usage",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.37"
+          }
+        }
+      },
+      {
+        "code": "F407",
+        "fix_availability": "None",
+        "message_formats": [
+          "Future feature `{name}` is not defined"
+        ],
+        "name": "future-feature-not-defined",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.34"
+          }
+        }
+      },
+      {
+        "code": "F501",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string has invalid format string: {message}"
+        ],
+        "name": "percent-format-invalid-format",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F502",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string expected mapping but got sequence"
+        ],
+        "name": "percent-format-expected-mapping",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F503",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string expected sequence but got mapping"
+        ],
+        "name": "percent-format-expected-sequence",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F504",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`%`-format string has unused named argument(s): {message}"
+        ],
+        "name": "percent-format-extra-named-arguments",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F505",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string is missing argument(s) for placeholder(s): {message}"
+        ],
+        "name": "percent-format-missing-argument",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F506",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string has mixed positional and named placeholders"
+        ],
+        "name": "percent-format-mixed-positional-and-named",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F507",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string has {wanted} placeholder(s) but {got} substitution(s)"
+        ],
+        "name": "percent-format-positional-count-mismatch",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F508",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string `*` specifier requires sequence"
+        ],
+        "name": "percent-format-star-requires-sequence",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F509",
+        "fix_availability": "None",
+        "message_formats": [
+          "`%`-format string has unsupported format character `{char}`"
+        ],
+        "name": "percent-format-unsupported-format-character",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.142"
+          }
+        }
+      },
+      {
+        "code": "F521",
+        "fix_availability": "None",
+        "message_formats": [
+          "`.format` call has invalid format string: {message}"
+        ],
+        "name": "string-dot-format-invalid-format",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.138"
+          }
+        }
+      },
+      {
+        "code": "F522",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`.format` call has unused named argument(s): {message}"
+        ],
+        "name": "string-dot-format-extra-named-arguments",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.139"
+          }
+        }
+      },
+      {
+        "code": "F523",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`.format` call has unused arguments at position(s): {message}"
+        ],
+        "name": "string-dot-format-extra-positional-arguments",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.139"
+          }
+        }
+      },
+      {
+        "code": "F524",
+        "fix_availability": "None",
+        "message_formats": [
+          "`.format` call is missing argument(s) for placeholder(s): {message}"
+        ],
+        "name": "string-dot-format-missing-arguments",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.139"
+          }
+        }
+      },
+      {
+        "code": "F525",
+        "fix_availability": "None",
+        "message_formats": [
+          "`.format` string mixes automatic and manual numbering"
+        ],
+        "name": "string-dot-format-mixing-automatic",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.139"
+          }
+        }
+      },
+      {
+        "code": "F541",
+        "fix_availability": "Always",
+        "message_formats": [
+          "f-string without any placeholders"
+        ],
+        "name": "f-string-missing-placeholders",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "F601",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Dictionary key literal `{name}` repeated",
+          "Dictionary key literal `{name}` repeated",
+          "Dictionary key literal `{name}` repeated (`{name}` hashes to the same value as `{existing}`)",
+          "Dictionary key literal repeated"
+        ],
+        "name": "multi-value-repeated-key-literal",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.30"
+          }
+        }
+      },
+      {
+        "code": "F602",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Dictionary key `{name}` repeated",
+          "Dictionary key repeated"
+        ],
+        "name": "multi-value-repeated-key-variable",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.30"
+          }
+        }
+      },
+      {
+        "code": "F621",
+        "fix_availability": "None",
+        "message_formats": [
+          "Too many expressions in star-unpacking assignment"
+        ],
+        "name": "expressions-in-star-assignment",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.32"
+          }
+        }
+      },
+      {
+        "code": "F622",
+        "fix_availability": "None",
+        "message_formats": [
+          "Two starred expressions in assignment"
+        ],
+        "name": "multiple-starred-expressions",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.32"
+          }
+        }
+      },
+      {
+        "code": "F631",
+        "fix_availability": "None",
+        "message_formats": [
+          "Assert test is a non-empty tuple, which is always `True`"
+        ],
+        "name": "assert-tuple",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "F632",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `==` to compare constant literals",
+          "Use `!=` to compare constant literals"
+        ],
+        "name": "is-literal",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.39"
+          }
+        }
+      },
+      {
+        "code": "F633",
+        "fix_availability": "None",
+        "message_formats": [
+          "Use of `>>` is invalid with `print` function"
+        ],
+        "name": "invalid-print-syntax",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.39"
+          }
+        }
+      },
+      {
+        "code": "F634",
+        "fix_availability": "None",
+        "message_formats": [
+          "If test is a tuple, which is always `True`"
+        ],
+        "name": "if-tuple",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "F701",
+        "fix_availability": "None",
+        "message_formats": [
+          "`break` outside loop"
+        ],
+        "name": "break-outside-loop",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.36"
+          }
+        }
+      },
+      {
+        "code": "F702",
+        "fix_availability": "None",
+        "message_formats": [
+          "`continue` not properly in loop"
+        ],
+        "name": "continue-outside-loop",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.36"
+          }
+        }
+      },
+      {
+        "code": "F704",
+        "fix_availability": "None",
+        "message_formats": [
+          "`{keyword}` statement outside of a function"
+        ],
+        "name": "yield-outside-function",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.22"
+          }
+        }
+      },
+      {
+        "code": "F706",
+        "fix_availability": "None",
+        "message_formats": [
+          "`return` statement outside of a function/method"
+        ],
+        "name": "return-outside-function",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "F707",
+        "fix_availability": "None",
+        "message_formats": [
+          "An `except` block as not the last exception handler"
+        ],
+        "name": "default-except-not-last",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.28"
+          }
+        }
+      },
+      {
+        "code": "F722",
+        "fix_availability": "None",
+        "message_formats": [
+          "Syntax error in forward annotation: {parse_error}"
+        ],
+        "name": "forward-annotation-syntax-error",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.39"
+          }
+        }
+      },
+      {
+        "code": "F811",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Redefinition of unused `{name}` from {row}"
+        ],
+        "name": "redefined-while-unused",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.171"
+          }
+        }
+      },
+      {
+        "code": "F821",
+        "fix_availability": "None",
+        "message_formats": [
+          "Undefined name `{name}`. {tip}",
+          "Undefined name `{name}`"
+        ],
+        "name": "undefined-name",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.20"
+          }
+        }
+      },
+      {
+        "code": "F822",
+        "fix_availability": "None",
+        "message_formats": [
+          "Undefined name `{name}` in `__all__`"
+        ],
+        "name": "undefined-export",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.25"
+          }
+        }
+      },
+      {
+        "code": "F823",
+        "fix_availability": "None",
+        "message_formats": [
+          "Local variable `{name}` referenced before assignment"
+        ],
+        "name": "undefined-local",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.24"
+          }
+        }
+      },
+      {
+        "code": "F841",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Local variable `{name}` is assigned to but never used"
+        ],
+        "name": "unused-variable",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.22"
+          }
+        }
+      },
+      {
+        "code": "F842",
+        "fix_availability": "None",
+        "message_formats": [
+          "Local variable `{name}` is annotated but never used"
+        ],
+        "name": "unused-annotation",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.172"
+          }
+        }
+      },
+      {
+        "code": "F901",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`raise NotImplemented` should be `raise NotImplementedError`"
+        ],
+        "name": "raise-not-implemented",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.18"
+          }
+        }
+      },
+      {
+        "code": "UP001",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`__metaclass__ = type` is implied"
+        ],
+        "name": "useless-metaclass-type",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP003",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `{}` instead of `type(...)`"
+        ],
+        "name": "type-of-primitive",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP004",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Class `{name}` inherits from `object`"
+        ],
+        "name": "useless-object-inheritance",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP005",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`{alias}` is deprecated, use `{target}`"
+        ],
+        "name": "deprecated-unittest-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP006",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `{to}` instead of `{from}` for type annotation"
+        ],
+        "name": "non-pep585-annotation",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP007",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `X | Y` for type annotations"
+        ],
+        "name": "non-pep604-annotation-union",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP008",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `super()` instead of `super(__class__, self)`"
+        ],
+        "name": "super-call-with-parameters",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP009",
+        "fix_availability": "Always",
+        "message_formats": [
+          "UTF-8 encoding declaration is unnecessary"
+        ],
+        "name": "utf8-encoding-declaration",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP010",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary `__future__` import `{import}` for target Python version",
+          "Unnecessary `__future__` imports {imports} for target Python version"
+        ],
+        "name": "unnecessary-future-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP011",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary parentheses to `functools.lru_cache`"
+        ],
+        "name": "lru-cache-without-parameters",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP012",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary call to `encode` as UTF-8",
+          "Unnecessary UTF-8 `encoding` argument to `encode`"
+        ],
+        "name": "unnecessary-encode-utf8",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP013",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Convert `{name}` from `TypedDict` functional to class syntax"
+        ],
+        "name": "convert-typed-dict-functional-to-class",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP014",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Convert `{name}` from `NamedTuple` functional to class syntax"
+        ],
+        "name": "convert-named-tuple-functional-to-class",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP015",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary mode argument",
+          "Unnecessary modes, use `{replacement}`"
+        ],
+        "name": "redundant-open-modes",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      },
+      {
+        "code": "UP017",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `datetime.UTC` alias"
+        ],
+        "name": "datetime-timezone-utc",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.192"
+          }
+        }
+      },
+      {
+        "code": "UP018",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary `{literal_type}` call (rewrite as a literal)"
+        ],
+        "name": "native-literals",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.193"
+          }
+        }
+      },
+      {
+        "code": "UP019",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`{}.Text` is deprecated, use `str`"
+        ],
+        "name": "typing-text-str-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.195"
+          }
+        }
+      },
+      {
+        "code": "UP020",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use builtin `open`"
+        ],
+        "name": "open-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.196"
+          }
+        }
+      },
+      {
+        "code": "UP021",
+        "fix_availability": "Always",
+        "message_formats": [
+          "`universal_newlines` is deprecated, use `text`"
+        ],
+        "name": "replace-universal-newlines",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.196"
+          }
+        }
+      },
+      {
+        "code": "UP022",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Prefer `capture_output` over sending `stdout` and `stderr` to `PIPE`"
+        ],
+        "name": "replace-stdout-stderr",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.199"
+          }
+        }
+      },
+      {
+        "code": "UP023",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`cElementTree` is deprecated, use `ElementTree`"
+        ],
+        "name": "deprecated-c-element-tree",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.199"
+          }
+        }
+      },
+      {
+        "code": "UP024",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Replace aliased errors with `OSError`"
+        ],
+        "name": "os-error-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.206"
+          }
+        }
+      },
+      {
+        "code": "UP025",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Remove unicode literals from strings"
+        ],
+        "name": "unicode-kind-prefix",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.201"
+          }
+        }
+      },
+      {
+        "code": "UP026",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "`mock` is deprecated, use `unittest.mock`"
+        ],
+        "name": "deprecated-mock-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.206"
+          }
+        }
+      },
+      {
+        "code": "UP028",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Replace `yield` over `for` loop with `yield from`"
+        ],
+        "name": "yield-in-for-loop",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.210"
+          }
+        }
+      },
+      {
+        "code": "UP029",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary builtin import: `{import}`",
+          "Unnecessary builtin imports: {imports}"
+        ],
+        "name": "unnecessary-builtin-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.211"
+          }
+        }
+      },
+      {
+        "code": "UP030",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use implicit references for positional format fields"
+        ],
+        "name": "format-literals",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.218"
+          }
+        }
+      },
+      {
+        "code": "UP031",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use format specifiers instead of percent format"
+        ],
+        "name": "printf-string-formatting",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.229"
+          }
+        }
+      },
+      {
+        "code": "UP032",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use f-string instead of `format` call"
+        ],
+        "name": "f-string",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.224"
+          }
+        }
+      },
+      {
+        "code": "UP033",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `@functools.cache` instead of `@functools.lru_cache(maxsize=None)`"
+        ],
+        "name": "lru-cache-with-maxsize-none",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.225"
+          }
+        }
+      },
+      {
+        "code": "UP034",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Avoid extraneous parentheses"
+        ],
+        "name": "extraneous-parentheses",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.228"
+          }
+        }
+      },
+      {
+        "code": "UP035",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Import from `{target}` instead: {names}",
+          "`{module}.{member}` is deprecated, use `{target}` instead"
+        ],
+        "name": "deprecated-import",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.239"
+          }
+        }
+      },
+      {
+        "code": "UP036",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Version block is outdated for minimum Python version",
+          "Version specifier is invalid"
+        ],
+        "name": "outdated-version-block",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.240"
+          }
+        }
+      },
+      {
+        "code": "UP037",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Remove quotes from type annotation"
+        ],
+        "name": "quoted-annotation",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.242"
+          }
+        }
+      },
+      {
+        "code": "UP039",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary parentheses after class definition"
+        ],
+        "name": "unnecessary-class-parentheses",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.273"
+          }
+        }
+      },
+      {
+        "code": "UP040",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Type alias `{name}` uses {type_alias_method} instead of the `type` keyword"
+        ],
+        "name": "non-pep695-type-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.283"
+          }
+        }
+      },
+      {
+        "code": "UP041",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Replace aliased errors with `TimeoutError`"
+        ],
+        "name": "timeout-error-alias",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.2.0"
+          }
+        }
+      },
+      {
+        "code": "UP042",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Class {name} inherits from both `str` and `enum.Enum`"
+        ],
+        "name": "replace-str-enum",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.15.0"
+          }
+        }
+      },
+      {
+        "code": "UP043",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unnecessary default type arguments"
+        ],
+        "name": "unnecessary-default-type-args",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.8.0"
+          }
+        }
+      },
+      {
+        "code": "UP044",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Use `*` for unpacking"
+        ],
+        "name": "non-pep646-unpack",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.10.0"
+          }
+        }
+      },
+      {
+        "code": "UP045",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Use `X | None` for type annotations"
+        ],
+        "name": "non-pep604-annotation-optional",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.12.0"
+          }
+        }
+      },
+      {
+        "code": "UP046",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Generic class `{name}` uses `Generic` subclass instead of type parameters"
+        ],
+        "name": "non-pep695-generic-class",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.12.0"
+          }
+        }
+      },
+      {
+        "code": "UP047",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Generic function `{name}` should use type parameters"
+        ],
+        "name": "non-pep695-generic-function",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.12.0"
+          }
+        }
+      },
+      {
+        "code": "UP049",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Generic {} uses private type parameters"
+        ],
+        "name": "private-type-parameter",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.12.0"
+          }
+        }
+      },
+      {
+        "code": "UP050",
+        "fix_availability": "Sometimes",
+        "message_formats": [
+          "Class `{name}` uses `metaclass=type`, which is redundant"
+        ],
+        "name": "useless-class-metaclass-type",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "0.13.0"
+          }
+        }
+      },
+      {
+        "code": "RUF100",
+        "fix_availability": "Always",
+        "message_formats": [
+          "Unused {}",
+          "Unused {} ({})",
+          "Unused blanket {}"
+        ],
+        "name": "unused-noqa",
+        "preview": false,
+        "status": {
+          "Stable": {
+            "since": "v0.0.155"
+          }
+        }
+      }
+    ],
+    "safe_fixes_only": true,
+    "select": [
+      "E4",
+      "E7",
+      "E9",
+      "F",
+      "UP",
+      "B",
+      "SIM",
+      "RUF100"
+    ]
+  },
+  "schema": "mamba.quality.profile.v1",
+  "standard_library": {
+    "3.12": [
+      "__future__",
+      "__hello__",
+      "__hello_alias__",
+      "__hello_only__",
+      "__phello__",
+      "__phello_alias__",
+      "_abc",
+      "_aix_support",
+      "_ast",
+      "_asyncio",
+      "_bisect",
+      "_blake2",
+      "_bz2",
+      "_codecs",
+      "_codecs_cn",
+      "_codecs_hk",
+      "_codecs_iso2022",
+      "_codecs_jp",
+      "_codecs_kr",
+      "_codecs_tw",
+      "_collections",
+      "_collections_abc",
+      "_compat_pickle",
+      "_compression",
+      "_contextvars",
+      "_crypt",
+      "_csv",
+      "_ctypes",
+      "_ctypes_test",
+      "_curses",
+      "_curses_panel",
+      "_datetime",
+      "_dbm",
+      "_decimal",
+      "_elementtree",
+      "_frozen_importlib",
+      "_frozen_importlib_external",
+      "_functools",
+      "_gdbm",
+      "_hashlib",
+      "_heapq",
+      "_imp",
+      "_io",
+      "_json",
+      "_locale",
+      "_lsprof",
+      "_lzma",
+      "_markupbase",
+      "_md5",
+      "_msi",
+      "_multibytecodec",
+      "_multiprocessing",
+      "_opcode",
+      "_operator",
+      "_osx_support",
+      "_overlapped",
+      "_pickle",
+      "_posixshmem",
+      "_posixsubprocess",
+      "_py_abc",
+      "_pydatetime",
+      "_pydecimal",
+      "_pyio",
+      "_pylong",
+      "_queue",
+      "_random",
+      "_scproxy",
+      "_sha1",
+      "_sha2",
+      "_sha3",
+      "_signal",
+      "_sitebuiltins",
+      "_socket",
+      "_sqlite3",
+      "_sre",
+      "_ssl",
+      "_stat",
+      "_statistics",
+      "_string",
+      "_strptime",
+      "_struct",
+      "_symtable",
+      "_testbuffer",
+      "_testcapi",
+      "_testclinic",
+      "_testconsole",
+      "_testimportmultiple",
+      "_testinternalcapi",
+      "_testmultiphase",
+      "_testsinglephase",
+      "_thread",
+      "_threading_local",
+      "_tkinter",
+      "_tokenize",
+      "_tracemalloc",
+      "_typing",
+      "_uuid",
+      "_warnings",
+      "_weakref",
+      "_weakrefset",
+      "_winapi",
+      "_wmi",
+      "_xxinterpchannels",
+      "_xxsubinterpreters",
+      "_xxtestfuzz",
+      "_zoneinfo",
+      "abc",
+      "aifc",
+      "antigravity",
+      "argparse",
+      "array",
+      "ast",
+      "asyncio",
+      "atexit",
+      "audioop",
+      "base64",
+      "bdb",
+      "binascii",
+      "bisect",
+      "builtins",
+      "bz2",
+      "cProfile",
+      "calendar",
+      "cgi",
+      "cgitb",
+      "chunk",
+      "cmath",
+      "cmd",
+      "code",
+      "codecs",
+      "codeop",
+      "collections",
+      "colorsys",
+      "compileall",
+      "concurrent",
+      "configparser",
+      "contextlib",
+      "contextvars",
+      "copy",
+      "copyreg",
+      "crypt",
+      "csv",
+      "ctypes",
+      "curses",
+      "dataclasses",
+      "datetime",
+      "dbm",
+      "decimal",
+      "difflib",
+      "dis",
+      "doctest",
+      "email",
+      "encodings",
+      "ensurepip",
+      "enum",
+      "errno",
+      "faulthandler",
+      "fcntl",
+      "filecmp",
+      "fileinput",
+      "fnmatch",
+      "fractions",
+      "ftplib",
+      "functools",
+      "gc",
+      "genericpath",
+      "getopt",
+      "getpass",
+      "gettext",
+      "glob",
+      "graphlib",
+      "grp",
+      "gzip",
+      "hashlib",
+      "heapq",
+      "hmac",
+      "html",
+      "http",
+      "idlelib",
+      "imaplib",
+      "imghdr",
+      "importlib",
+      "inspect",
+      "io",
+      "ipaddress",
+      "itertools",
+      "json",
+      "keyword",
+      "lib2to3",
+      "linecache",
+      "locale",
+      "logging",
+      "lzma",
+      "mailbox",
+      "mailcap",
+      "marshal",
+      "math",
+      "mimetypes",
+      "mmap",
+      "modulefinder",
+      "msilib",
+      "msvcrt",
+      "multiprocessing",
+      "netrc",
+      "nis",
+      "nntplib",
+      "nt",
+      "ntpath",
+      "nturl2path",
+      "numbers",
+      "opcode",
+      "operator",
+      "optparse",
+      "os",
+      "ossaudiodev",
+      "pathlib",
+      "pdb",
+      "pickle",
+      "pickletools",
+      "pipes",
+      "pkgutil",
+      "platform",
+      "plistlib",
+      "poplib",
+      "posix",
+      "posixpath",
+      "pprint",
+      "profile",
+      "pstats",
+      "pty",
+      "pwd",
+      "py_compile",
+      "pyclbr",
+      "pydoc",
+      "pydoc_data",
+      "pyexpat",
+      "queue",
+      "quopri",
+      "random",
+      "re",
+      "readline",
+      "reprlib",
+      "resource",
+      "rlcompleter",
+      "runpy",
+      "sched",
+      "secrets",
+      "select",
+      "selectors",
+      "shelve",
+      "shlex",
+      "shutil",
+      "signal",
+      "site",
+      "smtplib",
+      "sndhdr",
+      "socket",
+      "socketserver",
+      "spwd",
+      "sqlite3",
+      "sre_compile",
+      "sre_constants",
+      "sre_parse",
+      "ssl",
+      "stat",
+      "statistics",
+      "string",
+      "stringprep",
+      "struct",
+      "subprocess",
+      "sunau",
+      "symtable",
+      "sys",
+      "sysconfig",
+      "syslog",
+      "tabnanny",
+      "tarfile",
+      "telnetlib",
+      "tempfile",
+      "termios",
+      "textwrap",
+      "this",
+      "threading",
+      "time",
+      "timeit",
+      "tkinter",
+      "token",
+      "tokenize",
+      "tomllib",
+      "trace",
+      "traceback",
+      "tracemalloc",
+      "tty",
+      "turtle",
+      "turtledemo",
+      "types",
+      "typing",
+      "unicodedata",
+      "unittest",
+      "urllib",
+      "uu",
+      "uuid",
+      "venv",
+      "warnings",
+      "wave",
+      "weakref",
+      "webbrowser",
+      "winreg",
+      "winsound",
+      "wsgiref",
+      "xdrlib",
+      "xml",
+      "xmlrpc",
+      "xx",
+      "xxlimited",
+      "xxlimited_35",
+      "xxsubtype",
+      "zipapp",
+      "zipfile",
+      "zipimport",
+      "zlib",
+      "zoneinfo"
+    ],
+    "3.13": [
+      "__future__",
+      "__hello__",
+      "__hello_alias__",
+      "__hello_only__",
+      "__phello__",
+      "__phello_alias__",
+      "_abc",
+      "_aix_support",
+      "_android_support",
+      "_apple_support",
+      "_ast",
+      "_asyncio",
+      "_bisect",
+      "_blake2",
+      "_bz2",
+      "_codecs",
+      "_codecs_cn",
+      "_codecs_hk",
+      "_codecs_iso2022",
+      "_codecs_jp",
+      "_codecs_kr",
+      "_codecs_tw",
+      "_collections",
+      "_collections_abc",
+      "_colorize",
+      "_compat_pickle",
+      "_compression",
+      "_contextvars",
+      "_csv",
+      "_ctypes",
+      "_ctypes_test",
+      "_curses",
+      "_curses_panel",
+      "_datetime",
+      "_dbm",
+      "_decimal",
+      "_elementtree",
+      "_frozen_importlib",
+      "_frozen_importlib_external",
+      "_functools",
+      "_gdbm",
+      "_hashlib",
+      "_heapq",
+      "_imp",
+      "_interpchannels",
+      "_interpqueues",
+      "_interpreters",
+      "_io",
+      "_ios_support",
+      "_json",
+      "_locale",
+      "_lsprof",
+      "_lzma",
+      "_markupbase",
+      "_md5",
+      "_multibytecodec",
+      "_multiprocessing",
+      "_opcode",
+      "_opcode_metadata",
+      "_operator",
+      "_osx_support",
+      "_overlapped",
+      "_pickle",
+      "_posixshmem",
+      "_posixsubprocess",
+      "_py_abc",
+      "_pydatetime",
+      "_pydecimal",
+      "_pyio",
+      "_pylong",
+      "_pyrepl",
+      "_queue",
+      "_random",
+      "_scproxy",
+      "_sha1",
+      "_sha2",
+      "_sha3",
+      "_signal",
+      "_sitebuiltins",
+      "_socket",
+      "_sqlite3",
+      "_sre",
+      "_ssl",
+      "_stat",
+      "_statistics",
+      "_string",
+      "_strptime",
+      "_struct",
+      "_suggestions",
+      "_symtable",
+      "_sysconfig",
+      "_testbuffer",
+      "_testcapi",
+      "_testcapi_datetime",
+      "_testclinic",
+      "_testclinic_limited",
+      "_testconsole",
+      "_testexternalinspection",
+      "_testimportmultiple",
+      "_testinternalcapi",
+      "_testlimitedcapi",
+      "_testmultiphase",
+      "_testsinglephase",
+      "_thread",
+      "_threading_local",
+      "_tkinter",
+      "_tokenize",
+      "_tracemalloc",
+      "_typing",
+      "_uuid",
+      "_warnings",
+      "_weakref",
+      "_weakrefset",
+      "_winapi",
+      "_wmi",
+      "_xxtestfuzz",
+      "_zoneinfo",
+      "abc",
+      "antigravity",
+      "argparse",
+      "array",
+      "ast",
+      "asyncio",
+      "atexit",
+      "base64",
+      "bdb",
+      "binascii",
+      "bisect",
+      "builtins",
+      "bz2",
+      "cProfile",
+      "calendar",
+      "cmath",
+      "cmd",
+      "code",
+      "codecs",
+      "codeop",
+      "collections",
+      "colorsys",
+      "compileall",
+      "concurrent",
+      "configparser",
+      "contextlib",
+      "contextvars",
+      "copy",
+      "copyreg",
+      "csv",
+      "ctypes",
+      "curses",
+      "dataclasses",
+      "datetime",
+      "dbm",
+      "decimal",
+      "difflib",
+      "dis",
+      "doctest",
+      "email",
+      "encodings",
+      "ensurepip",
+      "enum",
+      "errno",
+      "faulthandler",
+      "fcntl",
+      "filecmp",
+      "fileinput",
+      "fnmatch",
+      "fractions",
+      "ftplib",
+      "functools",
+      "gc",
+      "genericpath",
+      "getopt",
+      "getpass",
+      "gettext",
+      "glob",
+      "graphlib",
+      "grp",
+      "gzip",
+      "hashlib",
+      "heapq",
+      "hmac",
+      "html",
+      "http",
+      "idlelib",
+      "imaplib",
+      "importlib",
+      "inspect",
+      "io",
+      "ipaddress",
+      "itertools",
+      "json",
+      "keyword",
+      "linecache",
+      "locale",
+      "logging",
+      "lzma",
+      "mailbox",
+      "marshal",
+      "math",
+      "mimetypes",
+      "mmap",
+      "modulefinder",
+      "msvcrt",
+      "multiprocessing",
+      "netrc",
+      "nt",
+      "ntpath",
+      "nturl2path",
+      "numbers",
+      "opcode",
+      "operator",
+      "optparse",
+      "os",
+      "pathlib",
+      "pdb",
+      "pickle",
+      "pickletools",
+      "pkgutil",
+      "platform",
+      "plistlib",
+      "poplib",
+      "posix",
+      "posixpath",
+      "pprint",
+      "profile",
+      "pstats",
+      "pty",
+      "pwd",
+      "py_compile",
+      "pyclbr",
+      "pydoc",
+      "pydoc_data",
+      "pyexpat",
+      "queue",
+      "quopri",
+      "random",
+      "re",
+      "readline",
+      "reprlib",
+      "resource",
+      "rlcompleter",
+      "runpy",
+      "sched",
+      "secrets",
+      "select",
+      "selectors",
+      "shelve",
+      "shlex",
+      "shutil",
+      "signal",
+      "site",
+      "smtplib",
+      "socket",
+      "socketserver",
+      "sqlite3",
+      "sre_compile",
+      "sre_constants",
+      "sre_parse",
+      "ssl",
+      "stat",
+      "statistics",
+      "string",
+      "stringprep",
+      "struct",
+      "subprocess",
+      "symtable",
+      "sys",
+      "sysconfig",
+      "syslog",
+      "tabnanny",
+      "tarfile",
+      "tempfile",
+      "termios",
+      "textwrap",
+      "this",
+      "threading",
+      "time",
+      "timeit",
+      "tkinter",
+      "token",
+      "tokenize",
+      "tomllib",
+      "trace",
+      "traceback",
+      "tracemalloc",
+      "tty",
+      "turtle",
+      "turtledemo",
+      "types",
+      "typing",
+      "unicodedata",
+      "unittest",
+      "urllib",
+      "uuid",
+      "venv",
+      "warnings",
+      "wave",
+      "weakref",
+      "webbrowser",
+      "winreg",
+      "winsound",
+      "wsgiref",
+      "xml",
+      "xmlrpc",
+      "xx",
+      "xxlimited",
+      "xxlimited_35",
+      "xxsubtype",
+      "zipapp",
+      "zipfile",
+      "zipimport",
+      "zlib",
+      "zoneinfo"
+    ],
+    "3.14": [
+      "__future__",
+      "__hello__",
+      "__hello_alias__",
+      "__hello_only__",
+      "__phello__",
+      "__phello_alias__",
+      "_abc",
+      "_aix_support",
+      "_android_support",
+      "_apple_support",
+      "_ast",
+      "_ast_unparse",
+      "_asyncio",
+      "_bisect",
+      "_blake2",
+      "_bz2",
+      "_codecs",
+      "_codecs_cn",
+      "_codecs_hk",
+      "_codecs_iso2022",
+      "_codecs_jp",
+      "_codecs_kr",
+      "_codecs_tw",
+      "_collections",
+      "_collections_abc",
+      "_colorize",
+      "_compat_pickle",
+      "_contextvars",
+      "_csv",
+      "_ctypes",
+      "_ctypes_test",
+      "_curses",
+      "_curses_panel",
+      "_datetime",
+      "_dbm",
+      "_decimal",
+      "_elementtree",
+      "_frozen_importlib",
+      "_frozen_importlib_external",
+      "_functools",
+      "_gdbm",
+      "_hashlib",
+      "_heapq",
+      "_hmac",
+      "_imp",
+      "_interpchannels",
+      "_interpqueues",
+      "_interpreters",
+      "_io",
+      "_ios_support",
+      "_json",
+      "_locale",
+      "_lsprof",
+      "_lzma",
+      "_markupbase",
+      "_md5",
+      "_multibytecodec",
+      "_multiprocessing",
+      "_opcode",
+      "_opcode_metadata",
+      "_operator",
+      "_osx_support",
+      "_overlapped",
+      "_pickle",
+      "_posixshmem",
+      "_posixsubprocess",
+      "_py_abc",
+      "_py_warnings",
+      "_pydatetime",
+      "_pydecimal",
+      "_pyio",
+      "_pylong",
+      "_pyrepl",
+      "_queue",
+      "_random",
+      "_remote_debugging",
+      "_scproxy",
+      "_sha1",
+      "_sha2",
+      "_sha3",
+      "_signal",
+      "_sitebuiltins",
+      "_socket",
+      "_sqlite3",
+      "_sre",
+      "_ssl",
+      "_stat",
+      "_statistics",
+      "_string",
+      "_strptime",
+      "_struct",
+      "_suggestions",
+      "_symtable",
+      "_sysconfig",
+      "_testbuffer",
+      "_testcapi",
+      "_testcapi_datetime",
+      "_testclinic",
+      "_testclinic_limited",
+      "_testconsole",
+      "_testimportmultiple",
+      "_testinternalcapi",
+      "_testlimitedcapi",
+      "_testmultiphase",
+      "_testsinglephase",
+      "_thread",
+      "_threading_local",
+      "_tkinter",
+      "_tokenize",
+      "_tracemalloc",
+      "_types",
+      "_typing",
+      "_uuid",
+      "_warnings",
+      "_weakref",
+      "_weakrefset",
+      "_winapi",
+      "_wmi",
+      "_xxtestfuzz",
+      "_zoneinfo",
+      "_zstd",
+      "abc",
+      "annotationlib",
+      "antigravity",
+      "argparse",
+      "array",
+      "ast",
+      "asyncio",
+      "atexit",
+      "base64",
+      "bdb",
+      "binascii",
+      "bisect",
+      "builtins",
+      "bz2",
+      "cProfile",
+      "calendar",
+      "cmath",
+      "cmd",
+      "code",
+      "codecs",
+      "codeop",
+      "collections",
+      "colorsys",
+      "compileall",
+      "compression",
+      "concurrent",
+      "configparser",
+      "contextlib",
+      "contextvars",
+      "copy",
+      "copyreg",
+      "csv",
+      "ctypes",
+      "curses",
+      "dataclasses",
+      "datetime",
+      "dbm",
+      "decimal",
+      "difflib",
+      "dis",
+      "doctest",
+      "email",
+      "encodings",
+      "ensurepip",
+      "enum",
+      "errno",
+      "faulthandler",
+      "fcntl",
+      "filecmp",
+      "fileinput",
+      "fnmatch",
+      "fractions",
+      "ftplib",
+      "functools",
+      "gc",
+      "genericpath",
+      "getopt",
+      "getpass",
+      "gettext",
+      "glob",
+      "graphlib",
+      "grp",
+      "gzip",
+      "hashlib",
+      "heapq",
+      "hmac",
+      "html",
+      "http",
+      "idlelib",
+      "imaplib",
+      "importlib",
+      "inspect",
+      "io",
+      "ipaddress",
+      "itertools",
+      "json",
+      "keyword",
+      "linecache",
+      "locale",
+      "logging",
+      "lzma",
+      "mailbox",
+      "marshal",
+      "math",
+      "mimetypes",
+      "mmap",
+      "modulefinder",
+      "msvcrt",
+      "multiprocessing",
+      "netrc",
+      "nt",
+      "ntpath",
+      "nturl2path",
+      "numbers",
+      "opcode",
+      "operator",
+      "optparse",
+      "os",
+      "pathlib",
+      "pdb",
+      "pickle",
+      "pickletools",
+      "pkgutil",
+      "platform",
+      "plistlib",
+      "poplib",
+      "posix",
+      "posixpath",
+      "pprint",
+      "profile",
+      "pstats",
+      "pty",
+      "pwd",
+      "py_compile",
+      "pyclbr",
+      "pydoc",
+      "pydoc_data",
+      "pyexpat",
+      "queue",
+      "quopri",
+      "random",
+      "re",
+      "readline",
+      "reprlib",
+      "resource",
+      "rlcompleter",
+      "runpy",
+      "sched",
+      "secrets",
+      "select",
+      "selectors",
+      "shelve",
+      "shlex",
+      "shutil",
+      "signal",
+      "site",
+      "smtplib",
+      "socket",
+      "socketserver",
+      "sqlite3",
+      "sre_compile",
+      "sre_constants",
+      "sre_parse",
+      "ssl",
+      "stat",
+      "statistics",
+      "string",
+      "stringprep",
+      "struct",
+      "subprocess",
+      "symtable",
+      "sys",
+      "sysconfig",
+      "syslog",
+      "tabnanny",
+      "tarfile",
+      "tempfile",
+      "termios",
+      "textwrap",
+      "this",
+      "threading",
+      "time",
+      "timeit",
+      "tkinter",
+      "token",
+      "tokenize",
+      "tomllib",
+      "trace",
+      "traceback",
+      "tracemalloc",
+      "tty",
+      "turtle",
+      "turtledemo",
+      "types",
+      "typing",
+      "unicodedata",
+      "unittest",
+      "urllib",
+      "uuid",
+      "venv",
+      "warnings",
+      "wave",
+      "weakref",
+      "webbrowser",
+      "winreg",
+      "winsound",
+      "wsgiref",
+      "xml",
+      "xmlrpc",
+      "xx",
+      "xxlimited",
+      "xxlimited_35",
+      "xxsubtype",
+      "zipapp",
+      "zipfile",
+      "zipimport",
+      "zlib",
+      "zoneinfo"
+    ]
+  },
+  "versions": {
+    "black": "26.10.0",
+    "isort": "9.0.2",
+    "mypy": "2.4.0",
+    "pydantic": "2.13.5",
+    "pylint": "4.1.2",
+    "ruff": "0.16.10"
+  }
+}

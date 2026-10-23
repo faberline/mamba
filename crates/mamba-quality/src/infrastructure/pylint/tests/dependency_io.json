@@ -1,0 +1,1335 @@
+[
+  {
+    "name": "unreadable_dependency",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nimport module\nprint(module.VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "module.py",
+    "source_sha256": {
+      "module.py": "4ab8924e461e109c23302090e17e1a2cbb6b78161bcdc5f2317f6f8975264137",
+      "main.py": "b5f86f56e53a9b68bfd5ea14a07d5d0d2ecf9ed48fbcdb35537d70ec9e881aae"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "unreadable_from_dependency",
+    "files": {
+      "module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "module.py",
+    "source_sha256": {
+      "module.py": "4ab8924e461e109c23302090e17e1a2cbb6b78161bcdc5f2317f6f8975264137",
+      "main.py": "e3524f1467e0270ee60a510098ebf2c546c47350b1a44d9ef7394a040eefaf11"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "unsearchable_package",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package fixture.\"\"\"\n",
+      "pkg/module.py": "\"\"\"Dependency fixture.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader fixture.\"\"\"\nfrom pkg.module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "pkg",
+    "source_sha256": {
+      "pkg/__init__.py": "0cf1fe78e6ac7a2a6db62e8df64ed82baaf1847fe2099c802a7b518b1fc9c02a",
+      "pkg/module.py": "4ab8924e461e109c23302090e17e1a2cbb6b78161bcdc5f2317f6f8975264137",
+      "main.py": "5d743ebde61e8ea68020537d05fff45fd69b9813f9e03639119345857a2348e5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "unsearchable_namespace_directory",
+    "files": {
+      "pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.module\nprint(pkg.module.VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "pkg",
+    "source_sha256": {
+      "pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "bf57060b8b5b93cc0062749ca8b5a54a24ae009a55cd28c35b9b93f329a9258e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'module' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'module' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "I1101",
+          "message": "Module 'pkg' has no 'module' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "info",
+          "location": {
+            "line": 3,
+            "column": 6,
+            "end_line": 3,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "unsearchable_nested_package_directory",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "pkg/sub/__init__.py": "\"\"\"Subpackage.\"\"\"\n",
+      "pkg/sub/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg.sub.module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "pkg/sub",
+    "source_sha256": {
+      "pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "pkg/sub/__init__.py": "ed5785ce85a63f883365b2e48030bc9f82c89fa3f6ecac47c75a2ac29809cc05",
+      "pkg/sub/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "dcd0ae8afd625162103bfb5f8706715c84e5adaa97fcba2512cea1f4097627b7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.sub.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg.sub'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.sub.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg.sub'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.sub.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "E0611",
+          "message": "No name 'module' in module 'pkg.sub'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 32
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "unreadable_package_initializer",
+    "files": {
+      "pkg/__init__.py": "\"\"\"Package.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg\nprint(pkg.VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "pkg/__init__.py",
+    "source_sha256": {
+      "pkg/__init__.py": "b4cfd405d6a095bd5de837758e72e9af9dd3de3bd8914503a2912821d084977a",
+      "main.py": "03636e5d27b5e86f8256232745027a335d2c81304abed803b1df67f6d299ed4c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 10
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_original",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg.module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "ecd72176121ce1ec66d4516930240bc8f85e0f688db309e6c62ec597767f0ec0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-000/private-pylint-cache/pylint-crash-2026-10-12-03-04-08.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-000/private-pylint-cache/pylint-crash-2026-10-12-03-04-11.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      3,
+      3,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_import",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nimport pkg.module\nprint(pkg.module)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "20085dbaa8705b4ad428158a020f88f572d6d8990d6c3b3ca684814bed51b420"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-001/private-pylint-cache/pylint-crash-2026-10-12-03-04-08.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-001/private-pylint-cache/pylint-crash-2026-10-12-03-04-11.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      3,
+      3,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_disable_wrong_order",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\n# pylint: disable=wrong-import-order\nfrom pkg.module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "6f7feeb4041786a286d3cfce8fa6b8225f2e34a4a7085e36ad26f5834f41cf59"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-002/private-pylint-cache/pylint-crash-2026-10-12-03-04-08.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-002/private-pylint-cache/pylint-crash-2026-10-12-03-04-11.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      3,
+      3,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_disable_import_checker",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\n# pylint: disable=imports\nfrom pkg.module import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "9f70c712e6e79a95aff0e3632eacea8897635d247e64f67421ce65096995bcfb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-003/private-pylint-cache/pylint-crash-2026-10-12-03-04-09.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-003/private-pylint-cache/pylint-crash-2026-10-12-03-04-12.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_stdlib",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nimport json\nprint(json.dumps(1))\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "f8cd4464f23234f7f5564782c5e03374358a8678a0f7ec1ccfa23611f202ea7c"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_relative",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom .pkg import VALUE\nprint(VALUE)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "5ebbd9ff7d61136e70607d0b0e94dbaa60261252246ac18a96a49d807f0cd709"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0402",
+          "message": "Attempted relative import beyond top-level package",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_local_wins",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg.module import VALUE\nprint(VALUE)\n",
+      "pkg/__init__.py": "\"\"\"Local package.\"\"\"\n",
+      "pkg/module.py": "\"\"\"Local module.\"\"\"\nVALUE = 1\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "ecd72176121ce1ec66d4516930240bc8f85e0f688db309e6c62ec597767f0ec0",
+      "pkg/__init__.py": "78525b7d4db65cf67e1175efa93fd76c505d1968d2a72c64f17823dc56aaae9f",
+      "pkg/module.py": "4682fb5a81b1e6f1a4dbebc15e7ad1983419cd374013ab9a7c62669c5041dd73"
+    },
+    "expected": [
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-006/private-pylint-cache/pylint-crash-2026-10-12-03-04-09.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-006/private-pylint-cache/pylint-crash-2026-10-12-03-04-13.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "incomplete"
+    ]
+  },
+  {
+    "name": "src_permission_type_checking",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom typing import TYPE_CHECKING\nif TYPE_CHECKING:\n    import pkg.module\nprint(TYPE_CHECKING)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "4b57cca42894d873ac2e66c1b52fa6bad741008e65ade16090cffc42053c1f9a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-007/private-pylint-cache/pylint-crash-2026-10-12-03-04-10.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-007/private-pylint-cache/pylint-crash-2026-10-12-03-04-13.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      []
+    ],
+    "reference_exits": [
+      1,
+      1,
+      0
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  },
+  {
+    "name": "src_permission_unused",
+    "files": {
+      "src/pkg/__init__.py": "\"\"\"Package.\"\"\"\n",
+      "src/pkg/module.py": "\"\"\"Dependency.\"\"\"\nVALUE = 1\n",
+      "main.py": "\"\"\"Reader.\"\"\"\nfrom pkg.module import VALUE\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "restricted": "src",
+    "search_roots": [
+      ".",
+      "src"
+    ],
+    "source_sha256": {
+      "src/pkg/__init__.py": "5cc58c46b7ce501cf98e236127603629092da502b29a510a5f19e368b537b0bd",
+      "src/pkg/module.py": "704542c4b328c41654a5afae13b1541b7a0c3dd0ecdc2e942ebd54a7c2ba0b41",
+      "main.py": "c1c1e1bbdcff5c72fa09eea08c920e2dc7f31ace66cb6fa048946e0db9044f0f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python312/case-008/private-pylint-cache/pylint-crash-2026-10-12-03-04-10.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "F0002",
+          "message": "main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. There is a pre-filled template that you can use in '/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/pylint-import-permission-crash-1/original-1/python313/case-008/private-pylint-cache/pylint-crash-2026-10-12-03-04-13.txt'.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "fatal",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0401",
+          "message": "Unable to import 'pkg.module'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "W0611",
+          "message": "Unused VALUE imported from pkg.module",
+          "hint": null,
+          "path": "main.py",
+          "severity": "warning",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      3,
+      3,
+      6
+    ],
+    "expected_completion": [
+      "error",
+      "error",
+      "error"
+    ]
+  }
+]

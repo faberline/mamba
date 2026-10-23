@@ -1,0 +1,586 @@
+[
+  {
+    "name": "cast_missing_result",
+    "files": {
+      "main.py": "from typing import cast\nreveal_type(cast(int))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "28b5e8a3c0ef150d39fce16be1ae34e777dcfc7a22ff5a81a559a80c761282bc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_extra_result",
+    "files": {
+      "main.py": "from typing import cast\nvalue: object = None\nreveal_type(cast(int, value, value))\nwrong: str = cast(int, value, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "485161eaa620bdbe3fb6d24decc84e1cea41004dc886a463f12c9178f1d8e27d"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 36
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_keyword_result",
+    "files": {
+      "main.py": "from typing import cast\nvalue: object = None\nreveal_type(cast(typ=int, val=value))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4445829575dde544cf894a9149f75c83f1e18711eecb750e60917de341fd6fe0"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" must be called with 2 positional arguments",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" must be called with 2 positional arguments",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" must be called with 2 positional arguments",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 36
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_empty_result",
+    "files": {
+      "main.py": "from typing import cast\nreveal_type(cast())\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "2fb6b6477ef66156f9e54c703d4caf4538cd722ad194299bc33e1f8aa731ee6c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "All overload variants of \"cast\" require at least one argument",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "All overload variants of \"cast\" require at least one argument",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "All overload variants of \"cast\" require at least one argument",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any\nRevealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_literal_redundant",
+    "files": {
+      "main.py": "from typing import Literal, cast\nvalue: Literal[1] = 1\ncast(Literal[1], value)\nreveal_type(cast(Literal[1], 1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ed1764d63a6681d4e6a2e1decb0db3cc830f74b10e91165b99f58f7ff986c19e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": "Revealed type is \"Literal[1]\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": "Revealed type is \"Literal[1]\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 13
+          }
+        }
+      ],
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"Literal[1]\"",
+          "hint": "Revealed type is \"Literal[1]\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 13
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

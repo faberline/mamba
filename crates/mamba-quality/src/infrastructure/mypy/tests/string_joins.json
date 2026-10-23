@@ -1,0 +1,600 @@
+[
+  {
+    "name": "som_compact_names_original_source",
+    "files": {
+      "src/som_core/compact_names.py": "\"\"\"Stable names for the new compact library's internal Python symbols.\"\"\"\n\nNAMES = {\n    \"BoundedInput\": \"_Bounded\",\n    \"PartialInput\": \"_Partial\",\n    \"ManagedRead\": \"_ManagedRead\",\n    \"BatchCreate\": \"_BatchCreate\",\n    \"BatchRead\": \"_BatchRead\",\n    \"FlowStore\": \"_Store\",\n    \"FlowContext\": \"_Context\",\n    \"RunRecord\": \"_Run\",\n    \"CrudRequest\": \"_RequestData\",\n    \"ResourceSpec\": \"_Resource\",\n    \"JsonObject\": \"_JsonMap\",\n    \"JsonValue\": \"_Json\",\n    \"ParentInput\": \"_ParentInput\",\n    \"ParentChanges\": \"_ParentChanges\",\n    \"ParentView\": \"_ParentView\",\n    \"ChildInput\": \"_ChildInput\",\n    \"ChildChanges\": \"_ChildChanges\",\n    \"ChildView\": \"_ChildView\",\n    \"flow_object_get\": \"object_get\",\n    \"flow_object_put\": \"object_put\",\n    \"flow_object_reverse\": \"object_reverse\",\n    \"flow_object_version\": \"object_version\",\n}\n\n\ndef source_names(source: str) -> str:\n    \"\"\"Rename only Python identifiers, never strings or user names.\"\"\"\n    result = []\n    index = 0\n    while index < len(source):\n        start = index\n        char = source[index]\n        if char == \"#\":\n            stop = source.find(\"\\n\", index)\n            index = len(source) if stop < 0 else stop + 1\n        elif char in {\"'\", '\"'}:\n            marker = char * (3 if source[index:index + 3] == char * 3 else 1)\n            index += len(marker)\n            while index < len(source):\n                if source[index] == \"\\\\\":\n                    index += 2\n                elif source.startswith(marker, index):\n                    index += len(marker)\n                    break\n                else:\n                    index += 1\n        elif char.isascii() and (char.isalpha() or char == \"_\"):\n            index += 1\n            while index < len(source) and source[index].isascii() and (\n                source[index].isalnum() or source[index] == \"_\"\n            ):\n                index += 1\n            result.append(NAMES.get(source[start:index], source[start:index]))\n            continue\n        else:\n            index += 1\n        result.append(source[start:index])\n    return \"\".join(result)\n\n\ndef rewrite_calls(source: str, replacements: dict[str, str]) -> str:\n    \"\"\"Change fixed call sites, leaving data literals and comments intact.\"\"\"\n    result = []\n    index = 0\n    while index < len(source):\n        start = index\n        char = source[index]\n        if char == \"#\":\n            stop = source.find(\"\\n\", index)\n            index = len(source) if stop < 0 else stop + 1\n        elif char in {\"'\", '\"'}:\n            marker = char * (3 if source[index:index + 3] == char * 3 else 1)\n            index += len(marker)\n            while index < len(source):\n                if source[index] == \"\\\\\":\n                    index += 2\n                elif source.startswith(marker, index):\n                    index += len(marker)\n                    break\n                else:\n                    index += 1\n        else:\n            match = next((key for key in replacements if source.startswith(key, index)), None)\n            boundary = index == 0 or not (source[index - 1].isalnum() or source[index - 1] in \"_.\")\n            if match is not None and boundary:\n                result.append(replacements[match])\n                index += len(match)\n                continue\n            index += 1\n        result.append(source[start:index])\n    return \"\".join(result)\n"
+    },
+    "source_sha256": {
+      "src/som_core/compact_names.py": "5131a4d92b95f78e9a89c00d0508b7189be11b02c4e9afbb46ed888a2a601928"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_parameter_list",
+    "files": {
+      "main.py": "def combine(sep: str, items: list[str]) -> str:\n    return sep.join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "bd35453254e318bf5e3a674ca681295498c5c1560062cc57d12db90fc9b287fc"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_bad_items",
+    "files": {
+      "main.py": "def combine(items: list[int]) -> str:\n    return \"-\".join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "58f129e3eb2c233126557d7213493c7f7cf5111ab233076c76637ed1cf048d03"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"list[int]\"; expected \"Iterable[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"list[int]\"; expected \"Iterable[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"list[int]\"; expected \"Iterable[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_string_iterable",
+    "files": {
+      "main.py": "def combine(value: str) -> str:\n    return \"-\".join(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7633a142291f7ab3094449948f5c4942aad32807ef190341bec5ef2b1b785230"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_tuple_items",
+    "files": {
+      "main.py": "def combine(items: tuple[str, str]) -> str:\n    return \"-\".join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "371295d84c15099242bb22a6f1a7955a93ac12b697dfe399215a528120cc90c5"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_missing_argument",
+    "files": {
+      "main.py": "def combine() -> str:\n    return \"-\".join()\n"
+    },
+    "source_sha256": {
+      "main.py": "4e64fa9b96ad1c0cde80ed1396b717ed8770bc2c67783d934aecd1fcfb947578"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_extra_argument",
+    "files": {
+      "main.py": "def combine() -> str:\n    return \"-\".join([\"a\"], [\"b\"])\n"
+    },
+    "source_sha256": {
+      "main.py": "79ab5a833f4e08d4cc1356f3f2c4fd0145438f97cbdff390874d7ecc56af4d74"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too many arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 33
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_keyword_argument",
+    "files": {
+      "main.py": "def combine() -> str:\n    return \"-\".join(iterable=[\"a\"])\n"
+    },
+    "source_sha256": {
+      "main.py": "ad2d7f38248d0fbb2e79e06a6416350e3cd920634663412e0e837d1ac5d23978"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"iterable\" for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"iterable\" for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"iterable\" for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_unbound_good",
+    "files": {
+      "main.py": "def combine(items: list[str]) -> str:\n    return str.join(\"-\", items)\n"
+    },
+    "source_sha256": {
+      "main.py": "0128f9ee51ecd02877f20211628b1c9181c441f9a6c364aa29edef7801424d0e"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_unbound_bad_receiver",
+    "files": {
+      "main.py": "def combine(items: list[str]) -> str:\n    return str.join(1, items)\n"
+    },
+    "source_sha256": {
+      "main.py": "aa63b8e33406aa1c7fb36b5855ed35f304a4c2ad4cb42e1df0f6ce7cfd9afb9b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 to \"join\" of \"str\" has incompatible type \"int\"; expected \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 21,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_unbound_missing",
+    "files": {
+      "main.py": "def combine() -> str:\n    return str.join(\"-\")\n"
+    },
+    "source_sha256": {
+      "main.py": "ed33cebf3d1546d4dff7b9bb50e50ff4cfb918bbb32d111741cb1bd94033ec0b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Too few arguments for \"join\" of \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_empty_items",
+    "files": {
+      "main.py": "def combine() -> str:\n    return \"-\".join([])\n"
+    },
+    "source_sha256": {
+      "main.py": "e042b06f73ad7ae1b513a15da054ec96e06cb08f59db0a9e104729edb547cec9"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_generator",
+    "files": {
+      "main.py": "def combine(items: list[str]) -> str:\n    return \"-\".join(value for value in items)\n"
+    },
+    "source_sha256": {
+      "main.py": "0daa37cb1d4097984b002333f6de255e77b1d709b53c9dca34e6a6b3833057a0"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_any_items",
+    "files": {
+      "main.py": "from typing import Any\ndef combine(items: Any) -> str:\n    return \"-\".join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "51da064c929ebbeb13b10e85d79db22d6de90b749a00563779dec9cd23258b79"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "join_incorrect_return",
+    "files": {
+      "main.py": "def combine(items: list[str]) -> int:\n    return \"-\".join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "b733fb7187e58ef30e7070cb792e6b1a713cd4ef06a7b9cc5624573e627565c9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str\", expected \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str\", expected \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "return-value",
+          "message": "Incompatible return value type (got \"str\", expected \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 12,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "join_local_method",
+    "files": {
+      "main.py": "class Separator:\n    def join(self, items: list[int]) -> int:\n        return len(items)\ndef combine(items: list[int]) -> int:\n    return Separator().join(items)\n"
+    },
+    "source_sha256": {
+      "main.py": "83af7bbde8053cc5ffd988b0b9fd45367f8cae4be3a93fb7b0cf420f3cced331"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

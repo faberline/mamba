@@ -1,0 +1,591 @@
+[
+  {
+    "name": "name_upper_both",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\n\n\n\nitem.BadAttr = 1\nprint(item.BadAttr)\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "c463c12b0989b87af926fb117d74182b4a84b5aa2cbdc2bb58a566f1e4d80a5c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 12
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "name_upper_main_only",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\n\n\n\nitem.BadAttr = 1\nprint(item.BadAttr)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "c463c12b0989b87af926fb117d74182b4a84b5aa2cbdc2bb58a566f1e4d80a5c"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "name_unicode_both",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\n\n\n\nitem.变量 = 1\nprint(item.变量)\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "00e47871b9c9e56fc8eab6848cc0658e7d5b0b4110d86a4ca49a8c82f24a8067"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C2401",
+          "message": "Attribute name \"变量\" contains a non-ASCII character, consider renaming it.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C2401",
+          "message": "Attribute name \"变量\" contains a non-ASCII character, consider renaming it.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C2401",
+          "message": "Attribute name \"变量\" contains a non-ASCII character, consider renaming it.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 7,
+            "column": 0,
+            "end_line": 7,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "name_unicode_main_only",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\n\n\n\nitem.变量 = 1\nprint(item.变量)\n"
+    },
+    "inputs": [
+      "main.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "00e47871b9c9e56fc8eab6848cc0658e7d5b0b4110d86a4ca49a8c82f24a8067"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "first_local_then_external",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    def __init__(self):\n        self.BadAttr = 1\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.BadAttr = 2\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "a53a3c3d6d27b2aec98de12a4f3f6f4fbc15329ae4d4597b985964cff00df869",
+      "main.py": "911f8f881899885191a2aa462e8df7ee9b7391d5132313c868f80754cb095255"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "C0103",
+          "message": "Attribute name \"BadAttr\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 8,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "name": "external_twenty_two_attributes",
+    "files": {
+      "models.py": "\"\"\"Model fixture.\"\"\"\nclass Model:\n    pass\n",
+      "main.py": "\"\"\"Instance fixture.\"\"\"\nfrom models import Model\nitem = Model()\nitem.field_0 = 0\nitem.field_1 = 1\nitem.field_2 = 2\nitem.field_3 = 3\nitem.field_4 = 4\nitem.field_5 = 5\nitem.field_6 = 6\nitem.field_7 = 7\nitem.field_8 = 8\nitem.field_9 = 9\nitem.field_10 = 10\nitem.field_11 = 11\nitem.field_12 = 12\nitem.field_13 = 13\nitem.field_14 = 14\nitem.field_15 = 15\nitem.field_16 = 16\nitem.field_17 = 17\nitem.field_18 = 18\nitem.field_19 = 19\nitem.field_20 = 20\nitem.field_21 = 21\n"
+    },
+    "inputs": [
+      "main.py",
+      "models.py"
+    ],
+    "source_sha256": {
+      "models.py": "da91c4b4fb6be800ccd3c2a1531a40ea6e2cf984c9ffaae645f3b50536b5bacf",
+      "main.py": "d3c4acb862ae950e70089c4259236970323f371ebdc7a09a5bbdaa795bf1ed02"
+    },
+    "expected": [
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0115",
+          "message": "Missing class docstring",
+          "hint": null,
+          "path": "models.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "R0903",
+          "message": "Too few public methods (0/2)",
+          "hint": null,
+          "path": "models.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 11
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      24,
+      24,
+      24
+    ]
+  }
+]

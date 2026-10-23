@@ -1,0 +1,407 @@
+[
+  {
+    "target": "3.12",
+    "case": "typed-result-controls",
+    "source_sha256": "f0e65435bdbad2caca17583909e22fae121bb0a6892efc0178207dab1384058b",
+    "json_original_exit": 1,
+    "raw_json_sha256": "5e36812dd131fff61a9502fb4dd8eeccfedd2689086fe2b7481a0c62a6ab2db7",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"list[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f4dba0f1e79915a34f5a95a7fcdf33e7c7bda0422ab209b29539182d9b552d76"
+  },
+  {
+    "target": "3.12",
+    "case": "assignment-propagation",
+    "source_sha256": "f878311ab6e43c4273a9c1da05649927e62b564ff08fff7a5e398fde57767c1f",
+    "json_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 1,
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d"
+  },
+  {
+    "target": "3.12",
+    "case": "generic-argument-propagation",
+    "source_sha256": "15b6338e577ece6cdb94d78c49225de655846842ba8b11033974c55ee1401bee",
+    "json_original_exit": 1,
+    "raw_json_sha256": "1ff75630d1f3c7e95d670f4a62cb534494fc6fe5ed4502c4a6360f829455ba14",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 9,
+          "column": 17,
+          "end_line": 9,
+          "end_column": 45
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f2d1b2a16c947376f45b73b7ed44157b45352ccf7afdf6122ed8e3ff1479712f"
+  },
+  {
+    "target": "3.12",
+    "case": "dependent-generators-and-isolation",
+    "source_sha256": "15be053b883f2e32e43c4315565db5f35bbf614c5667425ca4a0d8aec6f83ffb",
+    "json_original_exit": 1,
+    "raw_json_sha256": "7b5bec15990e5f7f8879032632e88a05ec13f8f0127014d48f4f2ca78348ca82",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int | str]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"str\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 20
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "fb9f4304bea1ca600fe87a790110be655e567b9ac1d985c46f0d3daa072607b0"
+  },
+  {
+    "target": "3.13",
+    "case": "typed-result-controls",
+    "source_sha256": "f0e65435bdbad2caca17583909e22fae121bb0a6892efc0178207dab1384058b",
+    "json_original_exit": 1,
+    "raw_json_sha256": "5e36812dd131fff61a9502fb4dd8eeccfedd2689086fe2b7481a0c62a6ab2db7",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"list[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f4dba0f1e79915a34f5a95a7fcdf33e7c7bda0422ab209b29539182d9b552d76"
+  },
+  {
+    "target": "3.13",
+    "case": "assignment-propagation",
+    "source_sha256": "f878311ab6e43c4273a9c1da05649927e62b564ff08fff7a5e398fde57767c1f",
+    "json_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 1,
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d"
+  },
+  {
+    "target": "3.13",
+    "case": "generic-argument-propagation",
+    "source_sha256": "15b6338e577ece6cdb94d78c49225de655846842ba8b11033974c55ee1401bee",
+    "json_original_exit": 1,
+    "raw_json_sha256": "1ff75630d1f3c7e95d670f4a62cb534494fc6fe5ed4502c4a6360f829455ba14",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 9,
+          "column": 17,
+          "end_line": 9,
+          "end_column": 45
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f2d1b2a16c947376f45b73b7ed44157b45352ccf7afdf6122ed8e3ff1479712f"
+  },
+  {
+    "target": "3.13",
+    "case": "dependent-generators-and-isolation",
+    "source_sha256": "15be053b883f2e32e43c4315565db5f35bbf614c5667425ca4a0d8aec6f83ffb",
+    "json_original_exit": 1,
+    "raw_json_sha256": "7b5bec15990e5f7f8879032632e88a05ec13f8f0127014d48f4f2ca78348ca82",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int | str]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"str\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 20
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "fb9f4304bea1ca600fe87a790110be655e567b9ac1d985c46f0d3daa072607b0"
+  },
+  {
+    "target": "3.14",
+    "case": "typed-result-controls",
+    "source_sha256": "f0e65435bdbad2caca17583909e22fae121bb0a6892efc0178207dab1384058b",
+    "json_original_exit": 1,
+    "raw_json_sha256": "5e36812dd131fff61a9502fb4dd8eeccfedd2689086fe2b7481a0c62a6ab2db7",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"list[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f4dba0f1e79915a34f5a95a7fcdf33e7c7bda0422ab209b29539182d9b552d76"
+  },
+  {
+    "target": "3.14",
+    "case": "assignment-propagation",
+    "source_sha256": "f878311ab6e43c4273a9c1da05649927e62b564ff08fff7a5e398fde57767c1f",
+    "json_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ],
+    "text_original_exit": 1,
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d"
+  },
+  {
+    "target": "3.14",
+    "case": "generic-argument-propagation",
+    "source_sha256": "15b6338e577ece6cdb94d78c49225de655846842ba8b11033974c55ee1401bee",
+    "json_original_exit": 1,
+    "raw_json_sha256": "1ff75630d1f3c7e95d670f4a62cb534494fc6fe5ed4502c4a6360f829455ba14",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 9,
+          "column": 17,
+          "end_line": 9,
+          "end_column": 45
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "f2d1b2a16c947376f45b73b7ed44157b45352ccf7afdf6122ed8e3ff1479712f"
+  },
+  {
+    "target": "3.14",
+    "case": "dependent-generators-and-isolation",
+    "source_sha256": "15be053b883f2e32e43c4315565db5f35bbf614c5667425ca4a0d8aec6f83ffb",
+    "json_original_exit": 1,
+    "raw_json_sha256": "7b5bec15990e5f7f8879032632e88a05ec13f8f0127014d48f4f2ca78348ca82",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int | str]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 6,
+          "column": 17,
+          "end_line": 6,
+          "end_column": 22
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"str\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 7,
+          "column": 17,
+          "end_line": 7,
+          "end_column": 20
+        }
+      }
+    ],
+    "text_original_exit": 0,
+    "raw_text_sha256": "fb9f4304bea1ca600fe87a790110be655e567b9ac1d985c46f0d3daa072607b0"
+  }
+]

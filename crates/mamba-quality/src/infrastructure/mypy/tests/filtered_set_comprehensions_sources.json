@@ -1,0 +1,17 @@
+{
+  "schema": "mamba.quality.filtered-setcomp-sources.v1",
+  "inputs": [
+    {
+      "name": "typed-filter-result",
+      "source": "from typing import Iterable, reveal_type\n\ndef inspect(values: Iterable[int]) -> None:\n    reveal_type({x for x in values})\n    reveal_type({x for x in values if True})\n",
+      "bytes": 168,
+      "sha256": "fbe11e3545edb740dd006753b1cc671db3b5c773a432ad8a1539780c96bf463f"
+    },
+    {
+      "name": "typed-filter-assignment",
+      "source": "from typing import Iterable\n\ndef inspect(values: Iterable[int]) -> None:\n    good: set[int] = {x for x in values if True}\n    bad: set[str] = {x for x in values if True}\n",
+      "bytes": 170,
+      "sha256": "2acca83d0d5ae821f10366bf5ddd8ef5768ec1298a4f13cebeadbb27607ed37c"
+    }
+  ]
+}

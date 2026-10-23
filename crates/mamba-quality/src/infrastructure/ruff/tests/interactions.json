@@ -1,0 +1,2808 @@
+{
+  "sources": {
+    "b016-negative.py": {
+      "source_hex": "696d706f72742072650a72616973652056616c75654572726f7228227822290a72652e73706c6974282278222c202279222c206d617873706c69743d31290a",
+      "source_sha256": "71dc9b3bafb127e1ff814aeb15f528d34ee33e6781826d48288087badd1965dd"
+    },
+    "b016-positive.py": {
+      "source_hex": "696d706f72742072650a726169736520226c69746572616c220a72652e73706c6974282278222c202279222c2031290a",
+      "source_sha256": "2499dc5e41ab364a44c2babf7d741d47729b62b890d152ecf1e42381c62478d0"
+    },
+    "b022-negative.py": {
+      "source_hex": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328457863657074696f6e293a0a20202020706173730a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "05799fe10c0209378cf62500d1295e5298f2d8dd47f70783f583e404f61edcc1"
+    },
+    "b022-positive.py": {
+      "source_hex": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328293a0a20202020706173730a726169736520226c69746572616c220a",
+      "source_sha256": "509df950d83b38ca9804c0a5b3190889752cbd9689e79f4f27a58564e8d20913"
+    },
+    "b032-negative.py": {
+      "source_hex": "61203d207b7d0a615b2262225d203d20310a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "3a709eb597c0aa7ad5f1e48fabdeff592e1ebce15400b4e5ab4c344e614fd88a"
+    },
+    "b032-positive.py": {
+      "source_hex": "61203d207b7d0a615b2262225d3a20310a726169736520226c69746572616c220a",
+      "source_sha256": "da419bc8c79cbf661a97313d9f5227581d9bb761a26654b75bb7d6f14d4ace9d"
+    },
+    "b033-negative.py": {
+      "source_hex": "76616c756573203d207b312c20327d0a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "8a493141cd6338a7d6b2db29aa086fb864f665ff40b7575768a1c40bd67eb510"
+    },
+    "b033-positive.py": {
+      "source_hex": "76616c756573203d207b312c20322c20317d0a726169736520226c69746572616c220a",
+      "source_sha256": "aaad8b2a913c71e38a918730132151ada3e36063b02c81efe20dbbee48589f00"
+    },
+    "b034-negative.py": {
+      "source_hex": "696d706f72742072650a72652e73706c6974282278222c202279222c206d617873706c69743d31290a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "8799223c39c9414646e247765ed7bdf383b356000597872c4177961662d5c026"
+    },
+    "b034-positive.py": {
+      "source_hex": "696d706f72742072650a72652e73706c6974282278222c202279222c2031290a726169736520226c69746572616c220a",
+      "source_sha256": "a8878ba0e1b3fec2912ae9ebaae8bd9f5359e019a6f6ad946abf36b29b8f8e73"
+    },
+    "e743-negative.py": {
+      "source_hex": "646566206c6f6e675f6e616d652876616c7565293a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "da2f7dc36caebbf314aac0d2defe0186ecf8e57f65cfb4103e03d5f807a6e904"
+    },
+    "e743-positive.py": {
+      "source_hex": "646566206c2876616c7565293a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a",
+      "source_sha256": "7474e25333b6490ff97b6338e790318a76ac8b37ca3cc7feb4829890ff3ac374"
+    },
+    "e902-companion.py": {
+      "source_hex": "726169736520226c69746572616c220a",
+      "source_sha256": "de22cdc3b28ff85026a5e2223b9e5ba771c26b0655a0b3eac05adf4c0ba9a7dd"
+    },
+    "f622-negative.py": {
+      "source_hex": "6c6566742c2072696768742c207461696c203d2028312c20322c2033290a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "e8ab92811fad3c000c54d1c3e5fcf696fb2ea4c96692f277daee67f9b2cf5225"
+    },
+    "f622-positive.py": {
+      "source_hex": "2a6c6566742c202a72696768742c207461696c203d2028312c20322c2033290a726169736520226c69746572616c220a",
+      "source_sha256": "c07a306f1b2412aa94a7d182dee04a92f2259e6f6595badc5cccb6a2f3308ad4"
+    },
+    "f631-negative.py": {
+      "source_hex": "636f6e646974696f6e203d20547275650a61737365727420636f6e646974696f6e0a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "20ab3e0bd85b1a8353dd0a577ecd1adde62c01cf5de801bea9fa1dcd40749ea2"
+    },
+    "f631-positive.py": {
+      "source_hex": "636f6e646974696f6e203d20547275650a6173736572742028636f6e646974696f6e2c290a726169736520226c69746572616c220a",
+      "source_sha256": "15d6d1321437b7fc4125d3309b2887a0df425be022dc314e896a82a26d3d4c11"
+    },
+    "sim112-negative.py": {
+      "source_hex": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b2255505045525f43415345225d0a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "696da84351e298e5bef7a5d78db1614aa5935b50011ebd7cdcd97451cd553af0"
+    },
+    "sim112-positive.py": {
+      "source_hex": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b226c6f7765725f63617365225d0a726169736520226c69746572616c220a",
+      "source_sha256": "ba81fc023cf2a7aa096798bb51c704113e3eaaff2ff7ce3ae1f47bf48f38b5aa"
+    },
+    "up005-negative.py": {
+      "source_hex": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "c082c78153a5020a4979b874434ec46cf5b7f583f863335167e9a2c33225aea3"
+    },
+    "up005-positive.py": {
+      "source_hex": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c7328312c2031290a726169736520226c69746572616c220a",
+      "source_sha256": "2f8c373cce8c1e9221f372793b30533a229ba9993b1c0eb38d9cf7c77ed4f6e4"
+    },
+    "up009-negative.py": {
+      "source_hex": "72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "f41b83569412b0df6c0a15a442524e32832c7dce46f5855c61f76912b173b4a4"
+    },
+    "up009-positive.py": {
+      "source_hex": "23202d2a2d20636f64696e673a207574662d38202d2a2d0a726169736520226c69746572616c220a",
+      "source_sha256": "409a11364cc16f88a40c3b81b50dbaabcee062c4d7e13c861946602365b3beaf"
+    },
+    "up021-negative.py": {
+      "source_hex": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "5f7c0bfdedeae94eed4e53880f15e99ac3f334b2985b43a35713d8c40462f968"
+    },
+    "up021-positive.py": {
+      "source_hex": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20756e6976657273616c5f6e65776c696e65733d54727565290a726169736520226c69746572616c220a",
+      "source_sha256": "a7379f9efaa06c7d73a64547e62b36c6f2a32b9d77321b30fe0c283190463574"
+    },
+    "up042-negative.py": {
+      "source_hex": "696d706f727420656e756d0a636c617373204528656e756d2e537472456e756d293a0a2020202041203d202261220a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "22a6eed32b91374e1dfc7df58d918c8351bd17ca07f4846e5a5eb9c36f356f3a"
+    },
+    "up042-positive.py": {
+      "source_hex": "696d706f727420656e756d0a636c6173732045287374722c20656e756d2e456e756d293a0a2020202041203d202261220a726169736520226c69746572616c220a",
+      "source_sha256": "f7e5af7bbbabde80c58d37d02789e296fbea921159704e27650aaf32f99cae53"
+    },
+    "up047-negative.py": {
+      "source_hex": "646566206964656e746974795b545d2876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+      "source_sha256": "38adb31436934600d5c564c347db563e164833b1e655014a66904f11c491fead"
+    },
+    "up047-positive.py": {
+      "source_hex": "66726f6d20747970696e6720696d706f727420547970655661720a54203d205479706556617228225422290a646566206964656e746974792876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a",
+      "source_sha256": "d6163d932a8125bc54c6255b4e6e017c21ac8eb8fa6e4864efd56d0ec60cfb73"
+    }
+  },
+  "versions": [
+    {
+      "python": "3.12",
+      "before": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B033",
+          "message": "Sets should not contain duplicate item `1`",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 18
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove duplicate item",
+            "edits": [
+              {
+                "start": 14,
+                "end": 17,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP005",
+          "message": "`assertEquals` is deprecated, use `assertEqual`",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 26
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace `assertEqual` with `assertEquals`",
+            "edits": [
+              {
+                "start": 81,
+                "end": 98,
+                "replacement": "self.assertEqual"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP009",
+          "message": "UTF-8 encoding declaration is unnecessary",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 24
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove unnecessary coding comment",
+            "edits": [
+              {
+                "start": 0,
+                "end": 24,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP021",
+          "message": "`universal_newlines` is deprecated, use `text`",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 41
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace with `text` keyword argument",
+            "edits": [
+              {
+                "start": 40,
+                "end": 58,
+                "replacement": "text"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "after": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "before_exit": 1,
+      "fix_exit": 1,
+      "after_exit": 1,
+      "repeat_exit": 1,
+      "fixed_hex": {
+        "b016-negative.py": "696d706f72742072650a72616973652056616c75654572726f7228227822290a72652e73706c6974282278222c202279222c206d617873706c69743d31290a",
+        "b016-positive.py": "696d706f72742072650a726169736520226c69746572616c220a72652e73706c6974282278222c202279222c2031290a",
+        "b022-negative.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328457863657074696f6e293a0a20202020706173730a72616973652056616c75654572726f7228227822290a",
+        "b022-positive.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328293a0a20202020706173730a726169736520226c69746572616c220a",
+        "b032-negative.py": "61203d207b7d0a615b2262225d203d20310a72616973652056616c75654572726f7228227822290a",
+        "b032-positive.py": "61203d207b7d0a615b2262225d3a20310a726169736520226c69746572616c220a",
+        "b033-negative.py": "76616c756573203d207b312c20327d0a72616973652056616c75654572726f7228227822290a",
+        "b033-positive.py": "76616c756573203d207b312c20327d0a726169736520226c69746572616c220a",
+        "b034-negative.py": "696d706f72742072650a72652e73706c6974282278222c202279222c206d617873706c69743d31290a72616973652056616c75654572726f7228227822290a",
+        "b034-positive.py": "696d706f72742072650a72652e73706c6974282278222c202279222c2031290a726169736520226c69746572616c220a",
+        "e743-negative.py": "646566206c6f6e675f6e616d652876616c7565293a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "e743-positive.py": "646566206c2876616c7565293a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a",
+        "e902-companion.py": "726169736520226c69746572616c220a",
+        "f622-negative.py": "6c6566742c2072696768742c207461696c203d2028312c20322c2033290a72616973652056616c75654572726f7228227822290a",
+        "f622-positive.py": "2a6c6566742c202a72696768742c207461696c203d2028312c20322c2033290a726169736520226c69746572616c220a",
+        "f631-negative.py": "636f6e646974696f6e203d20547275650a61737365727420636f6e646974696f6e0a72616973652056616c75654572726f7228227822290a",
+        "f631-positive.py": "636f6e646974696f6e203d20547275650a6173736572742028636f6e646974696f6e2c290a726169736520226c69746572616c220a",
+        "sim112-negative.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b2255505045525f43415345225d0a72616973652056616c75654572726f7228227822290a",
+        "sim112-positive.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b226c6f7765725f63617365225d0a726169736520226c69746572616c220a",
+        "up005-negative.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a72616973652056616c75654572726f7228227822290a",
+        "up005-positive.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a726169736520226c69746572616c220a",
+        "up009-negative.py": "72616973652056616c75654572726f7228227822290a",
+        "up009-positive.py": "726169736520226c69746572616c220a",
+        "up021-negative.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a72616973652056616c75654572726f7228227822290a",
+        "up021-positive.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a726169736520226c69746572616c220a",
+        "up042-negative.py": "696d706f727420656e756d0a636c617373204528656e756d2e537472456e756d293a0a2020202041203d202261220a72616973652056616c75654572726f7228227822290a",
+        "up042-positive.py": "696d706f727420656e756d0a636c6173732045287374722c20656e756d2e456e756d293a0a2020202041203d202261220a726169736520226c69746572616c220a",
+        "up047-negative.py": "646566206964656e746974795b545d2876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "up047-positive.py": "66726f6d20747970696e6720696d706f727420547970655661720a54203d205479706556617228225422290a646566206964656e746974792876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a"
+      },
+      "same_file_rule_controls": [
+        "B016",
+        "B022",
+        "B032",
+        "B033",
+        "B034",
+        "SIM112",
+        "E743",
+        "F622",
+        "F631",
+        "UP005",
+        "UP009",
+        "UP021",
+        "UP042",
+        "UP047"
+      ],
+      "stable": true
+    },
+    {
+      "python": "3.13",
+      "before": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B033",
+          "message": "Sets should not contain duplicate item `1`",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 18
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove duplicate item",
+            "edits": [
+              {
+                "start": 14,
+                "end": 17,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP005",
+          "message": "`assertEquals` is deprecated, use `assertEqual`",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 26
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace `assertEqual` with `assertEquals`",
+            "edits": [
+              {
+                "start": 81,
+                "end": 98,
+                "replacement": "self.assertEqual"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP009",
+          "message": "UTF-8 encoding declaration is unnecessary",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 24
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove unnecessary coding comment",
+            "edits": [
+              {
+                "start": 0,
+                "end": 24,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP021",
+          "message": "`universal_newlines` is deprecated, use `text`",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 41
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace with `text` keyword argument",
+            "edits": [
+              {
+                "start": 40,
+                "end": 58,
+                "replacement": "text"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "after": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "before_exit": 1,
+      "fix_exit": 1,
+      "after_exit": 1,
+      "repeat_exit": 1,
+      "fixed_hex": {
+        "b016-negative.py": "696d706f72742072650a72616973652056616c75654572726f7228227822290a72652e73706c6974282278222c202279222c206d617873706c69743d31290a",
+        "b016-positive.py": "696d706f72742072650a726169736520226c69746572616c220a72652e73706c6974282278222c202279222c2031290a",
+        "b022-negative.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328457863657074696f6e293a0a20202020706173730a72616973652056616c75654572726f7228227822290a",
+        "b022-positive.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328293a0a20202020706173730a726169736520226c69746572616c220a",
+        "b032-negative.py": "61203d207b7d0a615b2262225d203d20310a72616973652056616c75654572726f7228227822290a",
+        "b032-positive.py": "61203d207b7d0a615b2262225d3a20310a726169736520226c69746572616c220a",
+        "b033-negative.py": "76616c756573203d207b312c20327d0a72616973652056616c75654572726f7228227822290a",
+        "b033-positive.py": "76616c756573203d207b312c20327d0a726169736520226c69746572616c220a",
+        "b034-negative.py": "696d706f72742072650a72652e73706c6974282278222c202279222c206d617873706c69743d31290a72616973652056616c75654572726f7228227822290a",
+        "b034-positive.py": "696d706f72742072650a72652e73706c6974282278222c202279222c2031290a726169736520226c69746572616c220a",
+        "e743-negative.py": "646566206c6f6e675f6e616d652876616c7565293a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "e743-positive.py": "646566206c2876616c7565293a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a",
+        "e902-companion.py": "726169736520226c69746572616c220a",
+        "f622-negative.py": "6c6566742c2072696768742c207461696c203d2028312c20322c2033290a72616973652056616c75654572726f7228227822290a",
+        "f622-positive.py": "2a6c6566742c202a72696768742c207461696c203d2028312c20322c2033290a726169736520226c69746572616c220a",
+        "f631-negative.py": "636f6e646974696f6e203d20547275650a61737365727420636f6e646974696f6e0a72616973652056616c75654572726f7228227822290a",
+        "f631-positive.py": "636f6e646974696f6e203d20547275650a6173736572742028636f6e646974696f6e2c290a726169736520226c69746572616c220a",
+        "sim112-negative.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b2255505045525f43415345225d0a72616973652056616c75654572726f7228227822290a",
+        "sim112-positive.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b226c6f7765725f63617365225d0a726169736520226c69746572616c220a",
+        "up005-negative.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a72616973652056616c75654572726f7228227822290a",
+        "up005-positive.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a726169736520226c69746572616c220a",
+        "up009-negative.py": "72616973652056616c75654572726f7228227822290a",
+        "up009-positive.py": "726169736520226c69746572616c220a",
+        "up021-negative.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a72616973652056616c75654572726f7228227822290a",
+        "up021-positive.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a726169736520226c69746572616c220a",
+        "up042-negative.py": "696d706f727420656e756d0a636c617373204528656e756d2e537472456e756d293a0a2020202041203d202261220a72616973652056616c75654572726f7228227822290a",
+        "up042-positive.py": "696d706f727420656e756d0a636c6173732045287374722c20656e756d2e456e756d293a0a2020202041203d202261220a726169736520226c69746572616c220a",
+        "up047-negative.py": "646566206964656e746974795b545d2876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "up047-positive.py": "66726f6d20747970696e6720696d706f727420547970655661720a54203d205479706556617228225422290a646566206964656e746974792876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a"
+      },
+      "same_file_rule_controls": [
+        "B016",
+        "B022",
+        "B032",
+        "B033",
+        "B034",
+        "SIM112",
+        "E743",
+        "F622",
+        "F631",
+        "UP005",
+        "UP009",
+        "UP021",
+        "UP042",
+        "UP047"
+      ],
+      "stable": true
+    },
+    {
+      "python": "3.14",
+      "before": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B033",
+          "message": "Sets should not contain duplicate item `1`",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 17,
+            "end_line": 1,
+            "end_column": 18
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove duplicate item",
+            "edits": [
+              {
+                "start": 14,
+                "end": 17,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP005",
+          "message": "`assertEquals` is deprecated, use `assertEqual`",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 9,
+            "end_line": 4,
+            "end_column": 26
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace `assertEqual` with `assertEquals`",
+            "edits": [
+              {
+                "start": 81,
+                "end": 98,
+                "replacement": "self.assertEqual"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP009",
+          "message": "UTF-8 encoding declaration is unnecessary",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 24
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Remove unnecessary coding comment",
+            "edits": [
+              {
+                "start": 0,
+                "end": 24,
+                "replacement": ""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP021",
+          "message": "`universal_newlines` is deprecated, use `text`",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 23,
+            "end_line": 2,
+            "end_column": 41
+          },
+          "fix": {
+            "applicability": "safe",
+            "message": "Replace with `text` keyword argument",
+            "edits": [
+              {
+                "start": 40,
+                "end": 58,
+                "replacement": "text"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "after": [
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b016-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B022",
+          "message": "No arguments passed to `contextlib.suppress`. No exceptions will be suppressed and therefore this context manager is redundant",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 6,
+            "end_line": 2,
+            "end_column": 27
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b022-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B032",
+          "message": "Possible unintentional type annotation (using `:`). Did you mean to assign (using `=`)?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 10
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b032-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b033-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B034",
+          "message": "`re.split` should pass `maxsplit` and `flags` as keyword arguments to avoid confusion due to unintuitive argument positions",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 22
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "b034-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "E743",
+          "message": "Ambiguous function name: `l`",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 5,
+            "end_line": 1,
+            "end_column": 6
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e743-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "e902-companion.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F622",
+          "message": "Two starred expressions in assignment",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f622-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "F631",
+          "message": "Assert test is a non-empty tuple, which is always `True`",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 1,
+            "end_line": 2,
+            "end_column": 20
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "f631-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "SIM112",
+          "message": "Use capitalized environment variable `LOWER_CASE` instead of `lower_case`",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 20,
+            "end_line": 2,
+            "end_column": 32
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Replace `lower_case` with `LOWER_CASE`",
+            "edits": [
+              {
+                "start": 29,
+                "end": 41,
+                "replacement": "\"LOWER_CASE\""
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "sim112-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up005-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up009-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 7,
+            "end_line": 1,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up021-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP042",
+          "message": "Class E inherits from both `str` and `enum.Enum`",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 8
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Inherit from `enum.StrEnum`",
+            "edits": [
+              {
+                "start": 0,
+                "end": 11,
+                "replacement": "import enum"
+              },
+              {
+                "start": 19,
+                "end": 35,
+                "replacement": "(enum.StrEnum)"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up042-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 7,
+            "end_line": 4,
+            "end_column": 16
+          },
+          "fix": null
+        },
+        {
+          "rule": "UP047",
+          "message": "Generic function `identity` should use type parameters",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 5,
+            "end_line": 3,
+            "end_column": 23
+          },
+          "fix": {
+            "applicability": "unsafe",
+            "message": "Use type parameters",
+            "edits": [
+              {
+                "start": 56,
+                "end": 56,
+                "replacement": "[T]"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "B016",
+          "message": "Cannot raise a literal. Did you intend to return it or raise an Exception?",
+          "path": "up047-positive.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 16
+          },
+          "fix": null
+        }
+      ],
+      "before_exit": 1,
+      "fix_exit": 1,
+      "after_exit": 1,
+      "repeat_exit": 1,
+      "fixed_hex": {
+        "b016-negative.py": "696d706f72742072650a72616973652056616c75654572726f7228227822290a72652e73706c6974282278222c202279222c206d617873706c69743d31290a",
+        "b016-positive.py": "696d706f72742072650a726169736520226c69746572616c220a72652e73706c6974282278222c202279222c2031290a",
+        "b022-negative.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328457863657074696f6e293a0a20202020706173730a72616973652056616c75654572726f7228227822290a",
+        "b022-positive.py": "696d706f727420636f6e746578746c69620a7769746820636f6e746578746c69622e737570707265737328293a0a20202020706173730a726169736520226c69746572616c220a",
+        "b032-negative.py": "61203d207b7d0a615b2262225d203d20310a72616973652056616c75654572726f7228227822290a",
+        "b032-positive.py": "61203d207b7d0a615b2262225d3a20310a726169736520226c69746572616c220a",
+        "b033-negative.py": "76616c756573203d207b312c20327d0a72616973652056616c75654572726f7228227822290a",
+        "b033-positive.py": "76616c756573203d207b312c20327d0a726169736520226c69746572616c220a",
+        "b034-negative.py": "696d706f72742072650a72652e73706c6974282278222c202279222c206d617873706c69743d31290a72616973652056616c75654572726f7228227822290a",
+        "b034-positive.py": "696d706f72742072650a72652e73706c6974282278222c202279222c2031290a726169736520226c69746572616c220a",
+        "e743-negative.py": "646566206c6f6e675f6e616d652876616c7565293a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "e743-positive.py": "646566206c2876616c7565293a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a",
+        "e902-companion.py": "726169736520226c69746572616c220a",
+        "f622-negative.py": "6c6566742c2072696768742c207461696c203d2028312c20322c2033290a72616973652056616c75654572726f7228227822290a",
+        "f622-positive.py": "2a6c6566742c202a72696768742c207461696c203d2028312c20322c2033290a726169736520226c69746572616c220a",
+        "f631-negative.py": "636f6e646974696f6e203d20547275650a61737365727420636f6e646974696f6e0a72616973652056616c75654572726f7228227822290a",
+        "f631-positive.py": "636f6e646974696f6e203d20547275650a6173736572742028636f6e646974696f6e2c290a726169736520226c69746572616c220a",
+        "sim112-negative.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b2255505045525f43415345225d0a72616973652056616c75654572726f7228227822290a",
+        "sim112-positive.py": "696d706f7274206f730a76616c7565203d206f732e656e7669726f6e5b226c6f7765725f63617365225d0a726169736520226c69746572616c220a",
+        "up005-negative.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a72616973652056616c75654572726f7228227822290a",
+        "up005-positive.py": "66726f6d20756e69747465737420696d706f72742054657374436173650a636c6173732054285465737443617365293a0a202020206465662072756e5f746573742873656c66293a0a202020202020202073656c662e617373657274457175616c28312c2031290a726169736520226c69746572616c220a",
+        "up009-negative.py": "72616973652056616c75654572726f7228227822290a",
+        "up009-positive.py": "726169736520226c69746572616c220a",
+        "up021-negative.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a72616973652056616c75654572726f7228227822290a",
+        "up021-positive.py": "696d706f72742073756270726f636573730a73756270726f636573732e72756e285b2278225d2c20746578743d54727565290a726169736520226c69746572616c220a",
+        "up042-negative.py": "696d706f727420656e756d0a636c617373204528656e756d2e537472456e756d293a0a2020202041203d202261220a72616973652056616c75654572726f7228227822290a",
+        "up042-positive.py": "696d706f727420656e756d0a636c6173732045287374722c20656e756d2e456e756d293a0a2020202041203d202261220a726169736520226c69746572616c220a",
+        "up047-negative.py": "646566206964656e746974795b545d2876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a72616973652056616c75654572726f7228227822290a",
+        "up047-positive.py": "66726f6d20747970696e6720696d706f727420547970655661720a54203d205479706556617228225422290a646566206964656e746974792876616c75653a205429202d3e20543a0a2020202072657475726e2076616c75650a726169736520226c69746572616c220a"
+      },
+      "same_file_rule_controls": [
+        "B016",
+        "B022",
+        "B032",
+        "B033",
+        "B034",
+        "SIM112",
+        "E743",
+        "F622",
+        "F631",
+        "UP005",
+        "UP009",
+        "UP021",
+        "UP042",
+        "UP047"
+      ],
+      "stable": true
+    }
+  ],
+  "rules": {
+    "B016": {
+      "positive": "b016-positive.py",
+      "negative": "b016-negative.py",
+      "interaction_rule": "B034"
+    },
+    "B022": {
+      "positive": "b022-positive.py",
+      "negative": "b022-negative.py",
+      "interaction_rule": "B016"
+    },
+    "B032": {
+      "positive": "b032-positive.py",
+      "negative": "b032-negative.py",
+      "interaction_rule": "B016"
+    },
+    "B033": {
+      "positive": "b033-positive.py",
+      "negative": "b033-negative.py",
+      "interaction_rule": "B016"
+    },
+    "B034": {
+      "positive": "b034-positive.py",
+      "negative": "b034-negative.py",
+      "interaction_rule": "B016"
+    },
+    "SIM112": {
+      "positive": "sim112-positive.py",
+      "negative": "sim112-negative.py",
+      "interaction_rule": "B016"
+    },
+    "E743": {
+      "positive": "e743-positive.py",
+      "negative": "e743-negative.py",
+      "interaction_rule": "B016"
+    },
+    "F622": {
+      "positive": "f622-positive.py",
+      "negative": "f622-negative.py",
+      "interaction_rule": "B016"
+    },
+    "F631": {
+      "positive": "f631-positive.py",
+      "negative": "f631-negative.py",
+      "interaction_rule": "B016"
+    },
+    "UP005": {
+      "positive": "up005-positive.py",
+      "negative": "up005-negative.py",
+      "interaction_rule": "B016"
+    },
+    "UP009": {
+      "positive": "up009-positive.py",
+      "negative": "up009-negative.py",
+      "interaction_rule": "B016"
+    },
+    "UP021": {
+      "positive": "up021-positive.py",
+      "negative": "up021-negative.py",
+      "interaction_rule": "B016"
+    },
+    "UP042": {
+      "positive": "up042-positive.py",
+      "negative": "up042-negative.py",
+      "interaction_rule": "B016"
+    },
+    "UP047": {
+      "positive": "up047-positive.py",
+      "negative": "up047-negative.py",
+      "interaction_rule": "B016"
+    }
+  },
+  "missing_file_boundary_kept_separate": true
+}

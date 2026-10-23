@@ -1,0 +1,551 @@
+[
+  {
+    "python": "3.12",
+    "name": "not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.13",
+    "name": "name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.14",
+    "name": "name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1
+  },
+  {
+    "python": "3.12",
+    "name": "absolute_not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.12",
+    "name": "absolute_symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.12",
+    "name": "absolute_name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.12'\n",
+        "sha256": "704b87c8de134663f2de52f5d9d35db546aae56c54bba89c8ae1ae963fa121c1"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.13",
+    "name": "absolute_not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.13",
+    "name": "absolute_symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.13",
+    "name": "absolute_name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.13'\n",
+        "sha256": "f5abd00aeaf9bc7d4ff627d3b8d7b73896831d213d4a2de35c38b09edcb0fede"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.14",
+    "name": "absolute_not_a_directory",
+    "inputs": [
+      "regular.py/child.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      },
+      "regular.py": {
+        "text": "pass\n",
+        "sha256": "9f56e761d79bfdb34304a012586cb04d16b435ef6130091a97702e559260a2f2"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENOTDIR",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named regular.py/child.py",
+        "path": "regular.py/child.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.14",
+    "name": "absolute_symlink_loop",
+    "inputs": [
+      "loop.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      }
+    },
+    "symlinks": {
+      "loop.py": "loop.py"
+    },
+    "expected_errno_name": "ELOOP",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named loop.py",
+        "path": "loop.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  },
+  {
+    "python": "3.14",
+    "name": "absolute_name_too_long",
+    "inputs": [
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py"
+    ],
+    "files": {
+      "pyproject.toml": {
+        "text": "[project]\nrequires-python = '>=3.14'\n",
+        "sha256": "6cdb21efdb90cf26a17095feea9c0982123c227853cd11e1911a76c2c2e83ad6"
+      }
+    },
+    "symlinks": {},
+    "expected_errno_name": "ENAMETOOLONG",
+    "expected": [
+      {
+        "rule": "F0001",
+        "message": "No module named aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "path": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.py",
+        "severity": "fatal",
+        "line": 1,
+        "column": 0,
+        "end_line": null,
+        "end_column": null
+      }
+    ],
+    "reference_exit": 1,
+    "absolute_inputs": true
+  }
+]

@@ -1,0 +1,180 @@
+{
+  "schema": "mamba.quality.object-comparisons.v1",
+  "mypy": "2.4.0",
+  "targets": {
+    "3.12": {
+      "__eq__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__eq__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      },
+      "__ne__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__ne__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      }
+    },
+    "3.13": {
+      "__eq__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__eq__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      },
+      "__ne__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__ne__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      }
+    },
+    "3.14": {
+      "__eq__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__eq__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      },
+      "__ne__": {
+        ".class": "CallableType",
+        "arg_types": [
+          "builtins.object",
+          "builtins.object"
+        ],
+        "arg_kinds": [
+          0,
+          0
+        ],
+        "arg_names": [
+          null,
+          null
+        ],
+        "ret_type": "builtins.bool",
+        "fallback": "builtins.function",
+        "name": "__ne__ of object",
+        "variables": [],
+        "is_ellipsis_args": false,
+        "implicit": false,
+        "is_bound": false,
+        "type_guard": null,
+        "type_is": null,
+        "from_concatenate": false,
+        "imprecise_arg_kinds": false,
+        "unpack_kwargs": false,
+        "instance_type": null
+      }
+    }
+  }
+}

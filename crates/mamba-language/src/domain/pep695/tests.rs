@@ -1,0 +1,33 @@
+use super::*;
+use crate::parser;
+use crate::source::span::FileId;
+
+mod class_body_type_alias_does_not_rewrite_later_class_local_names;
+mod class_body_type_alias_prefers_shadowing_class_local_over_type_param;
+mod class_body_type_alias_reads_type_param_from_class_tuple;
+mod class_body_type_alias_rewrites_class_local_value_names;
+mod desugared;
+mod find_class_body;
+mod find_typevar_assign;
+mod generic_class_injects_parameters_too;
+mod generic_class_keeps_type_param_used_by_runtime_body;
+mod generic_fn_defaults_stay_outside_type_param_scope;
+mod generic_fn_injects_typevar_and_type_params;
+mod method_annotations_capture_enclosing_class_type_params;
+mod method_typevars_hoist_out_of_class_body;
+mod pep695_method_bound_does_not_rewrite_later_class_local_names;
+mod pep695_method_bound_rewrites_class_scope_names;
+mod plain_fn_explicitly_resets_empty_type_params;
+mod private_class_base_lazy_expr_uses_mangled_type_param_binding;
+mod private_class_bound_keeps_referenced_mangled_binding_alive;
+mod private_class_typevar_binding_uses_mangled_scope_name;
+mod private_method_and_alias_typevar_bindings_use_mangled_scope_names;
+mod restores_or_deletes;
+mod type_alias_keeps_stmt_and_adds_binding;
+mod typevar_bound_and_constraints_are_lazy_thunks;
+mod typevar_default_is_lowered_as_lazy_thunk;
+
+use desugared::desugared;
+use find_class_body::find_class_body;
+use find_typevar_assign::find_typevar_assign;
+use restores_or_deletes::restores_or_deletes;

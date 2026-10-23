@@ -1,0 +1,2978 @@
+[
+  {
+    "name": "typeguard_arity",
+    "files": {
+      "main.py": "from typing import TypeGuard\ndef zero(value: object) -> TypeGuard[()]:\n    return True\ndef two(value: object) -> TypeGuard[str, int]:\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "fa904a2d2d6d938eae9eb72732d8b96678e003fc7c9a9f60ec6a6da8994682d9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 40
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 45
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 40
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 45
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 40
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 45
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_outside_return",
+    "files": {
+      "main.py": "from typing import TypeGuard\nx: TypeGuard[str] = True\ndef consume(value: TypeGuard[str]) -> None:\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "125d5857f182ffee41cd289f62d5fd5df31e91101c0959dbf3e2e3dddba4a5a2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_bool_assignment",
+    "files": {
+      "main.py": "from typing import TypeGuard\nfrom typing import Callable\ndef bool_test(value: object) -> bool:\n    return True\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\nvalue: Callable[[object], TypeGuard[str]] = bool_test\nother: Callable[[object], bool] = predicate\nreveal_type(other)\n"
+    },
+    "source_sha256": {
+      "main.py": "bcbdd6f6ca6275b136d81f54831864c70067ae135677a1a31a9d32932424b8b8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 45,
+            "end_line": 7,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 45,
+            "end_line": 7,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 45,
+            "end_line": 7,
+            "end_column": 53
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_target_assignment",
+    "files": {
+      "main.py": "from typing import TypeGuard\nfrom typing import Callable\ndef predicate(value: object) -> TypeGuard[int]:\n    return True\nvalue: Callable[[object], TypeGuard[str]] = predicate\n"
+    },
+    "source_sha256": {
+      "main.py": "d18c28918eb8e3e3ceb0b7666b3f3f7893dcc114b24c773592e471386e6d64ff"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[int]]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 45,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[int]]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 45,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[int]]\", variable has type \"Callable[[object], TypeGuard[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 45,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_callable_no_args",
+    "files": {
+      "main.py": "from typing import TypeGuard\nfrom typing import Callable\nvalue: Callable[[], TypeGuard[str]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "54ea185263add7eb0fa6621f99db9fad097ab280d66356b5cc76f479657c513e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_assert_guard",
+    "files": {
+      "main.py": "from typing import TypeGuard\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: str | int) -> None:\n    assert predicate(value)\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "0293b4a33510fe12873a8a75275b1b6999479a07e7b468049b62020cff573e33"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_arity",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\ndef zero(value: object) -> TypeIs[()]:\n    return True\ndef two(value: object) -> TypeIs[str, int]:\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "0ad6553868b120c64b59bc5176be4d8df9c022083564e210410f136eb400b3a2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 42
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 42
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 28,
+            "end_line": 2,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 27,
+            "end_line": 4,
+            "end_column": 42
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_outside_return",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nx: TypeIs[str] = True\ndef consume(value: TypeIs[str]) -> None:\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "54779a2ffb0cad3259e45ecae16673754df84ae5d053698ddb88233a1f9c320b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_bool_assignment",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nfrom typing import Callable\ndef bool_test(value: object) -> bool:\n    return True\ndef predicate(value: object) -> TypeIs[str]:\n    return True\nvalue: Callable[[object], TypeIs[str]] = bool_test\nother: Callable[[object], bool] = predicate\nreveal_type(other)\n"
+    },
+    "source_sha256": {
+      "main.py": "2ec8c7958553da3ad51d5711d52982c9cd8bd44653437d92b1e6007b8f6d1606"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 42,
+            "end_line": 7,
+            "end_column": 50
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 42,
+            "end_line": 7,
+            "end_column": 50
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], bool]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 42,
+            "end_line": 7,
+            "end_column": 50
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 13,
+            "end_line": 9,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_target_assignment",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nfrom typing import Callable\ndef predicate(value: object) -> TypeIs[int]:\n    return True\nvalue: Callable[[object], TypeIs[str]] = predicate\n"
+    },
+    "source_sha256": {
+      "main.py": "5a523f2053fb3d73faafe33feebaf411c8493dca8aa7c07e6521ea364d05959f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[int]]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 42,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[int]]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 42,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[int]]\", variable has type \"Callable[[object], TypeIs[str]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 42,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_callable_no_args",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nfrom typing import Callable\nvalue: Callable[[], TypeIs[str]]\nreveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "924a55e8c24ff3b402a0618d213c9e39afd9f64571420bb1546d339874033bdb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def () -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_assert_guard",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: str | int) -> None:\n    assert predicate(value)\n    reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8cfd016841b77313dd5df6feb2ed8a2ef67d2a6a1ef63bb151bbeb784b2f478e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_numeric",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\ndef predicate(value: float) -> TypeIs[int]:\n    return True\ndef consume(value: int | float) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "e5c040f0c496aea963205caa009fa408f5307ae5a578666a371eac04d3e6e5cf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"float\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_nominal_overlap",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass A: pass\nclass B: pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ce7ce8d338229d47b553b1ba2c44dc0a7c5d999357479120b983226385791380"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_async",
+    "files": {
+      "main.py": "from typing import TypeGuard\nasync def predicate(value: object) -> TypeGuard[str]:\n    return True\nasync def consume(value: object) -> None:\n    if await predicate(value):\n        reveal_type(value)\n    reveal_type(predicate)\n"
+    },
+    "source_sha256": {
+      "main.py": "e35cd04b3448243b3fa17e8785aa47044f522d9a3b1f802ee50f2302f168fa22"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_overload",
+    "files": {
+      "main.py": "from typing import TypeGuard\nfrom typing import overload\n@overload\ndef predicate(value: str | int) -> TypeGuard[str]: ...\n@overload\ndef predicate(value: bytes) -> bool: ...\ndef predicate(value: object) -> bool:\n    return True\ndef consume(value: str | int) -> None:\n    if predicate(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "6b79c7e172b460cb511ddacfdef97ba1a40e6f7a6d91e7f049526f0211300653"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_loop",
+    "files": {
+      "main.py": "from typing import TypeGuard\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: str | int) -> None:\n    while predicate(value):\n        reveal_type(value)\n        break\n"
+    },
+    "source_sha256": {
+      "main.py": "7e3115cacbef6105d36354d6d3a8fb9793c9aea805f42ce29206bf99ae520150"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_alias_import",
+    "files": {
+      "main.py": "import typing as t\ndef predicate(value: object) -> t.TypeGuard[str]:\n    return True\nreveal_type(predicate)\ndef consume(value: object) -> None:\n    if predicate(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "825d6ad542971f54d897d3a7df8743f1eca3154e4c28e77df9898e25e4bd133f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeGuard[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_async",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nasync def predicate(value: object) -> TypeIs[str]:\n    return True\nasync def consume(value: object) -> None:\n    if await predicate(value):\n        reveal_type(value)\n    reveal_type(predicate)\n"
+    },
+    "source_sha256": {
+      "main.py": "9251534120bf7fb6fcc1354269170fab9beceeffc43f4ad4e214ff6334852ca6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 17,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_overload",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nfrom typing import overload\n@overload\ndef predicate(value: str | int) -> TypeIs[str]: ...\n@overload\ndef predicate(value: bytes) -> bool: ...\ndef predicate(value: object) -> bool:\n    return True\ndef consume(value: str | int) -> None:\n    if predicate(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "fcb477e6dfbc41bd5e152a26b4e4e82af92973455be7a143c8d219e277b3eb87"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_loop",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: str | int) -> None:\n    while predicate(value):\n        reveal_type(value)\n        break\n"
+    },
+    "source_sha256": {
+      "main.py": "1146405990a54dd0f9d3aac5590d0c81a6067adbe0a80357d704350d7301b0dc"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 21,
+            "end_line": 6,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_alias_import",
+    "files": {
+      "main.py": "import typing_extensions as t\ndef predicate(value: object) -> t.TypeIs[str]:\n    return True\nreveal_type(predicate)\ndef consume(value: object) -> None:\n    if predicate(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "8488f00ea281e68e6e643c1ad2eda19727544bab39d7d9adf439430003f19bbd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (value: object) -> TypeIs[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 21
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_final",
+    "files": {
+      "main.py": "from typing import final\nfrom typing_extensions import TypeIs\n@final\nclass A: pass\nclass B: pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a33bd2fbfa9c0305c3973364e189ab11321292519951201cfea1fed280e71df2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_fields",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass A:\n    left: int\nclass B:\n    right: str\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value.left)\n        reveal_type(value.right)\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ba142eceacd3c8549cc40509aa7ffe32f10111b4b4fa8d5e0903eef3b9062b62"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_conflicting_field",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass A:\n    value: int\nclass B:\n    value: str\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "37e8d822ba90fa0a567554c2c102c63da2502ee6e11dfe18d50087aa17219f1c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_conflicting_method",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass A:\n    def method(self, value: int) -> int:\n        return value\nclass B:\n    def method(self, value: str) -> str:\n        return value\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "5a8cf0eb7145a9a5bb5044f766514d1d03c87799848fd6148db316711e513a2b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_nested",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass A: pass\nclass B: pass\nclass C: pass\ndef pred_b(value: object) -> TypeIs[B]:\n    return True\ndef pred_c(value: object) -> TypeIs[C]:\n    return True\ndef consume(value: A) -> None:\n    if pred_b(value) and pred_c(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a27ca29ec60f00f06b4dd6e0e48150b2ca3a72e796a1b355cd54ce854ab9c688"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\", \"main.B\", and \"main.C\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\", \"main.B\", and \"main.C\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\", \"main.B\", and \"main.C\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_reverse_mro",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs\nclass Parent: pass\nclass A(Parent): pass\nclass B(Parent): pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "46f8ce4d514fbc728a762b56d267e4f66e8bb15a69ec6374d36dd423f387b82a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_reverse_method",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A:\n    def method(self, x: int) -> object:\n        return x\nclass B:\n    def method(self, y: object) -> int:\n        return 1\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "96078aa8334e0304fe6f37e9dfbd8ae9b835f3a44fb9f30fc8b00522ad734d07"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_generic_fields",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nT = TypeVar(\"T\")\nclass A(Generic[T]):\n    left: T\nclass B:\n    right: str\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A[int]) -> None:\n    if predicate(value):\n        reveal_type(value.left)\n        reveal_type(value.right)\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "29eb8b1b0342ef95f65ae8f5464de73423cfab151b1fe676d73b508cc4fc7cef"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A[builtins.int]\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A[builtins.int]\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A[builtins.int]\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_reverse_nested",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A: pass\nclass B:\n    def method(self, x: int) -> object:\n        return x\nclass C:\n    def method(self, y: object) -> int:\n        return 1\ndef pred_c(value: object) -> TypeIs[C]:\n    return True\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        if pred_c(value):\n            reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "1266292e7722375d35cc074d37bbcd2e4956377b98696a2c6b96698bf31a7086"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.C\", \"main.A\", and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 25,
+            "end_line": 17,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 19,
+            "column": 21,
+            "end_line": 19,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.C\", \"main.A\", and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 25,
+            "end_line": 17,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 19,
+            "column": 21,
+            "end_line": 19,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.C\", \"main.A\", and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 25,
+            "end_line": 17,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 19,
+            "column": 21,
+            "end_line": 19,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_final_attribute",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A:\n    @final\n    def method(self) -> int:\n        return 1\nclass B:\n    def method(self) -> int:\n        return 1\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b9f7b33a2c7ba1181e80ae70480b12dc8040c428b160e2174c2f8a6a31423be7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 16,
+            "column": 21,
+            "end_line": 16,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_readonly_writable",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A:\n    @property\n    def value(self) -> int:\n        return 1\nclass B:\n    value: int\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "f379f3f5d52e63fb30994ae63c9d125d294e9753078878cf7a110cbfe745c237"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.B\" and \"main.A\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_method_field",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A:\n    def member(self) -> int:\n        return 1\nclass B:\n    member: int\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "6e91db58145095cc401f7c85d6feaeb7a2a0f8cc3b7d5e91f68c72941bca76c2"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_inconsistent_mro",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass X: pass\nclass Y: pass\nclass A(X, Y): pass\nclass B(Y, X): pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "3af0ad014b5a9128520d84257c02395957d5f3cf38ae3db86303ae4468154222"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "intersection_compatible_parameter_names",
+    "files": {
+      "main.py": "from typing import final, Generic, TypeVar\nfrom typing_extensions import TypeIs\nclass A:\n    def method(self, x: int) -> int:\n        return x\nclass B:\n    def method(self, y: int) -> int:\n        return y\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a1a6069d07384d31b5145ce1e33df03e4dff1211a805f867611194dec3761ef9"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

@@ -1,0 +1,686 @@
+[
+  {
+    "name": "exact-inline",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "f49f7d2f6d4a67e9c4db3a7272fa90745b49f2117d74caa8ca8507d5a9a66128",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "f49f7d2f6d4a67e9c4db3a7272fa90745b49f2117d74caa8ca8507d5a9a66128",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "f49f7d2f6d4a67e9c4db3a7272fa90745b49f2117d74caa8ca8507d5a9a66128",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "f49f7d2f6d4a67e9c4db3a7272fa90745b49f2117d74caa8ca8507d5a9a66128",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "suffix-inline-extra",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a2020232069736f72743a2073706c69742065787472610a696d706f727420610a",
+    "source_sha256": "4f528f05482879af43074d3a51180544bc3940e3d8fba137e0656ee031bc19d1",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69742065787472610a696d706f727420610a",
+        "output_sha256": "4f528f05482879af43074d3a51180544bc3940e3d8fba137e0656ee031bc19d1",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69742065787472610a696d706f727420610a",
+        "output_sha256": "4f528f05482879af43074d3a51180544bc3940e3d8fba137e0656ee031bc19d1",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69742065787472610a696d706f727420610a",
+        "output_sha256": "4f528f05482879af43074d3a51180544bc3940e3d8fba137e0656ee031bc19d1",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "prefix-inline-extra",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a202023206e6f74652069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "41c5e3a0b33af7adc3eacca2b2c42a12d14d8969f69af610e0b1d162001150ca",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a202023206e6f74652069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "41c5e3a0b33af7adc3eacca2b2c42a12d14d8969f69af610e0b1d162001150ca",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a202023206e6f74652069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "41c5e3a0b33af7adc3eacca2b2c42a12d14d8969f69af610e0b1d162001150ca",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a202023206e6f74652069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "41c5e3a0b33af7adc3eacca2b2c42a12d14d8969f69af610e0b1d162001150ca",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "inline-spacing-extra",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a2020232069736f72743a202073706c69740a696d706f727420610a",
+    "source_sha256": "52fb54eb46833fdb17a7a9ade8453b0cf88fd494c6b9371447593c25c1d04150",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f727420610a696d706f7274207a2020232069736f72743a202073706c69740a",
+        "output_sha256": "3f5b93e60ee769177d77417829ee7e31d508cdb0fc3cacc252a1cca5430620d1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f727420610a696d706f7274207a2020232069736f72743a202073706c69740a",
+        "output_sha256": "3f5b93e60ee769177d77417829ee7e31d508cdb0fc3cacc252a1cca5430620d1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f727420610a696d706f7274207a2020232069736f72743a202073706c69740a",
+        "output_sha256": "3f5b93e60ee769177d77417829ee7e31d508cdb0fc3cacc252a1cca5430620d1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "inline-extra-code-spacing",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a20202020232069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "06d4fbfef136c5c9baf1ce874b69e6d7d993fe4dc6045aeb8cc4025862aac66d",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a20202020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "06d4fbfef136c5c9baf1ce874b69e6d7d993fe4dc6045aeb8cc4025862aac66d",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a20202020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "06d4fbfef136c5c9baf1ce874b69e6d7d993fe4dc6045aeb8cc4025862aac66d",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a20202020232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "06d4fbfef136c5c9baf1ce874b69e6d7d993fe4dc6045aeb8cc4025862aac66d",
+        "check_exit": 0,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "exact-standalone",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "468d0d970bbbabc624ac76bf160c37f4b4180f5503f947b6fffcadc1aaa1f44b",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "74b52706cc2ff25f48c8aefa1fc0f9e3d1d8ef4ac229a629e80a3375c3518a3a",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "74b52706cc2ff25f48c8aefa1fc0f9e3d1d8ef4ac229a629e80a3375c3518a3a",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "74b52706cc2ff25f48c8aefa1fc0f9e3d1d8ef4ac229a629e80a3375c3518a3a",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "suffix-standalone-extra",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c69742065787472610a696d706f727420610a",
+    "source_sha256": "3d6cb07c5851a052f78f9cf53fc77870e666bed8d472ce17866f86663b920733",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "232069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "066f6376b026b1224fdd3370d2ccb72b1cc9bdcbee231bffdeedc78330443fbb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "232069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "066f6376b026b1224fdd3370d2ccb72b1cc9bdcbee231bffdeedc78330443fbb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "232069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "066f6376b026b1224fdd3370d2ccb72b1cc9bdcbee231bffdeedc78330443fbb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "marker-in-string",
+    "filename": "main.py",
+    "source_hex": "6d61726b6572203d2022232069736f72743a2073706c6974220a696d706f7274207a0a696d706f727420610a",
+    "source_sha256": "594ee8d644e8624a2bf441b83fa97aaba55733b626e7028a12db75d45026e3a6",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "6d61726b6572203d2022232069736f72743a2073706c6974220a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "89c7fc3379bdb15478f97c97780a7421f982e3a62adc62c7b305ce8775b404a9",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "6d61726b6572203d2022232069736f72743a2073706c6974220a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "89c7fc3379bdb15478f97c97780a7421f982e3a62adc62c7b305ce8775b404a9",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "6d61726b6572203d2022232069736f72743a2073706c6974220a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "89c7fc3379bdb15478f97c97780a7421f982e3a62adc62c7b305ce8775b404a9",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "no-marker-baseline",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a696d706f727420610a",
+    "source_sha256": "63a5180c1501773a89a2b81b62d7161853a459aef716e783d5ccb28ffb666596",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "2f867b9264ee8d9136d4feb2b47e0fb45d7cee794931943be03c647ba5f2d4d0",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "2f867b9264ee8d9136d4feb2b47e0fb45d7cee794931943be03c647ba5f2d4d0",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "2f867b9264ee8d9136d4feb2b47e0fb45d7cee794931943be03c647ba5f2d4d0",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "mixed-split-and-sort",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a696d706f727420790a696d706f727420620a",
+    "source_sha256": "58d87b3ba5a7f146746fbbe44155de3e9481c0907fb47dc31dd4fc63b31109a3",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a696d706f727420620a696d706f727420790a",
+        "output_sha256": "1ec8964dd0b88a5ecfa769c027a3122132e7a8a3f77d0fbcfa33bd3adb355eca",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a696d706f727420620a696d706f727420790a",
+        "output_sha256": "1ec8964dd0b88a5ecfa769c027a3122132e7a8a3f77d0fbcfa33bd3adb355eca",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a2020232069736f72743a2073706c69740a696d706f727420610a696d706f727420620a696d706f727420790a",
+        "output_sha256": "1ec8964dd0b88a5ecfa769c027a3122132e7a8a3f77d0fbcfa33bd3adb355eca",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "tab-suffix",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c69740965787472610a696d706f727420610a",
+    "source_sha256": "efb247a39431202ba12c9cf72e567d9ebc247d4e685fc8fcc2574cb96b396166",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "232069736f72743a2073706c69740965787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "9b0df046057ec20a808bb7f9dad11b03c9018f2d7bf8d48564c05ce177951dc5",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "232069736f72743a2073706c69740965787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "9b0df046057ec20a808bb7f9dad11b03c9018f2d7bf8d48564c05ce177951dc5",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "232069736f72743a2073706c69740965787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "9b0df046057ec20a808bb7f9dad11b03c9018f2d7bf8d48564c05ce177951dc5",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "no-space-suffix",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c697465787472610a696d706f727420610a",
+    "source_sha256": "0c01ae32ceaa9c162aa99587abab88ec27ea20392c59f7bc8053f77920224d01",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "232069736f72743a2073706c697465787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "3a5331f5528dca070bcc1c8c355ef1b34dca35187109fe7f79da4741294e12c1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "232069736f72743a2073706c697465787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "3a5331f5528dca070bcc1c8c355ef1b34dca35187109fe7f79da4741294e12c1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "232069736f72743a2073706c697465787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "3a5331f5528dca070bcc1c8c355ef1b34dca35187109fe7f79da4741294e12c1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "compact-comment-prefix",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a2369736f72743a2073706c69742065787472610a696d706f727420610a",
+    "source_sha256": "eadcd88b8e7d49816b2f92d152175fa486ef679664a431aad4d9e269baac9831",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "2369736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "8a896896cd6dfec496d0eb42edb74b5937bdcc64dbb133616ba86cf4cf723aa2",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "2369736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "8a896896cd6dfec496d0eb42edb74b5937bdcc64dbb133616ba86cf4cf723aa2",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "2369736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "8a896896cd6dfec496d0eb42edb74b5937bdcc64dbb133616ba86cf4cf723aa2",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "compact-marker-spacing",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a73706c69742065787472610a696d706f727420610a",
+    "source_sha256": "b84c85370a02674da20a9c0d631ab13756f868f61a4b77931ed8b05df099d628",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "232069736f72743a73706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "de9616628345fbcdafd46b878f3184be5d6e18e0f2757f6cf6609b470313bde1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "232069736f72743a73706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "de9616628345fbcdafd46b878f3184be5d6e18e0f2757f6cf6609b470313bde1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "232069736f72743a73706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "de9616628345fbcdafd46b878f3184be5d6e18e0f2757f6cf6609b470313bde1",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "prefix-ordinary-comment",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a23206e6f74652069736f72743a2073706c69742065787472610a696d706f727420610a",
+    "source_sha256": "fbdc16cb9f12374bea09980bfc8ea9ef582eacc81a0bc0e43bb8fed2291de4d1",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "23206e6f74652069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "046c29d3d4eb85f0ff206be4f7eb2e850c35e313b9651cebee96af44a95e4b7f",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "23206e6f74652069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "046c29d3d4eb85f0ff206be4f7eb2e850c35e313b9651cebee96af44a95e4b7f",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "23206e6f74652069736f72743a2073706c69742065787472610a696d706f727420610a696d706f7274207a0a",
+        "output_sha256": "046c29d3d4eb85f0ff206be4f7eb2e850c35e313b9651cebee96af44a95e4b7f",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "terminal-marker-after-suffix",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c697420657874726120232069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "9b666147a3e0e442b44fba2906712b34db3b09827c043be4a63ef1e3e2251eb8",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c697420657874726120232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "fd5bedddb546b2bfa056c064cdb506507129ce358237b62eb11a19c994947a19",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c697420657874726120232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "fd5bedddb546b2bfa056c064cdb506507129ce358237b62eb11a19c994947a19",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c697420657874726120232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "fd5bedddb546b2bfa056c064cdb506507129ce358237b62eb11a19c994947a19",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "prefix-before-terminal-marker",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a23206e6f746520232069736f72743a2073706c69740a696d706f727420610a",
+    "source_sha256": "99a9227ef3b6d76f0fa89d3834cb84f1bd54546b7b3b13bfdb2be729d4ca7b22",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a0a0a23206e6f746520232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "c4bde5c1d49ddc694a762cc7c64d9ce6db5204d84712b9733c4e8b2e798a8c04",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a0a0a23206e6f746520232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "c4bde5c1d49ddc694a762cc7c64d9ce6db5204d84712b9733c4e8b2e798a8c04",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a0a0a23206e6f746520232069736f72743a2073706c69740a696d706f727420610a",
+        "output_sha256": "c4bde5c1d49ddc694a762cc7c64d9ce6db5204d84712b9733c4e8b2e798a8c04",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  },
+  {
+    "name": "exact-marker-trailing-spaces",
+    "filename": "main.py",
+    "source_hex": "696d706f7274207a0a232069736f72743a2073706c69742020200a696d706f727420610a",
+    "source_sha256": "c56021e75a6d39fe7f4e55543a6306646c2613835a4caa0417b5da04dfc16cd7",
+    "expected": [
+      {
+        "python": "3.12",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69742020200a696d706f727420610a",
+        "output_sha256": "2379db64322a2513cc8f0c16e9d44261afda133b250b6b74eec1877108ccc6eb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.13",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69742020200a696d706f727420610a",
+        "output_sha256": "2379db64322a2513cc8f0c16e9d44261afda133b250b6b74eec1877108ccc6eb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      },
+      {
+        "python": "3.14",
+        "output_hex": "696d706f7274207a0a0a232069736f72743a2073706c69742020200a696d706f727420610a",
+        "output_sha256": "2379db64322a2513cc8f0c16e9d44261afda133b250b6b74eec1877108ccc6eb",
+        "check_exit": 1,
+        "format_exit": 0,
+        "repeat_exit": 0,
+        "after_check_exit": 0,
+        "stable": true
+      }
+    ]
+  }
+]

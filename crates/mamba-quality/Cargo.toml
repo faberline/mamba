@@ -1,0 +1,48 @@
+[package]
+name = "mamba-quality"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Rust-native fixed-profile Python project quality analysis"
+
+[dependencies]
+mamba-language = { path = "../mamba-language" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+regex.workspace = true
+sha2 = "0.10"
+toml = "0.8"
+ignore = "=0.4.25"
+pep440_rs = "=0.7.3"
+encoding_rs = "0.8"
+tempfile = "3"
+fs2 = "0.4"
+ruff_linter = "=0.16.10"
+ruff_db = { version = "=0.0.16", default-features = false }
+ruff_diagnostics = "=0.0.16"
+ruff_python_ast = "=0.0.16"
+ruff_text_size = "=0.0.16"
+ruff_source_file = "=0.0.16"
+ruff_python_literal = "=0.0.16"
+mamba-black-layout = { path = "../../vendor/mamba-black-layout", version = "=0.0.16" }
+ruff_formatter = { package = "mamba-document-layout", path = "../../vendor/mamba-document-layout" }
+similar = "=3.2.0"
+num-bigint = "=0.4.6"
+num-rational = "=0.4.2"
+include_dir = "=0.7.4"
+
+[target.'cfg(unix)'.dependencies]
+rustix = { version = "=1.1.4", default-features = false, features = ["fs", "std"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints]
+workspace = true
+
+[[test]]
+name = "it"
+path = "tests/it/main.rs"

@@ -1,0 +1,96 @@
+{
+  "schema": "mamba.quality.isort-cr-public-byte-oracle.v1",
+  "qualified_proof_path": "/private/tmp/mamba-quality-15-isort-probe-data-root-1/result.json",
+  "qualified_proof_sha256": "01096e993a27bddc2e06097757eb48ed70dd127f9d9f562dfabc7cd9abc90189",
+  "raw_capture_manifest_sha256": "5cc58cdff2f03cc6b19f6d463aad27cf9458f2f7004774cc52b5836ab5fd2801",
+  "original_version": "9.0.2",
+  "profile": "black",
+  "line_length": 88,
+  "cells": [
+    {
+      "target": "3.12",
+      "source_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "source_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_stable_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "public_stable_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_initial_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_format_exits": [
+        0,
+        0
+      ],
+      "private_code_api_output_hex": "0d696d706f727420610d0d696d706f7274207a0d",
+      "private_code_api_output_sha256": "92bf317291f98251bc3b23e866c348fefc19505abf7d060817a7684b83f7004d",
+      "private_reference_exit": 0,
+      "native_completion": "incomplete",
+      "native_reference_exit_code": null,
+      "native_checked_files": 1,
+      "native_remaining": [
+        "isort full-profile reference parity has not passed the complete original corpus"
+      ]
+    },
+    {
+      "target": "3.13",
+      "source_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "source_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_stable_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "public_stable_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_initial_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_format_exits": [
+        0,
+        0
+      ],
+      "private_code_api_output_hex": "0d696d706f727420610d0d696d706f7274207a0d",
+      "private_code_api_output_sha256": "92bf317291f98251bc3b23e866c348fefc19505abf7d060817a7684b83f7004d",
+      "private_reference_exit": 0,
+      "native_completion": "incomplete",
+      "native_reference_exit_code": null,
+      "native_checked_files": 1,
+      "native_remaining": [
+        "isort full-profile reference parity has not passed the complete original corpus"
+      ]
+    },
+    {
+      "target": "3.14",
+      "source_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "source_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_stable_bytes_hex": "0d696d706f727420610d0d63696d706f7274207a0d",
+      "public_stable_sha256": "c3da5f909803e6e2ca3ec9b757474840c251190be345c0fbb8f7e88e46b65a17",
+      "public_initial_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_check_exits": [
+        0,
+        0
+      ],
+      "public_stable_format_exits": [
+        0,
+        0
+      ],
+      "private_code_api_output_hex": "0d696d706f727420610d0d696d706f7274207a0d",
+      "private_code_api_output_sha256": "92bf317291f98251bc3b23e866c348fefc19505abf7d060817a7684b83f7004d",
+      "private_reference_exit": 0,
+      "native_completion": "incomplete",
+      "native_reference_exit_code": null,
+      "native_checked_files": 1,
+      "native_remaining": [
+        "isort full-profile reference parity has not passed the complete original corpus"
+      ]
+    }
+  ],
+  "whole_acceptance": false
+}

@@ -1,0 +1,536 @@
+[
+  {
+    "name": "sys_exit_upper",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c6961732e2222220a696d706f7274207379730a53544f50203d207379732e657869740a",
+    "source_sha256": "b1d5396904d9d7dd7074f4d083f31e60547668ff4f78bc23ff31c9a265234eb1",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-000"
+    ]
+  },
+  {
+    "name": "sys_exit_lower",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c6961732e2222220a696d706f7274207379730a73746f70203d207379732e657869740a",
+    "source_sha256": "e32770ba1feb428254ebc7dd5b334177dffbaf50963df4c17badadd85427ede4",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-001"
+    ]
+  },
+  {
+    "name": "sys_alias_chain",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c69617320636861696e2e2222220a696d706f7274207379730a73746f70203d207379732e657869740a53544f50203d2073746f700a",
+    "source_sha256": "716c41b0c083dd5dceb2243a59fffca891bb9c457d50c53b14256393a1ee1075",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"STOP\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 4,
+            "column": 0,
+            "end_line": 4,
+            "end_column": 4
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-002"
+    ]
+  },
+  {
+    "name": "math_sin_upper",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c6961732e2222220a696d706f7274206d6174680a53494e45203d206d6174682e73696e0a",
+    "source_sha256": "2f53edbdc158edc4c420e7e43462f72a7c8b9d6d37f95e1f9e300079058a4adf",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-003"
+    ]
+  },
+  {
+    "name": "math_sin_lower",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c6961732e2222220a696d706f7274206d6174680a73696e65203d206d6174682e73696e0a",
+    "source_sha256": "f4aec7fa88d45f61e373d458b360ac7c747216471078ec5f78984c03cb9785cd",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-004"
+    ]
+  },
+  {
+    "name": "from_math_upper",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c6961732e2222220a66726f6d206d61746820696d706f72742073696e0a53494e45203d2073696e0a",
+    "source_sha256": "03a0544c5242dd0d94446fe6b25a4374ee7968b02da157116af6dceee71dd7d8",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"SINE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 3,
+            "column": 0,
+            "end_line": 3,
+            "end_column": 4
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-005"
+    ]
+  },
+  {
+    "name": "builtin_len_upper",
+    "source_hex": "2222224275696c74696e2066756e6374696f6e20616c6961732e2222220a4c454e475448203d206c656e0a",
+    "source_sha256": "ec9f6952e352ce8cec2dd523f4845b08659a914c3fed9f82bca59a2a259d646e",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"LENGTH\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"LENGTH\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"LENGTH\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 6
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-006",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-006",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-006"
+    ]
+  },
+  {
+    "name": "builtin_len_lower",
+    "source_hex": "2222224275696c74696e2066756e6374696f6e20616c6961732e2222220a6c656e677468203d206c656e0a",
+    "source_sha256": "5e62c2be8a5b8cdd768a166d6148b03b34292921f7845c5ac1b76075ad85ece2",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-007",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-007",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-007"
+    ]
+  },
+  {
+    "name": "constant_upper",
+    "source_hex": "222222436f6e7374616e7420636f6e74726f6c2e2222220a56414c5545203d20310a",
+    "source_sha256": "c8333d9c670969c7d79d4433654280ba6b7ca312f974d7e47dc9c9769a40287a",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-008",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-008",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-008"
+    ]
+  },
+  {
+    "name": "constant_lower",
+    "source_hex": "222222436f6e7374616e7420636f6e74726f6c2e2222220a76616c7565203d20310a",
+    "source_sha256": "462db86cd6bc2a961fead95d3871505e528b554a9a771f88fdfa7060b92d9b50",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Constant name \"value\" doesn't conform to UPPER_CASE naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": 5
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-009",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-009",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-009"
+    ]
+  },
+  {
+    "name": "local_function_upper",
+    "source_hex": "2222224c6f63616c2066756e6374696f6e20616c69617320636f6e74726f6c2e2222220a6465662063616c63756c61746528293a0a2020202022222252657475726e206f6e652e2222220a2020202072657475726e20310a43414c43554c415445203d2063616c63756c6174650a",
+    "source_sha256": "12c60e186f97013d1507358489e9fcb2ad83e3437ec5e5766f4a00cd3a7b74c2",
+    "expected": [
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"CALCULATE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"CALCULATE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "C0103",
+          "message": "Variable name \"CALCULATE\" doesn't conform to snake_case naming style",
+          "hint": null,
+          "path": "main.py",
+          "severity": "convention",
+          "location": {
+            "line": 5,
+            "column": 0,
+            "end_line": 5,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      16,
+      16,
+      16
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-010",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-010",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-010"
+    ]
+  },
+  {
+    "name": "inline_disable",
+    "source_hex": "222222496d706f727465642066756e6374696f6e20616c696173206469726563746976652e2222220a696d706f7274207379730a53544f50203d207379732e657869742020232070796c696e743a2064697361626c653d696e76616c69642d6e616d650a",
+    "source_sha256": "fe0027b732e2fba054b471a1be6074ce045b7dbb4753fcdf571ff602b817cd59",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python312/case-011",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python313/case-011",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-imported-function-alias-controls-reference-1/original-1/python314/case-011"
+    ]
+  }
+]

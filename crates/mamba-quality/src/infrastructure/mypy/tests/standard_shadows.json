@@ -1,0 +1,3517 @@
+[
+  {
+    "name": "import_shadow_json",
+    "files": {
+      "main.py": "import json\nreveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a573f2cea724dabe43d951b4d8e1c72dd4fcf62e6be48ccfa1410eafff14fd7"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_json",
+    "files": {
+      "main.py": "from json import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "48e17c94da08be772f13e6005fd9cf46375285d5207d1a8067b4b442d4538c9a"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_json_invalid",
+    "files": {
+      "main.py": "from json import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "48e17c94da08be772f13e6005fd9cf46375285d5207d1a8067b4b442d4538c9a"
+    },
+    "local_sha256": {
+      "json.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_shadow_math",
+    "files": {
+      "main.py": "import math\nreveal_type(math.VALUE)\n"
+    },
+    "local": {
+      "math.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5ea93eea3e5529a7cc37608f1847870080d6784754d783a6c3e9bac61904d69e"
+    },
+    "local_sha256": {
+      "math.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_math",
+    "files": {
+      "main.py": "from math import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "math.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4311b0ee96fe1cea65e150478442f4f80bcf4e4d18259d0c192d0a30f07aa3ce"
+    },
+    "local_sha256": {
+      "math.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_math_invalid",
+    "files": {
+      "main.py": "from math import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "math.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4311b0ee96fe1cea65e150478442f4f80bcf4e4d18259d0c192d0a30f07aa3ce"
+    },
+    "local_sha256": {
+      "math.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_shadow_pathlib",
+    "files": {
+      "main.py": "import pathlib\nreveal_type(pathlib.VALUE)\n"
+    },
+    "local": {
+      "pathlib.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "80ab16ae4c10bc6c780122025c5019b885f30533daa98532a76a05d3880356ea"
+    },
+    "local_sha256": {
+      "pathlib.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_pathlib",
+    "files": {
+      "main.py": "from pathlib import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pathlib.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "78713f8857b360eb72026d01e6a104b7760181c373d647e7e6f86f7e80a67893"
+    },
+    "local_sha256": {
+      "pathlib.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_pathlib_invalid",
+    "files": {
+      "main.py": "from pathlib import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pathlib.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "78713f8857b360eb72026d01e6a104b7760181c373d647e7e6f86f7e80a67893"
+    },
+    "local_sha256": {
+      "pathlib.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_shadow_dataclasses",
+    "files": {
+      "main.py": "import dataclasses\nreveal_type(dataclasses.VALUE)\n"
+    },
+    "local": {
+      "dataclasses.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "bf58a4e89a767095c03adfea8e38ddfdccf9b43699a5ece0ba9fc6c25f3bc93e"
+    },
+    "local_sha256": {
+      "dataclasses.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_dataclasses",
+    "files": {
+      "main.py": "from dataclasses import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "dataclasses.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b96497d6a651c402e4799dd102c48610ec44778f75f4d4094687c86f2b6b0209"
+    },
+    "local_sha256": {
+      "dataclasses.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_dataclasses_invalid",
+    "files": {
+      "main.py": "from dataclasses import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "dataclasses.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b96497d6a651c402e4799dd102c48610ec44778f75f4d4094687c86f2b6b0209"
+    },
+    "local_sha256": {
+      "dataclasses.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_shadow_pydantic",
+    "files": {
+      "main.py": "import pydantic\nreveal_type(pydantic.VALUE)\n"
+    },
+    "local": {
+      "pydantic.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "72fbb278359936e6cfd50e1c9cf01541ec884802ad199a2cac61502fc4f9cf54"
+    },
+    "local_sha256": {
+      "pydantic.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_pydantic",
+    "files": {
+      "main.py": "from pydantic import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pydantic.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "740ddfb86b66c6d41c3599a315a63a8e05d4ab004bb290c64c178163440f12d3"
+    },
+    "local_sha256": {
+      "pydantic.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 17
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_shadow_pydantic_invalid",
+    "files": {
+      "main.py": "from pydantic import VALUE\nreveal_type(VALUE)\n"
+    },
+    "local": {
+      "pydantic.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "740ddfb86b66c6d41c3599a315a63a8e05d4ab004bb290c64c178163440f12d3"
+    },
+    "local_sha256": {
+      "pydantic.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_stdlib_shadow_package",
+    "files": {
+      "main.py": "import json\nreveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json/__init__.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a573f2cea724dabe43d951b4d8e1c72dd4fcf62e6be48ccfa1410eafff14fd7"
+    },
+    "local_sha256": {
+      "json/__init__.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typed_stub_shadow_stdlib",
+    "files": {
+      "main.py": "import json\nreveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json.pyi": "VALUE: str\n",
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a573f2cea724dabe43d951b4d8e1c72dd4fcf62e6be48ccfa1410eafff14fd7"
+    },
+    "local_sha256": {
+      "json.pyi": "47f0aa8ac446c0df6970f54dc8255a55b4d61389c599aeeea4a4c25a55e255d4",
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_shadow_pydantic_basemodel",
+    "files": {
+      "main.py": "from pydantic import BaseModel\nreveal_type(BaseModel)\n"
+    },
+    "local": {
+      "pydantic.py": "BaseModel: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8595484497e1d8a5b57ca0b955b5e87ea6bd41cf6de58ed681663e5395357897"
+    },
+    "local_sha256": {
+      "pydantic.py": "2758a9b97601066232c2d847aa07d604e5172bb086f56ad8b7c7522c785a8356"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_json",
+    "files": {
+      "main.py": "import json\nreveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a573f2cea724dabe43d951b4d8e1c72dd4fcf62e6be48ccfa1410eafff14fd7"
+    },
+    "local_sha256": {
+      "json.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_math",
+    "files": {
+      "main.py": "import math\nreveal_type(math.VALUE)\n"
+    },
+    "local": {
+      "math.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5ea93eea3e5529a7cc37608f1847870080d6784754d783a6c3e9bac61904d69e"
+    },
+    "local_sha256": {
+      "math.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "math.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_pathlib",
+    "files": {
+      "main.py": "import pathlib\nreveal_type(pathlib.VALUE)\n"
+    },
+    "local": {
+      "pathlib.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "80ab16ae4c10bc6c780122025c5019b885f30533daa98532a76a05d3880356ea"
+    },
+    "local_sha256": {
+      "pathlib.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pathlib.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_dataclasses",
+    "files": {
+      "main.py": "import dataclasses\nreveal_type(dataclasses.VALUE)\n"
+    },
+    "local": {
+      "dataclasses.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "bf58a4e89a767095c03adfea8e38ddfdccf9b43699a5ece0ba9fc6c25f3bc93e"
+    },
+    "local_sha256": {
+      "dataclasses.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "dataclasses.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_pydantic",
+    "files": {
+      "main.py": "import pydantic\nreveal_type(pydantic.VALUE)\n"
+    },
+    "local": {
+      "pydantic.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "72fbb278359936e6cfd50e1c9cf01541ec884802ad199a2cac61502fc4f9cf54"
+    },
+    "local_sha256": {
+      "pydantic.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "pydantic.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_copy",
+    "files": {
+      "main.py": "import copy\nreveal_type(copy.VALUE)\n"
+    },
+    "local": {
+      "copy.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3b2ac65ba48c6265df7093b6d470ac128201ebf718e4a8eeb91b9a120320d69d"
+    },
+    "local_sha256": {
+      "copy.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "copy.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "copy.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "copy.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "import_invalid_shadow_functools",
+    "files": {
+      "main.py": "import functools\nreveal_type(functools.VALUE)\n"
+    },
+    "local": {
+      "functools.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e08309e9eff2fc5a7212818460bea9ffd90e7af2b2a3cfe71cab3e8b37cbec65"
+    },
+    "local_sha256": {
+      "functools.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "functools.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "functools.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "functools.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "aliased_json_shadow",
+    "files": {
+      "main.py": "import json as project_json\nreveal_type(project_json.VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "85af4172082fd84a25441e2aa67c01b444cb76dcb6272268c0e868e78465075d"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "module_missing_json_member",
+    "files": {
+      "main.py": "import json\nreveal_type(json.missing_value)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4bb95caf2e7598d2ce9ed1ba6774f2f7a054e0b6e4d12e41ddf0ce8997dbb046"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"missing_value\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"missing_value\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"missing_value\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_missing_json_member",
+    "files": {
+      "main.py": "from json import missing_value\nreveal_type(missing_value)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7413a767ae26cd25861e2f4eb00ec2caf7b7f5abeed18f653eabdf0d9b7341e5"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" has no attribute \"missing_value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" has no attribute \"missing_value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" has no attribute \"missing_value\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 1,
+            "end_line": 1,
+            "end_column": 30
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "copy_shadow_native_symbol",
+    "files": {
+      "main.py": "import copy\nreveal_type(copy.deepcopy)\n"
+    },
+    "local": {
+      "copy.py": "deepcopy: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "31945f4d248986571fd21ea25c941476146286c3c9e38bf823404d35c850c396"
+    },
+    "local_sha256": {
+      "copy.py": "7b00a356cd6ae72c9cb3b3b67bf2ee2ef7598bbb5fc729124dfaa666b666ea7b"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_copy_shadow_native_symbol",
+    "files": {
+      "main.py": "from copy import deepcopy\nreveal_type(deepcopy)\n"
+    },
+    "local": {
+      "copy.py": "deepcopy: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ce0cf4b52ce5ae5744bcc5e4b76a39c4c1a025ca4f85168fa7ed8a129010d29a"
+    },
+    "local_sha256": {
+      "copy.py": "7b00a356cd6ae72c9cb3b3b67bf2ee2ef7598bbb5fc729124dfaa666b666ea7b"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "functools_shadow_native_symbol",
+    "files": {
+      "main.py": "import functools\nreveal_type(functools.cached_property)\n"
+    },
+    "local": {
+      "functools.py": "cached_property: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a526be48009786c3e8295ea9f25c160bd033f882b5c5c49ee873c28e73773521"
+    },
+    "local_sha256": {
+      "functools.py": "f4bfec181b0794a975b435541b262c62f351ab00783984968207489d8b8a5486"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 37
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 37
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 37
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "pydantic_shadow_native_symbol",
+    "files": {
+      "main.py": "import pydantic\nreveal_type(pydantic.BaseModel)\n"
+    },
+    "local": {
+      "pydantic.py": "BaseModel: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4b35ece225bb83367ca5f4a18b4d92abba6cd2d5d52ff587972772cee6c37bf1"
+    },
+    "local_sha256": {
+      "pydantic.py": "2758a9b97601066232c2d847aa07d604e5172bb086f56ad8b7c7522c785a8356"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "json_child_import",
+    "files": {
+      "main.py": "import json.encoder\nreveal_type(json.encoder.VALUE)\n"
+    },
+    "local": {
+      "json/__init__.py": "",
+      "json/encoder.py": "VALUE: str = \"local\"\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b7ed3a77c605160ad11f6a03a5fed6880be7e198dd45f4d0718c33001073a395"
+    },
+    "local_sha256": {
+      "json/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "json/encoder.py": "b62267d6190fcbc9528b55f84f5a24b6208e2d9294c0d1b8f694eb568cc10e80"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 30
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "json_child_from",
+    "files": {
+      "main.py": "from json import encoder\nreveal_type(encoder.VALUE)\n"
+    },
+    "local": {
+      "json/__init__.py": "",
+      "json/encoder.pyi": "VALUE: str\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "11e36df8febbacbeb955d8e7ddde803f7f7f2978d7a712a2414c50365bcf6e57"
+    },
+    "local_sha256": {
+      "json/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "json/encoder.pyi": "47f0aa8ac446c0df6970f54dc8255a55b4d61389c599aeeea4a4c25a55e255d4"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "shadow_transitive_stdlib",
+    "files": {
+      "main.py": "import helper\nreveal_type(helper.VALUE)\n"
+    },
+    "local": {
+      "helper.py": "import json\nVALUE = json.VALUE\n",
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "18ddd00c6dc63fb1efaf94af210d413889b1bad6598ce241ddd07cc954244f8d"
+    },
+    "local_sha256": {
+      "helper.py": "a717e65f2e7722f8e448050ada0e4c551d574ab5fdae5436311dbedfb19a4502",
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "shadow_transitive_pydantic",
+    "files": {
+      "main.py": "import helper\nreveal_type(helper.VALUE)\n"
+    },
+    "local": {
+      "helper.py": "import pydantic\nVALUE = pydantic.VALUE\n",
+      "pydantic.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "18ddd00c6dc63fb1efaf94af210d413889b1bad6598ce241ddd07cc954244f8d"
+    },
+    "local_sha256": {
+      "helper.py": "fcb78ad267ba478d20e37d0cb11b34a512f6efa9a6644c07ee654cd8336dd716",
+      "pydantic.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "std_stub_priority_invalid_runtime",
+    "files": {
+      "main.py": "import json\nreveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json.pyi": "VALUE: str\n",
+      "json.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a573f2cea724dabe43d951b4d8e1c72dd4fcf62e6be48ccfa1410eafff14fd7"
+    },
+    "local_sha256": {
+      "json.pyi": "47f0aa8ac446c0df6970f54dc8255a55b4d61389c599aeeea4a4c25a55e255d4",
+      "json.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "installed_stdlib_name_keeps_embedded_priority",
+    "files": {
+      "main.py": "import json\nreveal_type(json.LOCAL_VALUE)\n"
+    },
+    "local": {},
+    "packages": {
+      "json/__init__.py": "LOCAL_VALUE: int = 1\n",
+      "json/py.typed": ""
+    },
+    "source_sha256": {
+      "main.py": "47fdd7450b977fcc97e5cd7e361f5f85f077fb93ba788bf82069442311e8360a"
+    },
+    "local_sha256": {},
+    "package_sha256": {
+      "json/__init__.py": "20040c83dc1b0b948c495f2bba1bf72858feea3d6e25c1eb420208895aabd4a8",
+      "json/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"LOCAL_VALUE\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"LOCAL_VALUE\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"LOCAL_VALUE\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 28
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "version_guarded_local_shadow",
+    "files": {
+      "main.py": "import sys\nif sys.version_info >= (3, 14):\n    import json\n    reveal_type(json.VALUE)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b79e2b5d132a869d00433fed59ae7d59d80de8936364e9b12551132caf60f9a5"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 17,
+            "end_line": 4,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": "version_guarded_invalid_shadow",
+    "files": {
+      "main.py": "import sys\nif sys.version_info >= (3, 14):\n    import json\n"
+    },
+    "local": {
+      "json.py": "VALUE =\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6ed31c387e12d651d24addfb3489f75b686c0afcad7e69eebb0b018ca979c05b"
+    },
+    "local_sha256": {
+      "json.py": "9eb272d400550481bbb7c9343903966db46ed69f68981e89a969ab5462077ce7"
+    },
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      [
+        {
+          "rule": "syntax",
+          "message": "Expected an expression",
+          "hint": null,
+          "path": "json.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 9,
+            "end_line": 1,
+            "end_column": 9
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      0,
+      0,
+      2
+    ]
+  },
+  {
+    "name": "valid_json_loads",
+    "files": {
+      "main.py": "import json\njson.loads(\"{}\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0ee52080dc9214aba9f064679051f8dd65dbbf5f19d288d30000298918a57d81"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "valid_json_child",
+    "files": {
+      "main.py": "import json.decoder\njson.decoder.JSONDecodeError(\"x\", \"\", 0)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "785afdd581738a2357a35ae30fbded0b27c31b413967ec56f76efef9042dd0fc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "valid_math_member",
+    "files": {
+      "main.py": "import math\nmath.sqrt(4.0)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "e94eff81ec415d110066d8f2f13a1a2cf1acd65912815a64e20dab583011e514"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "valid_pathlib_member",
+    "files": {
+      "main.py": "import pathlib\npathlib.Path(\".\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "33f68e45414d7f826cded55c467ddcc6a8d236399512f99637ff10164b01fc4d"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "valid_functools_member",
+    "files": {
+      "main.py": "import functools\nfunctools.partial(print, \"ok\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "2e801c8b133a85631448ec49a855175e30169403684daa2e36cacc4833067bbc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "valid_copy_member",
+    "files": {
+      "main.py": "import copy\ncopy.deepcopy([1])\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0095fe45cfb36722f6535eb37e47e4321038c7a90158dd93f60c3bf6fa7c401b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "json_missing_alias",
+    "files": {
+      "main.py": "import json as data\nprint(data.MISSING)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "51f1620f24ff6c20049df96dd45b959a5fe68e9bdfa5d7870ff9fc623b9bf803"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "json_child_missing",
+    "files": {
+      "main.py": "import json.decoder\nprint(json.decoder.MISSING)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "41ed8b2e80ba014a0ae06dfafc7fa89e65ef8378e25f95033b01050c5eb9b529"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "hidden_json_import",
+    "files": {
+      "main.py": "import json\nprint(json.Any)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "23f7e704572095f175643cd2080fb13d8e5379bf8f640291e914aa6adc8be106"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" does not explicitly export attribute \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" does not explicitly export attribute \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module \"json\" does not explicitly export attribute \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 14
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_json_blocks_stdlib_member",
+    "files": {
+      "main.py": "import json\nreveal_type(json.loads)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "8d67fe7cf50ed2e183b6df573387c8fb5764ce4459f9dc32e1e3bcfac36eb5e1"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"loads\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"loads\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"loads\"",
+          "hint": "Revealed type is \"Any\"",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 13,
+            "end_line": 2,
+            "end_column": 22
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "unimported_standard_child",
+    "files": {
+      "main.py": "import json\nprint(json.decoder.MISSING)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "353e560dfc89783b8dc890ee7d2ac9957e2324bbf90dde6519601479b0d2dae9"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "from_standard_child_valid",
+    "files": {
+      "main.py": "from json import decoder\ndecoder.JSONDecodeError(\"x\", \"\", 0)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ef90300050d79592f4c6d7c06c185c2af63e83574e0920a3149db44ee2b2f3b4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "from_standard_child_missing",
+    "files": {
+      "main.py": "from json import decoder\nprint(decoder.MISSING)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ae54e04e420ee628599033558ad92ca74a99df9ad614db3caf139995c86cc706"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 21
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "shared_standard_child_import",
+    "files": {
+      "main.py": "import helper\nimport json\nprint(json.decoder.MISSING)\n"
+    },
+    "local": {
+      "helper.py": "import json.decoder\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d0ec2d6167207f8aba2505efd460770849081bf616a5de6382e4217a4c93de92"
+    },
+    "local_sha256": {
+      "helper.py": "63902c2ff4e063ff9c3cf9c3d354e2f72cbe374a6e45cd7ec99c53ce65e3c755"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 7,
+            "end_line": 3,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "version_standard_child_import",
+    "files": {
+      "main.py": "import sys\nimport json\nif sys.version_info >= (3, 14):\n    import json.decoder\nprint(json.decoder.MISSING)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "781633b645f9de7be65c0ca05faeba1cd58dcaf694d1bf4a8c9a0709dc9d917c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 7,
+            "end_line": 5,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "local_shadow_blocks_standard_child",
+    "files": {
+      "main.py": "import json.decoder\nprint(json.decoder.MISSING)\n"
+    },
+    "local": {
+      "json.py": "VALUE: int = 1\n"
+    },
+    "packages": {},
+    "source_sha256": {
+      "main.py": "41ed8b2e80ba014a0ae06dfafc7fa89e65ef8378e25f95033b01050c5eb9b529"
+    },
+    "local_sha256": {
+      "json.py": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad"
+    },
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "Module has no attribute \"MISSING\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 7,
+            "end_line": 2,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

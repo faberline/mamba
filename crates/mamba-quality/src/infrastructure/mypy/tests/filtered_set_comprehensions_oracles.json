@@ -1,0 +1,185 @@
+[
+  {
+    "target": "3.12",
+    "case": "typed-filter-result",
+    "source_sha256": "fbe11e3545edb740dd006753b1cc671db3b5c773a432ad8a1539780c96bf463f",
+    "json_original_exit": 1,
+    "text_original_exit": 0,
+    "raw_json_sha256": "1530c10bf63238bb21ceb2e18164ef02377e8b899d09d972d7a3946a5fe9824f",
+    "raw_text_sha256": "6331721eab8584dd6ce6a01bf8346526a7503a507980058b578bfa0fde260d8c",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 4,
+          "column": 17,
+          "end_line": 4,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 43
+        }
+      }
+    ]
+  },
+  {
+    "target": "3.12",
+    "case": "typed-filter-assignment",
+    "source_sha256": "2acca83d0d5ae821f10366bf5ddd8ef5768ec1298a4f13cebeadbb27607ed37c",
+    "json_original_exit": 1,
+    "text_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ]
+  },
+  {
+    "target": "3.13",
+    "case": "typed-filter-result",
+    "source_sha256": "fbe11e3545edb740dd006753b1cc671db3b5c773a432ad8a1539780c96bf463f",
+    "json_original_exit": 1,
+    "text_original_exit": 0,
+    "raw_json_sha256": "1530c10bf63238bb21ceb2e18164ef02377e8b899d09d972d7a3946a5fe9824f",
+    "raw_text_sha256": "6331721eab8584dd6ce6a01bf8346526a7503a507980058b578bfa0fde260d8c",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 4,
+          "column": 17,
+          "end_line": 4,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 43
+        }
+      }
+    ]
+  },
+  {
+    "target": "3.13",
+    "case": "typed-filter-assignment",
+    "source_sha256": "2acca83d0d5ae821f10366bf5ddd8ef5768ec1298a4f13cebeadbb27607ed37c",
+    "json_original_exit": 1,
+    "text_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ]
+  },
+  {
+    "target": "3.14",
+    "case": "typed-filter-result",
+    "source_sha256": "fbe11e3545edb740dd006753b1cc671db3b5c773a432ad8a1539780c96bf463f",
+    "json_original_exit": 1,
+    "text_original_exit": 0,
+    "raw_json_sha256": "1530c10bf63238bb21ceb2e18164ef02377e8b899d09d972d7a3946a5fe9824f",
+    "raw_text_sha256": "6331721eab8584dd6ce6a01bf8346526a7503a507980058b578bfa0fde260d8c",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 4,
+          "column": 17,
+          "end_line": 4,
+          "end_column": 35
+        }
+      },
+      {
+        "rule": "misc",
+        "message": "Revealed type is \"set[int]\"",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "note",
+        "location": {
+          "line": 5,
+          "column": 17,
+          "end_line": 5,
+          "end_column": 43
+        }
+      }
+    ]
+  },
+  {
+    "target": "3.14",
+    "case": "typed-filter-assignment",
+    "source_sha256": "2acca83d0d5ae821f10366bf5ddd8ef5768ec1298a4f13cebeadbb27607ed37c",
+    "json_original_exit": 1,
+    "text_original_exit": 1,
+    "raw_json_sha256": "e747d7f7e0a8ebf6a8bfd4fbb6d0c40c6ca380b8af791c7d499f9fd249c0f85b",
+    "raw_text_sha256": "0940b49699ff7e4f72b745ae543b26c79a6e7d252f373d3f7353f4c2615c423d",
+    "diagnostics": [
+      {
+        "rule": "misc",
+        "message": "Set comprehension has incompatible type Set[int]; expected Set[str]",
+        "hint": null,
+        "path": "candidate.py",
+        "severity": "error",
+        "location": {
+          "line": 5,
+          "column": 22,
+          "end_line": 5,
+          "end_column": 22
+        }
+      }
+    ]
+  }
+]

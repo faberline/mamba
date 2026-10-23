@@ -1,0 +1,314 @@
+[
+  {
+    "name": "f-literal-marker-before-skip",
+    "source": "value = f\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+    "source_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0",
+            "output_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0",
+            "output_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0",
+            "output_sha256": "96b7c04cf85ff2585f091ac931b9d0f1ffe133695b92e37d8b7daf5aaaca93a0"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "rf-literal-marker-before-skip",
+    "source": "value = rf\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+    "source_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = rf\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0",
+            "output_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rf\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0",
+            "output_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = rf\"\"\"literal # fmt: skip\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0",
+            "output_sha256": "0baf326958f0e366eadae21a65d88ce6be004a484299b96183aab19701106fe0"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "f-literal-marker-with-colon-suffix",
+    "source": "value = f\"\"\"# fmt: skip: data\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+    "source_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"# fmt: skip: data\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83",
+            "output_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"# fmt: skip: data\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83",
+            "output_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"# fmt: skip: data\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83",
+            "output_sha256": "a15d5c4dc75d0426e07a7ca3af173e801d98e912830c7a3217e11aaf9ccdbe83"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "f-no-literal-marker-control",
+    "source": "value = f\"\"\"literal text without a directive\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+    "source_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal text without a directive\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2",
+            "output_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal text without a directive\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2",
+            "output_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal text without a directive\n{item  # fmt: skip\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2",
+            "output_sha256": "758204199f021acb6f1515b8acf4569001b2f1eb7dff7040500ad52745840ac2"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "f-literal-marker-parenthesized",
+    "source": "value = (\n    f\"\"\"literal # fmt: skip\n    {item  # fmt: skip\n    }\"\"\"\n    \"tail\"\n)\n",
+    "source_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"\"\"literal # fmt: skip\n    {item  # fmt: skip\n    }\"\"\"\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0",
+            "output_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"\"\"literal # fmt: skip\n    {item  # fmt: skip\n    }\"\"\"\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0",
+            "output_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = (\n    f\"\"\"literal # fmt: skip\n    {item  # fmt: skip\n    }\"\"\"\n    \"tail\"\n)\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0",
+            "output_sha256": "e447a28251cb321f221f3047d2c375682ea755cb05840b1cf3504d0eaa582ac0"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "f-literal-marker-no-real-skip",
+    "source": "value = f\"\"\"literal # fmt: skip\n{item  # ordinary comment\n}\"\"\" \"tail\"\n",
+    "source_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # ordinary comment\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24",
+            "output_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # ordinary comment\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24",
+            "output_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"literal # fmt: skip\n{item  # ordinary comment\n}\"\"\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24",
+            "output_sha256": "2fbbd432581d142ef1dc9ce52e9f1cbd8de65c3a0e33256f7f7173aa75f0ad24"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  }
+]

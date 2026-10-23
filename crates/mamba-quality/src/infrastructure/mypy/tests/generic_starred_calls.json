@@ -1,0 +1,721 @@
+[
+  {
+    "name": "generic_starred_int",
+    "files": {
+      "main.py": "def collect[T](*values: T) -> tuple[T, ...]:\n    return values\nitems: list[int] = [1, 2]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "d196bcaddeb9c9b49309e0343f9f81ebad838b271b9bbbdc3e483fce2ef4b3eb"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "generic_starred_str",
+    "files": {
+      "main.py": "def collect[T](*values: T) -> tuple[T, ...]:\n    return values\nitems: list[str] = [\"one\", \"two\"]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "6ae89bcd8d42511b07341e9e31380c6560c4a2c758c017a3f581d79528947c98"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "bounded_generic_starred_good",
+    "files": {
+      "main.py": "def collect[T: float](*values: T) -> tuple[T, ...]:\n    return values\nitems: list[int] = [1, 2]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "cccbb3418df92efeb6fecec002cd70e40ce8b0d8a60f0195a992298105dc25dc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "bounded_generic_starred_bad",
+    "files": {
+      "main.py": "def collect[T: float](*values: T) -> tuple[T, ...]:\n    return values\nitems: list[str] = [\"one\"]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7a27400b0ac68f50b69d30f5c78d1fce4541be24295870c8465fb4fe3317eca8"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "legacy_generic_starred",
+    "files": {
+      "main.py": "from typing import TypeVar\nT = TypeVar(\"T\")\ndef collect(*values: T) -> tuple[T, ...]:\n    return values\nitems: list[int] = [1, 2]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "f9fd7e95fbdaf3e140ea7385acefb65d36d950d3bbc4828b3654319216a382a3"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 13,
+            "end_line": 7,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "constrained_generic_starred",
+    "files": {
+      "main.py": "def collect[T: (int, str)](*values: T) -> tuple[T, ...]:\n    return values\nitems: list[int | str] = [1, \"two\"]\nresult = collect(*items)\nreveal_type(result)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5cb953cd988004ed42fc3c9f8aeb089ab0432503a8f05370107aadf3e8cc6a61"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int | str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int | str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "Value of type variable \"T\" of \"collect\" cannot be \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 10,
+            "end_line": 4,
+            "end_column": 24
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"tuple[int | str, ...]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "starred_with_kwargs_good",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\noptions: dict[str, bool] = {\"enabled\": True}\nflagged(*items, **options)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "16e9b0b2a490f40461e406ba116e81ffa019faca5179807ed8fd05a20ac7b87a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "starred_with_kwargs_bad",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\noptions: dict[str, str] = {\"enabled\": \"bad\"}\nflagged(*items, **options)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0f6aad6f75623fdcfddc0a81467c12bb32c63a77695819c39a36c69a0cc8bcbf"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 2 to \"flagged\" has incompatible type \"**dict[str, str]\"; expected \"bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 19,
+            "end_line": 5,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "starred_with_literal_kwargs_good",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\nflagged(*items, **{\"enabled\": True})\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "9f4245f1826df0c1dba474f542a7db8d1fc5f80cca33aa6d7bccc69b6f387d7f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "starred_with_empty_kwargs",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\nitems: list[int] = [1]\nflagged(*items, **{})\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a5ffb2d1218d7085fb0e56bd2d965b841d73d427c44842e35fbfbbe624bcf304"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "kwargs_only_control",
+    "files": {
+      "main.py": "def flagged(first: int, *, enabled: bool) -> None:\n    pass\noptions: dict[str, bool] = {\"first\": True, \"enabled\": True}\nflagged(**options)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ec8442662bdf5b8d6eded877ff768bad7d2f0e6a9a31d0897ac937cbc72eac1e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

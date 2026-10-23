@@ -1,0 +1,62 @@
+{
+  "schema": "mamba.quality.mypy-binder-identity-inputs.v1",
+  "python_targets": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "unchanged_refreshes": 3,
+  "inputs": {
+    "native_a": {
+      "filename": "native_a.py",
+      "source": "from typing import final as final, cast as cast, override as override, dataclass_transform as dataclass_transform\nfrom abc import abstractmethod as abstractmethod\n",
+      "source_sha256": "444ec2de37de678e33f0140da256cbc1cbfb7f5045d68ece493278564ba5104b"
+    },
+    "native_b": {
+      "filename": "native_b.py",
+      "source": "from typing import final as seal, cast as coerce, override as mark_override, dataclass_transform as factory\nfrom abc import abstractmethod as mark_abstract\n",
+      "source_sha256": "58f531fc98f068caebc36504919669ffb424947fa5b88c8440d90c7cf13fa1c8"
+    },
+    "provider_int": {
+      "filename": "provider.py",
+      "source": "Bound = int\n",
+      "source_sha256": "ebfef8575f39d5bb55ba907132fbeb9348efca5164a6ebe2695f98d2f49aa595"
+    },
+    "provider_str": {
+      "filename": "provider.py",
+      "source": "Bound = str\n",
+      "source_sha256": "25b5698351c9147c20e1dc3be80a5ef8cb5f51e804d4bec9fd3016dc80b405b7"
+    },
+    "declarations": {
+      "filename": "consumer.py",
+      "source": "from provider import Bound\n\ndef left[T: Bound](value: T) -> T: ...\ndef right[T: Bound](value: T) -> T: ...\ndef direct(value: Bound) -> Bound: ...\n",
+      "source_sha256": "3e7f0471bc8accd08c670e4041ab2df95d2fbb444c9013c439e6a3d7684d51b5"
+    }
+  },
+  "native_alias_pairs": [
+    [
+      "final",
+      "seal"
+    ],
+    [
+      "cast",
+      "coerce"
+    ],
+    [
+      "override",
+      "mark_override"
+    ],
+    [
+      "abstractmethod",
+      "mark_abstract"
+    ],
+    [
+      "dataclass_transform",
+      "factory"
+    ]
+  ],
+  "original_diagnostics_expected": null,
+  "structural_contract": "Exact unchanged Export and Signature equality; native declaration generic binders shared across aliases, distinct declarations isolated; actual bound/return change updates exports with same source binder id.",
+  "whole_mypy_accepted": false,
+  "whole_plan_accepted": false
+}

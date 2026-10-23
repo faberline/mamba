@@ -1,0 +1,764 @@
+[
+  {
+    "name": "unpack_list",
+    "source_hex": "5b2a76616c756520666f722076616c756520696e206974656d735d0a",
+    "source_sha256": "b91788d18dba0933e5112b25e741c0cb15cbb2efb49b1d18000b261cc14e5a0f",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-000",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-000"
+    ]
+  },
+  {
+    "name": "unpack_dict",
+    "source_hex": "7b2a2a76616c756520666f722076616c756520696e206974656d737d0a",
+    "source_sha256": "508295d7166bda0ca41283466588d316ece3147a8bfdffd21727862d4b595d3a",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-001",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-001"
+    ]
+  },
+  {
+    "name": "assigned_list",
+    "source_hex": "56414c554553203d205b2a76616c756520666f722076616c756520696e206974656d735d0a",
+    "source_sha256": "47a8819b9ac32db50c536bae002cfaef2739607d51105a9772d559b76b2e3bc2",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-002",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-002"
+    ]
+  },
+  {
+    "name": "assigned_dict",
+    "source_hex": "56414c554553203d207b2a2a76616c756520666f722076616c756520696e206974656d737d0a",
+    "source_sha256": "3cf6f7924d2f555ca2f7e0a2367d36375692fe898ebff67e1f3ae86046d38f7b",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-003",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-003"
+    ]
+  },
+  {
+    "name": "parenthesized_list",
+    "source_hex": "56414c554553203d205b2a2876616c75652920666f722076616c756520696e206974656d735d0a",
+    "source_sha256": "70ff311f5e12bf8e428e4ae8bfb94984de0f7e8814adcdfa55a5b5074b63aa5d",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 11,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-004",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-004"
+    ]
+  },
+  {
+    "name": "multiline_list",
+    "source_hex": "56414c554553203d205b0a202020202a76616c75650a20202020666f722076616c756520696e206974656d730a5d0a",
+    "source_sha256": "fb770d9bb4ecc324f942cddaeb8dd22ebf128e9d40d7491a3034e739432ed239",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-005",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-005"
+    ]
+  },
+  {
+    "name": "multiline_dict",
+    "source_hex": "56414c554553203d207b0a202020202a2a76616c75650a20202020666f722076616c756520696e206974656d730a7d0a",
+    "source_sha256": "36fe48aa16943ac3263cff89b5e80b2e9fcb99be8aaf34cc706e56e1ff9abe7f",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'dict unpacking cannot be used in dict comprehension (main, line 2)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-006",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-006",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-006"
+    ]
+  },
+  {
+    "name": "unpack_set",
+    "source_hex": "7b2a76616c756520666f722076616c756520696e206974656d737d0a",
+    "source_sha256": "8506963256703ddda7cc313c0303c64e19cd1b26fab196bc6391854b5cda84e8",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-007",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-007",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-007"
+    ]
+  },
+  {
+    "name": "unpack_generator",
+    "source_hex": "282a76616c756520666f722076616c756520696e206974656d73290a",
+    "source_sha256": "81053b76855dc7a227165f9e551586840c98dafc07ff957bad1272045ade5cb2",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 2,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-008",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-008",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-008"
+    ]
+  },
+  {
+    "name": "valid_spread_list",
+    "source_hex": "222222446f63756d656e746174696f6e2e2222220a4954454d53203d205b312c20325d0a56414c554553203d205b2a4954454d535d0a",
+    "source_sha256": "bd12740f153bc7f81dda78de53552873d1736554829a9113e72769ad7bf1e739",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-009",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-009",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-009"
+    ]
+  },
+  {
+    "name": "valid_spread_dict",
+    "source_hex": "222222446f63756d656e746174696f6e2e2222220a4954454d53203d207b313a20327d0a56414c554553203d207b2a2a4954454d537d0a",
+    "source_sha256": "a4e7216a6f982f3339cd86380b6c8ff287afc09775503083c8721fb831602c93",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-010",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-010",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-010"
+    ]
+  },
+  {
+    "name": "valid_list_comprehension",
+    "source_hex": "222222446f63756d656e746174696f6e2e2222220a56414c554553203d205b6974656d20666f72206974656d20696e2072616e67652833295d0a",
+    "source_sha256": "644debcbbffd7ec7a42239c220daf2e98da2ca723e9b30349d94db0d9698d693",
+    "expected": [
+      [
+        {
+          "rule": "R1721",
+          "message": "Unnecessary use of a comprehension, use list(range(3)) instead.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "R1721",
+          "message": "Unnecessary use of a comprehension, use list(range(3)) instead.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 36
+          }
+        }
+      ],
+      [
+        {
+          "rule": "R1721",
+          "message": "Unnecessary use of a comprehension, use list(range(3)) instead.",
+          "hint": null,
+          "path": "main.py",
+          "severity": "refactor",
+          "location": {
+            "line": 2,
+            "column": 9,
+            "end_line": 2,
+            "end_column": 36
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      8,
+      8,
+      8
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-011",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-011",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-011"
+    ]
+  },
+  {
+    "name": "valid_dict_comprehension",
+    "source_hex": "222222446f63756d656e746174696f6e2e2222220a56414c554553203d207b6974656d3a206974656d20666f72206974656d20696e2072616e67652833297d0a",
+    "source_sha256": "1ac6eb2fceacedfa4908fbb81c13b1bc6313c8fe9bb6f29c67ab2536579c868f",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-012",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-012",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-012"
+    ]
+  },
+  {
+    "name": "literal_marker_control",
+    "source_hex": "222222446f63756d656e746174696f6e2e2222220a56414c5545203d20225b2a76616c756520666f722076616c756520696e206974656d735d220a23207b2a2a76616c756520666f722076616c756520696e206974656d737d0a",
+    "source_sha256": "846204e6a1772966be4bfbacb9df218a5de7b7a7e5e70c07cc70545af60fe1ac",
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-013",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-013",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-013"
+    ]
+  },
+  {
+    "name": "unicode_assigned_list",
+    "source_hex": "cf80203d205b2a76616c756520666f722076616c756520696e206974656d735d0a",
+    "source_sha256": "162275644a4a3dad4a4939f94b728a614019af8287d5776b33e15a833907599b",
+    "expected": [
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ],
+      [
+        {
+          "rule": "E0001",
+          "message": "Parsing failed: 'iterable unpacking cannot be used in comprehension (main, line 1)'",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 6,
+            "end_line": null,
+            "end_column": null
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      2,
+      2,
+      2
+    ],
+    "reference_case_roots": [
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python312/case-014",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python313/case-014",
+      "/Users/chrischeng/.codex/worktrees/9725/mamba/target/quality-evidence-20261011-01a10cbe/quality-agent-dispatch-1/pylint-starred-comprehensions-reference-1/original-1/python314/case-014"
+    ]
+  }
+]

@@ -1,0 +1,605 @@
+[
+  {
+    "name": "unused_name_filter",
+    "files": {
+      "main.py": "value = 1  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "97e98960760717f58cae22a026caf8184394a01d5d7534c32c4d1643a0666406"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "used_name_filter",
+    "files": {
+      "main.py": "value = missing  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "2220e2fee947868a22ad4cc680ec6e690afc4ecd52db9dc924373156b4fd01e5"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "ignored_suggestion",
+    "files": {
+      "main.py": "value = 1\nprint(vaule)  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "53018a9ea62f8ca9ad0ebfbfe78125f346af76690b41449269e201633eace9a2"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "unused_name_and_assignment",
+    "files": {
+      "main.py": "value = 1  # type: ignore[name-defined, assignment]\n"
+    },
+    "source_sha256": {
+      "main.py": "c79e659ad49ffb62b299c6fad50f59c0c65b7ebcf3baacbc0ec1813de2f3194d"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined, assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined, assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined, assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "used_name_unused_assignment",
+    "files": {
+      "main.py": "value = missing  # type: ignore[name-defined, assignment]\n"
+    },
+    "source_sha256": {
+      "main.py": "d436762bd8e1bc32ad45ecd5bca156b31b909736f5119a3b2e86ebf0196fd340"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[assignment]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "used_assignment_unused_name",
+    "files": {
+      "main.py": "value: int = \"x\"  # type: ignore[name-defined, assignment]\n"
+    },
+    "source_sha256": {
+      "main.py": "efc8a8a72584e55786c67020e16aa74ebb3dce2544e6c226338e337e05d59abf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore[name-defined]\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "name_filter_wrong_rule",
+    "files": {
+      "main.py": "value: int = \"x\"  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "55f2d152defee908f9ea4877704f08b88b070077d3a6c54dc18882b3c4288b3c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": "Error code \"assignment\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": "Error code \"assignment\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": "Error code \"assignment\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 14,
+            "end_line": 1,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "unknown_return_name_filter",
+    "files": {
+      "main.py": "def value() -> int:\n    return missing  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "4cb53ebe3ab2500095130bb42c897811f6d53e493be49d5150d3f297b44fef8f"
+    },
+    "expected": [
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": "Error code \"no-any-return\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": "Error code \"no-any-return\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "no-any-return",
+          "message": "Returning Any from function declared to return \"int\"",
+          "hint": "Error code \"no-any-return\" not covered by \"type: ignore[name-defined]\" comment",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 5,
+            "end_line": 2,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "unknown_annotation_filter",
+    "files": {
+      "main.py": "value: Missing = 1  # type: ignore[name-defined]\n"
+    },
+    "source_sha256": {
+      "main.py": "bb00f439ff53828eb31c849299b8cf94d985829792da66b5f1817bf8638d1e19"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "generic_name_filter",
+    "files": {
+      "main.py": "def value[T: (int, str)](item: T) -> T:\n    local: T = item  # type: ignore[name-defined]\n    return local\n"
+    },
+    "source_sha256": {
+      "main.py": "f4783a5eed85ac688c13c25d64b9096260d0e3cba1fec1f78d8d36db441f2340"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 0,
+            "end_line": 2,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "blanket_unused",
+    "files": {
+      "main.py": "value = 1  # type: ignore\n"
+    },
+    "source_sha256": {
+      "main.py": "ae210a0790222cf36621e26a77c7cc88a159110d07d234e49c79b8771dfcb62c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ],
+      [
+        {
+          "rule": "unused-ignore",
+          "message": "Unused \"type: ignore\" comment",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 1,
+            "column": 0,
+            "end_line": 1,
+            "end_column": -1
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "blanket_used",
+    "files": {
+      "main.py": "value = missing  # type: ignore\n"
+    },
+    "source_sha256": {
+      "main.py": "c9ee00e9b2ad9eb1fc090fa388e2082bca4f132bbaacefe537ddb55d88cb9c91"
+    },
+    "expected": [
+      [],
+      [],
+      []
+    ],
+    "reference_exits": [
+      0,
+      0,
+      0
+    ]
+  }
+]

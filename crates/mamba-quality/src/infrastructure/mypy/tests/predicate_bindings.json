@@ -1,0 +1,3634 @@
+[
+  {
+    "name": "typeguard_variance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef parent(value: object) -> TypeGuard[Parent]:\n    return True\ndef child(value: object) -> TypeGuard[Child]:\n    return True\na: Callable[[object], TypeGuard[Parent]] = child\nb: Callable[[object], TypeGuard[Child]] = parent\n"
+    },
+    "source_sha256": {
+      "main.py": "86aea80e4967955662b3dd3434cf6005865c1b620734fe1ce5689fcc787bac7a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Parent]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 43,
+            "end_line": 10,
+            "end_column": 48
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Parent]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 43,
+            "end_line": 10,
+            "end_column": 48
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Parent]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 43,
+            "end_line": 10,
+            "end_column": 48
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_bool_covariance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeGuard[Child]:\n    return True\ncallback: Callable[[object], bool] = predicate\nreveal_type(callback)\n"
+    },
+    "source_sha256": {
+      "main.py": "c567fcfd66e7070fc3ab99630ba499d993ed013d6758bef392ea6cece0cd14c5"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_invalid_quoted_arity",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> \"TypeGuard[int, str]\":\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "319ca14a9cb0fe86b18182371bdc9eec17eeae456abde1709956e32559dcf349"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 53
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_callable_instance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\nclass Predicate:\n    def __call__(self, value: object) -> TypeGuard[Child]:\n        return True\ndef consume(value: object, predicate: Predicate) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "64b019741191468f21a755b427c32a95b5dff73a5d2fc8366fb03a2243417d84"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_protocol_callback",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\nclass Predicate(Protocol):\n    def __call__(self, value: object) -> TypeGuard[Child]: ...\ndef consume(value: object, predicate: Predicate) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "033bbeaad515531bb70637474436943e6c1000ca3870dc16cfc58eeff80d1a25"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_stored_result",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeGuard[Child]:\n    return True\ndef consume(value: object) -> None:\n    ok = predicate(value)\n    if ok:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "532c0e6018426407a20b3c49476104fba36fadccc1ad88f36d72f115a0cab4f8"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_star_argument",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeGuard[Child]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(*(value,)):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "671ee1a6e78efe5de1102789dd5f791c4fd59cc4e8d9e9e82b60d03426a208d0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_variance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef parent(value: object) -> TypeIs[Parent]:\n    return True\ndef child(value: object) -> TypeIs[Child]:\n    return True\na: Callable[[object], TypeIs[Parent]] = child\nb: Callable[[object], TypeIs[Child]] = parent\n"
+    },
+    "source_sha256": {
+      "main.py": "df827b307b375747f94c8ab42414ed5889f00a17c340e36fcaabcbf64b34a809"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeIs[Parent]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 41,
+            "end_line": 9,
+            "end_column": 45
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Parent]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 45
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeIs[Parent]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 41,
+            "end_line": 9,
+            "end_column": 45
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Parent]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 45
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeIs[Parent]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 41,
+            "end_line": 9,
+            "end_column": 45
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Parent]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 45
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_bool_covariance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeIs[Child]:\n    return True\ncallback: Callable[[object], bool] = predicate\nreveal_type(callback)\n"
+    },
+    "source_sha256": {
+      "main.py": "d1208017d02305436542c882fc7d9ac1e889024499b819412e5d949e4b23e38b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (object) -> bool\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 20
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_invalid_quoted_arity",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> \"TypeIs[int, str]\":\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "2d62d5d9fd142d9902618d9791162c95be4d1bdc90d75c43429623ebc75037e0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 33,
+            "end_line": 5,
+            "end_column": 50
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_callable_instance",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\nclass Predicate:\n    def __call__(self, value: object) -> TypeIs[Child]:\n        return True\ndef consume(value: object, predicate: Predicate) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "e2c6e75461eb9b6052ab7d8e799d6c0ad1a35aa27431ec898c1f50cc85409265"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_protocol_callback",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\nclass Predicate(Protocol):\n    def __call__(self, value: object) -> TypeIs[Child]: ...\ndef consume(value: object, predicate: Predicate) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "e8e9a839e7716a0a27a396a493a1f925f54d69568787e1809438b638763e2c57"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.Child\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_stored_result",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeIs[Child]:\n    return True\ndef consume(value: object) -> None:\n    ok = predicate(value)\n    if ok:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "c754c951197f3aca03b7f9d3090418e6cf26b4d669c8d15702e5001bba548074"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_star_argument",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef predicate(value: object) -> TypeIs[Child]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(*(value,)):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "78f039ce3e8d2ab87280e5bfd87ed450ccfea83cd2425296e367b7fd4f6fd618"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 8,
+            "end_line": 8,
+            "end_column": 27
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "predicate_kinds_are_distinct",
+    "files": {
+      "main.py": "from typing import Callable, Generic, TypeVar, Protocol\nfrom typing_extensions import TypeGuard, TypeIs\nclass Parent: pass\nclass Child(Parent): pass\ndef guard(value: object) -> TypeGuard[Child]:\n    return True\ndef predicate(value: object) -> TypeIs[Child]:\n    return True\na: Callable[[object], TypeGuard[Child]] = predicate\nb: Callable[[object], TypeIs[Child]] = guard\n"
+    },
+    "source_sha256": {
+      "main.py": "95f541f00346d5848fb5a595d0d98ff3fed31865fd31de0a91f82c6e8fbe23e1"
+    },
+    "expected": [
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 43,
+            "end_line": 9,
+            "end_column": 51
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Child]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 43,
+            "end_line": 9,
+            "end_column": 51
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Child]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeIs[Child]]\", variable has type \"Callable[[object], TypeGuard[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 9,
+            "column": 43,
+            "end_line": 9,
+            "end_column": 51
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[object], TypeGuard[Child]]\", variable has type \"Callable[[object], TypeIs[Child]]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 10,
+            "column": 40,
+            "end_line": 10,
+            "end_column": 44
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_any_input",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: Any) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "2685a6a39937732d37ba84ff199045c4ec8580b4e03642548e72fae4f2e4ae32"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_any_target",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeGuard[Any]:\n    return True\ndef consume(value: int | str) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "5eaa651c6a83fedc518c5411e4f4b5ce76a19daf715f6bd0324234acc04f5482"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_walrus_argument",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(other := value):\n        reveal_type(other)\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "fac5b08453e46583cd101f17fe8544ae44a68c89383c6d842c864393f2dcc210"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_literal_union",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeGuard[Literal[1]]:\n    return True\ndef consume(value: Literal[1, 2]) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ca598f968fe151ca4a6fb1e9fcfdb45ac74a51f571603c1af4ecab65722d4a95"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1] | Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_any_input",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: Any) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "cbe66d72b62722d3e5e7a95d77fb46a4c3b60f37ff1b127dbc773363ec1517fd"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_any_target",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeIs[Any]:\n    return True\ndef consume(value: int | str) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b986c22934848aaf5dd2ac42ed6ba9e56e69f92a092c69c91d49c5e0f767e037"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_walrus_argument",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(other := value):\n        reveal_type(other)\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "911ab7714ffa48f9da6f5b055932829eb4b978a753bb905068892ca0767dc033"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_literal_union",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeIs[Literal[1]]:\n    return True\ndef consume(value: Literal[1, 2]) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "68e09ef489ca2c5e500cfb83c59dfbb3442c3f2c7cf144cc306ec472c5790019"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[1]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Literal[2]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_generic_invariant_overlap",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\ndef predicate(value: object) -> TypeIs[list[str]]:\n    return True\ndef consume(value: list[int]) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "182e5c1d63a78fcba5169c0e661962f59ae042d8e8d3b5ffb4f5d7ccc19dfe5e"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_typevar_input",
+    "files": {
+      "main.py": "from typing import Any, Literal, TypeVar, Generic, Callable\nfrom typing_extensions import TypeGuard, TypeIs\nT = TypeVar(\"T\", bound=int | str)\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: T) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ba5a09111e85e42d0817fe34f21cc087d80b31758a94a371240021c9a816b3a0"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 21,
+            "end_line": 8,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"T\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_disjoint_decorators",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\n@disjoint_base\nclass A: pass\n@disjoint_base\nclass B: pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "e8f065d0ad3262a1813d2278cc1e090e4960954e59a7c997b53782f54f716ff7"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_disjoint_one_base",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\n@disjoint_base\nclass A: pass\nclass B: pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "864cdd13a133a5cd887305d508e2033f515a1dae0697c75e81699286d19ea5eb"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 11,
+            "column": 21,
+            "end_line": 11,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_distinct_slots",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\nclass A:\n    __slots__ = (\"left\",)\nclass B:\n    __slots__ = (\"right\",)\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "f159fba6c9338ddae1dd86ddf81d222f2326b28ecca5f7d4b061743220c3b8ab"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_empty_slots",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\nclass A:\n    __slots__ = ()\nclass B:\n    __slots__ = (\"right\",)\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "873a3eba5e04cebe1fe0709c21bb47f5d5ba9d31486d922b6c0b9119d3dfba3b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_shared_disjoint_parent",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\n@disjoint_base\nclass Parent: pass\nclass A(Parent): pass\nclass B(Parent): pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "cc1044f4d6e58b7326acb93477629ad4474cd396b4787482b4dcb2a44f0d3dda"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 10,
+            "column": 21,
+            "end_line": 10,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_inherited_disjoint_bases",
+    "files": {
+      "main.py": "from typing_extensions import TypeIs, disjoint_base\n@disjoint_base\nclass ParentA: pass\n@disjoint_base\nclass ParentB: pass\nclass A(ParentA): pass\nclass B(ParentB): pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "ae95c5684c23e3f186ae9383abe4060faef2316d7e784632b2094b035071ddbf"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_expanded_keyword",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(**{\"value\": value}):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "363c948afdb82caf44b420558e36f6007f36a6844406b1b88ed4b1f07e7510fa"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_wrong_keyword",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeGuard[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(other=value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "7f8f5a6af7e350a3218b70697bc898ac3ac4f1c5df92dff4874401f5674ae806"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type guard requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeguard_quoted_nested",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> \"TypeGuard[int, str]\":\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "16263e959dd77849e35d8faedf1b88c7f71cd90643621be41e3e90cda5206e32"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 53
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeGuard must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 53
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_expanded_keyword",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(**{\"value\": value}):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "c9ed1f67c7a280ec0fd18a3623fcc665598108d652e7be0f5a2213b9ad3d751c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_wrong_keyword",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeIs[str]:\n    return True\ndef consume(value: object) -> None:\n    if predicate(other=value):\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "644e883885a2a902601dfa02fa57f63463f418bc6718e3e3d4b1c3e2f814ec9b"
+    },
+    "expected": [
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "call-arg",
+          "message": "Unexpected keyword argument \"other\" for \"predicate\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Type narrower requires positional argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 8,
+            "end_line": 6,
+            "end_column": 29
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"object\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_quoted_nested",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> \"TypeIs[int, str]\":\n    return True\n"
+    },
+    "source_sha256": {
+      "main.py": "db3eeb3096ed5f5b843da7355580fcae86af7031c98cc90d35c14805fe3c2a57"
+    },
+    "expected": [
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 50
+          }
+        }
+      ],
+      [
+        {
+          "rule": "valid-type",
+          "message": "TypeIs must have exactly one type argument",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 33,
+            "end_line": 3,
+            "end_column": 50
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_invariant_any_element",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeIs[list[str]]:\n    return True\ndef consume(value: list[Any]) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "42d81828fe5cc4226435258641efa8dbcd70fb302b354c2c052d04744a6ba82a"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[Any]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_invariant_object_element",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\ndef predicate(value: object) -> TypeIs[list[str]]:\n    return True\ndef consume(value: list[object]) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "a75c5430971de496f329dfca2e13c3d34a59dd84d17af335c6720958d6677e3c"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[object]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_shared_slot_parent",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\nclass Parent:\n    __slots__ = (\"value\",)\nclass A(Parent):\n    __slots__ = ()\nclass B(Parent):\n    __slots__ = ()\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "b6c9212eef21186427f0fd7ff72be507539d374969176b0e8a484d1c5a10b29d"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.<subclass of \"main.A\" and \"main.B\">\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 21,
+            "end_line": 13,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "typeis_aliased_disjoint",
+    "files": {
+      "main.py": "from typing import Any, TypeVar\nfrom typing_extensions import TypeGuard, TypeIs, disjoint_base\nfrom typing_extensions import disjoint_base as layout\n@layout\nclass A: pass\n@layout\nclass B: pass\ndef predicate(value: object) -> TypeIs[B]:\n    return True\ndef consume(value: A) -> None:\n    if predicate(value):\n        reveal_type(value)\n    else:\n        reveal_type(value)\n"
+    },
+    "source_sha256": {
+      "main.py": "49e670e24a6511e439c11a353d648cd806daa7ba412e0bb6d1ad5bb195962fa6"
+    },
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"main.A\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 14,
+            "column": 21,
+            "end_line": 14,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ]
+  }
+]

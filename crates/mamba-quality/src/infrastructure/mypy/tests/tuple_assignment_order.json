@@ -1,0 +1,1155 @@
+{
+  "schema": "mamba.quality.mypy-tuple-assignment-order.v1",
+  "source_manifest_sha256": "a64d0fcaba17601fb9ba2c70764b8c2fdab993276f8fff2c7955e0d9a533f64f",
+  "qualified_oracles_sha256": "155ab243e12eb3c49eda023aaafaea3ceb9e98515941ecaa8c6805d39056179b",
+  "qualified_proof_sha256": "aa7038375368ac08709efd9bef5dfa8fabecec7c48bfac6f395779f6d6c989dd",
+  "capture_manifest_sha256": "c80feb49b45a72144538cdd37418aa549c2b116b7d6c7c0f6d4d7bb4e5740bf5",
+  "capture_pipeline_sha256": "5ec114975c566af39083b1235badb3ced83837a5870877a2e78e69fc3edf7572",
+  "qualified_original_calls": 60,
+  "qualified_repeat_pairs": 30,
+  "qualified_checks": 120149,
+  "historical_314_evidence_corrected": false,
+  "cases": [
+    {
+      "target": "3.12",
+      "case": "annotated_object_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    a, b = b, a\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a20202020612c2062203d20622c20610a2020202072657475726e20620a",
+      "source_bytes": 86,
+      "source_sha256": "a5dc574126f54cd759f0d697d967d819407d67360337ae766a863d702bf8fb9b",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-annotated_object_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c4684065390b2e659e5271466bf00ff3c790d4ad3d341d51f5c2fad7461847db"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "ba15fc610ca46cdeb283a5fca355b74a757eee4bf7bd459de1d594f62fa9bff0"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-annotated_object_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "dd0cacdf525c80a6524c9c528fffbe1d02d7070a2d515b67dbfd6f4a892dd0fb"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "79b4586a108b04469eda409d045064c071e636133002a4fa28e9361ea8cbd321"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.12",
+      "case": "annotated_union_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: int | str = 1\n    b: int | str = \"s\"\n    a, b = b, a\n    reveal_type(a)\n    reveal_type(b)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a20696e74207c20737472203d20310a20202020623a20696e74207c20737472203d202273220a20202020612c2062203d20622c20610a2020202072657665616c5f747970652861290a2020202072657665616c5f747970652862290a",
+      "source_bytes": 121,
+      "source_sha256": "72f6092271a9c9d210b5d686d033d3adc91427571c4481259ba2891015401542",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 17
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20352c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20352c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20362c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20362c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-annotated_union_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "404e5b387f84467688ad24fdee9ac9050c0ae63b3488ff069828c8fef01c19f5"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "03743ce0f5285974d155bb7236cb179a677ca11741b4243161a81f9486c86e2a"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+          "raw_stdout_hex": "6d61696e2e70793a353a31373a353a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a6d61696e2e70793a363a31373a363a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-annotated_union_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "f2a9cc8aaf3d886b156b4fb7241b9461f32e1b19cfb0f598e6e0884844456223"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "08eafef888dff7d47720d22294506b29e8fa365c80ad1d0cd4b231c60d5e82bb"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.12",
+      "case": "nested_list_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    [a, [b]] = [b, [a]]\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a202020205b612c205b625d5d203d205b622c205b615d5d0a2020202072657475726e20620a",
+      "source_bytes": 94,
+      "source_sha256": "ece8314fb9e7a33801b4f44a84efa661f7776d35c2c3dc8334bccc40e6e11f21",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-nested_list_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c9830387f17ffa9a22e1bb3e1da833f3ffeae6a69e93a99e108e27f9688091ed"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "329393b67907cc08c4fa6c0677c15d7a5713f4a1093dbdd7d07faac0de8af341"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-nested_list_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "16f192c361c5efabacba68c2046ffa8cf55fabac8bd4cc1f0358111d4c392b43"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "f96b4ed6750944ad986e72faa99177a148c9aced217add9cc283a13b61a2eace"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.12",
+      "case": "callable_swap",
+      "filename": "main.py",
+      "source_utf8": "def one() -> int:\n    return 1\n\n\ndef two() -> str:\n    return \"s\"\n\n\na = one\nb = two\na, b = b, a\nreveal_type(a())\nreveal_type(b())\n",
+      "source_bytes_hex": "646566206f6e652829202d3e20696e743a0a2020202072657475726e20310a0a0a6465662074776f2829202d3e207374723a0a2020202072657475726e202273220a0a0a61203d206f6e650a62203d2074776f0a612c2062203d20622c20610a72657665616c5f7479706528612829290a72657665616c5f7479706528622829290a",
+      "source_bytes": 130,
+      "source_sha256": "dfed2b7fba56cb3a35a31c47bec4e632de833c5592c58099a7402357c56466a4",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], str]\", variable has type \"Callable[[], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 8,
+            "end_line": 11,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], int]\", variable has type \"Callable[[], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 11,
+            "end_line": 11,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 13,
+            "end_line": 12,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 13,
+            "end_line": 13,
+            "end_column": 15
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a20372c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a20382c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a2031302c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a2031312c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031322c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031322c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c22696e745c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031332c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031332c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c227374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-callable_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "2816db53ecd70b6bfc0a9dafc2a37447384c9eb0b8e322a3fe736b169df39bd7"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "38771df8ce47c63d38bb3934dc0eb6334e72220a8706dc4d7db0028b0596c714"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+          "raw_stdout_hex": "6d61696e2e70793a31313a383a31313a383a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c207374725d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c20696e745d222920205b61737369676e6d656e745d0a6d61696e2e70793a31313a31313a31313a31313a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c20696e745d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c207374725d222920205b61737369676e6d656e745d0a6d61696e2e70793a31323a31333a31323a31353a206e6f74653a2052657665616c656420747970652069732022696e74220a6d61696e2e70793a31333a31333a31333a31353a206e6f74653a2052657665616c656420747970652069732022737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-callable_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "03437eead6e7115946165c9f134a99931b7419d391fb17522bcef6d517cab592"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "4a8c4c3468367ac7c6c5ba544faeb14c8a27b684ef3573be4a3a2179011e36a8"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.12",
+      "case": "plain_same_type_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a = 1\n    b = 2\n    a, b = b, a\n    return a + b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a2020202061203d20310a2020202062203d20320a20202020612c2062203d20622c20610a2020202072657475726e2061202b20620a",
+      "source_bytes": 75,
+      "source_sha256": "09e6c095e5b317641b1314335761aab451dc28c03c4ca96f8793e18ff2ede6d8",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-plain_same_type_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "73a67fd96ab089ce830df8a9424469619765e684bf6c53b1de4508dc92a30bd8"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "f5992c453d2c5a3328a22ef9f8bc3b21fa300795c2136dd36f96e4721ac1b50c"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "312-plain_same_type_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "5bf650bb19cc0fb6a657d9a188f1425bf22faa2d8784b23f838e691b43ab2568"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "4147f280ee350c43a72a6c91d1fa962d51cb75647cd35658e35de73a9dcd021e"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.13",
+      "case": "annotated_object_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    a, b = b, a\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a20202020612c2062203d20622c20610a2020202072657475726e20620a",
+      "source_bytes": 86,
+      "source_sha256": "a5dc574126f54cd759f0d697d967d819407d67360337ae766a863d702bf8fb9b",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-annotated_object_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c2a90716b9bd9711c155cb660621dc1df542530c25ba9e7cdd94241dec6fc90d"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "321f49fcfa0077d23597949d91d48b52a67242e5d0abcaf59d86e3f465f8e465"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-annotated_object_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "3e1eed68cf779fd55f657a7699ad11a0161a373eb06b54115058b231fcb846ee"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "400bff6730eeea82b0a7614c48918e1c98b0989f6700bf1cd27101400686c9dc"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.13",
+      "case": "annotated_union_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: int | str = 1\n    b: int | str = \"s\"\n    a, b = b, a\n    reveal_type(a)\n    reveal_type(b)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a20696e74207c20737472203d20310a20202020623a20696e74207c20737472203d202273220a20202020612c2062203d20622c20610a2020202072657665616c5f747970652861290a2020202072657665616c5f747970652862290a",
+      "source_bytes": 121,
+      "source_sha256": "72f6092271a9c9d210b5d686d033d3adc91427571c4481259ba2891015401542",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 17
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20352c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20352c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20362c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20362c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-annotated_union_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "d56552263bda7764abc636e9edd38cb7b51666f4ae4b83b230389dc95f84366d"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "529fcf0f46178ada920869a16160297ddec8824a33dffab89b12bc6f46842041"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+          "raw_stdout_hex": "6d61696e2e70793a353a31373a353a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a6d61696e2e70793a363a31373a363a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-annotated_union_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c8a4dee70413ab3437bb1052586182af2cae3b2a32aca2b8d89aaa193925afa7"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "64dedc1b52d6b398538b39bddc55cc241421a1cee1ae0852c9be58b6e8e50fca"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.13",
+      "case": "nested_list_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    [a, [b]] = [b, [a]]\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a202020205b612c205b625d5d203d205b622c205b615d5d0a2020202072657475726e20620a",
+      "source_bytes": 94,
+      "source_sha256": "ece8314fb9e7a33801b4f44a84efa661f7776d35c2c3dc8334bccc40e6e11f21",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-nested_list_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "d947fdc492192aa7d2b88f6001578b053e72737fa3802c24afdb28671669046a"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "ec26318dec46797aa645644a8e37507feb394e23201ebc69311345bd0708c5f4"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-nested_list_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c3058211967256ad19b46fc103a01260e06d3f5d920d24d7ceea0450295cfec6"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "30c40ecacc95e5ce5893c6fa5431c40e804a9b79e4ca8d94ebc1fd605a8741ef"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.13",
+      "case": "callable_swap",
+      "filename": "main.py",
+      "source_utf8": "def one() -> int:\n    return 1\n\n\ndef two() -> str:\n    return \"s\"\n\n\na = one\nb = two\na, b = b, a\nreveal_type(a())\nreveal_type(b())\n",
+      "source_bytes_hex": "646566206f6e652829202d3e20696e743a0a2020202072657475726e20310a0a0a6465662074776f2829202d3e207374723a0a2020202072657475726e202273220a0a0a61203d206f6e650a62203d2074776f0a612c2062203d20622c20610a72657665616c5f7479706528612829290a72657665616c5f7479706528622829290a",
+      "source_bytes": 130,
+      "source_sha256": "dfed2b7fba56cb3a35a31c47bec4e632de833c5592c58099a7402357c56466a4",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], str]\", variable has type \"Callable[[], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 8,
+            "end_line": 11,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], int]\", variable has type \"Callable[[], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 11,
+            "end_line": 11,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 13,
+            "end_line": 12,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 13,
+            "end_line": 13,
+            "end_column": 15
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a20372c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a20382c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a2031302c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a2031312c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031322c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031322c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c22696e745c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031332c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031332c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c227374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-callable_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c700440772396937f2347e01302116483413f3ad75c2c3620ec05988c52d7982"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "94137227364d829c6e1d59defd3cc5e0687727cbf33ac95d217ed84973e99de6"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+          "raw_stdout_hex": "6d61696e2e70793a31313a383a31313a383a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c207374725d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c20696e745d222920205b61737369676e6d656e745d0a6d61696e2e70793a31313a31313a31313a31313a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c20696e745d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c207374725d222920205b61737369676e6d656e745d0a6d61696e2e70793a31323a31333a31323a31353a206e6f74653a2052657665616c656420747970652069732022696e74220a6d61696e2e70793a31333a31333a31333a31353a206e6f74653a2052657665616c656420747970652069732022737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-callable_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "a3a6ef927f16e63275b313adc6e4f17077336de231b48985e413c10c9dbb86f4"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "3a2abdea824710802e2565b08f8f4ed6e93ca6099239935f90a3c3e2e80de19b"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.13",
+      "case": "plain_same_type_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a = 1\n    b = 2\n    a, b = b, a\n    return a + b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a2020202061203d20310a2020202062203d20320a20202020612c2062203d20622c20610a2020202072657475726e2061202b20620a",
+      "source_bytes": 75,
+      "source_sha256": "09e6c095e5b317641b1314335761aab451dc28c03c4ca96f8793e18ff2ede6d8",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-plain_same_type_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "27bbab057bddd377c84161abe0102091eb2a844e1fb01fbbf689d29c86a0908e"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "9d427055d0cde0b6298b3fff13d1162fec59a905517d9d17a8643d4ecb3eb44f"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "313-plain_same_type_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "8428476000e46a7710dbd2aae164e35366115a8ed4de51ff20044cf4719855a9"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "d30f498396bd1c6a41fb3dd371af10247216bfed9ee8b4f610185621027a61c9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.14",
+      "case": "annotated_object_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    a, b = b, a\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a20202020612c2062203d20622c20610a2020202072657475726e20620a",
+      "source_bytes": 86,
+      "source_sha256": "a5dc574126f54cd759f0d697d967d819407d67360337ae766a863d702bf8fb9b",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-annotated_object_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "c110dccf3e75fc59cad181b0e6f7a0ada45abab96cc9272461badd50ae1f2d6a"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "715fb4bd403b8cecf5bfc10af08e0a9f0eafb7a8bb2999ca213a16c35748cec2"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-annotated_object_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "1ce4d5d7c027ae26a29d94066d01f38a531bc655d403e8b9ad767da8b13bb616"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "2da62789b9584d1280c95e52e1617bf7af7b6d822a451c600f15e92ad66af82e"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.14",
+      "case": "annotated_union_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> None:\n    a: int | str = 1\n    b: int | str = \"s\"\n    a, b = b, a\n    reveal_type(a)\n    reveal_type(b)\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e204e6f6e653a0a20202020613a20696e74207c20737472203d20310a20202020623a20696e74207c20737472203d202273220a20202020612c2062203d20622c20610a2020202072657665616c5f747970652861290a2020202072657665616c5f747970652862290a",
+      "source_bytes": 121,
+      "source_sha256": "72f6092271a9c9d210b5d686d033d3adc91427571c4481259ba2891015401542",
+      "expected_diagnostics": [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 17,
+            "end_line": 5,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 17,
+            "end_line": 6,
+            "end_column": 17
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20352c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20352c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a20362c2022636f6c756d6e223a2031362c2022656e645f6c696e65223a20362c2022656e645f636f6c756d6e223a2031372c20226d657373616765223a202252657665616c65642074797065206973205c22696e74207c207374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-annotated_union_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "a3949cf589ba0a1f16f6d709b098bf18a1f1c2c04ff96672fd45165169f848ec"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "f692d78a08be6c90a6985646facac35268d18e21e75b69075c2f7fad139949f6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "026c195ccebd8651c965b721a3279be0ac5d7d5b4e85e7da5fbe0abd9b330808"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+          "raw_stdout_hex": "6d61696e2e70793a353a31373a353a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a6d61696e2e70793a363a31373a363a31373a206e6f74653a2052657665616c656420747970652069732022696e74207c20737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-annotated_union_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "77f5d279adb4b3146d91ed4168ed860d1d893830060d990106d416d8a45085ae"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "fb4114316a3248cadf8f4500f1f9c37567911ab5bcef333e45bd8575bc22f8d6",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "405d321d681527952f98b38a1761bad37b6a9ec65af07e5d8ff109bedc5270ed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.14",
+      "case": "nested_list_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a: object = \"s\"\n    b: int = 1\n    [a, [b]] = [b, [a]]\n    return b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a20202020613a206f626a656374203d202273220a20202020623a20696e74203d20310a202020205b612c205b625d5d203d205b622c205b615d5d0a2020202072657475726e20620a",
+      "source_bytes": 94,
+      "source_sha256": "ece8314fb9e7a33801b4f44a84efa661f7776d35c2c3dc8334bccc40e6e11f21",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-nested_list_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "636330f61ee5a9bf703225305a208f805f0eec5257bdfb2746242dcac0caf6c9"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "22ec4d01855897787911ea957431885e221919eef454a235bb1ffb91b3ca442a"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-nested_list_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "891a419b94b26fe4584b9e892fa0d30688af1bfba591f12b86de6b4200f1bdd6"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "14dcf5619e209d45051be02f67a608a7d3cb8d226d889eea6c3686c863eefa8f"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.14",
+      "case": "callable_swap",
+      "filename": "main.py",
+      "source_utf8": "def one() -> int:\n    return 1\n\n\ndef two() -> str:\n    return \"s\"\n\n\na = one\nb = two\na, b = b, a\nreveal_type(a())\nreveal_type(b())\n",
+      "source_bytes_hex": "646566206f6e652829202d3e20696e743a0a2020202072657475726e20310a0a0a6465662074776f2829202d3e207374723a0a2020202072657475726e202273220a0a0a61203d206f6e650a62203d2074776f0a612c2062203d20622c20610a72657665616c5f7479706528612829290a72657665616c5f7479706528622829290a",
+      "source_bytes": 130,
+      "source_sha256": "dfed2b7fba56cb3a35a31c47bec4e632de833c5592c58099a7402357c56466a4",
+      "expected_diagnostics": [
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], str]\", variable has type \"Callable[[], int]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 8,
+            "end_line": 11,
+            "end_column": 8
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"Callable[[], int]\", variable has type \"Callable[[], str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 11,
+            "end_line": 11,
+            "end_column": 11
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 13,
+            "end_line": 12,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 13,
+            "column": 13,
+            "end_line": 13,
+            "end_column": 15
+          }
+        }
+      ],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+          "raw_stdout_hex": "7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a20372c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a20382c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031312c2022636f6c756d6e223a2031302c2022656e645f6c696e65223a2031312c2022656e645f636f6c756d6e223a2031312c20226d657373616765223a2022496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065205c2243616c6c61626c655b5b5d2c20696e745d5c222c207661726961626c65206861732074797065205c2243616c6c61626c655b5b5d2c207374725d5c2229222c202268696e74223a206e756c6c2c2022636f6465223a202261737369676e6d656e74222c20227365766572697479223a20226572726f72227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031322c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031322c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c22696e745c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a7b2266696c65223a20226d61696e2e7079222c20226c696e65223a2031332c2022636f6c756d6e223a2031322c2022656e645f6c696e65223a2031332c2022656e645f636f6c756d6e223a2031352c20226d657373616765223a202252657665616c65642074797065206973205c227374725c22222c202268696e74223a206e756c6c2c2022636f6465223a20226d697363222c20227365766572697479223a20226e6f7465227d0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-callable_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "29efc33ddbf480e4d18c2810a24b11b0f870225689304fff7623144657e13dc6"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "0e6163542d6c87a4459e3dd55f34f649474aac8344122b44add83a7852a730dd",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "1743d958ec148097aa80176b4d80062f486b14c208165c78ce6c7ebd90eb4ffa"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 1,
+          "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+          "raw_stdout_hex": "6d61696e2e70793a31313a383a31313a383a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c207374725d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c20696e745d222920205b61737369676e6d656e745d0a6d61696e2e70793a31313a31313a31313a31313a206572726f723a20496e636f6d70617469626c6520747970657320696e2061737369676e6d656e74202865787072657373696f6e206861732074797065202243616c6c61626c655b5b5d2c20696e745d222c207661726961626c65206861732074797065202243616c6c61626c655b5b5d2c207374725d222920205b61737369676e6d656e745d0a6d61696e2e70793a31323a31333a31323a31353a206e6f74653a2052657665616c656420747970652069732022696e74220a6d61696e2e70793a31333a31333a31333a31353a206e6f74653a2052657665616c656420747970652069732022737472220a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-callable_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "811a40eb7da8a57c9cb235f0088dbb6144746590f3af3f86fe1109b768a082f8"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 1,
+              "raw_stdout_sha256": "db1f9d92b038f598b26f0d901e82311b14d47dbc3cb064c0d6a7a245060defb8",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "468749a2970c850544bab9e79aa0970b28e7680357e31a7b03dcbfcd9b7248b3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "target": "3.14",
+      "case": "plain_same_type_swap",
+      "filename": "main.py",
+      "source_utf8": "def example() -> int:\n    a = 1\n    b = 2\n    a, b = b, a\n    return a + b\n",
+      "source_bytes_hex": "646566206578616d706c652829202d3e20696e743a0a2020202061203d20310a2020202062203d20320a20202020612c2062203d20622c20610a2020202072657475726e2061202b20620a",
+      "source_bytes": 75,
+      "source_sha256": "09e6c095e5b317641b1314335761aab451dc28c03c4ca96f8793e18ff2ede6d8",
+      "expected_diagnostics": [],
+      "original_reporters": {
+        "json": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "raw_stdout_hex": "0a",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-plain_same_type_swap-json-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "0a2614984615580f694d3e50f16b6b6479c7eda473ddaeb0c3ecc9fd3fa09060"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "d26e9a4e96ef944e64e8e6d6d1b56336dfc1ab8f5208ada0d315956420b80a62"
+            }
+          ]
+        },
+        "text": {
+          "actual_original_exit": 0,
+          "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stdout_hex": "",
+          "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_stderr_hex": "",
+          "capture_cell": "314-plain_same_type_swap-text-1",
+          "repeat_cells": [
+            {
+              "repeat": 1,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "6fb21264b910d0bec3c2add5332ebe2d24029bef741a3e2275e6cdcbbe630349"
+            },
+            {
+              "repeat": 2,
+              "actual_exit": 0,
+              "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "process_json_sha256": "4546e514855650f547dc9504d14d59da34724f2cdcbb18e581986b1d7aa94ff2"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "whole_acceptance": false
+}

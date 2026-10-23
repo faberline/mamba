@@ -1,0 +1,366 @@
+[
+  {
+    "name": "standalone_fs",
+    "source": "# note\u001c\n",
+    "source_sha256": "6936847137642ed48c0e63ff9aa8b40bb984bcde6eafe6b297b5c4a34f62ffef",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "inline_fs",
+    "source": "value = 1  # note\u001c\n",
+    "source_sha256": "1e612edc0754f5c836a8c48f312d08a1c8adf3d5ad5c2c74281a20c853f48708",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "standalone_gs",
+    "source": "# note\u001d\n",
+    "source_sha256": "13a12432147795b7f672ae3ab5e8d7bb383029639780634df2d6190c80d3a14f",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "inline_gs",
+    "source": "value = 1  # note\u001d\n",
+    "source_sha256": "e78a4cf56f567144181ef96858bb157904969e231816f72a41484e1b591789e2",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "standalone_rs",
+    "source": "# note\u001e\n",
+    "source_sha256": "5134ccf5fe931d3e5e57d3bd23a1e25a19d3f8607cb34bf61c6c2bf5a9696ab3",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "inline_rs",
+    "source": "value = 1  # note\u001e\n",
+    "source_sha256": "3e6b80a1495d8f6bd13dc1748df95be8ff116c0d0e67bfcafefa7c467220fc79",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "standalone_us",
+    "source": "# note\u001f\n",
+    "source_sha256": "9b829d38fe825beaee5183f5bd38381955cd89ba9a4ea9f2c7ad6db3f9fc7f0b",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "inline_us",
+    "source": "value = 1  # note\u001f\n",
+    "source_sha256": "58f0993dc6df2bc0974d0cdb4be2ccf86b41419440322221c3c6e4096382daf0",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = 1  # note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "ordinary_space",
+    "source": "# note  \n",
+    "source_sha256": "96b35f085fab00c7b7db596441f8c1690397e985fa4e490d71753401f0221f6c",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "ordinary_tab",
+    "source": "# note\t\n",
+    "source_sha256": "ac8dad4515d20cd1808d7423473eab464d322b38efae43524245a78413b00cf6",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# note\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "string_c0_controls",
+    "source": "value = \"a\u001c\u001d\u001e\u001fb\"\n",
+    "source_sha256": "12d6a8ae03394e2d8bc784856747c1d639417b2cd8a6c3877c23d851a70d02c5",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = \"a\u001c\u001d\u001e\u001fb\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = \"a\u001c\u001d\u001e\u001fb\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value = \"a\u001c\u001d\u001e\u001fb\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "fmt_off_c0_suffix",
+    "source": "# fmt: off\u001c\nvalue    =    1\n# fmt: on\n",
+    "source_sha256": "e107f974228105703a69ae768c52a29aa058dd3af9788b1ce6c1ebab9d66387a",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue    =    1\n# fmt: on\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue    =    1\n# fmt: on\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue    =    1\n# fmt: on\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  },
+  {
+    "name": "fmt_skip_c0_suffix",
+    "source": "value    =    1  # fmt: skip\u001c\n",
+    "source_sha256": "dd21154298aa8654190cef445a65bcd6e543fade30ad88de8008253068ec3e9b",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value    =    1  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value    =    1  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      },
+      {
+        "kind": "formatted",
+        "output": "value    =    1  # fmt: skip\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null
+      }
+    ]
+  }
+]

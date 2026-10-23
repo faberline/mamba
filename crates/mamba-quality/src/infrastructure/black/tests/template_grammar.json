@@ -1,0 +1,395 @@
+[
+  {
+    "name": "t_plain_unchanged",
+    "source": "value = t\"{1}\" \"tail\"\n",
+    "source_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85",
+            "output_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85",
+            "output_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85",
+            "output_sha256": "1cb236e2295563a16248fd98b518a9b7e8448ed8b4f0be904195f8a0d4325c85"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_plain_changed",
+    "source": "value=t'{1}' 'tail'\n",
+    "source_sha256": "2d910c176d7126b13d4aca46550a05abf42d4aa7e928e237f81879be4c100e1e",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_only_unchanged",
+    "source": "value = t\"{1}\"\n",
+    "source_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01",
+            "output_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01",
+            "output_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01",
+            "output_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_only_changed",
+    "source": "value=t'{1}'\n",
+    "source_sha256": "275db0bb4e88e42b9f8824f47e99e316a34c7afa8cd918e77217542e4b9ee7af",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = t\"{1}\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "275db0bb4e88e42b9f8824f47e99e316a34c7afa8cd918e77217542e4b9ee7af",
+            "output_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01"
+          },
+          {
+            "input_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01",
+            "output_sha256": "9ddb893326a6ce069ed6d5d43bc4e1752d6e49751726d44ecc40c8ec7e7d6a01"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_skipped_second_template",
+    "source": "value = (\n    t\"{(\n        1  # fmt: skip\n    )}\"\n    t\"{2}\"\n)\n",
+    "source_sha256": "6acabf9b5e9d84a0ea8ea3e0f0ebcf3552697566963a3bfa49b90e7ec32c3a6a",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" t\"{2}\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk__5txgicn.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" t\"{2}\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_o_tbz4i9.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" t\"{2}\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_qjc_ms6b.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "b36e49c23a76719d99c31d4b01f94fffdecfe91262367dc353a4dc82bf9695d8",
+      "b36e49c23a76719d99c31d4b01f94fffdecfe91262367dc353a4dc82bf9695d8",
+      "b36e49c23a76719d99c31d4b01f94fffdecfe91262367dc353a4dc82bf9695d8"
+    ]
+  },
+  {
+    "name": "t_mixed_fstring",
+    "source": "value=(t'{1}' f'{2}')\n",
+    "source_sha256": "02449bfcc520ac7337cdd612e855f45f5c784dc2cc44338aeefc1a1856d7075e",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: invalid syntax (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_bytes_invalid",
+    "source": "value=(t'{1}' b'tail')\n",
+    "source_sha256": "e41e0c747c9a67a4cd2edc14a75452eb20734853547dc360cbe171663473a8ab",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix bytes and nonbytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.SourceASTParseError",
+        "message": "cannot use --safe with this file; failed to parse source file AST: cannot mix t-string literals with string or bytes literals (<unknown>, line 1)\nThis could be caused by running Black with an older Python version that does not support new syntax used in your source file.",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_annotated_unchanged",
+    "source": "value: str = t\"{1}\" \"tail\"\n",
+    "source_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value: str = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c",
+            "output_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value: str = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c",
+            "output_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value: str = t\"{1}\" \"tail\"\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c",
+            "output_sha256": "a6766f0b350a5c60348e9855e26e4ad819256996da086c4ad3d2e6a8c46ed63c"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  },
+  {
+    "name": "t_suppression_off",
+    "source": "# fmt: off\nvalue=t'{1}' 'tail'\n# fmt: on\n",
+    "source_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue=t'{1}' 'tail'\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca",
+            "output_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue=t'{1}' 'tail'\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca",
+            "output_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "# fmt: off\nvalue=t'{1}' 'tail'\n# fmt: on\n",
+        "reference_exit": 0,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca",
+            "output_sha256": "eb2b6140210ccc060a458198987bbdda38b87150c6ce5056be9d6bd19e790fca"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1388 @@
+[
+  {
+    "methods": [
+      "_sqlite3.enable_shared_cache",
+      "_ssl.RAND_pseudo_bytes",
+      "aifc.openfp",
+      "assertAlmostEquals",
+      "assertEquals",
+      "assertNotAlmostEquals",
+      "assertNotEquals",
+      "assertNotRegexpMatches",
+      "assertRaisesRegexp",
+      "assertRegexpMatches",
+      "assert_",
+      "asyncio.AbstractEventLoopPolicy.get_child_watcher",
+      "asyncio.AbstractEventLoopPolicy.set_child_watcher",
+      "asyncio.Task.all_task",
+      "asyncio.Task.current_task",
+      "asyncio.get_child_watcher",
+      "asyncio.set_child_watcher",
+      "asyncio.tasks.async",
+      "base64.decodestring",
+      "base64.encodestring",
+      "binascii.a2b_hqx",
+      "binascii.b2a_hqx",
+      "binascii.rlecode_hqx",
+      "binascii.rledecode_hqx",
+      "builtins.bool.__invert__",
+      "cgi.escape",
+      "cgi.log",
+      "configparser.RawConfigParser.readfp",
+      "datetime.datetime.utcfromtimestamp",
+      "datetime.datetime.utcnow",
+      "failIf",
+      "failIfAlmostEqual",
+      "failIfEqual",
+      "failUnless",
+      "failUnlessAlmostEqual",
+      "failUnlessEqual",
+      "failUnlessRaises",
+      "fractions.gcd",
+      "gettext.NullTranslations.output_charset",
+      "gettext.NullTranslations.set_output_charset",
+      "gettext.bind_textdomain_codeset",
+      "gettext.ldgettext",
+      "gettext.ldngettext",
+      "gettext.lgettext",
+      "gettext.lngettext",
+      "importlib._bootstrap_external.FileLoader.load_module",
+      "importlib.abc.Finder.find_module",
+      "importlib.abc.Loader.load_module",
+      "importlib.abc.Loader.module_repr",
+      "importlib.abc.PathEntryFinder.find_loader",
+      "importlib.abc.PathEntryFinder.find_module",
+      "importlib.find_loader",
+      "importlib.resources.contents",
+      "inspect.formatargspec",
+      "inspect.getargspec",
+      "inspect.getcallargs",
+      "inspect.getmoduleinfo",
+      "locale.format",
+      "locale.resetlocale",
+      "logging.Logger.warn",
+      "logging.LoggerAdapter.warn",
+      "logging.warn",
+      "nntplib._NNTPBase.xpath",
+      "ntpath.splitunc",
+      "os.path.splitunc",
+      "os.stat_float_times",
+      "pathlib.Path.link_to",
+      "pkgutil.find_loader",
+      "pkgutil.get_loader",
+      "platform.dist",
+      "platform.linux_distribution",
+      "platform.popen",
+      "plistlib.readPlist",
+      "plistlib.readPlistFromBytes",
+      "plistlib.writePlist",
+      "plistlib.writePlistToBytes",
+      "pty.master_open",
+      "pty.slave_open",
+      "re.template",
+      "sqlite3.OptimizedUnicode",
+      "ssl.match_hostname",
+      "ssl.wrap_socket",
+      "sunau.openfp",
+      "sys.get_coroutine_wrapper",
+      "sys.set_coroutine_wrapper",
+      "threading.Condition.notifyAll",
+      "threading.Event.isSet",
+      "threading.Thread.getName",
+      "threading.Thread.isAlive",
+      "threading.Thread.isDaemon",
+      "threading.Thread.setDaemon",
+      "threading.Thread.setName",
+      "threading.activeCount",
+      "threading.currentThread",
+      "time.clock",
+      "turtle.RawTurtle.settiltangle",
+      "unittest.TestLoader.getTestCaseNames",
+      "unittest.TestLoader.loadTestsFromModule",
+      "unittest.TestLoader.loadTestsFromTestCase",
+      "unittest.TestProgram.usageExit",
+      "unittest.findTestCases",
+      "unittest.getTestCaseNames",
+      "unittest.makeSuite",
+      "wave.openfp",
+      "xml.etree.ElementTree.Element.__bool__",
+      "xml.etree.ElementTree.Element.getchildren",
+      "xml.etree.ElementTree.Element.getiterator",
+      "xml.etree.ElementTree.XMLParser.doctype",
+      "xml.etree.ElementTree.XMLParser.getiterator",
+      "zipimport.zipimporter.find_loader",
+      "zipimport.zipimporter.find_module",
+      "zipimport.zipimporter.load_module"
+    ],
+    "arguments": {
+      "argparse.BooleanOptionalAction": [
+        [
+          3,
+          "type"
+        ],
+        [
+          4,
+          "choices"
+        ],
+        [
+          7,
+          "metavar"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_exec": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_shell": [
+        [
+          4,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.as_completed": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.gather": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.shield": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.sleep": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait_for": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "bdb.Bdb.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "bool": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "cProfile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "concurrent.futures.process.ProcessPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "concurrent.futures.thread.ThreadPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "contextlib.AsyncExitStack.push_async_callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "contextlib._BaseExitStack.callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "coroutine.throw": [
+        [
+          1,
+          "value"
+        ],
+        [
+          2,
+          "traceback"
+        ]
+      ],
+      "curses.wrapper": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "email.utils.localtime": [
+        [
+          1,
+          "isdst"
+        ]
+      ],
+      "float": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "functools.partialmethod": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "gettext.install": [
+        [
+          2,
+          "codeset"
+        ]
+      ],
+      "gettext.translation": [
+        [
+          5,
+          "codeset"
+        ]
+      ],
+      "importlib._bootstrap_external.cache_from_source": [
+        [
+          1,
+          "debug_override"
+        ]
+      ],
+      "int": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "multiprocessing.managers.Server.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "multiprocessing.managers.SharedMemoryServer.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "profile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "random.Random.shuffle": [
+        [
+          1,
+          "random"
+        ]
+      ],
+      "shutil.rmtree": [
+        [
+          2,
+          "onerror"
+        ]
+      ],
+      "sysconfig.is_python_build": [
+        [
+          0,
+          "check_home"
+        ]
+      ],
+      "trace.Trace.runfunc": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "unittest.case.TestCase.addCleanup": [
+        [
+          null,
+          "function"
+        ]
+      ],
+      "weakref.finalize": [
+        [
+          null,
+          "func"
+        ],
+        [
+          null,
+          "obj"
+        ]
+      ]
+    },
+    "classes": {
+      "ast": [
+        "Bytes",
+        "Ellipsis",
+        "NameConstant",
+        "Num",
+        "Str"
+      ],
+      "asyncio": [
+        "AbstractChildWatcher",
+        "FastChildWatcher",
+        "MultiLoopChildWatcher",
+        "SafeChildWatcher"
+      ],
+      "collections": [
+        "AsyncGenerator",
+        "AsyncIterable",
+        "AsyncIterator",
+        "Awaitable",
+        "ByteString",
+        "Callable",
+        "Collection",
+        "Container",
+        "Coroutine",
+        "Generator",
+        "Hashable",
+        "ItemsView",
+        "Iterable",
+        "Iterator",
+        "KeysView",
+        "Mapping",
+        "MappingView",
+        "MutableMapping",
+        "MutableSequence",
+        "MutableSet",
+        "Reversible",
+        "Sequence",
+        "Set",
+        "Sized",
+        "ValuesView"
+      ],
+      "collections.abc": [
+        "ByteString"
+      ],
+      "configparser": [
+        "LegacyInterpolation",
+        "SafeConfigParser"
+      ],
+      "importlib.abc": [
+        "ResourceReader",
+        "Traversable",
+        "TraversableResources"
+      ],
+      "pkgutil": [
+        "ImpImporter",
+        "ImpLoader"
+      ],
+      "smtpd": [
+        "MailmanProxy"
+      ],
+      "typing": [
+        "ByteString",
+        "Hashable",
+        "Sized"
+      ],
+      "urllib.parse": [
+        "Quoter"
+      ],
+      "webbrowser": [
+        "MacOSX"
+      ]
+    },
+    "decorators": [
+      "abc.abstractclassmethod",
+      "abc.abstractproperty",
+      "abc.abstractstaticmethod",
+      "asyncio.coroutine",
+      "importlib.util.module_for_loader"
+    ],
+    "attributes": [
+      "calendar.February",
+      "calendar.January",
+      "configparser.ParsingError.filename",
+      "sqlite3.version",
+      "sqlite3.version_info",
+      "sys.last_traceback",
+      "sys.last_type",
+      "sys.last_value"
+    ]
+  },
+  {
+    "methods": [
+      "_sqlite3.enable_shared_cache",
+      "_ssl.RAND_pseudo_bytes",
+      "aifc.openfp",
+      "assertAlmostEquals",
+      "assertEquals",
+      "assertNotAlmostEquals",
+      "assertNotEquals",
+      "assertNotRegexpMatches",
+      "assertRaisesRegexp",
+      "assertRegexpMatches",
+      "assert_",
+      "asyncio.AbstractEventLoopPolicy.get_child_watcher",
+      "asyncio.AbstractEventLoopPolicy.set_child_watcher",
+      "asyncio.Task.all_task",
+      "asyncio.Task.current_task",
+      "asyncio.get_child_watcher",
+      "asyncio.set_child_watcher",
+      "asyncio.tasks.async",
+      "base64.decodestring",
+      "base64.encodestring",
+      "binascii.a2b_hqx",
+      "binascii.b2a_hqx",
+      "binascii.rlecode_hqx",
+      "binascii.rledecode_hqx",
+      "builtins.bool.__invert__",
+      "cgi.escape",
+      "cgi.log",
+      "configparser.RawConfigParser.readfp",
+      "ctypes.SetPointerType",
+      "datetime.datetime.utcfromtimestamp",
+      "datetime.datetime.utcnow",
+      "failIf",
+      "failIfAlmostEqual",
+      "failIfEqual",
+      "failUnless",
+      "failUnlessAlmostEqual",
+      "failUnlessEqual",
+      "failUnlessRaises",
+      "fractions.gcd",
+      "gettext.NullTranslations.output_charset",
+      "gettext.NullTranslations.set_output_charset",
+      "gettext.bind_textdomain_codeset",
+      "gettext.ldgettext",
+      "gettext.ldngettext",
+      "gettext.lgettext",
+      "gettext.lngettext",
+      "importlib._bootstrap_external.FileLoader.load_module",
+      "importlib.abc.Finder.find_module",
+      "importlib.abc.Loader.load_module",
+      "importlib.abc.Loader.module_repr",
+      "importlib.abc.PathEntryFinder.find_loader",
+      "importlib.abc.PathEntryFinder.find_module",
+      "importlib.find_loader",
+      "importlib.resources.contents",
+      "inspect.formatargspec",
+      "inspect.getargspec",
+      "inspect.getcallargs",
+      "inspect.getmoduleinfo",
+      "locale.format",
+      "locale.resetlocale",
+      "logging.Logger.warn",
+      "logging.LoggerAdapter.warn",
+      "logging.warn",
+      "nntplib._NNTPBase.xpath",
+      "ntpath.splitunc",
+      "os.path.splitunc",
+      "os.stat_float_times",
+      "pathlib.Path.link_to",
+      "pathlib.PurePath.is_reserved",
+      "pkgutil.find_loader",
+      "pkgutil.get_loader",
+      "platform.dist",
+      "platform.java_ver",
+      "platform.linux_distribution",
+      "platform.popen",
+      "plistlib.readPlist",
+      "plistlib.readPlistFromBytes",
+      "plistlib.writePlist",
+      "plistlib.writePlistToBytes",
+      "pty.master_open",
+      "pty.slave_open",
+      "pydoc.is_package",
+      "re.template",
+      "sqlite3.OptimizedUnicode",
+      "ssl.match_hostname",
+      "ssl.wrap_socket",
+      "sunau.openfp",
+      "sys._enablelegacywindowsfsencoding",
+      "sys.get_coroutine_wrapper",
+      "sys.set_coroutine_wrapper",
+      "threading.Condition.notifyAll",
+      "threading.Event.isSet",
+      "threading.Thread.getName",
+      "threading.Thread.isAlive",
+      "threading.Thread.isDaemon",
+      "threading.Thread.setDaemon",
+      "threading.Thread.setName",
+      "threading.activeCount",
+      "threading.currentThread",
+      "time.clock",
+      "turtle.RawTurtle.settiltangle",
+      "unittest.TestLoader.getTestCaseNames",
+      "unittest.TestLoader.loadTestsFromModule",
+      "unittest.TestLoader.loadTestsFromTestCase",
+      "unittest.TestProgram.usageExit",
+      "unittest.findTestCases",
+      "unittest.getTestCaseNames",
+      "unittest.makeSuite",
+      "wave.Wave_read.getmark",
+      "wave.Wave_read.getmarkers",
+      "wave.Wave_read.setmark",
+      "wave.Wave_write.getmark",
+      "wave.Wave_write.getmarkers",
+      "wave.Wave_write.setmark",
+      "wave.openfp",
+      "xml.etree.ElementTree.Element.__bool__",
+      "xml.etree.ElementTree.Element.getchildren",
+      "xml.etree.ElementTree.Element.getiterator",
+      "xml.etree.ElementTree.XMLParser.doctype",
+      "xml.etree.ElementTree.XMLParser.getiterator",
+      "zipimport.zipimporter.find_loader",
+      "zipimport.zipimporter.find_module",
+      "zipimport.zipimporter.load_module"
+    ],
+    "arguments": {
+      "argparse.BooleanOptionalAction": [
+        [
+          3,
+          "type"
+        ],
+        [
+          4,
+          "choices"
+        ],
+        [
+          7,
+          "metavar"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_exec": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_shell": [
+        [
+          4,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.as_completed": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.gather": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.shield": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.sleep": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait_for": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "bdb.Bdb.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "bool": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "cProfile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "concurrent.futures.process.ProcessPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "concurrent.futures.thread.ThreadPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "contextlib.AsyncExitStack.push_async_callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "contextlib._BaseExitStack.callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "coroutine.throw": [
+        [
+          1,
+          "value"
+        ],
+        [
+          2,
+          "traceback"
+        ]
+      ],
+      "curses.wrapper": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "dis.get_instructions": [
+        [
+          2,
+          "show_caches"
+        ]
+      ],
+      "email.utils.localtime": [
+        [
+          1,
+          "isdst"
+        ]
+      ],
+      "float": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "functools.partialmethod": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "gettext.install": [
+        [
+          2,
+          "codeset"
+        ]
+      ],
+      "gettext.translation": [
+        [
+          5,
+          "codeset"
+        ]
+      ],
+      "importlib._bootstrap_external.cache_from_source": [
+        [
+          1,
+          "debug_override"
+        ]
+      ],
+      "int": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "multiprocessing.managers.Server.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "multiprocessing.managers.SharedMemoryServer.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "profile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "random.Random.shuffle": [
+        [
+          1,
+          "random"
+        ]
+      ],
+      "shutil.rmtree": [
+        [
+          2,
+          "onerror"
+        ]
+      ],
+      "sysconfig.is_python_build": [
+        [
+          0,
+          "check_home"
+        ]
+      ],
+      "trace.Trace.runfunc": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "unittest.case.TestCase.addCleanup": [
+        [
+          null,
+          "function"
+        ]
+      ],
+      "weakref.finalize": [
+        [
+          null,
+          "func"
+        ],
+        [
+          null,
+          "obj"
+        ]
+      ]
+    },
+    "classes": {
+      "ast": [
+        "Bytes",
+        "Ellipsis",
+        "NameConstant",
+        "Num",
+        "Str"
+      ],
+      "asyncio": [
+        "AbstractChildWatcher",
+        "FastChildWatcher",
+        "MultiLoopChildWatcher",
+        "SafeChildWatcher"
+      ],
+      "collections": [
+        "AsyncGenerator",
+        "AsyncIterable",
+        "AsyncIterator",
+        "Awaitable",
+        "ByteString",
+        "Callable",
+        "Collection",
+        "Container",
+        "Coroutine",
+        "Generator",
+        "Hashable",
+        "ItemsView",
+        "Iterable",
+        "Iterator",
+        "KeysView",
+        "Mapping",
+        "MappingView",
+        "MutableMapping",
+        "MutableSequence",
+        "MutableSet",
+        "Reversible",
+        "Sequence",
+        "Set",
+        "Sized",
+        "ValuesView"
+      ],
+      "collections.abc": [
+        "ByteString"
+      ],
+      "configparser": [
+        "LegacyInterpolation",
+        "SafeConfigParser"
+      ],
+      "glob": [
+        "glob.glob0",
+        "glob.glob1"
+      ],
+      "http.server": [
+        "CGIHTTPRequestHandler"
+      ],
+      "importlib.abc": [
+        "ResourceReader",
+        "Traversable",
+        "TraversableResources"
+      ],
+      "pkgutil": [
+        "ImpImporter",
+        "ImpLoader"
+      ],
+      "smtpd": [
+        "MailmanProxy"
+      ],
+      "typing": [
+        "ByteString",
+        "Hashable",
+        "Sized"
+      ],
+      "urllib.parse": [
+        "Quoter"
+      ],
+      "webbrowser": [
+        "MacOSX"
+      ]
+    },
+    "decorators": [
+      "abc.abstractclassmethod",
+      "abc.abstractproperty",
+      "abc.abstractstaticmethod",
+      "asyncio.coroutine",
+      "importlib.util.module_for_loader",
+      "typing.no_type_check_decorator"
+    ],
+    "attributes": [
+      "calendar.February",
+      "calendar.January",
+      "configparser.ParsingError.filename",
+      "dis.HAVE_ARGUMENT",
+      "sqlite3.version",
+      "sqlite3.version_info",
+      "sys.last_traceback",
+      "sys.last_type",
+      "sys.last_value",
+      "tarfile.TarFile.tarfile",
+      "traceback.TracebackException.exc_type",
+      "typing.AnyStr"
+    ]
+  },
+  {
+    "methods": [
+      "_sqlite3.enable_shared_cache",
+      "_ssl.RAND_pseudo_bytes",
+      "aifc.openfp",
+      "assertAlmostEquals",
+      "assertEquals",
+      "assertNotAlmostEquals",
+      "assertNotEquals",
+      "assertNotRegexpMatches",
+      "assertRaisesRegexp",
+      "assertRegexpMatches",
+      "assert_",
+      "asyncio.AbstractEventLoopPolicy.get_child_watcher",
+      "asyncio.AbstractEventLoopPolicy.set_child_watcher",
+      "asyncio.Task.all_task",
+      "asyncio.Task.current_task",
+      "asyncio.get_child_watcher",
+      "asyncio.get_event_loop_policy",
+      "asyncio.iscoroutinefunction",
+      "asyncio.set_child_watcher",
+      "asyncio.set_event_loop_policy",
+      "asyncio.tasks.async",
+      "base64.decodestring",
+      "base64.encodestring",
+      "binascii.a2b_hqx",
+      "binascii.b2a_hqx",
+      "binascii.rlecode_hqx",
+      "binascii.rledecode_hqx",
+      "builtins.bool.__invert__",
+      "cgi.escape",
+      "cgi.log",
+      "codecs.open",
+      "configparser.RawConfigParser.readfp",
+      "ctypes.SetPointerType",
+      "datetime.datetime.utcfromtimestamp",
+      "datetime.datetime.utcnow",
+      "failIf",
+      "failIfAlmostEqual",
+      "failIfEqual",
+      "failUnless",
+      "failUnlessAlmostEqual",
+      "failUnlessEqual",
+      "failUnlessRaises",
+      "fractions.gcd",
+      "gettext.NullTranslations.output_charset",
+      "gettext.NullTranslations.set_output_charset",
+      "gettext.bind_textdomain_codeset",
+      "gettext.ldgettext",
+      "gettext.ldngettext",
+      "gettext.lgettext",
+      "gettext.lngettext",
+      "importlib._bootstrap_external.FileLoader.load_module",
+      "importlib.abc.Finder.find_module",
+      "importlib.abc.Loader.load_module",
+      "importlib.abc.Loader.module_repr",
+      "importlib.abc.PathEntryFinder.find_loader",
+      "importlib.abc.PathEntryFinder.find_module",
+      "importlib.find_loader",
+      "importlib.resources.contents",
+      "inspect.formatargspec",
+      "inspect.getargspec",
+      "inspect.getcallargs",
+      "inspect.getmoduleinfo",
+      "locale.format",
+      "locale.resetlocale",
+      "logging.Logger.warn",
+      "logging.LoggerAdapter.warn",
+      "logging.warn",
+      "nntplib._NNTPBase.xpath",
+      "ntpath.splitunc",
+      "os.path.splitunc",
+      "os.stat_float_times",
+      "pathlib.Path.link_to",
+      "pathlib.PurePath.is_reserved",
+      "pkgutil.find_loader",
+      "pkgutil.get_loader",
+      "platform.dist",
+      "platform.java_ver",
+      "platform.linux_distribution",
+      "platform.popen",
+      "plistlib.readPlist",
+      "plistlib.readPlistFromBytes",
+      "plistlib.writePlist",
+      "plistlib.writePlistToBytes",
+      "pty.master_open",
+      "pty.slave_open",
+      "pydoc.is_package",
+      "re.template",
+      "sqlite3.OptimizedUnicode",
+      "ssl.match_hostname",
+      "ssl.wrap_socket",
+      "sunau.openfp",
+      "symtable.Class.get_methods",
+      "sys._clear_type_cache",
+      "sys._enablelegacywindowsfsencoding",
+      "sys.get_coroutine_wrapper",
+      "sys.set_coroutine_wrapper",
+      "sysconfig.expand_makefile_vars",
+      "threading.Condition.notifyAll",
+      "threading.Event.isSet",
+      "threading.Thread.getName",
+      "threading.Thread.isAlive",
+      "threading.Thread.isDaemon",
+      "threading.Thread.setDaemon",
+      "threading.Thread.setName",
+      "threading.activeCount",
+      "threading.currentThread",
+      "time.clock",
+      "turtle.RawTurtle.settiltangle",
+      "unittest.TestLoader.getTestCaseNames",
+      "unittest.TestLoader.loadTestsFromModule",
+      "unittest.TestLoader.loadTestsFromTestCase",
+      "unittest.TestProgram.usageExit",
+      "unittest.findTestCases",
+      "unittest.getTestCaseNames",
+      "unittest.makeSuite",
+      "wave.Wave_read.getmark",
+      "wave.Wave_read.getmarkers",
+      "wave.Wave_read.setmark",
+      "wave.Wave_write.getmark",
+      "wave.Wave_write.getmarkers",
+      "wave.Wave_write.setmark",
+      "wave.openfp",
+      "xml.etree.ElementTree.Element.__bool__",
+      "xml.etree.ElementTree.Element.getchildren",
+      "xml.etree.ElementTree.Element.getiterator",
+      "xml.etree.ElementTree.XMLParser.doctype",
+      "xml.etree.ElementTree.XMLParser.getiterator",
+      "zipimport.zipimporter.find_loader",
+      "zipimport.zipimporter.find_module",
+      "zipimport.zipimporter.load_module"
+    ],
+    "arguments": {
+      "argparse.ArgumentParser.add_argument_group": [
+        [
+          null,
+          "prefix_chars"
+        ]
+      ],
+      "argparse.BooleanOptionalAction": [
+        [
+          3,
+          "type"
+        ],
+        [
+          4,
+          "choices"
+        ],
+        [
+          7,
+          "metavar"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_exec": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.subprocess.create_subprocess_shell": [
+        [
+          4,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.as_completed": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.gather": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.shield": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.sleep": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "asyncio.tasks.wait_for": [
+        [
+          null,
+          "loop"
+        ]
+      ],
+      "bdb.Bdb.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "bool": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "cProfile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "concurrent.futures.process.ProcessPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "concurrent.futures.thread.ThreadPoolExecutor.submit": [
+        [
+          null,
+          "fn"
+        ]
+      ],
+      "contextlib.AsyncExitStack.push_async_callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "contextlib._BaseExitStack.callback": [
+        [
+          null,
+          "callback"
+        ]
+      ],
+      "coroutine.throw": [
+        [
+          1,
+          "value"
+        ],
+        [
+          2,
+          "traceback"
+        ]
+      ],
+      "curses.wrapper": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "dis.get_instructions": [
+        [
+          2,
+          "show_caches"
+        ]
+      ],
+      "email.utils.localtime": [
+        [
+          1,
+          "isdst"
+        ]
+      ],
+      "float": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "functools.partialmethod": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "gettext.install": [
+        [
+          2,
+          "codeset"
+        ]
+      ],
+      "gettext.translation": [
+        [
+          5,
+          "codeset"
+        ]
+      ],
+      "importlib._bootstrap_external.cache_from_source": [
+        [
+          1,
+          "debug_override"
+        ]
+      ],
+      "int": [
+        [
+          null,
+          "x"
+        ]
+      ],
+      "multiprocessing.managers.Server.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "multiprocessing.managers.SharedMemoryServer.create": [
+        [
+          null,
+          "c"
+        ],
+        [
+          null,
+          "typeid"
+        ]
+      ],
+      "profile.Profile.runcall": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "random.Random.shuffle": [
+        [
+          1,
+          "random"
+        ]
+      ],
+      "shutil.rmtree": [
+        [
+          2,
+          "onerror"
+        ]
+      ],
+      "sysconfig.is_python_build": [
+        [
+          0,
+          "check_home"
+        ]
+      ],
+      "threading.RLock": [
+        [
+          0,
+          "x"
+        ]
+      ],
+      "trace.Trace.runfunc": [
+        [
+          null,
+          "func"
+        ]
+      ],
+      "unittest.case.TestCase.addCleanup": [
+        [
+          null,
+          "function"
+        ]
+      ],
+      "weakref.finalize": [
+        [
+          null,
+          "func"
+        ],
+        [
+          null,
+          "obj"
+        ]
+      ]
+    },
+    "classes": {
+      "argparse": [
+        "FileType"
+      ],
+      "ast": [
+        "Bytes",
+        "Ellipsis",
+        "NameConstant",
+        "Num",
+        "Str"
+      ],
+      "asyncio": [
+        "AbstractEventLoopPolicy",
+        "DefaultEventLoopPolicy",
+        "WindowsProactorEventLoopPolicy",
+        "WindowsSelectorEventLoopPolicy"
+      ],
+      "collections": [
+        "AsyncGenerator",
+        "AsyncIterable",
+        "AsyncIterator",
+        "Awaitable",
+        "ByteString",
+        "Callable",
+        "Collection",
+        "Container",
+        "Coroutine",
+        "Generator",
+        "Hashable",
+        "ItemsView",
+        "Iterable",
+        "Iterator",
+        "KeysView",
+        "Mapping",
+        "MappingView",
+        "MutableMapping",
+        "MutableSequence",
+        "MutableSet",
+        "Reversible",
+        "Sequence",
+        "Set",
+        "Sized",
+        "ValuesView"
+      ],
+      "collections.abc": [
+        "ByteString"
+      ],
+      "configparser": [
+        "LegacyInterpolation",
+        "SafeConfigParser"
+      ],
+      "glob": [
+        "glob.glob0",
+        "glob.glob1"
+      ],
+      "http.server": [
+        "CGIHTTPRequestHandler"
+      ],
+      "importlib.abc": [
+        "ResourceReader",
+        "Traversable",
+        "TraversableResources"
+      ],
+      "pkgutil": [
+        "ImpImporter",
+        "ImpLoader"
+      ],
+      "shutil": [
+        "ExecError"
+      ],
+      "smtpd": [
+        "MailmanProxy"
+      ],
+      "typing": [
+        "._UnionGenericAlias"
+      ],
+      "urllib.parse": [
+        "Quoter"
+      ],
+      "webbrowser": [
+        "MacOSX"
+      ]
+    },
+    "decorators": [
+      "abc.abstractclassmethod",
+      "abc.abstractproperty",
+      "abc.abstractstaticmethod",
+      "asyncio.coroutine",
+      "importlib.util.module_for_loader",
+      "typing.no_type_check_decorator"
+    ],
+    "attributes": [
+      "calendar.February",
+      "calendar.January",
+      "configparser.ParsingError.filename",
+      "dis.HAVE_ARGUMENT",
+      "sqlite3.version",
+      "sqlite3.version_info",
+      "sys.last_traceback",
+      "sys.last_type",
+      "sys.last_value",
+      "tarfile.TarFile.tarfile",
+      "traceback.TracebackException.exc_type",
+      "typing.AnyStr"
+    ]
+  }
+]

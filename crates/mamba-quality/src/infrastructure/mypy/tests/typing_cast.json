@@ -1,0 +1,1505 @@
+[
+  {
+    "name": "cast_from_typing",
+    "files": {
+      "main.py": "from typing import cast\nvalue: object = 1\nreveal_type(cast(int, value))\ncast(int, 1)\nwrong: str = cast(int, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "5818c18f47b0d5527844bc9e46dfaf1c9abe989fa5ec21c2ded4e64e31db5960"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_module_alias",
+    "files": {
+      "main.py": "import typing as types\nvalue: object = \"a\"\nreveal_type(types.cast(str, value))\nwrong: int = types.cast(str, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "4c32d09ad984e6b244f2cbe368f494d46cfbfb98ee5169f62be1f2bf3a436f0c"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 35
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_import_alias",
+    "files": {
+      "main.py": "from typing import cast as convert\nvalue: object = [1]\nreveal_type(convert(list[int], value))\nwrong: list[str] = convert(list[int], value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "413296c102a8e35d17726f4f19e834e83c4bbd505d37b40d66e90d346b801695"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"list[int]\", variable has type \"list[str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 20,
+            "end_line": 4,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"list[int]\", variable has type \"list[str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 20,
+            "end_line": 4,
+            "end_column": 44
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"list[int]\", variable has type \"list[str]\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 20,
+            "end_line": 4,
+            "end_column": 44
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_forward_and_union",
+    "files": {
+      "main.py": "from typing import cast\nvalue: object = None\nreveal_type(cast(\"int | None\", value))\nreveal_type(cast(\"list[str]\", value))\nwrong: str = cast(\"int | None\", value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "a2b360a607c43c061433ba52da7756a2744427ad23aa59712b0e80209acb5029"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int | None\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int | None\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"int | None\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 37
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[str]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int | None\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 14,
+            "end_line": 5,
+            "end_column": 38
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_redundant",
+    "files": {
+      "main.py": "from typing import cast, Any\nnumber: int = 1\ntext: str = \"a\"\nmaybe: Any = 1\ncast(int, number)\ncast(str, text)\ncast(Any, maybe)\nreveal_type(cast(Any, number))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "faf47648c42e08ca4b3ed702670595f1dc81341e89f1d0d504294bad27f0fc7e"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ],
+      [
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 5,
+            "column": 1,
+            "end_line": 5,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "redundant-cast",
+          "message": "Redundant cast to \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 1,
+            "end_line": 6,
+            "end_column": 1
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 8,
+            "column": 13,
+            "end_line": 8,
+            "end_column": 29
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_modern_generic",
+    "files": {
+      "main.py": "from typing import cast\ndef convert[T](value: object) -> T:\n    return cast(T, value)\ndef to_list[T](value: object, example: T) -> list[T]:\n    return cast(list[T], value)\nreveal_type(to_list([1], 1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3b379733e78b2b40be17454480e29062a7197301ee7a23cb2bc26e8ccba66c01"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "type-var",
+          "message": "A function returning TypeVar should receive at least one argument containing the same TypeVar",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 34,
+            "end_line": 2,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "A function returning TypeVar should receive at least one argument containing the same TypeVar",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 34,
+            "end_line": 2,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "type-var",
+          "message": "A function returning TypeVar should receive at least one argument containing the same TypeVar",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 2,
+            "column": 34,
+            "end_line": 2,
+            "end_column": 34
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_legacy_generic",
+    "files": {
+      "main.py": "from typing import TypeVar, cast\nT = TypeVar(\"T\")\ndef to_list(value: object, example: T) -> list[T]:\n    return cast(list[T], value)\nreveal_type(to_list([1], 1))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "1ea9a34ba3e75b05876fd0f5d3ea596e415833319a7b357d87bcd1228b5ea8e3"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"list[int]\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 27
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_callable",
+    "files": {
+      "main.py": "from typing import Callable, cast\nvalue: object = None\nfunction = cast(Callable[[int], str], value)\nreveal_type(function)\nreveal_type(function(1))\nfunction(\"wrong\")\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "586fe19e8724a7b34f26bfc0bb41f4df6e12e45c16f375387a02954539d3cc3f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (int) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 10,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (int) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 10,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"def (int) -> str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 20
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 5,
+            "column": 13,
+            "end_line": 5,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "arg-type",
+          "message": "Argument 1 has incompatible type \"str\"; expected \"int\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 10,
+            "end_line": 6,
+            "end_column": 16
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_typed_dict",
+    "files": {
+      "main.py": "from typing import TypedDict, cast\nclass Row(TypedDict):\n    count: int\nvalue: object = {}\nrow = cast(Row, value)\nreveal_type(row)\nwrong: str = row[\"count\"]\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "3bfeb4a2ff9c105d3166e1b8cd3b0cc928ba24c10c36f4ffdaa2d5aaff37c976"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"TypedDict(main.Row, {'count': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 14,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"TypedDict(main.Row, {'count': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 14,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"TypedDict(main.Row, {'count': int})\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 6,
+            "column": 13,
+            "end_line": 6,
+            "end_column": 15
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 14,
+            "end_line": 7,
+            "end_column": 25
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_invalid_type",
+    "files": {
+      "main.py": "from typing import cast\nnumber: int = 1\nvalue: object = None\nreveal_type(cast(number, value))\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "b17365ef131715b2f6a0a47054b3523d790f223e8d4fbd76a342d83f5ee4e1bc"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"number?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "Variable \"main.number\" is not valid as a type",
+          "hint": "See https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 18,
+            "end_line": 4,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"number?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "Variable \"main.number\" is not valid as a type",
+          "hint": "See https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 18,
+            "end_line": 4,
+            "end_column": 18
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"number?\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 4,
+            "column": 13,
+            "end_line": 4,
+            "end_column": 31
+          }
+        },
+        {
+          "rule": "valid-type",
+          "message": "Variable \"main.number\" is not valid as a type",
+          "hint": "See https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 18,
+            "end_line": 4,
+            "end_column": 18
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_wrong_arity",
+    "files": {
+      "main.py": "from typing import cast\nvalue: object = None\ncast(int)\ncast(int, value, value)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ba2f04e6bf2c6fa861bffadd666f6449e9a6aa729494e101389dc77566e972d4"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument type \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 3,
+            "column": 1,
+            "end_line": 3,
+            "end_column": 9
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "\"cast\" expects 2 arguments",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        },
+        {
+          "rule": "call-overload",
+          "message": "No overload variant of \"cast\" matches argument types \"Any\", \"Any\", \"Any\"",
+          "hint": "Possible overload variants:\n    def [_T] cast(typ: type[_T], val: Any) -> _T\n    def cast(typ: str, val: Any) -> Any\n    def cast(typ: object, val: Any) -> Any",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 1,
+            "end_line": 4,
+            "end_column": 23
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "cast_shadow_control",
+    "files": {
+      "main.py": "def cast(value: int, unused: object) -> str:\n    return str(value)\nreveal_type(cast(1, None))\nwrong: int = cast(1, None)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "7e64319e0f1c757acf337fea598a9a4357ab6123eebf1cf2661c7b54ad41fa3a"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 26
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 3,
+            "column": 13,
+            "end_line": 3,
+            "end_column": 25
+          }
+        },
+        {
+          "rule": "assignment",
+          "message": "Incompatible types in assignment (expression has type \"str\", variable has type \"int\")",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 4,
+            "column": 14,
+            "end_line": 4,
+            "end_column": 26
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

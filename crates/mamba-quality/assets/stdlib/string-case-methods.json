@@ -1,0 +1,849 @@
+{
+  "schema": "mamba.quality.string-case-methods.v1",
+  "mypy": "2.4.0",
+  "targets": {
+    "3.12": {
+      "str": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "casefold": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      },
+      "bytes": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    },
+    "3.13": {
+      "str": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "casefold": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      },
+      "bytes": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    },
+    "3.14": {
+      "str": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "casefold": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.str"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.str",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      },
+      "bytes": {
+        "upper": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "lower": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "capitalize": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "swapcase": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        },
+        "title": {
+          ".class": "CallableType",
+          "arg_types": [
+            "builtins.bytes"
+          ],
+          "arg_kinds": [
+            0
+          ],
+          "arg_names": [
+            "self"
+          ],
+          "ret_type": "builtins.bytes",
+          "fallback": "builtins.function",
+          "name": null,
+          "variables": [],
+          "is_ellipsis_args": false,
+          "implicit": false,
+          "is_bound": false,
+          "type_guard": null,
+          "type_is": null,
+          "from_concatenate": false,
+          "imprecise_arg_kinds": false,
+          "unpack_kwargs": false,
+          "instance_type": null
+        }
+      }
+    }
+  }
+}

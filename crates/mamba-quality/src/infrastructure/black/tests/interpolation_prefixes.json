@@ -1,0 +1,119 @@
+[
+  {
+    "name": "t_inner_comment_fmt_skip",
+    "source": "value = (\n    t\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "17db73b892428434f915d0448fb2f653942eac6c5a0db99ed9ad2ec9da037b96",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_49nds_s7.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_bukhsru9.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_e2_uw389.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "570e15d6f116c0f393cccb8a02bcd064c7378448aa931a871429eb1f5426fedb",
+      "570e15d6f116c0f393cccb8a02bcd064c7378448aa931a871429eb1f5426fedb",
+      "570e15d6f116c0f393cccb8a02bcd064c7378448aa931a871429eb1f5426fedb"
+    ]
+  },
+  {
+    "name": "raw_f_inner_comment_fmt_skip",
+    "source": "value = (\n    fr\"{(\n        1  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "55092120d1b6471c76b28ce9af40a38a6cfd98ee9a5ab34abd525265d2288097",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_22eybexn.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_v7c41iln.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 2:36\n            1  # fmt: skip    )}\" \"tail\"\n                                       ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_ndgq_o3o.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "b20817d8d30bb5e6745b19bffe321273b1818d0b66ad9f1e41968b58dbd2cc0b",
+      "b20817d8d30bb5e6745b19bffe321273b1818d0b66ad9f1e41968b58dbd2cc0b",
+      "b20817d8d30bb5e6745b19bffe321273b1818d0b66ad9f1e41968b58dbd2cc0b"
+    ]
+  },
+  {
+    "name": "literal_hash_before_skip",
+    "source": "value = (\n    f\"{(\n        '# fmt: skip'\n        + 'value'  # fmt: skip\n    )}\"\n    \"tail\"\n)\n",
+    "source_sha256": "a2d48ea51630ad38fd47de5a385ec08ed019922be868535f2d8580dcf22a2082",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:44\n            + 'value'  # fmt: skip    )}\" \"tail\"\n                                               ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_8nqpelnn.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:44\n            + 'value'  # fmt: skip    )}\" \"tail\"\n                                               ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk__6ck2koi.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:44\n            + 'value'  # fmt: skip    )}\" \"tail\"\n                                               ^\nTokenError: Unexpected EOF in multi-line statement\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_c5sy0yef.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "45659fc808af3bb4b4a0f08a3637e940e31c99e57a6fc656026758c19b718351",
+      "45659fc808af3bb4b4a0f08a3637e940e31c99e57a6fc656026758c19b718351",
+      "45659fc808af3bb4b4a0f08a3637e940e31c99e57a6fc656026758c19b718351"
+    ]
+  }
+]

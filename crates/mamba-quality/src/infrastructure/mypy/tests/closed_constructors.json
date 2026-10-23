@@ -1,0 +1,590 @@
+{
+  "schema": "mamba.quality.mypy.closed-typed-dict-constructor-controls.v1",
+  "oracle_schema": "mamba.quality.mypy.closed-unpack-original-oracle.v1",
+  "oracle_sha256": "62e0c796c3ac60253709b19f1c3aaa65e48171a628da3359c28958f2ba776a0a",
+  "source_artifact_sha256": "b203ecf274c8cdeea059f0a64ede99050c77bd1dadabc415e62665ecf786c07f",
+  "qualified_capture_manifest_sha256": "48e2d24ef2e90a44be5e6d20f1fe77bfc08c84b11fa56b2a73bf0351479e7d7e",
+  "qualification_proof_sha256": "facac3f567aaac6efd3f816f51e98a05b7d4d8474a3f66d01519026e4beef418",
+  "selected_flag_state": "extra_checks_enabled",
+  "counterfactual_flag_state_excluded": "extra_checks_removed",
+  "targets": [
+    "3.12",
+    "3.13",
+    "3.14"
+  ],
+  "case_count": 4,
+  "cell_count": 12,
+  "original_exit_semantics": {
+    "field": "original_actual_exit",
+    "meaning": "Consolidated original process exit copied from the Root-qualified row. Reporter-specific raw calls are retained by ID, but this oracle row does not expose separate reporter exit fields.",
+    "native_reference_exit": "Must remain null because the native ToolReport does not run Mypy."
+  },
+  "native_flag_scope": {
+    "statement": "The frozen fixture includes only rows captured with --extra-checks enabled. The native check API has no per-call Mypy CLI flag parameter; this test protects these fixed source cases and does not compare the disabled counterfactual rows.",
+    "whole_acceptance": false
+  },
+  "cells": [
+    {
+      "case": "closed_open_extra",
+      "target": "3.12",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n    extra: str\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a2020202065787472613a207374720a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 244,
+      "source_sha256": "e0abb41473b425168a24b2f1fffa4bb526641ec4e59032c87b165d97cf3f88bb",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 11,
+          "end_line": 11,
+          "end_column": 33,
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "code": "typeddict-unknown-key",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:12:11:33: error: Extra key \"extra\" for TypedDict \"ClosedTarget\"  [typeddict-unknown-key]",
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "312-closed_open_extra-extra-on-json-1",
+        "312-closed_open_extra-extra-on-json-2",
+        "312-closed_open_extra-extra-on-text-1",
+        "312-closed_open_extra-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-unknown-key",
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 12,
+            "end_line": 11,
+            "end_column": 33
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_open_extra",
+      "target": "3.13",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n    extra: str\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a2020202065787472613a207374720a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 244,
+      "source_sha256": "e0abb41473b425168a24b2f1fffa4bb526641ec4e59032c87b165d97cf3f88bb",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 11,
+          "end_line": 11,
+          "end_column": 33,
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "code": "typeddict-unknown-key",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:12:11:33: error: Extra key \"extra\" for TypedDict \"ClosedTarget\"  [typeddict-unknown-key]",
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "313-closed_open_extra-extra-on-json-1",
+        "313-closed_open_extra-extra-on-json-2",
+        "313-closed_open_extra-extra-on-text-1",
+        "313-closed_open_extra-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-unknown-key",
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 12,
+            "end_line": 11,
+            "end_column": 33
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_open_extra",
+      "target": "3.14",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n    extra: str\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a2020202065787472613a207374720a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 244,
+      "source_sha256": "e0abb41473b425168a24b2f1fffa4bb526641ec4e59032c87b165d97cf3f88bb",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 11,
+          "end_line": 11,
+          "end_column": 33,
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "code": "typeddict-unknown-key",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:12:11:33: error: Extra key \"extra\" for TypedDict \"ClosedTarget\"  [typeddict-unknown-key]",
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "314-closed_open_extra-extra-on-json-1",
+        "314-closed_open_extra-extra-on-json-2",
+        "314-closed_open_extra-extra-on-text-1",
+        "314-closed_open_extra-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-unknown-key",
+          "message": "Extra key \"extra\" for TypedDict \"ClosedTarget\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 12,
+            "end_line": 11,
+            "end_column": 33
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_matching_source",
+      "target": "3.12",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedSource(TypedDict, closed=True):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: ClosedSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564536f75726365285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a20436c6f736564536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 246,
+      "source_sha256": "50de0653d444afb59c39370935e8b95f26cdbdbbe28a3cd7390649684a4e6753",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "312-closed_matching_source-extra-on-json-1",
+        "312-closed_matching_source-extra-on-json-2",
+        "312-closed_matching_source-extra-on-text-1",
+        "312-closed_matching_source-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_matching_source",
+      "target": "3.13",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedSource(TypedDict, closed=True):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: ClosedSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564536f75726365285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a20436c6f736564536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 246,
+      "source_sha256": "50de0653d444afb59c39370935e8b95f26cdbdbbe28a3cd7390649684a4e6753",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "313-closed_matching_source-extra-on-json-1",
+        "313-closed_matching_source-extra-on-json-2",
+        "313-closed_matching_source-extra-on-text-1",
+        "313-closed_matching_source-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_matching_source",
+      "target": "3.14",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedSource(TypedDict, closed=True):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct(source: ClosedSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564536f75726365285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e73747275637428736f757263653a20436c6f736564536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 246,
+      "source_sha256": "50de0653d444afb59c39370935e8b95f26cdbdbbe28a3cd7390649684a4e6753",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "314-closed_matching_source-extra-on-json-1",
+        "314-closed_matching_source-extra-on-json-2",
+        "314-closed_matching_source-extra-on-text-1",
+        "314-closed_matching_source-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_explicit_key",
+      "target": "3.12",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct() -> ClosedTarget:\n    return ClosedTarget(item=1)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e7374727563742829202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574286974656d3d31290a",
+      "source_bytes": 165,
+      "source_sha256": "e81e39e35252b07e9da6410ad639eb16d7f6b39512dcc353d0369dda9115b61d",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "312-closed_explicit_key-extra-on-json-1",
+        "312-closed_explicit_key-extra-on-json-2",
+        "312-closed_explicit_key-extra-on-text-1",
+        "312-closed_explicit_key-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_explicit_key",
+      "target": "3.13",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct() -> ClosedTarget:\n    return ClosedTarget(item=1)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e7374727563742829202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574286974656d3d31290a",
+      "source_bytes": 165,
+      "source_sha256": "e81e39e35252b07e9da6410ad639eb16d7f6b39512dcc353d0369dda9115b61d",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "313-closed_explicit_key-extra-on-json-1",
+        "313-closed_explicit_key-extra-on-json-2",
+        "313-closed_explicit_key-extra-on-text-1",
+        "313-closed_explicit_key-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_explicit_key",
+      "target": "3.14",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import TypedDict\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n\ndef construct() -> ClosedTarget:\n    return ClosedTarget(item=1)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274205479706564446963740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a0a64656620636f6e7374727563742829202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574286974656d3d31290a",
+      "source_bytes": 165,
+      "source_sha256": "e81e39e35252b07e9da6410ad639eb16d7f6b39512dcc353d0369dda9115b61d",
+      "filename": "main.py",
+      "original_actual_exit": 0,
+      "original_json_diagnostics": [],
+      "original_text_lines": [],
+      "original_raw_call_ids": [
+        "314-closed_explicit_key-extra-on-json-1",
+        "314-closed_explicit_key-extra-on-json-2",
+        "314-closed_explicit_key-extra-on-text-1",
+        "314-closed_explicit_key-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": []
+    },
+    {
+      "case": "closed_optional_open_interaction",
+      "target": "3.12",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import NotRequired, TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n    optional: NotRequired[str]\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274204e6f7452657175697265642c205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a202020206f7074696f6e616c3a204e6f7452657175697265645b7374725d0a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 273,
+      "source_sha256": "39551d8d5fb402440fde5296e2502cc7989d4a52b528ee0505c92a9a070dd0df",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]",
+        "main.py:11:27:11:32: error: Non-required key \"optional\" not explicitly found in any ** item  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "312-closed_optional_open_interaction-extra-on-json-1",
+        "312-closed_optional_open_interaction-extra-on-json-2",
+        "312-closed_optional_open_interaction-extra-on-text-1",
+        "312-closed_optional_open_interaction-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_optional_open_interaction",
+      "target": "3.13",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import NotRequired, TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n    optional: NotRequired[str]\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274204e6f7452657175697265642c205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a202020206f7074696f6e616c3a204e6f7452657175697265645b7374725d0a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 273,
+      "source_sha256": "39551d8d5fb402440fde5296e2502cc7989d4a52b528ee0505c92a9a070dd0df",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]",
+        "main.py:11:27:11:32: error: Non-required key \"optional\" not explicitly found in any ** item  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "313-closed_optional_open_interaction-extra-on-json-1",
+        "313-closed_optional_open_interaction-extra-on-json-2",
+        "313-closed_optional_open_interaction-extra-on-text-1",
+        "313-closed_optional_open_interaction-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    },
+    {
+      "case": "closed_optional_open_interaction",
+      "target": "3.14",
+      "flag_state": "extra_checks_enabled",
+      "source": "from typing_extensions import NotRequired, TypedDict\n\nclass OpenSource(TypedDict):\n    item: int\n\nclass ClosedTarget(TypedDict, closed=True):\n    item: int\n    optional: NotRequired[str]\n\ndef construct(source: OpenSource) -> ClosedTarget:\n    return ClosedTarget(**source)\n",
+      "source_bytes_hex": "66726f6d20747970696e675f657874656e73696f6e7320696d706f7274204e6f7452657175697265642c205479706564446963740a0a636c617373204f70656e536f7572636528547970656444696374293a0a202020206974656d3a20696e740a0a636c61737320436c6f736564546172676574285479706564446963742c20636c6f7365643d54727565293a0a202020206974656d3a20696e740a202020206f7074696f6e616c3a204e6f7452657175697265645b7374725d0a0a64656620636f6e73747275637428736f757263653a204f70656e536f7572636529202d3e20436c6f7365645461726765743a0a2020202072657475726e20436c6f736564546172676574282a2a736f75726365290a",
+      "source_bytes": 273,
+      "source_sha256": "39551d8d5fb402440fde5296e2502cc7989d4a52b528ee0505c92a9a070dd0df",
+      "filename": "main.py",
+      "original_actual_exit": 1,
+      "original_json_diagnostics": [
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        },
+        {
+          "file": "main.py",
+          "line": 11,
+          "column": 26,
+          "end_line": 11,
+          "end_column": 32,
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "code": "typeddict-item",
+          "severity": "error"
+        }
+      ],
+      "original_text_lines": [
+        "main.py:11:27:11:32: error: Cannot unpack item that may contain extra keys into a closed TypedDict  [typeddict-item]",
+        "main.py:11:27:11:32: error: Non-required key \"optional\" not explicitly found in any ** item  [typeddict-item]"
+      ],
+      "original_raw_call_ids": [
+        "314-closed_optional_open_interaction-extra-on-json-1",
+        "314-closed_optional_open_interaction-extra-on-json-2",
+        "314-closed_optional_open_interaction-extra-on-text-1",
+        "314-closed_optional_open_interaction-extra-on-text-2"
+      ],
+      "expected_native_diagnostics": [
+        {
+          "rule": "typeddict-item",
+          "message": "Cannot unpack item that may contain extra keys into a closed TypedDict",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        },
+        {
+          "rule": "typeddict-item",
+          "message": "Non-required key \"optional\" not explicitly found in any ** item",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 11,
+            "column": 27,
+            "end_line": 11,
+            "end_column": 32
+          }
+        }
+      ]
+    }
+  ],
+  "whole_acceptance": false,
+  "original_calls": 96,
+  "independent_reporter_pairs": 48,
+  "root_qualification_provenance": "Root actualcapture0 and independentdatareader0;current source/runtime guarded percall"
+}

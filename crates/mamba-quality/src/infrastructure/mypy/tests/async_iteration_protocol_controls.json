@@ -1,0 +1,555 @@
+[
+  {
+    "name": "aiter_returns_async_iterator",
+    "files": {
+      "main.py": "from typing import AsyncIterator\n\nclass Reader:\n    def __aiter__(self) -> AsyncIterator[str]:\n        return values()\n\nasync def values() -> AsyncIterator[str]:\n    yield \"x\"\n\nasync def check(reader: Reader) -> None:\n    async for item in reader:\n        reveal_type(item)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "70fe5917851d29d7e959bc9114e7b5543fd9786121d201f03f46a4ed6e8812ac"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"str\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 12,
+            "column": 21,
+            "end_line": 12,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "aiter_returns_awaitable_iterator",
+    "files": {
+      "main.py": "from typing import AsyncIterator, Awaitable\n\nclass Reader:\n    def __aiter__(self) -> Awaitable[AsyncIterator[int]]:\n        raise NotImplementedError\n\nasync def check(reader: Reader) -> None:\n    async for item in reader:\n        reveal_type(item)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "0d0ad66d56014adf8f9b6306ba4b14e70d0cac339040f4df2f1854f5575c4fc7"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"Awaitable[AsyncIterator[int]]\" has no attribute \"__anext__\"",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 23,
+            "end_line": 8,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"Awaitable[AsyncIterator[int]]\" has no attribute \"__anext__\"",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 23,
+            "end_line": 8,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"Awaitable[AsyncIterator[int]]\" has no attribute \"__anext__\"",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 8,
+            "column": 23,
+            "end_line": 8,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 9,
+            "column": 21,
+            "end_line": 9,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "aiter_returns_invalid_int",
+    "files": {
+      "main.py": "class Reader:\n    def __aiter__(self) -> int:\n        return 1\n\nasync def check(reader: Reader) -> None:\n    async for item in reader:\n        reveal_type(item)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "915fcf6b5101ae463248e9ba2de392c2c8d0aede756e2cbb5295c3605ff87d2b"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"int\" has no attribute \"__anext__\"; maybe \"__index__\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 23,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"int\" has no attribute \"__anext__\"; maybe \"__index__\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 23,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "attr-defined",
+          "message": "\"int\" has no attribute \"__anext__\"; maybe \"__index__\"?",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 6,
+            "column": 23,
+            "end_line": 6,
+            "end_column": 28
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 7,
+            "column": 21,
+            "end_line": 7,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "name": "overloaded_async_generator",
+    "files": {
+      "main.py": "from typing import AsyncIterator, Literal, overload\n\n@overload\nasync def values(flag: Literal[True]) -> AsyncIterator[int]: ...\n@overload\nasync def values(flag: Literal[False]) -> AsyncIterator[str]: ...\nasync def values(flag: bool) -> AsyncIterator[int | str]:\n    if flag:\n        yield 1\n    else:\n        yield \"x\"\n\nasync def check() -> None:\n    async for number in values(True):\n        reveal_type(number)\n    async for text in values(False):\n        reveal_type(text)\n"
+    },
+    "local": {},
+    "packages": {},
+    "source_sha256": {
+      "main.py": "ec40fe30710f4cc6ca5103ac2ae47a19149e144adca47a7ca8a21bff7e8d3e5f"
+    },
+    "local_sha256": {},
+    "package_sha256": {},
+    "expected": [
+      [
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 1",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 2",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[int]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 25,
+            "end_line": 14,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[str]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 16,
+            "column": 23,
+            "end_line": 16,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 21,
+            "end_line": 17,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 1",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 2",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[int]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 25,
+            "end_line": 14,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[str]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 16,
+            "column": 23,
+            "end_line": 16,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 21,
+            "end_line": 17,
+            "end_column": 24
+          }
+        }
+      ],
+      [
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 1",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Overloaded function implementation cannot produce return type of signature 2",
+          "hint": null,
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 7,
+            "column": 1,
+            "end_line": 11,
+            "end_column": 17
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[int]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 14,
+            "column": 25,
+            "end_line": 14,
+            "end_column": 36
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 15,
+            "column": 21,
+            "end_line": 15,
+            "end_column": 26
+          }
+        },
+        {
+          "rule": "attr-defined",
+          "message": "\"Coroutine[Any, Any, AsyncIterator[str]]\" has no attribute \"__aiter__\" (not async iterable)",
+          "hint": "Maybe you forgot to use \"await\"?",
+          "path": "main.py",
+          "severity": "error",
+          "location": {
+            "line": 16,
+            "column": 23,
+            "end_line": 16,
+            "end_column": 35
+          }
+        },
+        {
+          "rule": "misc",
+          "message": "Revealed type is \"Any\"",
+          "hint": null,
+          "path": "main.py",
+          "severity": "note",
+          "location": {
+            "line": 17,
+            "column": 21,
+            "end_line": 17,
+            "end_column": 24
+          }
+        }
+      ]
+    ],
+    "reference_exits": [
+      1,
+      1,
+      1
+    ],
+    "authorized_variants": [
+      [],
+      [],
+      []
+    ]
+  }
+]

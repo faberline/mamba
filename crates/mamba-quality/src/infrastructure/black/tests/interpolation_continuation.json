@@ -1,0 +1,344 @@
+[
+  {
+    "name": "skip_plain_continuation",
+    "source": "value = (\n    f'''{\n        left +  # fmt: skip\n        right\n    }'''\n    ' suffix'\n)\n",
+    "source_sha256": "8d2c16e67565d7daeab4ed8d79ac8faf2108966c4589c2a90e20927ff12da8fa",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_rw8nwt1e.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_rofamwzn.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_0p4_1rd_.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d",
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d",
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d"
+    ]
+  },
+  {
+    "name": "skip_plain_three_terms",
+    "source": "value = (\n    f'''{\n        left +  # fmt: skip\n        right + last\n    }'''\n    ' suffix'\n)\n",
+    "source_sha256": "397fc592885bfff88817feb3b871196a24c43a97bcc1a5c1193b125fc0a66aa7",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_krz852fm.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_obbqbt7i.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_8cw_qitl.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "9e6b2bb932035f919d89d58202d32c4f42975f271434d3bd9873f0974483cd85",
+      "9e6b2bb932035f919d89d58202d32c4f42975f271434d3bd9873f0974483cd85",
+      "9e6b2bb932035f919d89d58202d32c4f42975f271434d3bd9873f0974483cd85"
+    ]
+  },
+  {
+    "name": "skip_plain_comment",
+    "source": "value = (\n    f'''{\n        left +  # fmt: skip\n        right  # comment\n    }'''\n    ' suffix'\n)\n",
+    "source_sha256": "7c7580de31b7b652a40e2feb73fee3718906f9b24b2bded85c7d1f9780b223b5",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_doecss_8.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_vtc9cm34.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_zohbq48b.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "5642aa5af288add19dc1d5c24418b80b89c4d1593e91f11a2c7f71df96d0231d",
+      "5642aa5af288add19dc1d5c24418b80b89c4d1593e91f11a2c7f71df96d0231d",
+      "5642aa5af288add19dc1d5c24418b80b89c4d1593e91f11a2c7f71df96d0231d"
+    ]
+  },
+  {
+    "name": "skip_plain_nested_call",
+    "source": "value = (\n    f'''{\n        call(\n            left +  # fmt: skip\n            right\n        )\n    }'''\n    ' suffix'\n)\n",
+    "source_sha256": "8e25388125b3de4e4ef5f2d51bc67e49b2f532998fbece142253b55f9df908ee",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 4:8\n            )\n           ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk__patswh9.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 4:8\n            )\n           ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_bzd1qgaa.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 4:8\n            )\n           ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_9ujisypg.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "c6847638c26a40effbaf8a0dd717456a239c3c8ba33bc97382aeb4f803f6d600",
+      "c6847638c26a40effbaf8a0dd717456a239c3c8ba33bc97382aeb4f803f6d600",
+      "c6847638c26a40effbaf8a0dd717456a239c3c8ba33bc97382aeb4f803f6d600"
+    ]
+  },
+  {
+    "name": "skip_double_continuation",
+    "source": "value = (\n    f\"\"\"{\n        left +  # fmt: skip\n        right\n    }\"\"\"\n    \" suffix\"\n)\n",
+    "source_sha256": "608a27e7386e6f33980c2ca4ba00ccb16b3ee2c83db9ea9b43d056aab5b7eabc",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_4n3bbm7i.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_wgw9i_fe.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:4\n        }\"\"\" \" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk___unlqiy.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d",
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d",
+      "ad2d8f65784806003ab709d5bcffcb3a54f3a4f803ce27649890ee8a3dfbfe6d"
+    ]
+  },
+  {
+    "name": "skip_template_continuation",
+    "source": "value = (\n    t'''{\n        left +  # fmt: skip\n        right\n    }'''\n    t' suffix'\n)\n",
+    "source_sha256": "9d25bc1fc5a7ba134a771e03e2ae8ad250104581bce60491eda5a5e5a2abf580",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:4\n        }\"\"\" t\" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_y70zzv6d.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:4\n        }\"\"\" t\" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_1phvuslj.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:4\n        }\"\"\" t\" suffix\"\n       ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_azl1nrfa.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "d19aafac063baf5d84a6f1ff5303298df67bfe8b9e15032d456dfcc785456d6e",
+      "d19aafac063baf5d84a6f1ff5303298df67bfe8b9e15032d456dfcc785456d6e",
+      "d19aafac063baf5d84a6f1ff5303298df67bfe8b9e15032d456dfcc785456d6e"
+    ]
+  },
+  {
+    "name": "plain_without_skip",
+    "source": "value = (\n    f'''{\n        left +\n        right\n    }'''\n    ' suffix'\n)\n",
+    "source_sha256": "db441a9e090f5d44233895e556533e19a8fd3abb6d8859a95b917a88a5e06f70",
+    "expected": [
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{\n        left +\n        right\n    }\"\"\" \" suffix\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "db441a9e090f5d44233895e556533e19a8fd3abb6d8859a95b917a88a5e06f70",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          },
+          {
+            "input_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{\n        left +\n        right\n    }\"\"\" \" suffix\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "db441a9e090f5d44233895e556533e19a8fd3abb6d8859a95b917a88a5e06f70",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          },
+          {
+            "input_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          }
+        ],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "formatted",
+        "output": "value = f\"\"\"{\n        left +\n        right\n    }\"\"\" \" suffix\"\n",
+        "reference_exit": 1,
+        "exception_type": null,
+        "message": null,
+        "reference_converges": true,
+        "passes": [
+          {
+            "input_sha256": "db441a9e090f5d44233895e556533e19a8fd3abb6d8859a95b917a88a5e06f70",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          },
+          {
+            "input_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886",
+            "output_sha256": "cbc612b5b86038470397d70026ebd36530d57886318ca2b397149e5932cca886"
+          }
+        ],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "name": "skip_without_adjacent",
+    "source": "value = f'''{\n    left +  # fmt: skip\n    right\n}'''\n",
+    "source_sha256": "b90fa32a4234033be2e59fe05949b735ccda6d4255ec2ebf24ab2541f6369995",
+    "expected": [
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.12.11 produced invalid code:\ncannot parse for target version Python 3.12: 3:0\n    }\"\"\"\n    ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_b1vpv264.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.13.5 produced invalid code:\ncannot parse for target version Python 3.13: 3:0\n    }\"\"\"\n    ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_nn1md2c4.log",
+        "passes": [],
+        "version": "26.10.0"
+      },
+      {
+        "kind": "error",
+        "output": null,
+        "reference_exit": 123,
+        "exception_type": "black.parsing.InvalidInput",
+        "message": "INTERNAL ERROR: Black 26.10.0 on Python (CPython) 3.14.0 produced invalid code:\ncannot parse for target version Python 3.14: 3:0\n    }\"\"\"\n    ^\nParseError: bad input\nPlease report a bug on https://github.com/psf/black/issues.  This invalid output might be helpful: /var/folders/r_/zwj_t8895ms334wn1pq5gf_w0000gn/T/blk_z0_wr80w.log",
+        "passes": [],
+        "version": "26.10.0"
+      }
+    ],
+    "invalid_output_sha256": [
+      "0402842fabe2018f5766dc7bb78b5e3c32b6a1b52595cb19ba4fc43666aa5b64",
+      "0402842fabe2018f5766dc7bb78b5e3c32b6a1b52595cb19ba4fc43666aa5b64",
+      "0402842fabe2018f5766dc7bb78b5e3c32b6a1b52595cb19ba4fc43666aa5b64"
+    ]
+  }
+]
