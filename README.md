@@ -858,7 +858,7 @@ whose core is a C/C++ extension needs one of three treatments:
    acceptable precisely because the C-ext mamba can't do natively (cloud/DB clients,
    gRPC) is mostly **I/O-bound** — where mamba wouldn't beat CPython anyway, so the
    app's CPU-bound code stays native-fast and the I/O parts borrow CPython cheaply.
-3. **Native kit** — a full mambalib (see [C3](#c3-mambalibs-end-to-end--axis-3-3457)),
+3. **Native kit** — a full mambalib (see [C3](#mambalibs-end-to-end)),
    the lib reimplemented natively end-to-end.
 
 ### Hacked C-extension foundations (chokepoints)
