@@ -15,8 +15,16 @@ import subprocess
 import time
 
 
-def counts(inventory, output):
+def inventory_names(inventory):
     names = re.findall(r"^(.+): test$", inventory, re.M)
+    totals = re.findall(r"^(\d+) tests?, (\d+) benchmarks?$", inventory, re.M)
+    complete = (bool(names) and len(names) == len(set(names))
+                and len(totals) == 1 and tuple(map(int, totals[0])) == (len(names), 0))
+    return names, complete
+
+
+def counts(inventory, output):
+    names, complete_inventory = inventory_names(inventory)
     verdicts = re.findall(r"^test (.+?) \.\.\. (ok|FAILED|ignored)(?:,.*)?$", output, re.M)
     summaries = re.findall(
         r"test result: (?:ok|FAILED)\. (\d+) passed; (\d+) failed; "
@@ -25,8 +33,9 @@ def counts(inventory, output):
     observed = dict(verdicts)
     result = {key: sum(v == value for v in observed.values()) for key, value in
               (("passed", "ok"), ("failed", "FAILED"), ("ignored", "ignored"))}
-    result.update(inventory=len(names), not_run=len(set(names) - observed.keys()))
-    valid = (bool(names) and len(names) == len(set(names))
+    result.update(inventory=len(names), inventory_complete=complete_inventory,
+                  not_run=len(set(names) - observed.keys()))
+    valid = (complete_inventory
              and len(verdicts) == len(observed) and set(observed) == set(names)
              and len(summaries) == 1
              and tuple(map(int, summaries[0])) ==
@@ -61,9 +70,9 @@ def main():
     base = ["cargo", "test", "--locked", "-j", "1", "-p", "mamba", *selection]
     listing = run([*base, "--", "--list"], args.output / "inventory", args.timeout)
     inventory = (args.output / "inventory.stdout").read_text(errors="replace")
-    names = re.findall(r"^(.+): test$", inventory, re.M)
+    _, complete_inventory = inventory_names(inventory)
     execution = None
-    if listing["exit"] == 0 and not listing["timed_out"] and names and len(names) == len(set(names)):
+    if listing["exit"] == 0 and not listing["timed_out"] and complete_inventory:
         execution = run([*base, "--", "--test-threads=1"], args.output / "execution", args.timeout)
     output = (args.output / "execution.stdout").read_text(errors="replace") if execution else ""
     totals, valid = counts(inventory, output)

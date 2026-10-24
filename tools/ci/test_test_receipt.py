@@ -18,6 +18,12 @@ class ReceiptControls(unittest.TestCase):
     def test_zero_inventory_blocks(self):
         self.assertFalse(counts("", self.good)[1])
 
+    def test_incomplete_inventory_blocks(self):
+        self.assertFalse(counts("alpha: test\nbeta: test\n", self.good)[1])
+
+    def test_inventory_total_mismatch_blocks(self):
+        self.assertFalse(counts(self.inventory.replace("2 tests", "3 tests"), self.good)[1])
+
     def test_assertion_failure_blocks(self):
         self.assertFalse(counts(self.inventory, self.good.replace("beta ... ok", "beta ... FAILED"))[1])
 

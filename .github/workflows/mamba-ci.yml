@@ -50,7 +50,7 @@ jobs:
         run: |
           mkdir -p receipts
           {
-            git rev-parse HEAD HEAD^{tree}
+            git rev-parse HEAD 'HEAD^{tree}'
             rustc -Vv
             cargo -V
             python -VV
