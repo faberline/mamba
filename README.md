@@ -941,7 +941,7 @@ which is why deriving it from the directory finds nothing.
 
 | Need | Source of truth |
 |---|---|
-| Every command and its flags | `mamba --help` and `mamba <verb> --help`; the command surface is declared in [src/main.rs](src/main.rs) |
+| Every command and its flags | `mamba --help` and `mamba <verb> --help`; the command surface is declared in [src/cli.rs](src/cli.rs) |
 | Package-manager behaviour | [src/pkgmanage/](src/pkgmanage/), one module per verb; `run.rs` owns the `run` preflight |
 | Package-manager cases | [tests/pkgmgr/runner.rs](tests/pkgmgr/runner.rs), one module per verb, declared as the `pkgmgr` `[[test]]` target in [Cargo.toml](Cargo.toml) |
 | Package-manager e2e cases | [e2e/](e2e/), one black-box case per file, each its own `[[test]]` target in [Cargo.toml](Cargo.toml) |

@@ -14,4 +14,4 @@ This ADR records the order already written in those files. It does not add a new
 
 ## Current code boundary
 
-At baseline 8975, [src/lib.rs](../../src/lib.rs) still declares compiler, runtime, and package manager modules in the root crate. The order above is a product decision. It does not prove a completed code split or full runtime parity.
+In the current main tree after #239 merged at `4a76f8bbf7de31776fb8bad1d18aa5794c54699f`, [src/lib.rs](../../src/lib.rs) still declares compiler, runtime, and package-manager modules in the root crate. The thin [src/main.rs](../../src/main.rs) declares modules, retains feature-gated native links, and calls `cli::run()`. Command construction and routing live in [src/cli.rs](../../src/cli.rs). Its run handler is in [src/cli/run.rs](../../src/cli/run.rs), test handler in [src/cli/test.rs](../../src/cli/test.rs), benchmark handler in [src/cli/bench.rs](../../src/cli/bench.rs), and miscellaneous handlers in [src/cli/misc.rs](../../src/cli/misc.rs). This entry-point source change does not complete a code split or prove runtime parity.

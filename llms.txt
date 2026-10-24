@@ -8,10 +8,14 @@ Pipeline: source → `lexer` → `parser` → `resolve` → `types` (force-typed
 
 ## Entry points
 
-- [src/main.rs](src/main.rs): binary entrypoint; force-links first-party binding crates via `use {crate}_mamba as _;`
+- [src/main.rs](src/main.rs): thin binary entry; declares `cli`, `quality_command`, and `standard_cli`, keeps feature-gated native binding links, then calls `cli::run()`.
+- [src/cli.rs](src/cli.rs): builds the Clap command tree and dispatches top-level commands to Quality, standard, package-manager, and handler modules.
+- [src/cli/run.rs](src/cli/run.rs): handles `run` and `check` commands, including direct script and inline-code paths.
+- [src/cli/test.rs](src/cli/test.rs): handles `test`, `test-batch`, and `pytest` commands.
+- [src/cli/bench.rs](src/cli/bench.rs): handles the `bench` command.
+- [src/cli/misc.rs](src/cli/misc.rs): handles `surface-report` and shell-completion generation.
 - [src/lib.rs](src/lib.rs): library root; re-exports compiler stages and `runtime`
-- [src/driver/](src/driver/): CLI verbs (`run`, `build`, `bench`, `repl`, `check`)
-- [Cargo.toml](Cargo.toml): crate manifest; force-link list lives in `[dependencies]`
+- [Cargo.toml](Cargo.toml): crate manifest; declares the optional binding crates and the `native-modules` feature used by the binary entry.
 
 ## Compiler stages
 

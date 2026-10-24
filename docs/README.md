@@ -5,7 +5,7 @@ Read the [product requirements](product/README.md) for the promises and their st
 
 - [GOAL](GOAL.md) keeps the original project and session completion rules.
   Run its shell commands from the repository root; relative paths use that working directory.
-- [Architecture](architecture.md) maps the code in the 8975 baseline. It does not claim a completed workspace split.
+- [Architecture](architecture.md) maps the current CLI source paths after #239 merged.
 - [Glossary](glossary.md) defines terms used by these documents.
 - [Product capabilities](domain/product-capabilities.md) points to the existing capability documents.
 - [Delivery order decision](adr/0001-product-delivery-order.md) records the decision dated 2026-09-03.
