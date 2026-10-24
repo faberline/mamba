@@ -76,7 +76,12 @@ jobs:
           PY
       - name: Test complete library baseline
         if: matrix.suite == 'library-baseline'
-        run: python tools/ci/test_receipt.py lib --output receipts/lib --timeout 2400
+        run: |
+          python tools/ci/test_receipt.py lib --output receipts/lib --timeout 2400 \
+            --require-case runtime::stdlib::select_mod::tests::test_linux_pollmsg_matches_uapi_value \
+            --require-case runtime::stdlib::socket_mod::tests::test_sockaddr_v4_native_family_address_and_port \
+            --require-case runtime::stdlib::socket_mod::tests::test_getnameinfo_numeric_ipv6_native_sockaddr \
+            --require-case runtime::stdlib::resource_mod::tests::test_rlimit_selector_boundaries_rejected_before_abi_conversion
       - name: Test explicit contracts
         if: matrix.suite == 'contracts'
         shell: bash

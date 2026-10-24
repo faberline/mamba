@@ -1,7 +1,7 @@
 """Isolated receipt-parser controls; never invokes Cargo or product binaries."""
 import unittest
 
-from test_receipt import counts, source_identity_matches
+from test_receipt import counts, inventory_names, source_identity_matches
 
 
 class ReceiptControls(unittest.TestCase):
@@ -23,6 +23,14 @@ class ReceiptControls(unittest.TestCase):
 
     def test_inventory_total_mismatch_blocks(self):
         self.assertFalse(counts(self.inventory.replace("2 tests", "3 tests"), self.good)[1])
+
+    def test_missing_required_case_blocks_inventory(self):
+        self.assertFalse(inventory_names(self.inventory, ["gamma"])[1])
+
+    def test_required_cases_present_without_filtering(self):
+        names, complete = inventory_names(self.inventory, ["alpha"])
+        self.assertTrue(complete)
+        self.assertEqual(names, ["alpha", "beta"])
 
     def test_assertion_failure_blocks(self):
         self.assertFalse(counts(self.inventory, self.good.replace("beta ... ok", "beta ... FAILED"))[1])

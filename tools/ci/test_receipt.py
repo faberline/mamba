@@ -20,11 +20,12 @@ def source_identity_matches(expected, checked_out):
                 and re.fullmatch(r"[0-9a-f]{40}", checked_out))
 
 
-def inventory_names(inventory):
+def inventory_names(inventory, required=()):
     names = re.findall(r"^(.+): test$", inventory, re.M)
     totals = re.findall(r"^(\d+) tests?, (\d+) benchmarks?$", inventory, re.M)
     complete = (bool(names) and len(names) == len(set(names))
-                and len(totals) == 1 and tuple(map(int, totals[0])) == (len(names), 0))
+                and len(totals) == 1 and tuple(map(int, totals[0])) == (len(names), 0)
+                and set(required).issubset(names))
     return names, complete
 
 
@@ -73,6 +74,8 @@ def main():
     parser.add_argument("--timeout", type=int, default=1800)
     parser.add_argument("--inventory-timeout", type=int,
                         help="Separate deadline for the listing command, which includes compilation")
+    parser.add_argument("--require-case", action="append", default=[],
+                        help="Require this exact inventory name without filtering execution")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     selection = ["--lib"] if args.target == "lib" else ["--test", args.target]
@@ -80,7 +83,8 @@ def main():
     listing = run([*base, "--", "--list"], args.output / "inventory",
                   args.inventory_timeout or args.timeout)
     inventory = (args.output / "inventory.stdout").read_text(errors="replace")
-    _, complete_inventory = inventory_names(inventory)
+    names, complete_inventory = inventory_names(inventory, args.require_case)
+    missing_required_cases = sorted(set(args.require_case) - set(names))
     execution = None
     if listing["exit"] == 0 and not listing["timed_out"] and complete_inventory:
         execution = run([*base, "--", "--test-threads=1"], args.output / "execution", args.timeout)
@@ -96,6 +100,7 @@ def main():
              for p in args.output.glob("*.std*")}
     receipt = dict(schema=1, target=args.target, source=source,
                    checkout=checkout, source_identity_valid=identity_valid,
+                   required_cases=args.require_case, missing_required_cases=missing_required_cases,
                    runner=dict(os=os.environ.get("RUNNER_OS"), arch=os.environ.get("RUNNER_ARCH")),
                    inventory=listing, execution=execution, counts=totals,
                    evidence_complete=bool(passed), files=files)

@@ -50,7 +50,11 @@ The new library cases are:
 * `runtime::stdlib::socket_mod::tests::test_getnameinfo_numeric_ipv6_native_sockaddr`
 * `runtime::stdlib::resource_mod::tests::test_rlimit_selector_boundaries_rejected_before_abi_conversion`
 
-Local validation is limited to static checks, 19 receipt controls and a tiny
+The workflow requires all four exact names in the complete library inventory
+before executing the unfiltered suite. Missing or duplicate cases block the
+receipt; these requirements do not select a focused subset.
+
+Local validation is limited to static checks, 21 receipt controls and a tiny
 standalone native C-header probe. The Mac probe confirms the retained BSD path,
 not Linux behavior. Rustfmt adds no findings: the two existing socket formatting
 findings remain; the other two files pass. No Mamba library, integration, CLI,
