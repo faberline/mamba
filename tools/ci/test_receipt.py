@@ -15,6 +15,11 @@ import subprocess
 import time
 
 
+def source_identity_matches(expected, checked_out):
+    return bool(expected and expected == checked_out
+                and re.fullmatch(r"[0-9a-f]{40}", checked_out))
+
+
 def inventory_names(inventory):
     names = re.findall(r"^(.+): test$", inventory, re.M)
     totals = re.findall(r"^(\d+) tests?, (\d+) benchmarks?$", inventory, re.M)
@@ -25,7 +30,9 @@ def inventory_names(inventory):
 
 def counts(inventory, output):
     names, complete_inventory = inventory_names(inventory)
-    verdicts = re.findall(r"^test (.+?) \.\.\. (ok|FAILED|ignored)(?:,.*)?$", output, re.M)
+    verdicts = re.findall(
+        r"^test (.+?)(?: - should panic)? \.\.\. (ok|FAILED|ignored)(?:,.*)?$", output, re.M
+    )
     summaries = re.findall(
         r"test result: (?:ok|FAILED)\. (\d+) passed; (\d+) failed; "
         r"(\d+) ignored; (\d+) measured; (\d+) filtered out", output
@@ -78,10 +85,14 @@ def main():
     totals, valid = counts(inventory, output)
     passed = valid and listing["exit"] == 0 and execution is not None and execution["exit"] == 0
     passed = passed and not listing["timed_out"] and not execution["timed_out"]
+    source = os.environ.get("CI_HEAD_SHA")
+    checkout = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+    identity_valid = source_identity_matches(source, checkout)
+    passed = passed and identity_valid
     files = {p.name: dict(bytes=p.stat().st_size, sha256=hashlib.sha256(p.read_bytes()).hexdigest())
              for p in args.output.glob("*.std*")}
-    receipt = dict(schema=1, target=args.target, source=os.environ.get("CI_HEAD_SHA"),
-                   checkout=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+    receipt = dict(schema=1, target=args.target, source=source,
+                   checkout=checkout, source_identity_valid=identity_valid,
                    runner=dict(os=os.environ.get("RUNNER_OS"), arch=os.environ.get("RUNNER_ARCH")),
                    inventory=listing, execution=execution, counts=totals,
                    evidence_complete=bool(passed), files=files)

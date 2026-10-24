@@ -19,6 +19,9 @@ built for the checked-out PR head. Logs, tool identities, exact argv, exits,
 counts and hashes are retained as artifacts for 14 days, including failures.
 Cancelled or missing artifacts block acceptance. Fetch artifacts before expiry
 when they are needed for a durable acceptance record.
+The receipt requires the declared CI head to equal the checked-out commit.
+Recorded PIDs/exits identify the Cargo driver; nested libtest PIDs and executable
+hashes are not captured by this bootstrap and remain qualification follow-up.
 
 The two suites are deliberately bounded:
 
@@ -77,6 +80,11 @@ The full contract still needs:
   --bin mamba --features release`. The existing `mamba-release.yml` builds
   packages without tests and omits `--features release`; it is not a gate.
   No release workflow or publishing behavior changes in this draft.
+  A completed milestone makes a release candidate eligible. The future release
+  workflow must run the full applicable suite on matching GitHub-hosted runners
+  and publish only after every required full gate passes. Preserve failed run
+  links and repair follow-up; milestone completion never waives inherited
+  failures. No tag, publishing, or automatic release is enabled here.
 * Performance uses explicit opt-in targets `perf_pin` and `perf_gate_report`.
   Do not use `-- perf_pin`: generated cases are `run_pin::<filename>.toml`
   and that old filter may execute zero cases. Inventory must be nonzero,
@@ -111,6 +119,12 @@ selects `done` issues and `pass` merges. Those paths cannot run unchanged for
 this handoff. A central adapter must separate PR publication from qualification
 and disable automatic done/merge, rather than copying those scripts into
 Mamba. Their default 10/15/15-minute loop is not the requested review cadence.
+
+Onboarding found issue #240 without a milestone: it replaces the test-only
+live-PyPI AC6 placeholder with the original measured resolver gate. Claude
+planning should assess it against `L1 — Test and Mambalibs backlog`; that is a
+candidate, not an assignment or an arbitrary release version. No milestone is
+changed here.
 
 The intended handoff is Claude plan → AGY todo-to-doing/PR → CI → Codex review.
 Milestones are assigned only by Claude planning. CI failure returns work to
