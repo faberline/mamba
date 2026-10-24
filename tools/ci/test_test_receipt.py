@@ -1,7 +1,7 @@
 """Isolated receipt-parser controls; never invokes Cargo or product binaries."""
 import unittest
 
-from test_receipt import counts, source_identity_matches
+from test_receipt import counts, exact_inventory_matches, inventory_names, source_identity_matches
 
 
 class ReceiptControls(unittest.TestCase):
@@ -23,6 +23,14 @@ class ReceiptControls(unittest.TestCase):
 
     def test_inventory_total_mismatch_blocks(self):
         self.assertFalse(counts(self.inventory.replace("2 tests", "3 tests"), self.good)[1])
+
+    def test_missing_required_case_blocks_inventory(self):
+        self.assertFalse(inventory_names(self.inventory, ["gamma"])[1])
+
+    def test_required_cases_present_without_filtering(self):
+        names, complete = inventory_names(self.inventory, ["alpha"])
+        self.assertTrue(complete)
+        self.assertEqual(names, ["alpha", "beta"])
 
     def test_assertion_failure_blocks(self):
         self.assertFalse(counts(self.inventory, self.good.replace("beta ... ok", "beta ... FAILED"))[1])
@@ -80,6 +88,47 @@ class SourceIdentityControls(unittest.TestCase):
 
     def test_non_commit_identity_blocks(self):
         self.assertFalse(source_identity_matches("main", "main"))
+
+
+class ExactCaseControls(unittest.TestCase):
+    inventory = "alpha: test\n\n1 test, 0 benchmarks\n"
+    good = ("test alpha ... ok\n"
+            "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 42 filtered out\n")
+
+    def test_exact_one_case_inventory(self):
+        self.assertTrue(exact_inventory_matches(self.inventory, "alpha"))
+
+    def test_zero_or_missing_case_blocks(self):
+        self.assertFalse(exact_inventory_matches("0 tests, 0 benchmarks\n", "alpha"))
+        self.assertFalse(exact_inventory_matches(self.inventory, "beta"))
+        self.assertFalse(exact_inventory_matches(self.inventory, ""))
+
+    def test_unexpected_or_duplicate_cases_block(self):
+        extra = "alpha: test\nbeta: test\n\n2 tests, 0 benchmarks\n"
+        duplicate = "alpha: test\nalpha: test\n\n2 tests, 0 benchmarks\n"
+        self.assertFalse(exact_inventory_matches(extra, "alpha"))
+        self.assertFalse(exact_inventory_matches(duplicate, "alpha"))
+
+    def test_exact_receipt_checks_known_filtered_denominator(self):
+        result, valid = counts(self.inventory, self.good, expected_filtered=42)
+        self.assertTrue(valid)
+        self.assertEqual(result["filtered_out"], 42)
+
+    def test_full_target_still_rejects_filtered_results(self):
+        self.assertFalse(counts(self.inventory, self.good)[1])
+
+    def test_wrong_filtered_denominator_blocks(self):
+        self.assertFalse(counts(self.inventory, self.good, expected_filtered=41)[1])
+
+    def test_filtered_failure_or_ignore_or_incomplete_blocks(self):
+        for output in [self.good.replace("alpha ... ok", "alpha ... FAILED"),
+                       self.good.replace("alpha ... ok", "alpha ... ignored"),
+                       "test alpha ... ok\n"]:
+            self.assertFalse(counts(self.inventory, output, expected_filtered=42)[1])
+
+    def test_filtered_duplicate_or_substitution_blocks(self):
+        self.assertFalse(counts(self.inventory, "test alpha ... ok\n" + self.good, 42)[1])
+        self.assertFalse(counts(self.inventory, self.good.replace("alpha", "beta"), 42)[1])
 
 
 if __name__ == "__main__":

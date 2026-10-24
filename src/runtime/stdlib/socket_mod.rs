@@ -878,6 +878,45 @@ mod tests {
         assert_eq!(extract_str(MbValue::from_int(1)), None);
     }
 
+    #[test]
+    fn test_sockaddr_v4_native_family_address_and_port() {
+        let addr = sockaddr_v4("127.0.0.1", 0x1234).expect("numeric IPv4 address");
+        assert_eq!(addr.sin_family as i32, libc::AF_INET);
+        assert_eq!(u16::from_be(addr.sin_port), 0x1234);
+        assert_eq!(addr.sin_addr.s_addr.to_ne_bytes(), [127, 0, 0, 1]);
+        #[cfg(not(target_os = "linux"))]
+        assert_eq!(addr.sin_len as usize, std::mem::size_of_val(&addr));
+    }
+
+    #[test]
+    fn test_getnameinfo_numeric_ipv6_native_sockaddr() {
+        super::super::super::exception::clear_current_exception();
+        let address = MbValue::from_ptr(MbObject::new_tuple(vec![
+            MbValue::from_ptr(MbObject::new_str("::1".to_string())),
+            MbValue::from_int(443),
+            MbValue::from_int(0),
+            MbValue::from_int(0),
+        ]));
+        let args = [
+            address,
+            MbValue::from_int((libc::NI_NUMERICHOST | libc::NI_NUMERICSERV) as i64),
+        ];
+        let result = unsafe { d_getnameinfo_real(args.as_ptr(), args.len()) };
+        assert_eq!(
+            super::super::super::exception::current_exception_type(),
+            None
+        );
+        let ptr = result.as_ptr().expect("getnameinfo result tuple");
+        unsafe {
+            let ObjData::Tuple(ref items) = (*ptr).data else {
+                panic!("getnameinfo result must be a tuple");
+            };
+            assert_eq!(items.len(), 2);
+            assert_eq!(str_val(items[0]).as_deref(), Some("::1"));
+            assert_eq!(str_val(items[1]).as_deref(), Some("443"));
+        }
+    }
+
     // --- mb_socket_new ---
     #[test]
     fn test_socket_new_explicit_family_type() {
@@ -1307,7 +1346,11 @@ fn sockaddr_v4(host: &str, port: u16) -> Option<libc::sockaddr_in> {
     let mut sin: libc::sockaddr_in = unsafe { std::mem::zeroed() };
     sin.sin_family = libc::AF_INET as libc::sa_family_t;
     sin.sin_port = port.to_be();
-    sin.sin_len = std::mem::size_of::<libc::sockaddr_in>() as u8;
+    // Linux sockaddr_in has no BSD length field; preserve other hosts' setup.
+    #[cfg(not(target_os = "linux"))]
+    {
+        sin.sin_len = std::mem::size_of::<libc::sockaddr_in>() as u8;
+    }
     if host.is_empty() {
         sin.sin_addr.s_addr = libc::INADDR_ANY.to_be();
         return Some(sin);
@@ -2649,7 +2692,10 @@ unsafe extern "C" fn d_getnameinfo_real(args_ptr: *const MbValue, nargs: usize) 
         };
         let sin6 = unsafe { &mut *(&mut storage as *mut _ as *mut libc::sockaddr_in6) };
         sin6.sin6_family = libc::AF_INET6 as libc::sa_family_t;
-        sin6.sin6_len = std::mem::size_of::<libc::sockaddr_in6>() as u8;
+        #[cfg(not(target_os = "linux"))]
+        {
+            sin6.sin6_len = std::mem::size_of::<libc::sockaddr_in6>() as u8;
+        }
         sin6.sin6_port = port.to_be();
         sin6.sin6_scope_id = items.get(3).and_then(|v| v.as_int()).unwrap_or(0) as u32;
         let rc = unsafe {
