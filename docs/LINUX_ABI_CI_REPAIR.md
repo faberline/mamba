@@ -54,7 +54,7 @@ The workflow requires all four exact names in the complete library inventory
 before executing the unfiltered suite. Missing or duplicate cases block the
 receipt; these requirements do not select a focused subset.
 
-Local validation is limited to static checks, 21 receipt controls and a tiny
+Local validation is limited to static checks, 29 receipt controls and a tiny
 standalone native C-header probe. The Mac probe confirms the retained BSD path,
 not Linux behavior. Rustfmt adds no findings: the two existing socket formatting
 findings remain; the other two files pass. No Mamba library, integration, CLI,
@@ -67,3 +67,56 @@ declared Linux release artifacts: ship-profile `--features release` builds and
 the full applicable suite remain required, with publishing blocked until all
 required evidence passes. No macOS/APFS or performance qualification follows
 from Ubuntu checks. Existing metric and central AW activation gaps remain.
+
+## Exact-case execution before the full baseline
+
+The first repair run compiled and listed all 8,582 library cases, including
+the four regressions, but the unfiltered process crashed before reaching them.
+Run [40125433604](https://github.com/faberline/mamba/actions/runs/40125433604)
+retains 146 passed / 5 ignored verdicts, a native SIGSEGV, and 8,431 cases
+without a completed verdict. Its perf-policy target passed 12/12; its fixture
+contract target passed 16 and failed 1. These records remain unchanged.
+
+The follow-up workflow runs each of the four regressions with `--exact` in a
+separate process before the full baseline. Each receipt first records the
+complete catalogue, requires its exact case, then checks a one-case filtered
+inventory and verdict. The filtered-out count must equal the complete catalogue
+size minus one. Missing, duplicated, substituted, ignored, failed or incomplete
+cases block the selection. Source identity is checked before and after.
+Exact-case receipts explicitly cannot qualify the complete target. The four
+commands share the same job target directory, so only the first catalogue needs
+a cold build; later catalogues, cases and the full suite reuse those outputs.
+The unchanged full baseline still runs after a focused failure unless the job
+was cancelled. No ignore, retry, budget increase or full-suite waiver is added.
+
+## Read-only failure context and issue mapping
+
+The last-started generator case is unchanged from the bootstrap source. Its
+helper in `src/conformance/tests/generators/mod.rs` compiles through the JIT,
+passes an entry address to a spawned thread, calls it, then cleans runtime state.
+The raw SIGSEGV record does not locate the fault within entry execution,
+generator handling or cleanup. The helper also discards its `catch_unwind`
+result; that cannot catch SIGSEGV and is a separate assertion-power concern.
+No cause or fix is established by this static inspection, and no helper or
+generator behavior is changed in this CI patch.
+
+The fixture contract fails because the named AST fixture lacks a string `xfail`
+entry in its `[tool.mamba]` record. This is a metadata-contract assertion, not a
+CPython parity result. An oracle-backed policy decision is needed before any
+fixture metadata edit; adding xfail merely to obtain green is not a remedy.
+
+A read-only complete issue scan found no exact match for the crash case,
+fixture basename or contract assertion. Existing context is:
+
+* #26: Runtime tracking parent, with older generator-destruction crash evidence;
+  that is a different case/source generation, not proof of this cause.
+* #27: joint release acceptance; failed, missing and unrun evidence blocks it.
+* #244: native 8,513/45/19 baseline; neither exact new failure name is in its
+  recorded 45-case list. No unchanged Linux execution baseline is established.
+* #246: only the published gather boundary, not this generator or metadata case.
+* #5/#64: prepared-worker reuse/state isolation context, with no proven link to
+  this native libtest JIT crash.
+
+No duplicate issue, milestone assignment or runtime/xfail repair is created.
+Planning must freeze the specific cause and original controls before broader
+implementation. The old full-baseline and release requirements remain intact.

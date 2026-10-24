@@ -74,8 +74,30 @@ jobs:
           assert (actual['ipv6_host'], actual['ipv6_service']) == socket.getnameinfo(
               ('::1', 443, 0, 0), socket.NI_NUMERICHOST | socket.NI_NUMERICSERV)
           PY
-      - name: Test complete library baseline
+      - name: Test four required Linux ABI cases independently
+        id: abi_regressions
         if: matrix.suite == 'library-baseline'
+        shell: bash
+        run: |
+          cases=(
+            runtime::stdlib::select_mod::tests::test_linux_pollmsg_matches_uapi_value
+            runtime::stdlib::socket_mod::tests::test_sockaddr_v4_native_family_address_and_port
+            runtime::stdlib::socket_mod::tests::test_getnameinfo_numeric_ipv6_native_sockaddr
+            runtime::stdlib::resource_mod::tests::test_rlimit_selector_boundaries_rejected_before_abi_conversion
+          )
+          test "${#cases[@]}" -eq 4
+          status=0
+          index=0
+          for testcase in "${cases[@]}"; do
+            index=$((index + 1))
+            python tools/ci/test_receipt.py lib --output "receipts/abi-regressions/$index" \
+              --exact-case "$testcase" --inventory-timeout 2400 --timeout 1200 || status=1
+          done
+          exit "$status"
+      - name: Test complete library baseline
+        # The focused selection cannot skip the full gate on failure. Cancels
+        # still stop obsolete PR runs; setup failures remain setup failures.
+        if: ${{ !cancelled() && matrix.suite == 'library-baseline' && steps.abi_regressions.outcome != 'skipped' }}
         run: |
           python tools/ci/test_receipt.py lib --output receipts/lib --timeout 2400 \
             --require-case runtime::stdlib::select_mod::tests::test_linux_pollmsg_matches_uapi_value \
