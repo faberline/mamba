@@ -34,10 +34,10 @@ constraints; nested structures; and accumulated validation errors.
 - Gate — efficiency: `cargo test -p schema` - zero-copy validation
   remains covered by crate tests until a dedicated meter cube exists
 - Gate: `cargo test -p schema`
-- Source: `crates/schema/tests/validation_tests.rs`,
-  `crates/schema/tests/error_paths_tests.rs`,
-  `crates/schema/tests/field_validator_tests.rs`,
-  `crates/schema/tests/model_validator_tests.rs`
+- Source: `crates/schema/tests/it/validation_tests.rs`,
+  `crates/schema/tests/it/error_paths_tests.rs`,
+  `crates/schema/tests/it/field_validator_tests.rs`,
+  `crates/schema/tests/it/model_validator_tests.rs`
 - Evidence: `cargo test -p schema`
 
 ### Mamba Dataclass Schema Surface
@@ -81,7 +81,7 @@ BSON types, field/model serializers, and computed values.
   remains declared until a dedicated meter cube exists
 - Gate: `cargo test -p schema`
 - Source: `crates/schema/Cargo.toml`,
-  `crates/schema/tests/serializer_tests.rs`
+  `crates/schema/tests/it/main.rs`
 - Evidence: `cargo test -p schema`
 
 ## Overview
