@@ -71,11 +71,14 @@ def main():
     parser.add_argument("target", help="lib or an exact Cargo [[test]] name")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--timeout", type=int, default=1800)
+    parser.add_argument("--inventory-timeout", type=int,
+                        help="Separate deadline for the listing command, which includes compilation")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     selection = ["--lib"] if args.target == "lib" else ["--test", args.target]
     base = ["cargo", "test", "--locked", "-j", "1", "-p", "mamba", *selection]
-    listing = run([*base, "--", "--list"], args.output / "inventory", args.timeout)
+    listing = run([*base, "--", "--list"], args.output / "inventory",
+                  args.inventory_timeout or args.timeout)
     inventory = (args.output / "inventory.stdout").read_text(errors="replace")
     _, complete_inventory = inventory_names(inventory)
     execution = None

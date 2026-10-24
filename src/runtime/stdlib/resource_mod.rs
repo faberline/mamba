@@ -283,12 +283,14 @@ pub fn mb_resource_getrlimit(args: &[MbValue]) -> MbValue {
         Ok(r) => r,
         Err(e) => return e,
     };
-    if resource_id < 0 || resource_id >= libc::RLIM_NLIMITS {
+    if resource_id < 0 || i64::from(resource_id) >= i64::from(libc::RLIM_NLIMITS) {
         return raise_value_error("invalid resource specified");
     }
 
     let mut rl: libc::rlimit = unsafe { std::mem::zeroed() };
-    let rc = unsafe { libc::getrlimit(resource_id, &mut rl) };
+    // GNU libc takes an unsigned resource selector; other hosts use c_int.
+    // Validation above keeps this inferred ABI conversion in range on both.
+    let rc = unsafe { libc::getrlimit(resource_id as _, &mut rl) };
     if rc == -1 {
         return raise_os_error_errno(&std::io::Error::last_os_error());
     }
@@ -313,7 +315,7 @@ pub fn mb_resource_setrlimit(args: &[MbValue]) -> MbValue {
         Ok(r) => r,
         Err(e) => return e,
     };
-    if resource_id < 0 || resource_id >= libc::RLIM_NLIMITS {
+    if resource_id < 0 || i64::from(resource_id) >= i64::from(libc::RLIM_NLIMITS) {
         return raise_value_error("invalid resource specified");
     }
 
@@ -350,7 +352,7 @@ pub fn mb_resource_setrlimit(args: &[MbValue]) -> MbValue {
         rlim_cur: soft,
         rlim_max: hard,
     };
-    let rc = unsafe { libc::setrlimit(resource_id, &rl) };
+    let rc = unsafe { libc::setrlimit(resource_id as _, &rl) };
     if rc == -1 {
         let err = std::io::Error::last_os_error();
         if err.raw_os_error() == Some(libc::EINVAL) {
@@ -551,6 +553,34 @@ mod tests {
         let exc_type = super::super::super::exception::current_exception_type();
         assert_eq!(exc_type.as_deref(), Some("ValueError"));
         super::super::super::exception::clear_current_exception();
+    }
+
+    #[test]
+    fn test_rlimit_selector_boundaries_rejected_before_abi_conversion() {
+        for resource in [-1, i64::from(libc::RLIM_NLIMITS)] {
+            super::super::super::exception::clear_current_exception();
+            let id = MbValue::from_int(resource);
+            let _ = mb_resource_getrlimit(&[id]);
+            assert_eq!(
+                super::super::super::exception::current_exception_type().as_deref(),
+                Some("ValueError")
+            );
+            assert_eq!(
+                super::super::super::exception::current_exception_message().as_deref(),
+                Some("invalid resource specified")
+            );
+            super::super::super::exception::clear_current_exception();
+            let _ = mb_resource_setrlimit(&[id, MbValue::none()]);
+            assert_eq!(
+                super::super::super::exception::current_exception_type().as_deref(),
+                Some("ValueError")
+            );
+            assert_eq!(
+                super::super::super::exception::current_exception_message().as_deref(),
+                Some("invalid resource specified")
+            );
+            super::super::super::exception::clear_current_exception();
+        }
     }
 
     // REQ: R2

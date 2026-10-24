@@ -60,6 +60,20 @@ jobs:
           cargo metadata --locked --no-deps --format-version 1 > receipts/cargo-targets.json
       - name: Receipt parser negative controls
         run: python -m unittest discover -s tools/ci -p 'test_test_receipt.py' -v
+      - name: Independent Linux ABI and pinned CPython controls
+        run: |
+          cc --version > receipts/c-compiler.txt
+          cc -std=c11 -Wall -Wextra -Werror tools/ci/libc_abi_probe.c -o "$RUNNER_TEMP/mamba-libc-abi"
+          "$RUNNER_TEMP/mamba-libc-abi" > receipts/libc-abi.json
+          python - <<'PY'
+          import json, select, socket
+          with open('receipts/libc-abi.json') as stream:
+              actual = json.load(stream)
+          assert actual['linux'] is True
+          assert actual['pollmsg'] == select.POLLMSG == 0x0400
+          assert (actual['ipv6_host'], actual['ipv6_service']) == socket.getnameinfo(
+              ('::1', 443, 0, 0), socket.NI_NUMERICHOST | socket.NI_NUMERICSERV)
+          PY
       - name: Test complete library baseline
         if: matrix.suite == 'library-baseline'
         run: python tools/ci/test_receipt.py lib --output receipts/lib --timeout 2400
@@ -69,7 +83,7 @@ jobs:
         run: |
           status=0
           for target in perf_pin_gate_policy conformance_contract; do
-            python tools/ci/test_receipt.py "$target" --output "receipts/$target" --timeout 1200 || status=1
+            python tools/ci/test_receipt.py "$target" --output "receipts/$target" --inventory-timeout 2400 --timeout 1200 || status=1
           done
           exit "$status"
       - name: Retain raw results even on failure

@@ -1076,7 +1076,9 @@ pub fn register() {
     {
         attrs.insert(
             "POLLMSG".to_string(),
-            MbValue::from_int(libc::POLLMSG as i64),
+            // Linux UAPI asm-generic/poll.h defines POLLMSG as 0x0400;
+            // libc 0.2.186 does not export it. This is a poll mask, not EPOLLMSG.
+            MbValue::from_int(0x0400),
         );
     }
 
@@ -1176,6 +1178,16 @@ mod tests {
         assert_eq!(select_attr("POLLOUT").and_then(|v| v.as_int()), Some(4));
         assert_eq!(select_attr("POLLERR").and_then(|v| v.as_int()), Some(8));
         assert_eq!(select_attr("POLLHUP").and_then(|v| v.as_int()), Some(16));
+    }
+
+    #[test]
+    #[cfg(target_os = "linux")]
+    fn test_linux_pollmsg_matches_uapi_value() {
+        register();
+        assert_eq!(
+            select_attr("POLLMSG").and_then(|v| v.as_int()),
+            Some(0x0400)
+        );
     }
 
     #[test]
