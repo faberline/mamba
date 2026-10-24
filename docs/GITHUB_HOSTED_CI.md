@@ -102,6 +102,16 @@ handoff before activating Mamba agents; some existing tickets explicitly say
 No AGY. Reuse applicable tracker/PR/head/evidence contracts, never app GKE
 deployment policy. No schedule or old controller is started by this PR.
 
+Read-only inspection of central `faberline/aw` at local source commit
+`3e403aee31091eb8577db5a25afec0944daabff3` found reusable issue ownership,
+per-issue PR and exact-reviewed-head checks in `issue-work/scripts/work.sh`
+and `issue-review/scripts/review.sh`. Its `work.sh finish` currently relabels
+`doing` to `done` immediately after pushing/opening a PR; `review.sh next`
+selects `done` issues and `pass` merges. Those paths cannot run unchanged for
+this handoff. A central adapter must separate PR publication from qualification
+and disable automatic done/merge, rather than copying those scripts into
+Mamba. Their default 10/15/15-minute loop is not the requested review cadence.
+
 The intended handoff is Claude plan → AGY todo-to-doing/PR → CI → Codex review.
 Milestones are assigned only by Claude planning. CI failure returns work to
 todo after ownership reconciliation. Codex review requires all required CI
