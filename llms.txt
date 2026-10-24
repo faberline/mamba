@@ -8,10 +8,14 @@ Pipeline: source → `lexer` → `parser` → `resolve` → `types` (force-typed
 
 ## Entry points
 
-- [src/main.rs](src/main.rs): binary entrypoint; force-links first-party binding crates via `use {crate}_mamba as _;`
+- [src/main.rs](src/main.rs): thin binary entry; declares `cli`, `quality_command`, and `standard_cli`, keeps feature-gated native binding links, then calls `cli::run()`.
+- [src/cli.rs](src/cli.rs): builds the Clap command tree and dispatches top-level commands to Quality, standard, package-manager, and handler modules.
+- [src/cli/run.rs](src/cli/run.rs): handles `run` and `check` commands, including direct script and inline-code paths.
+- [src/cli/test.rs](src/cli/test.rs): handles `test`, `test-batch`, and `pytest` commands.
+- [src/cli/bench.rs](src/cli/bench.rs): handles the `bench` command.
+- [src/cli/misc.rs](src/cli/misc.rs): handles `surface-report` and shell-completion generation.
 - [src/lib.rs](src/lib.rs): library root; re-exports compiler stages and `runtime`
-- [src/driver/](src/driver/): CLI verbs (`run`, `build`, `bench`, `repl`, `check`)
-- [Cargo.toml](Cargo.toml): crate manifest; force-link list lives in `[dependencies]`
+- [Cargo.toml](Cargo.toml): crate manifest; declares the optional binding crates and the `native-modules` feature used by the binary entry.
 
 ## Compiler stages
 
@@ -36,9 +40,9 @@ Pipeline: source → `lexer` → `parser` → `resolve` → `types` (force-typed
 - [src/runtime/bigint_ops.rs](src/runtime/bigint_ops.rs): arbitrary-precision integer ops
 - [src/runtime/iter.rs](src/runtime/iter.rs), [generator.rs](src/runtime/generator.rs): iterator + generator protocol
 - [src/runtime/async_rt.rs](src/runtime/async_rt.rs), [async_task.rs](src/runtime/async_task.rs): asyncio-compatible event loop on tokio
-- [src/runtime/class.rs](src/runtime/class.rs), [closure.rs](src/runtime/closure.rs): user-defined classes + closures
+- [src/runtime/class/mod.rs](src/runtime/class/mod.rs), [closure.rs](src/runtime/closure.rs): user-defined classes + closures
 - [src/runtime/exception.rs](src/runtime/exception.rs): exception object + raise/catch
-- [src/runtime/builtins.rs](src/runtime/builtins.rs): `print`, `len`, `type`, `isinstance`, …
+- [src/runtime/builtins/mod.rs](src/runtime/builtins/mod.rs), [length.rs](src/runtime/builtins/length.rs), [type_objects.rs](src/runtime/builtins/type_objects.rs), [src/runtime/class/mod.rs](src/runtime/class/mod.rs): `print`, `len`, `type`, `isinstance`, … (these operations span builtins and class modules)
 - [src/runtime/stdlib/](src/runtime/stdlib/): per-module stdlib shims (os, json, re, itertools, …)
 
 ## Tests & conformance
@@ -50,12 +54,12 @@ Two distinct denominators — do not conflate:
 - [tests/harness/cpython/runner.rs](tests/harness/cpython/runner.rs): top-level conformance runner
 - [tests/harness/cpython/status.rs](tests/harness/cpython/status.rs): fast CPython fixture/perf/oracle readiness summary — `cargo test -p mamba --test cpython_status -- --json`; fill baseline gaps with `python3 tests/harness/cpython/tools/perf_baseline.py record --missing-only --ready-only --limit 10 --keep-going`
 - [tests/harness/cpython/tools/runtime_fast_loop.py](tests/harness/cpython/tools/runtime_fast_loop.py): runtime fix inner loop — one guarded debug build when needed, then changed-fixture/lib-cluster `sweep.py` validation in seconds
-- [tests/cpython_compat.rs](tests/cpython_compat.rs): CPython behaviour parity fixtures
-- [tests/generator_conformance_tests.rs](tests/generator_conformance_tests.rs), [iterator_conformance_tests.rs](tests/iterator_conformance_tests.rs)
-- [tests/behavioral_builtins_tests.rs](tests/behavioral_builtins_tests.rs), [behavioral_lang_tests.rs](tests/behavioral_lang_tests.rs), [behavioral_stdlib_tests.rs](tests/behavioral_stdlib_tests.rs)
-- [tests/p0_conformance_tests.rs](tests/p0_conformance_tests.rs): P0-tier core language fixtures
+- [src/conformance/mod.rs](src/conformance/mod.rs): discovers `.py` fixtures and compares captured stdout with `.expected` files; this identifies the fixture system, not full CPython parity or a completed test run
+- [src/driver/tests/generator_conformance.rs](src/driver/tests/generator_conformance.rs), [iterator_conformance.rs](src/driver/tests/iterator_conformance.rs): generator and iterator protocol conformance test sources
+- [src/driver/tests/behavioral_builtins.rs](src/driver/tests/behavioral_builtins.rs), [behavioral_lang.rs](src/driver/tests/behavioral_lang.rs), [behavioral_stdlib.rs](src/driver/tests/behavioral_stdlib.rs): Python 3.12 behavioral test sources; some tests are ignored until features land
+- [src/driver/tests/p0_conformance.rs](src/driver/tests/p0_conformance.rs): six P0 conformance cases; source location does not show pass status
 - [tests/cpython/](tests/cpython/): `.py` / `.json` fixture inputs, facet-first by dimension (surface / behavior / errors / bench / real_world / security), then bucket (core / pep / builtin-libs / std-libs / 3rd-libs / type-strict) / lib / case
-- [tests/cpython/cpython_ported/](tests/cpython/cpython_ported/): hand-ported CPython tests (small subset)
+- [tests/cpython_ported/](tests/cpython_ported/): hand-ported CPython tests (small subset; integration target is `tests/cpython_ported_integration.rs`)
 
 **External denominator (real Goal 1 metric — pending).** Not yet wired:
 
@@ -91,8 +95,8 @@ per library: `<lib>/real_world/<scenario>.py` for R4 exit-0 gates and
 
 ## Project config
 
-- [src/config/](src/config/): `mamba.toml` schema + parser
-- [src/pkgmgr/](src/pkgmgr/): package manager (resolver, installer, PyPI client) — Epic 2
+- [src/pkgmanage/manifest/schema.rs](src/pkgmanage/manifest/schema.rs), [src/driver/config.rs](src/driver/config.rs): `mamba.toml` configuration schema, parser, and discovery; schema also accepts `[tool.mamba]` in `pyproject.toml`
+- [src/pkgmanage/pkgmgr/](src/pkgmanage/pkgmgr/), [resolver/](src/pkgmanage/pkgmgr/resolver/), [installer/](src/pkgmanage/pkgmgr/installer/), [json_api.rs](src/pkgmanage/pkgmgr/json_api.rs): package manager resolver, installer, and PyPI client; the historical Epic 2 label is not a current completion claim
 - [cpython_known_failures.toml](cpython_known_failures.toml): per-test allowlist of known CPython-compat failures
 - [docs/integration/native-runtime-integration.md](docs/integration/native-runtime-integration.md): how to write a native binding crate (`MambaModule` trait, `rt_sym!`, `mamba.toml [crates.*]` schema)
 - [docs/notes/archive/autonomous-loop-scratchpad.md](docs/notes/archive/autonomous-loop-scratchpad.md): non-authoritative autonomous-loop scratchpad archive — single-fire investigation notes
@@ -100,10 +104,10 @@ per library: `<lib>/real_world/<scenario>.py` for R4 exit-0 gates and
 ## Key external references
 
 - [crates/mamba-registry/](crates/mamba-registry/): the ABI contract (`MbValue`, `MambaModule`, `MAMBA_MODULES`, `rt_sym!`)
-- [../../crates/cclab-fetch-mamba/](../../crates/cclab-fetch-mamba/): canonical first-party binding example (async HTTP client)
+- Historical reference: `../../crates/cclab-fetch-mamba/` was named as a canonical first-party async HTTP binding example. Its file and revision are unknown; the current HTTP client binding at [mambalibs/httpkit/binding/src/client/mod.rs](mambalibs/httpkit/binding/src/client/mod.rs) does not verify that historical source.
 - [mambalibs/httpkit/binding/](mambalibs/httpkit/binding/): higher-level binding example (FastAPI-style router)
-- [../../CLAUDE.md](../../CLAUDE.md): repo-wide working-tree, SDD, and CRRR rules
-- [../../README.md](../../README.md): repo project and shared-library inventory
+- Historical reference: `../../CLAUDE.md` was named for repo-wide working-tree, SDD, and CRRR rules. Its file and revision are unknown.
+- Historical reference: `../../README.md` was named for a repo project and shared-library inventory. Its file and revision are unknown; this repository's README and Cargo workspace do not verify that external inventory.
 
 ## Build & install
 
@@ -124,7 +128,7 @@ Live north-star issues: #1265 (perf superiority), #1260 (Goal 1 status), #1274 (
 
 - [src/ffi/](src/ffi/): C-ABI shims for libc, libm, dlfcn
 - [src/conformance/](src/conformance/): runtime-side conformance helpers (used by tests)
-- [tests/jit_tests.rs](tests/jit_tests.rs), [jit_refcount_tests.rs](tests/jit_refcount_tests.rs), [jit_refcount_audit_tests.rs](tests/jit_refcount_audit_tests.rs): JIT-specific test suites
+- [src/driver/tests/jit.rs](src/driver/tests/jit.rs), [src/driver/tests/jit_refcount.rs](src/driver/tests/jit_refcount.rs), [src/runtime/tests/jit_refcount_audit.rs](src/runtime/tests/jit_refcount_audit.rs): JIT execution and reference-count test sources; source locations do not show pass status
 - [tests/harness/cpython/perf_pin.rs](tests/harness/cpython/perf_pin.rs): perf regression tests (separate from `mamba bench`)
-- [tests/pkgmgr_resolver_test.rs](tests/pkgmgr_resolver_test.rs), [pkgmgr_installer_test.rs](tests/pkgmgr_installer_test.rs), [pypi_index_client_integration.rs](tests/pypi_index_client_integration.rs): pkgmgr suites
+- [src/pkgmanage/pkgmgr/tests/resolver.rs](src/pkgmanage/pkgmgr/tests/resolver.rs), [installer.rs](src/pkgmanage/pkgmgr/tests/installer.rs), [pypi_index_client.rs](src/pkgmanage/pkgmgr/tests/pypi_index_client.rs): package manager test sources. Resolver source includes ignored acceptance stubs and unfinished live-PyPI wiring; PyPI integration tests require the `integration` feature and network access. No test result is claimed.
 - [baseline.json](baseline.json): committed bench baseline (compared against in CI)

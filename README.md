@@ -858,7 +858,7 @@ whose core is a C/C++ extension needs one of three treatments:
    acceptable precisely because the C-ext mamba can't do natively (cloud/DB clients,
    gRPC) is mostly **I/O-bound** — where mamba wouldn't beat CPython anyway, so the
    app's CPU-bound code stays native-fast and the I/O parts borrow CPython cheaply.
-3. **Native kit** — a full mambalib (see [C3](#c3-mambalibs-end-to-end--axis-3-3457)),
+3. **Native kit** — a full mambalib (see [C3](#mambalibs-end-to-end)),
    the lib reimplemented natively end-to-end.
 
 ### Hacked C-extension foundations (chokepoints)
@@ -941,7 +941,7 @@ which is why deriving it from the directory finds nothing.
 
 | Need | Source of truth |
 |---|---|
-| Every command and its flags | `mamba --help` and `mamba <verb> --help`; the command surface is declared in [src/main.rs](src/main.rs) |
+| Every command and its flags | `mamba --help` and `mamba <verb> --help`; the command surface is declared in [src/cli.rs](src/cli.rs) |
 | Package-manager behaviour | [src/pkgmanage/](src/pkgmanage/), one module per verb; `run.rs` owns the `run` preflight |
 | Package-manager cases | [tests/pkgmgr/runner.rs](tests/pkgmgr/runner.rs), one module per verb, declared as the `pkgmgr` `[[test]]` target in [Cargo.toml](Cargo.toml) |
 | Package-manager e2e cases | [e2e/](e2e/), one black-box case per file, each its own `[[test]]` target in [Cargo.toml](Cargo.toml) |
