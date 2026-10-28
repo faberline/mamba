@@ -79,6 +79,13 @@ The detailed independent checks are in `q0-159-hosted-reference-results.json`.
 The source SHA above identifies the executed code. Later documentation commits
 must not be presented as that run's source.
 
-Issue acceptance is pending the user's decision on using the new hosted
-evidence in place of the missing historical environment/process records.
+On 2026-10-28, the user explicitly selected
+"採用本次 runner 證據（建議）" for issue 159.
+The reproduced hosted evidence replaces that issue's requirement to recover
+the missing historical environment/process records and original corpus JSON.
+The historical files remain missing. The original audit JSON stays unchanged.
+The 784 inputs, three Python targets, ordered diagnostics, fixed output bytes,
+174 rule rows and required process evidence remain the acceptance conditions.
+This decision applies only to issue 159. Final controller review and PR
+integration must finish before issue closure and the next Q0 issue.
 No product, platform, performance, parent issue, or release acceptance is claimed.
