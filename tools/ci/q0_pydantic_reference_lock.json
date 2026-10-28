@@ -1,0 +1,393 @@
+{
+  "schema": "mamba.q0.164.pydantic-reference-lock.v1",
+  "version": "2.13.5",
+  "mypy": "2.4.0",
+  "python_versions": [
+    "3.12.11",
+    "3.13.5",
+    "3.14.0"
+  ],
+  "families": [
+    "field-types",
+    "model-types",
+    "model-methods",
+    "model-config-field"
+  ],
+  "asset_target_count": 12,
+  "reference_timeout_seconds": 120,
+  "source_inventory_sha256": "d3d98eb06d8cdae1a658b0392755a2d517ea0e39f70906509d638ab81be4a278",
+  "source_inventory_order": "PurePosixPath components, not raw string order",
+  "source_files": {
+    "Cargo.lock": "a8165d49d5c4a8446c44fb3ac85e412e8237e9aaffd11e2bdc1aaf1d8c9e6147",
+    "Cargo.toml": "0da285bc49cb415670befd627d1295ce5b1280bfaf6e3bc82aa9751f09e8c3f3",
+    "crates/mamba-quality/Cargo.toml": "c6499d747cf3f213a45f69a9736b0bdfbe0b7d21cfd31ec0d5c07de1c0677bf8",
+    "crates/mamba-quality/assets/profile.json": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+    "crates/mamba-quality/assets/pydantic/field-types.json": "3feeb55e6b8abf976d00d42bd7c5357a06264d171b49ec4f30528f4fe1c0c5ca",
+    "crates/mamba-quality/assets/pydantic/model-config-field.json": "f4f4a01379dba139751a74465618a158ab80952e7a680e5bc8c0ffedf0853a96",
+    "crates/mamba-quality/assets/pydantic/model-methods.json": "4d8b9edc282ed6e064aaf613b74adce81bed8f18b18cd9556bbe08f2c8db7fa9",
+    "crates/mamba-quality/assets/pydantic/model-types.json": "745e7173fbed74acf3924ff92d36c67a6ba271dae63951e6b666facd78cc71a9",
+    "crates/mamba-quality/src/app.rs": "592f33c9243c8578098b9b6e6a98fabb90e2c26f481f3d97bf9f1a2caa46c889",
+    "crates/mamba-quality/src/application/quality.rs": "6a88bc4236dc0f1e146a4d289bc56a73d13159585db1566343c5f1ad10634192",
+    "crates/mamba-quality/src/domain/profile.rs": "88687764fe793117b42125da19c55ee8f617179ea94bcac9b494c4a1d5ccdda8",
+    "crates/mamba-quality/src/infrastructure/mypy/declarations/parameter_types.rs": "05ed0cf90cbec420583bbdc59ed826f2e65e460a08944672482e94d9dda3d7c5",
+    "crates/mamba-quality/src/infrastructure/mypy/declarations.rs": "4b999638d799ceec6fde4af70e24ec127fcdb6bb85f20f94ae27f151e6425ae3",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/class_properties.rs": "14ccc353fc15c01175dcd70dc2f578c412dfca2c7f7aaaedb7912f43225770f1",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/computed_fields.rs": "c0df62bd40f29a887ef4ac0148d1db2476444715df73224bb36b2932246b648d",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/configuration.rs": "7e66c99121518c10615ad5063f7aebdf85b66a1b6b9fd26f12e0655de6ec0514",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/construct.rs": "73304b7c3ce777edd5cc5d65b47107bff4371d94e49ed0d8e817bf24eb5d32e9",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/constructors.rs": "9378ab707a34d7c3eb9d52636e37009098e40aee6e51a0a62dd9eefb6b35bf48",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/field_types.rs": "5dc372df8b6abea11b12972fe91b6cf6c16db3bc81d13cb5606ba6b964f369c7",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/imports.rs": "4e5c7add97c479518f6a2e5f6c6587c0450732223bb1305ce3e63cfb8d6efb1a",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/info_members.rs": "5ebf30cee033d4f274d859b9bb629cbe10dfcb20e9c5e608febfa951ac57b285",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/inheritance.rs": "2ff03779e63827a870e17a6c67236df41ba0333623bb5140439160e5bae8c92a",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/model_methods.rs": "4b19c22da9579af24ecfe442211d118d9d2f66aa54d76cbcbd1d03cf9e53d2c6",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/model_types.rs": "ee17c90d2278d8b451d8373d3fb73835cdea5c74ead590d13e205010ea8fda14",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/qualifiers.rs": "fe741f7f0e8fb4b35e6dc350c3fb07589c1356f7b16ff901bfc15fbb44364b48",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic/root_models.rs": "5c8051c710e988e5d632f4b6180271f1cb09b4deba8a40b328f555b77cee5410",
+    "crates/mamba-quality/src/infrastructure/mypy/pydantic.rs": "0e5db4d7273160070caa801ae906a0d2644b85b77820acf2ac8aa98ebe50b4af",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_005/part_323.rs": "bafa7e21cbe97aba5a40f8fc4be65c74dfc00487111b4a555ec6ad2c988c5819",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_005/part_324.rs": "04c9cfbe1b3f9991dc6bfb09d0e4de8283e1a03d7ad6cdf9ca53d9f11dd61652",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.rs": "fbb3b6dfbd57c6c0917b6a58264d8a91bf1a0bedcd6eb23bb1e456af2e518ff1",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config_entrypoints.json": "a3f6f0073c49abc68b5bf44c4efef9aa26cb30cfd1445687e65f8cb58b6dfb26",
+    "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_construct.rs": "24f466a28ce1328bafbf59bc1a9feb912a6b4840d86b4360250864ea2b5e72e6",
+    "crates/mamba-quality/src/infrastructure/mypy/tests.rs": "183afd0464db4c8fd4e075cb2a86f234c2a330756a2594c73d7b4ce68fb1fef5",
+    "crates/mamba-quality/src/infrastructure/mypy.rs": "c1de697fdcf98f9dc380e21cf89b60c7219c8d5c1fdbdd607251cde222b9f63a",
+    "crates/mamba-quality/src/lib.rs": "6570d635c19151b5a1c319d494264047771ef4a35c1c8efa873178c104c664f8",
+    "src/quality_command/cmd_quality.rs": "8c084463ef1547de9853895e02d005de1a10eb836fea3bfa6eb96109e9a7a78d",
+    "vendor/mamba-black-layout/Cargo.toml": "34474e09a4903dc47271323f0a65bfe5f638ad6087033432851292e3ddc94157",
+    "vendor/mamba-black-layout/src/lib.rs": "b4623849ab39ff0b8e724235226b12e8d5df5b23d19aa50200e8feade357235c",
+    "vendor/mamba-document-layout/Cargo.toml": "5b495c073f17a03bac6eeb7b1887ea740ee305f3ddb9f6543f03e78de59a85a2",
+    "vendor/mamba-document-layout/src/lib.rs": "61ddc4c0b3ec5a3fe1d584defe851ac747190bc4f4fa2afbf50861ef0162dfca"
+  },
+  "asset_pins": {
+    "field-types": {
+      "path": "crates/mamba-quality/assets/pydantic/field-types.json",
+      "bytes": 344006,
+      "sha256": "3feeb55e6b8abf976d00d42bd7c5357a06264d171b49ec4f30528f4fe1c0c5ca",
+      "schema": "mamba.quality.pydantic-field-types.v1"
+    },
+    "model-types": {
+      "path": "crates/mamba-quality/assets/pydantic/model-types.json",
+      "bytes": 79871,
+      "sha256": "745e7173fbed74acf3924ff92d36c67a6ba271dae63951e6b666facd78cc71a9",
+      "schema": "mamba.quality.pydantic-model-types.v1"
+    },
+    "model-methods": {
+      "path": "crates/mamba-quality/assets/pydantic/model-methods.json",
+      "bytes": 1013691,
+      "sha256": "4d8b9edc282ed6e064aaf613b74adce81bed8f18b18cd9556bbe08f2c8db7fa9",
+      "schema": "mamba.quality.pydantic-model-methods.v1"
+    },
+    "model-config-field": {
+      "path": "crates/mamba-quality/assets/pydantic/model-config-field.json",
+      "bytes": 713,
+      "sha256": "f4f4a01379dba139751a74465618a158ab80952e7a680e5bc8c0ffedf0853a96",
+      "schema": "mamba.quality.pydantic-model-config-field.v1"
+    }
+  },
+  "profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+  "historical_oracle_lock_sha256": "3ede6b08cf4fb8a1a12ec148169667e6b22d484b380f901a1bb040c8a2669a35",
+  "historical_collector_sha256": {
+    "field-types": "63c23c3392b5eb1d35bf4bc333e80ca6e86d2470b2d128efc88943344b4d69a4",
+    "model-types": "e9a99cf45d65b7e62336119232ae927ce26fa4777c1a960247f4b6b46a03b553",
+    "model-methods": "fd1a4c076418991a5fc07d195f85d4e2f268c2ab1fa445730dfb12454b95d555",
+    "model-config-field": "7bb2861b3e91e6b6eeac39207822245288f7d9d23720f24bad592ac2d5edf3b9"
+  },
+  "stub_pins": {
+    "field-types": {
+      "filename": "field_types.pyi",
+      "bytes": 36,
+      "sha256": "018ead575559be46dc008f42f57060a3c6d986f3b832d891bc9b701907676aef"
+    },
+    "model-types": {
+      "filename": "field_types.pyi",
+      "bytes": 86,
+      "sha256": "c3b69f68843dbad4b0a7566d02c578efb1aed3b681035141ed6d9fe410f0e9e4"
+    },
+    "model-methods": {
+      "filename": "field_types.pyi",
+      "bytes": 86,
+      "sha256": "c3b69f68843dbad4b0a7566d02c578efb1aed3b681035141ed6d9fe410f0e9e4"
+    },
+    "model-config-field": {
+      "filename": "config_field.pyi",
+      "bytes": 70,
+      "sha256": "64b4189432f42deab3504305b04705be16a9f9a35a07f2c0dd3555f7d3b7f1e8"
+    }
+  },
+  "config_sha256": "82ca0b8a00280cb3546ec816852c81ec1b68a667c863bdff6d8c22119f1d893e",
+  "pydantic_fields_sha256": "6bc66125f23c143e934030fbf9c58c9b5657950bdad3031d4f6132e55bd57be3",
+  "dependencies": {
+    "3.12.11": [
+      {
+        "name": "mypy",
+        "version": "2.4.0",
+        "filename": "mypy-2.4.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/68/ed/e5d7cf4017e74a1c1e1c4058ce8f614fc1e3e7606564f47166e22bfc9f95/mypy-2.4.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e"
+      },
+      {
+        "name": "mypy_extensions",
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+      },
+      {
+        "name": "pathspec",
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+      },
+      {
+        "name": "librt",
+        "version": "0.16.0",
+        "filename": "librt-0.16.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/fd/0c/ab8ed3dab0085931aec4a792c7eaac8dc6c5ff4691fda3a5360d9d8a9cd2/librt-0.16.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "5bcc2c4726ced915b00de0c9856a4eeabfb3fddb93e10e0b8f735b7709358b6d"
+      },
+      {
+        "name": "ast_serialize",
+        "version": "0.12.1",
+        "filename": "ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/1b/d7/c56955934a431a0fa3e4e9aa7af4a53ceab2a61241005427545208945eb4/ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "sha256": "8a32f184ce3e4b1d0b06d642a1243281cf55b99e0323680b1b8f904029fd7700"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5",
+        "filename": "pydantic-2.13.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+        "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.46.5",
+        "filename": "pydantic_core-2.46.5-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/db/50/26b091836076ce4cb2fac264186936acc069e0595772cfd02a563bc4761a/pydantic_core-2.46.5-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "a39ac25a9a2fa4072efdb429833c4a4c8009a51ff9eea3eeae131713cd27991e"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "filename": "annotated_types-0.8.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+        "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+        "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      }
+    ],
+    "3.13.5": [
+      {
+        "name": "mypy",
+        "version": "2.4.0",
+        "filename": "mypy-2.4.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/44/f2/eb15183c97c69d7cbfac990a6efd33a19ecfd97dab9e714c742fa78a784f/mypy-2.4.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "sha256": "7da85fbcff6dac1abcc636707bed38b45598131fb7a605d9719c70b5cc733af8"
+      },
+      {
+        "name": "mypy_extensions",
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+      },
+      {
+        "name": "pathspec",
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+      },
+      {
+        "name": "librt",
+        "version": "0.16.0",
+        "filename": "librt-0.16.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/41/5a/48a16e323c5f9447a94cce7b59babf60fa04e62c3365ecf060c77ed8b320/librt-0.16.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "sha256": "33f41443a1f4e1f099331b3d8120e409fbff84b9760bc1cc9ea496f37ddaa5cc"
+      },
+      {
+        "name": "ast_serialize",
+        "version": "0.12.1",
+        "filename": "ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/1b/d7/c56955934a431a0fa3e4e9aa7af4a53ceab2a61241005427545208945eb4/ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "sha256": "8a32f184ce3e4b1d0b06d642a1243281cf55b99e0323680b1b8f904029fd7700"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5",
+        "filename": "pydantic-2.13.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+        "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.46.5",
+        "filename": "pydantic_core-2.46.5-cp313-cp313-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/21/43/6323b1f8b217780454c61304bcd2b38ae4762f50754414124603ccc90bb2/pydantic_core-2.46.5-cp313-cp313-macosx_11_0_arm64.whl",
+        "sha256": "f332f0e72a5a0400141f830744e141bf9f97917878dbe968669e8a7fefea78ff"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "filename": "annotated_types-0.8.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+        "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+        "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      }
+    ],
+    "3.14.0": [
+      {
+        "name": "mypy",
+        "version": "2.4.0",
+        "filename": "mypy-2.4.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/e0/66/924be0b653372ed31ad5c48e26044cc00840e591943a56e61621cf05b60e/mypy-2.4.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "058165f564ccf559c68c70fec2091fca5891110480210c22594635e3f6683437"
+      },
+      {
+        "name": "mypy_extensions",
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+      },
+      {
+        "name": "pathspec",
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+      },
+      {
+        "name": "librt",
+        "version": "0.16.0",
+        "filename": "librt-0.16.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/8f/26/8a90d2a8f2b2e471bb486b7aec117b8ae622715ed6c39853aec48ea20073/librt-0.16.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "1bc17e54e5305f8d40b7ca203671ff5a9e59c1d0f8ea0f625dcca53a3984de11"
+      },
+      {
+        "name": "ast_serialize",
+        "version": "0.12.1",
+        "filename": "ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/1b/d7/c56955934a431a0fa3e4e9aa7af4a53ceab2a61241005427545208945eb4/ast_serialize-0.12.1-cp39-abi3-macosx_11_0_arm64.whl",
+        "sha256": "8a32f184ce3e4b1d0b06d642a1243281cf55b99e0323680b1b8f904029fd7700"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5",
+        "filename": "pydantic-2.13.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+        "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.46.5",
+        "filename": "pydantic_core-2.46.5-cp314-cp314-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/ae/d5/d8a4eb6d6c7f66b91dd37c576d76e9e60fba900caf5372c17bcf949febc2/pydantic_core-2.46.5-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "1a353f84de772f423b5ffb11d7ae352fbbef0f446f3c0b0af0f8236d7233606e"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "filename": "annotated_types-0.8.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+        "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+        "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      }
+    ]
+  },
+  "sdist": {
+    "filename": "pydantic-2.13.5.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/53/ef/fc4f868f4e2cee79f863883abffceff107875f569b848507319842d2a681/pydantic-2.13.5.tar.gz",
+    "sha256": "51a9c5f7b2f8e636f04c6cada605d9b6a3bf1348fdf945a3d8869b19bba0ee08",
+    "bytes": 845750
+  },
+  "platform": {
+    "sys_platform": "darwin",
+    "platform_system": "Darwin",
+    "runner_os": "macOS",
+    "runner_arch": "ARM64",
+    "runner_label": "macos-15"
+  },
+  "interpreters": {
+    "3.12.11": {
+      "version": "3.12.11",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.12.11+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.12.11%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15669523,
+      "sha256": "c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "executable_sha256": "6a7e3fae3487f8c7ded2cd93e46259365649f7aff2b6c37b3a329087847108fa",
+      "official_asset_id": 263291460,
+      "official_asset_digest": "sha256:c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "release_immutable": true
+    },
+    "3.13.5": {
+      "version": "3.13.5",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.13.5+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.13.5%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15742877,
+      "sha256": "d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "executable_sha256": "aa33feb95882944731fa97029b08a8485279c42da1b9884f02384fedeebe8aea",
+      "official_asset_id": 263291890,
+      "official_asset_digest": "sha256:d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "release_immutable": true
+    },
+    "3.14.0": {
+      "version": "3.14.0",
+      "release": "20251031",
+      "flavor": "install_only_stripped",
+      "filename": "cpython-3.14.0+20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.14.0%2B20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "bytes": 17173334,
+      "sha256": "4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "executable_sha256": "ec27e4f62976a76da9adb1e889ed7330f86cfc7f20e38710461212e435ce8234",
+      "official_asset_id": 311184709,
+      "official_asset_digest": "sha256:4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "release_immutable": true
+    }
+  }
+}
