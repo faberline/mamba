@@ -1,0 +1,245 @@
+{
+  "run_id": 40680721778,
+  "head_sha": "ea2e0c6f705b49f7526028150792dfadb17667f1",
+  "artifact_inventory_files": 7460,
+  "artifact_inventory_bytes": 128748056,
+  "all_784_input_hashes_match": true,
+  "targets": [
+    {
+      "python": "3.12.11",
+      "ruff_binary_sha256": "14704de5ea0d07038512de127bd52d6a169fb70bd70ddfa25bf39e21fed6b2b6",
+      "input_count": 784,
+      "fixed_file_hash_matches": 784,
+      "comparisons": {
+        "before": {
+          "diagnostics": 13628,
+          "frozen_diagnostics": 13628,
+          "ordered_all_fields_equal": true
+        },
+        "fix-1": {
+          "diagnostics": 10936,
+          "frozen_diagnostics": 10936,
+          "ordered_all_fields_equal": true
+        },
+        "fix-2": {
+          "diagnostics": 10936,
+          "frozen_diagnostics": 10936,
+          "ordered_all_fields_equal": true
+        },
+        "after": {
+          "diagnostics": 10936,
+          "frozen_diagnostics": 10936,
+          "ordered_all_fields_equal": true
+        }
+      }
+    },
+    {
+      "python": "3.13.5",
+      "ruff_binary_sha256": "14704de5ea0d07038512de127bd52d6a169fb70bd70ddfa25bf39e21fed6b2b6",
+      "input_count": 784,
+      "fixed_file_hash_matches": 784,
+      "comparisons": {
+        "before": {
+          "diagnostics": 13560,
+          "frozen_diagnostics": 13560,
+          "ordered_all_fields_equal": true
+        },
+        "fix-1": {
+          "diagnostics": 10858,
+          "frozen_diagnostics": 10858,
+          "ordered_all_fields_equal": true
+        },
+        "fix-2": {
+          "diagnostics": 10858,
+          "frozen_diagnostics": 10858,
+          "ordered_all_fields_equal": true
+        },
+        "after": {
+          "diagnostics": 10858,
+          "frozen_diagnostics": 10858,
+          "ordered_all_fields_equal": true
+        }
+      }
+    },
+    {
+      "python": "3.14.0",
+      "ruff_binary_sha256": "14704de5ea0d07038512de127bd52d6a169fb70bd70ddfa25bf39e21fed6b2b6",
+      "input_count": 784,
+      "fixed_file_hash_matches": 784,
+      "comparisons": {
+        "before": {
+          "diagnostics": 13638,
+          "frozen_diagnostics": 13638,
+          "ordered_all_fields_equal": true
+        },
+        "fix-1": {
+          "diagnostics": 10774,
+          "frozen_diagnostics": 10774,
+          "ordered_all_fields_equal": true
+        },
+        "fix-2": {
+          "diagnostics": 10774,
+          "frozen_diagnostics": 10774,
+          "ordered_all_fields_equal": true
+        },
+        "after": {
+          "diagnostics": 10774,
+          "frozen_diagnostics": 10774,
+          "ordered_all_fields_equal": true
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "historical_original_evidence_recovered": false,
+  "issue_accepted": false,
+  "scope": "new Linux reference execution; independent artifact, source, input, ordered diagnostics, fixed bytes, process receipts and rule coverage verification",
+  "process_receipts": [
+    {
+      "python_minor": 12,
+      "stage": "before",
+      "actual_exit": 1,
+      "pid": 2822,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 12,
+      "stage": "fix-1",
+      "actual_exit": 1,
+      "pid": 2832,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 12,
+      "stage": "fix-2",
+      "actual_exit": 1,
+      "pid": 2841,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 12,
+      "stage": "after",
+      "actual_exit": 1,
+      "pid": 2850,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 12,
+      "stage": "clean",
+      "actual_exit": 0,
+      "pid": 2859,
+      "wait_completed": true,
+      "input_count": 2
+    },
+    {
+      "python_minor": 13,
+      "stage": "before",
+      "actual_exit": 1,
+      "pid": 2868,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 13,
+      "stage": "fix-1",
+      "actual_exit": 1,
+      "pid": 2877,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 13,
+      "stage": "fix-2",
+      "actual_exit": 1,
+      "pid": 2886,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 13,
+      "stage": "after",
+      "actual_exit": 1,
+      "pid": 2895,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 13,
+      "stage": "clean",
+      "actual_exit": 0,
+      "pid": 2904,
+      "wait_completed": true,
+      "input_count": 2
+    },
+    {
+      "python_minor": 14,
+      "stage": "before",
+      "actual_exit": 1,
+      "pid": 2913,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 14,
+      "stage": "fix-1",
+      "actual_exit": 1,
+      "pid": 2922,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 14,
+      "stage": "fix-2",
+      "actual_exit": 1,
+      "pid": 2931,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 14,
+      "stage": "after",
+      "actual_exit": 1,
+      "pid": 2941,
+      "wait_completed": true,
+      "input_count": 784
+    },
+    {
+      "python_minor": 14,
+      "stage": "clean",
+      "actual_exit": 0,
+      "pid": 2950,
+      "wait_completed": true,
+      "input_count": 2
+    }
+  ],
+  "rule_coverage": [
+    {
+      "python_minor": 12,
+      "rule_rows": 174,
+      "observed": 171,
+      "target_inactive": 2,
+      "original_dormant": 1
+    },
+    {
+      "python_minor": 13,
+      "rule_rows": 174,
+      "observed": 172,
+      "target_inactive": 1,
+      "original_dormant": 1
+    },
+    {
+      "python_minor": 14,
+      "rule_rows": 174,
+      "observed": 173,
+      "target_inactive": 0,
+      "original_dormant": 1
+    }
+  ],
+  "run_url": "https://github.com/faberline/mamba/actions/runs/40680721778",
+  "artifact_id": 12811809198,
+  "artifact_digest": "sha256:5abf2442f7ad87120bfe591c50936c77900549c1259d6d2046b2257308afdd2a"
+}

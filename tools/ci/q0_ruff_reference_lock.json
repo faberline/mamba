@@ -1,0 +1,27 @@
+{
+  "schema": "mamba.q0.ruff.hosted-lock.v1",
+  "ruff_version": "0.16.10",
+  "python_versions": ["3.12.11", "3.13.5", "3.14.0"],
+  "profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+  "historical_oracle_lock_sha256": "3ede6b08cf4fb8a1a12ec148169667e6b22d484b380f901a1bb040c8a2669a35",
+  "historical_corpus_sha256": "0c4bdd343f472d92b6f482236935e415a8efcdc37f42d24bb740e24a5dcdcc81",
+  "baseline_cases": 596,
+  "full_cases": 784,
+  "rule_count": 174,
+  "dormant_rules": ["F621"],
+  "sdist": {
+    "filename": "ruff-0.16.10.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/c4/49/23802c45f093eb14bde54b141d2b2f058edfa63a06db7beed047308cc08f/ruff-0.16.10.tar.gz",
+    "sha256": "eff4728c4eaae93f0955cd264d24b2ab348e74bf59986ccf282ba6dc16b3b017"
+  },
+  "fixtures": {
+    "filename": "ruff_linter-0.16.10.crate",
+    "url": "https://static.crates.io/crates/ruff_linter/ruff_linter-0.16.10.crate",
+    "sha256": "fe832d85eefd628f5a00e04e04aac1d91f0ff7b5ec212a8be695ad2c600c59a2"
+  },
+  "wheel": {
+    "filename": "ruff-0.16.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/e4/03/17234145f302a645a123e8c3bb2411ecf4669fbc350de3b0d803230a1729/ruff-0.16.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "sha256": "f33f43a864a8483eebd160e713336c8bab02c934feaff0a33cf5ccb41546d09a"
+  }
+}
