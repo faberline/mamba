@@ -1,0 +1,78 @@
+name: q0-161-mypy-reference
+
+on:
+  push:
+    branches: [codex/q0-161-mypy-reference]
+
+permissions:
+  contents: read
+
+jobs:
+  reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Record source and host
+        shell: bash
+        run: |
+          mkdir receipts
+          {
+            git rev-parse HEAD
+            git rev-parse 'HEAD^{tree}'
+            git status --porcelain=v1 -uall
+            uname -a
+            echo "run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT"
+            sha256sum Cargo.lock crates/mamba-quality/assets/profile.json tools/ci/q0_mypy*.py tools/ci/q0_mypy_reference_lock.json tools/ci/q0_ruff_reference.py
+          } > receipts/source.txt
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        id: py312
+        with:
+          python-version: 3.12.11
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        id: py313
+        with:
+          python-version: 3.13.5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        id: py314
+        with:
+          python-version: 3.14.0
+      - name: Receipt, input and dependency negative controls
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import sys
+          import unittest
+          sys.path.insert(0, "tools/ci")
+          suite = unittest.TestSuite()
+          for name in ("test_q0_mypy_inputs", "test_q0_mypy_reference"):
+              module = __import__(name)
+              tests = unittest.defaultTestLoader.loadTestsFromModule(module)
+              if tests.countTestCases() == 0:
+                  raise SystemExit("zero control tests in " + name)
+              suite.addTests(tests)
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          raise SystemExit(0 if result.wasSuccessful() else 1)
+          PY
+      - name: Run every fixed mypy reference input on all three targets
+        shell: bash
+        run: |
+          python3 -B tools/ci/q0_mypy_reference.py \
+            --repository "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/receipts/run" \
+            --python312 '${{ steps.py312.outputs.python-path }}' \
+            --python313 '${{ steps.py313.outputs.python-path }}' \
+            --python314 '${{ steps.py314.outputs.python-path }}'
+      - name: Retain original evidence on success and failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q0-161-mypy-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            receipts/
+            !receipts/run/python3*/venv/**
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
