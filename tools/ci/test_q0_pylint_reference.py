@@ -94,6 +94,38 @@ class Partition(unittest.TestCase):
 
 
 class PackageIdentity(unittest.TestCase):
+    def test_venv_aliases_resolve_to_the_exact_base(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            base = root / "base"
+            base.write_bytes(b"synthetic interpreter")
+            alias = root / "python3.12"
+            alias.symlink_to(base)
+            executable = root / "python"
+            executable.symlink_to(alias.name)
+            state = runner.require_venv_link(executable, base)
+            self.assertEqual(state["venv_creation_mode"], "symlinks")
+            self.assertTrue(state["venv_executable_is_symlink"])
+            self.assertEqual(state["venv_executable_resolved"], str(base.resolve()))
+            self.assertEqual(state["base_executable_resolved"], str(base.resolve()))
+
+    def test_copied_wrong_or_dangling_venv_interpreters_fail(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            base, executable, other = root / "base", root / "python", root / "other"
+            base.write_bytes(b"synthetic interpreter")
+            other.write_bytes(base.read_bytes())
+            executable.write_bytes(base.read_bytes())
+            with self.assertRaises(ValueError):
+                runner.require_venv_link(executable, base)
+            executable.unlink()
+            executable.symlink_to(other)
+            with self.assertRaises(ValueError):
+                runner.require_venv_link(executable, base)
+            other.unlink()
+            with self.assertRaises((ValueError, FileNotFoundError)):
+                runner.require_venv_link(executable, base)
+
     def identity(self, venv):
         pins = [{"name": name, "version": version} for name, version in runner.PINNED_VERSIONS.items()]
         distributions = {name: {"name": name, "version": version, "requires_dist": [],

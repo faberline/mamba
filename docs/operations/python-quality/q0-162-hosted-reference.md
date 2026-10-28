@@ -131,8 +131,19 @@ full initial payload hashes, links and modes, and a real isolated identity
 probe with PID, wait and exit. A separate manifest covers this evidence.
 Signed redirect queries are omitted from receipts.
 The existing runner receives the exact interpreter path through `--python`.
-Its exact-patch probe, copied venv and offline nine-wheel install stay intact.
+Its exact-patch probe and offline nine-wheel install stay intact.
 The bootstrap does not execute a fixture or change the reference recipe.
+
+Run 40733556126 then verified all three archive-bound interpreter identities.
+Each target failed before any case ran: the copied venv's ensurepip child
+aborted. Static Mach-O records load libpython relative to the executable.
+Copying that executable into the venv loses the archive's library layout.
+The retained child stderr does not include the inner loader message, so
+this is a linkage inference pending successful hosted execution.
+The replacement creates the fresh venv with `--symlinks` and requires its
+interpreter link to resolve to the exact pinned base. Copies, wrong targets
+and dangling links fail. Both resolved paths and executable hashes remain
+recorded. The per-case Pylint argv, inputs and comparison rules do not change.
 
 ## Coverage and evidence boundary
 

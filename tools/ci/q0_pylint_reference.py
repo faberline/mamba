@@ -201,14 +201,23 @@ def require_package_identity(identity: dict, version: str, pins: list[dict], rul
             raise ValueError(f"module identity is outside the isolated environment or differs: {name}")
 
 
+def require_venv_link(executable: Path, base: Path) -> dict:
+    if not executable.is_symlink() or executable.resolve(strict=True) != base.resolve(strict=True):
+        raise ValueError("Mac venv interpreter must link to the exact pinned base")
+    return {"venv_creation_mode": "symlinks", "venv_executable_is_symlink": True,
+            "venv_executable_resolved": str(executable.resolve(strict=True)),
+            "base_executable_resolved": str(base.resolve(strict=True))}
+
+
 def prepare(python: Path, version: str, root: Path, pins: list[dict], wheels: list[Path], rules: list[str]) -> Path:
     root.mkdir(parents=True, exist_ok=False)
     probe = "import json,sys; print(json.dumps({'python':list(sys.version_info[:3]),'executable':sys.executable,'isolated':sys.flags.isolated}))"
     command([str(python), "-I", "-B", "-c", probe], root, root / "base-identity")
     base = json.loads((root / "base-identity/stdout.raw").read_bytes())
     require_python_identity(base, version)
-    command([str(python), "-I", "-B", "-m", "venv", "--copies", str(root / "venv")], root, root / "create-venv")
+    command([str(python), "-I", "-B", "-m", "venv", "--symlinks", str(root / "venv")], root, root / "create-venv")
     executable = root / "venv/bin/python"
+    require_venv_link(executable, python)
     require_pins(pins)
     if len(wheels) != len(PINNED_VERSIONS):
         raise ValueError("Pylint dependency artifact denominator differs")
@@ -227,7 +236,7 @@ def prepare(python: Path, version: str, root: Path, pins: list[dict], wheels: li
     command([str(executable), "-I", "-B", "-m", "pip", "freeze", "--all"], root, root / "pip-freeze")
     identity.update(base_identity=base, base_executable_sha256=digest(python.read_bytes()),
                     venv_executable_sha256=digest(executable.read_bytes()), wheel_artifacts=artifacts,
-                    historical_environment=False)
+                    historical_environment=False, **require_venv_link(executable, python))
     for pin, wheel in zip(pins, wheels):
         checked_bytes(wheel.read_bytes(), pin["sha256"])
     write_json(root / "identity.json", identity)
