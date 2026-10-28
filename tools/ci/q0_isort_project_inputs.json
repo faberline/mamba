@@ -1,0 +1,1210 @@
+{
+  "schema": "mamba.q0.isort.published-project-inputs.v1",
+  "provenance": "Input fields already published in the fixed isort catalog. No expected outputs or protected helper source copied.",
+  "cases": [
+    {
+      "name": "generated_interaction_032",
+      "source": "# File header\n# Comment for import 0\nfrom package import \u01c5A, \u03a9mega, Beta as alias  # noqa: F401\n\nfrom package import value10, \u01c5A, alpha\nfrom os import value2\n# Comment for import 3\nimport package2.sub as Alias\n\nfrom .local import \u01c5A, value10, value2, \u03a9mega"
+    },
+    {
+      "name": "generated_interaction_121",
+      "source": "from _import_helper import \u01c5A  # noqa: F401\r\n# Comment for import 1\r\nfrom ..other import alpha, alpha, value2, value2, Beta\r\nimport package2.sub\r\n# Comment for import 3\r\nfrom .local import (  # Opening note\r\n    alpha,\r\n)\r\nfrom .local import (\r\n    alpha,  # Attribute note\r\n    Beta as alias,\r\n    value10 as alias,\r\n    \u03a9mega as alias,\r\n)  # Closing note\r\n"
+    },
+    {
+      "name": "generated_interaction_172",
+      "source": "from os import (\n    \u01c5A,  # Attribute note\n    value10,  # Attribute note\n    value2,\n    CONSTANT,\n    value2 as alias,\n)\n# Comment for import 1\nimport package2.sub as renamed\nfrom package.sub import (  # Opening note\n    \u01c5A as alias,  # Attribute note\n    \u03a9mega,\n    Beta,  # Attribute note\n)\nimport os  # Import note\n\n# Comment for import 4\nimport package2.sub\nfrom sys import (\n    alpha,\n    Beta as alias,\n    Beta,\n)\nfrom sys import value2  # noqa: F401\n\n# Comment for import 7\nfrom sys import CONSTANT"
+    },
+    {
+      "name": "generated_interaction_031",
+      "source": "# File header\nimport package\nfrom ..other import CONSTANT, \u01c5A, alpha\n# Comment for import 2\nfrom sys import value2 as alias, \u01c5A as alias, Beta, \u01c5A as alias\nimport os\n# Comment for import 4\nfrom .local import value10, value10 as alias, value10 as alias, alpha as alias\nfrom _import_helper import value2, \u01c5A as alias, Beta as alias\nfrom _import_helper import alpha as alias, Beta  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_196",
+      "source": "def function():\n    from package.sub import Beta as alias, \u01c5A as alias, value2 as alias\n    from ..other import (  # Opening note\n        value10,  # Attribute note\n        value2,\n        Beta,\n    )\n    from package.sub import (  # Opening note\n        Beta,\n        \u01c5A,  # Attribute note\n        \u01c5A,\n    )\n    import package\n    # Comment for import 4\n    from .local import Beta  # noqa: F401\n    from .local import CONSTANT as alias, value2, Beta, \u01c5A, \u01c5A  # noqa: F401\n    # Comment for import 6\n    from package import (  # Opening note\n        value10,\n        \u01c5A as alias,\n        alpha as alias,\n        Beta as alias,\n    )  # Closing note"
+    },
+    {
+      "name": "generated_interaction_232",
+      "source": "\nfrom ..other import (\n    value2,\n    value2,  # Attribute note\n    CONSTANT as alias,\n)  # Closing note\n\nfrom _import_helper import (\n    value10,\n    alpha,\n    CONSTANT,\n)  # Closing note\nfrom package.sub import value2 as alias, CONSTANT  # noqa: F401\n# Comment for import 3\nfrom sys import \u03a9mega as alias"
+    },
+    {
+      "name": "generated_interaction_039",
+      "source": "# File header\nimport sys as Alias  # Import note\n\nfrom package2.sub import \u01c5A, alpha as alias  # noqa: F401\nfrom package.sub import (\n    \u03a9mega,\n    CONSTANT as alias,\n    value10 as alias,\n)  # Closing note\nfrom .local import \u03a9mega, alpha, \u03a9mega\nfrom importlib import value10 as alias, \u03a9mega as alias, value2  # noqa: F401\nfrom ..other import (\n    value2,\n    value2,  # Attribute note\n    value2,\n    Beta,\n    \u01c5A,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "source_namespace_priority",
+      "source": "import widget.part\nimport requests\nimport os\n",
+      "files": {
+        "src/widget/part.py": ""
+      },
+      "directories": [
+        "widget"
+      ]
+    },
+    {
+      "name": "generated_interaction_132",
+      "source": "# Comment for import 0\r\nfrom importlib import value2, CONSTANT, \u01c5A as alias\r\nfrom ..other import (\r\n    Beta,\r\n)\r\n\r\nfrom package2.sub import CONSTANT as alias, value10, \u01c5A, \u01c5A as alias, \u03a9mega as alias\r\n# Comment for import 3\r\nfrom ..other import (\r\n    \u03a9mega,  # Attribute note\r\n    \u03a9mega,  # Attribute note\r\n    value10,\r\n)\r\n\r\nfrom importlib import value10, alpha  # noqa: F401\r\nfrom package.sub import (\r\n    value2,\r\n    value2,  # Attribute note\r\n    alpha,\r\n    value10,  # Attribute note\r\n    Beta as alias,\r\n)  # Closing note\r\nfrom package.sub import (  # Opening note\r\n    alpha as alias,\r\n)\r\nfrom _import_helper import CONSTANT as alias, \u01c5A  # noqa: F401\r\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_229",
+      "source": "# File header\n# Comment for import 0\nfrom package import (  # Opening note\n    \u03a9mega,\n    \u01c5A as alias,\n    CONSTANT as alias,  # Attribute note\n    value10,\n)\n\n# Comment for import 1\nimport importlib as renamed\n\nfrom _import_helper import (  # Opening note\n    alpha as alias,\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_021",
+      "source": "def function():\n    # File header\n    # Comment for import 0\n    import package2.sub as renamed\n    from ..other import (\n        \u01c5A as alias,\n        \u01c5A,\n        CONSTANT,\n        alpha,  # Attribute note\n    )\n\n    from ..other import value2, value10 as alias, alpha  # noqa: F401\n    from sys import value10, \u03a9mega, \u01c5A, Beta, \u01c5A\n\n    from .local import value10  # noqa: F401\n\n    from ..other import (\n        alpha,\n        CONSTANT,\n        value2,\n    )\n    value = 1\n"
+    },
+    {
+      "name": "generated_interaction_068",
+      "source": "import package2.sub  # Import note\nimport importlib\n\n# Comment for import 2\nimport os"
+    },
+    {
+      "name": "literal_strings",
+      "source": "# isort: list\nx = ['a\\nb', 'a\\tb', 'a\\\\b', 'a\"b', \"a'b\\\"c\"]\n"
+    },
+    {
+      "name": "generated_interaction_075",
+      "source": "\nfrom os import value2, \u01c5A as alias, Beta, value10 as alias, alpha\nfrom _import_helper import (  # Opening note\n    \u01c5A as alias,\n)\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_127",
+      "source": "from .local import value10 as alias, \u03a9mega\nfrom package.sub import \u01c5A, \u03a9mega, \u03a9mega as alias, CONSTANT as alias, CONSTANT\nfrom .local import \u03a9mega, value10, CONSTANT\nimport package\n\nfrom package.sub import (\n    value2,  # Attribute note\n    Beta as alias,\n    value10,\n    Beta,  # Attribute note\n    \u03a9mega,  # Attribute note\n)  # Closing note\nimport importlib\n\nfrom _import_helper import CONSTANT, CONSTANT  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_212",
+      "source": "from importlib import \u01c5A\n\nfrom .local import alpha  # noqa: F401\nfrom sys import \u03a9mega, value2, CONSTANT, value2, Beta\nfrom .local import (\n    Beta,  # Attribute note\n)\nfrom importlib import value10 as alias, \u03a9mega, value10, Beta, \u01c5A\n# Comment for import 5\nimport _import_helper as Alias"
+    },
+    {
+      "name": "generated_interaction_056",
+      "source": "def function():\n    # Comment for import 0\n    from package.sub import CONSTANT, value2  # noqa: F401\n    import package.sub as renamed  # Import note\n\n    import _import_helper  # Import note\n\n    import _import_helper\n    from importlib import \u03a9mega, value10 as alias, value2 as alias\n    from .local import (  # Opening note\n        \u03a9mega,\n        value10 as alias,  # Attribute note\n        alpha as alias,  # Attribute note\n    )  # Closing note"
+    },
+    {
+      "name": "generated_interaction_181",
+      "source": "# File header\nfrom importlib import \u01c5A as alias, Beta\nfrom importlib import value10 as alias, Beta, \u03a9mega, value2\n# Comment for import 2\nfrom package.sub import Beta, CONSTANT, \u03a9mega\n\nfrom package import alpha\n\nfrom package import alpha, value10, value2, Beta  # noqa: F401\nfrom ..other import CONSTANT, alpha, value10 as alias, Beta\n"
+    },
+    {
+      "name": "generated_interaction_112",
+      "source": "def function():\n    from sys import alpha, \u01c5A, \u03a9mega, CONSTANT, Beta\n    from importlib import (  # Opening note\n        \u01c5A as alias,\n        alpha,  # Attribute note\n        Beta as alias,\n    )\n    from importlib import (  # Opening note\n        alpha as alias,\n        alpha,\n        value10,\n        Beta as alias,\n        value2,\n    )\n    import _import_helper\n\n    from .local import value2, alpha, \u03a9mega as alias, \u01c5A, CONSTANT  # noqa: F401"
+    },
+    {
+      "name": "empty_namespace",
+      "source": "import widget.missing\nimport requests\nimport os\n",
+      "directories": [
+        "widget"
+      ]
+    },
+    {
+      "name": "generated_interaction_184",
+      "source": "from .local import value2, Beta, value10  # noqa: F401\nfrom ..other import alpha, value2, value10, value10 as alias\nfrom _import_helper import (  # Opening note\n    alpha,\n    value10,\n)  # Closing note\n# Comment for import 3\nfrom ..other import (  # Opening note\n    CONSTANT,  # Attribute note\n    Beta,  # Attribute note\n    alpha,  # Attribute note\n    \u03a9mega,\n)"
+    },
+    {
+      "name": "generated_interaction_164",
+      "source": "from _import_helper import alpha, CONSTANT  # noqa: F401\nfrom .local import (  # Opening note\n    \u01c5A as alias,  # Attribute note\n)\nfrom package2.sub import (\n    CONSTANT as alias,  # Attribute note\n    value10,  # Attribute note\n    \u01c5A,  # Attribute note\n    Beta,\n)\n# Comment for import 3\nimport package.sub\nfrom package import (  # Opening note\n    Beta,\n    CONSTANT,\n)\n# Comment for import 5\nfrom os import (  # Opening note\n    \u03a9mega,  # Attribute note\n    value10 as alias,\n    \u03a9mega as alias,  # Attribute note\n)\nimport os as Alias\n\n# Comment for import 7\nfrom package2.sub import (\n    value2 as alias,\n    \u01c5A,\n    \u03a9mega,  # Attribute note\n    value2,\n    \u03a9mega,  # Attribute note\n)  # Closing note"
+    },
+    {
+      "name": "generated_interaction_209",
+      "source": "# Comment for import 0\r\nfrom importlib import \u01c5A as alias, value10, value10\r\nfrom package import (\r\n    \u03a9mega,\r\n    CONSTANT,\r\n    \u03a9mega,  # Attribute note\r\n)  # Closing note\r\nfrom package.sub import (\r\n    alpha,\r\n    alpha as alias,  # Attribute note\r\n    \u01c5A as alias,\r\n)  # Closing note\r\n\r\nfrom os import CONSTANT as alias, Beta as alias\r\n"
+    },
+    {
+      "name": "generated_interaction_167",
+      "source": "# File header\n\nfrom package2.sub import (\n    value2 as alias,\n    value2 as alias,\n    value10,\n)\n\n# Comment for import 1\nfrom package import alpha, value2 as alias, value2, value10, Beta\n# Comment for import 2\nfrom .local import alpha as alias, Beta as alias, value10\nfrom ..other import \u03a9mega, value10 as alias, alpha, value2  # noqa: F401\n# Comment for import 4\nfrom package2.sub import value10 as alias  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_071",
+      "source": "# File header\nfrom importlib import value2, value2\nfrom .local import value10, value2, alpha, value2\nfrom package.sub import (\n    \u01c5A,  # Attribute note\n)\n\nfrom os import alpha as alias, Beta, CONSTANT, \u01c5A  # noqa: F401\nfrom _import_helper import value10, \u03a9mega, \u03a9mega, alpha\n"
+    },
+    {
+      "name": "generated_interaction_194",
+      "source": "# File header\n\nfrom sys import \u01c5A, value2, value10, value10\n# Comment for import 1\nfrom ..other import CONSTANT, \u01c5A  # noqa: F401\n# Comment for import 2\nimport importlib as renamed\nfrom package.sub import (\n    Beta,  # Attribute note\n    alpha,  # Attribute note\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_013",
+      "source": "# File header\nfrom sys import (\n    value2 as alias,  # Attribute note\n    alpha as alias,\n    value10,\n)\n# Comment for import 1\nimport package.sub  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_115",
+      "source": "from package2.sub import (  # Opening note\n    alpha,\n    value2 as alias,  # Attribute note\n    value10,  # Attribute note\n)\n# Comment for import 1\nfrom package import \u03a9mega\n\n# Comment for import 2\nfrom package import value2 as alias, value2, value10, \u03a9mega, CONSTANT\n# Comment for import 3\nfrom ..other import (  # Opening note\n    value2 as alias,\n    \u01c5A,\n    value10,\n    \u03a9mega,  # Attribute note\n    Beta,\n)  # Closing note\n# Comment for import 4\nfrom package.sub import (\n    value2,  # Attribute note\n    \u01c5A,\n    \u03a9mega,  # Attribute note\n    \u03a9mega as alias,\n)  # Closing note\n\nfrom _import_helper import \u01c5A  # noqa: F401\nfrom .local import value10\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_104",
+      "source": "from sys import (\n    value2,  # Attribute note\n    \u03a9mega,\n    \u01c5A,  # Attribute note\n    alpha,  # Attribute note\n)\n# Comment for import 1\nfrom .local import value10, \u01c5A, CONSTANT, Beta, Beta\nfrom .local import alpha, value2, value10, value10, \u01c5A as alias  # noqa: F401\nfrom package2.sub import (\n    Beta,\n)  # Closing note\nfrom _import_helper import value2, \u01c5A, \u01c5A, \u01c5A, Beta\nimport importlib as Alias"
+    },
+    {
+      "name": "generated_interaction_221",
+      "source": "\nfrom _import_helper import alpha, \u01c5A  # noqa: F401\nfrom os import CONSTANT, value10\nfrom package import \u01c5A, \u03a9mega, \u03a9mega, value10, \u03a9mega  # noqa: F401\nfrom os import alpha, CONSTANT, \u01c5A, alpha  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_238",
+      "source": "def function():\n\n    import package.sub\n    # Comment for import 1\n    from os import \u03a9mega as alias\n    from ..other import CONSTANT\n"
+    },
+    {
+      "name": "generated_interaction_239",
+      "source": "\nfrom _import_helper import \u01c5A\nfrom .local import (  # Opening note\n    value2,\n    alpha,\n    value2 as alias,  # Attribute note\n    Beta,\n)\n\nimport _import_helper  # Import note\nfrom ..other import CONSTANT, value10\nfrom importlib import \u01c5A, Beta, \u03a9mega as alias, Beta  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_044",
+      "source": "# File header\r\nfrom package2.sub import (\r\n    alpha,  # Attribute note\r\n    value2,\r\n    value10,\r\n    \u03a9mega as alias,\r\n    value10 as alias,\r\n)  # Closing note\r\n\r\n# Comment for import 1\r\nfrom .local import (\r\n    value2,  # Attribute note\r\n    value10,  # Attribute note\r\n    value2,  # Attribute note\r\n    value2,\r\n)\r\nimport package2.sub  # Import note"
+    },
+    {
+      "name": "generated_interaction_155",
+      "source": "# File header\n# Comment for import 0\nimport os as renamed\nimport package as Alias  # Import note\nfrom os import (  # Opening note\n    alpha,  # Attribute note\n    alpha,\n    Beta,\n    CONSTANT,  # Attribute note\n)  # Closing note\nfrom sys import Beta, Beta, value2\nfrom package.sub import (\n    value2,  # Attribute note\n    value2,  # Attribute note\n    alpha,\n)\n\n# Comment for import 5\nfrom package2.sub import value10, CONSTANT, CONSTANT, \u03a9mega\n\n# Comment for import 6\nfrom importlib import CONSTANT\n\nfrom ..other import (\n    Beta,  # Attribute note\n    Beta,\n    value10,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_249",
+      "source": "# File header\nfrom package2.sub import Beta\nfrom .local import \u03a9mega as alias, value2, alpha as alias, \u03a9mega, CONSTANT as alias\nimport package.sub\nimport package.sub as renamed\nfrom ..other import \u03a9mega  # noqa: F401\n# Comment for import 5\nfrom sys import Beta as alias, alpha\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_162",
+      "source": "# Comment for import 0\nfrom package2.sub import (\n    CONSTANT,\n    CONSTANT,\n)\n\nimport package\n# Comment for import 2\nimport importlib\nfrom package2.sub import (\n    CONSTANT,  # Attribute note\n    value2,  # Attribute note\n    value2,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_190",
+      "source": "from package import (\n    \u03a9mega,  # Attribute note\n    value2,  # Attribute note\n    CONSTANT as alias,\n    \u01c5A as alias,\n)\nfrom package2.sub import Beta, value10, CONSTANT\n# Comment for import 2\nfrom .local import (  # Opening note\n    value10,  # Attribute note\n)\n\nfrom ..other import (\n    alpha,  # Attribute note\n)\nimport package.sub\nfrom package2.sub import Beta, \u03a9mega  # noqa: F401\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_007",
+      "source": "def function():\n    # File header\n    from .local import (  # Opening note\n        Beta as alias,\n        value10,\n    )  # Closing note\n    from ..other import (  # Opening note\n        alpha,\n        \u01c5A,\n        Beta,  # Attribute note\n    )  # Closing note\n    from ..other import \u03a9mega, value10\n    # Comment for import 3\n    import os as Alias\n"
+    },
+    {
+      "name": "generated_interaction_149",
+      "source": "from package import (\n    \u01c5A,  # Attribute note\n    value10 as alias,\n)\nimport package2.sub as Alias\n# Comment for import 2\nfrom importlib import value2, Beta, \u03a9mega as alias\n# Comment for import 3\nfrom _import_helper import (\n    value10,  # Attribute note\n    alpha,  # Attribute note\n    value10,  # Attribute note\n    value10,  # Attribute note\n    \u03a9mega,  # Attribute note\n)  # Closing note\n# Comment for import 4\nfrom ..other import Beta as alias\n# Comment for import 5\nfrom _import_helper import (\n    CONSTANT,\n    \u01c5A,\n    Beta,\n    value10,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n)  # Closing note\n# Comment for import 6\nimport os  # Import note\nfrom sys import (\n    Beta,  # Attribute note\n    value2,\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_131",
+      "source": "from _import_helper import \u01c5A\nfrom .local import (\n    value10,\n    alpha,\n    CONSTANT as alias,  # Attribute note\n)  # Closing note\n# Comment for import 2\nfrom sys import (  # Opening note\n    \u03a9mega as alias,  # Attribute note\n    value2 as alias,\n)\n\nimport _import_helper as renamed\n\n# Comment for import 4\nfrom .local import (  # Opening note\n    alpha,\n    alpha,  # Attribute note\n    alpha,\n    value2,  # Attribute note\n    CONSTANT,\n)\nfrom os import (\n    \u01c5A,\n    value10,\n)\n# Comment for import 6\nimport os  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_199",
+      "source": "\nfrom .local import (\n    \u03a9mega,\n    CONSTANT,\n    value10 as alias,\n    CONSTANT as alias,  # Attribute note\n)\nfrom ..other import Beta as alias, value10 as alias, alpha, value2, Beta\n\nfrom package.sub import \u03a9mega, value10, alpha, \u01c5A\n\nimport package\n"
+    },
+    {
+      "name": "generated_interaction_137",
+      "source": "import importlib\nfrom package.sub import (\n    value10,  # Attribute note\n    \u03a9mega,\n    value2 as alias,\n    value10,\n    CONSTANT,\n)\nimport package\n# Comment for import 3\nfrom .local import (\n    CONSTANT,\n    value10,  # Attribute note\n    value2,  # Attribute note\n)  # Closing note\nfrom os import (\n    \u03a9mega,  # Attribute note\n    value10 as alias,  # Attribute note\n    value2,  # Attribute note\n    CONSTANT,\n    value10,  # Attribute note\n)  # Closing note\nimport sys as Alias\n# Comment for import 6\nfrom package2.sub import (  # Opening note\n    value10,\n    CONSTANT as alias,\n    \u03a9mega,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_110",
+      "source": "from _import_helper import value2\r\nfrom .local import (  # Opening note\r\n    Beta,\r\n    \u03a9mega,\r\n    alpha,  # Attribute note\r\n)\r\nfrom ..other import (\r\n    value10,\r\n    CONSTANT,\r\n    \u03a9mega,\r\n    Beta,  # Attribute note\r\n    value10 as alias,  # Attribute note\r\n)\r\nfrom package.sub import (\r\n    CONSTANT,  # Attribute note\r\n    \u03a9mega,  # Attribute note\r\n    Beta,\r\n    value10,  # Attribute note\r\n    value2,\r\n)\r\nimport sys as renamed  # Import note\r\n\r\nfrom package2.sub import (\r\n    value2,\r\n    value2,\r\n    CONSTANT,  # Attribute note\r\n)\r\nfrom package import alpha, Beta, Beta, Beta\r\n# isort: split\r\nimport sys\r\nimport os\r\n"
+    },
+    {
+      "name": "generated_interaction_134",
+      "source": "# File header\nimport os\nfrom package import Beta, value10\n\nfrom package2.sub import value10, CONSTANT\n\n# Comment for import 3\nimport importlib as renamed\n\n# Comment for import 4\nfrom ..other import value2 as alias, value2, \u03a9mega, alpha, CONSTANT\nfrom package.sub import Beta as alias, alpha, Beta\n# Comment for import 6\nfrom package.sub import value2, value2 as alias, value10, alpha, CONSTANT\n"
+    },
+    {
+      "name": "empty_directory_import",
+      "source": "import widget\nimport requests\nimport os\n",
+      "directories": [
+        "widget"
+      ]
+    },
+    {
+      "name": "generated_interaction_251",
+      "source": "# File header\n\nfrom package.sub import (\n    value2 as alias,\n    CONSTANT,  # Attribute note\n    Beta,\n    Beta,  # Attribute note\n)\nfrom importlib import (\n    Beta,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n)\nfrom .local import value10 as alias, alpha, value2, \u03a9mega  # noqa: F401\nimport _import_helper as Alias\nfrom package import (\n    \u01c5A,\n    alpha,\n    \u01c5A,\n    CONSTANT,  # Attribute note\n    \u01c5A,\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_182",
+      "source": "def function():\n    import package2.sub  # Import note\n\n    import sys as Alias\n\n    import _import_helper\n    from .local import (\n        value10,\n        CONSTANT,\n    )  # Closing note\n\n    # Comment for import 4\n    import _import_helper\n"
+    },
+    {
+      "name": "generated_interaction_179",
+      "source": "\n# Comment for import 0\nfrom package2.sub import value2 as alias, CONSTANT as alias, CONSTANT as alias, value2 as alias, Beta\nfrom _import_helper import Beta, value10, alpha as alias, CONSTANT as alias, value2\nfrom sys import value2, Beta\n# Comment for import 3\nfrom package.sub import (  # Opening note\n    \u01c5A,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_250",
+      "source": "# File header\nfrom .local import value10, Beta as alias, value10  # noqa: F401\nfrom _import_helper import (  # Opening note\n    alpha,\n    CONSTANT,\n    alpha as alias,  # Attribute note\n    alpha,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_091",
+      "source": "def function():\n\n    from ..other import \u01c5A, \u01c5A, value2, CONSTANT as alias\n    from .local import (\n        value10,\n        CONSTANT,\n        \u01c5A as alias,\n    )  # Closing note\n\n    from package2.sub import value2, value10\n    import sys as renamed\n    from sys import (  # Opening note\n        Beta,  # Attribute note\n        \u03a9mega,  # Attribute note\n        \u01c5A,\n        Beta,\n    )\n    from importlib import (  # Opening note\n        Beta,\n    )  # Closing note\n\n    from importlib import (  # Opening note\n        \u01c5A as alias,\n        value10,\n        alpha,\n        value10,\n        value2,  # Attribute note\n    )  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_171",
+      "source": "from ..other import value10  # noqa: F401\nfrom package.sub import alpha as alias, alpha  # noqa: F401\n# Comment for import 2\nfrom importlib import (  # Opening note\n    alpha,  # Attribute note\n    \u01c5A,\n    CONSTANT,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_163",
+      "source": "# File header\n# Comment for import 0\nfrom package import alpha, Beta, alpha, value10, Beta as alias\n\nfrom ..other import (\n    \u03a9mega as alias,\n    alpha,\n)  # Closing note\nfrom ..other import Beta as alias, Beta as alias, \u01c5A\nfrom package import Beta as alias, Beta, \u01c5A as alias, value2, alpha\nfrom package import \u01c5A, \u01c5A, \u03a9mega\nimport package\n# Comment for import 6\nfrom importlib import CONSTANT  # noqa: F401\nfrom package.sub import (\n    alpha,\n    Beta,\n    alpha as alias,\n    Beta,\n)\n"
+    },
+    {
+      "name": "generated_interaction_070",
+      "source": "def function():\n    # File header\n\n    from package.sub import (  # Opening note\n        \u01c5A,\n        value10,\n        CONSTANT,  # Attribute note\n        \u03a9mega as alias,  # Attribute note\n        \u03a9mega,  # Attribute note\n    )\n    import importlib\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_082",
+      "source": "# File header\nimport os\nfrom importlib import (\n    \u03a9mega,\n    alpha as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_036",
+      "source": "# File header\n# Comment for import 0\nfrom sys import \u01c5A, CONSTANT, \u01c5A  # noqa: F401\nfrom package2.sub import \u01c5A, \u03a9mega as alias, Beta as alias, alpha\nimport sys as Alias\n\nfrom package import (  # Opening note\n    \u01c5A,\n    alpha,  # Attribute note\n    Beta,  # Attribute note\n    value10,\n    CONSTANT,\n)  # Closing note\nimport package.sub as Alias\n\n# Comment for import 5\nfrom package.sub import \u03a9mega, alpha, value10, CONSTANT\nfrom package import (  # Opening note\n    \u01c5A,  # Attribute note\n)\nfrom ..other import Beta, Beta, value2 as alias, \u03a9mega as alias, value10  # noqa: F401\nvalue = 1"
+    },
+    {
+      "name": "deep_namespace",
+      "source": "import widget.nested.part\nimport requests\nimport os\n",
+      "files": {
+        "widget/nested/part.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_060",
+      "source": "from .local import value10, value2, value10 as alias, \u03a9mega  # noqa: F401\nimport package\nvalue = 1\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_140",
+      "source": "def function():\n\n    import package.sub as Alias\n\n    from package.sub import \u03a9mega, value2 as alias, value10\n    # Comment for import 2\n    from .local import CONSTANT as alias, value2 as alias, alpha, value10\n    # isort: split\n    import sys\n    import os"
+    },
+    {
+      "name": "generated_interaction_236",
+      "source": "# File header\nfrom package2.sub import (  # Opening note\n    alpha,  # Attribute note\n    CONSTANT as alias,\n)\n\nfrom package.sub import value10, CONSTANT, \u01c5A\n# Comment for import 2\nfrom os import Beta\nfrom ..other import (  # Opening note\n    CONSTANT,\n    \u03a9mega as alias,  # Attribute note\n    value2,\n    Beta,\n    CONSTANT,  # Attribute note\n)\n# Comment for import 4\nfrom .local import value10 as alias\nfrom package2.sub import \u01c5A, CONSTANT, alpha\nfrom .local import value10 as alias, \u01c5A  # noqa: F401\n\nimport importlib as renamed"
+    },
+    {
+      "name": "generated_interaction_208",
+      "source": "# File header\n\nfrom package.sub import (\n    CONSTANT,\n    value10,\n    \u03a9mega,\n)\n# Comment for import 1\nfrom .local import Beta, value10, value2 as alias"
+    },
+    {
+      "name": "generated_interaction_093",
+      "source": "from package import (  # Opening note\n    CONSTANT,\n    value2 as alias,\n    Beta,\n    value2,  # Attribute note\n)\nfrom sys import (\n    Beta,\n    value10,\n)  # Closing note\n# Comment for import 2\nimport importlib  # Import note\n# Comment for import 3\nfrom package.sub import (  # Opening note\n    value2,  # Attribute note\n    \u01c5A,\n    CONSTANT,\n)\nfrom _import_helper import (  # Opening note\n    alpha,\n)  # Closing note\nfrom package.sub import \u01c5A as alias, CONSTANT as alias, Beta, \u01c5A as alias  # noqa: F401\nfrom package2.sub import (\n    \u01c5A,  # Attribute note\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_108",
+      "source": "from ..other import alpha, \u03a9mega\nfrom .local import (\n    value2,  # Attribute note\n    \u01c5A as alias,\n    Beta,\n    value10 as alias,\n)\n\nfrom _import_helper import (\n    value2 as alias,\n    \u03a9mega,\n)\nimport package2.sub\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_245",
+      "source": "def function():\n    # File header\n    # Comment for import 0\n    from ..other import value2, value2 as alias\n\n    # Comment for import 1\n    from ..other import (  # Opening note\n        alpha,  # Attribute note\n        Beta,\n    )  # Closing note\n    # Comment for import 2\n    import package2.sub\n    # Comment for import 3\n    from ..other import value10, value2, \u03a9mega\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_204",
+      "source": "from importlib import (\n    value10,  # Attribute note\n    CONSTANT as alias,\n)\n\n# Comment for import 1\nfrom importlib import (\n    \u03a9mega,  # Attribute note\n    alpha as alias,\n    value10 as alias,\n    Beta,\n)  # Closing note\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_102",
+      "source": "# File header\n# Comment for import 0\nimport importlib  # Import note\nfrom package import alpha\nfrom ..other import value10, CONSTANT, value2, \u01c5A\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_253",
+      "source": "from os import \u01c5A as alias, alpha as alias, alpha  # noqa: F401\r\n\r\nfrom _import_helper import (\r\n    \u03a9mega,\r\n    alpha,\r\n    value2,\r\n    CONSTANT,\r\n    alpha,\r\n)  # Closing note\r\n# Comment for import 2\r\nfrom .local import (\r\n    value2,\r\n    alpha,\r\n    \u01c5A as alias,\r\n    CONSTANT,\r\n    CONSTANT as alias,\r\n)  # Closing note\r\n"
+    },
+    {
+      "name": "generated_interaction_094",
+      "source": "# File header\nfrom ..other import (  # Opening note\n    alpha as alias,  # Attribute note\n    \u03a9mega,  # Attribute note\n    \u03a9mega,\n    alpha,\n    value2,  # Attribute note\n)  # Closing note\nimport sys\nfrom sys import CONSTANT, \u03a9mega, \u01c5A  # noqa: F401\n\nimport _import_helper\nfrom package import (\n    alpha,\n    \u03a9mega,\n    CONSTANT,\n)\nimport os as Alias  # Import note\nfrom package import value10\n"
+    },
+    {
+      "name": "generated_interaction_145",
+      "source": "# File header\n# Comment for import 0\nimport _import_helper  # Import note\nimport package2.sub\nfrom package import (\n    CONSTANT,\n)  # Closing note\n\n# Comment for import 3\nfrom ..other import (\n    Beta,\n    alpha,\n)\nfrom .local import CONSTANT, \u01c5A, Beta, \u01c5A as alias  # noqa: F401\n# Comment for import 5\nimport package2.sub\n# Comment for import 6\nimport package as renamed  # Import note\n\nfrom .local import \u01c5A, Beta as alias, value10\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_046",
+      "source": "from _import_helper import (  # Opening note\n    value10,\n    value10,\n)\n\nfrom .local import (\n    \u03a9mega,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_084",
+      "source": "def function():\n    # Comment for import 0\n    from ..other import (\n        alpha,\n        \u01c5A,\n        \u03a9mega,\n        alpha,  # Attribute note\n        \u01c5A,\n    )\n    from _import_helper import (\n        alpha,\n    )  # Closing note\n    from ..other import value10, Beta as alias, Beta  # noqa: F401\n\n    from .local import (\n        Beta,\n        value10,\n        Beta as alias,\n    )\n\n    from package import CONSTANT, CONSTANT\n    from ..other import (\n        CONSTANT,\n        \u01c5A as alias,\n        Beta,  # Attribute note\n        value2,\n    )  # Closing note\n    value = 1"
+    },
+    {
+      "name": "generated_interaction_243",
+      "source": "# File header\n# Comment for import 0\nimport package.sub  # Import note\nfrom ..other import (\n    value10,\n    Beta,  # Attribute note\n)\nfrom .local import CONSTANT, value2\nimport package.sub as Alias\nfrom package.sub import Beta, value2  # noqa: F401\n# Comment for import 5\nfrom package2.sub import value2 as alias, alpha as alias\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_051",
+      "source": "# File header\nimport package2.sub  # Import note\nfrom os import value2, Beta, \u01c5A as alias  # noqa: F401\nfrom ..other import value10 as alias, value2, \u03a9mega, Beta\nvalue = 1\n"
+    },
+    {
+      "name": "stub_only_module",
+      "source": "import widget\nimport requests\nimport os\n",
+      "files": {
+        "widget.pyi": ""
+      }
+    },
+    {
+      "name": "generated_interaction_019",
+      "source": "# File header\n\nfrom ..other import CONSTANT, \u01c5A, Beta\n# Comment for import 1\nfrom package2.sub import Beta as alias, value2, CONSTANT\nfrom sys import (\n    \u03a9mega,  # Attribute note\n    Beta as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_057",
+      "source": "# File header\nimport os  # Import note\n# Comment for import 1\nfrom os import (  # Opening note\n    value10,  # Attribute note\n    Beta,\n    \u01c5A as alias,\n)\n\nfrom _import_helper import value2, \u03a9mega as alias, CONSTANT as alias, CONSTANT, Beta\nimport package as Alias\n\nimport package2.sub  # Import note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_092",
+      "source": "# File header\nfrom sys import (  # Opening note\n    Beta,\n    \u03a9mega,\n    alpha,\n    value2,\n)  # Closing note\nfrom package2.sub import (\n    \u03a9mega,  # Attribute note\n    value2 as alias,  # Attribute note\n    alpha as alias,\n)\n# Comment for import 2\nfrom .local import \u01c5A, \u01c5A as alias, \u03a9mega\nimport sys as Alias  # Import note\nfrom ..other import (  # Opening note\n    value10,\n    Beta,\n    alpha,  # Attribute note\n)"
+    },
+    {
+      "name": "generated_interaction_230",
+      "source": "# File header\nimport _import_helper  # Import note\n# Comment for import 1\nimport _import_helper as Alias\nfrom sys import (\n    \u01c5A,  # Attribute note\n    Beta,  # Attribute note\n)\nimport importlib as renamed\n# Comment for import 4\nfrom package import (\n    value2,\n    \u01c5A,\n    alpha,\n)\nfrom sys import (\n    \u01c5A,  # Attribute note\n    \u01c5A,\n    alpha,\n    \u03a9mega,\n    \u01c5A as alias,\n)  # Closing note\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "literal_dictionary_duplicate",
+      "source": "# isort: dict\nx = {'b': 2, 'a': 1, 'b': 0}\n"
+    },
+    {
+      "name": "namespace_with_metadata",
+      "source": "import widget.missing\nimport requests\nimport os\n",
+      "files": {
+        "widget/pyproject.toml": ""
+      }
+    },
+    {
+      "name": "generated_interaction_049",
+      "source": "def function():\n\n    from importlib import CONSTANT as alias, value2\n    import sys\n    from package.sub import \u03a9mega as alias, value10, Beta as alias  # noqa: F401\n    # Comment for import 3\n    from .local import CONSTANT as alias, value10, \u03a9mega, Beta as alias\n    import _import_helper\n"
+    },
+    {
+      "name": "generated_interaction_055",
+      "source": "# Comment for import 0\r\nfrom package.sub import Beta as alias, CONSTANT, CONSTANT as alias\r\nimport sys  # Import note\r\nimport package.sub  # Import note\r\nfrom package import (\r\n    \u03a9mega,  # Attribute note\r\n    \u01c5A,\r\n    \u03a9mega,\r\n    CONSTANT,  # Attribute note\r\n    CONSTANT as alias,\r\n)\r\n# Comment for import 4\r\nfrom _import_helper import (\r\n    value10,\r\n    value10,  # Attribute note\r\n    Beta,  # Attribute note\r\n    \u01c5A as alias,\r\n)  # Closing note\r\nfrom _import_helper import \u01c5A as alias, Beta\r\nimport package2.sub  # Import note\r\n# Comment for import 7\r\nfrom importlib import CONSTANT as alias, CONSTANT\r\n# isort: split\r\nimport sys\r\nimport os\r\n"
+    },
+    {
+      "name": "unicode_numbers",
+      "source": "import module\u0661\u0660\nimport module2\nimport module\u0660\u0661\nfrom package import value\u096f, value2, value\u0967\u0966\n"
+    },
+    {
+      "name": "generated_interaction_220",
+      "source": "# File header\r\n# Comment for import 0\r\nfrom ..other import value10, Beta, value2\r\n# Comment for import 1\r\nfrom ..other import (\r\n    Beta,\r\n    CONSTANT,\r\n    \u03a9mega as alias,\r\n    CONSTANT,  # Attribute note\r\n    alpha,  # Attribute note\r\n)\r\n# isort: split\r\nimport sys\r\nimport os"
+    },
+    {
+      "name": "generated_interaction_100",
+      "source": "# File header\nfrom sys import (\n    value10,  # Attribute note\n    \u01c5A,\n    Beta,  # Attribute note\n    CONSTANT,\n)  # Closing note\n# Comment for import 1\nfrom sys import value10, Beta\nfrom .local import value2, value2, alpha, value10 as alias\nimport sys as renamed\n\n# Comment for import 4\nfrom .local import (\n    alpha,\n    CONSTANT,  # Attribute note\n    Beta,  # Attribute note\n)  # Closing note\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "commented_alias_duplicates",
+      "source": "from package import a as b  # first\nfrom package import a as c  # second\nfrom package import a\n"
+    },
+    {
+      "name": "generated_interaction_026",
+      "source": "# File header\n# Comment for import 0\nimport _import_helper\nimport package2.sub as renamed\n# Comment for import 2\nimport package.sub as renamed\n\nfrom package2.sub import (\n    Beta as alias,\n    \u03a9mega,\n    value10,  # Attribute note\n)\n# Comment for import 4\nfrom os import (\n    value10,\n    alpha,\n)  # Closing note\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_225",
+      "source": "from os import value2\nimport os\nimport importlib\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_173",
+      "source": "# File header\nfrom importlib import \u03a9mega, alpha, alpha, value10, value10\nfrom ..other import (\n    \u01c5A,\n    alpha,\n    value2,\n    \u01c5A,\n)  # Closing note\n\nfrom os import Beta, alpha\nimport sys\n# Comment for import 4\nfrom .local import CONSTANT  # noqa: F401\nfrom sys import (\n    \u03a9mega,\n    \u01c5A,\n    CONSTANT,  # Attribute note\n    value10,\n)\n"
+    },
+    {
+      "name": "generated_interaction_188",
+      "source": "# File header\n\nimport package as renamed  # Import note\nfrom package.sub import \u01c5A, \u03a9mega, \u01c5A, \u01c5A as alias\nimport importlib as Alias  # Import note\n# Comment for import 3\nfrom ..other import Beta, value10, \u03a9mega  # noqa: F401\n# Comment for import 4\nimport _import_helper\n\nfrom sys import Beta  # noqa: F401\n\nimport os  # Import note\nfrom importlib import (\n    value10,  # Attribute note\n    \u01c5A,\n    Beta as alias,  # Attribute note\n    alpha,\n)"
+    },
+    {
+      "name": "generated_interaction_187",
+      "source": "# File header\r\nfrom os import alpha, \u03a9mega, \u03a9mega  # noqa: F401\r\nfrom package2.sub import alpha, Beta, value2, Beta, alpha as alias  # noqa: F401\r\n# Comment for import 2\r\nimport _import_helper  # Import note\r\n\r\nfrom ..other import alpha, Beta, \u01c5A, value2\r\n# Comment for import 4\r\nfrom importlib import Beta\r\n\r\n# Comment for import 5\r\nfrom _import_helper import (\r\n    \u01c5A,\r\n    \u03a9mega,  # Attribute note\r\n    \u01c5A as alias,\r\n    value10,  # Attribute note\r\n)  # Closing note\r\nfrom importlib import Beta\r\nfrom package2.sub import CONSTANT, \u01c5A, alpha as alias, \u03a9mega, CONSTANT  # noqa: F401\r\n"
+    },
+    {
+      "name": "generated_interaction_008",
+      "source": "# File header\nimport package as Alias  # Import note\nfrom _import_helper import (  # Opening note\n    value2,\n    CONSTANT,\n    value10,  # Attribute note\n    Beta as alias,\n)\n# Comment for import 2\nimport importlib  # Import note\nfrom importlib import (\n    alpha,\n    \u01c5A as alias,\n    Beta,  # Attribute note\n)  # Closing note\nfrom sys import alpha as alias, \u01c5A, \u03a9mega, \u03a9mega as alias\n# Comment for import 5\nfrom .local import (\n    \u03a9mega,  # Attribute note\n)  # Closing note\n# Comment for import 6\nfrom ..other import value2, value10  # noqa: F401\nfrom importlib import value2, \u01c5A"
+    },
+    {
+      "name": "generated_interaction_189",
+      "source": "def function():\n    # File header\n\n    import _import_helper\n    # Comment for import 1\n    from os import value2, value10, \u03a9mega, value10, \u01c5A\n    from _import_helper import (\n        CONSTANT,  # Attribute note\n        CONSTANT,\n    )\n    from .local import (\n        CONSTANT,  # Attribute note\n        Beta,\n    )  # Closing note\n\n    from ..other import (  # Opening note\n        CONSTANT,\n        alpha,  # Attribute note\n    )  # Closing note\n    from ..other import value10, \u01c5A, value2, \u01c5A as alias, value2\n\n    from ..other import Beta as alias, \u03a9mega, CONSTANT, value10 as alias  # noqa: F401\n\n    from sys import (\n        Beta as alias,\n    )\n    value = 1\n"
+    },
+    {
+      "name": "generated_interaction_107",
+      "source": "# File header\nfrom package.sub import alpha as alias, CONSTANT  # noqa: F401\nfrom os import CONSTANT, value10, \u03a9mega, \u03a9mega  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_033",
+      "source": "# File header\r\nfrom package2.sub import (  # Opening note\r\n    Beta,\r\n    Beta,\r\n    alpha as alias,  # Attribute note\r\n)\r\n\r\nimport os  # Import note\r\n\r\n# Comment for import 2\r\nfrom importlib import alpha as alias, \u03a9mega as alias, CONSTANT, Beta\r\nfrom sys import (\r\n    CONSTANT as alias,\r\n    value10,\r\n    value2,\r\n    \u03a9mega,\r\n    CONSTANT,\r\n)  # Closing note\r\nvalue = 1\r\n"
+    },
+    {
+      "name": "unicode_type_order",
+      "source": "from package import \u01c5A, A\u01c5, \u00c9CLAIR, \u00e9clair, \u03a9mega, \u03b1\n"
+    },
+    {
+      "name": "native_extension",
+      "source": "import widget\nimport requests\nimport os\n",
+      "files": {
+        "widget.so": ""
+      }
+    },
+    {
+      "name": "generated_interaction_151",
+      "source": "from ..other import (  # Opening note\n    Beta,\n    Beta,\n    Beta,\n)\nfrom sys import value10, value10, Beta as alias, \u03a9mega as alias, \u03a9mega  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_029",
+      "source": "# Comment for import 0\nfrom ..other import Beta, value2, value2, Beta as alias\n\nimport importlib\n\nimport sys  # Import note\n\nfrom ..other import \u01c5A, value10, CONSTANT, value2, \u03a9mega\nimport package.sub\n# Comment for import 5\nimport package.sub\n# Comment for import 6\nfrom importlib import alpha, value2, alpha as alias, CONSTANT  # noqa: F401\n# Comment for import 7\nfrom os import CONSTANT  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_160",
+      "source": "\nfrom .local import (  # Opening note\n    CONSTANT,  # Attribute note\n)  # Closing note\n\nfrom importlib import value10, value10\nfrom sys import (  # Opening note\n    value10 as alias,  # Attribute note\n    \u03a9mega as alias,\n    alpha,  # Attribute note\n    alpha,  # Attribute note\n)\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_226",
+      "source": "from os import (\n    CONSTANT,\n    value2,  # Attribute note\n)  # Closing note\n\n# Comment for import 1\nfrom package.sub import alpha as alias, \u03a9mega as alias, value10, CONSTANT as alias, CONSTANT\n\nfrom ..other import value2, \u03a9mega\n\nfrom os import value2, value10, \u01c5A  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_161",
+      "source": "def function():\n    # File header\n    from package import (\n        value2,  # Attribute note\n        Beta,\n        value2,\n        \u03a9mega,\n        value10 as alias,\n    )\n    from ..other import (\n        alpha,  # Attribute note\n    )\n    # Comment for import 2\n    import sys as Alias  # Import note\n\n    # Comment for import 3\n    from .local import (\n        value2,  # Attribute note\n    )\n    # Comment for import 4\n    from package.sub import alpha\n    # Comment for import 5\n    from ..other import (  # Opening note\n        value2 as alias,\n        alpha as alias,\n    )  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_028",
+      "source": "def function():\n    from ..other import alpha as alias, value10 as alias, value10 as alias\n    from importlib import value2, value10  # noqa: F401\n    from ..other import Beta as alias, alpha, \u03a9mega, \u01c5A  # noqa: F401"
+    },
+    {
+      "name": "missing_regular_submodule",
+      "source": "import widget.missing\nimport requests\nimport os\n",
+      "files": {
+        "widget/__init__.py": ""
+      }
+    },
+    {
+      "name": "literal_off",
+      "source": "# isort: off\n# isort: list\nx = ['b', 'a']\n"
+    },
+    {
+      "name": "generated_interaction_186",
+      "source": "# File header\nfrom sys import (\n    value10,\n    Beta,\n    \u01c5A,  # Attribute note\n    value10 as alias,\n    \u01c5A,  # Attribute note\n)  # Closing note\n\nfrom ..other import (  # Opening note\n    \u01c5A,\n    value2,\n    alpha as alias,\n    CONSTANT as alias,  # Attribute note\n)\nfrom .local import (\n    \u01c5A as alias,\n    value2,\n    value2,\n    CONSTANT as alias,\n    CONSTANT,\n)  # Closing note\n\nimport importlib  # Import note\nfrom os import (\n    value10,\n    value2,\n    Beta,  # Attribute note\n    \u03a9mega,\n    \u03a9mega as alias,  # Attribute note\n)  # Closing note\nfrom package import (\n    alpha,  # Attribute note\n    \u01c5A,\n    CONSTANT as alias,\n    Beta,  # Attribute note\n)  # Closing note\nfrom importlib import \u03a9mega, \u03a9mega as alias, \u01c5A  # noqa: F401\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_069",
+      "source": "# File header\nimport package  # Import note\n# Comment for import 1\nfrom os import (\n    value10,\n    Beta,\n    Beta as alias,\n)\nfrom importlib import alpha as alias, Beta, \u01c5A as alias  # noqa: F401\nimport os\n\nfrom .local import (  # Opening note\n    Beta,  # Attribute note\n)  # Closing note\nfrom package import value10, value10, \u01c5A\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_073",
+      "source": "\n# Comment for import 0\nimport os  # Import note\n\nfrom _import_helper import CONSTANT  # noqa: F401\n# Comment for import 2\nfrom ..other import (\n    \u01c5A,\n    value2,  # Attribute note\n    value10 as alias,\n    value10,\n)\nfrom package2.sub import (\n    alpha,  # Attribute note\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_074",
+      "source": "# File header\n\nimport package.sub\n# Comment for import 1\nimport importlib\n\nfrom package.sub import Beta as alias, value10 as alias  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_042",
+      "source": "def function():\n    # File header\n\n    from ..other import (\n        alpha,  # Attribute note\n        \u03a9mega,\n    )\n\n    # Comment for import 1\n    import package2.sub\n    import _import_helper\n    from .local import (\n        value10,\n        value2,\n    )  # Closing note\n\n    import package\n    from _import_helper import alpha as alias, Beta as alias, CONSTANT, Beta\n    import sys\n    from _import_helper import (  # Opening note\n        \u01c5A,\n        \u03a9mega,  # Attribute note\n        value10,\n        Beta,\n    )  # Closing note\n    value = 1\n"
+    },
+    {
+      "name": "literal_float_precision",
+      "source": "# isort: list\nx = [9007199254740993, 9007199254740992.0, 9007199254740992]\n"
+    },
+    {
+      "name": "generated_interaction_254",
+      "source": "\nfrom package.sub import (\n    Beta,\n    \u03a9mega,\n    alpha,  # Attribute note\n    value2,\n    value10,  # Attribute note\n)  # Closing note\nfrom package2.sub import (  # Opening note\n    alpha,\n    \u01c5A,  # Attribute note\n    value10 as alias,\n)\nfrom package import CONSTANT, alpha, value10 as alias, Beta\nfrom sys import (\n    CONSTANT,\n    value10 as alias,\n    alpha as alias,\n    value10,\n    Beta,  # Attribute note\n)\nfrom ..other import value10 as alias, value2  # noqa: F401\nfrom .local import alpha as alias, CONSTANT, alpha, value10 as alias\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_006",
+      "source": "# File header\n\nfrom package import (  # Opening note\n    CONSTANT,\n    Beta as alias,  # Attribute note\n    alpha,\n)  # Closing note\n# Comment for import 1\nfrom _import_helper import alpha, Beta  # noqa: F401\nfrom _import_helper import (  # Opening note\n    value10,  # Attribute note\n)\nfrom importlib import (  # Opening note\n    value2,\n    \u01c5A,\n    alpha,\n)  # Closing note\nfrom package.sub import (\n    value10 as alias,\n    CONSTANT,  # Attribute note\n)  # Closing note\nfrom sys import (  # Opening note\n    value10,  # Attribute note\n    \u01c5A,\n    alpha as alias,  # Attribute note\n)  # Closing note\n# Comment for import 6\nfrom package.sub import alpha, value2, value2, CONSTANT, value10 as alias\nfrom package2.sub import (\n    value10,\n    alpha as alias,\n)  # Closing note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_242",
+      "source": "# Comment for import 0\r\nfrom .local import (  # Opening note\r\n    value10,  # Attribute note\r\n    CONSTANT as alias,  # Attribute note\r\n    \u01c5A,\r\n    Beta,\r\n)\r\nfrom package2.sub import (\r\n    CONSTANT,  # Attribute note\r\n    value10,\r\n    \u01c5A as alias,  # Attribute note\r\n)  # Closing note\r\n# Comment for import 2\r\nimport package.sub\r\nfrom ..other import Beta, value2, value10 as alias, \u03a9mega  # noqa: F401\r\nfrom sys import \u01c5A\r\n"
+    },
+    {
+      "name": "generated_interaction_014",
+      "source": "def function():\n    # File header\n    import _import_helper\n    from .local import (  # Opening note\n        value10,\n    )\n    # Comment for import 2\n    from _import_helper import Beta, value2, \u03a9mega, value10, alpha  # noqa: F401\n    # Comment for import 3\n    import importlib  # Import note\n    # Comment for import 4\n    from ..other import CONSTANT, Beta, \u01c5A as alias, CONSTANT, Beta as alias\n    import importlib\n    from sys import value2, value10 as alias, value2, CONSTANT, Beta  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_113",
+      "source": "# File header\n# Comment for import 0\nfrom package import \u01c5A as alias, value10, \u03a9mega, alpha  # noqa: F401\n# Comment for import 1\nfrom package import (  # Opening note\n    value2,  # Attribute note\n    Beta,\n    CONSTANT as alias,\n    CONSTANT,\n)\nfrom .local import alpha as alias, value2 as alias, value2 as alias  # noqa: F401\n\nimport _import_helper as Alias\n\nimport package as Alias  # Import note\nfrom importlib import (\n    \u03a9mega as alias,\n    \u01c5A,  # Attribute note\n    \u01c5A as alias,\n    alpha,\n    \u03a9mega,  # Attribute note\n)\nfrom sys import Beta\n"
+    },
+    {
+      "name": "generated_interaction_201",
+      "source": "from .local import (  # Opening note\n    alpha,\n    CONSTANT,\n    value10,  # Attribute note\n    value2,  # Attribute note\n    CONSTANT,\n)  # Closing note\n\nimport package2.sub as renamed\nfrom sys import (\n    alpha as alias,  # Attribute note\n)\n\n# Comment for import 3\nfrom package2.sub import (\n    \u03a9mega as alias,\n)\n\nfrom .local import value2 as alias\n\nfrom ..other import (\n    Beta as alias,\n)\nimport package2.sub\nfrom package import (  # Opening note\n    CONSTANT,\n    \u01c5A as alias,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_101",
+      "source": "import _import_helper  # Import note\n\nfrom _import_helper import (\n    value10 as alias,\n    \u01c5A,  # Attribute note\n    alpha as alias,  # Attribute note\n    \u01c5A,\n    value2,  # Attribute note\n)\nfrom package2.sub import (\n    value2,\n)\n\n# Comment for import 3\nfrom package.sub import (\n    \u03a9mega as alias,\n)\n"
+    },
+    {
+      "name": "type_checked_imports",
+      "source": "from typing import TYPE_CHECKING\nif TYPE_CHECKING:\n    import sys\n    import os\n",
+      "extension": "pyi"
+    },
+    {
+      "name": "generated_interaction_015",
+      "source": "# File header\nimport package2.sub  # Import note\n\nfrom sys import \u03a9mega as alias, \u01c5A as alias, \u01c5A  # noqa: F401\n# Comment for import 2\nimport _import_helper as renamed\nfrom .local import value2 as alias, \u01c5A, \u01c5A, \u01c5A\nfrom ..other import value2, Beta as alias, Beta\nfrom ..other import (  # Opening note\n    \u01c5A,\n    \u03a9mega,\n    value2,\n    alpha as alias,  # Attribute note\n    value2,\n)  # Closing note\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_003",
+      "source": "import package.sub\nfrom ..other import (\n    CONSTANT,  # Attribute note\n    \u03a9mega,  # Attribute note\n    Beta,\n    Beta as alias,  # Attribute note\n)  # Closing note\n\nfrom sys import (  # Opening note\n    \u01c5A,\n)\nfrom .local import value10 as alias, \u03a9mega, value10, \u03a9mega as alias, \u01c5A\nfrom importlib import value10 as alias, value10, Beta, alpha as alias  # noqa: F401\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_035",
+      "source": "def function():\n    from importlib import value10, value2, CONSTANT, alpha as alias, Beta\n    # Comment for import 1\n    from .local import Beta, value2, Beta as alias, value10, value2\n    from package2.sub import (\n        CONSTANT as alias,\n        \u03a9mega,\n        Beta,\n        value2,  # Attribute note\n        \u03a9mega,\n    )  # Closing note\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_174",
+      "source": "# File header\n\nfrom package2.sub import (\n    \u01c5A as alias,\n    CONSTANT,\n    CONSTANT,\n    value10,\n    CONSTANT,\n)\n# Comment for import 1\nfrom os import (  # Opening note\n    alpha,\n    value10,\n    value2,\n)\nfrom importlib import (  # Opening note\n    \u01c5A as alias,\n    alpha,\n    \u03a9mega as alias,\n)\n# Comment for import 3\nimport package  # Import note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_083",
+      "source": "# File header\nfrom importlib import (  # Opening note\n    CONSTANT,  # Attribute note\n    Beta,\n    CONSTANT,  # Attribute note\n    alpha,\n)  # Closing note\nimport os as Alias\nfrom .local import alpha\n\nimport package2.sub  # Import note\nfrom os import (\n    alpha as alias,  # Attribute note\n    alpha as alias,\n    Beta as alias,\n    Beta,\n    \u03a9mega,\n)\nfrom os import (\n    \u03a9mega,\n    \u03a9mega,  # Attribute note\n    CONSTANT,\n    \u01c5A,\n)\n"
+    },
+    {
+      "name": "generated_interaction_023",
+      "source": "# Comment for import 0\nfrom ..other import (  # Opening note\n    value2,  # Attribute note\n    value10,\n    alpha,  # Attribute note\n    Beta,  # Attribute note\n)\n\nfrom package2.sub import \u01c5A, alpha, \u01c5A  # noqa: F401\nfrom package2.sub import \u03a9mega, CONSTANT  # noqa: F401\nfrom package2.sub import Beta, alpha, alpha\nfrom os import value10, alpha as alias, \u03a9mega\n"
+    },
+    {
+      "name": "generated_interaction_016",
+      "source": "from package2.sub import (  # Opening note\n    Beta,  # Attribute note\n    value10 as alias,\n    value10,\n)\nfrom sys import value2, Beta, \u03a9mega as alias, \u01c5A\nfrom os import (\n    CONSTANT,\n    Beta,  # Attribute note\n    value10,\n    \u01c5A,  # Attribute note\n)\nfrom ..other import (  # Opening note\n    Beta,\n    value10,  # Attribute note\n)  # Closing note\nfrom ..other import \u03a9mega, alpha, value10\nimport importlib\nimport os\nfrom package.sub import value2, Beta, value10, \u03a9mega"
+    },
+    {
+      "name": "generated_interaction_136",
+      "source": "# Comment for import 0\nimport package as renamed\nimport package as renamed  # Import note\nfrom package2.sub import value2, \u01c5A\nfrom .local import (\n    value2,\n)\nfrom importlib import (  # Opening note\n    value10,\n    value10,\n    CONSTANT,\n    alpha,\n    \u03a9mega,\n)\nfrom _import_helper import alpha as alias, Beta, Beta, CONSTANT"
+    },
+    {
+      "name": "generated_interaction_059",
+      "source": "# File header\n\n# Comment for import 0\nimport sys as Alias\n# Comment for import 1\nfrom os import (\n    value2,\n)\nfrom package.sub import \u01c5A, value2 as alias, value2\nfrom sys import (\n    value10,\n    \u03a9mega as alias,\n    value2,  # Attribute note\n)\n\nimport os  # Import note\nfrom importlib import (  # Opening note\n    CONSTANT as alias,\n    CONSTANT,\n    value10,\n)\n\nfrom _import_helper import Beta, value2 as alias, CONSTANT, CONSTANT, \u01c5A\n"
+    },
+    {
+      "name": "generated_interaction_126",
+      "source": "def function():\n    # File header\n\n    from .local import (\n        \u01c5A,\n    )\n\n    from _import_helper import (  # Opening note\n        CONSTANT,  # Attribute note\n    )\n\n    from package import value10 as alias\n    # Comment for import 3\n    from sys import (\n        \u01c5A,\n        \u01c5A,\n        \u01c5A as alias,  # Attribute note\n        \u03a9mega,\n        Beta,\n    )\n\n    from _import_helper import alpha, alpha, alpha  # noqa: F401\n    from _import_helper import (\n        \u03a9mega,\n        value10,\n    )  # Closing note\n    import package2.sub\n\n    import _import_helper\n    value = 1\n"
+    },
+    {
+      "name": "generated_interaction_096",
+      "source": "from .local import (\n    Beta,\n    \u03a9mega,\n    value2,  # Attribute note\n    CONSTANT,\n    \u01c5A as alias,\n)\nfrom package.sub import (  # Opening note\n    \u03a9mega,\n    Beta,  # Attribute note\n    \u01c5A,  # Attribute note\n)\nfrom ..other import \u01c5A, \u03a9mega, \u03a9mega as alias  # noqa: F401\nfrom .local import \u01c5A as alias, alpha, CONSTANT\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_087",
+      "source": "import package.sub as Alias  # Import note\n\nfrom importlib import Beta, value2, value10  # noqa: F401\n\n# Comment for import 2\nfrom package import (  # Opening note\n    \u03a9mega,\n)  # Closing note\n# Comment for import 3\nfrom ..other import \u03a9mega as alias, \u03a9mega, \u03a9mega, \u01c5A\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_231",
+      "source": "def function():\r\n\r\n    import importlib as Alias\r\n\r\n    from os import CONSTANT, \u03a9mega, value2, \u03a9mega, value10\r\n    value = 1\r\n"
+    },
+    {
+      "name": "generated_interaction_022",
+      "source": "# Comment for import 0\r\nfrom package import (\r\n    value2 as alias,\r\n)  # Closing note\r\nfrom package.sub import CONSTANT as alias, \u01c5A, alpha  # noqa: F401\r\nfrom ..other import value2 as alias, CONSTANT, value10, alpha, CONSTANT\r\nfrom ..other import (\r\n    alpha as alias,  # Attribute note\r\n    \u03a9mega as alias,\r\n)\r\n\r\n# Comment for import 4\r\nimport package\r\nfrom importlib import value2 as alias, Beta as alias, value10, value2 as alias  # noqa: F401\r\n\r\nfrom _import_helper import (\r\n    value2,\r\n)\r\nimport importlib  # Import note\r\n"
+    },
+    {
+      "name": "generated_interaction_105",
+      "source": "def function():\n    # Comment for import 0\n    from importlib import CONSTANT as alias  # noqa: F401\n    from .local import \u01c5A, alpha  # noqa: F401\n    # Comment for import 2\n    from sys import (  # Opening note\n        value10,  # Attribute note\n        \u01c5A,\n        CONSTANT,\n        alpha,\n        value2 as alias,\n    )  # Closing note\n    value = 1\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_129",
+      "source": "\n# Comment for import 0\nfrom sys import (\n    alpha,\n    \u01c5A,\n    CONSTANT,\n    alpha,  # Attribute note\n    \u03a9mega,\n)\n# Comment for import 1\nfrom _import_helper import (  # Opening note\n    Beta,\n    CONSTANT,\n)  # Closing note\nfrom sys import CONSTANT as alias, \u01c5A, \u01c5A, Beta, \u01c5A as alias\nimport sys\nfrom ..other import (\n    alpha as alias,  # Attribute note\n    \u01c5A,\n    \u01c5A,  # Attribute note\n    \u01c5A,  # Attribute note\n    \u01c5A,\n)  # Closing note\n# Comment for import 5\nfrom sys import value2\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_223",
+      "source": "# File header\nfrom sys import Beta as alias, Beta as alias, value2 as alias  # noqa: F401\n\n# Comment for import 1\nfrom package.sub import Beta, value2 as alias, value10, alpha  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_027",
+      "source": "\nfrom package import value2, value2 as alias  # noqa: F401\nfrom ..other import (\n    \u03a9mega,  # Attribute note\n    value10,  # Attribute note\n)  # Closing note\nfrom importlib import \u03a9mega\nfrom package.sub import CONSTANT as alias\nfrom package import alpha as alias, value10 as alias\nfrom sys import (  # Opening note\n    Beta,  # Attribute note\n    Beta,\n    CONSTANT,  # Attribute note\n)  # Closing note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_005",
+      "source": "# File header\nimport os as renamed\nfrom _import_helper import (  # Opening note\n    \u01c5A,  # Attribute note\n    value2,\n    \u03a9mega,  # Attribute note\n    \u01c5A,  # Attribute note\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_213",
+      "source": "# File header\nfrom importlib import value2 as alias, Beta, value2 as alias, value2, \u01c5A\nfrom .local import (\n    value10 as alias,  # Attribute note\n    value2 as alias,  # Attribute note\n    value10,\n)  # Closing note\nfrom sys import (  # Opening note\n    value10 as alias,  # Attribute note\n    \u03a9mega,  # Attribute note\n)\n# Comment for import 3\nfrom importlib import (\n    CONSTANT,  # Attribute note\n    \u01c5A,  # Attribute note\n)\nfrom package import (\n    value2,\n    Beta,  # Attribute note\n    Beta,\n)\n# Comment for import 5\nfrom ..other import alpha as alias, alpha, value2, \u01c5A, CONSTANT\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_010",
+      "source": "# File header\n\nfrom .local import value2, Beta as alias, \u01c5A, value10  # noqa: F401\nfrom .local import (\n    Beta,\n    \u03a9mega,\n    value2 as alias,\n    value10 as alias,  # Attribute note\n    value2,\n)\n# Comment for import 2\nimport importlib as renamed\n# Comment for import 3\nfrom sys import value2  # noqa: F401\nfrom _import_helper import CONSTANT, CONSTANT, \u03a9mega, \u01c5A as alias  # noqa: F401\n# Comment for import 5\nimport os  # Import note\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "literal_directive_after_import",
+      "source": "import sys\nimport os\n# isort: list\nx = ['b', 'a']\n"
+    },
+    {
+      "name": "generated_interaction_158",
+      "source": "\nimport os\nfrom package.sub import \u03a9mega\nfrom .local import (  # Opening note\n    \u03a9mega as alias,  # Attribute note\n    value10,\n    CONSTANT as alias,\n    Beta as alias,\n)\n\nimport os\n\nfrom os import \u01c5A  # noqa: F401\nfrom ..other import \u01c5A, value10\n"
+    },
+    {
+      "name": "generated_interaction_038",
+      "source": "import importlib as Alias\n\nfrom importlib import (  # Opening note\n    alpha as alias,\n    \u01c5A,\n    value2,\n    \u03a9mega as alias,\n)  # Closing note\n\nfrom importlib import value2, Beta as alias  # noqa: F401\nfrom .local import alpha, value2, CONSTANT, value10\nfrom sys import (\n    value2,\n    alpha,\n    Beta,\n)\nfrom package import (\n    alpha as alias,\n    CONSTANT,  # Attribute note\n    Beta,  # Attribute note\n    value2,\n    value10 as alias,\n)\n\nfrom _import_helper import value2, \u03a9mega as alias, CONSTANT\n"
+    },
+    {
+      "name": "generated_interaction_117",
+      "source": "import sys as Alias\nfrom os import value2 as alias, alpha  # noqa: F401\nfrom .local import (\n    Beta,\n    value2,\n    Beta,\n    \u03a9mega,\n    Beta,\n)\n\nfrom ..other import \u01c5A, CONSTANT as alias  # noqa: F401\nfrom package2.sub import \u03a9mega, alpha\n\nfrom _import_helper import alpha, Beta, alpha, Beta\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_097",
+      "source": "# Comment for import 0\nfrom _import_helper import Beta, value2, value10, Beta as alias  # noqa: F401\nimport package as Alias\nfrom importlib import CONSTANT, \u01c5A, \u01c5A as alias, value10 as alias, value2\n"
+    },
+    {
+      "name": "generated_interaction_052",
+      "source": "# Comment for import 0\nfrom ..other import (  # Opening note\n    \u01c5A,\n    value2,  # Attribute note\n)\n# Comment for import 1\nimport importlib\nfrom importlib import CONSTANT as alias, CONSTANT, CONSTANT, CONSTANT, value2 as alias  # noqa: F401\nfrom _import_helper import (\n    Beta,\n    value10,  # Attribute note\n    alpha,\n    alpha,\n    alpha,\n)"
+    },
+    {
+      "name": "generated_interaction_217",
+      "source": "def function():\n\n    from ..other import alpha\n    # Comment for import 1\n    from importlib import \u01c5A, \u01c5A as alias, \u01c5A, value10, Beta\n    from package import CONSTANT, alpha, Beta as alias  # noqa: F401\n    from .local import (\n        Beta,\n    )  # Closing note\n    from ..other import \u01c5A, \u01c5A\n    # Comment for import 5\n    from sys import CONSTANT as alias, value2 as alias\n    # Comment for import 6\n    from .local import value2, alpha, alpha as alias, value10, value2 as alias\n    # Comment for import 7\n    from importlib import alpha, \u03a9mega, Beta, Beta as alias\n"
+    },
+    {
+      "name": "generated_interaction_088",
+      "source": "# File header\r\nfrom ..other import (  # Opening note\r\n    alpha as alias,  # Attribute note\r\n    value10,\r\n    value2 as alias,\r\n)\r\n\r\nfrom package2.sub import (\r\n    \u03a9mega,\r\n    \u01c5A as alias,  # Attribute note\r\n    CONSTANT,\r\n)\r\nfrom os import (\r\n    alpha,  # Attribute note\r\n    value10,  # Attribute note\r\n    value10,\r\n)\r\n# Comment for import 3\r\nfrom ..other import \u03a9mega, alpha, value10\r\nfrom .local import (\r\n    value10 as alias,  # Attribute note\r\n    value2,\r\n    alpha,  # Attribute note\r\n    value10,\r\n    Beta,  # Attribute note\r\n)  # Closing note\r\nimport package as Alias\r\nfrom importlib import (  # Opening note\r\n    Beta,\r\n)\r\nimport package2.sub"
+    },
+    {
+      "name": "placement_in_suite",
+      "source": "if True:\n    import sys\n    import requests\n    # isort: imports-stdlib\n    # isort: imports-thirdparty\n"
+    },
+    {
+      "name": "generated_interaction_037",
+      "source": "# File header\n# Comment for import 0\nfrom ..other import \u01c5A, CONSTANT\n# Comment for import 1\nfrom package import Beta, value10 as alias, \u03a9mega, value2, Beta  # noqa: F401\nfrom importlib import Beta, \u01c5A, Beta as alias, value2\n"
+    },
+    {
+      "name": "generated_interaction_058",
+      "source": "import _import_helper\n# Comment for import 1\nfrom .local import (\n    CONSTANT as alias,\n    CONSTANT,\n    alpha,  # Attribute note\n)  # Closing note\nimport _import_helper\n# Comment for import 3\nfrom importlib import (\n    CONSTANT as alias,\n    Beta,\n)\nfrom .local import alpha as alias\nfrom sys import value2 as alias  # noqa: F401\n# Comment for import 6\nfrom sys import Beta\n"
+    },
+    {
+      "name": "generated_interaction_222",
+      "source": "# File header\nfrom ..other import (  # Opening note\n    Beta,\n    alpha,\n)  # Closing note\n# Comment for import 1\nimport package2.sub as renamed  # Import note\n\nfrom importlib import CONSTANT, value10, value10\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_141",
+      "source": "# Comment for import 0\nfrom importlib import (\n    \u03a9mega,  # Attribute note\n    \u01c5A as alias,\n    Beta,\n    \u01c5A,\n)  # Closing note\nimport package2.sub as renamed\nfrom importlib import (\n    alpha as alias,\n    Beta as alias,\n    Beta,\n    value2,\n)  # Closing note\nfrom ..other import (  # Opening note\n    \u03a9mega as alias,\n    alpha,\n    \u03a9mega,  # Attribute note\n)\nfrom importlib import alpha\n\n# Comment for import 5\nimport importlib\n\nfrom sys import (  # Opening note\n    \u03a9mega as alias,\n    Beta,\n    value10,\n    value2 as alias,  # Attribute note\n    \u03a9mega,  # Attribute note\n)\nfrom _import_helper import Beta, alpha, \u01c5A as alias\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_210",
+      "source": "def function():\n    from .local import (\n        alpha,\n        value10 as alias,\n        value2,\n        alpha,\n    )  # Closing note\n    # Comment for import 1\n    from package import (\n        CONSTANT as alias,\n        alpha as alias,\n        Beta,\n        value10,\n        \u03a9mega,\n    )\n    value = 1\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_224",
+      "source": "def function():\n    # File header\n    from package2.sub import (\n        \u03a9mega,\n        Beta as alias,\n    )  # Closing note\n    # Comment for import 1\n    from ..other import (\n        CONSTANT as alias,\n    )  # Closing note\n    from importlib import (\n        alpha,  # Attribute note\n        \u03a9mega,\n        value2,  # Attribute note\n        \u03a9mega,\n        value2,  # Attribute note\n    )  # Closing note\n    # Comment for import 3\n    from ..other import (\n        alpha,  # Attribute note\n        Beta,\n    )\n    from package import value2, value10, value10, \u01c5A as alias, Beta"
+    },
+    {
+      "name": "generated_interaction_119",
+      "source": "def function():\n    # Comment for import 0\n    from os import value10, alpha  # noqa: F401\n\n    from .local import value10, \u03a9mega, value2\n\n    from ..other import CONSTANT, \u03a9mega, Beta as alias, value2 as alias  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_040",
+      "source": "\nfrom package import \u03a9mega, CONSTANT\nfrom ..other import CONSTANT\n\nfrom _import_helper import alpha, value2, alpha, \u03a9mega\n\nfrom importlib import (  # Opening note\n    value2 as alias,  # Attribute note\n    alpha,  # Attribute note\n)  # Closing note\nfrom os import (\n    value10,  # Attribute note\n    alpha,\n    value2,\n    CONSTANT,\n    value2,  # Attribute note\n)  # Closing note\n# Comment for import 5\nfrom package import CONSTANT, alpha  # noqa: F401\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_207",
+      "source": "# File header\n\nfrom importlib import value2, value10, CONSTANT as alias  # noqa: F401\nfrom sys import \u01c5A, value2, value2 as alias, \u03a9mega, CONSTANT as alias\nimport _import_helper as Alias\n# Comment for import 3\nimport sys\n\nfrom importlib import (  # Opening note\n    CONSTANT,  # Attribute note\n    alpha,\n    alpha as alias,\n    CONSTANT as alias,\n    value10,  # Attribute note\n)\nfrom ..other import (\n    CONSTANT as alias,\n    CONSTANT as alias,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_128",
+      "source": "# Comment for import 0\nfrom os import value2 as alias\nimport importlib as Alias\nfrom ..other import Beta as alias, \u01c5A\nfrom package.sub import Beta as alias  # noqa: F401\n# Comment for import 4\nfrom sys import value10, \u01c5A  # noqa: F401\n# Comment for import 5\nfrom .local import value2, \u03a9mega as alias, value10, \u03a9mega, value10 as alias  # noqa: F401\nimport _import_helper as renamed\nimport package.sub"
+    },
+    {
+      "name": "generated_interaction_165",
+      "source": "# File header\r\n# Comment for import 0\r\nfrom _import_helper import (  # Opening note\r\n    \u03a9mega,\r\n)\r\nfrom .local import \u03a9mega as alias, Beta\r\nvalue = 1\r\n# isort: split\r\nimport sys\r\nimport os\r\n"
+    },
+    {
+      "name": "generated_interaction_034",
+      "source": "# File header\n\nfrom os import \u03a9mega as alias, alpha\nfrom _import_helper import \u03a9mega as alias, value2  # noqa: F401\nimport sys  # Import note\n# Comment for import 3\nfrom ..other import alpha, value10 as alias, alpha, \u03a9mega, \u03a9mega\nfrom package2.sub import (\n    CONSTANT,\n    \u03a9mega,  # Attribute note\n)  # Closing note\nfrom sys import (\n    value2,\n    \u01c5A,  # Attribute note\n    value2,\n)\nimport sys\nfrom .local import (  # Opening note\n    alpha,\n    CONSTANT as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_018",
+      "source": "# File header\n# Comment for import 0\nfrom ..other import \u03a9mega, \u01c5A, value2, value2  # noqa: F401\nfrom sys import (\n    \u03a9mega,\n    Beta,  # Attribute note\n    \u01c5A,\n    value2,  # Attribute note\n    CONSTANT,\n)\nfrom .local import alpha, Beta\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_064",
+      "source": "# File header\nimport package2.sub\nimport _import_helper  # Import note\nfrom os import alpha, value10, CONSTANT  # noqa: F401\nfrom os import \u01c5A, Beta, alpha, alpha, CONSTANT as alias\n\nfrom package2.sub import value2, value2, value10, alpha as alias, Beta  # noqa: F401"
+    },
+    {
+      "name": "generated_interaction_090",
+      "source": "from sys import (  # Opening note\n    alpha,\n    \u01c5A as alias,\n    Beta,  # Attribute note\n    value2,\n)\nfrom importlib import (  # Opening note\n    value2,\n    Beta,\n)  # Closing note\nimport sys as Alias\n\nfrom package import (  # Opening note\n    CONSTANT as alias,\n    value2,\n    value2 as alias,  # Attribute note\n)  # Closing note\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_066",
+      "source": "# Comment for import 0\r\nfrom os import (\r\n    Beta,  # Attribute note\r\n)  # Closing note\r\nfrom package.sub import (\r\n    alpha,\r\n    alpha,\r\n    Beta as alias,\r\n)\r\nvalue = 1\r\n"
+    },
+    {
+      "name": "generated_interaction_025",
+      "source": "import package.sub as Alias  # Import note\nfrom sys import (  # Opening note\n    \u01c5A,\n    value10,\n    \u03a9mega as alias,\n    Beta,  # Attribute note\n)\nimport importlib  # Import note\nimport _import_helper\nimport sys\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_228",
+      "source": "# File header\n\nfrom importlib import (\n    value2 as alias,\n)\nfrom os import (  # Opening note\n    alpha,\n    Beta,  # Attribute note\n    CONSTANT as alias,  # Attribute note\n    CONSTANT as alias,\n    CONSTANT as alias,  # Attribute note\n)\n\nfrom package.sub import CONSTANT, value2 as alias\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_086",
+      "source": "import package.sub\n# Comment for import 1\nfrom ..other import value10 as alias\nfrom importlib import (\n    value2,\n    \u01c5A,\n    \u03a9mega,\n    value2,  # Attribute note\n    value10,\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_159",
+      "source": "# File header\nfrom os import \u01c5A, value2  # noqa: F401\nimport os\nfrom package.sub import CONSTANT as alias, \u01c5A, alpha, value10, value2 as alias\n# Comment for import 3\nfrom package2.sub import \u03a9mega, CONSTANT, \u03a9mega\n\nimport sys  # Import note\nfrom ..other import Beta, Beta, Beta\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_111",
+      "source": "# Comment for import 0\nfrom sys import (\n    CONSTANT,\n)\nfrom .local import (\n    \u03a9mega as alias,  # Attribute note\n    CONSTANT,\n    value2,  # Attribute note\n    CONSTANT,\n)  # Closing note\n\n# Comment for import 2\nfrom _import_helper import value10 as alias, value2, CONSTANT as alias, \u03a9mega  # noqa: F401\nfrom importlib import (\n    value10 as alias,\n    CONSTANT,\n    value2,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_183",
+      "source": "# File header\n# Comment for import 0\nimport importlib  # Import note\nfrom .local import (  # Opening note\n    \u03a9mega,\n    alpha,\n    \u03a9mega,\n)\n\nimport _import_helper as renamed  # Import note\nimport package2.sub  # Import note\nvalue = 1\n"
+    },
+    {
+      "name": "literal_unique_numeric",
+      "source": "# isort: unique-list\nx = [True, 1, 1.0, False, 0, -0.0]\n"
+    },
+    {
+      "name": "generated_interaction_085",
+      "source": "\nfrom .local import (\n    \u01c5A,  # Attribute note\n    alpha,\n    value2 as alias,\n    alpha,\n)\nfrom package2.sub import CONSTANT, Beta, \u03a9mega, CONSTANT, Beta as alias\n\n# Comment for import 2\nfrom package import \u03a9mega, CONSTANT, alpha as alias\nfrom .local import value10, Beta\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_180",
+      "source": "from package2.sub import (  # Opening note\n    Beta,  # Attribute note\n)\nfrom _import_helper import value2, value10\n\n# Comment for import 2\nfrom sys import (  # Opening note\n    \u01c5A as alias,\n    Beta,\n    value10,  # Attribute note\n    alpha as alias,\n)\nfrom package import Beta, \u01c5A  # noqa: F401\n\n# Comment for import 4\nimport importlib\nfrom os import (  # Opening note\n    value10,\n    CONSTANT,\n)  # Closing note\nfrom package.sub import alpha as alias, alpha, CONSTANT  # noqa: F401\nvalue = 1\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_192",
+      "source": "# File header\nimport package.sub  # Import note\nfrom package import \u03a9mega, \u01c5A, CONSTANT as alias, value10\nfrom sys import \u01c5A, \u03a9mega, alpha, value10  # noqa: F401\nimport package.sub\n# Comment for import 4\nimport os as Alias\n# Comment for import 5\nimport os as Alias\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_077",
+      "source": "def function():\r\n    from ..other import alpha, \u03a9mega, Beta as alias, value10 as alias  # noqa: F401\r\n    from package import (\r\n        alpha,\r\n        \u03a9mega,\r\n        Beta,  # Attribute note\r\n        CONSTANT,\r\n    )\r\n"
+    },
+    {
+      "name": "generated_interaction_116",
+      "source": "# File header\nfrom .local import (\n    value10,\n    alpha as alias,\n    \u03a9mega as alias,\n    Beta as alias,  # Attribute note\n)\n\nfrom _import_helper import (\n    \u01c5A,  # Attribute note\n)  # Closing note\nfrom _import_helper import (  # Opening note\n    \u03a9mega as alias,\n    CONSTANT,\n)\nfrom ..other import Beta, value10  # noqa: F401\nfrom package2.sub import (  # Opening note\n    Beta,\n    alpha as alias,\n    Beta,\n    \u03a9mega,\n    alpha,  # Attribute note\n)\n\n# Comment for import 5\nfrom package.sub import (\n    CONSTANT,  # Attribute note\n)  # Closing note\n# Comment for import 6\nimport _import_helper as Alias\n# Comment for import 7\nimport package.sub"
+    },
+    {
+      "name": "generated_interaction_214",
+      "source": "\nfrom package.sub import \u03a9mega, value10  # noqa: F401\n# Comment for import 1\nimport package.sub as Alias\nfrom .local import (\n    Beta,\n    \u01c5A,\n    \u03a9mega as alias,\n    value10 as alias,\n    value10 as alias,\n)  # Closing note\n\nimport package  # Import note\n\nfrom importlib import \u03a9mega\nfrom os import alpha, Beta\n"
+    },
+    {
+      "name": "generated_interaction_020",
+      "source": "# File header\n# Comment for import 0\nfrom _import_helper import (\n    \u03a9mega,\n    \u03a9mega,  # Attribute note\n)\nfrom _import_helper import value2 as alias, value10, value2\nfrom package2.sub import (  # Opening note\n    CONSTANT,\n    alpha,\n    alpha,  # Attribute note\n    Beta,\n    \u01c5A,\n)\n\nfrom _import_helper import value10 as alias, value10, value10, CONSTANT, alpha  # noqa: F401\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "regular_package",
+      "source": "import widget.part\nimport requests\nimport os\n",
+      "files": {
+        "widget/__init__.py": "",
+        "widget/part.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_168",
+      "source": "def function():\n\n    from ..other import (  # Opening note\n        CONSTANT,\n        \u01c5A,\n        value10,\n        value10,  # Attribute note\n        \u03a9mega as alias,\n    )\n    from package import value2\n    # Comment for import 2\n    import package  # Import note\n    # Comment for import 3\n    from package2.sub import (\n        alpha,\n    )  # Closing note\n    from package.sub import \u03a9mega, \u03a9mega, \u03a9mega, \u03a9mega\n    import importlib\n    import importlib\n    from _import_helper import value2  # noqa: F401\n    value = 1"
+    },
+    {
+      "name": "generated_interaction_103",
+      "source": "\n# Comment for import 0\nfrom sys import (  # Opening note\n    \u03a9mega,\n    \u01c5A,\n    \u01c5A,\n    \u01c5A as alias,\n    value10,  # Attribute note\n)\n\nfrom ..other import (\n    \u01c5A,\n)\nimport os\n\n# Comment for import 3\nimport package2.sub\n"
+    },
+    {
+      "name": "generated_interaction_122",
+      "source": "from package import (\n    Beta,  # Attribute note\n    \u03a9mega,\n    Beta,\n    value10,  # Attribute note\n)\nfrom _import_helper import (  # Opening note\n    \u03a9mega,\n    alpha as alias,  # Attribute note\n    CONSTANT,\n)  # Closing note\n# Comment for import 2\nfrom os import CONSTANT, value2, value2 as alias, alpha\nimport package2.sub  # Import note\nfrom ..other import (\n    value2,\n    CONSTANT as alias,\n)\n"
+    },
+    {
+      "name": "directive_inside_string",
+      "source": "text = '''\n# isort: list\nx = ['b', 'a']\n'''\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_063",
+      "source": "def function():\n\n    from os import (\n        alpha,\n        \u01c5A,\n        value2,\n        value2,\n        value2 as alias,  # Attribute note\n    )\n    # Comment for import 1\n    import package as Alias\n    import package2.sub  # Import note\n    from os import value2 as alias, \u03a9mega as alias, alpha\n    value = 1\n"
+    },
+    {
+      "name": "generated_interaction_148",
+      "source": "# File header\n# Comment for import 0\nfrom package2.sub import value2, CONSTANT as alias, CONSTANT\n# Comment for import 1\nfrom ..other import \u01c5A, Beta, Beta  # noqa: F401\n# Comment for import 2\nfrom importlib import (  # Opening note\n    \u01c5A,\n)  # Closing note\nfrom ..other import (\n    \u03a9mega,  # Attribute note\n    alpha,\n    CONSTANT as alias,\n    \u03a9mega as alias,\n    \u01c5A,\n)  # Closing note\n\nfrom .local import Beta, alpha, value10 as alias, Beta, Beta\n\nfrom sys import (\n    \u03a9mega as alias,\n    CONSTANT as alias,  # Attribute note\n    \u01c5A,\n    alpha,  # Attribute note\n)\nfrom package import value2, Beta, alpha as alias"
+    },
+    {
+      "name": "source_module",
+      "source": "import widget\nimport requests\nimport os\n",
+      "files": {
+        "src/widget.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_215",
+      "source": "# File header\nfrom package2.sub import (  # Opening note\n    value2,\n)\nimport sys\nfrom _import_helper import value10, value2, \u01c5A, \u03a9mega as alias, Beta  # noqa: F401\nfrom .local import \u03a9mega, \u03a9mega as alias, Beta as alias, alpha, alpha  # noqa: F401\nfrom ..other import (  # Opening note\n    value10 as alias,  # Attribute note\n    value2 as alias,  # Attribute note\n    CONSTANT,\n    value2,  # Attribute note\n)  # Closing note\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_065",
+      "source": "# Comment for import 0\nimport sys\nfrom importlib import (  # Opening note\n    \u03a9mega,  # Attribute note\n    alpha as alias,\n    CONSTANT as alias,\n)  # Closing note\n\nfrom ..other import (  # Opening note\n    CONSTANT,\n    Beta,  # Attribute note\n)\nfrom ..other import (\n    CONSTANT,\n    CONSTANT,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_076",
+      "source": "# File header\n# Comment for import 0\nfrom ..other import \u03a9mega as alias, value10, value10  # noqa: F401\nfrom package import Beta, value10 as alias, value10, \u01c5A as alias, \u01c5A\n\nfrom .local import (\n    \u01c5A as alias,\n    value2,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n    value2,\n)\nimport _import_helper\n# Comment for import 4\nimport os as renamed  # Import note\nfrom package.sub import \u03a9mega, alpha, value2\nfrom .local import (\n    value2,  # Attribute note\n    value10,\n)"
+    },
+    {
+      "name": "generated_interaction_080",
+      "source": "\n# Comment for import 0\nfrom ..other import (  # Opening note\n    value2 as alias,\n    Beta as alias,  # Attribute note\n    value10 as alias,\n    CONSTANT,  # Attribute note\n)\nfrom package import (  # Opening note\n    alpha as alias,\n    Beta,\n    \u01c5A as alias,  # Attribute note\n)  # Closing note\nimport package.sub as renamed\n# Comment for import 3\nfrom os import (  # Opening note\n    CONSTANT,\n    value10,  # Attribute note\n    value10,\n    \u03a9mega as alias,\n)  # Closing note\n\n# Comment for import 4\nfrom package.sub import (\n    Beta,\n    CONSTANT,\n)  # Closing note\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_218",
+      "source": "# File header\nfrom package2.sub import (\n    \u03a9mega as alias,  # Attribute note\n    value10 as alias,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n    value2 as alias,\n    value2 as alias,\n)\n\nfrom importlib import (\n    value2,\n)\n"
+    },
+    {
+      "name": "generated_interaction_233",
+      "source": "import package as renamed\n# Comment for import 1\nfrom ..other import alpha, value10 as alias, alpha as alias, value10, \u03a9mega\n"
+    },
+    {
+      "name": "generated_interaction_118",
+      "source": "from package import (  # Opening note\n    value2,  # Attribute note\n    \u03a9mega,\n    CONSTANT,\n    \u01c5A as alias,  # Attribute note\n    alpha,  # Attribute note\n)  # Closing note\nimport sys  # Import note\n# Comment for import 2\nimport package.sub\nimport importlib\n\nfrom _import_helper import (\n    \u03a9mega as alias,\n    value2,  # Attribute note\n    \u01c5A,\n    alpha as alias,  # Attribute note\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_053",
+      "source": "# File header\n# Comment for import 0\nfrom package2.sub import (  # Opening note\n    \u03a9mega,  # Attribute note\n)\n\nimport package\n"
+    },
+    {
+      "name": "generated_interaction_198",
+      "source": "import package\r\nfrom package.sub import Beta, value2 as alias, Beta, CONSTANT, \u01c5A\r\nimport package.sub  # Import note\r\n# Comment for import 3\r\nfrom .local import \u01c5A, alpha\r\n\r\nfrom importlib import alpha, \u01c5A, value2, value2, value2\r\n\r\nimport os  # Import note\r\nimport package2.sub  # Import note\r\nvalue = 1\r\n"
+    },
+    {
+      "name": "generated_interaction_048",
+      "source": "# Comment for import 0\nimport package\n\nfrom package2.sub import alpha, alpha, alpha, \u03a9mega\n# Comment for import 2\nfrom sys import Beta, value10, value10, Beta  # noqa: F401\n# Comment for import 3\nfrom package2.sub import \u01c5A\nfrom .local import \u03a9mega, \u01c5A, CONSTANT, value10, value2  # noqa: F401\n\nfrom ..other import value10 as alias, CONSTANT as alias  # noqa: F401\nfrom ..other import Beta, \u03a9mega as alias  # noqa: F401\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_234",
+      "source": "\nfrom package.sub import value2\nimport package\nfrom _import_helper import value10, value2\n# Comment for import 3\nfrom package.sub import value10, Beta as alias\nfrom ..other import (  # Opening note\n    \u03a9mega,\n    value10,\n)\n# Comment for import 5\nfrom ..other import (  # Opening note\n    Beta,  # Attribute note\n    \u01c5A,\n)\nfrom package2.sub import (\n    Beta as alias,  # Attribute note\n    alpha,  # Attribute note\n    \u01c5A,\n)\n# Comment for import 7\nfrom ..other import (\n    Beta,  # Attribute note\n    Beta,\n    value10,  # Attribute note\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_095",
+      "source": "# Comment for import 0\nfrom _import_helper import value2, value10, \u03a9mega, value2, \u03a9mega  # noqa: F401\n# Comment for import 1\nfrom importlib import value10, \u03a9mega as alias, Beta, value2 as alias, value10 as alias  # noqa: F401\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_114",
+      "source": "from package2.sub import value2, alpha, \u03a9mega as alias, \u01c5A, alpha\nimport package.sub as Alias\n\nimport package2.sub as renamed\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_205",
+      "source": "# File header\n# Comment for import 0\nfrom package2.sub import \u01c5A  # noqa: F401\nimport package.sub\nimport package2.sub\n# Comment for import 3\nfrom .local import (\n    alpha,\n)  # Closing note\nfrom package import CONSTANT  # noqa: F401\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_009",
+      "source": "# File header\n# Comment for import 0\nfrom package.sub import (\n    \u03a9mega as alias,\n)  # Closing note\n# Comment for import 1\nfrom package2.sub import value10, Beta as alias  # noqa: F401\n\nimport _import_helper as renamed\nfrom .local import \u03a9mega as alias, alpha as alias, value2  # noqa: F401\n# Comment for import 4\nfrom .local import (\n    alpha as alias,\n    alpha,  # Attribute note\n)\nimport os\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_125",
+      "source": "# File header\n# Comment for import 0\nfrom importlib import (\n    value10,  # Attribute note\n)\nfrom importlib import value2, value2\nfrom os import (\n    CONSTANT as alias,\n    \u03a9mega,\n    value10,  # Attribute note\n    \u01c5A,\n)\nimport package.sub\n# Comment for import 4\nfrom ..other import value2 as alias, value2, value10 as alias, CONSTANT\n# Comment for import 5\nfrom ..other import value2, alpha, \u01c5A, value10\nfrom importlib import (  # Opening note\n    alpha as alias,\n)\nfrom sys import (\n    \u01c5A,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "namespace_with_stub",
+      "source": "import widget.missing\nimport requests\nimport os\n",
+      "files": {
+        "widget/part.pyi": ""
+      }
+    },
+    {
+      "name": "generated_interaction_227",
+      "source": "\nimport importlib  # Import note\nfrom package2.sub import (\n    CONSTANT,\n)\n\nfrom sys import value2, \u01c5A as alias, value2\n\nfrom package.sub import (  # Opening note\n    value2,  # Attribute note\n    \u01c5A as alias,\n    value10,\n    CONSTANT as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_109",
+      "source": "\nfrom package import alpha, value10, value2  # noqa: F401\n\n# Comment for import 1\nimport package.sub\nfrom package2.sub import (\n    \u03a9mega as alias,\n    \u01c5A as alias,\n    CONSTANT,  # Attribute note\n    CONSTANT,  # Attribute note\n)\nfrom package import (  # Opening note\n    \u01c5A,\n    CONSTANT,\n    alpha as alias,  # Attribute note\n    value10,  # Attribute note\n)\n"
+    },
+    {
+      "name": "namespace_submodule",
+      "source": "import widget.part\nimport requests\nimport os\n",
+      "files": {
+        "widget/part.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_135",
+      "source": "from sys import alpha, Beta, \u03a9mega as alias, value2\nfrom ..other import (  # Opening note\n    \u01c5A,\n    Beta as alias,  # Attribute note\n    CONSTANT as alias,  # Attribute note\n    \u03a9mega,\n    Beta as alias,\n)\n# Comment for import 2\nfrom .local import \u03a9mega, Beta as alias, alpha, Beta\nfrom .local import (\n    CONSTANT,  # Attribute note\n)\nimport package2.sub\nimport package2.sub\nfrom .local import (\n    \u03a9mega,\n    value2 as alias,\n    alpha,\n    \u01c5A,  # Attribute note\n)\nfrom importlib import \u03a9mega, \u01c5A  # noqa: F401\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_240",
+      "source": "# Comment for import 0\nimport package\n# Comment for import 1\nimport os\nfrom importlib import value10  # noqa: F401\n# Comment for import 3\nfrom os import (\n    alpha,  # Attribute note\n    value2,\n    \u01c5A as alias,\n    \u01c5A as alias,\n)\n\nimport os as Alias\n# Comment for import 5\nfrom _import_helper import CONSTANT  # noqa: F401\nimport package2.sub\n\nfrom sys import (  # Opening note\n    value2 as alias,  # Attribute note\n    alpha,\n    alpha,\n    \u03a9mega,  # Attribute note\n)  # Closing note\nvalue = 1\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_219",
+      "source": "\nfrom _import_helper import alpha, value2 as alias, alpha, value10 as alias  # noqa: F401\n# Comment for import 1\nfrom sys import CONSTANT, \u01c5A  # noqa: F401\n# Comment for import 2\nimport package as renamed\nfrom .local import (\n    value10,\n)\n\n# Comment for import 4\nfrom ..other import (\n    value2 as alias,  # Attribute note\n    value2,\n    value10,\n    value10,\n    CONSTANT,\n)\n\nfrom package import (  # Opening note\n    value10,\n    value10 as alias,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_054",
+      "source": "# File header\n\nimport importlib  # Import note\nimport sys\nfrom .local import \u03a9mega, value2, alpha, CONSTANT\nfrom package2.sub import CONSTANT, CONSTANT as alias, alpha as alias, CONSTANT, value2\n# Comment for import 4\nfrom package import value2, Beta as alias, value2\nfrom sys import \u01c5A as alias, alpha as alias, \u03a9mega, \u01c5A as alias, CONSTANT as alias  # noqa: F401\nimport sys as renamed\n\nimport package2.sub as Alias\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_252",
+      "source": "def function():\n\n    from .local import alpha, value2, \u03a9mega as alias, value2 as alias, value10\n\n    import sys  # Import note\n    # Comment for import 2\n    from _import_helper import \u03a9mega, alpha as alias, \u03a9mega  # noqa: F401\n    from package.sub import value10  # noqa: F401\n    from .local import \u01c5A, alpha, value10, alpha\n    from ..other import value2 as alias\n    from sys import (  # Opening note\n        value2,  # Attribute note\n        value10 as alias,\n    )  # Closing note\n    value = 1"
+    },
+    {
+      "name": "generated_interaction_177",
+      "source": "\n# Comment for import 0\nfrom .local import (\n    \u01c5A,\n    value2,\n    CONSTANT,\n    value2 as alias,\n)\n\nfrom os import (\n    value2,\n    alpha as alias,  # Attribute note\n    \u03a9mega,\n    value10,  # Attribute note\n    alpha,  # Attribute note\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_072",
+      "source": "from .local import value2 as alias, value2, value10\n# Comment for import 1\nfrom _import_helper import (\n    value10,\n    value2,  # Attribute note\n)  # Closing note\nfrom .local import (\n    \u01c5A,  # Attribute note\n    \u01c5A,\n    Beta,  # Attribute note\n    Beta,\n)  # Closing note\n# Comment for import 3\nfrom sys import CONSTANT, \u03a9mega, alpha, value10 as alias\n# Comment for import 4\nimport importlib  # Import note\n# Comment for import 5\nfrom importlib import (\n    CONSTANT,\n)  # Closing note\n\nfrom package import Beta, alpha, \u01c5A  # noqa: F401\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_246",
+      "source": "from ..other import (\n    CONSTANT,\n    value2,\n    value10 as alias,\n    alpha,  # Attribute note\n)\n\nfrom _import_helper import \u03a9mega, \u03a9mega\nimport sys  # Import note\nfrom package.sub import (\n    Beta,\n    alpha,\n    value10,\n    alpha,\n    value10,  # Attribute note\n)\n# Comment for import 4\nfrom package.sub import CONSTANT  # noqa: F401\nfrom .local import Beta, value2 as alias\n\nfrom package2.sub import (\n    value2 as alias,  # Attribute note\n    Beta as alias,\n    value2,  # Attribute note\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_202",
+      "source": "# File header\nfrom os import \u01c5A, CONSTANT, alpha as alias\nfrom _import_helper import CONSTANT, value2  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_248",
+      "source": "\nfrom sys import (\n    CONSTANT,\n    alpha,\n    CONSTANT,\n    \u03a9mega,\n    \u03a9mega,\n)  # Closing note\nfrom .local import (  # Opening note\n    \u03a9mega,  # Attribute note\n    Beta,\n)\n\nfrom package.sub import (\n    Beta as alias,\n    alpha,\n    value2,  # Attribute note\n)"
+    },
+    {
+      "name": "generated_interaction_041",
+      "source": "from os import (\n    CONSTANT,\n)  # Closing note\nimport sys\nfrom os import (\n    \u01c5A,  # Attribute note\n    \u01c5A as alias,\n    Beta as alias,\n)  # Closing note\nfrom _import_helper import (\n    Beta,\n    Beta,\n    value2,  # Attribute note\n    value10 as alias,  # Attribute note\n)  # Closing note\nfrom sys import (\n    Beta,\n    \u01c5A as alias,\n    \u01c5A,\n    \u03a9mega as alias,\n)\nfrom sys import (\n    value2,\n    value2,\n)  # Closing note\nfrom package2.sub import CONSTANT  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_045",
+      "source": "import package.sub  # Import note\n\nfrom _import_helper import value2 as alias, value10\n# Comment for import 2\nimport importlib  # Import note\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_203",
+      "source": "def function():\n    # File header\n\n    # Comment for import 0\n    import importlib as Alias\n    import os\n    # Comment for import 2\n    import package2.sub\n    # Comment for import 3\n    from sys import (  # Opening note\n        value10,  # Attribute note\n        Beta,  # Attribute note\n        CONSTANT,\n        value2,\n    )  # Closing note\n    import _import_helper\n    from sys import (\n        value2,  # Attribute note\n    )\n    import _import_helper\n    import package  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_047",
+      "source": "# File header\n\nfrom os import Beta as alias, \u01c5A\n\n# Comment for import 1\nfrom sys import value2, Beta as alias, \u03a9mega, \u01c5A, \u01c5A  # noqa: F401\nfrom os import value10, alpha, \u01c5A, CONSTANT  # noqa: F401\n\nfrom .local import (\n    value2,  # Attribute note\n    CONSTANT,  # Attribute note\n    value10,\n    alpha,\n    CONSTANT as alias,\n)\nimport importlib as Alias\nimport _import_helper\n# Comment for import 6\nfrom .local import Beta, alpha\n\nimport os  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_157",
+      "source": "# File header\nfrom sys import CONSTANT, alpha as alias, value2 as alias, \u03a9mega\n\nfrom os import (\n    value2,\n)\n"
+    },
+    {
+      "name": "generated_interaction_098",
+      "source": "def function():\n    # File header\n    from importlib import value2  # noqa: F401\n    # Comment for import 1\n    from _import_helper import (\n        alpha as alias,  # Attribute note\n        \u03a9mega as alias,\n        \u01c5A,  # Attribute note\n        value2,  # Attribute note\n        alpha,  # Attribute note\n    )\n    from package2.sub import \u01c5A as alias, value10 as alias\n\n    from package2.sub import CONSTANT, Beta\n    from package2.sub import (  # Opening note\n        \u01c5A,\n        value2,  # Attribute note\n        CONSTANT,\n    )\n    from os import (\n        \u01c5A,\n        value2 as alias,  # Attribute note\n        value2,  # Attribute note\n        value2,\n        value2,  # Attribute note\n    )\n"
+    },
+    {
+      "name": "generated_interaction_150",
+      "source": "# File header\nfrom importlib import (\n    Beta,\n)\n\nfrom sys import (\n    CONSTANT as alias,  # Attribute note\n    Beta,\n)\nfrom importlib import \u01c5A as alias, value2  # noqa: F401\nfrom package.sub import (\n    CONSTANT,  # Attribute note\n    \u01c5A,  # Attribute note\n    value10,\n)  # Closing note\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_169",
+      "source": "import package2.sub\n\nfrom package.sub import (\n    Beta,  # Attribute note\n    CONSTANT,\n    Beta as alias,\n)\nfrom package.sub import \u03a9mega, CONSTANT, Beta, value2\nimport package as Alias\nimport package\n# Comment for import 5\nimport sys as Alias\n"
+    },
+    {
+      "name": "generated_interaction_178",
+      "source": "# Comment for import 0\nfrom importlib import Beta\nfrom ..other import \u03a9mega as alias, alpha as alias\nimport os as renamed\n"
+    },
+    {
+      "name": "generated_interaction_175",
+      "source": "def function():\n    # File header\n    from importlib import value2 as alias, CONSTANT, Beta as alias\n    # Comment for import 1\n    from package import (\n        value2 as alias,\n        value10,\n        \u03a9mega,\n        \u03a9mega,  # Attribute note\n        value10,\n    )\n    # Comment for import 2\n    from package.sub import \u01c5A as alias, Beta as alias, Beta, \u03a9mega, CONSTANT as alias  # noqa: F401\n\n    from .local import value10, alpha, value10, alpha  # noqa: F401\n    from importlib import (\n        \u03a9mega,  # Attribute note\n        value10,\n        alpha,\n        alpha as alias,\n        Beta,\n    )  # Closing note\n    # Comment for import 5\n    from ..other import \u03a9mega, \u01c5A, Beta, \u03a9mega  # noqa: F401\n    # isort: split\n    import sys\n    import os\n"
+    },
+    {
+      "name": "generated_interaction_050",
+      "source": "from os import \u01c5A\nimport package.sub\nfrom importlib import value10, alpha as alias, Beta as alias, alpha, CONSTANT as alias\nfrom package.sub import (\n    CONSTANT as alias,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_011",
+      "source": "# File header\r\nfrom package.sub import Beta, alpha, \u01c5A\r\nfrom .local import (\r\n    value2,\r\n    value2,\r\n    \u01c5A as alias,\r\n)\r\nfrom _import_helper import CONSTANT\r\nimport sys\r\nfrom os import (\r\n    Beta,\r\n    \u01c5A,\r\n    alpha,\r\n    \u03a9mega,\r\n)\r\n"
+    },
+    {
+      "name": "literal_indented",
+      "source": "if True:\n    # isort: list\n    x = ['b', 'a']\n"
+    },
+    {
+      "name": "generated_interaction_235",
+      "source": "from package2.sub import (  # Opening note\n    \u03a9mega,\n    alpha,\n    Beta,\n    CONSTANT,  # Attribute note\n)  # Closing note\n# Comment for import 1\nfrom ..other import (  # Opening note\n    value10,  # Attribute note\n    \u01c5A,\n)  # Closing note\nfrom os import (  # Opening note\n    value2,  # Attribute note\n    CONSTANT,\n    CONSTANT,  # Attribute note\n    CONSTANT,\n    value2,  # Attribute note\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_133",
+      "source": "def function():\n    # File header\n    from os import \u01c5A\n\n    # Comment for import 1\n    from .local import value2\n    from os import value2, alpha, value2\n    from package.sub import value2\n    # Comment for import 4\n    from ..other import (\n        value10 as alias,\n        alpha,\n    )  # Closing note\n    from os import \u01c5A\n"
+    },
+    {
+      "name": "generated_interaction_154",
+      "source": "def function():\r\n    # File header\r\n    from os import value10\r\n    # Comment for import 1\r\n    from os import (\r\n        Beta,\r\n        value2,\r\n        CONSTANT,\r\n        \u03a9mega,  # Attribute note\r\n        \u03a9mega as alias,\r\n    )\r\n    from package import (\r\n        \u03a9mega,\r\n        CONSTANT,\r\n    )\r\n"
+    },
+    {
+      "name": "generated_interaction_012",
+      "source": "from package import (\n    \u01c5A,  # Attribute note\n    \u01c5A,\n    Beta as alias,\n    value2,\n    value10,\n)\n\nimport package.sub\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_255",
+      "source": "# File header\nfrom .local import (\n    \u01c5A,\n    alpha,\n    Beta,\n    \u01c5A,\n)  # Closing note\n\nimport _import_helper as Alias\n\nfrom package import (\n    CONSTANT,\n    value2,\n    alpha,\n)\nfrom .local import (\n    alpha as alias,\n)  # Closing note\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_002",
+      "source": "# File header\n# Comment for import 0\nfrom package.sub import value10 as alias, value10\n\nfrom package.sub import (\n    alpha,  # Attribute note\n    alpha as alias,  # Attribute note\n)\nimport _import_helper as Alias\n# Comment for import 3\nfrom importlib import value2 as alias, value2, value10, \u03a9mega, \u01c5A  # noqa: F401\nfrom ..other import (  # Opening note\n    alpha,\n)\n"
+    },
+    {
+      "name": "generated_interaction_166",
+      "source": "# File header\nfrom os import Beta, \u01c5A  # noqa: F401\nfrom sys import (\n    Beta,\n)\nfrom package2.sub import (\n    \u01c5A as alias,\n    value2,\n    CONSTANT,\n)\n"
+    },
+    {
+      "name": "generated_interaction_147",
+      "source": "def function():\n    import _import_helper as Alias\n    from os import (  # Opening note\n        value10,  # Attribute note\n    )  # Closing note\n\n    # Comment for import 2\n    from package2.sub import Beta, alpha  # noqa: F401\n    from os import CONSTANT, \u01c5A, value10, CONSTANT, Beta as alias\n    value = 1\n"
+    },
+    {
+      "name": "generated_interaction_017",
+      "source": "\n# Comment for import 0\nfrom package.sub import (\n    alpha as alias,\n    value10,  # Attribute note\n    CONSTANT,\n    CONSTANT as alias,\n)  # Closing note\nfrom ..other import (\n    alpha,  # Attribute note\n    \u01c5A as alias,  # Attribute note\n    Beta as alias,\n    alpha,\n    Beta,\n)\nimport package\nimport os as renamed\n"
+    },
+    {
+      "name": "generated_interaction_216",
+      "source": "\nfrom sys import value10, \u01c5A, CONSTANT as alias, Beta\n\n# Comment for import 1\nimport os\nfrom importlib import \u01c5A as alias, value10 as alias, Beta, \u01c5A as alias, value10\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_000",
+      "source": "def function():\r\n    # File header\r\n    from sys import (\r\n        value2,\r\n        value10,\r\n    )\r\n    from ..other import (  # Opening note\r\n        CONSTANT,\r\n        alpha,\r\n    )  # Closing note\r\n\r\n    # Comment for import 2\r\n    from .local import (\r\n        CONSTANT,  # Attribute note\r\n        value10,  # Attribute note\r\n        alpha,\r\n        value2,\r\n    )  # Closing note\r\n\r\n    from os import (  # Opening note\r\n        CONSTANT,\r\n        \u01c5A,\r\n        alpha,  # Attribute note\r\n        value2 as alias,  # Attribute note\r\n    )\r\n    # Comment for import 4\r\n    import package2.sub\r\n\r\n    # Comment for import 5\r\n    import package.sub\r\n    from sys import value2\r\n    value = 1\r\n    # isort: split\r\n    import sys\r\n    import os"
+    },
+    {
+      "name": "generated_interaction_146",
+      "source": "\nimport package2.sub as Alias\n# Comment for import 1\nfrom _import_helper import (\n    value10,  # Attribute note\n    value2 as alias,\n    \u01c5A,  # Attribute note\n    alpha as alias,\n    \u03a9mega,\n)\n# Comment for import 2\nfrom package2.sub import (  # Opening note\n    \u03a9mega,  # Attribute note\n    \u01c5A,  # Attribute note\n    \u01c5A as alias,  # Attribute note\n    Beta as alias,  # Attribute note\n    \u03a9mega,\n)\n# Comment for import 3\nimport importlib as Alias\n"
+    },
+    {
+      "name": "generated_interaction_062",
+      "source": "# File header\n\nfrom package.sub import (  # Opening note\n    CONSTANT,\n    alpha,\n    Beta as alias,  # Attribute note\n    \u03a9mega,  # Attribute note\n    value10,\n)  # Closing note\nfrom sys import (\n    alpha,  # Attribute note\n    alpha,\n    value2 as alias,\n)  # Closing note\nfrom .local import \u01c5A, value10, CONSTANT\n# Comment for import 3\nfrom .local import (\n    \u01c5A,\n    Beta as alias,\n    CONSTANT,\n    Beta,\n    \u03a9mega,\n)\nfrom importlib import (  # Opening note\n    Beta,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_241",
+      "source": "# File header\nfrom importlib import (\n    \u03a9mega,\n)\n# Comment for import 1\nfrom os import Beta, value2, alpha as alias, \u03a9mega\nfrom .local import alpha, CONSTANT, \u03a9mega, value2, \u03a9mega\n"
+    },
+    {
+      "name": "generated_interaction_124",
+      "source": "# File header\n# Comment for import 0\nimport sys\n\nfrom os import (  # Opening note\n    \u03a9mega,  # Attribute note\n    \u03a9mega as alias,\n    value10,\n)\nfrom package.sub import (\n    Beta,\n    value10 as alias,\n    value10,  # Attribute note\n)  # Closing note\n\n# Comment for import 3\nimport os\nfrom _import_helper import \u03a9mega  # noqa: F401\nfrom ..other import value2, Beta, \u03a9mega  # noqa: F401\n\n# Comment for import 6\nfrom package2.sub import alpha as alias"
+    },
+    {
+      "name": "generated_interaction_142",
+      "source": "# Comment for import 0\nfrom .local import (  # Opening note\n    Beta,\n    Beta as alias,\n    CONSTANT,  # Attribute note\n    value10 as alias,\n)\n# Comment for import 1\nimport package\nfrom sys import \u01c5A, alpha as alias, \u03a9mega, value10  # noqa: F401\n\n# Comment for import 3\nfrom .local import \u03a9mega as alias, CONSTANT, alpha, value10  # noqa: F401\nfrom package import \u03a9mega, \u01c5A\n\nfrom package.sub import (\n    CONSTANT as alias,\n)  # Closing note\nimport package.sub  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_130",
+      "source": "# File header\nfrom importlib import \u03a9mega as alias  # noqa: F401\nfrom sys import value2 as alias, value2, value10\n\nfrom os import (\n    Beta,  # Attribute note\n    value10,  # Attribute note\n    Beta,  # Attribute note\n)  # Closing note\n# Comment for import 3\nfrom sys import (\n    Beta,\n)\nfrom ..other import CONSTANT, CONSTANT\nimport package.sub\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_004",
+      "source": "from package2.sub import (\n    value10,\n    alpha,  # Attribute note\n    alpha,\n    CONSTANT,\n)\n\nimport package.sub  # Import note\n# Comment for import 2\nfrom package.sub import (\n    alpha,\n    \u01c5A,\n    value2 as alias,  # Attribute note\n)\n# Comment for import 3\nfrom ..other import \u01c5A as alias, Beta as alias"
+    },
+    {
+      "name": "generated_interaction_139",
+      "source": "from ..other import (\n    value10 as alias,  # Attribute note\n)  # Closing note\nfrom package.sub import \u03a9mega, \u01c5A, value2, alpha, alpha\nimport os  # Import note\nfrom sys import (\n    \u03a9mega as alias,\n    value2,\n)  # Closing note\n# Comment for import 4\nfrom package.sub import value10, CONSTANT, alpha, \u03a9mega, Beta as alias\n\nimport importlib  # Import note\n"
+    },
+    {
+      "name": "generated_interaction_244",
+      "source": "from package import (\n    value2,\n    CONSTANT,\n    Beta,\n    alpha,\n    CONSTANT,\n)  # Closing note\nfrom .local import (  # Opening note\n    CONSTANT as alias,\n    CONSTANT,  # Attribute note\n    alpha,  # Attribute note\n    value2,  # Attribute note\n    Beta,  # Attribute note\n)  # Closing note\n\nimport os\nfrom package.sub import (\n    \u01c5A,  # Attribute note\n    \u01c5A,\n    CONSTANT,\n)\n\nimport importlib"
+    },
+    {
+      "name": "generated_interaction_078",
+      "source": "# File header\nfrom importlib import (  # Opening note\n    value10,\n    alpha as alias,\n)  # Closing note\nfrom os import Beta, value10, Beta as alias, value10, alpha  # noqa: F401\nimport package  # Import note\n\nfrom os import (\n    value10 as alias,\n    \u03a9mega as alias,\n    \u03a9mega,  # Attribute note\n    Beta as alias,  # Attribute note\n)\nfrom .local import \u01c5A  # noqa: F401\nfrom ..other import (  # Opening note\n    CONSTANT as alias,  # Attribute note\n    Beta,\n    value2,\n)\n\n# Comment for import 6\nfrom package.sub import (\n    CONSTANT as alias,\n    value10,\n    \u03a9mega,\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_143",
+      "source": "# File header\r\nfrom package.sub import CONSTANT as alias, value2\r\nfrom os import (\r\n    CONSTANT,\r\n)\r\n"
+    },
+    {
+      "name": "generated_interaction_081",
+      "source": "\nfrom sys import (\n    Beta,\n    \u01c5A,  # Attribute note\n)\nimport package  # Import note\n\nfrom .local import (\n    value2,\n    value10,  # Attribute note\n)\nfrom _import_helper import \u03a9mega\n# Comment for import 4\nfrom package2.sub import value2 as alias, alpha, Beta\nfrom package2.sub import value2, alpha\n\nfrom ..other import (\n    CONSTANT,\n)  # Closing note\n\nfrom ..other import (\n    \u03a9mega,\n    \u03a9mega as alias,\n)  # Closing note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_176",
+      "source": "from importlib import (\r\n    \u03a9mega,\r\n    alpha as alias,\r\n    value2,\r\n    value2,\r\n    value2,  # Attribute note\r\n)\r\nfrom _import_helper import (\r\n    \u03a9mega,  # Attribute note\r\n    \u03a9mega,  # Attribute note\r\n    value10,\r\n    value10,  # Attribute note\r\n    alpha as alias,\r\n)  # Closing note\r\n# Comment for import 2\r\nfrom sys import alpha as alias\r\nfrom .local import alpha, value2, CONSTANT, CONSTANT, \u01c5A as alias\r\nfrom .local import (\r\n    value10,\r\n    alpha,  # Attribute note\r\n    value2 as alias,  # Attribute note\r\n    CONSTANT as alias,  # Attribute note\r\n    \u03a9mega,\r\n)  # Closing note\r\nfrom package2.sub import CONSTANT, \u01c5A, CONSTANT, \u01c5A, \u03a9mega as alias"
+    },
+    {
+      "name": "literal_nested",
+      "source": "# isort: list\nx = [(2, 'b'), (1, 'z'), (1, 'a')]\n"
+    },
+    {
+      "name": "generated_interaction_061",
+      "source": "# File header\nfrom package import (\n    CONSTANT,  # Attribute note\n    CONSTANT,\n    value2,\n)  # Closing note\nfrom package.sub import (  # Opening note\n    \u03a9mega,\n    \u01c5A,\n)\n"
+    },
+    {
+      "name": "commented_plain_duplicates",
+      "source": "import sys  # first\nimport sys  # second\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_200",
+      "source": "import package.sub  # Import note\n\nfrom sys import \u03a9mega as alias, \u01c5A, value10, Beta, value10 as alias\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_211",
+      "source": "# File header\nfrom _import_helper import \u03a9mega as alias, value10 as alias, \u01c5A, Beta, \u01c5A\n# Comment for import 1\nfrom ..other import value2 as alias, \u01c5A  # noqa: F401\n"
+    },
+    {
+      "name": "generated_interaction_089",
+      "source": "from os import (\n    Beta as alias,\n    CONSTANT as alias,\n)\n\nfrom sys import alpha, \u03a9mega, \u01c5A, value10 as alias\nfrom ..other import (\n    CONSTANT,  # Attribute note\n)  # Closing note\nfrom package import (\n    \u03a9mega,  # Attribute note\n    \u03a9mega,  # Attribute note\n    value2,\n)\n\n# Comment for import 4\nfrom ..other import value10, Beta as alias, Beta, CONSTANT, \u03a9mega\n# Comment for import 5\nfrom os import \u03a9mega, \u01c5A, value2, \u03a9mega\n"
+    },
+    {
+      "name": "literal_numeric",
+      "source": "# isort: list\nx = [1.0, False, -2, 100000000000000000000000000000000000001, 0x10000000000000000000000000000000]\n"
+    },
+    {
+      "name": "generated_interaction_247",
+      "source": "from os import (  # Opening note\n    \u03a9mega,\n)\n# Comment for import 1\nfrom package.sub import (  # Opening note\n    CONSTANT,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_152",
+      "source": "# File header\nimport package  # Import note\nfrom os import alpha as alias, CONSTANT as alias\n\nfrom ..other import (\n    \u01c5A as alias,  # Attribute note\n    Beta,  # Attribute note\n)\nfrom package2.sub import (\n    Beta,\n    CONSTANT,\n)\n# Comment for import 4\nfrom package import \u03a9mega, Beta as alias, value10  # noqa: F401"
+    },
+    {
+      "name": "generated_interaction_193",
+      "source": "from _import_helper import (  # Opening note\n    CONSTANT,\n    value2,\n    \u01c5A,  # Attribute note\n    alpha as alias,\n    \u03a9mega,\n)\nfrom package2.sub import value2 as alias, alpha, \u03a9mega, value10\n# Comment for import 2\nimport os\nfrom _import_helper import (\n    value10,\n    value2,  # Attribute note\n    \u01c5A,\n    Beta,\n    alpha as alias,\n)\nimport _import_helper  # Import note\n\nimport importlib as renamed\nimport sys\n# Comment for import 7\nfrom .local import \u01c5A, \u03a9mega\n"
+    },
+    {
+      "name": "generated_interaction_206",
+      "source": "# Comment for import 0\nfrom importlib import value10, CONSTANT as alias\nfrom ..other import \u01c5A as alias\n# Comment for import 2\nfrom package import Beta, value10 as alias, alpha, \u01c5A\nfrom package.sub import (  # Opening note\n    \u01c5A,  # Attribute note\n    value10,\n)  # Closing note\nfrom os import \u01c5A\nfrom package import (\n    \u03a9mega,\n)\n"
+    },
+    {
+      "name": "generated_interaction_030",
+      "source": "from os import (  # Opening note\n    \u01c5A,\n    \u03a9mega,\n    \u03a9mega,\n)\nfrom os import Beta as alias, alpha, alpha, Beta as alias\nfrom package import (  # Opening note\n    value2,\n    value10,\n)\n\nfrom package2.sub import \u01c5A, \u01c5A as alias, value2, CONSTANT\nfrom package.sub import value10 as alias, Beta, value2, CONSTANT, \u03a9mega\nimport package2.sub  # Import note\nimport package  # Import note\n\nfrom importlib import (\n    alpha,\n    value2,\n    alpha as alias,\n    alpha,\n)\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "project_module",
+      "source": "import widget\nimport requests\nimport os\n",
+      "files": {
+        "widget.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_191",
+      "source": "from package.sub import Beta, Beta, alpha, \u03a9mega\n# Comment for import 1\nfrom sys import (\n    value10,  # Attribute note\n)\n"
+    },
+    {
+      "name": "generated_interaction_067",
+      "source": "# File header\nfrom ..other import CONSTANT as alias, \u03a9mega, CONSTANT as alias, Beta, CONSTANT\nfrom sys import (\n    Beta,  # Attribute note\n    CONSTANT,  # Attribute note\n    value2 as alias,\n)  # Closing note\n\nfrom ..other import (\n    \u03a9mega,  # Attribute note\n)  # Closing note\n"
+    },
+    {
+      "name": "generated_interaction_138",
+      "source": "# File header\n# Comment for import 0\nimport package2.sub\n\nfrom importlib import (\n    \u03a9mega,\n    alpha,  # Attribute note\n    \u03a9mega,  # Attribute note\n    \u03a9mega as alias,\n)\nimport package.sub as Alias  # Import note\nfrom ..other import (  # Opening note\n    Beta as alias,\n    value10,  # Attribute note\n    CONSTANT,  # Attribute note\n)\nimport sys\n\nimport _import_helper  # Import note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_197",
+      "source": "\n# Comment for import 0\nfrom .local import Beta, CONSTANT, \u01c5A  # noqa: F401\nfrom package.sub import value10  # noqa: F401\n\nimport package2.sub\nfrom ..other import \u01c5A as alias, \u01c5A, Beta\nfrom package import (  # Opening note\n    \u03a9mega,\n)\n# Comment for import 5\nimport os as Alias\n# Comment for import 6\nfrom sys import alpha, \u03a9mega, value2\n"
+    },
+    {
+      "name": "module_case",
+      "source": "import widget\nimport Widget\nimport requests\n",
+      "files": {
+        "Widget.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_185",
+      "source": "from package2.sub import (  # Opening note\n    alpha,  # Attribute note\n    value2 as alias,  # Attribute note\n)  # Closing note\nimport os as renamed  # Import note\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_237",
+      "source": "# Comment for import 0\nimport sys\nfrom package import value2 as alias, \u03a9mega, CONSTANT\nimport os\nfrom .local import (  # Opening note\n    \u01c5A,\n    \u03a9mega,\n)\nfrom ..other import value10, alpha\n\n# Comment for import 5\nfrom sys import (\n    Beta,\n    value10 as alias,\n    value10,\n    value2 as alias,\n    value10,  # Attribute note\n)\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_156",
+      "source": "from package import \u03a9mega as alias, \u01c5A, alpha, CONSTANT, CONSTANT  # noqa: F401\nfrom importlib import (\n    \u01c5A,\n    CONSTANT as alias,  # Attribute note\n    \u03a9mega,  # Attribute note\n    value2 as alias,\n    value10,\n)\n\nfrom _import_helper import (\n    \u03a9mega,  # Attribute note\n    value2 as alias,\n    value10 as alias,\n)\n# Comment for import 3\nfrom os import \u01c5A, value10, \u01c5A, \u01c5A, value2\nfrom .local import (  # Opening note\n    \u03a9mega as alias,\n    alpha,\n    value2,\n)\n# Comment for import 5\nfrom .local import (\n    Beta as alias,\n    value10,\n    CONSTANT,\n    CONSTANT,\n    Beta,\n)  # Closing note\nfrom .local import CONSTANT\nfrom .local import value2, \u03a9mega, \u03a9mega as alias, \u03a9mega\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_153",
+      "source": "from ..other import (\n    \u01c5A,\n    value10 as alias,\n    value10 as alias,\n)  # Closing note\n# Comment for import 1\nfrom package.sub import (\n    CONSTANT,  # Attribute note\n    value2,\n)\n\nfrom sys import (\n    value10 as alias,\n    \u03a9mega,\n    Beta as alias,\n    \u03a9mega,\n)\nfrom _import_helper import (\n    CONSTANT,\n    alpha,  # Attribute note\n    \u01c5A,\n    Beta,\n)  # Closing note\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_099",
+      "source": "# Comment for import 0\r\nimport sys  # Import note\r\n\r\n# Comment for import 1\r\nfrom os import \u01c5A, CONSTANT, \u03a9mega  # noqa: F401\r\n\r\nfrom package.sub import \u01c5A, \u01c5A, value10 as alias, \u03a9mega, value2\r\n# Comment for import 3\r\nfrom package import Beta, value2 as alias, CONSTANT, value10, CONSTANT\r\nfrom package import (\r\n    Beta,\r\n    Beta as alias,  # Attribute note\r\n    value2,\r\n    alpha,\r\n    alpha,\r\n)  # Closing note\r\nvalue = 1\r\n"
+    },
+    {
+      "name": "generated_interaction_079",
+      "source": "from .local import alpha as alias, value2 as alias, \u01c5A, value2, value10\nfrom os import (\n    Beta,\n)  # Closing note\n\nfrom _import_helper import (\n    \u03a9mega as alias,  # Attribute note\n    \u01c5A as alias,\n    \u03a9mega as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_043",
+      "source": "from _import_helper import value2 as alias, \u01c5A, value10\nfrom sys import alpha, value10 as alias\n# Comment for import 2\nfrom importlib import value10, CONSTANT, \u03a9mega, Beta as alias\n"
+    },
+    {
+      "name": "generated_interaction_001",
+      "source": "# File header\n\nfrom os import \u03a9mega, alpha  # noqa: F401\nfrom .local import (\n    Beta as alias,  # Attribute note\n    Beta as alias,\n    value10,  # Attribute note\n    Beta,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n)\nimport importlib as renamed\n\nfrom ..other import (  # Opening note\n    alpha,\n    alpha,\n    Beta,  # Attribute note\n    CONSTANT,  # Attribute note\n    \u03a9mega as alias,  # Attribute note\n)\nfrom _import_helper import value10, CONSTANT as alias, Beta\nfrom package.sub import value2  # noqa: F401\nimport os\nfrom package.sub import CONSTANT, Beta, Beta, value10, value10\n"
+    },
+    {
+      "name": "shadow_stdlib",
+      "source": "import widget\nimport requests\nimport os\n",
+      "files": {
+        "os.py": "",
+        "widget.py": ""
+      }
+    },
+    {
+      "name": "generated_interaction_170",
+      "source": "# File header\n\nfrom sys import (\n    value10 as alias,\n    CONSTANT,\n    alpha,  # Attribute note\n    \u01c5A,  # Attribute note\n)\n\nfrom .local import (\n    \u03a9mega,\n    Beta,\n)\n# isort: split\nimport sys\nimport os\n"
+    },
+    {
+      "name": "generated_interaction_144",
+      "source": "# File header\n# Comment for import 0\nfrom os import (  # Opening note\n    \u01c5A,\n    Beta,\n    \u01c5A,\n    value10 as alias,  # Attribute note\n)  # Closing note\n\n# Comment for import 1\nfrom .local import (  # Opening note\n    value2,\n    value10,\n    CONSTANT,  # Attribute note\n    value2,  # Attribute note\n)  # Closing note\n# Comment for import 2\nfrom .local import Beta as alias, value2, value10\n\nfrom package import (\n    CONSTANT,\n)\n\nfrom os import \u03a9mega, CONSTANT\n# Comment for import 5\nfrom .local import (\n    alpha,\n    \u03a9mega as alias,  # Attribute note\n    value10,\n    \u01c5A,\n)\n\nfrom os import (  # Opening note\n    value2,\n)\nvalue = 1"
+    },
+    {
+      "name": "stub_spacing",
+      "source": "import sys\nimport os\nclass Example: ...\n",
+      "extension": "pyi"
+    },
+    {
+      "name": "generated_interaction_106",
+      "source": "# File header\n\nfrom sys import CONSTANT\n\nfrom os import CONSTANT, alpha as alias, Beta\nfrom sys import (  # Opening note\n    alpha,  # Attribute note\n    \u01c5A as alias,\n    value10,\n)  # Closing note\n\nfrom .local import (\n    alpha as alias,\n    \u01c5A,\n    \u03a9mega as alias,  # Attribute note\n    CONSTANT as alias,\n)\n"
+    },
+    {
+      "name": "generated_interaction_120",
+      "source": "import _import_helper as Alias\nfrom package import \u03a9mega, alpha as alias\n# Comment for import 2\nimport package\nvalue = 1\n# isort: split\nimport sys\nimport os"
+    },
+    {
+      "name": "generated_interaction_123",
+      "source": "# File header\n\n# Comment for import 0\nfrom os import value10, Beta as alias, value10  # noqa: F401\n\nfrom ..other import (  # Opening note\n    \u01c5A,  # Attribute note\n    value10,\n    value10,  # Attribute note\n    CONSTANT,  # Attribute note\n    CONSTANT,  # Attribute note\n)\n# Comment for import 2\nimport package2.sub as Alias\nvalue = 1\n"
+    },
+    {
+      "name": "generated_interaction_024",
+      "source": "# File header\n# Comment for import 0\nfrom .local import Beta as alias, \u03a9mega, \u01c5A as alias, \u01c5A, alpha\n# Comment for import 1\nfrom importlib import \u03a9mega, \u03a9mega, CONSTANT as alias, value2 as alias\nfrom .local import value10, value10, value10, value10, value2  # noqa: F401\n\nfrom ..other import \u03a9mega as alias, alpha, value2, \u03a9mega, \u03a9mega\n\nimport package\nfrom _import_helper import alpha, \u03a9mega\nfrom package.sub import (\n    Beta,  # Attribute note\n    Beta,\n    value2,\n    alpha,\n    \u01c5A as alias,\n)\nvalue = 1"
+    },
+    {
+      "name": "generated_interaction_195",
+      "source": "from sys import \u03a9mega, \u03a9mega, \u01c5A, alpha, Beta as alias\n\nfrom package2.sub import \u01c5A\n\n# Comment for import 2\nfrom os import (  # Opening note\n    \u01c5A as alias,\n    alpha,\n    value2 as alias,\n    \u01c5A,\n)  # Closing note\nfrom sys import (\n    value10 as alias,\n    value2,\n)\n\nfrom package import (  # Opening note\n    alpha,\n    alpha,  # Attribute note\n)\nvalue = 1\n# isort: split\nimport sys\nimport os\n"
+    }
+  ]
+}
