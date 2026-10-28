@@ -117,8 +117,9 @@ Native, full-reference, parent #44 and release acceptance remain false or unrun.
 | Original recipe for all four families | Recovered and statically checked |
 | Asset/source/profile/version identities | Statically checked |
 | Locked package metadata and source payloads | Statically checked |
-| Combined capture helper controls | 64 passed; no skips; root retained actual wait/exit 0 |
-| Formal hosted reference processes | not_run |
+| Combined capture helper controls after repair | 71 passed; no skips; root retained actual wait/exit 0 |
+| First hosted preparation attempt | Failed before any original collector launched |
+| Formal hosted reference processes | 0 launched; not_run |
 | Independent full raw/index/environment review | not_run |
 | Bounded audit acceptance and integration | Pending |
 
@@ -145,5 +146,58 @@ Each fileless alias must resolve to the exact same object in an allowed file-bac
 Unknown objects and forged owners still fail. This changes new capture custody only.
 The original API values, stdout, input files, argv and comparison rule remain fixed.
 Root also matched all 41 named sources to the actual base Git tree.
+
+## First hosted preparation failure
+
+[Run 40773532370](https://github.com/faberline/mamba/actions/runs/40773532370)
+used head `202e26f3df1861da0e310da650c74c2caa39b2fd`.
+Its source tree is `f86a8715964a48edc22d9030adbe01f523c9e28d`.
+The 64 hosted helper controls and all three exact-Python bootstrap steps passed.
+The three package-identity probes then exited 1.
+Their actual PIDs were 1327, 1353 and 1362. Each child completed its wait.
+The probe treated every imported package as one file.
+The raw trace shows `Path(module.__file__)` raised `TypeError` on `None`.
+Static wheel and pinned importlib checks identify `librt` as the first namespace in probe order.
+That attribution is a static inference; the failed stdout did not print the module name.
+This is a new evidence-probe failure, before the original API calls.
+None of the 12 original collector processes launched.
+No asset comparison or formal reference result passed in this attempt.
+
+The complete artifact has 148 files and 104,302,296 uncompressed bytes.
+The 99,782,095-byte ZIP SHA-256 is
+`906e01437e446c9c0130ffa2ca217c5c46735c10256de9406fbd9295a555b075`.
+The failed run, ZIP, metadata and download receipt have durable custody at
+`/Users/chrischeng/.codex/artifacts/mamba-q0-164-hosted-20261029/run-40773532370-failed-package-probe/`.
+Its 155-file custody manifest SHA-256 is
+`0b96f868fd7d073a848c526ceea5fcd315028cbb65d0d658abf8d7ef721e3590`.
+Root re-read and matched every saved file's size and SHA-256.
+The repair is limited to namespace module evidence and its validation.
+The original pins, inputs, API calls, commands and comparisons remain fixed.
+
+The repaired probe retains the namespace's module spec, exact directory and complete own-package subtree.
+The parent requires that directory inside the exact target venv's `site-packages`.
+Whole installed RECORD and native payload checks still apply.
+External, empty, changed, unowned, initialized, symlinked or forged directories fail.
+Independent review also found a mixed-format bypass in the first repair.
+The final repair requires exactly `path`, `bytes` and `sha256` for ordinary module records.
+A namespace record cannot enter that branch with extra fields.
+The original failure and both repair reports remain saved.
+
+Root repeated all 71 pure helper controls after that fix.
+Child PID 25204 completed its wait and exited 0, without skips.
+The before/after source manifests match.
+These controls include a real standard-library-created test namespace and a mixed-format forgery.
+They import no reference package and execute no original or native tool.
+Raw controls are under `root-namespace-helper-controls-r2/` in the static report directory.
+The repair addendum SHA-256 is
+`d877e6767b4d7a418b5b8cc97c9a4579111b960bfac48602dd93e42eb2e78a0f`.
+The independent first-failure review SHA-256 is
+`07d634ddcc1b3c5c3b45474dd6eae1283d713f1447eba37e362b8c5a3cb652c1`.
+Independent review confirmed the mixed-format counterexample fails after the repair.
+Its final source/schema review has no remaining probe blocker.
+The review SHA-256 is
+`29c170e6ba95792e8c4b02af2e7ae7f72c7ac4b193ed86baecda066ec5231607`.
+The next hosted reference run and its full independent review remain pending.
+
 The final record must bind the executed head, final PR source closure, actual command/exit receipts,
 all 12 target sections, immutable full evidence, independent review and exact merged tree.

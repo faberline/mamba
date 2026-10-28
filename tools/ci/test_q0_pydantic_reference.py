@@ -4,12 +4,15 @@ import base64
 import copy
 import csv
 import io
+import importlib.machinery
+import importlib.util
 import json
 import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import types
 import unittest
 from unittest.mock import patch
 
@@ -42,6 +45,30 @@ def make_identity(root):
               'mypy_version':'2.4.0','pydantic_version':'2.13.5','strict_flags':['control'],
               'dependency_verification':runner.validate_dependencies(pins,distributions,markers)}
     return identity,pins,venv
+
+
+def make_namespace_identity(root):
+    identity,pins,venv=make_identity(root)
+    distribution=identity['distributions']['librt'];site=Path(distribution['metadata_path']).parent
+    directory=site/'librt';directory.mkdir()
+    Path(identity['modules']['librt']['path']).rename(directory/'__init__.pyi')
+    native=directory/'internal.cpython-312-darwin.so';native.write_bytes(b'harmless native identity bytes; never executed')
+    payloads={str(path.relative_to(site)):runner.file_fact(path) for path in [directory/'__init__.pyi',native]}
+    record=next(iter(distribution['installed_records']))
+    stream=io.StringIO(newline='');writer=csv.writer(stream,lineterminator='\r\n')
+    for name,fact in payloads.items():
+        writer.writerow([name,'sha256='+base64.urlsafe_b64encode(bytes.fromhex(fact['sha256'])).rstrip(b'=').decode(),str(fact['bytes'])])
+    writer.writerow([record,'','']);raw=stream.getvalue().encode();(site/record).write_bytes(raw)
+    fact={'bytes':len(raw),'sha256':runner.digest(raw)}
+    distribution['distribution_files']={**payloads,record:fact}
+    distribution['installed_records']={record:{**fact,'bytes_b64':base64.b64encode(raw).decode()}}
+    distribution['native_files']={str(native.relative_to(site)):runner.file_fact(native)}
+    loader=type('NamespaceLoader',(),{'__module__':'_frozen_importlib_external'})()
+    specification=types.SimpleNamespace(name='librt',origin=None,has_location=False,loader=loader,
+                                        submodule_search_locations=[str(directory)])
+    module=types.SimpleNamespace(__file__=None,__name__='librt',__package__='librt',__path__=[str(directory)],__spec__=specification)
+    identity['modules']['librt']=runner.describe_module(module,'librt','librt',distribution)
+    return identity,pins,venv,module
 
 
 def fake_receipt(root,argv,stdout,stderr=b'',actual_exit=0):
@@ -158,6 +185,95 @@ class PackageIdentity(unittest.TestCase):
             with self.assertRaises(ValueError):runner.require_venv_link(python,base)
             python.unlink();python.symlink_to(root/'missing')
             with self.assertRaises((ValueError,FileNotFoundError)):runner.require_venv_link(python,base)
+
+
+class NamespaceIdentity(unittest.TestCase):
+    def test_mixed_namespace_fields_cannot_bypass_normal_module_schema(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            identity,pins,venv,_=make_namespace_identity(Path(temporary).resolve())
+            runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+            module=identity['modules']['librt'];distribution=identity['distributions']['librt']
+            native=next(iter(distribution['native_files']))
+            module.update(path=str(Path(distribution['metadata_path']).parent/native),**distribution['native_files'][native])
+            with self.assertRaisesRegex(ValueError,'normal module identity schema'):
+                runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+
+    def test_real_stdlib_namespace_spec_is_captured_without_importing_package_code(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            identity,pins,venv,_=make_namespace_identity(Path(temporary).resolve())
+            previous=sys.modules.get('librt')
+            spec=importlib.machinery.ModuleSpec('librt',None,is_package=True)
+            spec.submodule_search_locations=list(identity['modules']['librt']['namespace_paths'])
+            module=importlib.util.module_from_spec(spec)
+            self.assertIsInstance(module.__spec__.loader,importlib.machinery.NamespaceLoader)
+            self.assertIsNone(getattr(module,'__file__',None))
+            identity['modules']['librt']=runner.describe_module(module,'librt','librt',identity['distributions']['librt'])
+            runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+            self.assertIs(sys.modules.get('librt'),previous)
+
+    def test_fileless_librt_keeps_spec_paths_and_complete_own_record_subtree(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            identity,pins,venv,_=make_namespace_identity(Path(temporary).resolve())
+            module=identity['modules']['librt'];self.assertIsNone(module['path'])
+            self.assertEqual(module['spec']['submodule_search_locations'],module['namespace_paths'])
+            self.assertEqual(set(module['namespace_files']),{'librt/__init__.pyi','librt/internal.cpython-312-darwin.so'})
+            self.assertEqual(len(identity['distributions']['librt']['installed_records']),1)
+            runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+
+    def test_forged_names_specs_and_distribution_subtrees_fail(self):
+        changes=[('name','other'),('package','other'),('distribution','pydantic'),('namespace_files',{}),
+                 ('namespace_paths',[]),('kind','normal')]
+        spec_changes=[('name','other'),('origin','forged.py'),('has_location',True),('has_location',0),
+                      ('loader','other.NamespaceLoader'),('submodule_search_locations',[])]
+        for key,value in changes+[(f'spec:{k}',v) for k,v in spec_changes]:
+            with self.subTest(key=key,value=value),tempfile.TemporaryDirectory() as temporary:
+                identity,pins,venv,_=make_namespace_identity(Path(temporary).resolve())
+                module=identity['modules']['librt']
+                if key.startswith('spec:'):module['spec'][key[5:]]=value
+                else:module[key]=value
+                with self.assertRaises(ValueError):runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+
+    def test_outside_global_other_target_duplicate_and_alias_paths_fail(self):
+        for change in ['outside','global','other-target','duplicate','alias','spec-mismatch','foreign-files']:
+            with self.subTest(change=change),tempfile.TemporaryDirectory() as temporary:
+                root=Path(temporary).resolve();identity,pins,venv,_=make_namespace_identity(root)
+                module=identity['modules']['librt'];directory=Path(module['namespace_paths'][0])
+                if change=='outside':paths=[str(root/'outside/librt')]
+                elif change=='global':paths=[str(Path(identity['base_prefix'])/'lib/python3.12/site-packages/librt')]
+                elif change=='other-target':paths=[str(venv/'lib/python3.13/site-packages/librt')]
+                elif change=='duplicate':paths=[str(directory),str(directory)]
+                elif change=='alias':paths=[str(directory)+'/./']
+                else:paths=[str(directory)]
+                module['namespace_paths']=paths;module['spec']['submodule_search_locations']=paths
+                if change=='spec-mismatch':module['spec']['submodule_search_locations']=[str(root/'other')]
+                if change=='foreign-files':module['namespace_files']={'pydantic.py':runner.file_fact(Path(identity['modules']['pydantic']['path']))}
+                with self.assertRaises(ValueError):runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+
+    def test_empty_changed_unowned_or_initialized_namespace_cannot_pass(self):
+        for change in ['empty','changed','unowned','initializer','symlink']:
+            with self.subTest(change=change),tempfile.TemporaryDirectory() as temporary:
+                root=Path(temporary).resolve();identity,pins,venv,_=make_namespace_identity(root)
+                directory=Path(identity['modules']['librt']['namespace_paths'][0])
+                if change=='empty':
+                    for path in directory.iterdir():path.unlink()
+                elif change=='changed':(directory/'internal.cpython-312-darwin.so').write_bytes(b'changed')
+                elif change=='unowned':(directory/'rogue.py').write_bytes(b'unowned')
+                elif change=='initializer':(directory/'__init__.py').write_bytes(b'not a namespace')
+                else:
+                    real=directory.with_name('real-librt');directory.rename(real);directory.symlink_to(real,target_is_directory=True)
+                with self.assertRaises((ValueError,FileNotFoundError)):
+                    runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
+
+    def test_source_module_capture_is_unchanged_and_unknown_fileless_module_fails(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary).resolve();identity,pins,venv=make_identity(root)
+            path=Path(identity['modules']['pydantic']['path'])
+            fake=types.SimpleNamespace(__file__=str(path))
+            self.assertEqual(runner.describe_module(fake,'pydantic','pydantic',identity['distributions']['pydantic']),
+                             {'path':str(path),**runner.file_fact(path)})
+            with self.assertRaises(ValueError):runner.describe_module(types.SimpleNamespace(__file__=None),'pydantic','pydantic',{})
+            identity['modules']['librt']={'path':None,'kind':'unknown'}
+            with self.assertRaises(ValueError):runner.require_package_identity(identity,'3.12.11',pins,venv,['control'])
 
 
 class WorkAndProjection(unittest.TestCase):

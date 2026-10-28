@@ -29,6 +29,30 @@ MODULE_NAMES = {"mypy":"mypy","mypy_extensions":"mypy_extensions","pathspec":"pa
                 "ast_serialize":"ast_serialize","typing_extensions":"typing_extensions","pydantic":"pydantic",
                 "pydantic_core":"pydantic_core","annotated-types":"annotated_types","typing-inspection":"typing_inspection"}
 
+
+def describe_module(module, pin_name: str, module_name: str, distribution: dict) -> dict:
+    """Capture a normal source file or an explicit distribution-owned namespace."""
+    import hashlib
+    from pathlib import Path
+    filename = getattr(module,"__file__",None)
+    if filename is not None:
+        path = Path(filename).resolve(strict=True)
+        raw = path.read_bytes()
+        return {"path":str(path),"bytes":len(raw),"sha256":hashlib.sha256(raw).hexdigest()}
+    specification = getattr(module,"__spec__",None)
+    if specification is None or getattr(module,"__path__",None) is None:
+        raise ValueError("pinned module has neither a source file nor a namespace spec: "+module_name)
+    site = Path(distribution["metadata_path"]).parent
+    directories = [str(path) for path in module.__path__]
+    files = {relative:fact for relative,fact in distribution["distribution_files"].items()
+             if any((site / relative).resolve(strict=True).is_relative_to(Path(directory)) for directory in directories)}
+    return {"kind":"namespace","path":None,"name":module.__name__,"package":module.__package__,
+            "distribution":pin_name.replace("_","-"),"namespace_paths":directories,"namespace_files":files,
+            "spec":{"name":specification.name,"origin":specification.origin,"has_location":specification.has_location,
+                    "loader":type(specification.loader).__module__+"."+type(specification.loader).__qualname__,
+                    "submodule_search_locations":list(specification.submodule_search_locations or [])}}
+
+
 INSTALLER = """import runpy,sys
 wheel=sys.argv[1]
 sys.path.insert(0,wheel)
@@ -38,7 +62,8 @@ runpy.run_module('pip',run_name='__main__')
 
 # Only the separate preparation probe loads the archive-bound pip wheel. The
 # twelve original collector commands do not add a parser or installer package.
-PACKAGE_PROBE = "import sys\nsys.path.insert(0,sys.argv[2])\n" + inspect.getsource(validate_dependencies) + r'''
+PACKAGE_PROBE = ("import sys\nsys.path.insert(0,sys.argv[2])\n" + inspect.getsource(validate_dependencies)
+                 + "\n" + inspect.getsource(describe_module) + r'''
 import base64, hashlib, importlib, importlib.machinery, importlib.metadata, json, pathlib
 from pip._vendor.packaging.specifiers import SpecifierSet
 from pip._vendor.packaging.utils import canonicalize_name
@@ -76,9 +101,7 @@ modules = {}
 module_names = json.loads(sys.argv[3])
 for pin_name, module_name in module_names.items():
     module = importlib.import_module(module_name)
-    path = pathlib.Path(module.__file__).resolve()
-    raw = path.read_bytes()
-    modules[pin_name] = {'path':str(path),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+    modules[pin_name] = describe_module(module,pin_name,module_name,distributions[canonicalize_name(pin_name)])
 import mypy.main,mypy.version,pydantic
 site_packages = pathlib.Path(importlib.metadata.distribution('pydantic')._path).parent
 installed = {canonicalize_name(d.metadata['Name']):d.version for d in importlib.metadata.distributions(path=[str(site_packages)])}
@@ -86,7 +109,7 @@ print(json.dumps({'python':list(sys.version_info[:3]),'executable':sys.executabl
     'prefix':sys.prefix,'base_prefix':sys.base_prefix,'mypy_version':mypy.version.__version__,'pydantic_version':pydantic.__version__,
     'strict_flags':mypy.main.define_options()[1],'distributions':distributions,'modules':modules,
     'installed_site_distributions':installed,'dependency_verification':verification}))
-'''
+''')
 
 
 
@@ -169,9 +192,38 @@ def require_package_identity(identity: dict, version: str, pins: list[dict], ven
         raise ValueError("Pydantic module identity denominator differs")
     payloads = installed_payloads(identity,venv)
     for name,module in identity["modules"].items():
+        if module.get("path") is None:
+            require_namespace_module(name,module,identity["distributions"][name.replace("_","-")],venv,version)
+            continue
+        if set(module)!={"path","bytes","sha256"}:
+            raise ValueError("Pydantic normal module identity schema differs: "+name)
         path = Path(module["path"])
         if not path.is_relative_to(venv) or payloads.get(str(path)) != {"bytes":module["bytes"],"sha256":module["sha256"]}:
             raise ValueError(f"Pydantic module import escaped or changed: {name}")
+
+
+def require_namespace_module(name: str, module: dict, distribution: dict, venv: Path, version: str) -> None:
+    module_name = MODULE_NAMES[name]
+    site = venv / "lib" / ("python"+".".join(version.split(".")[:2])) / "site-packages"
+    directory = site.joinpath(*module_name.split("."))
+    keys = {"kind","path","name","package","distribution","namespace_paths","namespace_files","spec"}
+    expected_spec = {"name":module_name,"origin":None,"has_location":False,
+                     "loader":"_frozen_importlib_external.NamespaceLoader","submodule_search_locations":[str(directory)]}
+    if (set(module)!=keys or module["kind"]!="namespace" or module["path"] is not None
+            or module["name"]!=module_name or module["package"]!=module_name
+            or module["distribution"]!=name.replace("_","-") or Path(distribution["metadata_path"]).parent!=site
+            or module["namespace_paths"]!=[str(directory)] or module["spec"]!=expected_spec
+            or type(module["spec"]["has_location"]) is not bool
+            or not directory.is_dir() or directory.is_symlink() or directory.resolve(strict=True)!=directory
+            or (directory / "__init__.py").exists() or (directory / "__init__.pyc").exists()):
+        raise ValueError("pinned namespace name, spec or exact target site directory differs: "+name)
+    expected = {relative:fact for relative,fact in distribution["distribution_files"].items()
+                if (site / relative).resolve(strict=True).is_relative_to(directory)}
+    if not expected or module["namespace_files"]!=expected:
+        raise ValueError("pinned namespace subtree is empty or differs from its own distribution: "+name)
+    actual = {str(path.relative_to(site)):file_fact(path) for path in directory.rglob("*") if path.is_file()}
+    if actual!=expected or any(path.is_symlink() for path in directory.rglob("*")):
+        raise ValueError("pinned namespace subtree has missing, changed or unowned files: "+name)
 
 def prepare(python: Path, version: str, root: Path, pins: list[dict], wheels: list[Path], interpreter_pin: dict, strict_flags: list[str]) -> Path:
     root.mkdir(parents=True, exist_ok=False)
