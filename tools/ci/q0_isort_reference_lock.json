@@ -1,0 +1,279 @@
+{
+  "schema": "mamba.q0.isort.hosted-lock.v1",
+  "version": "9.0.2",
+  "python_versions": [
+    "3.12.11",
+    "3.13.5",
+    "3.14.0"
+  ],
+  "profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+  "historical_oracle_lock_sha256": "3ede6b08cf4fb8a1a12ec148169667e6b22d484b380f901a1bb040c8a2669a35",
+  "historical_corpus_sha256": "826d79e288a54023f4547a2d9873c2dccdaead9de20ba744a829d03129610e49",
+  "project_inputs_sha256": "743ab0757a381b04e35ae7436254e25d9f43d7702bfd6568b009dcedbc4acd73",
+  "expected_candidates": 1355,
+  "accepted": 1155,
+  "excluded": 200,
+  "main_reference_errors": 2,
+  "main_nonconverging": 36,
+  "main_skipped": 3,
+  "sdist": {
+    "filename": "isort-9.0.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/da/cf/068066b8fdab91cd40bcd63e483137908710a3d25a4d3a01b538be45d9d6/isort-9.0.2.tar.gz",
+    "sha256": "d2298980ce44350f11d9d24c8150eaef1883431ec203dddbb4e9b5c3ceb54c70"
+  },
+  "wheels": {
+    "312": {
+      "filename": "isort-9.0.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/ab/36/512c41f0d9f4c2a61d56d383db21d42a9b82b4f768827f7e852139d14123/isort-9.0.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "af8be0b5cac101202c8255360e5de832ebbb84b2e863dc0f65dbb1a3d63dd40a"
+    },
+    "313": {
+      "filename": "isort-9.0.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/28/54/0ac6f7cf254c29bde0832dc655b0327d84752c4511f9f56fbd0778251542/isort-9.0.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "e5f11c7ccd5f079ac0431fe52c7b38ea5d9f4e31a1889746de81dac0e7b0a766"
+    },
+    "314": {
+      "filename": "isort-9.0.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/7e/da/f97a4905cf8212c31d584f0222ae8b1deed391e42db910e8e908eb89002e/isort-9.0.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "6eb3e714d64de6eba78ee29051f7fc80613c74e90c6f54f84082f59c429c0a0b"
+    }
+  },
+  "test_sources": [
+    {
+      "path": "isort-9.0.2/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/benchmark/test_api.py",
+      "sha256": "73dd06add950d60fc5eaac67a6932f81d378b0a5b90051da7c82a801a548c20a"
+    },
+    {
+      "path": "isort-9.0.2/tests/integration/test_hypothesmith.py",
+      "sha256": "4458273e62234f365c9ab579c4fcd57ece7673b62afa75998d01e8b8c0b7fdc3"
+    },
+    {
+      "path": "isort-9.0.2/tests/integration/test_literal.py",
+      "sha256": "a085247f24b276ec2d94b1ba58b41a5f7394d77423b7a1d2afafc0ccb0fe9857"
+    },
+    {
+      "path": "isort-9.0.2/tests/integration/test_projects_using_isort.py",
+      "sha256": "92694a554233e2e2f2868317dcf7e95b81a1386e74992f49283347e790ed3a6e"
+    },
+    {
+      "path": "isort-9.0.2/tests/integration/test_setting_combinations.py",
+      "sha256": "b70705b27d2f4e78d5f44f28f871cb7235619676b7544f7f3c58f90232ee3b94"
+    },
+    {
+      "path": "isort-9.0.2/tests/integration/test_ticketed_features.py",
+      "sha256": "b8497dceb43f570dc56b23286350f455cf2c16ee2256fec4d5394eb341b7b1c1"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/conftest.py",
+      "sha256": "6c87913959f6e185cd7e1a5e76aa12e8954c2fba0feab82ffb860c91558380a3"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_crlf_file.py",
+      "sha256": "af0c3b64a87d15726fe1f6c475375f2018d27dc4e87c5ca1670db33ad4e43911"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/almost-implicit/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/almost-implicit/root/nested/x.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/almost-implicit/root/y.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/implicit/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/implicit/root/nested/x.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/none/root/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/none/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkg_resource/root/__init__.py",
+      "sha256": "ab724d9879f408c3ed12a90c478d25923290cee594b53dfdc48154609f8c2881"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkg_resource/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkg_resource/root/nested/x.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkgutil/root/__init__.py",
+      "sha256": "103ea31dc622b98a6bff4be31b3d33c7696bae6253f6c0c90b32258e80df9a53"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkgutil/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/pkgutil/root/nested/x.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/weird_encoding/root/__init__.py",
+      "sha256": "1c9d2613db108b713367c75cc768dbde313ce3362d6ec5dec708ba886cdd8bac"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/example_projects/namespaces/weird_encoding/root/nested/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_attrs.py",
+      "sha256": "fcd228ffca218ae5beed42d48c9326820dd38fc935d05ac7eb371374bacc72c3"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_black.py",
+      "sha256": "9ee7e8b01cb195954aba0b7f6321fd5033bc91e79550a3451fdc5949fbf5784b"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_django.py",
+      "sha256": "dab6a2fb0c27b5a6f2fd8eda70f50b3dc58ae7f2a761be4e22dc65349d2f7bb7"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_google.py",
+      "sha256": "09fd5c558d81143d0949bf48d3be07e4f66668e67603e4f47b3af8e48bd6aa30"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_hug.py",
+      "sha256": "1198a782407455d3ee5189dec9117b939a53edf910f96a5664ba49bb380a20f3"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_open_stack.py",
+      "sha256": "45fbf49e238a39165b24b4fc8ef334e5c831e6c64b5dae7aee9f77a00f3b235a"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_plone.py",
+      "sha256": "32289182b82a4eb350cb9504e296b5802d2bf9207ed410bc46822379f39eeb5a"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_pycharm.py",
+      "sha256": "c6e2c7c7dfe924d009af16b6a970be08c5442c72181174fb9bf599ed08ccae4d"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/profiles/test_wemake.py",
+      "sha256": "c5a3d4def48a5710d8eb8a49830569a0785fda48ee438d7f06a8247855bce4e0"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_action_comments.py",
+      "sha256": "54c9640cb8e2896eed83c344da03cc75ed7ca355a5bd98158ccf71768c29cef2"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_api.py",
+      "sha256": "66e48bfe5f5dcc2839e54d5d4e74fb9f7c57e77f60a33b3c17569550f7c0f953"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_comments.py",
+      "sha256": "eb88cf1d3043cff24c0be4e904da2ad086a3020452c1f6b1dbdeb2a2f5788748"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_exceptions.py",
+      "sha256": "cbabdb319797b6649da563758ebede4bcdfc179d489a46a061b4d40a63647ddf"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_files.py",
+      "sha256": "2a5b7ae2948959c17fa946e0a014a8edaec413c12a24e6f82f22c89c564c4ad6"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_format.py",
+      "sha256": "615119ec2950cd33e5fcc07008686ace6d848ec4a1e5c884f3faca82797c8109"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_hooks.py",
+      "sha256": "5bbdfd5d9af5d2ca013d28cdf058671a368518578184916beb1c4081f2b1506a"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_identify.py",
+      "sha256": "67d0ec11d2d737594c1ca012fa2b4ac8b2e0215955a4d1a1d2cba3640096d927"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_importable.py",
+      "sha256": "4f95ff7486efaf5a4bbb4ab347a2dc314f4247c5fd4ce0616119abb6403e3a32"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_io.py",
+      "sha256": "f789e408c99d1719fe129990e26567196eac4b2b37eb7787aa8c27c89fcaa21d"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_isort.py",
+      "sha256": "d8197574aead93d6b295cbb8fd93a0facfbc86f06f74a9a9729d021a972a332c"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_lazy_imports.py",
+      "sha256": "798f8fc6b7a0d1662d56cf0c342aa5ebde53f76ba85989d27b3a54158c9411ac"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_literal.py",
+      "sha256": "a89415570cd55b357353d32565cae39c986c5e9a4a67add047145a27f3b40d79"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_main.py",
+      "sha256": "c60090af8751eb94553ad1010c90738aafdc8bb6ec9978533bd96b62f4decb8f"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_output.py",
+      "sha256": "656c9d7aceab92273a4daf402d2b22510870ca613284f6b18327854e9fccbfb9"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_parse.py",
+      "sha256": "b0c2132dc05d5b32452ae9ba8b87b4fbdf212196b76b0013786a473b25289835"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_place.py",
+      "sha256": "b066d0d316bb7f5ef3055b27a82b306f2597e34d4b549a622616c471e893d13a"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_regressions.py",
+      "sha256": "19b59cd8eb40c88214d6729149d884fed1e201b93ba1f368c5e99f6a2be542dc"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_settings.py",
+      "sha256": "4543c895f20aed2d0b085f9c9e5e7f4435bb74c564fe33bb2884b3e90ff25f5c"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_ticketed_features.py",
+      "sha256": "b1fcb8073409281d7133dc6a372cd55bfdec596bbdd38075f05c860318af7c66"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_utils.py",
+      "sha256": "86bf3d77bb16807a2e2dd5e3c91d52e2bf36664c1827847fc10e24a8818ce604"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_wrap.py",
+      "sha256": "f57ef78ec850439b657abf61d9fe25a096d0ac44982c32549ac14627880cbcda"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/test_wrap_modes.py",
+      "sha256": "9be3c5f59a670125af527a92f9ea6f2c1951cc2ac3fde4aa950ed9273678d0c4"
+    },
+    {
+      "path": "isort-9.0.2/tests/unit/utils.py",
+      "sha256": "cf5c7717bdacc6cde0c5d3ab03df5d4d13980e3ea6a45a89afc204f069b1650e"
+    }
+  ]
+}
