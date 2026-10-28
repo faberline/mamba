@@ -1,0 +1,78 @@
+name: q0-162-pylint-reference
+
+on:
+  push:
+    branches: [codex/q0-162-pylint-reference]
+
+permissions:
+  contents: read
+
+jobs:
+  reference:
+    name: python-${{ matrix.python }}-shard-${{ matrix.shard }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        python: [3.12.11, 3.13.5, 3.14.0]
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Record source and host
+        shell: bash
+        run: |
+          mkdir receipts
+          {
+            git rev-parse HEAD
+            git rev-parse 'HEAD^{tree}'
+            git status --porcelain=v1 -uall
+            uname -a
+            echo "run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT"
+            echo 'python=${{ matrix.python }} shard=${{ matrix.shard }} count=4'
+            sha256sum Cargo.lock crates/mamba-quality/assets/profile.json tools/ci/q0_pylint*.py tools/ci/q0_pylint_reference_lock.json tools/ci/q0_mypy_reference.py tools/ci/q0_ruff_reference.py
+          } > receipts/source.txt
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        id: python
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Receipt, input and approved-comparator controls
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import sys
+          import unittest
+          sys.path.insert(0, "tools/ci")
+          suite = unittest.TestSuite()
+          for name in ("test_q0_pylint_inputs", "test_q0_pylint_normalize", "test_q0_pylint_reference"):
+              module = __import__(name)
+              tests = unittest.defaultTestLoader.loadTestsFromModule(module)
+              if tests.countTestCases() == 0:
+                  raise SystemExit("zero control tests in " + name)
+              suite.addTests(tests)
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          raise SystemExit(0 if result.wasSuccessful() else 1)
+          PY
+      - name: Run every assigned original case in a fresh process
+        shell: bash
+        run: |
+          python3 -B tools/ci/q0_pylint_reference.py \
+            --repository "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/receipts/run" \
+            --python '${{ steps.python.outputs.python-path }}' \
+            --python-version '${{ matrix.python }}' \
+            --shard-index '${{ matrix.shard }}' \
+            --shard-count 4
+      - name: Retain original evidence on success and failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q0-162-pylint-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}-py${{ matrix.python }}-shard${{ matrix.shard }}
+          path: |
+            receipts/
+            !receipts/run/python3*/venv/**
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
