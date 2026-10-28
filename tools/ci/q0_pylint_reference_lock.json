@@ -616,5 +616,46 @@
     "runner_os": "macOS",
     "runner_arch": "ARM64",
     "runner_label": "macos-15"
+  },
+  "interpreters": {
+    "3.12.11": {
+      "version": "3.12.11",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.12.11+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.12.11%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15669523,
+      "sha256": "c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "executable_sha256": "6a7e3fae3487f8c7ded2cd93e46259365649f7aff2b6c37b3a329087847108fa",
+      "official_asset_id": 263291460,
+      "official_asset_digest": "sha256:c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "release_immutable": true
+    },
+    "3.13.5": {
+      "version": "3.13.5",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.13.5+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.13.5%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15742877,
+      "sha256": "d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "executable_sha256": "aa33feb95882944731fa97029b08a8485279c42da1b9884f02384fedeebe8aea",
+      "official_asset_id": 263291890,
+      "official_asset_digest": "sha256:d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "release_immutable": true
+    },
+    "3.14.0": {
+      "version": "3.14.0",
+      "release": "20251031",
+      "flavor": "install_only_stripped",
+      "filename": "cpython-3.14.0+20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.14.0%2B20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "bytes": 17173334,
+      "sha256": "4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "executable_sha256": "ec27e4f62976a76da9adb1e889ed7330f86cfc7f20e38710461212e435ce8234",
+      "official_asset_id": 311184709,
+      "official_asset_digest": "sha256:4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "release_immutable": true
+    }
   }
 }

@@ -13,6 +13,13 @@ The current reconstruction uses standard macOS 15 ARM64 hosted runners.
 Retained interpreter hashes and Mach-O headers identify the original platform
 family. The original Mac ARM64 isort wheels are pinned for all three targets.
 This does not recover the old venvs or assert their old OS release.
+Exact CPython archives are pinned to official immutable
+`astral-sh/python-build-standalone` releases and published checksums.
+Python 3.12.11 and 3.13.5 use release 20250612 `install_only` archives.
+These are new builds of the exact patches; their executables differ from
+the historical pyenv builds. Python 3.14.0 uses release 20251031
+`install_only_stripped`; its executable hash matches the retained uv build.
+All three still need actual hosted execution and exact identity probes.
 Eight core runtime packages and the fixture-import dependency
 `typing_extensions 4.16.0` use the retained original oracle versions and hashes.
 The fixture dependency is required by 63 fixed source files, including Final
@@ -108,6 +115,24 @@ Nine project inventories also gained interpreter-generated resource bytecode.
 Their declared input files were neither removed nor changed. Generated cache
 files are runtime output, distinct from the original fixture bytes. Their full
 bytes and metadata remain visible; input immutability still needs verification.
+
+## First hosted Mac setup failure
+
+Run 40731426172 used source `e28141dabbc12ec52cc17baca06a79b64e85bfd5`.
+The standard setup action could not supply Python 3.12.11 ARM64 on the host.
+The controller requested cancellation because that run could not complete
+the required three-target matrix. Cancelled and skipped work is not passed.
+Its setup failure and available partial evidence remain retained.
+
+The replacement bootstrap downloads each fixed official archive on the
+hosted Mac, checks its size and SHA, and checks every archive member.
+It extracts only into a fresh temporary prefix. It retains the archive,
+full initial payload hashes, links and modes, and a real isolated identity
+probe with PID, wait and exit. A separate manifest covers this evidence.
+Signed redirect queries are omitted from receipts.
+The existing runner receives the exact interpreter path through `--python`.
+Its exact-patch probe, copied venv and offline nine-wheel install stay intact.
+The bootstrap does not execute a fixture or change the reference recipe.
 
 ## Coverage and evidence boundary
 
