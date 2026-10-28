@@ -7,6 +7,8 @@ Issue 159 was accepted and closed before this work began.
 
 The source is isort 9.0.2 with its original source-archive SHA.
 The three ABI-specific Linux wheels are pinned by the retained original lock.
+Their declared runtime dependency is pinned to the original
+`mypy_extensions 1.1.0` wheel. Inactive optional extras are not installed.
 Python targets are 3.12.11, 3.13.5 and 3.14.0.
 The profile remains Black with line length 88.
 

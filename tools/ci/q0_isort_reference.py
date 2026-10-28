@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
 import os
 from pathlib import Path
@@ -13,32 +14,89 @@ from q0_ruff_reference import checked_bytes, checked_command, digest, download, 
 VERSIONS = {12: "3.12.11", 13: "3.13.5", 14: "3.14.0"}
 
 
-PACKAGE_PROBE = """
+def validate_dependencies(pins: list[dict], distributions: dict[str, dict],
+                          environment: dict | None = None) -> dict:
+    """Validate only pinned runtime distributions and their active requirements."""
+    from pip._vendor.packaging.markers import default_environment
+    from pip._vendor.packaging.requirements import Requirement
+    from pip._vendor.packaging.utils import canonicalize_name
+
+    locked = {"isort": "9.0.2"}
+    for pin in pins:
+        name = canonicalize_name(pin["name"])
+        if name in locked:
+            raise ValueError(f"duplicate dependency pin: {name}")
+        locked[name] = pin["version"]
+    installed = {canonicalize_name(name): row for name, row in distributions.items()}
+    if len(installed) != len(distributions):
+        raise ValueError("duplicate installed dependency identity")
+    for name, version in locked.items():
+        if name not in installed:
+            raise ValueError(f"pinned dependency is missing: {name}")
+        if installed[name]["version"] != version:
+            raise ValueError(f"installed dependency version differs from pin: {name}")
+    markers = default_environment()
+    markers.update(environment or {})
+    markers["extra"] = ""
+    active, inactive = [], []
+    for parent in locked:
+        for text in installed[parent].get("requires_dist", []):
+            requirement = Requirement(text)
+            record = {"distribution": parent, "requirement": text,
+                      "name": canonicalize_name(requirement.name)}
+            if requirement.marker is not None and not requirement.marker.evaluate(markers):
+                inactive.append(record)
+                continue
+            if requirement.url is not None or requirement.extras:
+                raise ValueError(f"unsupported active dependency requirement: {text}")
+            name = record["name"]
+            if name not in locked:
+                raise ValueError(f"active dependency is not pinned: {name}")
+            actual = installed[name]["version"]
+            if not requirement.specifier.contains(actual, prereleases=True):
+                raise ValueError(f"dependency constraint is not satisfied: {text}")
+            record.update(version=actual, specifier=str(requirement.specifier), satisfied=True)
+            active.append(record)
+    return {"pinned_versions": locked, "active_requirements": active,
+            "inactive_requirements": inactive, "marker_environment": markers,
+            "dependencies_verified": True}
+
+
+PACKAGE_PROBE = inspect.getsource(validate_dependencies) + """
 import hashlib, importlib.metadata, json, pathlib, sys
 import isort
-from pip._vendor.packaging.requirements import Requirement
-d = importlib.metadata.distribution('isort')
-files = {}
-missing = []
-for relative in d.files or []:
-    p = pathlib.Path(d.locate_file(relative))
-    if p.is_file():
-        raw = p.read_bytes()
-        files[str(relative)] = {'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
-    else:
-        missing.append(str(relative))
+from pip._vendor.packaging.utils import canonicalize_name
+pins = json.loads(sys.argv[1])
+distributions = {}
+for name in ['isort'] + [pin['name'] for pin in pins]:
+    d = importlib.metadata.distribution(name)
+    files, missing = {}, []
+    for relative in d.files or []:
+        p = pathlib.Path(d.locate_file(relative))
+        if p.is_file():
+            raw = p.read_bytes()
+            files[str(relative)] = {'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+        else:
+            missing.append(str(relative))
+    distributions[canonicalize_name(name)] = {
+        'name':d.metadata['Name'], 'version':d.version, 'requires_dist':d.requires or [],
+        'distribution_files':files, 'missing_distribution_files':missing}
+verification = validate_dependencies(pins, distributions)
+original = distributions['isort']
 module = pathlib.Path(isort.__file__)
 print(json.dumps({'python':list(sys.version_info[:3]), 'executable':sys.executable,
     'version':isort.__version__, 'module':str(module),
     'module_sha256':hashlib.sha256(module.read_bytes()).hexdigest(),
-    'requires_dist':d.requires or [],
-    'active_requirements':[text for text in d.requires or []
-        if Requirement(text).marker is None or Requirement(text).marker.evaluate({'extra':''})],
-    'distribution_files':files, 'missing_distribution_files':missing}))
+    'requires_dist':original['requires_dist'],
+    'distribution_files':original['distribution_files'],
+    'missing_distribution_files':original['missing_distribution_files'],
+    'dependency_distributions':{name:row for name,row in distributions.items() if name!='isort'},
+    'dependency_verification':verification}))
 """
 
 
-def prepare(python: Path, expected: str, root: Path, wheel: Path) -> Path:
+def prepare(python: Path, expected: str, root: Path, wheel: Path,
+            dependency_pins: list[dict], dependency_wheels: list[Path]) -> Path:
     root.mkdir(parents=True, exist_ok=False)
     probe = "import json,sys; print(json.dumps({'python':list(sys.version_info[:3]),'executable':sys.executable}))"
     checked_command([str(python), "-I", "-B", "-c", probe], root, root / "base-identity")
@@ -48,17 +106,26 @@ def prepare(python: Path, expected: str, root: Path, wheel: Path) -> Path:
     checked_command([str(python), "-I", "-B", "-m", "venv", "--copies", str(root / "venv")],
                     root, root / "create-venv")
     executable = root / "venv/bin/python"
+    if len(dependency_pins) != len(dependency_wheels):
+        raise ValueError("dependency artifact denominator differs")
+    for pin, path in zip(dependency_pins, dependency_wheels):
+        checked_bytes(path.read_bytes(), pin["sha256"])
     checked_command([str(executable), "-I", "-B", "-m", "pip", "install", "--no-index",
-                     "--no-deps", "--no-compile", str(wheel)], root, root / "install")
-    checked_command([str(executable), "-I", "-B", "-c", PACKAGE_PROBE], root,
+                     "--no-deps", "--no-compile", str(wheel),
+                     *[str(path) for path in dependency_wheels]], root, root / "install")
+    checked_command([str(executable), "-I", "-B", "-c", PACKAGE_PROBE,
+                     json.dumps(dependency_pins)], root,
                     root / "package-identity")
     identity = json.loads((root / "package-identity/stdout.raw").read_bytes())
     if identity["version"] != "9.0.2" or identity["python"] != base["python"]:
         raise ValueError("installed original identity differs")
     if identity["missing_distribution_files"] or not identity["distribution_files"]:
         raise ValueError("installed original distribution payload is incomplete")
-    if identity["active_requirements"]:
-        raise ValueError("isort has active dependencies not covered by this frozen wheel-only environment")
+    for name, dependency in identity["dependency_distributions"].items():
+        if dependency["missing_distribution_files"] or not dependency["distribution_files"]:
+            raise ValueError(f"installed dependency payload is incomplete: {name}")
+    if not identity["dependency_verification"]["dependencies_verified"]:
+        raise ValueError("installed dependencies were not verified")
     checked_command([str(executable), "-I", "-B", "-m", "pip", "list", "--format=json"],
                     root, root / "installed-distributions")
     installed = json.loads((root / "installed-distributions/stdout.raw").read_bytes())
@@ -67,6 +134,9 @@ def prepare(python: Path, expected: str, root: Path, wheel: Path) -> Path:
     identity.update(base_executable_sha256=digest(python.read_bytes()),
                     venv_executable_sha256=digest(executable.read_bytes()),
                     wheel_sha256=digest(wheel.read_bytes()), installed_distributions=installed,
+                    dependency_artifacts=[{"name":pin["name"], "version":pin["version"],
+                                           "filename":path.name, "sha256":digest(path.read_bytes())}
+                                          for pin,path in zip(dependency_pins, dependency_wheels)],
                     historical_environment=False)
     write_json(root / "identity.json", identity)
     return executable
@@ -150,6 +220,14 @@ def main() -> int:
             "oracle_source_sha256": digest(Path(__file__).with_name("q0_isort_oracle.py").read_bytes()),
             "helper_source_sha256": digest(Path(__file__).with_name("q0_isort_inputs.py").read_bytes())})
         sdist = download(lock["sdist"], output / "downloads/sdist")
+        dependency_pins = lock["dependencies"]
+        if not isinstance(dependency_pins, list):
+            raise ValueError("dependency lock must be a list")
+        dependency_wheels = []
+        for index, pin in enumerate(dependency_pins):
+            destination = output / "downloads" / f"dependency-{index}"
+            download(pin, destination)
+            dependency_wheels.append(destination / pin["filename"])
         cases, proof = construct(sdist, repository)
         if len(cases) != lock["expected_candidates"] or len({row["id"] for row in cases}) != 1355:
             raise ValueError("candidate denominator differs")
@@ -171,7 +249,7 @@ def main() -> int:
                 python = getattr(args, f"python3{minor}")
                 if not python.is_absolute():
                     raise ValueError("interpreter path must be absolute")
-                executable = prepare(python, version, root, wheel)
+                executable = prepare(python, version, root, wheel, dependency_pins, dependency_wheels)
                 results[minor] = oracle(executable, cases, packet, root / "api-projects", version,
                                         "api", root / "api")
                 executables[minor] = executable

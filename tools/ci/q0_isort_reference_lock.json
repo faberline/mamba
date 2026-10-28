@@ -275,5 +275,14 @@
       "path": "isort-9.0.2/tests/unit/utils.py",
       "sha256": "cf5c7717bdacc6cde0c5d3ab03df5d4d13980e3ea6a45a89afc204f069b1650e"
     }
+  ],
+  "dependencies": [
+    {
+      "name": "mypy_extensions",
+      "version": "1.1.0",
+      "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+      "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+    }
   ]
 }

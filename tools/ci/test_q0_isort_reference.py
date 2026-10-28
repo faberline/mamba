@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 from q0_isort_oracle import EXCLUDED_API_CODE, api_case, checker_receipt, child_path
-from q0_isort_reference import PACKAGE_PROBE, checked_rows, terminal_summary
+from q0_isort_reference import PACKAGE_PROBE, checked_rows, terminal_summary, validate_dependencies
 
 
 class OracleControls(unittest.TestCase):
@@ -115,6 +115,55 @@ class OracleControls(unittest.TestCase):
     def test_hosted_child_programs_have_valid_syntax(self):
         ast.parse(PACKAGE_PROBE)
         ast.parse(EXCLUDED_API_CODE)
+
+
+class DependencyControls(unittest.TestCase):
+    def setUp(self):
+        self.pins = [{"name": "mypy_extensions", "version": "1.1.0"}]
+        self.installed = {
+            "isort": {"version": "9.0.2", "requires_dist": [
+                "mypy-extensions>=1.1.0", "colorama; extra == 'colors'"]},
+            "mypy-extensions": {"version": "1.1.0", "requires_dist": []},
+        }
+
+    def test_pinned_requirement_and_inactive_extra(self):
+        result = validate_dependencies(self.pins, self.installed)
+        self.assertTrue(result["dependencies_verified"])
+        self.assertEqual(result["pinned_versions"]["mypy-extensions"], "1.1.0")
+        self.assertEqual(len(result["active_requirements"]), 1)
+        self.assertEqual(result["inactive_requirements"][0]["name"], "colorama")
+
+    def test_missing_pinned_dependency_fails(self):
+        del self.installed["mypy-extensions"]
+        with self.assertRaisesRegex(ValueError, "is missing"):
+            validate_dependencies(self.pins, self.installed)
+
+    def test_installed_version_must_match_exact_pin(self):
+        self.installed["mypy-extensions"]["version"] = "1.2.0"
+        with self.assertRaisesRegex(ValueError, "differs from pin"):
+            validate_dependencies(self.pins, self.installed)
+
+    def test_pin_must_satisfy_active_constraint(self):
+        self.pins[0]["version"] = "1.0.0"
+        self.installed["mypy-extensions"]["version"] = "1.0.0"
+        with self.assertRaisesRegex(ValueError, "constraint is not satisfied"):
+            validate_dependencies(self.pins, self.installed)
+
+    def test_unpinned_transitive_dependency_fails(self):
+        self.installed["mypy-extensions"]["requires_dist"] = ["unlocked>=2"]
+        with self.assertRaisesRegex(ValueError, "is not pinned"):
+            validate_dependencies(self.pins, self.installed)
+
+    def test_unsupported_active_dependency_source_fails(self):
+        self.installed["isort"]["requires_dist"] = [
+            "mypy-extensions @ https://example.invalid/mypy.whl"]
+        with self.assertRaisesRegex(ValueError, "unsupported active"):
+            validate_dependencies(self.pins, self.installed)
+
+    def test_duplicate_alias_pins_fail(self):
+        self.pins.append({"name": "mypy-extensions", "version": "1.1.0"})
+        with self.assertRaisesRegex(ValueError, "duplicate dependency pin"):
+            validate_dependencies(self.pins, self.installed)
 
 
 if __name__ == "__main__":
