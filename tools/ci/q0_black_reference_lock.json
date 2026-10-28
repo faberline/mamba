@@ -1,0 +1,235 @@
+{
+  "schema": "mamba.q0.163.black-reference-lock.v1",
+  "version": "26.10.0",
+  "python_versions": [
+    "3.12.11",
+    "3.13.5",
+    "3.14.0"
+  ],
+  "case_count": 4172,
+  "batch_count": 3,
+  "reference_timeout_seconds": 300,
+  "input_sha256": "7c293118b1f493b4244049116fe6308cdebc4b1a3c161b6988cae3a1bdc2246e",
+  "input_bytes": 2036273,
+  "extra_input_sha256": "d9918c69d50d04e4cc801911a92be1893139909001468a8621eb0cf4febcfbd4",
+  "historical_corpus_sha256": "9adbd99901efc776a87117d3546eab85b4d75ad56bbd72cc8868d97533fa60da",
+  "historical_oracle_lock_sha256": "3ede6b08cf4fb8a1a12ec148169667e6b22d484b380f901a1bb040c8a2669a35",
+  "historical_corpus_lock_sha256": "14806dbcaa1bc65b2d1344341f89069f50908f2589811d6c2967a63a17536e2c",
+  "profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+  "published_catalog_inventory_sha256": "80112297058fed872122e5019f18536c955195b29f36d539b49a500d5b5b57a5",
+  "comparator_sources": {
+    "crates/mamba-quality/src/infrastructure/black/tests/reference.rs": "9b51dec1ed171a31b86eb2fd73853d00e0a9b278e328eb81d5936da068348bc7",
+    "crates/mamba-quality/src/infrastructure/black/tests/safety.rs": "02f125bc578583e85e968062241f90cad1120601244a435a400c509b5be44b02",
+    "crates/mamba-quality/src/infrastructure/black/tests/errors.rs": "96a8db2b9112b01e47c57372f601089f7593dabaef8c153fb7c4bf8bfc6efe6b",
+    "crates/mamba-quality/src/infrastructure/black/tests/catalog.rs": "1c4a8c81dd6e348186b7cefe6a43c88c6feebcf628d38213d5f37709da9543d0"
+  },
+  "dependencies": {
+    "3.12.11": [
+      {
+        "version": "26.10.0",
+        "filename": "black-26.10.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/d3/90/01775245b976cec8255b78d699c90dab31667aca2c5c2a9db2a1b4dc195a/black-26.10.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "fe0aa3c70ed74ae3cbd994b49c2f8a68df00ee8c2a2dc67b9bb796b4caf23387",
+        "name": "black"
+      },
+      {
+        "version": "8.5.0",
+        "filename": "click-8.5.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+        "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+        "name": "click"
+      },
+      {
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505",
+        "name": "mypy_extensions"
+      },
+      {
+        "version": "26.3",
+        "filename": "packaging-26.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+        "name": "packaging"
+      },
+      {
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+        "name": "pathspec"
+      },
+      {
+        "version": "4.12.3",
+        "filename": "platformdirs-4.12.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl",
+        "sha256": "080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8",
+        "name": "platformdirs"
+      },
+      {
+        "version": "0.4.1",
+        "filename": "pytokens-0.4.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/c6/78/397db326746f0a342855b81216ae1f0a32965deccfd7c830a2dbc66d2483/pytokens-0.4.1-py3-none-any.whl",
+        "sha256": "26cef14744a8385f35d0e095dc8b3a7583f6c953c2e3d269c7f82484bf5ad2de",
+        "name": "pytokens"
+      }
+    ],
+    "3.13.5": [
+      {
+        "version": "26.10.0",
+        "filename": "black-26.10.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/50/92/e57a6fd06ae08426af6b65488159196739d74b84adecc2e8ab2c054c8b9c/black-26.10.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "sha256": "69e5bf5e22660dba002e102e43a2dce1924b098781c9665bffa1ffd2d490ebc5",
+        "name": "black"
+      },
+      {
+        "version": "8.5.0",
+        "filename": "click-8.5.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+        "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+        "name": "click"
+      },
+      {
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505",
+        "name": "mypy_extensions"
+      },
+      {
+        "version": "26.3",
+        "filename": "packaging-26.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+        "name": "packaging"
+      },
+      {
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+        "name": "pathspec"
+      },
+      {
+        "version": "4.12.3",
+        "filename": "platformdirs-4.12.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl",
+        "sha256": "080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8",
+        "name": "platformdirs"
+      },
+      {
+        "version": "0.4.1",
+        "filename": "pytokens-0.4.1-cp313-cp313-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/cb/dc/08b1a080372afda3cceb4f3c0a7ba2bde9d6a5241f1edb02a22a019ee147/pytokens-0.4.1-cp313-cp313-macosx_11_0_arm64.whl",
+        "sha256": "8bdb9d0ce90cbf99c525e75a2fa415144fd570a1ba987380190e8b786bc6ef9b",
+        "name": "pytokens"
+      }
+    ],
+    "3.14.0": [
+      {
+        "version": "26.10.0",
+        "filename": "black-26.10.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/94/eb/ea58ef8d2455e170a32b1368d83458286c284007e9584bb83d58fc5e60e5/black-26.10.0-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "c3e770b27a848b23ca90783dcce243a72035566322fdee7b7080aed2f1066692",
+        "name": "black"
+      },
+      {
+        "version": "8.5.0",
+        "filename": "click-8.5.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+        "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+        "name": "click"
+      },
+      {
+        "version": "1.1.0",
+        "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl",
+        "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505",
+        "name": "mypy_extensions"
+      },
+      {
+        "version": "26.3",
+        "filename": "packaging-26.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+        "name": "packaging"
+      },
+      {
+        "version": "1.1.1",
+        "filename": "pathspec-1.1.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+        "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+        "name": "pathspec"
+      },
+      {
+        "version": "4.12.3",
+        "filename": "platformdirs-4.12.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl",
+        "sha256": "080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8",
+        "name": "platformdirs"
+      },
+      {
+        "version": "0.4.1",
+        "filename": "pytokens-0.4.1-cp314-cp314-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/8f/a7/b470f672e6fc5fee0a01d9e75005a0e617e162381974213a945fcd274843/pytokens-0.4.1-cp314-cp314-macosx_11_0_arm64.whl",
+        "sha256": "4a14d5f5fc78ce85e426aa159489e2d5961acf0e47575e08f35584009178e321",
+        "name": "pytokens"
+      }
+    ]
+  },
+  "sdist": {
+    "filename": "black-26.10.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d9/38/02b7c5d2475f40c000a142b3bcddd29ff6674617eba1b2236f0cda9fff41/black-26.10.0.tar.gz",
+    "sha256": "b3476ce71b494fc6e39d77e75488e8339a87583029bbf608416e955c83582bd6",
+    "bytes": 728037
+  },
+  "platform": {
+    "sys_platform": "darwin",
+    "platform_system": "Darwin",
+    "runner_os": "macOS",
+    "runner_arch": "ARM64",
+    "runner_label": "macos-15"
+  },
+  "interpreters": {
+    "3.12.11": {
+      "version": "3.12.11",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.12.11+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.12.11%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15669523,
+      "sha256": "c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "executable_sha256": "6a7e3fae3487f8c7ded2cd93e46259365649f7aff2b6c37b3a329087847108fa",
+      "official_asset_id": 263291460,
+      "official_asset_digest": "sha256:c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "release_immutable": true
+    },
+    "3.13.5": {
+      "version": "3.13.5",
+      "release": "20250612",
+      "flavor": "install_only",
+      "filename": "cpython-3.13.5+20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20250612/cpython-3.13.5%2B20250612-aarch64-apple-darwin-install_only.tar.gz",
+      "bytes": 15742877,
+      "sha256": "d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "executable_sha256": "aa33feb95882944731fa97029b08a8485279c42da1b9884f02384fedeebe8aea",
+      "official_asset_id": 263291890,
+      "official_asset_digest": "sha256:d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "release_immutable": true
+    },
+    "3.14.0": {
+      "version": "3.14.0",
+      "release": "20251031",
+      "flavor": "install_only_stripped",
+      "filename": "cpython-3.14.0+20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.14.0%2B20251031-aarch64-apple-darwin-install_only_stripped.tar.gz",
+      "bytes": 17173334,
+      "sha256": "4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "executable_sha256": "ec27e4f62976a76da9adb1e889ed7330f86cfc7f20e38710461212e435ce8234",
+      "official_asset_id": 311184709,
+      "official_asset_digest": "sha256:4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "release_immutable": true
+    }
+  }
+}
