@@ -119,9 +119,10 @@ Native, full-reference, parent #44 and release acceptance remain false or unrun.
 | Locked package metadata and source payloads | Statically checked |
 | Combined capture helper controls after repair | 71 passed; no skips; root retained actual wait/exit 0 |
 | First hosted preparation attempt | Failed before any original collector launched |
-| Formal hosted reference processes | 0 launched; not_run |
-| Independent full raw/index/environment review | not_run |
-| Bounded audit acceptance and integration | Pending |
+| Formal hosted reference processes | All 12 independently checked; actual exit 0 and empty stderr |
+| Independent full raw/API/index/asset review | Passed: all four whole assets match |
+| Independent full environment/import review | Passed: all named archive, package and captured import facts joined |
+| Bounded audit evidence | Verified; source-closure and exact merge checks control issue closure |
 
 Static reports are under `/private/tmp/mamba-q0-164-20261029-16ddkt6_/`.
 Recipe SHA-256: `2f806cfcf910e365ed7f3a4db08dea36c745e87a94735db2ae8156c9149e31ce`.
@@ -197,7 +198,136 @@ Independent review confirmed the mixed-format counterexample fails after the rep
 Its final source/schema review has no remaining probe blocker.
 The review SHA-256 is
 `29c170e6ba95792e8c4b02af2e7ae7f72c7ac4b193ed86baecda066ec5231607`.
-The next hosted reference run and its full independent review remain pending.
+The second hosted reference run completed. Its full raw and environment reviews passed.
+
+## Second hosted capture
+
+[Run 40776279452](https://github.com/faberline/mamba/actions/runs/40776279452)
+used head `d28781f02eaabff06e644ddcd611b0ec3cab0b5f`.
+Its tree is `111eb2b53e2acf78d6f29c159abe96e925bc4f58`.
+All workflow steps completed successfully, including 71 helper controls without skips.
+Independent raw review confirms all 12 original processes completed with exit 0.
+All four whole-asset Python equality comparisons are true.
+The separate environment/import check below also passed.
+
+| Family | Python 3.12 PID | Python 3.13 PID | Python 3.14 PID |
+|---|---:|---:|---:|
+| field-types | 1397 | 1427 | 1485 |
+| model-types | 1497 | 1530 | 1627 |
+| model-methods | 1656 | 1684 | 1780 |
+| model-config-field | 1785 | 1888 | 1949 |
+
+Each main receipt has the matching waited PID, completed wait, actual exit 0 and empty stderr.
+The complete command/stdout/stderr pointers are in `run/index.jsonl`.
+Its SHA-256 is `eab9e4e194b60f41d7e0f8b554669a4cb19f23918e73e1f284d89059f40832b8`.
+The config-field cells also retain their complete `work/field.json` and `work/identity.json` files.
+
+The full artifact contains 404 files and 113,994,182 uncompressed bytes.
+Its 101,735,775-byte ZIP SHA-256 is
+`a3cfb2f3307dabccbbfec98d133a2a822ecb723fe47feba9e0474bcd1764b2df`.
+Durable custody is
+`/Users/chrischeng/.codex/artifacts/mamba-q0-164-hosted-20261029/run-40776279452-full/`.
+Its 413-file custody manifest SHA-256 is
+`60538f3d1c5dca4b4b73b92d3cd8561205797015f9a29f6b4bb524b120f13b6f`.
+Root re-read every durable file and byte-compared it with the download.
+The durable copy has no missing, different or unreadable files.
+Its custody proof SHA-256 is
+`349d08ee4f69b767d40c2d45663655ab54ca565176445d7419104aa39a642d78`.
+
+Root also checked every ZIP member and all four producer file manifests.
+It matched all 66 captured source files to the executed Git head.
+It verified raw hash bindings and actual waits for all 33 process receipts.
+These 1,064 integrity checks have no mismatch.
+The root integrity report SHA-256 is
+`9e8c81b8f00e96fa55c392e5f620ec1c3e79c442ba5bc8279f83c0fd938985a5`.
+All 41 named owning files still match the lock and actual base Git objects.
+All 11 executed candidate files match the saved repair snapshot.
+The candidate source proof SHA-256 is
+`b49559d858033b3a696b8d3b08b6d454ca1b941788e35ed9bf37e9145735627d`.
+Independent review read every raw command, output, input and index cell.
+It checked the exact API recipe without calling the producer's projector or comparator.
+It rebuilt all 12 target sections and all four complete assets.
+Every serialized field, list order and value matches the frozen reference.
+The primary comparison stays ordinary Python equality.
+Separate JSON type-integrity findings are zero.
+The reconstructed whole-asset bytes also match all four original SHA-256 pins.
+That byte match is an observed result, not an added acceptance rule.
+The nine first-three-family outputs retain all six ordered Field signatures each.
+All selectors, unpacked kwargs, alias traversal and explicit slots remain checked.
+The raw/API review has 458 checks and no errors.
+Its SHA-256 is
+`4bc909d9574d74aa0f15afc0346738d667e0d05aa31668db213e3a72b563c735`.
+The independent auditor also passed ten negative controls.
+Their report SHA-256 is
+`42f980442bb626916ec05d1d4e1bbece082def1cd1c6b0ba479f193277eef0bc`.
+
+## Independent environment and import review
+
+The independent review calls no producer validator or original reference package.
+It reads the exact archives, wheels, raw JSON/CSV and captured source facts.
+All three bootstrap archives and executable pins match.
+Their member counts are 1,830, 1,821 and 1,903.
+All 5,994 initial payload facts match the independent reconstruction.
+The three actual bootstrap identity children completed their waits and exited 0.
+
+All 30 selected wheel bindings and 30 whole installed RECORDs were checked.
+The 5,163 installed facts contain 5,028 immutable wheel payloads,
+105 installer-generated files and 30 regenerated RECORDs.
+All 726 native payload facts match their exact locked wheel members.
+The generated files and scripts were derived from the exact bundled pip and wheel metadata.
+They were checked separately, rather than omitted from the file denominator.
+Each target has exactly the ten replay packages and its correct dependency marker context.
+The pip bundle supplies preparation infrastructure without adding a target distribution.
+Each preparation namespace contains the complete 16-file own-package subtree.
+
+The review checks all 4,504 captured module rows across the 12 collectors.
+It joins all 3,828 file-backed module facts and all 2,120 graph rows.
+Each graph has its one exact fixed stub input.
+All eight fileless typing aliases retain their executed owner-identity traces.
+Their owners match the exact pinned `typing.py` source and class definitions.
+The 33 retained command children have actual matching waits and exit 0.
+No archive, installed-record, namespace, captured import or graph mismatch was found.
+The review SHA-256 is
+`b40bb99797e09c6470fc79ff2d2f121726064034f9b16f1bdb228f5c3e13ae34`.
+The final source/program addendum retains that report unchanged.
+It also binds eight actual observer/bootstrap/helper sources and the exact probe and collector programs.
+Its SHA-256 is
+`fc2697f9f440a4be25f8aa826f73344a823120c2100a3d0a6d4ac2180076e3f0`.
+Its complete 11,111-row file-fact ledger SHA-256 is
+`2364e52546395e8fd300837cd5d21ade0afd8c58788ecb7b30c17181ff613544`.
+Root re-read the review, auditor source and complete ledger and verified their hash bindings.
+
+The uploaded evidence does not contain raw copies of the extracted venv and base directory trees.
+It contains the complete source archives/wheels, installed RECORD bytes and captured file facts instead.
+The initial directory/symlink mode facts do not assert that extraction preserves every tar permission.
+Static fileless-alias review uses the retained runtime owner trace and pinned source.
+It does not execute the target interpreter or reference package locally.
+No historical environment or old raw process is declared recovered.
+
+## Bounded Acceptance record
+
+| Original item | Complete evidence | Result |
+|---|---|---|
+| Exact source/version/dependency/profile/test and three environment identities | 41 owning-source pins; four retained assets; source archive/profile; three exact fresh interpreters; 30 locked wheel/RECORD bindings and full import review | Verified under the human-approved fresh evidence basis; historical recovery remains false |
+| Existing reference index and raw/command/actual-exit pointers, without corpus or comparison changes | All 12 original sections, independent raw/API review, four whole assets, unknown role mapping, separate protected QA hashes/statuses | Verified for this bounded asset audit; undeclared roles remain unknown and separate QA remains not_run |
+| Exact revision, scope, actual checks/exits and limits; parent contract intact | Executed head/tree above, 66 captured source files, 11 candidate paths, 71 helper controls, all 33 retained command receipts, full durable evidence and explicit limits | Verified for the bounded audit; root source-closure, clean-tree and exact merged-tree checks control issue closure |
+
+Product unit/build is N/A for this capture and audit change.
+The 71 controls check new evidence capture behavior; they are not product conformance tests.
+The separate protected QA has 257 projects, 341 files and 771 target cells, with seven entrypoint overrides.
+The three exact construct rows have nine target cells.
+Their original files and expectations are unchanged. Both QA groups remain `not_run`.
+All 12 indexed sections retain unknown roles where the original assets declare no roles.
+Absent case IDs, reference-error and exclusion fields remain undeclared, not zero or passed.
+Native, full-reference, SAME217/SOM, parent #44 and release gates remain unaccepted or `not_run`.
+The original-file identity requirements of #16/#228/#229 remain unchanged.
+The author contract review SHA-256 is
+`a0212e88e1770965bb042f6d6e02eb4790b91f0eb87cd62895eb8ffd95b8a6b5`.
+
+The record commit changes only this document after the executed capture head.
+Its final source proof must match all 66 executed source files and all 11 candidate Git objects.
+It must record actual clean-tree/diff checks and the current remote base.
+No new reference execution at that record-only head is claimed.
 
 The final record must bind the executed head, final PR source closure, actual command/exit receipts,
 all 12 target sections, immutable full evidence, independent review and exact merged tree.
