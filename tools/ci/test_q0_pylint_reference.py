@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import copy
+import importlib.util
 import io
 import json
 import os
+import py_compile
 from pathlib import Path
 import sys
 import tempfile
@@ -31,6 +33,11 @@ def receipt(argv, project, exit_code=0):
     return {"pid": 42, "waited_pid": 42, "wait_completed": True, "actual_exit": exit_code,
             "timed_out": False, "launch_error": None, "passed": exit_code in runner.REFERENCE_EXITS,
             "argv": argv, "cwd": str(project)}
+
+
+def environment_identity(minor=12):
+    return {"identity": "control", "cache_tag": f"cpython-3{minor}",
+            "magic_number_hex": importlib.util.MAGIC_NUMBER.hex()}
 
 
 def fake_helper():
@@ -95,7 +102,8 @@ class PackageIdentity(unittest.TestCase):
                          for name, version in runner.PINNED_VERSIONS.items()}
         distributions["pylint"]["requires_dist"] = ["astroid>=4.3.3,<4.4", "isort>=9", "dill>=0.4"]
         distributions["isort"]["requires_dist"] = ["mypy-extensions>=1.1", 'colorama; extra == "colors"']
-        markers = {"python_full_version": "3.12.11", "python_version": "3.12", "sys_platform": "linux", "platform_system": "Linux"}
+        markers = {"python_full_version": "3.12.11", "python_version": "3.12", "sys_platform": "darwin",
+                   "platform_system": "Darwin", "platform_machine": "arm64"}
         modules = {}
         for name in ["pylint", "astroid"]:
             path = venv / (name + ".bin")
@@ -103,6 +111,7 @@ class PackageIdentity(unittest.TestCase):
             modules[name] = {"path": str(path), "sha256": runner.digest(path.read_bytes())}
         rules = [f"C{i:04}" for i in range(383)]
         identity = {"python": [3, 12, 11], "isolated": 1, "pylint": "4.1.2", "astroid": "4.3.3",
+                    "cache_tag": "cpython-312", "magic_number_hex": importlib.util.MAGIC_NUMBER.hex(),
                     "rules": rules, "modules": modules, "distributions": distributions,
                     "dependency_verification": runner.validate_dependencies(pins, distributions, markers)}
         return identity, pins, rules
@@ -143,7 +152,8 @@ class PackageIdentity(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             venv = Path(temporary)
             identity, pins, rules = self.identity(venv)
-            for change in ["patch", "isolation", "marker", "rule"]:
+            for change in ["patch", "isolation", "marker", "rule", "cache_tag", "magic_number_hex",
+                           "sys_platform", "platform_system", "platform_machine"]:
                 altered = copy.deepcopy(identity)
                 if change == "patch":
                     altered["python"][-1] = 10
@@ -151,6 +161,11 @@ class PackageIdentity(unittest.TestCase):
                     altered["isolated"] = 0
                 elif change == "marker":
                     altered["dependency_verification"]["marker_environment"]["python_full_version"] = "3.13.5"
+                elif change in {"cache_tag", "magic_number_hex"}:
+                    altered[change] = "incorrect"
+                elif change in {"sys_platform", "platform_system", "platform_machine"}:
+                    altered["dependency_verification"]["marker_environment"][change] = {
+                        "sys_platform": "linux", "platform_system": "Linux", "platform_machine": "x86_64"}[change]
                 else:
                     altered["rules"][-1] = "unapproved"
                 with self.assertRaises(ValueError):
@@ -181,7 +196,7 @@ class PackageIdentity(unittest.TestCase):
 
 
 class CaseExecution(unittest.TestCase):
-    def run_control(self, root, input_case, frozen, *, diagnostics=None, exit_code=0, mutate=False, timeout=False):
+    def run_control(self, root, input_case, frozen, *, diagnostics=None, exit_code=0, mutate=False, timeout=False, cache=False):
         comparator = runner.PylintComparator(Path(__file__).resolve().parents[2])
         def execute(argv, project, output, **options):
             output.mkdir(parents=True)
@@ -189,13 +204,65 @@ class CaseExecution(unittest.TestCase):
             (output / "stderr.raw").write_bytes(b"raw stderr control")
             if mutate:
                 (project / "native.so").write_bytes(b"changed")
+            if cache:
+                destination = project / "nested/__pycache__/extra.cpython-312.pyc"
+                destination.parent.mkdir(parents=True)
+                py_compile.compile(str(project / "nested/extra.py"), cfile=str(destination), doraise=True)
             record = receipt(argv, project, exit_code)
             if timeout:
                 record.update(timed_out=True, actual_exit=-9, passed=False)
             return record
         with (patch.dict(sys.modules, {"q0_pylint_inputs": fake_helper()}), patch.object(runner, "run_command", side_effect=execute) as command):
-            result = runner.run_case(Path("/venv/bin/python"), root, input_case, frozen, 12, comparator, {"identity": "control"})
+            result = runner.run_case(Path("/venv/bin/python"), root, input_case, frozen, 12, comparator, environment_identity())
         return result, command
+
+    def test_valid_interpreter_cache_is_retained_without_source_change(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "results").mkdir()
+            input_case = case()
+            frozen = expected(input_case)
+            result, _ = self.run_control(root, input_case, frozen, cache=True)
+            cache_name = "nested/__pycache__/extra.cpython-312.pyc"
+            self.assertEqual(result["status"], "passed")
+            self.assertTrue(result["fixture_files_unchanged"])
+            self.assertTrue(result["source_unchanged"])
+            self.assertFalse(result["project_tree_unchanged"])
+            self.assertIn(cache_name, result["source_after"])
+            self.assertNotIn(cache_name, result["source_before"])
+            self.assertEqual(result["generated_cache_files"][cache_name]["source"], "nested/extra.py")
+            self.assertEqual(result["generated_cache_files"][cache_name]["magic_number_hex"], importlib.util.MAGIC_NUMBER.hex())
+            self.assertEqual((root / "case_0000" / cache_name).read_bytes()[:4], importlib.util.MAGIC_NUMBER)
+            self.assertIn("case_0000/" + cache_name, runner.inventory(root))
+            runner.require_shard_results([input_case], [result], [frozen], 12, Path("/venv/bin/python"), root, environment_identity())
+
+    def test_unknown_or_invalid_cache_and_changed_or_missing_fixture_fail(self):
+        for change in ["tag", "magic", "nonsource", "arbitrary", "changed", "removed"]:
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as temporary:
+                project = Path(temporary) / "case_0000"
+                input_case = case()
+                fake_helper().materialize_case(input_case, project)
+                before = runner.inventory(project)
+                cache_name = {"tag": "__pycache__/main.cpython-313.pyc",
+                              "magic": "__pycache__/main.cpython-312.pyc",
+                              "nonsource": "__pycache__/unknown.cpython-312.pyc",
+                              "arbitrary": "new.txt"}.get(change)
+                if cache_name:
+                    path = project / cache_name
+                    path.parent.mkdir(exist_ok=True)
+                    magic = b"wrong" if change == "magic" else importlib.util.MAGIC_NUMBER
+                    path.write_bytes(magic + b"harmless cache control")
+                elif change == "changed":
+                    (project / "native.so").write_bytes(b"changed")
+                else:
+                    (project / "native.so").unlink()
+                state = runner.fixture_file_state(input_case, before, runner.inventory(project), project, environment_identity(), 12)
+                self.assertFalse(state["project_files_acceptable"])
+                if change in {"changed", "removed"}:
+                    self.assertFalse(state["fixture_files_unchanged"])
+                else:
+                    self.assertTrue(state["fixture_files_unchanged"])
+                    self.assertFalse(state["project_tree_unchanged"])
 
     def test_one_case_one_fresh_command_and_all_fixture_files(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -276,6 +343,22 @@ class CaseExecution(unittest.TestCase):
 
 
 class Coverage(unittest.TestCase):
+    def test_only_exact_host_and_lock_context_are_permitted(self):
+        environment = {"GITHUB_ACTIONS": "true", "RUNNER_OS": "macOS", "RUNNER_ARCH": "ARM64"}
+        with patch.object(sys, "platform", "darwin"), patch.dict(os.environ, environment):
+            runner.require_host_context(runner.HOST_CONTEXT)
+            for key, value in [("runner_label", "macos-15-intel"), ("runner_arch", "X64"), ("runner_os", "Linux")]:
+                changed = {**runner.HOST_CONTEXT, key: value}
+                with self.assertRaisesRegex(ValueError, "locked host context differs"):
+                    runner.require_host_context(changed)
+        for key, value in [("GITHUB_ACTIONS", "false"), ("RUNNER_OS", "Linux"), ("RUNNER_ARCH", "X64")]:
+            with patch.object(sys, "platform", "darwin"), patch.dict(os.environ, {**environment, key: value}):
+                with self.assertRaisesRegex(ValueError, "macOS ARM64"):
+                    runner.require_host_context(runner.HOST_CONTEXT)
+        with patch.object(sys, "platform", "linux"), patch.dict(os.environ, environment):
+            with self.assertRaisesRegex(ValueError, "macOS ARM64"):
+                runner.require_host_context(runner.HOST_CONTEXT)
+
     def test_non_hosted_run_fails_before_download_and_claims_no_acceptance(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary) / "fresh"
@@ -292,25 +375,34 @@ class Coverage(unittest.TestCase):
                 self.assertFalse(summary[key])
 
     def setup_rows(self):
-        root, executable = Path("/output/python312"), Path("/output/python312/venv/bin/python")
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name) / "python312"
+        root.mkdir()
+        executable = root / "venv/bin/python"
         selected = [case(0), case(4)]
         published = [expected(case(i)) for i in range(5)]
         rows = []
         for input_case in selected:
             project = root / f"case_{input_case['index']:04}"
-            rows.append({"index": input_case["index"], "name": input_case["name"], "source_sha256": input_case["source_sha256"],
+            fake_helper().materialize_case(input_case, project)
+            before = runner.inventory(project)
+            row = {"index": input_case["index"], "name": input_case["name"], "source_sha256": input_case["source_sha256"],
                          "status": "passed", "failures": [], "source_unchanged": True,
-                         "source_before": runner.source_manifest(input_case), "source_after": runner.source_manifest(input_case),
+                         "source_before": before, "source_after": before,
+                         "environment_identity": environment_identity(),
                          "receipt": receipt(runner.reference_argv(executable, ["main.py", "nested/extra.py"], 12), project),
-                         "comparison": {"matched": True, "matched_by": "canonical", "actual_exit": 0, "reference_exit": 0}})
+                         "comparison": {"matched": True, "matched_by": "canonical", "actual_exit": 0, "reference_exit": 0}}
+            row.update(runner.fixture_file_state(input_case, before, before, project, environment_identity(), 12))
+            rows.append(row)
         return selected, rows, published, executable, root
 
     def test_complete_shard_receipts_and_sources_are_required(self):
         selected, rows, published, executable, root = self.setup_rows()
-        runner.require_shard_results(selected, rows, published, 12, executable, root)
+        runner.require_shard_results(selected, rows, published, 12, executable, root, environment_identity())
         for altered in [[], rows[:-1], [rows[0], rows[0]], list(reversed(rows))]:
             with self.assertRaises(ValueError):
-                runner.require_shard_results(selected, altered, published, 12, executable, root)
+                runner.require_shard_results(selected, altered, published, 12, executable, root, environment_identity())
 
     def test_missing_wait_pid_exit_and_timeout_are_rejected(self):
         selected, rows, published, executable, root = self.setup_rows()
@@ -318,7 +410,7 @@ class Coverage(unittest.TestCase):
             altered = copy.deepcopy(rows)
             altered[0]["receipt"][key] = value
             with self.assertRaises(ValueError):
-                runner.require_shard_results(selected, altered, published, 12, executable, root)
+                runner.require_shard_results(selected, altered, published, 12, executable, root, environment_identity())
 
     def test_wrong_command_cwd_source_and_comparison_are_rejected(self):
         selected, rows, published, executable, root = self.setup_rows()
@@ -333,7 +425,32 @@ class Coverage(unittest.TestCase):
             else:
                 altered[0]["comparison"]["matched"] = False
             with self.assertRaises(ValueError):
-                runner.require_shard_results(selected, altered, published, 12, executable, root)
+                runner.require_shard_results(selected, altered, published, 12, executable, root, environment_identity())
+
+    def test_collector_rechecks_files_and_recorded_cache_metadata(self):
+        selected, rows, published, executable, root = self.setup_rows()
+        project = root / "case_0000"
+        path = project / "__pycache__/main.cpython-312.pyc"
+        path.parent.mkdir()
+        py_compile.compile(str(project / "main.py"), cfile=str(path), doraise=True)
+        rows[0]["source_after"] = runner.inventory(project)
+        rows[0].update(runner.fixture_file_state(selected[0], rows[0]["source_before"], rows[0]["source_after"], project, environment_identity(), 12))
+        runner.require_shard_results(selected, rows, published, 12, executable, root, environment_identity())
+        for change in ["cache", "tree", "fixture", "environment"]:
+            altered = copy.deepcopy(rows)
+            if change == "cache":
+                altered[0]["generated_cache_files"]["__pycache__/main.cpython-312.pyc"]["source"] = "other.py"
+            elif change == "tree":
+                altered[0]["project_tree_unchanged"] = True
+            elif change == "fixture":
+                altered[0]["fixture_files_unchanged"] = False
+            else:
+                altered[0]["environment_identity"]["magic_number_hex"] = "00000000"
+            with self.assertRaises(ValueError):
+                runner.require_shard_results(selected, altered, published, 12, executable, root, environment_identity())
+        (project / "native.so").unlink()
+        with self.assertRaises(ValueError):
+            runner.require_shard_results(selected, rows, published, 12, executable, root, environment_identity())
 
     def test_benign_process_receipt_retains_raw_bytes(self):
         with tempfile.TemporaryDirectory() as temporary:

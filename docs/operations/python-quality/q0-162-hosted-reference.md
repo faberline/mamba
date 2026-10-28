@@ -9,6 +9,10 @@ Each issue still needs complete independent review before the next starts.
 
 Pylint remains 4.1.2 and astroid remains 4.3.3.
 Python targets remain 3.12.11, 3.13.5 and 3.14.0.
+The current reconstruction uses standard macOS 15 ARM64 hosted runners.
+Retained interpreter hashes and Mach-O headers identify the original platform
+family. The original Mac ARM64 isort wheels are pinned for all three targets.
+This does not recover the old venvs or assert their old OS release.
 Eight core runtime packages and the fixture-import dependency
 `typing_extensions 4.16.0` use the retained original oracle versions and hashes.
 The fixture dependency is required by 63 fixed source files, including Final
@@ -49,6 +53,15 @@ actual exit and raw stdout/stderr. The actual exit must equal the frozen
 case/target exit. Usage errors, timeouts, missing processes and altered
 fixture bytes fail. Failed cases do not silently stop the other assigned cases.
 
+The collector keeps the complete project inventory before and after each run.
+Every declared fixture must remain present with its exact original bytes.
+An added file is allowed only at the CPython cache path of a declared `.py`
+source. Its cache tag and four-byte magic must match the probed target.
+The collector records `fixture_files_unchanged`, `project_tree_unchanged`
+and `generated_cache_files` separately. It rechecks files and cache metadata
+after all assigned cases finish. Cache bytes remain in the artifact.
+Other added files fail. No bytecode-suppression option is added to Pylint.
+
 A shard pass is only a partition result. Final acceptance requires all
 twelve artifacts from the same candidate/run and an independent full join.
 The join must find every case on every target exactly once, with no missing,
@@ -74,8 +87,27 @@ The fixture and its original approval SHA are pinned.
 
 Three F0002 crash cases and two F0010 cases per target remain fatal outcomes.
 They are not relabeled as successful Pylint executions.
-The original recipe has no platform adjustment. Linux differences remain
-failures unless the existing precise comparator already permits them.
+The original recipe has no platform adjustment. Differences remain failures
+unless the existing precise comparator already permits them.
+
+## First hosted Linux evidence
+
+Run 40723996421 used source `f0cc2ac939dec78a60887aad6e60d92da9a95f5f`.
+All twelve artifacts are retained with their GitHub ZIP hashes.
+The run completed and waited for all 59,241 child processes.
+The original shard gates reported 59,192 matches and 49 failed cells.
+The run remains failed and is not reused as current acceptance evidence.
+
+Observed differences include I0011 registration order, R0801 fragment text,
+W1303 order and platform-specific extension behavior. The pinned Pylint source
+uses unsorted directory enumeration and object-identity set iteration in the
+relevant paths. Matching the original OS family does not guarantee a match.
+The complete matrix must run again under the unchanged comparison rules.
+
+Nine project inventories also gained interpreter-generated resource bytecode.
+Their declared input files were neither removed nor changed. Generated cache
+files are runtime output, distinct from the original fixture bytes. Their full
+bytes and metadata remain visible; input immutability still needs verification.
 
 ## Coverage and evidence boundary
 

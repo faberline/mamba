@@ -473,19 +473,19 @@
       "version": "9.0.2",
       "wheels": {
         "12": {
-          "filename": "isort-9.0.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "url": "https://files.pythonhosted.org/packages/ab/36/512c41f0d9f4c2a61d56d383db21d42a9b82b4f768827f7e852139d14123/isort-9.0.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "sha256": "af8be0b5cac101202c8255360e5de832ebbb84b2e863dc0f65dbb1a3d63dd40a"
+          "filename": "isort-9.0.2-cp312-cp312-macosx_11_0_arm64.whl",
+          "url": "https://files.pythonhosted.org/packages/41/c3/3cd3e0f66af21e1bf917f50b45d3389de3d9a25661f2e7f74e51c7fb37a8/isort-9.0.2-cp312-cp312-macosx_11_0_arm64.whl",
+          "sha256": "a05dc63cb6ae2a8e62ec4184153f424b1650593e00a24e6138184c46193891e9"
         },
         "13": {
-          "filename": "isort-9.0.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "url": "https://files.pythonhosted.org/packages/28/54/0ac6f7cf254c29bde0832dc655b0327d84752c4511f9f56fbd0778251542/isort-9.0.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "sha256": "e5f11c7ccd5f079ac0431fe52c7b38ea5d9f4e31a1889746de81dac0e7b0a766"
+          "filename": "isort-9.0.2-cp313-cp313-macosx_11_0_arm64.whl",
+          "url": "https://files.pythonhosted.org/packages/99/44/b51a78a2aee3bc14b91d5f071aea2fe35d9acde5f65f0ac5cb77800616a3/isort-9.0.2-cp313-cp313-macosx_11_0_arm64.whl",
+          "sha256": "f65ff614632ddc3306c40f619717b3b3ca69938ffee21d97110056d52472c79a"
         },
         "14": {
-          "filename": "isort-9.0.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "url": "https://files.pythonhosted.org/packages/7e/da/f97a4905cf8212c31d584f0222ae8b1deed391e42db910e8e908eb89002e/isort-9.0.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
-          "sha256": "6eb3e714d64de6eba78ee29051f7fc80613c74e90c6f54f84082f59c429c0a0b"
+          "filename": "isort-9.0.2-cp314-cp314-macosx_11_0_arm64.whl",
+          "url": "https://files.pythonhosted.org/packages/53/25/b0dae3025157f020d9010bc126120e703b50ed74ebfb5ca56be81e064d0c/isort-9.0.2-cp314-cp314-macosx_11_0_arm64.whl",
+          "sha256": "bd8c4fb9829a5e7117d9f71f540ff1e8caafb471e574012057ce6dc35fda2d7b"
         }
       }
     },
@@ -607,7 +607,14 @@
   "fixture_import_dependencies": {
     "typing_extensions": {
       "version": "4.16.0",
-      "reason": "63 fixed cases import this original-pinned package; it is not active in the core LinuxPylint dependency closure"
+      "reason": "63 fixed cases import this original-pinned package; it is not active in the core Pylint dependency closure on the locked targets"
     }
+  },
+  "platform": {
+    "sys_platform": "darwin",
+    "platform_system": "Darwin",
+    "runner_os": "macOS",
+    "runner_arch": "ARM64",
+    "runner_label": "macos-15"
   }
 }
