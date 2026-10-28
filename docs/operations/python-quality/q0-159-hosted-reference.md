@@ -64,5 +64,21 @@ acceptance item before it can close issue 159.
 
 ## Current status
 
-The hosted result is pending.
+[Run 40680721778](https://github.com/faberline/mamba/actions/runs/40680721778)
+passed at source `ea2e0c6f705b49f7526028150792dfadb17667f1`.
+The controller downloaded the artifact and checked all 7,460 indexed files.
+No file was missing or different.
+
+All 784 reconstructed input hashes match the published inputs.
+For all three Python targets, every ordered diagnostic field matches the
+existing frozen reference results. All 784 fixed output hashes also match.
+The 15 original processes completed with the required exits.
+All 522 rule rows passed their declared observed, inactive, or dormant condition.
+
+The detailed independent checks are in `q0-159-hosted-reference-results.json`.
+The source SHA above identifies the executed code. Later documentation commits
+must not be presented as that run's source.
+
+Issue acceptance is pending the user's decision on using the new hosted
+evidence in place of the missing historical environment/process records.
 No product, platform, performance, parent issue, or release acceptance is claimed.
