@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import stat
 
-PACKET = "tools/ci/q0_16_cases/mypy_shadow_order.json"
+PACKET = "tools/ci/q0_16_cases/reference/mypy_shadow_order.json"
 CASE_SOURCE = "crates/mamba-quality/src/infrastructure/mypy/tests/dependency_source_errors.json"
 REQUEST = "2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d"
 CATEGORY = "mypy ordering when both collections and collections.abc are shadowed."

@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 import q0_16_contract_lint as lint
 import q0_16_shadow_reference as shadow
+from q0_16_packet import load_packets
 
 
 class ShadowReferenceControls(unittest.TestCase):
@@ -192,6 +193,20 @@ class ShadowReferenceControls(unittest.TestCase):
         self.assertEqual(len(gated[0]["source_aliases"]), 1)
         self.assertEqual(self.packet["original_contexts_added"], 0)
         self.assertEqual(self.packet["original_aliases_added"], 0)
+
+    def test_nested_reference_packet_preserves_original_supplement_discovery(self):
+        self.assertEqual(shadow.PACKET, "tools/ci/q0_16_cases/reference/mypy_shadow_order.json")
+        self.assertTrue((self.repo / shadow.PACKET).is_file())
+        self.assertFalse((self.repo / "tools/ci/q0_16_cases/mypy_shadow_order.json").exists())
+        self.assertEqual(shadow.digest((self.repo / "tools/ci/q0_16_packet.py").read_bytes()),
+            "fc3ca14da898de1227e3614273a06c82068d1241e3485ca94cf0d50fbbc7e166")
+        profile = shadow.read_json((self.repo / "crates/mamba-quality/assets/profile.json").read_bytes())
+        packets = load_packets(self.repo, profile)
+        self.assertEqual([row["packet"]["tool"] for row in packets], ["mypy", "pydantic", "pylint"])
+        self.assertEqual({row["proof"]["tool"]: row["proof"]["case_count"] for row in packets}, {"mypy": 7, "pydantic": 9, "pylint": 327})
+        self.assertEqual(sum(row["proof"]["case_count"] for row in packets), 343)
+        self.assertEqual(sum(row["proof"]["planned_target_cells"] for row in packets), 1029)
+        self.assertEqual(sum(len(row["proof"]["disabled_rule_pairs"]) for row in packets), 136)
 
 
 if __name__ == "__main__":
