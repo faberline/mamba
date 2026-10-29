@@ -1,0 +1,628 @@
+"""Pure controls for the finite hosted contract lint capture.
+
+No original checker, fixture program, package installer or native tool runs.
+"""
+import copy
+import ast
+import json
+import pathlib
+import zipfile
+from pathlib import Path
+import tempfile
+import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+
+import q0_16_contract_lint as lint
+
+
+class ContractControls(unittest.TestCase):
+    def test_known_wait_requires_physical_process_fields(self):
+        fact = {"pid": 1, "waited_pid": 1, "wait_completed": True, "actual_exit": 2}
+        self.assertTrue(lint.known_wait(fact))
+        self.assertFalse(lint.known_wait(None))
+        for change in ({"pid": True}, {"pid": 0}, {"waited_pid": True},
+                       {"waited_pid": 2}, {"wait_completed": False},
+                       {"actual_exit": None}, {"actual_exit": False}):
+            self.assertFalse(lint.known_wait({**fact, **change}))
+
+    def test_pointer_rejects_negative_indexes_and_bad_escape(self):
+        for pointer in ("/-1", "/01", "/+1", "/~2"):
+            with self.assertRaises(ValueError):
+                lint.select([1, 2], pointer)
+
+    def test_safe_selection_keeps_lexical_spelling(self):
+        root = Path("/sealed/work")
+        self.assertEqual(str(lint.lexical_path(root, "regular.py/child.py")), "/sealed/work/regular.py/child.py")
+        for path in ("../escape.py", "/outside.py", "x/../../escape.py"):
+            with self.assertRaises(ValueError):
+                lint.lexical_path(root, path)
+
+    def test_receipt_bool_is_not_integer(self):
+        receipt = {"pid": 1, "waited_pid": True, "wait_completed": True, "timed_out": False,
+            "launch_error": None, "actual_exit": 0, "passed": True}
+        with self.assertRaises(ValueError):
+            lint.terminal_receipt(receipt, (0,))
+        receipt["waited_pid"] = 1
+        lint.terminal_receipt(receipt, (0,))
+
+    def test_saved_receipt_all_fields_and_JSON_types(self):
+        returned = {"expected_exits": (0, 1), "pid": 3, "waited_pid": 3, "actual_exit": 1, "extra": {"value": 0}}
+        stored = {**returned, "expected_exits": [0, 1]}
+        lint.capture.require_saved_receipt(returned, stored, (0, 1))
+        for change in ({"extra": {"value": False}}, {"actual_exit": True}, {"new": "field"}):
+            bad = {**stored, **change}
+            with self.assertRaises(ValueError):
+                lint.capture.require_saved_receipt(returned, bad, (0, 1))
+
+    def test_raw_mypy_projection_keeps_hint_and_end_sites(self):
+        raw = {"file": "main.py", "line": 2, "column": 0, "end_line": 3, "end_column": -1,
+            "message": "message", "hint": "note\nsecond", "code": "misc", "severity": "note"}
+        projected = lint.normal_mypy(raw, Path("/work"), None)
+        self.assertEqual(projected["hint"], "note\nsecond")
+        self.assertEqual(projected["location"], {"line": 2, "column": 1, "end_line": 3, "end_column": -1})
+        with self.assertRaises(ValueError):
+            lint.json_lines(json.dumps({**raw, "unknown": 1}).encode())
+        raw["code"] = None
+        self.assertIsNone(lint.normal_mypy(raw, Path("/work"), None)["rule"])
+
+    def test_only_declared_pinned_blockers_allow_exit_two(self):
+        with tempfile.TemporaryDirectory() as folder:
+            repo = Path(folder); path = repo / "contract.json"
+            raw = {"file": "main.py", "line": 1, "column": 0, "end_line": 1, "end_column": 1,
+                "message": "Expected an expression", "hint": None, "code": "syntax", "severity": "error"}
+            def plan(diagnostic, extra=None):
+                value = {"expected": [lint.normal_mypy(diagnostic, Path("/work"), None)], **(extra or {})}
+                path.write_text(json.dumps(value)); sources = lint.Sources(repo)
+                ref = {"source_id": path.name, "sha256": lint.digest(path.read_bytes()), "json_pointer": "", "value_sha256": lint.value_sha(value)}
+                case = {"context": {"tool": "mypy", "target": "3.13"},
+                    "source_aliases": [{"unit_id": "test", "case_source": ref}],
+                    "expected_bindings": [{"source": sources.child(ref, "expected") }], "owner_sources": []}
+                return sources, case
+            sources, case = plan(raw)
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [2])
+            _, comparisons = lint.compare(sources, case, json.dumps(raw).encode(), 2, Path("/work"))
+            self.assertEqual(comparisons[0]["exit_parity_status"], "not_defined_for_JSON")
+            changed = {**raw, "message": "different complete diagnostic"}
+            with self.assertRaises(lint.ComparisonError):
+                lint.compare(sources, case, json.dumps(changed).encode(), 2, Path("/work"))
+            sources, case = plan({**raw, "code": "assignment"})
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [0, 1])
+            sources, case = plan(raw, {"original_json_exit": 0})
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [0, 1])
+            shadow = {**raw, "code": None, "message": 'This file shadows library module "typing"',
+                "hint": 'A user-defined top-level module with name "typing" is not supported'}
+            sources, case = plan(shadow)
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [2])
+            sources, case = plan({**shadow, "hint": "different hint"})
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [0, 1])
+            version_gate = {**raw, "message": "T-strings: requires Python 3.14 or newer (current target: Python 3.13)"}
+            sources, case = plan(version_gate)
+            self.assertEqual(lint.process_exit_contract(sources, case)["allowed_exits"], [0, 1])
+            _, comparisons = lint.compare(sources, case, json.dumps(version_gate).encode(), 1, Path("/work"))
+            self.assertEqual(comparisons[0]["exit_parity_status"], "not_defined_for_JSON")
+            value = {"expected": [lint.normal_mypy(version_gate, Path("/work"), None), lint.normal_mypy(raw, Path("/work"), None)]}
+            path.write_text(json.dumps(value)); sources = lint.Sources(repo)
+            ref = {"source_id": path.name, "sha256": lint.digest(path.read_bytes()), "json_pointer": "", "value_sha256": lint.value_sha(value)}
+            case["source_aliases"][0]["case_source"] = ref
+            case["expected_bindings"][0]["source"] = sources.child(ref, "expected")
+            contract = lint.process_exit_contract(sources, case)
+            self.assertEqual(contract["allowed_exits"], [2])
+            self.assertEqual([m["diagnostic_index"] for m in contract["blocker_bindings"][0]["declared_blockers"]], [1])
+
+    def test_rejected_terminal_exit_retains_full_receipt_and_known_wait(self):
+        case = {"request_id": "test", "context": {"tool": "mypy", "target": "3.13",
+            "layout": {"files": {"main.py": lint.payload(b"static fixture data\n")}, "model_packages": {},
+                "symlinks": {}, "declared_directories": [], "modes": {}, "restricted_path": None,
+                "source_role_name_for_FS_operations": None}, "selection": {"paths": ["main.py"], "absolute": False}},
+            "source_aliases": [], "expected_bindings": []}
+        def command(argv, cwd, destination, **options):
+            destination.mkdir(); lint.write_json(destination / "inputs.json", options["inputs"])
+            receipt = {"argv": argv, "cwd": str(cwd), "expected_exits": options["expected_exits"],
+                "pid": 41, "waited_pid": 41, "wait_completed": True, "actual_exit": 2,
+                "timed_out": False, "launch_error": None, "passed": False}
+            for name in ("stdin", "stdout", "stderr"):
+                (destination / (name + ".raw")).write_bytes(b""); receipt[name + "_sha256"] = lint.digest(b"")
+            receipt["inputs_sha256"] = lint.digest((destination / "inputs.json").read_bytes())
+            lint.write_json(destination / "receipt.json", receipt); return receipt
+        with tempfile.TemporaryDirectory() as folder, patch.object(lint, "run_command", side_effect=command):
+            root = Path(folder)
+            row = lint.run_case(lint.Sources(root), case, "3.13.5", Path("/not-executed"), Path("/not-executed"), {}, root / "case")
+            self.assertEqual(row["status"], "failed")
+            self.assertEqual(row["receipt"]["actual_exit"], 2)
+            self.assertEqual(row["returned_receipt"]["waited_pid"], 41)
+            self.assertTrue(lint.known_wait(row["capture_process_fact"]))
+            with self.assertRaises(ValueError):
+                lint.final_reconcile(row, root / "case")
+
+    def test_whole_source_JSON_exit_selects_target_and_all_repeats(self):
+        calls = [{"target": target, "reporter": reporter, "repeat": repeat,
+            "actual_exit": 1 if target == "3.12" and reporter == "json" else 7}
+            for target in ("3.12", "3.13") for reporter in ("json", "text") for repeat in (1, 2)]
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); path = root / "lambda_binding.json"
+            def setup():
+                value = {"source": "static data", "original_calls": calls}
+                path.write_text(json.dumps(value))
+                ref = {"source_id": path.name, "sha256": lint.digest(path.read_bytes()), "json_pointer": "/source", "value_sha256": lint.value_sha(value["source"])}
+                return lint.Sources(root), {"context": {"tool": "mypy", "target": "3.12"}}, {"unit_id": "mypy:ancillary:lambda_binding.json:whole-source", "case_source": ref}
+            sources, case, alias = setup()
+            code, binding = lint.explicit_exit(sources, case, alias)
+            self.assertEqual(code, 1)
+            self.assertEqual([ref["json_pointer"] for ref in binding["repeat_bindings"]],
+                ["/original_calls/0/actual_exit", "/original_calls/1/actual_exit"])
+            self.assertEqual([sources.resolve(ref) for ref in binding["repeat_bindings"]], [1, 1])
+            calls[1]["actual_exit"] = 0
+            sources, case, alias = setup()
+            with self.assertRaisesRegex(ValueError, "conflict"):
+                lint.explicit_exit(sources, case, alias)
+
+    def test_metadata_path_binding_is_exact_prefix(self):
+        site = Path("/case/metadata/venv/lib/python3.12/site-packages")
+        self.assertEqual(lint.project_path(str(site / "pkg/mod.py"), Path("/case/work"), site),
+            ".venv/lib/python3.12/site-packages/pkg/mod.py")
+        self.assertEqual(lint.project_path("/other/pkg/mod.py", Path("/case/work"), site), "/other/pkg/mod.py")
+
+    def test_duplicate_message_binding_requires_declared_entry(self):
+        message = 'Duplicate module named "m" (also at "/old/a.py")'
+        self.assertEqual(lint.bind_duplicate_message(message, "/old", Path("/new"), {"a.py": {}}),
+            'Duplicate module named "m" (also at "/new/a.py")')
+        for entries in ({}, {"b.py": {}}):
+            with self.assertRaises(ValueError):
+                lint.bind_duplicate_message(message, "/old", Path("/new"), entries)
+        self.assertEqual(lint.bind_duplicate_message("other message", "/old", Path("/new"), {}), "other message")
+
+    def test_crash_binding_has_narrow_message_and_rule_guard(self):
+        message = ("main.py: Fatal error while checking 'main.py'. Please open an issue in our bug tracker so we address this. "
+            "There is a pre-filled template that you can use in '/cache/pylint-crash-2026-10-29-01-02-03.txt'.")
+        row = {"rule": "F0002", "path": "main.py", "message": message}
+        self.assertIn("<timestamp>", lint.crash_filename([row])[0]["message"])
+        for altered in ({**row, "rule": "F0010"}, {**row, "path": "other.py"}, {**row, "message": message.replace("Please open", "Please create")}):
+            self.assertEqual(lint.crash_filename([altered]), [altered])
+
+    def test_declared_argv_uses_real_metadata_python_and_sealed_config(self):
+        case = {"context": {"tool": "mypy", "target": "3.12", "selection": {"paths": ["."], "absolute": False}}}
+        argv = lint.argv_for(Path("/checker/python"), case, Path("/case/work"), Path("/case/control/mypy.ini"), Path("/case/metadata/venv/bin/python"))
+        self.assertEqual(argv[1:4], ["-I", "-m", "mypy"])
+        self.assertEqual(argv[argv.index("--python-executable") + 1], "/case/metadata/venv/bin/python")
+        self.assertEqual(argv[argv.index("--config-file") + 1], "/case/control/mypy.ini")
+        self.assertEqual(argv[-1], ".")
+
+    def test_metadata_startup_files_rejected_before_process(self):
+        for name in ("unsafe.pth", "sitecustomize.py", "usercustomize.py", "site.py", "sitecustomize/__init__.py", "usercustomize/__init__.py"):
+            case = {"context": {"target": "3.12", "layout": {"model_packages": {name: lint.payload(b"raise RuntimeError()")}}}}
+            with tempfile.TemporaryDirectory() as folder, patch.object(lint, "run_command") as command:
+                with self.assertRaises(ValueError):
+                    lint.prepare_metadata(Path("/base"), Path("/checker"), "3.12.11", case, Path(folder) / "metadata")
+                command.assert_not_called()
+
+    def test_metadata_query_guard_rejects_other_args_and_fixture_execution(self):
+        tree = ast.parse(lint.METADATA_QUERY_GUARD)
+        validate = next(node for node in ast.walk(tree) if isinstance(node, ast.FunctionDef) and node.name == "validate_query_args")
+        audit = next(node for node in ast.walk(tree) if isinstance(node, ast.FunctionDef) and node.name == "audit")
+        namespace = {"pathlib": pathlib, "fixture_roots": [Path("/sealed/fixture")]}
+        exec(compile(ast.Module(body=[validate, audit], type_ignores=[]), "<pure-query-guard-control>", "exec"), namespace)
+        namespace["validate_query_args"](["/pinned/pyinfo.py", "getsearchdirs"], "/pinned/pyinfo.py")
+        for args in (["-V"], ["/foreign/pyinfo.py", "getsearchdirs"], ["/pinned/pyinfo.py", "getsearchdirs", "extra"]):
+            with self.assertRaises(ValueError):
+                namespace["validate_query_args"](args, "/pinned/pyinfo.py")
+        with self.assertRaisesRegex(RuntimeError, "fixture body execution"):
+            namespace["audit"]("exec", [SimpleNamespace(co_filename="/sealed/fixture/pkg/__init__.py")])
+        with self.assertRaisesRegex(RuntimeError, "fixture import"):
+            namespace["audit"]("import", ["pkg", "/sealed/fixture/pkg/native.so"])
+        namespace["audit"]("exec", [SimpleNamespace(co_filename="/pinned/pyinfo.py")])
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); helper = root / "pyinfo.py"; helper.write_bytes(b"pure mock data only")
+            original_fact = lint.capture.fact
+            def static_fact(path):
+                if str(path).startswith("/base/lib/python3.12/"):
+                    return {"bytes": 1, "sha256": "0" * 64}
+                fact = original_fact(path)
+                return {**fact, "sha256": lint.PYINFO_SHA} if path == helper else fact
+            with patch.object(lint.capture, "fact", side_effect=static_fact), patch.object(lint, "checked_command") as command:
+                transport, state = lint.metadata_query_transport(Path("/real/metadata/python"), helper, "3.12.11", root, Path("/metadata/site"))
+                command.assert_not_called()
+            text = transport.read_text()
+            self.assertIn("exec /real/metadata/python -I -B ", text)
+            self.assertEqual(state["kind"], "guarded_query_transport_not_Python_identity")
+            self.assertEqual((root / "query-guard.py").read_text(), lint.METADATA_QUERY_GUARD)
+            self.assertNotIn("PYTHONPATH", text)
+            mock_state = {"root": str(root), "site": "/metadata/site", "base_executable": "/base/bin/python", "python": [3, 12, 11],
+                "query_transport": state, "query_preflight_pid": 91, "checker_venv": "/checker"}
+            started = {"pid_self_reported": 91, "parent_pid_self_reported": 42, "parent_wait_claimed": False,
+                "completion_self_reported": False, "real_python": state["real_python"], "python": [3, 12, 11],
+                "prefix": str(root / "venv"), "base_prefix": "/base", "isolated": 1, "safe_path": True,
+                "dont_write_bytecode": 1, "user_site": False,
+                "transport_argv": [state["guard_path"], state["policy_path"], state["helper_path"], "getsearchdirs"]}
+            raw = (repr(([], [mock_state["site"]])) + "\n").encode()
+            completed = {**started, "completion_self_reported": True, "self_reported_exit": 0, "fixture_execution_guard": True,
+                "helper_sha256": lint.PYINFO_SHA, "helper_bytes": state["helper"]["bytes"],
+                "stdout_bytes": len(raw), "stdout_sha256": lint.digest(raw), "stderr_bytes": 0, "stderr_sha256": lint.digest(b""),
+                "module_origins": {name: {"path": "/base/lib/python3.12/" + name + ".py", "bytes": 1, "sha256": "0" * 64}
+                    for name in ("site", "sysconfig", "types")}}
+            proof = root / "query-observations"
+            lint.write_json(proof / "91.started.json", started); lint.write_json(proof / "91.completed.json", completed)
+            (proof / "91.stdout.raw").write_bytes(raw); (proof / "91.stderr.raw").write_bytes(b"")
+            (root / "search-query").mkdir(); (root / "search-query/stdout.raw").write_bytes(raw)
+            with patch.object(lint.capture, "fact", side_effect=static_fact):
+                result = lint.verify_metadata_queries(mock_state, None)
+                self.assertEqual(result[0]["observation"]["path"], "query-observations/91.completed.json")
+                self.assertIs(result[0]["parent_wait_claimed"], False)
+                with self.assertRaisesRegex(ValueError, "no actual internal"):
+                    lint.verify_metadata_queries(mock_state, 123)
+                internal_started = {**started, "pid_self_reported": 92, "parent_pid_self_reported": 123}
+                internal_completed = {**completed, "pid_self_reported": 92, "parent_pid_self_reported": 123}
+                lint.write_json(proof / "92.started.json", internal_started); lint.write_json(proof / "92.completed.json", internal_completed)
+                (proof / "92.stdout.raw").write_bytes(raw); (proof / "92.stderr.raw").write_bytes(b"")
+                result = lint.verify_metadata_queries(mock_state, 123)
+                self.assertEqual([item["kind"] for item in result], ["waited_preflight", "internal_checker_query"])
+                self.assertIs(result[1]["parent_wait_claimed"], False)
+                self.assertEqual(lint.verify_metadata_queries(mock_state, 123), result)
+                final_path = root / "queries-final.json"; final_raw = final_path.read_bytes()
+                final_path.write_text("[]")
+                with self.assertRaisesRegex(ValueError, "immutable metadata observation changed"):
+                    lint.verify_metadata_queries(mock_state, 123)
+                final_path.write_bytes(final_raw)
+                (proof / "91.started.json").write_text(json.dumps({"completion_self_reported": False}))
+                with self.assertRaisesRegex(ValueError, "initial observation changed"):
+                    lint.verify_metadata_queries(mock_state, 123)
+                (proof / "91.started.json").write_text(json.dumps(started))
+                tampered = {**completed, "parent_wait_claimed": True}
+                (proof / "91.completed.json").write_text(json.dumps(tampered))
+                with self.assertRaisesRegex(ValueError, "identity/health"):
+                    lint.verify_metadata_queries(mock_state, None)
+
+    def test_reference_library_copy_keeps_only_attested_static_type_bytes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder); environment = output / "environments/mypy"
+            executable = environment / "venv/bin/python"; executable.parent.mkdir(parents=True); executable.write_bytes(b"not executed")
+            checker_site = environment / "venv/lib/python3.12/site-packages"; checker_site.mkdir(parents=True)
+            metadata = output / "case/metadata"; site = metadata / "venv/lib/python3.12/site-packages"; site.mkdir(parents=True)
+            model = {"pkg/__init__.py": lint.payload(b"static mock fixture data")}
+            (site / "pkg").mkdir(); (site / "pkg/__init__.py").write_bytes(bytes.fromhex(model["pkg/__init__.py"]["bytes_hex"]))
+            selections = {name: {**selection, "files": 1} for name, selection in lint.REFERENCE_LIBRARY_SELECTIONS.items()}
+            identity = {"executable": str(executable), "wheel_artifacts": [], "distributions": {}}
+            origins, before = [], {}
+            for index, (name, selection) in enumerate(selections.items()):
+                member = selection.get("exact", selection.get("prefix", "") + ("_pydantic_core.pyi" if name == "pydantic_core" else "__init__.py"))
+                raw = (name + " original static type bytes").encode(); descriptor = {"bytes": len(raw), "sha256": lint.digest(raw)}
+                source = checker_site / member; source.parent.mkdir(parents=True, exist_ok=True); source.write_bytes(raw)
+                directory = output / "downloads/mypy" / ("wheel-" + str(index)); directory.mkdir(parents=True)
+                wheel = directory / (name + ".whl")
+                with zipfile.ZipFile(wheel, "w") as archive:
+                    archive.writestr(member, raw)
+                    archive.writestr((selection.get("prefix") or "") + "forbidden.so", b"native must not be copied")
+                    archive.writestr((selection.get("prefix") or "") + "startup.pth", b"startup must not be copied")
+                pin = {"filename": wheel.name, "sha256": lint.digest(wheel.read_bytes())}
+                identity["wheel_artifacts"].append({**pin, "bytes": wheel.stat().st_size})
+                identity["distributions"][name] = {"version": "test", "distribution_files": {member: descriptor}}
+                before[str(source)] = descriptor
+                origins.append({"name": name, "version": "test", "wheel_pin": pin, "member_selection": selection,
+                    "wheel_binding": {"source_id": "public-lock.json", "json_pointer": "/" + name}})
+            lint.write_json(environment / "identity.json", identity); lint.write_json(environment / "payloads-before.json", before)
+            case = {"context": {"tool": "mypy", "target": "3.12", "layout": {"model_packages": model},
+                "reference_library_assets": {"source_binding": {"source_id": "public-case.json"}, "origins": origins}},
+                "source_aliases": [{"case_source": {"source_id": "crates/mamba-quality/src/infrastructure/mypy/tests/dependencies.json", "json_pointer": "/29"}}]}
+            with patch.object(lint, "REFERENCE_LIBRARY_SELECTIONS", selections):
+                state = lint.copy_reference_libraries(case, executable, metadata, site)
+                self.assertEqual(state["file_count"], 5)
+                manifest = lint.read_json(Path(state["manifest_path"]).read_bytes())
+                self.assertEqual(len(manifest["expected_site_union_paths"]), 6)
+                self.assertTrue(all(row["metadata_site_before_fact"] == row["input_snapshot_fact"] == row["distribution_file_fact"] for row in manifest["files"]))
+                self.assertTrue((site / "pydantic_core/_pydantic_core.pyi").is_file())
+                self.assertFalse(any(path.suffix in {".so", ".pth"} for path in site.rglob("*")))
+                foreign = copy.deepcopy(case); foreign["source_aliases"][0]["case_source"]["json_pointer"] = "/28"
+                with self.assertRaisesRegex(ValueError, "outside the fixed"):
+                    lint.copy_reference_libraries(foreign, executable, metadata, site)
+                first = Path(manifest["files"][0]["installed_source"]); first.write_bytes(b"changed installed source")
+                with self.assertRaisesRegex(ValueError, "attested type bytes differ"):
+                    lint.copy_reference_libraries(case, executable, metadata, site)
+            with self.assertRaises(ValueError):
+                lint.selected_library_members(["pydantic/../escape.py"], {"prefix": "pydantic/", "excluded": [], "files": 1})
+
+    def test_metadata_venv_uses_symlinks_and_checks_resolved_base_custody(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); base = root / "base-python"; base.write_bytes(b"static pinned binary data")
+            case = {"context": {"target": "3.12", "layout": {"model_packages": {"pkg/__init__.py": lint.payload(b"VALUE = 1\n")}}}}
+            def static_metadata_command(argv, cwd, output, inputs):
+                if "venv" not in argv:
+                    raise RuntimeError("mock identity stop")
+                venv = Path(argv[-1]); (venv / "bin").mkdir(parents=True)
+                (venv / "bin/python").symlink_to(base)
+                (venv / "pyvenv.cfg").write_bytes(b"include-system-site-packages = false\nversion = 3.12.11\n")
+                (venv / "lib/python3.12/site-packages").mkdir(parents=True)
+                return {"wait_completed": True}
+            with patch.object(lint, "checked_command", side_effect=static_metadata_command) as command:
+                with self.assertRaisesRegex(RuntimeError, "mock identity stop"):
+                    lint.prepare_metadata(base, Path("/checker"), "3.12.11", case, root / "unexecuted-metadata")
+                argv = command.call_args_list[0].args[0]
+                self.assertIn("--symlinks", argv); self.assertIn("--without-pip", argv); self.assertNotIn("--copies", argv)
+            before_sidecar = root / "unexecuted-metadata/executable-before.json"
+            self.assertEqual(lint.read_json(before_sidecar.read_bytes()), lint.metadata_executable_identity(
+                root / "unexecuted-metadata/venv/bin/python", base))
+            metadata = root / "metadata"; python = metadata / "venv/bin/python"; python.parent.mkdir(parents=True)
+            python.symlink_to(base)
+            identity = lint.metadata_executable_identity(python, base)
+            self.assertEqual(identity["kind"], "symlink")
+            self.assertEqual(identity["resolved_base"], str(base.resolve()))
+            self.assertEqual(identity["resolved_binary"], lint.capture.fact(base))
+            copy_path = root / "copied-python"; copy_path.write_bytes(base.read_bytes())
+            with self.assertRaises(ValueError):
+                lint.metadata_executable_identity(copy_path, base)
+            other = root / "different-base"; other.write_bytes(base.read_bytes())
+            wrong = root / "wrong-link"; wrong.symlink_to(other)
+            with self.assertRaises(ValueError):
+                lint.metadata_executable_identity(wrong, base)
+            site = metadata / "venv/lib/python3.12/site-packages"; site.mkdir(parents=True)
+            cfg = b"include-system-site-packages = false\nversion = 3.12.11\n"
+            (metadata / "venv/pyvenv.cfg").write_bytes(cfg)
+            state = {"root": str(metadata), "site": str(site), "site_tree_before": {}, "cfg_sha256": lint.digest(cfg),
+                "base_executable": str(base), "executable_identity": identity}
+            base.write_bytes(b"changed pinned binary data")
+            with self.assertRaisesRegex(ValueError, "metadata interpreter/config/static packages changed"):
+                lint.finish_metadata(state)
+            self.assertEqual(lint.read_json((metadata / "executable-after.json").read_bytes()),
+                lint.metadata_executable_identity(python, base))
+            self.assertNotEqual(lint.read_json((metadata / "executable-after.json").read_bytes()), identity)
+
+    def test_permission_restore_list_survives_guard_failure(self):
+        layout = {"restricted_path": "x.py", "source_role_name_for_FS_operations": None}
+        case = {"context": {"layout": layout, "selection": {"paths": ["x.py"]}}}
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); path = root / "x.py"; path.write_text("data")
+            restores = []
+            with patch.object(Path, "open", side_effect=OSError(5, "wrong errno")):
+                with self.assertRaises(ValueError):
+                    lint.apply_filesystem(case, root, restores)
+            self.assertEqual(len(restores), 1)
+            for item, mode in reversed(restores):
+                item.chmod(mode)
+            self.assertEqual(path.read_text(), "data")
+
+    def test_filesystem_snapshot_detects_added_file_and_mode(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); p = root / "main.py"; p.write_bytes(b"text")
+            before = lint.filesystem_snapshot(root)
+            p.chmod(0o600)
+            self.assertNotEqual(before, lint.filesystem_snapshot(root))
+            (root / "new.py").write_bytes(b"new")
+            self.assertIn("new.py", lint.filesystem_snapshot(root))
+
+    def test_final_receipt_tamper_preserves_initial(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); command = root / "command"; command.mkdir()
+            receipt = {"pid": 3, "waited_pid": 3, "wait_completed": True, "timed_out": False,
+                "launch_error": None, "actual_exit": 0, "passed": True, "expected_exits": [0], "nested": {"zero": 0}}
+            for name, key in (("stdout.raw", "stdout_sha256"), ("stderr.raw", "stderr_sha256"), ("stdin.raw", "stdin_sha256"), ("inputs.json", "inputs_sha256")):
+                raw = b"{}" if name == "inputs.json" else b""
+                (command / name).write_bytes(raw); receipt[key] = lint.digest(raw)
+            for name in ("receipt.json", "returned-receipt.json"):
+                (command / name).write_text(json.dumps(receipt))
+            initial = b'{"status":"observed_unreconciled"}\n'; (root / "initial-result.json").write_bytes(initial)
+            row = {"process_launched": True, "receipt": copy.deepcopy(receipt)}
+            lint.final_reconcile(row, root)
+            bad = copy.deepcopy(receipt); bad["nested"]["zero"] = False
+            (command / "receipt.json").write_text(json.dumps(bad))
+            with self.assertRaises(ValueError):
+                lint.final_reconcile(row, root)
+            self.assertEqual((root / "initial-result.json").read_bytes(), initial)
+
+    def test_preparation_failure_keeps_complete_intended_request(self):
+        case = {"request_id": "one", "context": {"tool": "mypy", "target": "3.12"}, "source_aliases": [], "expected_bindings": []}
+        lock = {"requests": [case], "source_files": {}}
+        with tempfile.TemporaryDirectory() as folder:
+            repo = Path(folder) / "repo"; (repo / "tools/ci").mkdir(parents=True)
+            (repo / lint.LOCK).write_text(json.dumps(lock)); output = Path(folder) / "artifact"
+            def denied():
+                self.assertEqual(json.loads((output / "intended-requests.json").read_text()), [case])
+                raise ValueError("mocked hosted-only denial")
+            with patch.object(lint, "COUNTS", {"mypy": 3, "pylint": 3}), patch.object(lint, "load_inputs", return_value=(lock, [case])), \
+                    patch.object(lint.capture, "source_manifest", return_value={}), patch.object(lint, "host_guard", side_effect=denied), \
+                    patch.object(lint.capture, "prepare_environment") as prepare, patch.object(lint, "run_command") as command:
+                self.assertEqual(lint.run(repo, output, Path("/base"), "3.12.11", "mypy"), 1)
+                prepare.assert_not_called(); command.assert_not_called()
+            row = json.loads((output / "case-results.json").read_text())[0]
+            self.assertEqual(row["status"], "not_run")
+            self.assertFalse(json.loads((output / "summary.json").read_text())["capture_passed"])
+            self.assertTrue((output / "requests/one/initial-result.json").is_file())
+            self.assertTrue((output / "requests/one/final-result.json").is_file())
+
+
+class SourcePlanControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.repo = Path(__file__).resolve().parents[2]
+        cls.lock, cls.cases = lint.build_lock(cls.repo)
+
+    def test_complete_finite_source_plan(self):
+        self.assertEqual(self.lock["request_counts"], {"mypy": 2982, "pylint": 1380})
+        self.assertEqual(len({c["request_id"] for c in self.cases}), 4362)
+        for tool, count in (("mypy", 994), ("pylint", 460)):
+            for target in lint.TARGETS:
+                self.assertEqual(sum(c["context"]["tool"] == tool and c["context"]["target"] == target for c in self.cases), count)
+        self.assertEqual(sum(bool(c["context"]["layout"]["model_packages"]) for c in self.cases), 138)
+
+    def test_all_source_arrays_and_explicit_exit_fields_resolve(self):
+        sources = lint.Sources(self.repo)
+        for case in self.cases:
+            for alias, expected in zip(case["source_aliases"], case["expected_bindings"]):
+                rows, _ = lint.expected_record(sources, expected["source"])
+                self.assertIsInstance(rows, list)
+                code, ref = lint.explicit_exit(sources, case, alias)
+                if code is not None:
+                    self.assertEqual(sources.resolve(ref), code)
+                if case["context"]["tool"] == "pylint":
+                    self.assertIsNotNone(code)
+
+    def test_public_lock_has_no_private_payloads(self):
+        text = lint.encode(self.lock).decode()
+        self.assertNotIn("/private/", text)
+        self.assertNotIn("/Users/", text)
+        self.assertNotIn("bytes_hex", text)
+        for request in self.lock["requests"]:
+            self.assertEqual(request["request_id"], lint.value_sha(next(c["context"] for c in self.cases if c["request_id"] == request["request_id"])))
+
+    def test_frozen_lock_matches_current_public_sources(self):
+        frozen = json.loads((self.repo / lint.LOCK).read_text())
+        self.assertEqual(lint.encode(self.lock), lint.encode(frozen))
+
+    def test_duplicate_selection_correction_is_source_bound_and_lexical(self):
+        corrections = self.lock["selection_corrections_from_R4"]
+        self.assertEqual(len(corrections), 45)
+        self.assertEqual(sum(len(row["source_command_bindings"]) for row in corrections), 90)
+        sources = lint.Sources(self.repo); cases = {case["request_id"]: case for case in self.cases}
+        for correction in corrections:
+            case = cases[correction["new_request_id"]]
+            self.assertTrue(case["context"]["selection"]["absolute"])
+            old = copy.deepcopy(case["context"]); old["selection"] = correction["old_selection"]
+            self.assertEqual(lint.value_sha(old), correction["old_request_id"])
+            for ref in correction["source_command_bindings"]:
+                self.assertIsInstance(sources.resolve(ref), list)
+            argv = lint.argv_for(Path("/checker/python"), case, Path("/sealed/work"), Path("/sealed/config"), None)
+            names = case["context"]["selection"]["paths"]
+            self.assertEqual(argv[-len(names):], ["/sealed/work/" + name for name in names])
+        case = cases[corrections[0]["new_request_id"]]; alias = case["source_aliases"][0]
+        value = copy.deepcopy(sources.resolve(alias["case_source"]))
+        value["targets"][0]["reporters"]["json"]["runs"][1]["original_command_argv"][-1] = "/wrong/input.py"
+        with self.assertRaises(ValueError):
+            lint.duplicate_command_selection(sources, alias["case_source"], value, "3.12")
+
+    def test_expected_path_binding_does_not_mutate_frozen_source_cache(self):
+        sources = lint.Sources(self.repo)
+        case = next(c for c in self.cases if c["source_aliases"][0]["case_source"]["source_id"].endswith("/duplicate_modules.json"))
+        alias = case["source_aliases"][0]
+        value = sources.resolve(alias["case_source"])
+        original_hash = lint.value_sha(value)
+        expected, _ = lint.expected_record(sources, case["expected_bindings"][0]["source"])
+        raw = copy.deepcopy(expected)
+        for row in raw:
+            row["message"] = row["message"].replace(value["original_case_root"].rstrip("/") + "/", "/sealed/current/")
+        stdout = b"\n".join(json.dumps(row).encode() for row in raw) + b"\n"
+        code, _ = lint.explicit_exit(sources, case, alias)
+        lint.compare(sources, case, stdout, code, Path("/sealed/current"))
+        self.assertEqual(lint.value_sha(sources.resolve(alias["case_source"])), original_hash)
+
+    def test_only_source_owned_row16_complete_variants_match(self):
+        sources = lint.Sources(self.repo)
+        cases = [case for case in self.cases if case["expected_bindings"][0].get("authorized_variants")]
+        self.assertEqual(len(cases), 3)
+        self.assertEqual(sum(len(case["expected_bindings"][0]["authorized_variants"]) for case in cases), 9)
+        case = next(case for case in cases if case["context"]["target"] == "3.12")
+        binding = case["expected_bindings"][0]
+        expected = sources.resolve(binding["authorized_variants"][1])
+        raw = [{"code": row["rule"], "message": row["message"], "hint": row["hint"], "file": row["path"],
+            "severity": row["severity"], "line": row["location"]["line"], "column": row["location"]["column"] - 1,
+            "end_line": row["location"]["end_line"], "end_column": row["location"]["end_column"]} for row in expected]
+        def output(rows):
+            return b"\n".join(json.dumps(row).encode() for row in rows) + b"\n"
+        _, comparisons = lint.compare(sources, case, output(raw), 2, Path("/sealed/work"))
+        comparison = comparisons[0]
+        self.assertFalse(comparison["primary_ordered_diagnostics_match"])
+        self.assertEqual(comparison["matched_complete_list_binding"], binding["authorized_variants"][1])
+        self.assertEqual(comparison["matched_authorized_variants"], binding["authorized_variants"][1:])
+        partial = copy.deepcopy(raw); partial[0]["hint"] = "foreign partial field"
+        with self.assertRaises(lint.ComparisonError):
+            lint.compare(sources, case, output(partial), 2, Path("/sealed/work"))
+        foreign = copy.deepcopy(case)
+        foreign["expected_bindings"][0]["authorized_variants"][1] = binding["source"]
+        with self.assertRaisesRegex(ValueError, "variant source bindings differ"):
+            lint.compare(sources, foreign, output(raw), 2, Path("/sealed/work"))
+
+    def test_pylint_source_context_corrections_keep_inputs_and_ordered_roots(self):
+        corrections = self.lock["pylint_context_corrections_from_1881"]
+        self.assertEqual(len(corrections), 90)
+        self.assertEqual(sum("ordered_project_import_search_roots" in row["reasons"] for row in corrections), 69)
+        self.assertEqual(sum("source_owned_directory_non_stub_selection" in row["reasons"] for row in corrections), 27)
+        cases = {case["request_id"]: case for case in self.cases}
+        for row in corrections:
+            case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
+            old["selection"] = row["old_selection"]; old.pop("search_roots", None)
+            old.pop("module_source_roots", None); old.pop("module_source_roots_binding", None)
+            self.assertEqual(lint.value_sha(old), row["old_request_id"])
+            if "source_owned_directory_non_stub_selection" in row["reasons"]:
+                self.assertEqual(case["context"]["selection"]["paths"], sorted(name for name in old["layout"]["files"] if name.endswith(".py")))
+            for ref in row["source_bindings"]:
+                lint.Sources(self.repo).resolve(ref)
+        stub = next(case for case in cases.values() if case["source_aliases"][0]["case_source"]["source_id"].endswith("cross_file_stubs.json")
+            and case["source_aliases"][0]["case_source"]["json_pointer"] == "/10")
+        self.assertEqual(stub["context"]["selection"]["paths"], ["dependency.py", "main.py"])
+        self.assertIn("dependency/__init__.pyi", stub["context"]["layout"]["files"])
+        rooted = next(case for case in cases.values() if case["context"].get("search_roots"))
+        with tempfile.TemporaryDirectory() as folder:
+            project = Path(folder); (project / "src").mkdir()
+            argv = lint.argv_for(Path("/checker/python"), rooted, project, Path("/config"), None)
+            hook = next(arg.removeprefix("--init-hook=") for arg in argv if arg.startswith("--init-hook="))
+            tree = ast.parse(hook)
+            self.assertEqual(len(tree.body), 2)
+            self.assertIsInstance(tree.body[0], ast.Import)
+            self.assertEqual([item.name for item in tree.body[0].names], ["sys"])
+            self.assertEqual(ast.literal_eval(tree.body[1].value), [str(project.resolve()), str((project / "src").resolve())])
+
+    def test_literal_backslash_fixture_preserves_posix_name_and_shared_guard(self):
+        cases = [case for case in self.cases if lint.literal_fixture_names(case)]
+        self.assertEqual(len(cases), 3)
+        for case in cases:
+            self.assertEqual(lint.filesystem_operations(case["context"]["layout"], case["context"]["selection"]),
+                [{"operation": "chmod", "path": "back\\slash.py", "mode": 0}])
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); project, _ = lint.materialize(cases[0], root)
+            raw = bytes.fromhex(cases[0]["context"]["layout"]["files"]["back\\slash.py"]["bytes_hex"])
+            self.assertEqual((project / "back\\slash.py").read_bytes(), raw)
+            self.assertEqual((root / "input-snapshot/back\\slash.py").read_bytes(), raw)
+            self.assertFalse((project / "back/slash.py").exists())
+        with self.assertRaises(ValueError):
+            lint.safe_path("back\\slash.py")
+
+    def test_cross_file_project_prefix_uses_only_its_captured_owner(self):
+        case = next(case for case in self.cases if case["source_aliases"][0]["case_source"]["source_id"].endswith("cross_file_dependencies.json")
+            and case["source_aliases"][0]["case_source"]["json_pointer"] == "/3" and case["context"]["target"] == "3.12")
+        sources = lint.Sources(self.repo); expected, _ = lint.expected_record(sources, case["expected_bindings"][0]["source"])
+        project = Path("/sealed/project")
+        raw = [{"messageId": row["rule"], "message": row["message"].replace("<project>", str(project)), "path": row["path"],
+            "type": row["severity"], "line": row["location"]["line"], "column": row["location"]["column"],
+            "endLine": row["location"]["end_line"], "endColumn": row["location"]["end_column"]} for row in expected]
+        stdout = json.dumps({"messages": raw}).encode()
+        lint.compare(sources, case, stdout, 2, project)
+        foreign = copy.deepcopy(case); foreign["owner_sources"] = []
+        with self.assertRaises(lint.ComparisonError):
+            lint.compare(sources, foreign, stdout, 2, project)
+
+    def test_reference_library_context_migration_is_only_declared_three_targets(self):
+        rows = self.lock["mypy_library_asset_corrections_from_64db"]
+        self.assertEqual(len(rows), 3)
+        cases = {case["request_id"]: case for case in self.cases}; sources = lint.Sources(self.repo)
+        self.assertEqual(sum("reference_library_assets" in case["context"] for case in self.cases), 3)
+        self.assertEqual(sum(item["files"] for item in lint.REFERENCE_LIBRARY_SELECTIONS.values()), 116)
+        for row in rows:
+            case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
+            assets = old.pop("reference_library_assets")
+            self.assertEqual(lint.value_sha(old), row["old_request_id"])
+            self.assertEqual(case["source_aliases"][0]["case_source"]["json_pointer"], "/29")
+            self.assertIn("locked Pydantic 2.13.5", sources.resolve(assets["source_binding"]))
+            for origin in assets["origins"]:
+                pin = sources.resolve(origin["wheel_binding"])
+                self.assertEqual(origin["wheel_pin"], {key: pin[key] for key in ("filename", "sha256")})
+
+    def test_namespace_root_keeps_only_fixed_case_module_identity(self):
+        rows = self.lock["pylint_namespace_corrections_from_64db"]
+        self.assertEqual(len(rows), 3)
+        cases = {case["request_id"]: case for case in self.cases}; sources = lint.Sources(self.repo)
+        for row in rows:
+            case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
+            roots = old.pop("module_source_roots"); binding = old.pop("module_source_roots_binding")
+            self.assertEqual(roots, ["."]); self.assertEqual(lint.value_sha(old), row["old_request_id"])
+            self.assertEqual(sources.resolve(binding["source"]), ["."])
+            self.assertEqual(case["source_aliases"][0]["case_source"]["json_pointer"], "/1")
+            with tempfile.TemporaryDirectory() as folder:
+                project = Path(folder)
+                argv = lint.argv_for(Path("/checker/python"), case, project, Path("/config"), None)
+                self.assertEqual([arg for arg in argv if arg.startswith("--source-roots=")], ["--source-roots=" + str(project.resolve())])
+                names = case["context"]["selection"]["paths"]
+                self.assertEqual(argv[-len(names):], names)
+                foreign = copy.deepcopy(case); foreign["source_aliases"][0]["case_source"]["json_pointer"] = "/2"
+                with self.assertRaisesRegex(ValueError, "outside the fixed namespace"):
+                    lint.argv_for(Path("/checker/python"), foreign, project, Path("/config"), None)
+
+
+if __name__ == "__main__":
+    unittest.main()

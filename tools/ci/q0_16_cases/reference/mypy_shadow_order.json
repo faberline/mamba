@@ -1,0 +1,351 @@
+{
+  "schema": "mamba.q0.16.mypy-shadow-order-reference.v1",
+  "policy": {
+    "scope": "original_tool_reference_eligibility_only",
+    "parent_issue": 15,
+    "parent_issue_url": "https://github.com/faberline/mamba/issues/15",
+    "parent_updated_at": "2026-10-21T10:34:04Z",
+    "parent_section_lines": [
+      205,
+      220
+    ],
+    "already_approved_category": "mypy ordering when both collections and collections.abc are shadowed.",
+    "category_has_Python_restriction": false,
+    "strict_source_comparison_preserved": true,
+    "native_gate": "not_run",
+    "no_seed_or_retry_selection": true,
+    "parent_body_utf8_sha256": "3915cbc7135b61cd90ecb850ed2fda88d26e1dd4e383255c6c71c4396521e63d",
+    "authorization_kind": "existing_parent_approved_category",
+    "human_supplement_record_url": "https://github.com/faberline/mamba/issues/16#issuecomment-6488609627",
+    "policy_clarification_url": "https://github.com/faberline/mamba/issues/16#issuecomment-6502571858"
+  },
+  "scope": {
+    "tool": "mypy",
+    "target": "3.13",
+    "python_version": "3.13.5",
+    "request_id": "2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d",
+    "case_source": {
+      "source_id": "crates/mamba-quality/src/infrastructure/mypy/tests/dependency_source_errors.json",
+      "sha256": "ed722a36b5e0c0b19a9042a58d8911589e761f9a7d484569bad068f4ce138bd6",
+      "json_pointer": "/16",
+      "value_sha256": "a84dbb718c08bbe5fc3b6dba2ddfa21d025e1f06fe5c5b6e5d37c38cdf4924cc"
+    }
+  },
+  "binding": {
+    "context_sha256": "2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d",
+    "public_context_sha256": "8b12f47c160190beccbfd1acff96711b4ba8911f3cb9448cbcba7516de239218",
+    "selection": {
+      "kind": "explicit_main",
+      "paths": [
+        "main.py"
+      ],
+      "absolute": false
+    },
+    "profile_source": {
+      "path": "crates/mamba-quality/assets/profile.json",
+      "sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7"
+    },
+    "source_aliases_sha256": "8aec123fc0d8b8f87761b98b66ef818db541091e74c102627b021ce85f06889b",
+    "expected_bindings_sha256": "8a0893e1b8358a24bc7d11c7581e4ecda1c31d32fc50cdc84adec99ffe4f92a1",
+    "source_snapshot": {
+      "collections": {
+        "kind": "directory",
+        "mode": 493
+      },
+      "collections/__init__.py": {
+        "kind": "regular",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "mode": 420
+      },
+      "collections/abc.py": {
+        "kind": "regular",
+        "bytes": 15,
+        "sha256": "921d13f9d2032f84d38429eee5c3963d538f55884dc856ed4ee41808ad0cb9ad",
+        "mode": 420
+      },
+      "main.py": {
+        "kind": "regular",
+        "bytes": 15,
+        "sha256": "f9321136b93a41e790d124497838275e8741fbf59b43f66713e7e780e918a693",
+        "mode": 420
+      },
+      "pyproject.toml": {
+        "kind": "regular",
+        "bytes": 72,
+        "sha256": "2f4b80731f240a2a8442171254cdc8ca009471f3d1237bb3b35047782787e4e0",
+        "mode": 420
+      }
+    },
+    "checker_config": {
+      "bytes": 127,
+      "sha256": "82ca0b8a00280cb3546ec816852c81ec1b68a667c863bdff6d8c22119f1d893e"
+    },
+    "environment": {
+      "environment_kind": "mypy",
+      "identity_path": "environments/mypy/identity.json",
+      "identity_sha256": "96b0a68d2fb11ad370d4f3f2863321e1ee9309152d58494cf4dce71072a7a175",
+      "executable_sha256": "aa33feb95882944731fa97029b08a8485279c42da1b9884f02384fedeebe8aea",
+      "base_executable_sha256": "aa33feb95882944731fa97029b08a8485279c42da1b9884f02384fedeebe8aea",
+      "mixed_slots_traceback_sources": {},
+      "pinned_distribution_count": 10,
+      "payload_file_count": 1721,
+      "installed_record_count": 10
+    },
+    "metadata": null
+  },
+  "source_bindings": [
+    {
+      "source_id": "crates/mamba-quality/src/infrastructure/mypy/tests/dependency_source_errors.json",
+      "sha256": "ed722a36b5e0c0b19a9042a58d8911589e761f9a7d484569bad068f4ce138bd6",
+      "json_pointer": "/16",
+      "value_sha256": "a84dbb718c08bbe5fc3b6dba2ddfa21d025e1f06fe5c5b6e5d37c38cdf4924cc"
+    },
+    {
+      "source_id": "crates/mamba-quality/src/infrastructure/mypy/tests/dependency_source_errors.json",
+      "sha256": "ed722a36b5e0c0b19a9042a58d8911589e761f9a7d484569bad068f4ce138bd6",
+      "json_pointer": "/16/expected/1",
+      "value_sha256": "200e57753c28162d684697fa2b9ae236a6348814d9765f3c9d7ede8487c2660f"
+    },
+    {
+      "source_id": "crates/mamba-quality/assets/profile.json",
+      "sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+      "json_pointer": "",
+      "value_sha256": "716f9ff3d3da312fc2c1396a22722e50ab595177614ba02447b13da21715f843"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/interpreters/3.13.5",
+      "value_sha256": "d0dfd54b4744f399f19b7becb98dd2a39544831d5402640a6e3ff308a39cdb7f"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/0",
+      "value_sha256": "9331be0089d8f041a3d27cee8d84850ff47b46ff7ee47672d271bbb6ec9ea4a3"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/1",
+      "value_sha256": "d58a7ca527308f90abfeca1b79e6a064d39631882d0c9ba4d0426c6e3693c667"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/2",
+      "value_sha256": "c9f34182d0b19743548e3b15c457b358dd91adce83313f25f6ab133d9ff454aa"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/3",
+      "value_sha256": "7bf2a92be2d0ea8215f2afeeda56ab7fb50075695b7e6075da653a4187b34612"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/4",
+      "value_sha256": "3ed0c132722a2b40bd62331028f33315947bfed2d72705745bf87917618b32f4"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/5",
+      "value_sha256": "de89c1f57421f2647e1c256f344a1bf4961abc87b265a519a1a290fb0b2806a8"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/6",
+      "value_sha256": "c9133a250bef9ffb82edec672a7d55f17973a3ec6a9c7443ef46d1bd4ba4b3c4"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/7",
+      "value_sha256": "ef43c80d2d7b20983f5d4afa02b60c00a47e00f40c9cd899b38ae4a88eba0ad5"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/8",
+      "value_sha256": "1493da4aa12537919ede401309106126d42f33383106ccf6c071b11329bf9211"
+    },
+    {
+      "source_id": "tools/ci/q0_pydantic_reference_lock.json",
+      "sha256": "3bcc3b8e11ebb15791dd63b3c942370b99b1a452ed361a2593348b5b5e519ae1",
+      "json_pointer": "/dependencies/3.13.5/9",
+      "value_sha256": "a55bf4ac626a9fac57bf7d82566560d4101e2910622ec8b270efc38aed9e06ef"
+    }
+  ],
+  "command": {
+    "arguments": [
+      "-I",
+      "-m",
+      "mypy",
+      "--strict",
+      "--config-file",
+      "<CASE_ROOT>/control/mypy.ini",
+      "--python-version",
+      "3.13",
+      "--cache-dir=/dev/null",
+      "--no-incremental",
+      "--output=json",
+      "main.py"
+    ],
+    "expected_exits": [
+      2
+    ]
+  },
+  "upstream_ordering": {
+    "member": "mypy/build.py",
+    "sha256": "61e1295a840159ea32f78dcc2fe253c49be7d1915f47551ad74be91be76df641",
+    "line_spans": [
+      [
+        185,
+        197
+      ],
+      [
+        919,
+        937
+      ]
+    ],
+    "fact": "CORE_BUILTIN_MODULES is a set; the first shadow produces the complete blocking diagnostic"
+  },
+  "unchanged_strict_comparator": {
+    "source_id": "tools/ci/q0_16_contract_lint.py",
+    "function": "compare",
+    "bytes": 6749,
+    "sha256": "74825a58b2b66b8359fbeb548bdb915ddae372adb47996d1ec36535056ee8bab"
+  },
+  "observations": [
+    {
+      "id": "collections_abc",
+      "stdout_hex": "7b2266696c65223a2022636f6c6c656374696f6e732f6162632e7079222c20226c696e65223a202d312c2022636f6c756d6e223a202d312c2022656e645f6c696e65223a202d312c2022656e645f636f6c756d6e223a20302c20226d657373616765223a2022546869732066696c6520736861646f7773206c696272617279206d6f64756c65205c22636f6c6c656374696f6e732e6162635c22222c202268696e74223a20224120757365722d646566696e656420746f702d6c6576656c206d6f64756c652077697468206e616d65205c22636f6c6c656374696f6e732e6162635c22206973206e6f7420737570706f72746564222c2022636f6465223a206e756c6c2c20227365766572697479223a20226572726f72227d0a",
+      "stdout_sha256": "4dce6aa8fc9b10edee0585cf4882835b02581a209e19feecf1cbd13e8cadaaa3",
+      "diagnostics": [
+        {
+          "file": "collections/abc.py",
+          "line": -1,
+          "column": -1,
+          "end_line": -1,
+          "end_column": 0,
+          "message": "This file shadows library module \"collections.abc\"",
+          "hint": "A user-defined top-level module with name \"collections.abc\" is not supported",
+          "code": null,
+          "severity": "error"
+        }
+      ],
+      "stdin_hex": "",
+      "stderr_hex": "",
+      "actual_exit": 2,
+      "origin": {
+        "run_id": "40892463789",
+        "artifact_id": "12906568972",
+        "request_id": "2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d",
+        "source_head": "64db9a3feeb0f30f5c6164f7105779229e26d510",
+        "pid": 3536,
+        "waited_pid": 3536,
+        "wait_completed": true,
+        "actual_exit": 2,
+        "stdout": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stdout.raw",
+          "bytes": 282,
+          "sha256": "4dce6aa8fc9b10edee0585cf4882835b02581a209e19feecf1cbd13e8cadaaa3"
+        },
+        "stderr": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stderr.raw",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdin": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stdin.raw",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "receipt": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/receipt.json",
+          "bytes": 1198,
+          "sha256": "2ac50c659944eed577238447d280b011257ce87078933ef29bf0e8b8b08ccf31"
+        },
+        "returned_receipt": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/returned-receipt.json",
+          "bytes": 1198,
+          "sha256": "2ac50c659944eed577238447d280b011257ce87078933ef29bf0e8b8b08ccf31"
+        },
+        "inputs": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/inputs.json",
+          "bytes": 5618,
+          "sha256": "5f60247cf0d479f88231b5ec0cab5740447aefc025e3e842bf9835c3be665350"
+        }
+      }
+    },
+    {
+      "id": "collections",
+      "stdout_hex": "7b2266696c65223a2022636f6c6c656374696f6e732f5f5f696e69745f5f2e7079222c20226c696e65223a202d312c2022636f6c756d6e223a202d312c2022656e645f6c696e65223a202d312c2022656e645f636f6c756d6e223a20302c20226d657373616765223a2022546869732066696c6520736861646f7773206c696272617279206d6f64756c65205c22636f6c6c656374696f6e735c22222c202268696e74223a20224120757365722d646566696e656420746f702d6c6576656c206d6f64756c652077697468206e616d65205c22636f6c6c656374696f6e735c22206973206e6f7420737570706f72746564222c2022636f6465223a206e756c6c2c20227365766572697479223a20226572726f72227d0a",
+      "stdout_sha256": "0fd16d0d971ea78fe96e5acffde7dccb9ec618827870735c537cbf698233636b",
+      "diagnostics": [
+        {
+          "file": "collections/__init__.py",
+          "line": -1,
+          "column": -1,
+          "end_line": -1,
+          "end_column": 0,
+          "message": "This file shadows library module \"collections\"",
+          "hint": "A user-defined top-level module with name \"collections\" is not supported",
+          "code": null,
+          "severity": "error"
+        }
+      ],
+      "stdin_hex": "",
+      "stderr_hex": "",
+      "actual_exit": 2,
+      "origin": {
+        "run_id": "40901000019",
+        "artifact_id": "12909549281",
+        "request_id": "2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d",
+        "source_head": "9969f7f0dbcf467074e9e16f9d1527740559a233",
+        "pid": 3555,
+        "waited_pid": 3555,
+        "wait_completed": true,
+        "actual_exit": 2,
+        "stdout": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stdout.raw",
+          "bytes": 279,
+          "sha256": "0fd16d0d971ea78fe96e5acffde7dccb9ec618827870735c537cbf698233636b"
+        },
+        "stderr": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stderr.raw",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdin": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/stdin.raw",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "receipt": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/receipt.json",
+          "bytes": 1198,
+          "sha256": "0a5e594e3805b2fec1212d7dadf4b9de798544a10794051a0bfbf7a5886bf373"
+        },
+        "returned_receipt": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/returned-receipt.json",
+          "bytes": 1198,
+          "sha256": "0a5e594e3805b2fec1212d7dadf4b9de798544a10794051a0bfbf7a5886bf373"
+        },
+        "inputs": {
+          "member": "run/requests/2a11abe6244b5c3bfc236c5869513a7f5f03f420fe6eb6da75fdd74ffcc6f58d/command/inputs.json",
+          "bytes": 5618,
+          "sha256": "5f60247cf0d479f88231b5ec0cab5740447aefc025e3e842bf9835c3be665350"
+        }
+      }
+    }
+  ],
+  "original_contexts_added": 0,
+  "original_aliases_added": 0,
+  "native_acceptance": false,
+  "parent_acceptance": false
+}
