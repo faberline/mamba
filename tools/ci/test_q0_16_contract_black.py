@@ -27,11 +27,12 @@ class BlackContractControls(unittest.TestCase):
         row = dict.fromkeys(runner.API_RECORD_KEYS)
         row.update(request_id=request["request_id"], target=request["target"], operation=request["operation"],
                    input_sha256=runner.digest(raw), input_bytes=len(raw), mode=request["mode"],
-                   api_calls={"decode_bytes": int(request["operation"] == "black_decode_bytes_safe_format_API"), "format_file_contents": 1},
+                   decoded_input_sha256=runner.digest(raw), decoded_input_bytes=len(raw),
+                   api_calls={"decode_bytes": 1, "format_file_contents": 1},
                    fast=False, lines=[], kind="unchanged" if unchanged else "formatted", output=output,
                    output_hex=output_bytes.hex(), output_sha256=runner.digest(output_bytes),
                    exception_type="black.report.NothingChanged" if unchanged else None,
-                   message="" if unchanged else None, encoding=None, newline=None,
+                   message="" if unchanged else None, encoding="utf-8", newline="\n",
                    computed_reference_exit=int(output_bytes != raw),
                    internal_equivalence_and_stability_completed=not unchanged)
         return row
@@ -196,7 +197,7 @@ class BlackContractControls(unittest.TestCase):
         def mode(**values):
             return SimpleNamespace(**values)
         api = SimpleNamespace(TargetVersion=SimpleNamespace(PY312=target), Mode=mode, NothingChanged=NothingChanged)
-        api.decode_bytes = mock.Mock(return_value=decoded)
+        api.decode_bytes = mock.Mock(return_value=decoded if decoded is not None else (raw.decode("utf-8"), "utf-8", "\n"))
         api.format_file_contents = mock.Mock(side_effect=error, return_value=response)
         case = {"request_id":"mock-context", "target":"3.12", "operation":operation, "source_hex":raw.hex()}
         scope = {"black":api, "hashlib":hashlib, "cases":[case], "results":[], "retain":mock.Mock()}
@@ -206,12 +207,16 @@ class BlackContractControls(unittest.TestCase):
         exec(compile(ast.Module(body=[loop], type_ignores=[]), "mock-black-api-loop", "exec"), scope)
         return scope["results"][0], api, scope["retain"]
 
-    def test_real_observer_loop_preserves_direct_CR_text_without_decode(self):
-        raw = b"VALUE=1\rNEXT=2\n"
-        row, api, _ = self.fake_observer_loop("black_safe_format_API", raw, response="VALUE = 1\rNEXT = 2\n")
-        self.assertEqual(api.format_file_contents.call_args.args[0], raw.decode())
-        api.decode_bytes.assert_not_called()
-        self.assertEqual(row["api_calls"], {"decode_bytes":0, "format_file_contents":1})
+    def test_real_observer_loop_uses_file_decoder_before_safe_format(self):
+        raw = b"VALUE=1\r\nNEXT=2\r\n"
+        decoded = "VALUE=1\nNEXT=2\n"
+        row, api, _ = self.fake_observer_loop("black_safe_format_API", raw,
+                    response="VALUE = 1\nNEXT = 2\n", decoded=(decoded, "utf-8", "\r\n"))
+        self.assertEqual(api.format_file_contents.call_args.args[0], decoded)
+        api.decode_bytes.assert_called_once()
+        self.assertEqual(bytes.fromhex(row["output_hex"]), b"VALUE = 1\r\nNEXT = 2\r\n")
+        self.assertEqual(row["decoded_input_sha256"], runner.digest(decoded.encode()))
+        self.assertEqual(row["api_calls"], {"decode_bytes":1, "format_file_contents":1})
         self.assertTrue(row["internal_equivalence_and_stability_completed"])
 
     def test_real_observer_loop_preserves_BOM_encoding_and_CRLF(self):

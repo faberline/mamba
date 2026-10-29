@@ -18,12 +18,13 @@ import sys
 
 from q0_16_packet import read_json, safe_path
 import q0_16_reference as capture
+import q0_black_reference as mac_reference
 import q0_isort_reference as reference
 from q0_mypy_reference import require_receipt
 from q0_ruff_reference import checked_bytes, digest, download, run_command, write_json, write_sources
 
 LOCK = "tools/ci/q0_16_contract_isort_lock.json"
-LOCK_SHA = "76b99f51552d0ad5309fd3d347b489cd504d6ebadd03b0134b771e0c19564f7c"
+LOCK_SHA = "be18576dd4fcd94b69641ae30c7fcdb37cfe3a58fa38511481a7fb5ffed54053"
 VERSIONS = {"3.12": "3.12.11", "3.13": "3.13.5", "3.14": "3.14.0"}
 MARKER = "__SEALED_INPUT_BYTES_HEX__"
 BASE = "crates/mamba-quality/src/infrastructure/isort/tests/"
@@ -96,6 +97,14 @@ def load_plan(repo: Path) -> tuple[dict, list[dict], Sources]:
     for path, sha in {**lock["helper_sources"], **lock["comparison_owners"]}.items(): sources.read(path, sha)
     for key in ("upstream_lock", "mac_wheel_lock", "base_python_lock"):
         sources.read(lock[key]["source_id"], lock[key]["sha256"])
+    require(set(lock["bundled_installers"])==set(VERSIONS.values()),"bundled installer target denominator differs")
+    base_pins=read_json(sources.read(lock["base_python_lock"]["source_id"]))["interpreters"]
+    for version,pin in lock["bundled_installers"].items():
+        minor=".".join(version.split(".")[:2])
+        require(set(pin)=={"archive_sha256","member","bytes","sha256"} and pin["archive_sha256"]==base_pins[version]["sha256"]
+            and type(pin["bytes"]) is int and pin["bytes"]>0 and re.fullmatch(r"[0-9a-f]{64}",pin["sha256"]) is not None
+            and re.fullmatch(r"python/lib/python"+re.escape(minor)+r"/ensurepip/_bundled/pip-[0-9.]+-py3-none-any[.]whl",pin["member"]) is not None,
+            "bundled installer archive/member binding differs")
     requests = []
     for entry in lock["requests"]:
         bound = entry["input_binding"]; scalar = sources.value(bound["source"])
@@ -412,15 +421,114 @@ def payloads(environment: Path, identity: dict, phase: str, python: Path) -> dic
             except Exception as error:errors.append({"path":relative,"type":type(error).__name__,"message":str(error)})
     if not rows or not any(name.endswith(".dist-info/RECORD") for name in rows):
         errors.append({"type":"ValueError","message":"package/RECORD denominator is empty"})
-    result={"package_files":rows,"base":capture.fact(python.resolve(strict=True)),"venv_python":capture.fact(environment/"venv/bin/python"),
+    result={"package_files":rows,"base":capture.fact(python.resolve(strict=True)),"venv_python":capture.fact((environment/"venv/bin/python").resolve(strict=True)),
             "tree":capture.artifact_inventory(environment/"venv",[]),"errors":errors}
     for label,path in (("base",python.resolve(strict=True)),("venv_python",environment/"venv/bin/python")):
         raw=path.read_bytes();destination=retained/(digest(raw)+".raw")
         if not destination.exists():destination.write_bytes(raw)
         require(destination.read_bytes()==raw,"retained interpreter differs")
+    if "installer" in identity:
+        try:
+            installer=identity["installer"];path=Path(installer["path"])
+            require(capture.fact(path)=={key:installer[key] for key in ("bytes","sha256")},"bundled installer changed")
+            require((environment/installer["retained"]).read_bytes()==path.read_bytes(),"retained bundled installer changed")
+            result["installer"]={"bytes":installer["bytes"],"sha256":installer["sha256"],"retained":installer["retained"]}
+            result["venv_link"]=mac_reference.require_venv_link(environment/"venv/bin/python",python)
+            require(result["venv_link"]==identity["venv_link"],"venv interpreter link changed")
+            result["wheel_artifacts"]=[]
+            for artifact in identity["wheel_artifacts"]:
+                actual=capture.fact(Path(artifact["path"]))
+                require(actual=={key:artifact[key] for key in ("bytes","sha256")},"installed wheel artifact changed")
+                result["wheel_artifacts"].append({"path":artifact["path"],**actual})
+        except Exception as error:errors.append({"type":type(error).__name__,"message":str(error)})
     result["matches_identity"]=not errors and result["base"]["sha256"]==identity["base_executable_sha256"] and result["venv_python"]["sha256"]==identity["venv_executable_sha256"]
     write_json(environment/("payloads-"+phase+".json"),result)
     return result
+
+
+MAC_PACKAGE_PROBE = """import contextlib,io,json,pathlib,site,sys,sysconfig
+installer=sys.argv.pop(1)
+sys.path.insert(0,installer)
+captured=io.StringIO()
+with contextlib.redirect_stdout(captured):
+    exec(PROBE_SOURCE)
+identity=json.loads(captured.getvalue())
+target_site=pathlib.Path(sysconfig.get_path('purelib'))
+installed={}
+for distribution in importlib.metadata.distributions(path=[str(target_site)]):
+    name=distribution.metadata['Name'].lower().replace('_','-')
+    if name in installed:raise ValueError('duplicate target site distribution')
+    installed[name]=distribution.version
+import pip
+identity.update(prefix=sys.prefix,base_prefix=sys.base_prefix,isolated=sys.flags.isolated,
+    dont_write_bytecode=sys.dont_write_bytecode,user_site_enabled=site.ENABLE_USER_SITE,
+    target_site=str(target_site),installed_site_distributions=installed,
+    installer_import_origin=pip.__file__,packaging_import_origin=sys.modules['pip._vendor.packaging'].__file__)
+print(json.dumps(identity))
+""".replace("PROBE_SOURCE", repr(reference.PACKAGE_PROBE))
+
+
+def prepare_mac(python: Path, version: str, root: Path, wheel_pin: dict, wheel: Path,
+                dependency_pins: list[dict], dependency_wheels: list[Path], interpreter_pin: dict,
+                installer_pin: dict, records: list[dict]) -> Path:
+    """Use only the sealed PBS installer wheel, without running ensurepip."""
+    root.mkdir(parents=True,exist_ok=False)
+    checked_bytes(python.resolve(strict=True).read_bytes(),interpreter_pin["executable_sha256"])
+    require(installer_pin["archive_sha256"]==interpreter_pin["sha256"],"installer archive binding differs")
+    def command(argv: list[str], name: str, inputs: dict) -> dict:
+        row=process(argv,root,root/name,inputs,(0,),records)
+        require(row["status"]=="passed","preparation process failed: "+name)
+        return row
+    probe="import json,sys; print(json.dumps({'python':list(sys.version_info[:3]),'executable':sys.executable,'isolated':sys.flags.isolated,'dont_write_bytecode':sys.dont_write_bytecode}))"
+    command([str(python),"-I","-B","-c",probe],"base-identity",{"interpreter_pin":interpreter_pin})
+    base=read_json((root/"base-identity/stdout.raw").read_bytes())
+    require(base["python"]==list(map(int,version.split("."))) and type(base["isolated"]) is int and base["isolated"]==1
+        and base["dont_write_bytecode"] is True and base["executable"]==str(python),"exact isolated base identity differs")
+    require((root/"base-identity/stderr.raw").read_bytes()==b"","base identity emitted stderr")
+    command([str(python),"-I","-B","-m","venv","--symlinks","--without-pip",str(root/"venv")],"create-venv",{"base_identity":base})
+    executable=root/"venv/bin/python";link=mac_reference.require_venv_link(executable,python)
+    installer=mac_reference.bundled_pip(python,version)
+    require(installer.relative_to(python.resolve(strict=True).parent.parent.parent).as_posix()==installer_pin["member"],"bundled installer archive member differs")
+    installer_raw=checked_bytes(installer.read_bytes(),installer_pin["sha256"])
+    require(len(installer_raw)==installer_pin["bytes"],"bundled installer byte count differs")
+    retained=root/"bundled-installer.whl";retained.write_bytes(installer_raw)
+    installer_identity={**installer_pin,"path":str(installer),"retained":retained.name,
+        "source":"exact sealed PBS archive member; supplied explicitly without installing pip"}
+    write_json(root/"installer-identity.json",installer_identity)
+    require(len(dependency_pins)==len(dependency_wheels)==1,"isort dependency artifact denominator differs")
+    require([(pin["name"],pin["version"]) for pin in dependency_pins]==[("mypy_extensions","1.1.0")],"isort dependency pins differ")
+    artifacts=[]
+    for pin,path in zip([wheel_pin,*dependency_pins],[wheel,*dependency_wheels]):
+        raw=checked_bytes(path.read_bytes(),pin["sha256"])
+        require(path.name==pin["filename"],"pinned wheel filename differs")
+        artifacts.append({"name":pin.get("name","isort"),"version":pin.get("version","9.0.2"),"filename":path.name,"path":str(path),"bytes":len(raw),"sha256":digest(raw)})
+    prefix=[str(executable),"-I","-B","-c",mac_reference.INSTALLER,str(installer)]
+    command([*prefix,"install","--no-index","--no-deps","--no-compile",str(wheel),*map(str,dependency_wheels)],"install",
+        {"installer":installer_identity,"wheels":artifacts})
+    command([str(executable),"-I","-B","-c",MAC_PACKAGE_PROBE,str(installer),json.dumps(dependency_pins)],"package-identity",
+        {"installer":installer_identity,"package_probe_sha256":digest(MAC_PACKAGE_PROBE.encode()),"dependency_pins":dependency_pins})
+    require((root/"package-identity/stderr.raw").read_bytes()==b"","package identity emitted stderr")
+    identity=read_json((root/"package-identity/stdout.raw").read_bytes())
+    require(identity["version"]=="9.0.2" and identity["python"]==base["python"] and identity["executable"]==str(executable),"installed isort/Python identity differs")
+    require(identity["prefix"]==str(root/"venv") and identity["base_prefix"]==str(python.resolve(strict=True).parent.parent)
+        and type(identity["isolated"]) is int and identity["isolated"]==1 and identity["dont_write_bytecode"] is True
+        and identity["user_site_enabled"] is False,"isolated target environment identity differs")
+    require(identity["installed_site_distributions"]=={"isort":"9.0.2","mypy-extensions":"1.1.0"},"target has missing, extra or wrong distributions")
+    site=Path(identity["target_site"]);require(site.is_relative_to(root/"venv") and Path(identity["module"]).is_relative_to(site),"target module/site escaped venv")
+    for field in ("installer_import_origin","packaging_import_origin"):
+        require(identity[field].startswith(str(installer)+"/"),"trusted probe import escaped explicit installer wheel")
+    require(set(identity["dependency_distributions"])=={"mypy-extensions"},"dependency identity denominator differs")
+    require(identity["dependency_verification"]["dependencies_verified"] is True
+        and identity["dependency_verification"]["pinned_versions"]=={"isort":"9.0.2","mypy-extensions":"1.1.0"},"dependency verification differs")
+    for distribution in [identity,*identity["dependency_distributions"].values()]:
+        require(not distribution["missing_distribution_files"] and distribution["distribution_files"],"installed package payload is incomplete")
+        require(sum(path.endswith(".dist-info/RECORD") for path in distribution["distribution_files"])==1,"installed package RECORD denominator differs")
+    identity.update(base_identity=base,base_executable_sha256=digest(python.resolve(strict=True).read_bytes()),
+        venv_executable_sha256=digest(executable.read_bytes()),wheel_sha256=artifacts[0]["sha256"],
+        installed_distributions=identity["installed_site_distributions"],dependency_artifacts=artifacts[1:],wheel_artifacts=artifacts,
+        installer=installer_identity,venv_link=link,historical_environment=False)
+    write_json(root/"identity.json",identity)
+    return executable
 
 
 def planned_rows(requests: list[dict]) -> list[dict]:
@@ -471,7 +579,7 @@ def run(repo: Path, output: Path, python: Path, version: str) -> int:
     require(Counter(r["operation"] for r in selected)=={"isort_code_API":143,"isort_file_CLI":25},"intended-lane operation counts differ")
     write_json(output/"plan.json",{"all_target_contexts":504,"selected_target_contexts":168,"contexts":rows})
     write_json(output/"initial-results.json",rows)
-    errors=[];identity=None;before=None;environment=output/"environment";context=False
+    errors=[];identity=None;before=None;environment=output/"environment";context=False;preparation=[]
     try:
         require_hosted();require(python.is_absolute(),"base interpreter path must be absolute")
         upstream=read_json(sources.read(lock["upstream_lock"]["source_id"]))
@@ -483,7 +591,8 @@ def run(repo: Path, output: Path, python: Path, version: str) -> int:
         for index,pin in enumerate(upstream["dependencies"]):
             destination=output/"downloads"/("dependency-"+str(index));download(pin,destination);dependencies.append(destination/pin["filename"])
         pin=wheels["wheels"][target.split(".")[1]];download(pin,output/"downloads/wheel")
-        executable=reference.prepare(python,version,environment,output/"downloads/wheel"/pin["filename"],upstream["dependencies"],dependencies)
+        executable=prepare_mac(python,version,environment,pin,output/"downloads/wheel"/pin["filename"],upstream["dependencies"],dependencies,
+            base["interpreters"][version],lock["bundled_installers"][version],preparation)
         identity=read_json((environment/"identity.json").read_bytes());before=payloads(environment,identity,"before",python)
         require(before["matches_identity"],"prepared payload/base/RECORD identity is incomplete")
         write_json(output/"run-identity.json",{"source_sha":os.environ.get("GITHUB_SHA"),"run_id":os.environ.get("GITHUB_RUN_ID"),
@@ -503,13 +612,24 @@ def run(repo: Path, output: Path, python: Path, version: str) -> int:
     if identity is not None and not (environment/"payloads-after.json").exists():
         try:payloads(environment,identity,"after",python)
         except Exception as error:errors.append({"stage":"post_capture_payloads","type":type(error).__name__,"message":str(error)})
+    for record in preparation:
+        try:
+            reconcile_process(record);record["final_proof_reconciled"]=True
+        except Exception as error:
+            record["status"]="failed";record["final_proof_reconciled"]=False;context=False
+            failure={"stage":"final_preparation_proof","type":type(error).__name__,"message":str(error)}
+            record["errors"].append(failure);errors.append(failure)
+    write_json(output/"preparation-processes.json",preparation)
     publish(output,rows,context)
-    counts=process_counts(rows)
+    counts=process_counts(rows);preparation_counts=process_counts([{"processes":preparation,"actual_api_calls":0}])
     matched=bool(context and not errors and len(rows)==168 and all(row["status"]=="observed" for row in rows)
                  and all(counts[key]==218 for key in ("actual_target_processes","waited_target_processes","verified_process_receipts")) and counts["actual_isort_code_calls"]==143)
     summary={"schema":"mamba.q0.16.isort-contract-summary.v1","contract_capture_passed":matched,"all_planned_contexts":504,
         "selected_target_contexts":168,"observed_contexts":sum(row["status"]=="observed" for row in rows),**counts,"errors":errors,
         "api_exit_projections_are_process_exits":False,"native_gate_status":"not_run","issue_accepted":False,
+        "planned_preparation_processes":4,"actual_preparation_processes":preparation_counts["actual_target_processes"],
+        "waited_preparation_processes":preparation_counts["waited_target_processes"],"verified_preparation_receipts":preparation_counts["verified_process_receipts"],
+        "preparation_processes_pointer":"preparation-processes.json",
         "artifact_exclusions":["environment/venv"],"historical_original_evidence_recovered":False}
     write_json(output/"summary.json",summary)
     write_json(output/"artifact-manifest.json",capture.artifact_inventory(output,[environment/"venv"]))

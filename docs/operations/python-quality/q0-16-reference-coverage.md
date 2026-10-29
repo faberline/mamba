@@ -72,6 +72,36 @@ new capture gate. Each Python lane has 994 mypy contexts, 460 Pylint contexts,
 separate. The workflow retains its original seven jobs and adds 12 jobs for
 these four tools. The current run and acceptance status are recorded on #16.
 
+The first contract run,
+[40874324310](https://github.com/faberline/mamba/actions/runs/40874324310),
+passed its original seven jobs and failed the 12 added jobs. Its 16 available
+artifacts and all 19 job logs are retained in `failed-D-run-40874324310-r1`.
+The custody manifest SHA-256 is
+`1fcf5a51b92f1dc351241708b6cb2ab83b2e5a0aeb91d84e3fbd1dca68ddd213`.
+All three Pylint artifact uploads failed on fixture link loops. Their case raw
+files were not retained by GitHub. The missing files are explicit evidence gaps;
+no missing result is counted as passing.
+
+The repaired capture uses these source-bound rules:
+
+- Mac environments link to the exact archive-bound Python binary. They use the
+  pinned bundled pip wheel. Metadata venvs remain separate from checker venvs.
+- Black uses its documented file pipeline: decode bytes, safely format, then
+  restore the encoding and newline. Raw and decoded input identities are both
+  retained. All 747 contexts call the decoder. The 30 byte-boundary scenarios
+  remain a case category. Invalid-output log bytes are never normalized.
+- The mypy lock records 45 input-selection corrections and 90 frozen command
+  bindings. The source commands use absolute paths with their literal suffixes.
+  JSON null codes remain null. Only explicit JSON exits or source-bound parser
+  and library-shadow blockers allow exit 2. Undefined exit parity stays separate.
+  Version diagnostics that the pinned parser marks nonblocking keep exits 0/1.
+  One dependency-source row also retains its nine existing whole-list variant
+  slots. A partial message or field match cannot select a variant.
+- Lint evidence is packed with literal symlink headers and a complete byte/mode
+  manifest. The uploader receives only a regular TAR and its manifest. It never
+  traverses the generated fixture links. Exact checker and metadata venv trees
+  are the only omitted roots. The fixture layouts stay unchanged.
+
 ## Scope
 
 Original tools run only for development acceptance. Fixture programs are input

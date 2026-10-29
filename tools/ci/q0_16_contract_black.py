@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import hashlib
+import io
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -19,7 +20,7 @@ LOCK = "tools/ci/q0_16_contract_black_lock.json"
 VERSIONS = {"3.12": "3.12.11", "3.13": "3.13.5", "3.14": "3.14.0"}
 MARKER = "__SEALED_INPUT_BYTES_HEX__"
 LOG_MARKERS = ("This diff might be helpful: ", "This invalid output might be helpful: ")
-API_RECORD_KEYS = ("request_id", "target", "operation", "input_sha256", "input_bytes", "mode", "api_calls", "fast", "lines",
+API_RECORD_KEYS = ("request_id", "target", "operation", "input_sha256", "input_bytes", "decoded_input_sha256", "decoded_input_bytes", "mode", "api_calls", "fast", "lines",
                    "kind", "output", "output_hex", "output_sha256", "exception_type", "message", "encoding", "newline",
                    "computed_reference_exit", "internal_equivalence_and_stability_completed")
 
@@ -113,6 +114,11 @@ def load_plan(repo: Path) -> tuple[dict, list[dict], Sources]:
     require(lock["python_versions"] == list(VERSIONS.values()), "Black runtime version axis differs")
     for name, sha in {**lock["helper_sources"], **lock["comparison_owners"]}.items():
         sources.read(name, sha)
+    recipe = lock["file_API_recipe"]
+    require(recipe["kind"] == "pinned_black_file_bytes_decode_safe_format_restore" and
+            recipe["format_file_contents_fast"] is False, "Black file API recipe differs")
+    for name, sha in recipe["repository_source_proofs"].items():
+        sources.read(name, sha)
     upstream = lock["upstream_lock"]
     sources.read(upstream["source_id"], upstream["sha256"])
     requests = []
@@ -150,6 +156,12 @@ def load_plan(repo: Path) -> tuple[dict, list[dict], Sources]:
             == {target: 249 for target in VERSIONS}, "Black target context counts differ")
     require(dict(Counter(r["operation"] for r in requests)) == lock["operation_counts"]
             == {"black_decode_bytes_safe_format_API": 30, "black_safe_format_API": 717}, "Black operation counts differ")
+    counterpart = recipe["CRLF_source_counterpart"]
+    crlf, lf = sources.value(counterpart["CRLF_case"]), sources.value(counterpart["LF_case"])
+    with io.TextIOWrapper(io.BytesIO(crlf["source"].encode()), encoding="utf-8") as stream:
+        require(stream.read() == lf["source"], "frozen CRLF/LF file-input counterpart differs")
+    require(crlf["invalid_output_sha256"] == lf["invalid_output_sha256"] ==
+            [counterpart["required_raw_error_log_sha256"]] * 3, "frozen raw log contract differs")
     return lock, requests, sources
 
 
@@ -217,6 +229,7 @@ for case in cases:
                   "is_pyi":mode.is_pyi,"enabled_features":sorted(feature.name for feature in mode.enabled_features)}
     row = {"request_id":case["request_id"], "target":case["target"], "operation":case["operation"],
            "input_sha256":hashlib.sha256(raw).hexdigest(), "input_bytes":len(raw),
+           "decoded_input_sha256":None,"decoded_input_bytes":None,
            "mode":descriptor,
            "api_calls":{"decode_bytes":0,"format_file_contents":0}, "fast":False, "lines":[],
            "kind":None,"output":None,"output_hex":None,"output_sha256":None,
@@ -224,12 +237,13 @@ for case in cases:
            "computed_reference_exit":None,"internal_equivalence_and_stability_completed":False}
     source = None
     try:
-        if case["operation"] == "black_decode_bytes_safe_format_API":
-            row["api_calls"]["decode_bytes"] += 1
-            source, encoding, newline = black.decode_bytes(raw, mode)
-            row.update(encoding=encoding,newline=newline)
-        else:
-            source = raw.decode("utf-8")
+        # These scenarios come from filesystem-backed source owners. Follow
+        # pinned format_file_in_place's input/output recipe for every file.
+        # Never normalize a returned exception or its raw referenced log.
+        row["api_calls"]["decode_bytes"] += 1
+        source, encoding, newline = black.decode_bytes(raw, mode)
+        row.update(encoding=encoding,newline=newline,decoded_input_sha256=hashlib.sha256(source.encode("utf-8")).hexdigest(),
+                   decoded_input_bytes=len(source.encode("utf-8")))
         row["api_calls"]["format_file_contents"] += 1
         try:
             output = black.format_file_contents(source, fast=False, mode=mode, lines=())
@@ -238,8 +252,7 @@ for case in cases:
         except black.NothingChanged as error:
             output = source
             row.update(kind="unchanged",exception_type=type(error).__module__+"."+type(error).__name__,message=str(error))
-        output_bytes = (output.replace("\n", row["newline"]).encode(row["encoding"])
-                        if case["operation"] == "black_decode_bytes_safe_format_API" else output.encode("utf-8"))
+        output_bytes = output.replace("\n", row["newline"]).encode(row["encoding"])
         row.update(output=output,output_hex=output_bytes.hex(),output_sha256=hashlib.sha256(output_bytes).hexdigest(),
                    computed_reference_exit=int(output_bytes != raw))
     except Exception as error:
@@ -336,8 +349,13 @@ def compare_record(actual: dict, request: dict, logs: list[dict]) -> list[dict]:
             and strict_json(actual["mode"]) == strict_json(request["mode"]) and actual["fast"] is False and actual["lines"] == []
             and type(actual["computed_reference_exit"]) is int, "Black API result input/mode/fast/lines differs")
     calls = actual["api_calls"]
-    require(strict_json(calls) == strict_json({"decode_bytes": int(request["operation"] == "black_decode_bytes_safe_format_API"),
+    require(strict_json(calls) == strict_json({"decode_bytes": 1,
                       "format_file_contents": 1}), "Black API invocation denominator differs")
+    require(type(actual["encoding"]) is str and actual["newline"] in {"\n", "\r\n", "\r"}, "Black file decoder metadata differs")
+    with io.TextIOWrapper(io.BytesIO(raw), encoding=actual["encoding"]) as stream:
+        decoded = stream.read().encode("utf-8")
+    require(actual["decoded_input_sha256"] == digest(decoded) and type(actual["decoded_input_bytes"]) is int
+            and actual["decoded_input_bytes"] == len(decoded), "Black decoded file input identity differs")
     if actual["kind"] != "error":
         output = bytes.fromhex(actual["output_hex"])
         require(digest(output) == actual["output_sha256"] and actual["computed_reference_exit"] == int(output != raw)
@@ -489,6 +507,8 @@ def run(repo: Path, output: Path, python: Path, version: str) -> int:
             wheels.append(destination / pin["filename"])
         executable = black_reference.prepare(python, version, root, upstream["dependencies"][version], wheels, upstream["interpreters"][version])
         identity = json.loads((root / "identity.json").read_bytes())
+        require(identity["distributions"]["black"]["distribution_files"]["black/__init__.py"]["sha256"] ==
+                lock["file_API_recipe"]["upstream_source"]["member_sha256"], "prepared Black file API source differs")
         before = capture_payloads(root, identity, "before", python)
         (root / "referenced-error-logs").mkdir()
         text = observer_source(root)

@@ -601,15 +601,23 @@ jobs:
           if failures or result.returncode:
               raise SystemExit("tracked source changed")
           PY
+      - name: Pack lint receipts without following fixture links
+        if: always()
+        shell: bash
+        run: |
+          python3 -B tools/ci/q0_16_artifact.py \
+            --receipts "$GITHUB_WORKSPACE/receipts" \
+            --output "$GITHUB_WORKSPACE/receipts-safe.tar" \
+            --manifest "$GITHUB_WORKSPACE/receipts-safe-manifest.json" \
+            --tool '${{ matrix.tool }}'
       - name: Retain success and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: q0-16-contract-lint-${{ matrix.tool }}-${{ matrix.python }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            receipts/
-            !receipts/run/environments/${{ matrix.tool }}/venv/**
-            !receipts/run/requests/*/metadata/venv/**
+            receipts-safe.tar
+            receipts-safe-manifest.json
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 14

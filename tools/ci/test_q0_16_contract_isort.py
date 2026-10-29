@@ -55,6 +55,59 @@ def capture_fake(request, *, saved="valid", change=None, private_cr=False):
     return run
 
 
+def prepared_fixture(root,version,*,wrong_installer=False,extra_distribution=False,wrong_probe_origin=False):
+    """Create only inert files; mocked commands do not import or execute them."""
+    minor=".".join(version.split(".")[:2]);base=root/"pbs/python";python=base/"bin"/("python"+minor)
+    python.parent.mkdir(parents=True);python.write_bytes(b"inert pinned interpreter")
+    installer=base/"lib"/("python"+minor)/"ensurepip/_bundled/pip-25.0-py3-none-any.whl"
+    installer.parent.mkdir(parents=True);installer.write_bytes(b"inert sealed installer wheel")
+    archive_sha=adapter.digest(b"inert sealed archive")
+    interpreter_pin={"executable_sha256":adapter.digest(python.read_bytes()),"sha256":archive_sha}
+    installer_pin={"archive_sha256":archive_sha,"member":installer.relative_to(root/"pbs").as_posix(),
+        "bytes":installer.stat().st_size,"sha256":adapter.digest(b"wrong installer" if wrong_installer else installer.read_bytes())}
+    wheels=[];pins=[]
+    for name,version_pin in (("isort","9.0.2"),("mypy_extensions","1.1.0")):
+        path=root/(name+".whl");path.write_bytes(("inert wheel "+name).encode());wheels.append(path)
+        pins.append({"name":name,"version":version_pin,"filename":path.name,"sha256":adapter.digest(path.read_bytes())})
+    environment=root/"environment"
+    def command(argv,cwd,destination,**options):
+        destination.mkdir();stdout=b""
+        if destination.name=="base-identity":
+            stdout=adapter.encoded({"python":list(map(int,version.split("."))),"executable":str(python),"isolated":1,"dont_write_bytecode":True})+b"\n"
+        elif destination.name=="create-venv":
+            executable=environment/"venv/bin/python";executable.parent.mkdir(parents=True);executable.symlink_to(python)
+        elif destination.name=="install":
+            site=environment/"venv/lib"/("python"+minor)/"site-packages";site.mkdir(parents=True)
+            for name,dist in (("isort","isort-9.0.2.dist-info"),("mypy_extensions","mypy_extensions-1.1.0.dist-info")):
+                module=site/name/"__init__.py";module.parent.mkdir();module.write_bytes(b"# inert installed package\n")
+                record=site/dist/"RECORD";record.parent.mkdir();record.write_bytes(b"inert recorded payload\n")
+        elif destination.name=="package-identity":
+            site=environment/"venv/lib"/("python"+minor)/"site-packages"
+            distributions=[]
+            for name,dist in (("isort","isort-9.0.2.dist-info"),("mypy_extensions","mypy_extensions-1.1.0.dist-info")):
+                paths=[site/name/"__init__.py",site/dist/"RECORD"]
+                distributions.append({"distribution_files":{p.relative_to(site).as_posix():adapter.capture.fact(p) for p in paths},"missing_distribution_files":[]})
+            identity={**distributions[0],"version":"9.0.2","python":list(map(int,version.split("."))),
+                "executable":str(environment/"venv/bin/python"),"prefix":str(environment/"venv"),"base_prefix":str(base),
+                "isolated":1,"dont_write_bytecode":True,"user_site_enabled":False,"target_site":str(site),
+                "module":str(site/"isort/__init__.py"),"installed_site_distributions":{"isort":"9.0.2","mypy-extensions":"1.1.0"},
+                "installer_import_origin":str(installer)+"/pip/__init__.py","packaging_import_origin":str(installer)+"/pip/_vendor/packaging/__init__.py",
+                "dependency_distributions":{"mypy-extensions":distributions[1]},
+                "dependency_verification":{"dependencies_verified":True,"pinned_versions":{"isort":"9.0.2","mypy-extensions":"1.1.0"}}}
+            if extra_distribution:identity["installed_site_distributions"]["pip"]="unapproved"
+            if wrong_probe_origin:identity["packaging_import_origin"]="/ambient/packaging/__init__.py"
+            stdout=adapter.encoded(identity)+b"\n"
+        else:raise AssertionError("unexpected mocked preparation command")
+        adapter.write_json(destination/"inputs.json",options["inputs"])
+        for name,raw in (("stdin",b""),("stdout",stdout),("stderr",b"")):(destination/(name+".raw")).write_bytes(raw)
+        receipt={"argv":argv,"cwd":str(cwd),"expected_exits":options["expected_exits"],"pid":321,"waited_pid":321,
+            "wait_completed":True,"actual_exit":0,"timed_out":False,"launch_error":None,"passed":True,
+            **{name+"_sha256":adapter.digest((destination/(name+(".json" if name=="inputs" else ".raw"))).read_bytes()) for name in ("stdin","stdout","stderr","inputs")}}
+        adapter.write_json(destination/"receipt.json",receipt);return receipt
+    arguments=(python,version,environment,pins[0],wheels[0],pins[1:],wheels[1:],interpreter_pin,installer_pin)
+    return arguments,command
+
+
 class IsortContractControls(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.lock,cls.requests,_=adapter.load_plan(REPO)
@@ -62,6 +115,62 @@ class IsortContractControls(unittest.TestCase):
     def test_static_imports_and_observer_parse_do_not_import_targets(self):
         self.assertFalse({name.split(".")[0] for name in sys.modules}&{"isort","mypy","pydantic","pylint","astroid"})
         ast.parse(adapter.OBSERVER)
+        ast.parse(adapter.MAC_PACKAGE_PROBE)
+
+    def test_mac_preparer_uses_sealed_bundle_symlinks_without_ensurepip_for_all_targets(self):
+        for version in adapter.VERSIONS.values():
+            with self.subTest(version=version),tempfile.TemporaryDirectory() as temporary:
+                arguments,fake=prepared_fixture(Path(temporary).resolve(),version);records=[]
+                with patch.object(adapter,"run_command",side_effect=fake):executable=adapter.prepare_mac(*arguments,records)
+                self.assertTrue(executable.is_symlink());self.assertEqual(len(records),4)
+                for row in records:adapter.reconcile_process(row)
+                creation=records[1]["receipt"]["argv"]
+                self.assertEqual(creation[3:7],["-m","venv","--symlinks","--without-pip"])
+                install=records[2]["receipt"]["argv"]
+                self.assertEqual(install[3:6],["-c",adapter.mac_reference.INSTALLER,str(adapter.mac_reference.bundled_pip(arguments[0],version))])
+                self.assertIn("--no-index",install);self.assertIn("--no-deps",install);self.assertIn("--no-compile",install)
+                self.assertEqual(records[3]["receipt"]["argv"][5],install[5])
+                self.assertNotIn("--copies",[arg for row in records for arg in row["receipt"]["argv"]])
+                identity=json.loads((arguments[2]/"identity.json").read_bytes())
+                before=adapter.payloads(arguments[2],identity,"before",arguments[0]);self.assertTrue(before["matches_identity"])
+                after=adapter.payloads(arguments[2],identity,"after",arguments[0]);self.assertEqual(before,after)
+                self.assertEqual((arguments[2]/identity["installer"]["retained"]).read_bytes(),Path(identity["installer"]["path"]).read_bytes())
+                Path(identity["installer"]["path"]).write_bytes(b"late installer mutation")
+                self.assertFalse(adapter.payloads(arguments[2],identity,"mutated",arguments[0])["matches_identity"])
+
+    def test_mac_preparer_rejects_wrong_bundle_extra_distribution_and_unbound_probe_import(self):
+        for option,count in (("wrong_installer",2),("extra_distribution",4),("wrong_probe_origin",4)):
+            with self.subTest(option=option),tempfile.TemporaryDirectory() as temporary:
+                arguments,fake=prepared_fixture(Path(temporary).resolve(),"3.13.5",**{option:True});records=[]
+                with patch.object(adapter,"run_command",side_effect=fake),self.assertRaises(ValueError):adapter.prepare_mac(*arguments,records)
+                self.assertEqual(len(records),count)
+                self.assertTrue(all(row["capture_process_fact"]["wait_completed"] is True for row in records))
+                self.assertFalse((arguments[2]/"identity.json").exists())
+
+    def test_installer_target_and_archive_lock_drift_rejects_before_target_preparation(self):
+        for mutation in ("archive","target"):
+            lock=copy.deepcopy(self.lock)
+            if mutation=="archive":lock["bundled_installers"]["3.13.5"]["archive_sha256"]="0"*64
+            else:del lock["bundled_installers"]["3.14.0"]
+            with patch.object(adapter,"checked_bytes",return_value=adapter.encoded(lock)),self.assertRaises(ValueError):adapter.load_plan(REPO)
+
+    def test_failed_preparation_retains_waited_child_and_stops_before_install(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            arguments,fake=prepared_fixture(Path(temporary).resolve(),"3.13.5");records=[]
+            def failed_creation(argv,cwd,destination,**options):
+                returned=fake(argv,cwd,destination,**options)
+                if destination.name=="create-venv":
+                    returned["actual_exit"]=1;returned["passed"]=False
+                    (destination/"stderr.raw").write_bytes(b"retained synthetic preparation failure\n")
+                    returned["stderr_sha256"]=adapter.digest((destination/"stderr.raw").read_bytes())
+                    (destination/"receipt.json").write_bytes(adapter.encoded(returned))
+                return returned
+            with patch.object(adapter,"run_command",side_effect=failed_creation),self.assertRaises(ValueError):adapter.prepare_mac(*arguments,records)
+            self.assertEqual(len(records),2);self.assertEqual(records[1]["status"],"failed")
+            self.assertEqual(records[1]["capture_process_fact"],{"pid":321,"waited_pid":321,"wait_completed":True,"actual_exit":1,"timed_out":False,"launch_error":None})
+            self.assertTrue((arguments[2]/"create-venv/returned-receipt.json").is_file())
+            self.assertEqual((arguments[2]/"create-venv/stderr.raw").read_bytes(),b"retained synthetic preparation failure\n")
+            self.assertFalse((arguments[2]/"install").exists())
 
     def test_all_504_full_contexts_keep_entry_api_target_and_alias_bindings(self):
         self.assertEqual(len(self.requests),504)
@@ -226,7 +335,7 @@ class IsortContractControls(unittest.TestCase):
     def test_host_rejection_keeps_intended_lane_initial_and_final_indexes_complete(self):
         with tempfile.TemporaryDirectory() as temporary:
             output=Path(temporary).resolve()/"run"
-            with patch.object(adapter,"require_hosted",side_effect=ValueError("not hosted")),patch.object(adapter,"download") as download,patch.object(adapter.reference,"prepare") as prepare:
+            with patch.object(adapter,"require_hosted",side_effect=ValueError("not hosted")),patch.object(adapter,"download") as download,patch.object(adapter,"prepare_mac") as prepare:
                 code=adapter.run(REPO,output,Path("/never-executed"),"3.12.11")
             self.assertEqual(code,1);download.assert_not_called();prepare.assert_not_called()
             initial=(output/"initial-results.json").read_bytes();rows=json.loads((output/"final-results.json").read_bytes())

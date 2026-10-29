@@ -22,7 +22,8 @@
     "tools/ci/q0_mypy_reference.py": "2c5334f75198e399245fa4e2728c8d2a2f4c2257880b5cba9924b503ae54f2e4",
     "tools/ci/q0_16_reference.py": "115d702e61461fe01fab655ea4f706ba00248365e1dda3971a0c151d3b8a0718",
     "tools/ci/q0_16_packet.py": "fc3ca14da898de1227e3614273a06c82068d1241e3485ca94cf0d50fbbc7e166",
-    "tools/ci/q0_pylint_reference.py": "71a88f573955e1bafc9e4cea54c11a5d5319f96dbcb6fcf047033314b4372f4a"
+    "tools/ci/q0_pylint_reference.py": "71a88f573955e1bafc9e4cea54c11a5d5319f96dbcb6fcf047033314b4372f4a",
+    "tools/ci/q0_black_reference.py": "0a1593f1d57e7f3430e39c8c0414c53a8aa6ca1ea438a082cefe59427d53ec56"
   },
   "comparison_owners": {
     "crates/mamba-quality/src/infrastructure/isort/tests/ast_errors.rs": "304e07402ce54ef3f0a7636cdf4e18009986d255d07f91d4c700fd5c709c26f1",
@@ -45143,5 +45144,25 @@
       ],
       "settings_overlay": "[settings]\nprofile = black\nline_length = 88\npy_version = 314\nsrc_paths = .,./src\n"
     }
-  ]
+  ],
+  "bundled_installers": {
+    "3.12.11": {
+      "archive_sha256": "c6d4843e8af496f034176908ae3384556680284653a4bff45eff07e43fe4ae34",
+      "member": "python/lib/python3.12/ensurepip/_bundled/pip-25.0.1-py3-none-any.whl",
+      "bytes": 1841526,
+      "sha256": "c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f"
+    },
+    "3.13.5": {
+      "archive_sha256": "d7867270b8c7be69ec26a351afb6bf24802b1cd9818e8426bd69d439a619bf2d",
+      "member": "python/lib/python3.13/ensurepip/_bundled/pip-25.1.1-py3-none-any.whl",
+      "bytes": 1825227,
+      "sha256": "2913a38a2abf4ea6b64ab507bd9e967f3b53dc1ede74b01b0931e1ce548751af"
+    },
+    "3.14.0": {
+      "archive_sha256": "4d37c50912b533913fe4a6f0239acb737d65dc6dad72096c4573b755c6b26712",
+      "member": "python/lib/python3.14/ensurepip/_bundled/pip-25.2-py3-none-any.whl",
+      "bytes": 1752557,
+      "sha256": "6d67a2b4e7f14d8b31b8b52648866fa717f45a1eb70e83002f4331d07e953717"
+    }
+  }
 }
