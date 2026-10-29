@@ -21,6 +21,7 @@ import sys
 import zipfile
 
 import q0_16_reference as capture
+import q0_16_shadow_reference as shadow_reference
 from q0_16_packet import CONFIG_BYTES, read_json, safe_path
 from q0_mypy_reference import require_receipt
 from q0_ruff_reference import digest, run_command, write_json
@@ -456,6 +457,11 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         if correction:
             corrections[identity] = correction
         node = requests.setdefault(identity, {"request_id": identity, "context": context, "source_aliases": [], "expected_bindings": [], "owner_sources": owners})
+        if (record["record_pointer"]["source_id"] == shadow_reference.CASE_SOURCE
+                and record["record_pointer"]["json_pointer"] == "/16" and section["target"] == "3.13"):
+            node[shadow_reference.BINDING] = {"source_id": shadow_reference.PACKET,
+                "sha256": digest(sources.raw(shadow_reference.PACKET))}
+            shadow_reference.load_packet(repo, node[shadow_reference.BINDING])
         node["source_aliases"].append({"unit_id": record["unit_id"], "manifest_id": manifest["unit_id"], "case_source": record["record_pointer"]})
         binding = {"target": section["target"], "source": expected_binding(sources, section)}
         if (record["record_pointer"]["source_id"] == "crates/mamba-quality/src/infrastructure/mypy/tests/dependency_source_errors.json"
@@ -494,6 +500,9 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         for target in TARGETS:
             append(manifest, record, sources.resolve(ref), {"target": target, "expected_pointer": sources.child(ref, "expected_diagnostics")})
     cases = list(requests.values())
+    if [case["request_id"] for case in cases if shadow_reference.BINDING in case] != [shadow_reference.REQUEST]:
+        raise ValueError("independent shadow reference gate scope differs")
+    sources.raw("tools/ci/q0_16_shadow_reference.py")
     counts = {tool: sum(c["context"]["tool"] == tool for c in cases) for tool in COUNTS}
     if counts != COUNTS or sum(bool(c["context"]["layout"]["model_packages"]) for c in cases) != 138:
         raise ValueError(f"finite lint request denominator differs: {counts}")
@@ -535,6 +544,10 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         "mypy_library_asset_corrections_from_64db": list(library_corrections.values()),
         "pylint_namespace_corrections_from_64db": list(namespace_corrections.values()),
         "reference_library_member_selections": REFERENCE_LIBRARY_SELECTIONS,
+        "independent_shadow_reference": {"packet": {"source_id": shadow_reference.PACKET,
+            "sha256": digest(sources.raw(shadow_reference.PACKET))}, "module": "tools/ci/q0_16_shadow_reference.py",
+            "original_contexts_added": 0, "original_aliases_added": 0, "strict_source_comparison_rewritten": False,
+            "reference_eligibility_only": True, "native_gate": "not_run"},
         "pylint_recipe_sources": PYLINT_RECIPE_SOURCES, "pylint_init_hook_source": PYLINT_INIT_HOOK_SOURCE,
         "pylint_namespace_source": PYLINT_NAMESPACE_SOURCE,
         "requests": [{**c, "context": public_context(c["context"])} for c in cases],
@@ -967,7 +980,7 @@ def terminal_receipt(receipt: dict, exits: tuple[int, ...]) -> None:
         raise ValueError("waited PID must be an integer, not a JSON boolean")
 
 
-def final_reconcile(row: dict, root: Path) -> None:
+def final_reconcile(row: dict, root: Path, repo: Path | None = None, case: dict | None = None) -> None:
     if not row["process_launched"]:
         return
     stored = read_json((root / "command/receipt.json").read_bytes())
@@ -985,6 +998,11 @@ def final_reconcile(row: dict, root: Path) -> None:
     if metadata:
         finish_metadata(metadata, stored["pid"])
         row["metadata_final_reconciled"] = True
+    if case is not None and shadow_reference.BINDING in case:
+        if repo is None:
+            raise ValueError("independent shadow reference gate lacks its repository binding")
+        shadow_reference.reconcile(repo, case, root, row)
+        row["independent_shadow_final_reconciled"] = True
 
 
 def metadata_executable_identity(python: Path, base_python: Path) -> dict:
@@ -1508,6 +1526,15 @@ def run_case(sources: Sources, case: dict, version: str, executable: Path, base:
                 raise ValueError("source bytes/entries or sealed checker configuration changed")
     except Exception as error:
         row["status"] = "failed"; row["errors"].append({"stage": "preservation", "message": str(error)})
+    if shadow_reference.BINDING in case and row["process_launched"]:
+        try:
+            proof = shadow_reference.capture(sources.repo, case, root, row)
+            row["independent_shadow_reference"] = proof
+            if proof["classification"] == "approved_reference_variant":
+                row["status"] = "passed_reference_variant"
+        except Exception as error:
+            row["status"] = "failed"
+            row["errors"].append({"stage": "independent_shadow_reference", "type": type(error).__name__, "message": str(error)})
     if not initial_saved:
         write_json(root / "initial-result.json", row)
     row["raw_pointers"] = {name: "command/" + name for name in ("receipt.json", "returned-receipt.json", "stdin.raw", "stdout.raw", "stderr.raw", "inputs.json") if (root / "command" / name).is_file()}
@@ -1616,13 +1643,14 @@ def run(repo: Path, output: Path, python: Path, version: str, tool: str) -> int:
         if case["request_id"] not in indexed:
             row = initial_row(case, version); row["errors"].append({"stage": "preparation", "message": str(common)})
             rows.append(row)
+    planned_by_id = {case["request_id"]: case for case in planned}
     for row in rows:
         row["lane_context_verified"] = common is None
-        if common and row["status"] == "passed":
+        if common and row["status"] in {"passed", "passed_reference_variant"}:
             row["status"] = "failed"; row["errors"].append({"stage": "lane_context", **common})
         root = output / "requests" / row["request_id"]; root.mkdir(parents=True, exist_ok=True)
         try:
-            final_reconcile(row, root)
+            final_reconcile(row, root, repo, planned_by_id[row["request_id"]])
         except Exception as error:
             row["status"] = "failed"; row["final_receipt_reconciled"] = False
             row["errors"].append({"stage": "final_receipt", "type": type(error).__name__, "message": str(error)})
@@ -1633,12 +1661,16 @@ def run(repo: Path, output: Path, python: Path, version: str, tool: str) -> int:
     with (output / "raw-index.jsonl").open("x") as stream:
         for row in rows:
             stream.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
-    passed = bool(planned and len(rows) == COUNTS[tool] // 3 and common is None and all(r["status"] == "passed" for r in rows))
+    passed = bool(planned and len(rows) == COUNTS[tool] // 3 and common is None and all(shadow_reference.reference_pass(r) for r in rows))
     comparisons = [c for r in rows for c in r["comparison_results"]]
     summary = {"schema": "mamba.q0.16.contract-lint-summary.v1", "tool": tool, "python_version": version,
         "intended_requests": len(planned), "results": len(rows), "passed_requests": sum(r["status"] == "passed" for r in rows),
+        "strict_source_match_requests": sum(bool(r["comparison_results"]) and all(c["full_ordered_diagnostics_match"] is True for c in r["comparison_results"]) for r in rows),
+        "approved_reference_variant_requests": [r["request_id"] for r in rows if r["status"] == "passed_reference_variant" and shadow_reference.reference_pass(r)],
+        "reference_eligible_requests": sum(shadow_reference.reference_pass(r) for r in rows),
+        "strict_source_mismatch_requests": [r["request_id"] for r in rows if any(c["full_ordered_diagnostics_match"] is False for c in r["comparison_results"])],
         "not_run_requests": [r["request_id"] for r in rows if r["status"] == "not_run"],
-        "failed_requests": [r["request_id"] for r in rows if r["status"] not in {"passed", "not_run"}],
+        "failed_requests": [r["request_id"] for r in rows if not shadow_reference.reference_pass(r) and r["status"] != "not_run"],
         "actual_checker_processes": sum(r["process_launched"] for r in rows),
         "waited_checker_processes": sum(known_wait(r.get("capture_process_fact")) for r in rows),
         "JSON_exit_parity": {s: sum(c["exit_parity_status"] == s for c in comparisons) for s in ("matched", "mismatched", "not_defined_for_JSON")},

@@ -101,8 +101,11 @@ contexts and retained seven mismatches. All 138 metadata contexts and their 276
 query observations passed the independent query proof checks. The mismatches
 have three separate causes: missing source-declared Pydantic type data,
 namespace module discovery, and one Python 3.13 shadow-module output outside
-the existing authorized variant lists. The last output remains unaccepted
-while a separate user decision is pending.
+the existing authorized variant lists. The last output belongs to the shadow-order category already approved in
+[#15](https://github.com/faberline/mamba/issues/15).
+The earlier request for another decision added an unnecessary gate. Its strict
+source comparison remains a mismatch; a separate complete reference observation
+will retain the exact fields and exit without changing the old comparator.
 
 The new source-bound repair prepares 116 original text/type files from five
 pinned distributions for the single typed-Pydantic case across three targets.
@@ -111,7 +114,9 @@ the unchanged model fixtures. No library program is installed or imported in
 the metadata interpreter. The namespace repair sets the project source root
 only for `cross_file_selected_imports.json` row 1 across the three targets.
 Both repairs retain the old input and expected bytes. They require a new
-hosted run. The new Python 3.13 variant is not enabled by these repairs.
+hosted run. The typed-data and namespace repairs do not alter the shadow comparison.
+The separate shadow observation uses the existing parent-approved category. It
+keeps the strict source result and reference eligibility as separate facts.
 
 The repaired capture uses these source-bound rules:
 
