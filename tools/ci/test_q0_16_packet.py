@@ -8,11 +8,34 @@ import tempfile
 import unittest
 
 from q0_16_packet import (CONFIG_BYTES, evaluate_predicates, materialize, read_json,
-                         safe_path, validate_case, validate_packet)
+                         REFERENCE_FAILURE_KIND, REFERENCE_FAILURE_SOURCE, canonical,
+                         digest, safe_path, validate_case, validate_packet)
 
 PROFILE = {"mypy": {"strict_flags": ["--warn-redundant-casts"]},
            "pydantic": {"init_typed": True},
-           "pylint": {"rules": [{"code": "E0602"}, {"code": "F0001"}]}}
+           "pylint": {"rules": [{"code": "E0602"}, {"code": "F0001"}, {"code": "F0002"}]}}
+
+MIXED_SLOTS_SOURCE = ('"""Slot fixture."""\nclass Parent:\n    """Slot class."""\n'
+    '    __slots__ = b"value"\nclass Other:\n    """Slot class."""\n'
+    '    __slots__ = ("other",)\nclass Resource(Parent, Other):\n    """Slot class."""\n'
+    '    __slots__ = ("value",)\n    def __init__(self):\n        """Inspect slots."""\n'
+    '        self.value = 1\n        self.other = 1\n        self.extra = 1\n')
+
+
+def failure_case(role="hit"):
+    suffix = {"hit": "hit", "non_trigger": "disabled", "interaction": "project_interaction"}[role]
+    value = case("pylint", role, "q016_pylint_f0002_paired_" + suffix)
+    value.update(behavior="F0002", group="q016_pylint_f0002_paired", files={"main.py": MIXED_SLOTS_SOURCE},
+                 requires=[{"rule": "F0002", "presence": "absent" if role == "non_trigger" else "present"}],
+                 reference_failure_kind=REFERENCE_FAILURE_KIND,
+                 reference_failure_source_sha256=dict(REFERENCE_FAILURE_SOURCE))
+    if role == "non_trigger":
+        value["disabled_rules"] = ["F0002"]
+    if role == "interaction":
+        value["files"]["q0_16_boundary_probe.py"] = '"""Independent project-boundary lint probe."""\nprint(q0_16_missing_probe_value)\n'
+        value["entrypoints"] = sorted(value["files"])
+        value["requires"].append({"rule": "E0602", "presence": "present", "path": "q0_16_boundary_probe.py"})
+    return value
 
 
 def case(tool="mypy", role="hit", ident="case-one"):
@@ -32,6 +55,38 @@ def packet(tool="mypy", cases=None):
 
 
 class PacketControls(unittest.TestCase):
+    def test_reference_tool_error_contract_is_exact_and_part_of_input_identity(self):
+        for role in ("hit", "non_trigger", "interaction"):
+            value = failure_case(role)
+            proof = validate_case(value, "pylint", PROFILE)
+            semantic = {key: value.get(key, []) if key in {"disabled_rules", "missing_entrypoints"} else value[key]
+                for key in ("behavior", "role", "group", "files", "entrypoints", "python_targets", "requires",
+                            "disabled_rules", "missing_entrypoints", "reference_failure_kind", "reference_failure_source_sha256")}
+            self.assertEqual(proof["input_sha256"], digest(canonical(semantic)))
+            self.assertEqual(proof["source_files"]["main.py"]["sha256"], REFERENCE_FAILURE_SOURCE["main.py"])
+        pair = packet("pylint", [failure_case(), failure_case("non_trigger")])
+        self.assertEqual(len(validate_packet(pair, PROFILE)["disabled_rule_pairs"]), 1)
+
+    def test_reference_tool_error_contract_rejects_scope_and_source_changes(self):
+        original = failure_case()
+        variants = []
+        for field in ("reference_failure_kind", "reference_failure_source_sha256"):
+            value = copy.deepcopy(original); del value[field]; variants.append(value)
+        for changes in ({"id": "ordinary"}, {"behavior": "E0602"}, {"role": "interaction"},
+                        {"reference_failure_kind": "other-error"}, {"reference_failure_source_sha256": {}},
+                        {"reference_failure_extra": True}, {"requires": [{"rule": "F0002", "presence": "absent"}]},
+                        {"files": {"main.py": MIXED_SLOTS_SOURCE + "# changed\n"}},
+                        {"files": {"main.py": MIXED_SLOTS_SOURCE, "unapproved.py": "pass\n"}}):
+            value = copy.deepcopy(original); value.update(changes); variants.append(value)
+        for value in variants:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                validate_case(value, "pylint", PROFILE)
+        ordinary = case()
+        ordinary["reference_failure_kind"] = REFERENCE_FAILURE_KIND
+        ordinary["reference_failure_source_sha256"] = dict(REFERENCE_FAILURE_SOURCE)
+        with self.assertRaises(ValueError):
+            validate_case(ordinary, "mypy", PROFILE)
+
     def test_path_traversal_and_cli_option_inputs_are_rejected(self):
         for name in ("../escape.py", "/absolute.py", "x/../escape.py", "x//y.py", "x/./y.py",
                      "x\\y.py", "--config-file=evil.py", "@args.py", "x\n.py"):

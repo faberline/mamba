@@ -49,6 +49,15 @@ PROBE_NAME = "q0_16_boundary_probe.py"
 PROBE_SOURCE = '"""Independent project-boundary lint probe."""\nprint(q0_16_missing_probe_value)\n'
 RAW_LITERAL = re.compile(r'pub const CASES: &str = r(?P<h>#+)"(?P<body>.*)"(?P=h);', re.S)
 REENABLE = re.compile(r"pylint\s*:\s*enable", re.I)
+MIXED_SLOTS_FAILURE_KIND = "pylint-astroid-mixed-slots-v1"
+MIXED_SLOTS_SOURCE_SHA256 = {
+    "main.py": "887d71f5c0c0590172b39cc02c0aa019ce7d5eb228129e547a560ad4454b8fb0"
+}
+MIXED_SLOTS_CASE_IDS = {
+    "q016_pylint_f0002_paired_hit",
+    "q016_pylint_f0002_paired_disabled",
+    "q016_pylint_f0002_paired_project_interaction",
+}
 
 
 def digest(raw: bytes) -> str:
@@ -136,6 +145,8 @@ def source_provenance(item: dict, code: str, focus_file: str) -> dict:
 
 def guard_description(code: str, guard: dict) -> tuple[str, str]:
     kind = guard["guard"]
+    if code == "E2501":
+        return "parser-entry-preemption", "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass."
     if kind == "version_range":
         return "outside-supported-target-range", "The message definition maximum Python version is below every supported target."
     if code == "E1131":
@@ -184,6 +195,25 @@ def guard_source_refs(repository: Path, target: dict, code: str) -> list[dict]:
                      "guard_file_pointer": "/0/source_guards/" + path.replace("~", "~0").replace("/", "~1"),
                      "methods": [{"name": name, "line": method["line"], "end_line": method["end_line"]}
                                  for name, methods in source["methods"].items() for method in methods]})
+    if code == "E2501":
+        refs.extend([
+            {"upstream_path": "pylint/checkers/unicode.py",
+             "sha256": "e14d000700318d0a14dc993b91b74b66e1fbcd88dc54969f2fc0266eefb893a6",
+             "archive": "pylint-4.1.2.tar.gz",
+             "archive_sha256": "235f13dc418c0041c649b42a5c35c99f2ffc6ca8b6a7574958eac5335906a68a",
+             "member": "pylint-4.1.2/pylint/checkers/unicode.py",
+             "conditions": [{"line": 375, "end_line": 377, "kind": "only-utf16-utf32-codec-prefixes"},
+                            {"line": 460, "end_line": 475, "kind": "invalid-unicode-codec-message-selection"},
+                            {"line": 518, "end_line": 522, "kind": "module-callback-checks-detected-codec"},
+                            {"line": 324, "end_line": 325, "kind": "unsupported-codec-source-comment"}]},
+            {"upstream_path": "astroid/builder.py",
+             "sha256": "42089e51728d70719abc08322dc571c8d91c54af775643ec887e455049579e13",
+             "archive": "astroid-4.3.3-py3-none-any.whl",
+             "archive_sha256": "366c99c2907b6407869b1bbfd8abb10f3aea5818309e9c93c9b9c93ecf14bc4f",
+             "member": "astroid/builder.py",
+             "conditions": [{"line": 48, "end_line": 54, "kind": "source-file-decoding"},
+                            {"line": 134, "end_line": 138, "kind": "unicode-error-becomes-building-error"}]},
+        ])
     if guard == "fixed_configuration_entry":
         path = repository / "tools/ci/q0_pylint_reference.py"
         refs.append({"repository_path": path.relative_to(repository).as_posix(),
@@ -307,7 +337,10 @@ def build(repository: Path) -> dict:
                              "positive_or_interaction_pass_claim": False,
                              "other_configurations_or_internal_API_coverage_claim": False})
         requires = [{"rule": code, "presence": "absent"}]
-        if code in {"E2501", "E2514", "W2607"}:
+        if code == "E2501":
+            requires.append({"rule": "F0010", "presence": "present", "path": "main.py", "line": 1,
+                             "message_contains": "error while code parsing: Wrong or no encoding specified for "})
+        if code in {"E2514", "W2607"}:
             requires.append({"rule": "E0001", "presence": "present"})
         cases.append({"id": "q016_pylint_" + code.lower() + "_guard_probe", "behavior": code,
                       "role": "non_trigger", "group": "q016_pylint_" + code.lower() + "_guard",
@@ -315,6 +348,11 @@ def build(repository: Path) -> dict:
                       "python_targets": TARGETS, "requires": requires, "guard_probe": True,
                       "intent": "Probe the declared fixed-scope guard or parser boundary. Absence is not a positive-emission pass.",
                       "provenance": {"kind": "new-fixed-scope-guard-input", "guard_source": dispositions[-1]["source"]}})
+    for case in cases:
+        if case["id"] in MIXED_SLOTS_CASE_IDS:
+            case["reference_failure_kind"] = MIXED_SLOTS_FAILURE_KIND
+            case["reference_failure_source_sha256"] = MIXED_SLOTS_SOURCE_SHA256
+            case["intent"] += " This is a declared fatal reference-tool error witness. Disabling F0002 only suppresses that diagnostic; it does not establish clean tool health."
     cases.sort(key=lambda case: case["id"])
     packet = {"schema": "mamba.q0.16.supplement-inputs.v1", "tool": "pylint", "cases": cases,
               "dispositions": [*dispositions, *unresolved],
@@ -366,7 +404,20 @@ def validate(packet: dict, enabled_codes: set[str] | None = None) -> None:
             raise ValueError("only exact focus disable is allowed")
         if case.get("disabled_rules") and (case["role"] != "non_trigger" or case.get("negative_kind") != "cli-rule-suppression"):
             raise ValueError("disabled rule is not an explicit negative control")
+        failure_fields = {name for name in case if name.startswith("reference_failure_")}
+        if case["id"] in MIXED_SLOTS_CASE_IDS:
+            if (failure_fields != {"reference_failure_kind", "reference_failure_source_sha256"}
+                    or case["reference_failure_kind"] != MIXED_SLOTS_FAILURE_KIND
+                    or case["reference_failure_source_sha256"] != MIXED_SLOTS_SOURCE_SHA256
+                    or case["behavior"] != "F0002"
+                    or case["group"] != "q016_pylint_f0002_paired"
+                    or digest(case["files"]["main.py"].encode()) != MIXED_SLOTS_SOURCE_SHA256["main.py"]):
+                raise ValueError("declared reference-tool error fixture differs")
+        elif failure_fields:
+            raise ValueError("reference-tool error metadata is outside the three declared fixtures")
         by_group.setdefault(case["group"], {})[case["role"]] = case
+    if not MIXED_SLOTS_CASE_IDS <= ids:
+        raise ValueError("declared reference-tool error fixture denominator differs")
     for group in by_group.values():
         negative = group.get("non_trigger")
         if negative is not None and negative.get("disabled_rules"):

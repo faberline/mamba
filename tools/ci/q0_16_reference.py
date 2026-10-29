@@ -9,13 +9,16 @@ from __future__ import annotations
 import argparse
 from contextlib import contextmanager
 import json
+import math
 import os
 from pathlib import Path
+import re
 import stat
 import sys
 
-from q0_16_packet import (CONFIG_BYTES, TOOLS, digest, evaluate_predicates,
-                         load_packets, materialize, safe_path)
+from q0_16_packet import (CONFIG_BYTES, TOOLS, canonical, digest, evaluate_predicates,
+                         load_packets, materialize, read_json, reference_failure_contract,
+                         safe_path, source_facts)
 from q0_mypy_inputs import parse_diagnostics
 from q0_mypy_reference import require_receipt
 from q0_pydantic_inputs import CONFIG
@@ -30,6 +33,25 @@ SEVERITY_BITS = {"fatal": 1, "error": 2, "warning": 4, "refactor": 8,
                  "convention": 16, "info": 0}
 CODE_SEVERITIES = {"F": "fatal", "E": "error", "W": "warning", "R": "refactor",
                    "C": "convention", "I": "info"}
+# These exact source files and call sites come from the pinned Pylint 4.1.2
+# archive and Astroid 4.3.3 wheel. They describe one upstream error witness.
+MIXED_SLOTS_SOURCES = {
+    "pylint/lint/pylinter.py": "abd946e305628847e7fc2d65066b36dde4fb38998c653b9a33824d0c3e67bea9",
+    "astroid/manager.py": "69d23a0dcf1bd07a92714a067adf85cd5f7408782e1e927eb3635ef9fc2074e3",
+    "astroid/builder.py": "42089e51728d70719abc08322dc571c8d91c54af775643ec887e455049579e13",
+    "astroid/nodes/scoped_nodes/scoped_nodes.py": "68763422d75553b2377ec05939f940fb61cb61e6b8e9126f53794d04adf371ef"}
+MIXED_SLOTS_FRAMES = (
+    ("pylint/lint/pylinter.py", 1131, "get_ast", "return MANAGER.ast_from_file(filepath, modname, source=True)"),
+    ("astroid/manager.py", 165, "ast_from_file", "return AstroidBuilder(self).file_build(filepath, modname)"),
+    ("astroid/builder.py", 148, "file_build", "return self._post_build(module, builder, encoding)"),
+    ("astroid/builder.py", 172, "_post_build", "self.delayed_assattr(delayed)"),
+    ("astroid/builder.py", 261, "delayed_assattr", "if not _can_assign_attr(inferred, node.attrname):"),
+    ("astroid/builder.py", 59, "_can_assign_attr", "slots = node.slots()"),
+    ("astroid/nodes/scoped_nodes/scoped_nodes.py", 2836, "slots", "return self._all_slots"),
+    ("functools.py", None, "__get__", "val = self.func(instance)"),
+    ("astroid/nodes/scoped_nodes/scoped_nodes.py", 2833, "_all_slots", "return sorted(set(slots), key=lambda item: item.value)"))
+MIXED_SLOTS_TERMINALS = {"TypeError: '<' not supported between instances of 'bytes' and 'str'",
+                         "TypeError: '<' not supported between instances of 'str' and 'bytes'"}
 
 
 def fact(path: Path) -> dict:
@@ -89,12 +111,105 @@ def ordered_mypy_diagnostics(stdout: bytes, filenames: set[str], project: Path) 
     # separately so this supplemental index also retains global stream order.
     rows = []
     for line in stdout.splitlines():
+        if not line.strip(b" \t\r\n\v\f"):
+            continue
         grouped = parse_diagnostics(line + b"\n", filenames, project)
         projected = [item for items in grouped.values() for item in items]
         if len(projected) != 1:
             raise ValueError("one mypy JSON line must project to exactly one diagnostic")
         rows.extend(projected)
     return rows
+
+
+def strict_json_bytes(value: object) -> bytes:
+    """Reject implicit JSON type conversion before comparing saved records."""
+    def check(item):
+        if type(item) is dict:
+            if any(type(key) is not str for key in item):
+                raise ValueError("JSON record object keys must be text")
+            for child in item.values():
+                check(child)
+        elif type(item) is list:
+            for child in item:
+                check(child)
+        elif type(item) is float:
+            if not math.isfinite(item):
+                raise ValueError("JSON record numbers must be finite")
+        elif item is not None and type(item) not in {str, int, bool}:
+            raise ValueError("JSON record contains a non-JSON value")
+    check(value)
+    return canonical(value)
+
+
+def require_saved_receipt(receipt: dict, stored: dict, exits: tuple[int, ...]) -> dict:
+    """Reconcile only the capture API's declared tuple with its JSON array."""
+    if type(receipt) is not dict or type(stored) is not dict:
+        raise ValueError("capture receipt must be a JSON object")
+    expected = receipt.get("expected_exits")
+    if (type(expected) is not tuple or any(type(code) is not int for code in expected)
+            or expected != exits):
+        raise ValueError("capture receipt exit contract differs from the requested exits")
+    normalized = dict(receipt)
+    normalized["expected_exits"] = list(expected)
+    if strict_json_bytes(normalized) != strict_json_bytes(stored):
+        raise ValueError("saved receipt differs from the complete returned process receipt")
+    return stored
+
+
+def expected_reference_error(stderr: bytes, tool: str, case: dict, proof: dict,
+                             executable: Path, environment: dict, minor: int) -> dict | None:
+    """Check a complete raw traceback independently of diagnostic predicates."""
+    declared = reference_failure_contract(case, tool)
+    if not declared:
+        if stderr:
+            raise ValueError("new reference CLI produced undeclared stderr")
+        return None
+    if (proof.get("source_files") != source_facts(case["files"])
+            or environment.get("mixed_slots_traceback_sources", {}).keys() != MIXED_SLOTS_SOURCES.keys()
+            or any(set(environment["mixed_slots_traceback_sources"][name]) != {"bytes", "sha256"}
+                   or type(environment["mixed_slots_traceback_sources"][name].get("bytes")) is not int
+                   or environment["mixed_slots_traceback_sources"][name]["bytes"] <= 0
+                   or environment["mixed_slots_traceback_sources"][name].get("sha256") != expected
+                   for name, expected in MIXED_SLOTS_SOURCES.items())):
+        raise ValueError("expected upstream error lacks complete declared and pinned package source facts")
+    base = Path(environment["base_executable"])
+    if not base.is_absolute() or executable != Path(environment["executable"]):
+        raise ValueError("expected upstream error is outside its declared interpreter paths")
+    site = executable.parent.parent / "lib" / f"python3.{minor}" / "site-packages"
+    stdlib = base.parent.parent / "lib" / f"python3.{minor}"
+    text = stderr.decode("utf-8")
+    lines = text.split("\n")
+    if (not text.endswith("\n") or "\r" in text or lines.pop() != ""
+            or not lines or lines.pop(0) != "Traceback (most recent call last):"):
+        raise ValueError("expected upstream error traceback envelope differs")
+    observed = []
+    for name, number, function, source in MIXED_SLOTS_FRAMES:
+        number = {12: 998, 13: 1026, 14: 1127}[minor] if number is None else number
+        path = (stdlib if name == "functools.py" else site) / name
+        frame = f'  File "{path}", line {number}, in {function}'
+        if len(lines) < 2 or lines.pop(0) != frame or lines.pop(0) != "    " + source:
+            raise ValueError("expected upstream error frame path, order, site or source differs")
+        if lines and re.fullmatch(r"    [ ~^]*\^[ ~^]*", lines[0]):
+            lines.pop(0)  # CPython caret spans differ between the three pinned versions.
+        observed.append({"path": str(path), "line": number, "function": function, "source_line": source})
+    if len(lines) != 1 or lines[0] not in MIXED_SLOTS_TERMINALS:
+        raise ValueError("expected upstream error terminal or traceback count differs")
+    return {"kind": case["reference_failure_kind"], "stderr_sha256": digest(stderr),
+            "ordered_frames": observed, "terminal": lines[0], "signature_passed": True,
+            "source_files": proof["source_files"], "pinned_package_sources": environment["mixed_slots_traceback_sources"]}
+
+
+def capture_error_report(cache: Path, case: dict, error: dict) -> dict:
+    paths = sorted(cache.glob("pylint-crash-*.txt"))
+    if len(paths) != 1:
+        raise ValueError("expected upstream error must retain exactly one crash report")
+    path = paths[0]
+    observed = fact(path)
+    raw = path.read_bytes()
+    if (digest(raw) != observed["sha256"] or case["files"]["main.py"].encode() not in raw
+            or error["terminal"].encode() not in raw):
+        raise ValueError("expected upstream error report lacks its unchanged fixture or terminal")
+    return {"path": str(path), **observed, "fixture_and_terminal_present": True}
 
 
 def expected_exit(tool: str, diagnostics: list[dict]) -> int:
@@ -171,7 +286,8 @@ def run_case(tool: str, case: dict, proof: dict, packet_source: dict,
            "environment": environment, "requires": case["requires"], "status": "failed",
            "process_launched": False, "observation_status": "not_run", "observation_complete": False, "predicate_results": [],
            "receipt": None, "diagnostics": None, "errors": [], "issue_accepted": False,
-           "native_parity": "not_run", "historical_evidence_recovered": False}
+           "native_parity": "not_run", "historical_evidence_recovered": False,
+           "expected_reference_tool_error": False, "clean_tool_health": None}
     before = None
     try:
         before = materialize(case, tool, project)
@@ -192,17 +308,29 @@ def run_case(tool: str, case: dict, proof: dict, packet_source: dict,
             receipt = run_command(argv, project, capture, expected_exits=exits, timeout=TIMEOUT,
                                   inputs={"case": case, "input_proof": before, "packet_source": packet_source,
                                           "input_sha256": proof["input_sha256"], "environment": environment})
-        row["receipt"] = receipt
         row["process_launched"] = type(receipt.get("pid")) is int and receipt["pid"] > 0
         row["observation_status"] = "observed" if row["process_launched"] else "launch_failed"
+        # Keep the capture API's facts before checking the separately saved
+        # receipt. A failed reconciliation must not erase a known child.
+        returned_path = capture / "returned-receipt.json"
+        write_json(returned_path, receipt)
+        returned = read_json(returned_path.read_bytes())
+        row["returned_receipt_pointer"] = "command/returned-receipt.json"
+        row["returned_receipt_sha256"] = digest(returned_path.read_bytes())
+        row["capture_process_fact"] = {key: returned.get(key) for key in (
+            "pid", "waited_pid", "wait_completed", "actual_exit", "timed_out", "launch_error")}
+        row["receipt"] = read_json((capture / "receipt.json").read_bytes())
+        receipt = require_saved_receipt(receipt, row["receipt"], exits)
         require_receipt(receipt, exits)
         stdout, stderr = (capture / "stdout.raw").read_bytes(), (capture / "stderr.raw").read_bytes()
         if digest(stdout) != receipt["stdout_sha256"] or digest(stderr) != receipt["stderr_sha256"]:
             raise ValueError("captured raw hashes differ from the actual process receipt")
-        # These CLI contracts produce JSON diagnostics on stdout. No stderr
-        # allowlist or old whole-list variant table is used for new cases.
-        if stderr:
-            raise ValueError("new reference CLI produced stderr; retain and review before acceptance")
+        row["clean_tool_health"] = False if stderr else None
+        error_witness = expected_reference_error(stderr, tool, case, proof, executable, environment, minor)
+        if error_witness is not None:
+            row["expected_reference_tool_error"] = True
+            row["reference_tool_error"] = error_witness
+            row["reference_tool_error"]["crash_report"] = capture_error_report(cache, case, error_witness)
         diagnostics = (project_diagnostics(stdout, project) if tool == "pylint" else
                        ordered_mypy_diagnostics(stdout, set(case["files"]), project))
         row["diagnostics"] = diagnostics
@@ -211,6 +339,8 @@ def run_case(tool: str, case: dict, proof: dict, packet_source: dict,
         if receipt["actual_exit"] != row["expected_exit_from_observed_diagnostics"]:
             raise ValueError("actual exit does not match the full observed diagnostic severities")
         row["observation_complete"] = True
+        if error_witness is None:
+            row["clean_tool_health"] = True
         row["predicate_results"] = evaluate_predicates(diagnostics, case["requires"])
         absence_only = tool in {"mypy", "pydantic"} and all(
             item["presence"] == "absent" for item in case["requires"])
@@ -291,6 +421,7 @@ def write_final_results(rows: list[dict], output: Path) -> None:
     """Preserve initial observations and publish one authoritative final row."""
     if len({(row["tool"], row["id"]) for row in rows}) != len(rows):
         raise ValueError("final result case identities are duplicated")
+    strict_json_bytes(rows)
     for row in rows:
         if row["tool"] not in TOOLS or safe_path(row["id"]) != Path(row["id"]).name:
             raise ValueError("unsafe final result identity")
@@ -323,9 +454,11 @@ def publish_case_results(rows: list[dict], packets: list[dict], output: Path) ->
     with (output / "raw-index.jsonl").open("x") as stream:
         for row in rows:
             stream.write(json.dumps(row, ensure_ascii=False) + "\n")
-    if (json.loads((output / "case-results.json").read_bytes()) != rows
-            or [json.loads(line) for line in (output / "raw-index.jsonl").read_bytes().splitlines()] != rows
-            or any(json.loads((output / row["final_result_pointer"]).read_bytes()) != row for row in rows)):
+    expected = strict_json_bytes(rows)
+    if (strict_json_bytes(read_json((output / "case-results.json").read_bytes())) != expected
+            or strict_json_bytes([read_json(line) for line in (output / "raw-index.jsonl").read_bytes().splitlines()]) != expected
+            or any(strict_json_bytes(read_json((output / row["final_result_pointer"]).read_bytes()))
+                   != strict_json_bytes(row) for row in rows)):
         raise ValueError("final result pointers and complete indexes disagree")
 
 
@@ -422,10 +555,20 @@ def prepare_environment(repository: Path, python: Path, version: str, output: Pa
     records = capture_installed_records(environment_root, identity, tool, "before")
     if not records["all_sources_match"]:
         raise ValueError("installed RECORD byte custody is incomplete before reference execution")
+    traceback_sources = {}
+    if tool == "pylint":
+        site = Path(identity["modules"]["pylint"]["path"]).parent.parent
+        for name, expected in MIXED_SLOTS_SOURCES.items():
+            path = site / name
+            observed = fact(path)
+            if observed["sha256"] != expected or payloads.get(str(path.resolve(strict=True))) != observed:
+                raise ValueError("pinned upstream error traceback source differs from the prepared package")
+            traceback_sources[name] = observed
     return executable, {"environment_kind": tool, "identity_path": str(identity_path.relative_to(output)),
                         "identity_sha256": digest(identity_path.read_bytes()),
                         "executable": str(executable), "executable_sha256": digest(executable.read_bytes()),
                         "base_executable_sha256": digest(python.resolve(strict=True).read_bytes()),
+                        "base_executable": str(python), "mixed_slots_traceback_sources": traceback_sources,
                         "pinned_distribution_count": len(pins), "payload_file_count": len(payloads),
                         "installed_record_count": records["copied_record_count"]}
 
@@ -438,6 +581,7 @@ def not_run_row(tool: str, case: dict, proof: dict, source: dict, minor: int, re
             "requires": case["requires"], "predicate_results": [], "process_launched": False,
             "observation_status": "not_run", "observation_complete": False, "receipt": None, "diagnostics": None,
             "errors": [{"stage": "environment_preparation", "message": reason}],
+            "expected_reference_tool_error": False, "clean_tool_health": None,
             "issue_accepted": False, "native_parity": "not_run", "historical_evidence_recovered": False}
 
 
@@ -574,7 +718,7 @@ def run(repository: Path, output: Path, python: Path, version: str) -> int:
                "failed_case_ids": [row["id"] for row in rows if row["status"] == "failed"],
                "not_run_case_ids": [row["id"] for row in rows if row["status"] == "not_run"],
                "actual_process_count": sum(row.get("process_launched") is True for row in rows),
-               "waited_process_count": sum((row.get("receipt") or {}).get("wait_completed") is True for row in rows),
+               "waited_process_count": sum((row.get("capture_process_fact") or row.get("receipt") or {}).get("wait_completed") is True for row in rows),
                "packet_count": len(packets), "environments": environment_states, "common_error": common_error,
                "supplement_capture_passed": passed, "issue_accepted": False, "native_parity": "not_run",
                "full_semantic_map_accepted": False, "historical_evidence_recovered": False,

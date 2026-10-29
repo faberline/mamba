@@ -10,6 +10,11 @@ SCHEMA = "mamba.q0.16.supplement-inputs.v1"
 TARGETS = ("3.12", "3.13", "3.14")
 TOOLS = {"mypy", "pylint", "pydantic"}
 ROLES = {"hit", "non_trigger", "interaction"}
+REFERENCE_FAILURE_KIND = "pylint-astroid-mixed-slots-v1"
+REFERENCE_FAILURE_IDS = {"q016_pylint_f0002_paired_hit": "hit",
+                         "q016_pylint_f0002_paired_disabled": "non_trigger",
+                         "q016_pylint_f0002_paired_project_interaction": "interaction"}
+REFERENCE_FAILURE_SOURCE = {"main.py": "887d71f5c0c0590172b39cc02c0aa019ce7d5eb228129e547a560ad4454b8fb0"}
 CONFIG_BYTES = (b"[mypy]\nplugins = pydantic.mypy\n[pydantic-mypy]\n"
                 b"init_typed = true\ninit_forbid_extra = true\n"
                 b"warn_required_dynamic_aliases = true\n")
@@ -51,6 +56,32 @@ def safe_path(value: object) -> str:
 def source_facts(files: dict[str, str]) -> dict[str, dict]:
     return {name: {"bytes": len(text.encode()), "sha256": digest(text.encode())}
             for name, text in files.items()}
+
+
+def reference_failure_contract(case: dict, tool: str) -> bool:
+    """Admit one explicit known upstream error witness, never a general override."""
+    fields = {name for name in case if name.startswith("reference_failure")}
+    if not fields and case.get("id") not in REFERENCE_FAILURE_IDS:
+        return False
+    if (fields != {"reference_failure_kind", "reference_failure_source_sha256"}
+            or tool != "pylint" or case.get("behavior") != "F0002"
+            or case.get("role") != REFERENCE_FAILURE_IDS.get(case.get("id"))
+            or case.get("group") != "q016_pylint_f0002_paired"
+            or case["reference_failure_kind"] != REFERENCE_FAILURE_KIND
+            or case["reference_failure_source_sha256"] != REFERENCE_FAILURE_SOURCE
+            or case.get("missing_entrypoints")
+            or "main.py" not in case.get("files", {})
+            or digest(case["files"]["main.py"].encode()) != REFERENCE_FAILURE_SOURCE["main.py"]):
+        raise ValueError("unknown or changed explicit reference-tool error contract")
+    controlled = case["role"] == "non_trigger"
+    if (case.get("disabled_rules", []) != (["F0002"] if controlled else [])
+            or not any(item.get("rule") == "F0002" and item.get("presence") ==
+                       ("absent" if controlled else "present") for item in case.get("requires", []))
+            or case.get("entrypoints") != sorted(case["files"])
+            or set(case["files"]) != ({"main.py", "q0_16_boundary_probe.py"}
+                                      if case["role"] == "interaction" else {"main.py"})):
+        raise ValueError("reference-tool error contract is outside its declared source and focus boundary")
+    return True
 
 
 def _targets(value: object) -> list[str]:
@@ -169,11 +200,15 @@ def validate_case(case: dict, tool: str, profile: dict) -> dict:
     hashes = {name: fact["sha256"] for name, fact in source_facts(files).items()}
     if "source_sha256" in provenance and provenance["source_sha256"] != hashes:
         raise ValueError("declared supplemental source hashes differ")
+    failure_contract = reference_failure_contract(case, tool)
+    semantic = {key: case.get(key, []) if key in {"disabled_rules", "missing_entrypoints"} else case[key]
+                for key in ("behavior", "role", "group", "files", "entrypoints", "python_targets",
+                            "requires", "disabled_rules", "missing_entrypoints")}
+    if failure_contract:
+        semantic.update({key: case[key] for key in ("reference_failure_kind", "reference_failure_source_sha256")})
     return {"id": case["id"], "behavior": case["behavior"], "role": case["role"],
             "targets": targets, "source_files": source_facts(files),
-            "input_sha256": digest(canonical({key: case.get(key, []) if key in {"disabled_rules", "missing_entrypoints"}
-                else case[key] for key in ("behavior", "role", "group", "files", "entrypoints", "python_targets",
-                                          "requires", "disabled_rules", "missing_entrypoints")}))}
+            "input_sha256": digest(canonical(semantic))}
 
 
 def validate_packet(packet: dict, profile: dict) -> dict:
@@ -193,6 +228,8 @@ def validate_packet(packet: dict, profile: dict) -> dict:
                    if other["role"] == "hit" and not other.get("disabled_rules")
                    and all(other[key] == case[key] for key in ("behavior", "group", "files", "entrypoints", "python_targets"))
                    and other.get("missing_entrypoints", []) == case.get("missing_entrypoints", [])
+                   and all(other.get(key) == case.get(key) for key in
+                           ("reference_failure_kind", "reference_failure_source_sha256"))
                    and any(item["rule"] == case["behavior"] and item["presence"] == "present" for item in other["requires"])]
         if len(matches) != 1:
             raise ValueError("one-rule suppression requires one identical-input, fresh hit partner")

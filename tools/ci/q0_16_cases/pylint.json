@@ -8727,7 +8727,7 @@
                 "spelling_dict": ""
               },
               "guard_pointer": "/0/rules/E2501",
-              "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+              "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
               "scope_status": "parser-entry-preemption",
               "target": "3.12"
             },
@@ -8763,7 +8763,7 @@
                 "spelling_dict": ""
               },
               "guard_pointer": "/1/rules/E2501",
-              "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+              "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
               "scope_status": "parser-entry-preemption",
               "target": "3.13"
             },
@@ -8799,7 +8799,7 @@
                 "spelling_dict": ""
               },
               "guard_pointer": "/2/rules/E2501",
-              "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+              "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
               "scope_status": "parser-entry-preemption",
               "target": "3.14"
             }
@@ -8821,6 +8821,54 @@
               ],
               "sha256": "abd946e305628847e7fc2d65066b36dde4fb38998c653b9a33824d0c3e67bea9",
               "upstream_path": "pylint/lint/pylinter.py"
+            },
+            {
+              "archive": "pylint-4.1.2.tar.gz",
+              "archive_sha256": "235f13dc418c0041c649b42a5c35c99f2ffc6ca8b6a7574958eac5335906a68a",
+              "conditions": [
+                {
+                  "end_line": 377,
+                  "kind": "only-utf16-utf32-codec-prefixes",
+                  "line": 375
+                },
+                {
+                  "end_line": 475,
+                  "kind": "invalid-unicode-codec-message-selection",
+                  "line": 460
+                },
+                {
+                  "end_line": 522,
+                  "kind": "module-callback-checks-detected-codec",
+                  "line": 518
+                },
+                {
+                  "end_line": 325,
+                  "kind": "unsupported-codec-source-comment",
+                  "line": 324
+                }
+              ],
+              "member": "pylint-4.1.2/pylint/checkers/unicode.py",
+              "sha256": "e14d000700318d0a14dc993b91b74b66e1fbcd88dc54969f2fc0266eefb893a6",
+              "upstream_path": "pylint/checkers/unicode.py"
+            },
+            {
+              "archive": "astroid-4.3.3-py3-none-any.whl",
+              "archive_sha256": "366c99c2907b6407869b1bbfd8abb10f3aea5818309e9c93c9b9c93ecf14bc4f",
+              "conditions": [
+                {
+                  "end_line": 54,
+                  "kind": "source-file-decoding",
+                  "line": 48
+                },
+                {
+                  "end_line": 138,
+                  "kind": "unicode-error-becomes-building-error",
+                  "line": 134
+                }
+              ],
+              "member": "astroid/builder.py",
+              "sha256": "42089e51728d70719abc08322dc571c8d91c54af775643ec887e455049579e13",
+              "upstream_path": "astroid/builder.py"
             }
           ]
         },
@@ -8837,8 +8885,11 @@
           "rule": "E2501"
         },
         {
+          "line": 1,
+          "message_contains": "error while code parsing: Wrong or no encoding specified for ",
+          "path": "main.py",
           "presence": "present",
-          "rule": "E0001"
+          "rule": "F0010"
         }
       ],
       "role": "non_trigger"
@@ -9317,7 +9368,7 @@
       },
       "group": "q016_pylint_f0002_paired",
       "id": "q016_pylint_f0002_paired_disabled",
-      "intent": "Identical source and entrypoints under the default profile with only the exact focus code disabled. Other diagnostic changes are retained, not assumed invariant.",
+      "intent": "Identical source and entrypoints under the default profile with only the exact focus code disabled. Other diagnostic changes are retained, not assumed invariant. This is a declared fatal reference-tool error witness. Disabling F0002 only suppresses that diagnostic; it does not establish clean tool health.",
       "negative_kind": "cli-rule-suppression",
       "provenance": {
         "catalog_path": "crates/mamba-quality/src/infrastructure/pylint/tests/catalog/group_022/part_359.rs",
@@ -9346,6 +9397,10 @@
         "3.13",
         "3.14"
       ],
+      "reference_failure_kind": "pylint-astroid-mixed-slots-v1",
+      "reference_failure_source_sha256": {
+        "main.py": "887d71f5c0c0590172b39cc02c0aa019ce7d5eb228129e547a560ad4454b8fb0"
+      },
       "requires": [
         {
           "presence": "absent",
@@ -9364,7 +9419,7 @@
       },
       "group": "q016_pylint_f0002_paired",
       "id": "q016_pylint_f0002_paired_hit",
-      "intent": "Fresh default-profile hit baseline for the relevant paired control.",
+      "intent": "Fresh default-profile hit baseline for the relevant paired control. This is a declared fatal reference-tool error witness. Disabling F0002 only suppresses that diagnostic; it does not establish clean tool health.",
       "provenance": {
         "catalog_path": "crates/mamba-quality/src/infrastructure/pylint/tests/catalog/group_022/part_359.rs",
         "catalog_row_pointer": "/5",
@@ -9392,6 +9447,10 @@
         "3.13",
         "3.14"
       ],
+      "reference_failure_kind": "pylint-astroid-mixed-slots-v1",
+      "reference_failure_source_sha256": {
+        "main.py": "887d71f5c0c0590172b39cc02c0aa019ce7d5eb228129e547a560ad4454b8fb0"
+      },
       "requires": [
         {
           "path": "main.py",
@@ -9413,7 +9472,7 @@
       },
       "group": "q016_pylint_f0002_paired",
       "id": "q016_pylint_f0002_paired_project_interaction",
-      "intent": "The existing focus project and a distinct valid lint probe share one original-tool invocation. This is project-scope coexistence, not same-file or causal-interference proof.",
+      "intent": "The existing focus project and a distinct valid lint probe share one original-tool invocation. This is project-scope coexistence, not same-file or causal-interference proof. This is a declared fatal reference-tool error witness. Disabling F0002 only suppresses that diagnostic; it does not establish clean tool health.",
       "interaction_kind": "project-boundary-co-emission",
       "provenance": {
         "catalog_path": "crates/mamba-quality/src/infrastructure/pylint/tests/catalog/group_022/part_359.rs",
@@ -9442,6 +9501,10 @@
         "3.13",
         "3.14"
       ],
+      "reference_failure_kind": "pylint-astroid-mixed-slots-v1",
+      "reference_failure_source_sha256": {
+        "main.py": "887d71f5c0c0590172b39cc02c0aa019ce7d5eb228129e547a560ad4454b8fb0"
+      },
       "requires": [
         {
           "path": "main.py",
@@ -20258,7 +20321,7 @@
         "3.13",
         "3.14"
       ],
-      "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+      "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
       "source": {
         "path": "crates/mamba-quality/assets/pylint-rule-guards.json",
         "sha256": "21a9de59b1d2019f797af7d06141d434d2f06d7f89b91341c03e8bad8332020c",
@@ -20295,7 +20358,7 @@
               "spelling_dict": ""
             },
             "guard_pointer": "/0/rules/E2501",
-            "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+            "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
             "scope_status": "parser-entry-preemption",
             "target": "3.12"
           },
@@ -20331,7 +20394,7 @@
               "spelling_dict": ""
             },
             "guard_pointer": "/1/rules/E2501",
-            "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+            "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
             "scope_status": "parser-entry-preemption",
             "target": "3.13"
           },
@@ -20367,7 +20430,7 @@
               "spelling_dict": ""
             },
             "guard_pointer": "/2/rules/E2501",
-            "reason": "The ordinary full-tool parser rejects the trigger before the later checker callback. A fresh parser-boundary absence probe is included.",
+            "reason": "UnicodeChecker._is_invalid_codec accepts only normalized utf-16/utf-32 prefixes. The fixed UTF-8 source bytes with a utf-16 cookie fail Astroid file decoding before the UnicodeChecker callback. AstroidBuilder.file_build wraps UnicodeError as AstroidBuildingError; PyLinter.get_ast reports F0010 parse-error. This probe requires that exact encoding-error boundary and E2501 absence, not a positive E2501 emission pass.",
             "scope_status": "parser-entry-preemption",
             "target": "3.14"
           }
@@ -20389,6 +20452,54 @@
             ],
             "sha256": "abd946e305628847e7fc2d65066b36dde4fb38998c653b9a33824d0c3e67bea9",
             "upstream_path": "pylint/lint/pylinter.py"
+          },
+          {
+            "archive": "pylint-4.1.2.tar.gz",
+            "archive_sha256": "235f13dc418c0041c649b42a5c35c99f2ffc6ca8b6a7574958eac5335906a68a",
+            "conditions": [
+              {
+                "end_line": 377,
+                "kind": "only-utf16-utf32-codec-prefixes",
+                "line": 375
+              },
+              {
+                "end_line": 475,
+                "kind": "invalid-unicode-codec-message-selection",
+                "line": 460
+              },
+              {
+                "end_line": 522,
+                "kind": "module-callback-checks-detected-codec",
+                "line": 518
+              },
+              {
+                "end_line": 325,
+                "kind": "unsupported-codec-source-comment",
+                "line": 324
+              }
+            ],
+            "member": "pylint-4.1.2/pylint/checkers/unicode.py",
+            "sha256": "e14d000700318d0a14dc993b91b74b66e1fbcd88dc54969f2fc0266eefb893a6",
+            "upstream_path": "pylint/checkers/unicode.py"
+          },
+          {
+            "archive": "astroid-4.3.3-py3-none-any.whl",
+            "archive_sha256": "366c99c2907b6407869b1bbfd8abb10f3aea5818309e9c93c9b9c93ecf14bc4f",
+            "conditions": [
+              {
+                "end_line": 54,
+                "kind": "source-file-decoding",
+                "line": 48
+              },
+              {
+                "end_line": 138,
+                "kind": "unicode-error-becomes-building-error",
+                "line": 134
+              }
+            ],
+            "member": "astroid/builder.py",
+            "sha256": "42089e51728d70719abc08322dc571c8d91c54af775643ec887e455049579e13",
+            "upstream_path": "astroid/builder.py"
           }
         ]
       },
