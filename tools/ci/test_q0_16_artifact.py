@@ -19,6 +19,7 @@ class ArtifactControls(unittest.TestCase):
             (root / "broken.py").symlink_to("missing.py")
             raw = b"line\r\n\xff\x00"
             (root / ".raw").write_bytes(raw)
+            (root / "back\\slash.py").write_bytes(raw)
             result = custody.pack(root, base / "safe.tar", base / "manifest.json", "pylint")
             self.assertFalse(result["symlinks_followed"])
             with tarfile.open(base / "safe.tar") as archive:
@@ -26,6 +27,7 @@ class ArtifactControls(unittest.TestCase):
                 self.assertEqual(archive.getmember("receipts/loop.py").linkname, "loop.py")
                 self.assertEqual(archive.getmember("receipts/broken.py").linkname, "missing.py")
                 self.assertEqual(archive.extractfile("receipts/.raw").read(), raw)
+                self.assertEqual(archive.extractfile("receipts/back\\slash.py").read(), raw)
             self.assertEqual((root / ".raw").read_bytes(), raw)
             self.assertEqual(result["archive"]["sha256"], hashlib.sha256((base / "safe.tar").read_bytes()).hexdigest())
             self.assertEqual(json.loads((base / "manifest.json").read_bytes()), result)

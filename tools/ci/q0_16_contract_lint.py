@@ -15,6 +15,7 @@ import os
 from pathlib import Path, PurePosixPath
 import platform
 import re
+import shlex
 import stat
 import sys
 
@@ -37,6 +38,7 @@ RAW_MYPY_FIELDS = {"file", "line", "column", "end_line", "end_column", "message"
 MYPY_MAIN_SHA = "13c5661811f3d11d51ce2c7a4cc9a8451a3c72f1f7629adf61198d0b0bef8ace"
 MYPY_UTIL_SHA = "961d74878dd3736f7025292a3fb50973dea5a67cb1e4820895f4d5f4778f36b3"
 PYINFO_SHA = "cd19c696e92a9de347b95facb8331e7709c405c5e380dc5577098d42d2e84bf4"
+MODULEFINDER_SHA = "09ff2266e5ac2b827c69066bbd2fef5471a30dc8d6dd48d1aa92925a4624549e"
 MYPY_BLOCKER_SOURCES = {
     "mypy/fastparse.py": {"sha256": "9bea678209bab98c6f6b7aeed0174905be3c9a456b1ca0730d613c29a8e0f5d7", "line_spans": [[260, 270]]},
     "mypy/build.py": {"sha256": "61e1295a840159ea32f78dcc2fe253c49be7d1915f47551ad74be91be76df641", "line_spans": [[932, 937]]},
@@ -44,6 +46,107 @@ MYPY_BLOCKER_SOURCES = {
 MYPY_NONBLOCKER_SOURCES = {
     "mypy/nativeparse.py": {"sha256": "6621e8f6e863dbc6e6bee8139528a0d76ec6df8c91a6abbf6f9dd2444360bc3a", "line_spans": [[192, 208]]},
 }
+PYLINT_ROOT_ROWS = {"cross_file_import_precedence.json": {2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 14, 16, 18, 19},
+    "dependency_io.json": set(range(6, 15))}
+PYLINT_DIRECTORY_ROWS = {"cross_file_import_precedence.json": {17, 18, 19, 30},
+    "cross_file_relative_boundaries.json": {6}, "cross_file_selected_imports.json": {1}, "cross_file_stubs.json": {7, 10, 11}}
+PYLINT_RECIPE_SOURCES = {
+    "crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_stores.rs": "d10f43b946f544b46880eb3051e56dc8d64ae7e1b6477f387579a6bc30498875",
+    "crates/mamba-quality/src/infrastructure/metadata.rs": "559f8fff1f5007a9303b86bf08472e280a5aa32289dc1994f3459cf11fa370d0",
+    "crates/mamba-quality/src/infrastructure/filesystem.rs": "2374693d91c50293239ec53d076529d841c6167af1397d1bf44ce6c789ce19c9",
+    "crates/mamba-quality/src/infrastructure/pylint/runner.rs": "5d4dd09b66c48ed289c3675f14a530ae25de9fad2ebefdef26922aa9af02f10a"}
+PYLINT_INIT_HOOK_SOURCE = {"member": "pylint/config/utils.py", "sha256": "563b8a79ff2b4225a81e46ab5f722bf24075956e683f76b4d9e9815d98fad350", "line_spans": [[146, 154]]}
+METADATA_QUERY_GUARD = r'''import contextlib, hashlib, io, json, os, pathlib, site, sys, traceback
+
+def validate_query_args(actual, helper):
+    if actual != [helper, "getsearchdirs"]:
+        raise ValueError("metadata transport only accepts the pinned helper/getsearchdirs query")
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+policy = json.loads(pathlib.Path(sys.argv[1]).read_bytes())
+args = sys.argv[2:]
+root = pathlib.Path(policy["proof_root"])
+prefix = root / str(os.getpid())
+record = {"pid_self_reported": os.getpid(), "parent_pid_self_reported": os.getppid(),
+    "parent_wait_claimed": False, "completion_self_reported": False,
+    "transport_argv": sys.argv, "real_python": sys.executable,
+    "python": list(sys.version_info[:3]), "prefix": sys.prefix, "base_prefix": sys.base_prefix,
+    "isolated": sys.flags.isolated, "safe_path": sys.flags.safe_path,
+    "dont_write_bytecode": sys.flags.dont_write_bytecode, "user_site": site.ENABLE_USER_SITE}
+with pathlib.Path(str(prefix) + ".started.json").open("x") as stream:
+    json.dump(record, stream, ensure_ascii=True, sort_keys=True)
+out, err = io.BytesIO(), io.BytesIO()
+stdout = io.TextIOWrapper(out, encoding="utf-8", write_through=True)
+stderr = io.TextIOWrapper(err, encoding="utf-8", write_through=True)
+exit_code = 0
+try:
+    validate_query_args(args, policy["helper"])
+    if (sys.executable != policy["real_python"] or sys.prefix != policy["venv"]
+            or list(sys.version_info[:3]) != policy["python"] or sys.flags.isolated != 1
+            or not sys.flags.safe_path or not sys.flags.dont_write_bytecode or site.ENABLE_USER_SITE):
+        raise ValueError("metadata query escaped its real isolated interpreter")
+    helper = pathlib.Path(policy["helper"])
+    raw = helper.read_bytes()
+    if sha(raw) != policy["helper_sha256"]:
+        raise ValueError("pinned metadata helper bytes changed")
+    stdlib = pathlib.Path(sys.base_prefix) / "lib" / ("python%d.%d" % sys.version_info[:2])
+    allowed_paths = {str(stdlib), str(stdlib / "lib-dynload"), str(stdlib.parent / ("python%d%d.zip" % sys.version_info[:2])), policy["site"]}
+    if any(path not in allowed_paths for path in sys.path) or policy["site"] not in sys.path:
+        raise ValueError("metadata query search path contains foreign or checker code")
+    fixture_roots = [pathlib.Path(path).resolve() for path in policy["fixture_roots"]]
+    def audit(event, values):
+        if event == "exec":
+            filename = values[0].co_filename
+            if not filename.startswith("<") and any(pathlib.Path(filename).resolve().is_relative_to(path) for path in fixture_roots):
+                raise RuntimeError("fixture body execution is outside the metadata query")
+        elif event == "import" and len(values) > 1 and isinstance(values[1], str):
+            if any(pathlib.Path(values[1]).resolve().is_relative_to(path) for path in fixture_roots):
+                raise RuntimeError("fixture import is outside the metadata query")
+    sys.addaudithook(audit)
+    record["actual_sys_path"] = list(sys.path)
+    record["helper_sha256"] = sha(raw)
+    record["helper_bytes"] = len(raw)
+    record["fixture_execution_guard"] = True
+    sys.argv = list(args)
+    with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+        exec(compile(raw, str(helper), "exec"), {"__name__": "__main__", "__file__": str(helper), "__package__": None, "__spec__": None})
+    if helper.read_bytes() != raw:
+        raise ValueError("metadata helper changed during query")
+    modules = {}
+    for name, module in sorted(sys.modules.copy().items()):
+        filename = getattr(module, "__file__", None)
+        if not filename:
+            continue
+        path = pathlib.Path(filename).resolve()
+        if not (path.is_relative_to(stdlib) or path == pathlib.Path(__file__).resolve()) or path.is_relative_to(stdlib / "site-packages"):
+            raise ValueError("metadata query imported a foreign module: " + name)
+        if any(path.is_relative_to(fixture) for fixture in fixture_roots):
+            raise ValueError("metadata query imported a fixture module: " + name)
+        data = path.read_bytes()
+        modules[name] = {"path": str(path), "bytes": len(data), "sha256": sha(data)}
+    record["module_origins"] = modules
+except BaseException as error:
+    exit_code = error.code if isinstance(error, SystemExit) and type(error.code) is int else 1
+    if exit_code == 0:
+        exit_code = 1
+    traceback.print_exc(file=stderr)
+    record["error_type"] = type(error).__name__
+    record["error_message"] = str(error)
+stdout.flush(); stderr.flush()
+raw_out, raw_err = out.getvalue(), err.getvalue()
+for suffix, raw_stream in (("stdout.raw", raw_out), ("stderr.raw", raw_err)):
+    with pathlib.Path(str(prefix) + "." + suffix).open("xb") as stream:
+        stream.write(raw_stream)
+record.update(completion_self_reported=True, self_reported_exit=exit_code,
+    stdout_bytes=len(raw_out), stdout_sha256=sha(raw_out), stderr_bytes=len(raw_err), stderr_sha256=sha(raw_err))
+with pathlib.Path(str(prefix) + ".completed.json").open("x") as stream:
+    json.dump(record, stream, ensure_ascii=True, sort_keys=True)
+sys.stdout.buffer.write(raw_out); sys.stdout.buffer.flush()
+sys.stderr.buffer.write(raw_err); sys.stderr.buffer.flush()
+raise SystemExit(exit_code)
+'''
 
 
 def encode(value: object) -> bytes:
@@ -261,7 +364,7 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
     tier = sources.object(REGISTRY)["tiers"]["B"]
     manifests = {m["unit_id"]: m for m in tier["manifests"] if m["tool"] in COUNTS}
     profile_path = "crates/mamba-quality/assets/profile.json"
-    requests, corrections = {}, {}
+    requests, corrections, pylint_corrections = {}, {}, {}
     excluded = {"builtin_values_regressions.json", "pydantic_config.json", "pydantic_config_entrypoints.json", "cross_file_dependency_regressions.json"}
 
     def append(manifest: dict, record: dict, value: dict, section: dict):
@@ -281,6 +384,31 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
                 "reason": "frozen_JSON_reporter_commands_use_absolute_selected_inputs",
                 "old_selection": old_selection, "new_selection": copy.deepcopy(context["selection"]),
                 "source_command_bindings": proofs}
+        if manifest["tool"] == "pylint":
+            prior_context = copy.deepcopy(context)
+            source_name = Path(record["record_pointer"]["source_id"]).name
+            ordinal = record.get("legacy_record_entry_index")
+            reasons, proofs = [], []
+            if ordinal in PYLINT_ROOT_ROWS.get(source_name, set()):
+                if value.get("search_roots") != [".", "src"]:
+                    raise ValueError("fixed Pylint ordered search-root source differs")
+                context["search_roots"] = [".", "src"]
+                reasons.append("ordered_project_import_search_roots")
+                proofs.append(sources.child(record["record_pointer"], "search_roots"))
+            if ordinal in PYLINT_DIRECTORY_ROWS.get(source_name, set()):
+                if (value.get("inputs") != ["."] or not any(item["source_id"].endswith("/cross_file_stores.rs") for item in owners)):
+                    raise ValueError("fixed Pylint directory selection owner differs")
+                selected = sorted(name for name in context["layout"]["files"] if name.endswith(".py"))
+                if not selected:
+                    raise ValueError("fixed Pylint directory selection has no source targets")
+                context["selection"] = {"kind": "source_owned_directory_non_stub_selection", "paths": selected, "absolute": False}
+                reasons.append("source_owned_directory_non_stub_selection")
+                proofs.append(sources.child(record["record_pointer"], "inputs"))
+            if reasons:
+                pylint_corrections[value_sha(context)] = {"old_request_id": value_sha(prior_context), "new_request_id": value_sha(context),
+                    "target": section["target"], "reasons": reasons, "source_bindings": proofs,
+                    "old_selection": prior_context["selection"], "new_selection": copy.deepcopy(context["selection"]),
+                    "old_search_roots": None, "new_search_roots": context.get("search_roots")}
         identity = value_sha(context)
         if correction:
             corrections[identity] = correction
@@ -328,6 +456,13 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         raise ValueError(f"finite lint request denominator differs: {counts}")
     if len(corrections) != 45 or len({row["old_request_id"] for row in corrections.values()}) != 45:
         raise ValueError("source-proven duplicate selection correction denominator differs")
+    if (len(pylint_corrections) != 90 or len({row["old_request_id"] for row in pylint_corrections.values()}) != 90
+            or sum("ordered_project_import_search_roots" in row["reasons"] for row in pylint_corrections.values()) != 69
+            or sum("source_owned_directory_non_stub_selection" in row["reasons"] for row in pylint_corrections.values()) != 27):
+        raise ValueError("source-proven Pylint context correction denominator differs")
+    for path, expected in PYLINT_RECIPE_SOURCES.items():
+        if digest(sources.raw(path)) != expected:
+            raise ValueError("fixed Pylint source recipe differs")
     for path in ["tools/ci/q0_mypy_reference_lock.json", "tools/ci/q0_pylint_reference_lock.json", "tools/ci/q0_pydantic_reference_lock.json",
                  "tools/ci/q0_16_reference.py", "tools/ci/q0_16_packet.py", "tools/ci/q0_mypy_reference.py", "tools/ci/q0_pylint_reference.py",
                  "tools/ci/q0_pydantic_reference.py", "tools/ci/q0_ruff_reference.py", "tools/ci/q0_mypy_inputs.py", "tools/ci/q0_pylint_inputs.py"]:
@@ -339,12 +474,18 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         "metadata_package_models": 46, "source_files": dict(sorted(sources.files.items())),
         "metadata_query": {"kind": "real_minimal_pinned_Python_venv", "without_pip": True, "system_site_packages": False,
             "creation_flags": ["--symlinks", "--without-pip"], "executable_identity": "symlink_to_exact_pinned_base",
-            "helper": {"member": "mypy/pyinfo.py", "sha256": PYINFO_SHA}, "fixture_modules_executed": False},
+            "helper": {"member": "mypy/pyinfo.py", "sha256": PYINFO_SHA}, "fixture_modules_executed": False,
+            "caller": {"member": "mypy/modulefinder.py", "sha256": MODULEFINDER_SHA, "line_spans": [[846, 881], [945, 949]]},
+            "transport": {"kind": "guarded_query_transport_not_Python_identity", "guard_sha256": digest(METADATA_QUERY_GUARD.encode()),
+                "real_python_flags": ["-I", "-B"], "only_allowed_arguments": ["exact_pinned_pyinfo_path", "getsearchdirs"],
+                "helper_bytes_modified": False, "internal_child_parent_wait_claimed": False}},
         "mypy_JSON_terminal_sources": {"mypy/main.py": MYPY_MAIN_SHA, "mypy/util.py": MYPY_UTIL_SHA},
         "mypy_JSON_blocker_sources": MYPY_BLOCKER_SOURCES,
         "mypy_JSON_nonblocker_sources": MYPY_NONBLOCKER_SOURCES,
         "generated_pyproject": {"source_owner": "tools/ci/q0_16_project_contracts.py", "bytes": len(PYPROJECT), "sha256": digest(PYPROJECT), "explicit_fixture_takes_precedence": True},
         "selection_corrections_from_R4": list(corrections.values()),
+        "pylint_context_corrections_from_1881": list(pylint_corrections.values()),
+        "pylint_recipe_sources": PYLINT_RECIPE_SOURCES, "pylint_init_hook_source": PYLINT_INIT_HOOK_SOURCE,
         "requests": [{**c, "context": public_context(c["context"])} for c in cases],
         "source_programs_executed": False, "native_parity": "not_run"}
     return lock, cases
@@ -560,6 +701,10 @@ def compare(sources: Sources, case: dict, stdout: bytes, actual_exit: int, proje
                 # entry_io.rs binds this exact command's absolute root token.
                 for row in actual:
                     row["message"] = row["message"].replace(str(project), "<project>")
+            if any(item["source_id"] == "crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_stores.rs" for item in case["owner_sources"]):
+                # cross_file_stores.rs owns exactly this root-token projection.
+                for row in actual:
+                    row["message"] = row["message"].replace(str(project), "<project>")
             if filename in {"encoding_controls.json", "encoding_declaration_controls.json"}:
                 target = TARGETS.index(case["context"]["target"])
                 prefix = str(project) + "/"
@@ -676,10 +821,27 @@ def lexical_path(root: Path, text: str, *, allow_dot: bool = False) -> Path:
     return Path(str(root) + "/" + text)
 
 
-def write_payloads(root: Path, files: dict) -> None:
+def literal_fixture_names(case: dict) -> set[str]:
+    allowed = set()
+    wanted = {"3.12": "/15", "3.13": "/20", "3.14": "/25"}
+    for alias in case["source_aliases"]:
+        ref = alias["case_source"]
+        if (ref["source_id"] == "crates/mamba-quality/src/infrastructure/pylint/tests/entry_io_data.json"
+                and ref["json_pointer"] == wanted[case["context"]["target"]]):
+            if (case["context"]["tool"] != "pylint" or case["context"]["selection"]["paths"] != ["back\\slash.py"]
+                    or case["context"]["layout"]["source_role_name_for_FS_operations"] != "backslash_path"):
+                raise ValueError("fixed literal POSIX filename context differs")
+            allowed.add("back\\slash.py")
+    return allowed
+
+
+def write_payloads(root: Path, files: dict, literal_names: set[str] | None = None) -> None:
+    if literal_names and literal_names != {"back\\slash.py"}:
+        raise ValueError("only the source-bound literal POSIX fixture basename is admitted")
     root.mkdir(parents=True, exist_ok=False)
     for name, row in files.items():
-        safe_path(name)
+        if name not in (literal_names or set()):
+            safe_path(name)
         raw = bytes.fromhex(row["bytes_hex"])
         if len(raw) != row["bytes"] or digest(raw) != row["sha256"]:
             raise ValueError("declared source bytes or SHA differ")
@@ -713,8 +875,9 @@ def materialize(case: dict, root: Path) -> tuple[Path, dict]:
     if "pyproject.toml" not in files:
         files["pyproject.toml"] = payload(PYPROJECT)
     work = root / "work"
-    write_payloads(work, files)
-    write_payloads(root / "input-snapshot", files)
+    literals = literal_fixture_names(case)
+    write_payloads(work, files, literals)
+    write_payloads(root / "input-snapshot", files, literals)
     for name in layout["declared_directories"]:
         lexical_path(work, name).mkdir(parents=True, exist_ok=True)
     for name, target in layout["symlinks"].items():
@@ -767,6 +930,10 @@ def final_reconcile(row: dict, root: Path) -> None:
         if digest((root / "command" / name).read_bytes()) != stored[key]:
             raise ValueError("final raw command payload changed")
     row["final_receipt_reconciled"] = True
+    metadata = read_json((root / "command/inputs.json").read_bytes()).get("metadata")
+    if metadata:
+        finish_metadata(metadata, stored["pid"])
+        row["metadata_final_reconciled"] = True
 
 
 def metadata_executable_identity(python: Path, base_python: Path) -> dict:
@@ -786,6 +953,117 @@ def metadata_executable_identity(python: Path, base_python: Path) -> dict:
     return {"kind": "symlink", "path": str(python), "target": target,
         "target_bytes": len(raw_target), "target_sha256": digest(raw_target),
         "resolved_base": str(resolved), "resolved_binary": binary}
+
+
+def metadata_query_transport(python: Path, helper: Path, version: str, root: Path, site: Path) -> tuple[Path, dict]:
+    """Route only mypy's exact query through the genuine isolated interpreter."""
+    guard, policy_path, launcher = root / "query-guard.py", root / "query-policy.json", root / "query-transport"
+    helper_fact = capture.fact(helper)
+    if helper_fact["sha256"] != PYINFO_SHA:
+        raise ValueError("metadata transport requires the unmodified pinned helper")
+    proof = root / "query-observations"; proof.mkdir()
+    policy = {"real_python": str(python), "venv": str(root / "venv"), "python": [int(x) for x in version.split(".")],
+        "helper": str(helper), "helper_sha256": PYINFO_SHA, "site": str(site), "proof_root": str(proof),
+        "fixture_roots": [str(site), str(root.parent / "work")]}
+    write_json(policy_path, policy)
+    guard.write_text(METADATA_QUERY_GUARD)
+    launcher.write_text("#!/bin/sh\nexec " + shlex.quote(str(python)) + " -I -B " + shlex.quote(str(guard))
+        + " " + shlex.quote(str(policy_path)) + ' "$@"\n')
+    launcher.chmod(0o700)
+    state = {"kind": "guarded_query_transport_not_Python_identity", "path": str(launcher),
+        "launcher": capture.fact(launcher), "launcher_mode": stat.S_IMODE(launcher.stat().st_mode),
+        "guard_path": str(guard), "guard": capture.fact(guard), "policy_path": str(policy_path), "policy": capture.fact(policy_path),
+        "real_python": str(python), "helper": helper_fact, "helper_path": str(helper), "proof_root": str(proof)}
+    write_json(root / "query-transport-identity.json", state)
+    return launcher, state
+
+
+def save_or_verify_metadata_json(path: Path, value: object) -> None:
+    if path.exists():
+        if capture.strict_json_bytes(read_json(path.read_bytes())) != capture.strict_json_bytes(value):
+            raise ValueError("immutable metadata observation changed")
+    else:
+        write_json(path, value)
+
+
+def verify_metadata_queries(state: dict, checker_pid: int | None) -> list[dict]:
+    transport, root = state["query_transport"], Path(state["root"])
+    for path_key, fact_key in (("path", "launcher"), ("guard_path", "guard"), ("policy_path", "policy"), ("helper_path", "helper")):
+        if capture.fact(Path(transport[path_key])) != transport[fact_key]:
+            raise ValueError("metadata query transport/helper bytes changed")
+    if stat.S_IMODE(Path(transport["path"]).stat().st_mode) != transport["launcher_mode"]:
+        raise ValueError("metadata query transport mode changed")
+    proof, result = Path(transport["proof_root"]), []
+    completed = sorted(proof.glob("*.completed.json"))
+    if not completed:
+        raise ValueError("metadata query has no actual completed observation")
+    expected_names = set()
+    for completed_path in completed:
+        record = read_json(completed_path.read_bytes()); identifier = completed_path.name.removesuffix(".completed.json")
+        pid = record["pid_self_reported"]
+        if (type(pid) is not int or pid <= 0 or str(pid) != identifier
+                or type(record["parent_pid_self_reported"]) is not int or record["parent_pid_self_reported"] <= 0
+                or record["parent_wait_claimed"] is not False or record["completion_self_reported"] is not True
+                or type(record["self_reported_exit"]) is not int or record["self_reported_exit"] != 0
+                or record["fixture_execution_guard"] is not True or record["real_python"] != transport["real_python"]
+                or record["helper_sha256"] != PYINFO_SHA or record["helper_bytes"] != transport["helper"]["bytes"]
+                or capture.strict_json_bytes(record["python"]) != capture.strict_json_bytes(state["python"]) or record["prefix"] != str(root / "venv")
+                or record["base_prefix"] != str(Path(state["base_executable"]).parent.parent)
+                or record["transport_argv"] != [transport["guard_path"], transport["policy_path"], transport["helper_path"], "getsearchdirs"]
+                or type(record["isolated"]) is not int or record["isolated"] != 1
+                or record["safe_path"] is not True or type(record["dont_write_bytecode"]) is not int
+                or record["dont_write_bytecode"] != 1 or record["user_site"] is not False):
+            raise ValueError("metadata query observation identity/health differs")
+        stdlib = Path(record["base_prefix"]) / "lib" / ("python" + ".".join(str(x) for x in state["python"][:2]))
+        if (type(record.get("module_origins")) is not dict or not {"site", "sysconfig", "types"}.issubset(record["module_origins"])):
+            raise ValueError("metadata query lacks its complete real module origins")
+        for module in record["module_origins"].values():
+            module_path = Path(module["path"])
+            if (not module_path.is_absolute() or not (module_path.is_relative_to(stdlib) or str(module_path) == transport["guard_path"])
+                    or module_path.is_relative_to(stdlib / "site-packages") or module_path.is_relative_to(Path(state["site"]))
+                    or type(module["bytes"]) is not int or module["bytes"] < 0
+                    or type(module["sha256"]) is not str or re.fullmatch(r"[0-9a-f]{64}", module["sha256"]) is None):
+                raise ValueError("metadata query module origin escaped the exact stdlib/control code")
+            if capture.strict_json_bytes(capture.fact(module_path)) != capture.strict_json_bytes({key: module[key] for key in ("bytes", "sha256")}):
+                raise ValueError("metadata query module origin bytes changed")
+        started_path = proof / (identifier + ".started.json"); started = read_json(started_path.read_bytes())
+        started_keys = {"pid_self_reported", "parent_pid_self_reported", "parent_wait_claimed", "completion_self_reported",
+            "transport_argv", "real_python", "python", "prefix", "base_prefix", "isolated", "safe_path", "dont_write_bytecode", "user_site"}
+        if (set(started) != started_keys or started.get("completion_self_reported") is not False
+                or any(capture.strict_json_bytes(record[key]) != capture.strict_json_bytes(value)
+                    for key, value in started.items() if key != "completion_self_reported")):
+            raise ValueError("metadata query initial observation changed")
+        pointers = {}
+        for stream in ("stdout", "stderr"):
+            raw_path = proof / (identifier + "." + stream + ".raw"); raw = raw_path.read_bytes()
+            if (type(record[stream + "_bytes"]) is not int or len(raw) != record[stream + "_bytes"]
+                    or digest(raw) != record[stream + "_sha256"] or stream == "stderr" and raw):
+                raise ValueError("metadata query full raw stream differs")
+            pointers[stream] = {"path": str(raw_path.relative_to(root)), **capture.fact(raw_path)}
+            if stream == "stdout":
+                search = ast.literal_eval(raw.decode())
+                if (type(search) is not tuple or len(search) != 2 or any(type(group) is not list for group in search)
+                        or any(type(value) is not str for group in search for value in group) or state["site"] not in search[1]
+                        or any(state["checker_venv"] in value for group in search for value in group)):
+                    raise ValueError("actual metadata query search result leaked checker code or missed fixture metadata")
+        is_preflight = pid == state["query_preflight_pid"]
+        if is_preflight:
+            if (proof / (identifier + ".stdout.raw")).read_bytes() != (root / "search-query/stdout.raw").read_bytes():
+                raise ValueError("outer waited preflight differs from actual query stdout")
+        elif type(checker_pid) is not int or record["parent_pid_self_reported"] != checker_pid:
+            raise ValueError("internal query lacks the declared outer checker parent")
+        for suffix in ("started.json", "completed.json", "stdout.raw", "stderr.raw"):
+            expected_names.add(identifier + "." + suffix)
+        result.append({"pid_self_reported": pid, "parent_pid_self_reported": record["parent_pid_self_reported"],
+            "completion_self_reported": True, "parent_wait_claimed": False, "kind": "waited_preflight" if is_preflight else "internal_checker_query",
+            "outer_waited_preflight_pid": state["query_preflight_pid"] if is_preflight else None,
+            "observation": {"path": str(completed_path.relative_to(root)), **capture.fact(completed_path)}, "raw": pointers})
+    if {path.name for path in proof.iterdir()} != expected_names:
+        raise ValueError("metadata query has missing or unrecognized observation members")
+    if checker_pid is not None and not any(row["kind"] == "internal_checker_query" for row in result):
+        raise ValueError("launched checker has no actual internal metadata query observation")
+    save_or_verify_metadata_json(root / ("queries-preflight.json" if checker_pid is None else "queries-final.json"), result)
+    return result
 
 
 def prepare_metadata(base_python: Path, executable: Path, version: str, case: dict, root: Path) -> tuple[Path, dict]:
@@ -836,8 +1114,10 @@ def prepare_metadata(base_python: Path, executable: Path, version: str, case: di
     helper = capture.fact(pyinfo)
     if helper["sha256"] != PYINFO_SHA:
         raise ValueError("metadata query helper differs from its pinned source")
-    query_argv = [str(python), str(pyinfo), "getsearchdirs"]
-    checked_command(query_argv, root, root / "search-query", {"helper": helper, "metadata_identity": identity, "site_tree": before})
+    transport, transport_state = metadata_query_transport(python, pyinfo, version, root, site)
+    query_argv = [str(transport), str(pyinfo), "getsearchdirs"]
+    query = checked_command(query_argv, root, root / "search-query", {"helper": helper, "metadata_identity": identity,
+        "real_python": executable_identity, "query_transport": transport_state, "site_tree": before})
     search = ast.literal_eval((root / "search-query/stdout.raw").read_text())
     if (type(search) is not tuple or len(search) != 2 or any(type(x) is not list for x in search)
             or str(site) not in search[1] or any(str(executable.parent.parent) in p for group in search for p in group)):
@@ -845,24 +1125,36 @@ def prepare_metadata(base_python: Path, executable: Path, version: str, case: di
     write_json(root / "identity.json", {"actual_identity": identity, "actual_search_dirs": search,
         "helper": helper, "interpreter": executable_identity["resolved_binary"],
         "interpreter_symlink": executable_identity, "real_pyvenv_cfg": payload(cfg),
+        "query_transport": transport_state,
         "source_fixture_pyvenv_cfg_is_not_actual_identity": True, "fixture_imports": [], "creation_wait_completed": create["wait_completed"]})
-    return python, {"root": str(root), "site": str(site), "site_tree_before": before, "cfg_sha256": digest(cfg),
+    state = {"root": str(root), "site": str(site), "site_tree_before": before, "cfg_sha256": digest(cfg),
         "base_executable": str(base_python.resolve(strict=True)), "executable_identity": executable_identity,
-        "executable_sha256": executable_identity["resolved_binary"]["sha256"]}
+        "executable_sha256": executable_identity["resolved_binary"]["sha256"], "python": [int(x) for x in version.split(".")],
+        "query_transport": transport_state, "query_preflight_pid": query["pid"], "checker_venv": str(executable.parent.parent)}
+    verify_metadata_queries(state, None)
+    return transport, state
 
 
-def finish_metadata(state: dict) -> None:
+def finish_metadata(state: dict, checker_pid: int | None = None) -> None:
     root, site = Path(state["root"]), Path(state["site"])
     after = capture.artifact_inventory(site, [])
-    write_json(root / "site-tree-after.json", after)
+    save_or_verify_metadata_json(root / "site-tree-after.json", after)
     cfg = (root / "venv/pyvenv.cfg").read_bytes()
-    (root / "pyvenv.cfg.after").write_bytes(cfg)
+    cfg_after = root / "pyvenv.cfg.after"
+    if cfg_after.exists():
+        if cfg_after.read_bytes() != cfg:
+            raise ValueError("immutable metadata config observation changed")
+    else:
+        with cfg_after.open("xb") as stream:
+            stream.write(cfg)
     executable_identity = metadata_executable_identity(root / "venv/bin/python", Path(state["base_executable"]))
-    write_json(root / "executable-after.json", executable_identity)
+    save_or_verify_metadata_json(root / "executable-after.json", executable_identity)
     if (after != state["site_tree_before"] or digest(cfg) != state["cfg_sha256"]
             or capture.strict_json_bytes(executable_identity)
                 != capture.strict_json_bytes(state["executable_identity"])):
         raise ValueError("metadata interpreter/config/static packages changed")
+    if "query_transport" in state:
+        verify_metadata_queries(state, checker_pid)
 
 
 def apply_filesystem(case: dict, project: Path, restores: list) -> dict:
@@ -909,8 +1201,21 @@ def argv_for(executable: Path, case: dict, project: Path, config: Path, metadata
         if metadata:
             argv += ["--python-executable", str(metadata)]
         return argv + names
-    return [str(executable), "-I", "-m", "pylint", "--rcfile=/dev/null", "--persistent=n", "--max-line-length=88",
-        "--py-version=" + context["target"], "--output-format=json2", *names]
+    argv = [str(executable), "-I", "-m", "pylint", "--rcfile=/dev/null", "--persistent=n", "--max-line-length=88",
+        "--py-version=" + context["target"], "--output-format=json2"]
+    if context.get("search_roots") is not None:
+        if context["search_roots"] != [".", "src"]:
+            raise ValueError("only the exact source-owned ordered project roots are admitted")
+        roots = []
+        for name in context["search_roots"]:
+            root = lexical_path(project, name, allow_dot=True).resolve(strict=True)
+            if not root.is_dir() or not root.is_relative_to(project.resolve(strict=True)):
+                raise ValueError("declared Pylint root escaped the materialized project")
+            roots.append(str(root))
+        # Pinned Pylint executes this fixed hook for import search roots. The
+        # only import is the already loaded built-in sys module.
+        argv += ["--init-hook=import sys;sys.path[:0]=" + repr(roots)]
+    return argv + names
 
 
 def initial_row(case: dict, version: str) -> dict:
@@ -1003,7 +1308,7 @@ def run_case(sources: Sources, case: dict, version: str, executable: Path, base:
                 row["status"] = "failed"; row["errors"].append({"stage": "permission_restore", "message": str(error)})
     try:
         if metadata:
-            finish_metadata(metadata)
+            finish_metadata(metadata, row["capture_process_fact"]["pid"] if row["process_launched"] else None)
         if project:
             after = filesystem_snapshot(project)
             write_json(root / "source-after.json", after)
@@ -1072,6 +1377,9 @@ def run(repo: Path, output: Path, python: Path, version: str, tool: str) -> int:
             util = main.with_name("util.py")
             if capture.fact(main)["sha256"] != MYPY_MAIN_SHA or capture.fact(util)["sha256"] != MYPY_UTIL_SHA:
                 raise ValueError("pinned mypy JSON terminal-contract source differs")
+            modulefinder = main.with_name("modulefinder.py")
+            if capture.fact(modulefinder)["sha256"] != MODULEFINDER_SHA:
+                raise ValueError("pinned mypy internal metadata-query caller differs")
             blocker_sources = {}
             nonblocker_sources = {}
             for member, expected in {**MYPY_BLOCKER_SOURCES, **MYPY_NONBLOCKER_SOURCES}.items():
@@ -1083,10 +1391,18 @@ def run(repo: Path, output: Path, python: Path, version: str, tool: str) -> int:
                 destination[member] = {**observed, "line_spans": expected["line_spans"]}
             write_json(output / "mypy-terminal-source.json", {"source": capture.fact(main), "line_spans": [[184, 187]],
                 "count_stats_source": capture.fact(util), "count_stats_line_spans": [[502, 509]],
+                "metadata_query_caller": capture.fact(modulefinder), "metadata_query_line_spans": [[846, 881], [945, 949]],
                 "blocker_sources": blocker_sources,
                 "nonblocker_sources": nonblocker_sources,
                 "allowed_JSON_terminal_exits": [0, 1], "explicit_source_bound_blocker_exit": 2,
                 "unexpected_exit_2": "health failure; investigate raw output", "no_severity_inference": True})
+        else:
+            init_hook_owner = executable.parent.parent / "lib" / ("python" + target) / "site-packages" / PYLINT_INIT_HOOK_SOURCE["member"]
+            if capture.fact(init_hook_owner)["sha256"] != PYLINT_INIT_HOOK_SOURCE["sha256"]:
+                raise ValueError("pinned Pylint import-root init-hook owner differs")
+            write_json(output / "pylint-import-root-source.json", {"source": capture.fact(init_hook_owner),
+                "line_spans": PYLINT_INIT_HOOK_SOURCE["line_spans"], "hook_imports": ["sys"], "fixture_imports": [],
+                "ordered_roots": ["project", "project/src"]})
         with (output / "initial-index.jsonl").open("x") as index:
             for case in planned:
                 root = output / "requests" / case["request_id"]

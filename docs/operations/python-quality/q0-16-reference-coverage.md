@@ -82,6 +82,13 @@ All three Pylint artifact uploads failed on fixture link loops. Their case raw
 files were not retained by GitHub. The missing files are explicit evidence gaps;
 no missing result is counted as passing.
 
+The second contract run,
+[40884219128](https://github.com/faberline/mamba/actions/runs/40884219128),
+passed 13 jobs and failed its six Lint jobs. Black's 747 contexts and 753
+source aliases passed independent raw comparison. isort's 504 contexts and
+507 source aliases also passed independent raw comparison. All 19 artifacts
+and job logs are retained. These results do not pass the six failed Lint jobs.
+
 The repaired capture uses these source-bound rules:
 
 - Mac environments link to the exact archive-bound Python binary. They use the
@@ -97,6 +104,16 @@ The repaired capture uses these source-bound rules:
   Version diagnostics that the pinned parser marks nonblocking keep exits 0/1.
   One dependency-source row also retains its nine existing whole-list variant
   slots. A partial message or field match cannot select a variant.
+- mypy metadata queries use a guarded transport that calls the real pinned
+  metadata Python with `-I -B`. It accepts only the unmodified pinned
+  `pyinfo.py` helper and `getsearchdirs`. It preserves query stdout, records
+  module origins and blocks fixture imports. The transport is a control program,
+  not a Python identity or a parent wait receipt.
+- The Pylint lock records 90 source-bound context corrections. These include
+  69 ordered search-root contexts and 27 directory selections, with six overlaps.
+  Directory selection uses the nine source-owned rows and sorted `.py` paths.
+  Stubs stay in the input layout. Literal POSIX backslash names keep their bytes.
+  Source and expected values stay fixed.
 - Lint evidence is packed with literal symlink headers and a complete byte/mode
   manifest. The uploader receives only a regular TAR and its manifest. It never
   traverses the generated fixture links. Exact checker and metadata venv trees
