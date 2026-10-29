@@ -1,0 +1,159 @@
+name: q0-16-reference-coverage
+
+on:
+  push:
+    branches: [codex/q0-16-reference-coverage]
+
+permissions:
+  contents: read
+
+jobs:
+  reference:
+    name: supplemental-${{ matrix.python }}
+    runs-on: macos-15
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        python: [3.12.11, 3.13.5, 3.14.0]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Record source and host facts
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import platform
+          import subprocess
+          import sys
+          root = Path.cwd()
+          records = []
+          for argv in (["git", "rev-parse", "HEAD"], ["git", "rev-parse", "HEAD^{tree}"],
+                       ["git", "status", "--porcelain=v1", "-uall"], ["uname", "-a"]):
+              process = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+              stdout, stderr = process.communicate()
+              records.append({"argv": argv, "cwd": str(root), "pid": process.pid,
+                              "waited_pid": process.pid, "wait_completed": True,
+                              "actual_exit": process.returncode, "stdout": stdout.decode(),
+                              "stderr": stderr.decode()})
+              if process.returncode != 0:
+                  raise SystemExit("source/host command failed")
+          if records[2]["stdout"]:
+              raise SystemExit("source checkout has uncommitted changes")
+          source_names = subprocess.check_output(["git", "ls-files", "-z"]).decode().split("\0")
+          files = {}
+          for name in source_names:
+              if not name:
+                  continue
+              path = root / name
+              if path.is_symlink():
+                  value = os.readlink(path).encode()
+                  files[name] = {"kind": "link", "target": os.readlink(path), "bytes": len(value),
+                                 "sha256": hashlib.sha256(value).hexdigest()}
+              elif path.is_file():
+                  value = path.read_bytes()
+                  files[name] = {"kind": "regular", "bytes": len(value),
+                                 "sha256": hashlib.sha256(value).hexdigest()}
+              else:
+                  raise SystemExit("tracked source is unavailable: " + name)
+          receipts = root / "receipts"
+          receipts.mkdir()
+          record = {"commands": records, "tracked_files": files, "controller_python": sys.version,
+                    "controller_executable": sys.executable, "sys_platform": sys.platform,
+                    "machine": platform.machine(), "platform": platform.platform(),
+                    "host": {key: os.environ.get(key) for key in
+                             ("RUNNER_OS", "RUNNER_ARCH", "ImageOS", "ImageVersion",
+                              "GITHUB_RUN_ID", "GITHUB_RUN_ATTEMPT", "GITHUB_SHA")}}
+          (receipts / "source.json").write_text(json.dumps(record, indent=2) + "\n")
+          if sys.version_info < (3, 12):
+              raise SystemExit("controller Python must be 3.12 or later")
+          PY
+      - name: Run only supplemental capture helper controls
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import sys
+          sys.path.insert(0, "tools/ci")
+          from q0_ruff_reference import run_command
+          from q0_mypy_reference import require_receipt
+          code = '''import unittest
+          suite = unittest.defaultTestLoader.discover("tools/ci", pattern="test_q0_16_*.py")
+          count = suite.countTestCases()
+          if count == 0:
+              raise SystemExit("zero supplemental helper controls")
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          if result.skipped:
+              raise SystemExit("supplemental helper controls skipped")
+          raise SystemExit(0 if result.wasSuccessful() else 1)
+          '''
+          receipt = run_command([sys.executable, "-B", "-c", code], Path.cwd(),
+                                Path.cwd() / "receipts/controls", expected_exits=(0,), timeout=120)
+          require_receipt(receipt)
+          PY
+      - name: Prepare the exact archive-bound Python
+        id: python
+        shell: bash
+        run: |
+          python3 -B tools/ci/q0_pydantic_python.py \
+            --repository "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/receipts/bootstrap" \
+            --prefix "$RUNNER_TEMP/q0-16-python" \
+            --python-version '${{ matrix.python }}'
+      - name: Capture every supplemental reference case
+        shell: bash
+        run: |
+          python3 -B tools/ci/q0_16_reference.py \
+            --repository "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/receipts/run" \
+            --python '${{ steps.python.outputs.python-path }}' \
+            --python-version '${{ matrix.python }}'
+      - name: Check tracked source preservation
+        if: always()
+        shell: bash
+        run: |
+          python3 -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          root = Path.cwd()
+          source = json.loads((root / "receipts/source.json").read_bytes())
+          failures = []
+          for name, fact in source["tracked_files"].items():
+              path = root / name
+              if fact["kind"] == "link":
+                  okay = path.is_symlink() and os.readlink(path) == fact["target"]
+              else:
+                  okay = path.is_file() and not path.is_symlink()
+                  if okay:
+                      data = path.read_bytes()
+                      okay = len(data) == fact["bytes"] and hashlib.sha256(data).hexdigest() == fact["sha256"]
+              if not okay:
+                  failures.append(name)
+          result = subprocess.run(["git", "diff", "--exit-code", "--"], capture_output=True)
+          report = {"checked_tracked_files": len(source["tracked_files"]), "changed_files": failures,
+                    "git_diff_exit": result.returncode, "git_diff_stdout": result.stdout.decode(),
+                    "git_diff_stderr": result.stderr.decode()}
+          (root / "receipts/source-after.json").write_text(json.dumps(report, indent=2) + "\n")
+          if failures or result.returncode:
+              raise SystemExit("tracked source changed")
+          PY
+      - name: Retain success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q0-16-reference-${{ matrix.python }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            receipts/
+            !receipts/run/environments/mypy/venv/**
+            !receipts/run/environments/pylint/venv/**
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

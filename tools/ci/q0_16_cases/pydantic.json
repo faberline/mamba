@@ -1,0 +1,591 @@
+{
+  "schema": "mamba.q0.16.supplement-inputs.v1",
+  "tool": "pydantic",
+  "cases": [
+    {
+      "behavior": "pydantic.init_typed",
+      "role": "hit",
+      "group": "pydantic-init-typed",
+      "files": {
+        "main.py": "from pydantic import BaseModel, ConfigDict, Field\nclass Model(BaseModel):\n    value: int\n    class Config:\n        title = \"Example\"\nModel(value=\"bad\")\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "arg-type",
+          "presence": "present",
+          "path": "main.py",
+          "line": 6,
+          "message_contains": "incompatible type \"str\"; expected \"int\""
+        }
+      ],
+      "intent": "The field is annotated int. The constructor call supplies a str literal. The frozen diagnostic at this call rejects str where int is expected.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/17",
+        "case_name": "legacy_untracked_config",
+        "source_sha256": {
+          "main.py": "7fc9ec485f030d9195a7d52f804978ccea77d2f0ffaff8c0731d4f268dd204d7"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          896,
+          900,
+          902
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "2c94f07121acf435b0b92e5ae8fd75aba2bc1b9019120643e8093f2fc2fb1c1e"
+    },
+    {
+      "behavior": "pydantic.init_typed",
+      "role": "non_trigger",
+      "group": "pydantic-init-typed",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\nclass Model(BaseModel):\n    value: int = Field(alias=\"external\")\n    class Config:\n        populate_by_name = True\nModel(value=1)\nModel(external=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "arg-type",
+          "presence": "absent",
+          "path": "main.py",
+          "line": 6
+        },
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 7,
+          "message_contains": "Unexpected keyword argument \"external\" for \"Model\""
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 6
+        }
+      ],
+      "intent": "The same model has an int field. This call supplies an int by the active field name. The declared diagnostic is on the next alias call, not this typed call.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/1",
+        "case_name": "legacy_populate_name",
+        "source_sha256": {
+          "main.py": "3d126e26ee6f6c6520b0472bd5abdc0531e93380b4aae26139e67f39c3f88da2"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          896,
+          898,
+          900,
+          902,
+          905
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "3e60ec506f3c5254513343626d1f9fb1c5e4fbc66261ae8ac00ca3fc7596c2fc"
+    },
+    {
+      "behavior": "pydantic.init_typed",
+      "role": "interaction",
+      "group": "pydantic-init-typed",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\nclass Model(BaseModel):\n    value: int = Field(alias=\"external\")\n    class Config:\n        populate_by_name = True\nModel(value=1)\nModel(external=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 7,
+          "message_contains": "Unexpected keyword argument \"external\" for \"Model\""
+        },
+        {
+          "rule": "arg-type",
+          "presence": "absent",
+          "path": "main.py",
+          "line": 6
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 6
+        }
+      ],
+      "intent": "This existing project combines typed initializer construction, a literal field alias and populate_by_name. The typed field-name call on line6 has no declared error; the alias call on line7 is rejected as an unexpected keyword. This is a source/expectation interaction annotation, not an isolated causal test.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/1",
+        "case_name": "legacy_populate_name",
+        "source_sha256": {
+          "main.py": "3d126e26ee6f6c6520b0472bd5abdc0531e93380b4aae26139e67f39c3f88da2"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          896,
+          898,
+          900,
+          902,
+          905
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "c278b59784c766da59c0f02d59dcb07a51bec299378cb7ceb9e0bb2bb605971d"
+    },
+    {
+      "behavior": "pydantic.init_forbid_extra",
+      "role": "hit",
+      "group": "pydantic-init-forbid-extra",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\nclass Model(BaseModel):\n    value: int = Field(alias=\"external\")\n    class Config:\n        populate_by_name = True\nModel(value=1)\nModel(external=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 7,
+          "message_contains": "Unexpected keyword argument \"external\" for \"Model\""
+        }
+      ],
+      "intent": "populate_by_name selects the declared field name. The alias spelling is not in the generated static signature. The frozen expectation rejects it instead of accepting arbitrary kwargs.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/1",
+        "case_name": "legacy_populate_name",
+        "source_sha256": {
+          "main.py": "3d126e26ee6f6c6520b0472bd5abdc0531e93380b4aae26139e67f39c3f88da2"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          898,
+          1168,
+          1171,
+          1174,
+          1179
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "02191737a47a7d9e22eff8101ae798a30a84db32767507d209016ef5c1097ea6"
+    },
+    {
+      "behavior": "pydantic.init_forbid_extra",
+      "role": "non_trigger",
+      "group": "pydantic-init-forbid-extra",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\nclass Model(BaseModel):\n    value: int = Field(alias=\"external\")\n    class Config:\n        populate_by_name = True\nModel(value=1)\nModel(external=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "call-arg",
+          "presence": "absent",
+          "path": "main.py",
+          "line": 6
+        },
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 7,
+          "message_contains": "Unexpected keyword argument \"external\" for \"Model\""
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 6
+        }
+      ],
+      "intent": "The constructor uses its declared field name with no extra keyword. There is no frozen diagnostic at this relevant constructor call.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/1",
+        "case_name": "legacy_populate_name",
+        "source_sha256": {
+          "main.py": "3d126e26ee6f6c6520b0472bd5abdc0531e93380b4aae26139e67f39c3f88da2"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          898,
+          1168,
+          1179
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "55cfe8b0a2126ddcf15d695e89ca91c0f69e3d8560674c18d14293f99f52c9a8"
+    },
+    {
+      "behavior": "pydantic.init_forbid_extra",
+      "role": "interaction",
+      "group": "pydantic-init-forbid-extra",
+      "files": {
+        "main.py": "from pydantic import BaseModel, ConfigDict, Field\nclass Parent(BaseModel):\n    value: int = Field(alias=\"external\")\n    class Config:\n        populate_by_name = True\nclass Child(Parent):\n    class Config:\n        populate_by_name = False\nChild(value=1)\nChild(external=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 9,
+          "message_contains": "Unexpected keyword argument \"value\" for \"Child\""
+        },
+        {
+          "rule": "call-arg",
+          "presence": "absent",
+          "path": "main.py",
+          "line": 10
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 10
+        }
+      ],
+      "intent": "The child overrides inherited populate_by_name=True to False. With the literal alias retained, the field spelling is rejected on line9 and the alias spelling on line10 has no declared error. This joins inheritance, alias routing and exclusion of arbitrary kwargs.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/19",
+        "case_name": "legacy_override_populate_false",
+        "source_sha256": {
+          "main.py": "88f676152dec1b4331ae47096ec31240c72f5441062f3c6d7c43c46089c079f8"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          898,
+          1168,
+          1174,
+          1179
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "50ab46b85054a3883a8b5e1dd485bf16ad1ffc6c797d1b31285120e63d5582de"
+    },
+    {
+      "behavior": "pydantic.warn_required_dynamic_aliases",
+      "role": "hit",
+      "group": "pydantic-warn-required-dynamic-aliases",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\ndef alias(value: str) -> str:\n    return value.upper()\nclass Model(BaseModel):\n    value: int\n    class Config:\n        alias_generator = alias\nModel()\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "pydantic-alias",
+          "presence": "present",
+          "path": "main.py",
+          "line": 6,
+          "message_contains": "Required dynamic aliases disallowed"
+        }
+      ],
+      "intent": "The required int field has an alias generator and no name-based validation. The frozen expectation contains Required dynamic aliases disallowed at the Config statement.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/7",
+        "case_name": "legacy_alias_generator",
+        "source_sha256": {
+          "main.py": "e93e81aaf45a9e48ead32da2773c405d246f41ee0cc1ff379436cc8a1d0b0fb9"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          611,
+          613,
+          614,
+          615,
+          617
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "ff09e33e04c417721d322e7092af066ef5d3797bdf38c0e417331d430042a399"
+    },
+    {
+      "behavior": "pydantic.warn_required_dynamic_aliases",
+      "role": "non_trigger",
+      "group": "pydantic-warn-required-dynamic-aliases",
+      "files": {
+        "main.py": "from pydantic import BaseModel, Field\ndef alias(value: str) -> str:\n    return value.upper()\nclass Model(BaseModel):\n    value: int\n    class Config:\n        alias_generator = alias\n        validate_by_name = True\nModel()\nModel(value=1)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "pydantic-alias",
+          "presence": "absent",
+          "path": "main.py"
+        },
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 9,
+          "message_contains": "Missing named argument \"value\" for \"Model\""
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 10
+        }
+      ],
+      "intent": "This existing source retains the alias generator but enables validate_by_name. The upstream warning guard is false. No pydantic-alias diagnostic occurs in any target expectation; the separate missing-argument diagnostic is preserved.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/8",
+        "case_name": "legacy_name_and_alias_generator",
+        "source_sha256": {
+          "main.py": "acf2a946f1007208a6e6f010eb85dab902f6ea962e5788b04acfc77dc37fb126"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          611,
+          613,
+          614,
+          615,
+          617
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "20740c615aba58ad75721f06d10cc730e6da34ace10579b4482d45e9777da2b9"
+    },
+    {
+      "behavior": "pydantic.warn_required_dynamic_aliases",
+      "role": "interaction",
+      "group": "pydantic-warn-required-dynamic-aliases",
+      "files": {
+        "main.py": "from pydantic import BaseModel, ConfigDict, Field\ndef alias(value: str) -> str:\n    return value.upper()\nclass Parent(BaseModel):\n    value: int\n    class Config:\n        alias_generator = alias\nclass Child(Parent):\n    class Config:\n        alias_generator = None\nChild()\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "pydantic-alias",
+          "presence": "present",
+          "path": "main.py",
+          "line": 6,
+          "message_contains": "Required dynamic aliases disallowed"
+        },
+        {
+          "rule": "call-arg",
+          "presence": "present",
+          "path": "main.py",
+          "line": 11,
+          "message_contains": "Missing named argument \"value\" for \"Child\""
+        },
+        {
+          "rule": "pydantic-alias",
+          "presence": "absent",
+          "path": "main.py",
+          "line": 9
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 9
+        },
+        {
+          "rule": "*",
+          "presence": "absent",
+          "severity": "error",
+          "path": "main.py",
+          "line": 10
+        }
+      ],
+      "intent": "The parent alias generator produces a parent pydantic-alias diagnostic. The child sets alias_generator=None. Its empty constructor call separately has a missing named argument diagnostic. The annotation retains the two class scopes and does not claim that the parent warning is a child warning.",
+      "provenance": {
+        "kind": "new-replay-of-existing-public-input",
+        "source_catalog": "crates/mamba-quality/src/infrastructure/mypy/tests/pydantic_config.json",
+        "catalog_sha256": "46f933fcd2a615f806de44810680715a21d755a0556654fe3de531ef9b1c2a9f",
+        "case_pointer": "/14",
+        "case_name": "legacy_override_alias_generator_none",
+        "source_sha256": {
+          "main.py": "468def6c6db5828174abd89e7a0010aebd9f58e012c79521d188012812ff2c71"
+        },
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "upstream_distribution": "pydantic",
+        "upstream_version": "2.13.5",
+        "upstream_member": "pydantic-2.13.5/pydantic/mypy.py",
+        "upstream_member_sha256": "ca99e187b867f8bfa693ab16e0272b755d82e65c8ccdc33a153063db51ae7ec1",
+        "upstream_lines_1based": [
+          611,
+          613,
+          614,
+          615,
+          617,
+          623,
+          899,
+          1157
+        ],
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "6f2c78438121b94ba3e4f8d591193e5f874914c7c42131b3e4cf6cb84b379861"
+    }
+  ],
+  "dispositions": []
+}

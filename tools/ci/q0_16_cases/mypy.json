@@ -1,0 +1,495 @@
+{
+  "schema": "mamba.q0.16.supplement-inputs.v1",
+  "tool": "mypy",
+  "cases": [
+    {
+      "behavior": "--warn-redundant-casts",
+      "role": "hit",
+      "group": "redundant-cast-boundaries",
+      "files": {
+        "main.py": "from typing import cast\n\n\ndef echo(value: int) -> int:\n    return cast(int, value)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "redundant-cast",
+          "presence": "present",
+          "path": "main.py",
+          "line": 5,
+          "message_contains": "Redundant cast"
+        }
+      ],
+      "intent": "Reject a cast whose annotated int parameter already has the target int type.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "main.py": "fb7b8bafa1c1d5c04783c5ef8217f9552f9a68da5a6d1c67249981efb399c783"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              4847,
+              4855
+            ]
+          }
+        ],
+        "existing_catalog_basis": [],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "f02a75f4c226792e766db1a807148584fd6740229f882f73c279ff59ccecd0ea"
+    },
+    {
+      "behavior": "--warn-redundant-casts",
+      "role": "non_trigger",
+      "group": "redundant-cast-boundaries",
+      "files": {
+        "main.py": "from typing import cast\n\n\ndef require_text(value: object) -> str:\n    return cast(str, value)\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "redundant-cast",
+          "presence": "absent"
+        },
+        {
+          "rule": "return-value",
+          "presence": "absent"
+        },
+        {
+          "rule": "no-any-return",
+          "presence": "absent"
+        }
+      ],
+      "intent": "Accept a narrowing cast from an unconstrained object parameter to str. The parameter avoids initializer-based flow narrowing.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "main.py": "a82a7800fbc55558b2f8db4ccb9dc6a9737994b1ca0585d2e3dc02279a3b0c92"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              4847,
+              4855
+            ]
+          }
+        ],
+        "existing_catalog_basis": [],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "876deeabeaeaf333b785e2759b448f0eb1791ae44151719b452ca222f917cf4d"
+    },
+    {
+      "behavior": "--warn-redundant-casts",
+      "role": "interaction",
+      "group": "redundant-cast-boundaries",
+      "files": {
+        "main.py": "from typing import cast\n\n\ndef inspect(value: int) -> bool:\n    same = cast(int, value)\n    return range(same) == 1\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "redundant-cast",
+          "presence": "present",
+          "path": "main.py",
+          "line": 5,
+          "message_contains": "Redundant cast"
+        },
+        {
+          "rule": "comparison-overlap",
+          "presence": "present",
+          "path": "main.py",
+          "line": 6,
+          "message_contains": "Non-overlapping equality check"
+        }
+      ],
+      "intent": "Retain the redundant-cast rejection while the resulting int feeds range and a separate strict-equality rejection.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "main.py": "8cc9f1df976bc76a3014dca879775da0f5e50cc42ee74f6e8f475964d6ab7290"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              4847,
+              4855
+            ]
+          },
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              3876,
+              3892
+            ]
+          }
+        ],
+        "existing_catalog_basis": [],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "dbf52fd1d4b216adc916348e6326944a432bcb10f65bc68439982e892c7c8800"
+    },
+    {
+      "behavior": "--no-implicit-reexport",
+      "role": "hit",
+      "group": "local-module-reexport-control",
+      "files": {
+        "q0_export_bridge.py": "from decimal import Decimal\n",
+        "consumer.py": "from q0_export_bridge import Decimal\n\nvalue: Decimal = Decimal(\"1\")\n"
+      },
+      "entrypoints": [
+        "consumer.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "attr-defined",
+          "presence": "present",
+          "path": "consumer.py",
+          "line": 1,
+          "message_contains": "does not explicitly export attribute \"Decimal\""
+        },
+        {
+          "rule": "import-not-found",
+          "presence": "absent"
+        }
+      ],
+      "intent": "Reject an implicit re-export from an authored local .py bridge. The bridge imports the public decimal.Decimal symbol; its own export visibility is the boundary.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "q0_export_bridge.py": "bdd67e5479755d8a26e98400d93142df85350aef9bd1be8dee3d3c0b42d6b989",
+          "consumer.py": "24074821345a605b999375816838c93a4356e78b6a137f39a6439e38489aa941"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/semanal.py",
+            "member_sha256": "b7f7fc794e8103b0fb162ead00d4ee9e08a3ccf78fb286adb10a58e81233f3fa",
+            "lines_1based": [
+              3033,
+              3040
+            ]
+          }
+        ],
+        "existing_catalog_basis": [],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "5c9ad372a9867c478e7b43d767dce4404b8c2d0b5798c843a43bb677b1377258"
+    },
+    {
+      "behavior": "--no-implicit-reexport",
+      "role": "non_trigger",
+      "group": "local-module-reexport-control",
+      "files": {
+        "q0_export_bridge.py": "from decimal import Decimal as Decimal\n",
+        "consumer.py": "from q0_export_bridge import Decimal\n\nvalue: Decimal = Decimal(\"1\")\n"
+      },
+      "entrypoints": [
+        "consumer.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "attr-defined",
+          "presence": "absent"
+        },
+        {
+          "rule": "import-not-found",
+          "presence": "absent"
+        },
+        {
+          "rule": "name-defined",
+          "presence": "absent"
+        }
+      ],
+      "intent": "Accept the same local bridge and consumer when Decimal is explicitly re-exported with a matching as alias.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "q0_export_bridge.py": "7899e36cd77b5abd1776479f2cd9777d6ffef86e1482da89d422e957bcd96e27",
+          "consumer.py": "24074821345a605b999375816838c93a4356e78b6a137f39a6439e38489aa941"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/semanal.py",
+            "member_sha256": "b7f7fc794e8103b0fb162ead00d4ee9e08a3ccf78fb286adb10a58e81233f3fa",
+            "lines_1based": [
+              3033,
+              3040
+            ]
+          }
+        ],
+        "existing_catalog_basis": [],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "78c614bcfd2242c00e1bb9ed2ecdeedf5ca5551eb614594a9ff3404ec9ae28ff"
+    },
+    {
+      "behavior": "--extra-checks",
+      "role": "interaction",
+      "group": "typeddict-update-and-strict-equality",
+      "files": {
+        "main.py": "from typing import TypedDict\n\nclass Record(TypedDict):\n    name: str\n    count: int\n\nclass Partial(TypedDict):\n    count: int\n\ndef combine(target: Record, incoming: Partial) -> bool:\n    target.update(incoming)\n    return range(3) == 1\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "typeddict-item",
+          "presence": "present",
+          "path": "main.py",
+          "line": 11,
+          "message_contains": "Argument 1 to \"update\" of \"TypedDict\" has incompatible type \"Partial\""
+        },
+        {
+          "rule": "comparison-overlap",
+          "presence": "present",
+          "path": "main.py",
+          "line": 12,
+          "message_contains": "Non-overlapping equality check"
+        }
+      ],
+      "intent": "Reject a partial-width TypedDict update and independently reject a non-overlapping range equality in the same fully annotated function.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "main.py": "4ecfb73cbfcb0d786f91c149f68020afa3158c0efff84caab8d504341d859456"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/plugins/default.py",
+            "member_sha256": "8340d9ef6da6632450908ebbefd3dff1c56f647f11e37f4c9ff1002355308e48",
+            "lines_1based": [
+              485,
+              533
+            ]
+          },
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              3876,
+              3892
+            ]
+          }
+        ],
+        "existing_catalog_basis": [
+          {
+            "filename": "case_1831.py",
+            "name": "typeddict_method_boundary_update_typeddict_partial",
+            "source_sha256": "c416701acb1349ff6ef65a15b63e608b2d4cac752a5bdfec60e045158944f650",
+            "catalog_path": "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_000/part_057.rs",
+            "catalog_json_pointer": "/7",
+            "relationship": "New authored combination of the relevant source structure, not copied expected diagnostics."
+          },
+          {
+            "filename": "case_20539.py",
+            "name": "strict_sequence1_int_equal_left",
+            "source_sha256": "41d4af58f332b7d206d704309b4e22c0fc0478b426ede22cbedff834395355ce",
+            "catalog_path": "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_010/part_641.rs",
+            "catalog_json_pointer": "/27",
+            "relationship": "New authored combination of the relevant source structure, not copied expected diagnostics."
+          }
+        ],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "00fe2edbab15079bc06968d21296751424f8d4ae1c7efb6d75b40541254a20a9"
+    },
+    {
+      "behavior": "--extra-checks",
+      "role": "non_trigger",
+      "group": "typeddict-update-and-strict-equality",
+      "files": {
+        "main.py": "from typing import TypedDict\n\nclass Record(TypedDict):\n    name: str\n    count: int\n\nclass Partial(TypedDict):\n    count: int\n\ndef combine(target: Record, incoming: Record) -> bool:\n    target.update(incoming)\n    return range(3) == 1\n"
+      },
+      "entrypoints": [
+        "main.py"
+      ],
+      "python_targets": [
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "requires": [
+        {
+          "rule": "typeddict-item",
+          "presence": "absent"
+        },
+        {
+          "rule": "comparison-overlap",
+          "presence": "present",
+          "path": "main.py",
+          "line": 12,
+          "message_contains": "Non-overlapping equality check"
+        }
+      ],
+      "intent": "Use the full-width Record argument as the paired update control. Keep the same strict-equality rejection so the second requirement remains observable.",
+      "provenance": {
+        "kind": "new-authored-input",
+        "source_sha256": {
+          "main.py": "d9f7da7b79bd0955dc1f218da4bc9b4f1228d3321afa2143059c0733c149df76"
+        },
+        "requires_are_intended_predicates": true,
+        "reference_executed_at_authoring": false,
+        "full_diagnostic_outputs_frozen": false,
+        "historical_original_evidence_claim": false,
+        "current_profile_path": "crates/mamba-quality/assets/profile.json",
+        "current_profile_sha256": "59cd5c03b0ab25ba7f994bcd81fece95dd84c613f1e0ca4dc947573b7bcae2e7",
+        "strict_flags_pointer": "/mypy/strict_flags",
+        "upstream_source_anchors": [
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/plugins/default.py",
+            "member_sha256": "8340d9ef6da6632450908ebbefd3dff1c56f647f11e37f4c9ff1002355308e48",
+            "lines_1based": [
+              485,
+              533
+            ]
+          },
+          {
+            "distribution": "mypy",
+            "version": "2.4.0",
+            "wheel_sha256": "e05ff2925d8b37ad26c80c1b9dc43ae5d455da2df1e23c24c095a6425917c57e",
+            "member": "mypy/checkexpr.py",
+            "member_sha256": "ef89c8b5929ad35c43d847ef988f1ac756317abae07b2bf7874ea318463327b0",
+            "lines_1based": [
+              3876,
+              3892
+            ]
+          }
+        ],
+        "existing_catalog_basis": [
+          {
+            "filename": "case_1831.py",
+            "name": "typeddict_method_boundary_update_typeddict_partial",
+            "source_sha256": "c416701acb1349ff6ef65a15b63e608b2d4cac752a5bdfec60e045158944f650",
+            "catalog_path": "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_000/part_057.rs",
+            "catalog_json_pointer": "/7",
+            "relationship": "New authored combination of the relevant source structure, not copied expected diagnostics."
+          },
+          {
+            "filename": "case_20539.py",
+            "name": "strict_sequence1_int_equal_left",
+            "source_sha256": "41d4af58f332b7d206d704309b4e22c0fc0478b426ede22cbedff834395355ce",
+            "catalog_path": "crates/mamba-quality/src/infrastructure/mypy/tests/catalog/group_010/part_641.rs",
+            "catalog_json_pointer": "/27",
+            "relationship": "New authored combination of the relevant source structure, not copied expected diagnostics."
+          }
+        ],
+        "id_algorithm": "SHA-256 of UTF-8 JSON for behavior, role, group, files, entrypoints, python_targets and requires; sorted keys, compact separators, ensure_ascii=False"
+      },
+      "id": "d53e9bda118537828f5134fa41d6780e6dcbe52f89e9740ccefc8527df2f8b80"
+    }
+  ],
+  "dispositions": []
+}
