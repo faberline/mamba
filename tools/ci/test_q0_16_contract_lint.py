@@ -6,6 +6,7 @@ import copy
 import ast
 import json
 import pathlib
+import zipfile
 from pathlib import Path
 import tempfile
 import unittest
@@ -271,6 +272,54 @@ class ContractControls(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "identity/health"):
                     lint.verify_metadata_queries(mock_state, None)
 
+    def test_reference_library_copy_keeps_only_attested_static_type_bytes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder); environment = output / "environments/mypy"
+            executable = environment / "venv/bin/python"; executable.parent.mkdir(parents=True); executable.write_bytes(b"not executed")
+            checker_site = environment / "venv/lib/python3.12/site-packages"; checker_site.mkdir(parents=True)
+            metadata = output / "case/metadata"; site = metadata / "venv/lib/python3.12/site-packages"; site.mkdir(parents=True)
+            model = {"pkg/__init__.py": lint.payload(b"static mock fixture data")}
+            (site / "pkg").mkdir(); (site / "pkg/__init__.py").write_bytes(bytes.fromhex(model["pkg/__init__.py"]["bytes_hex"]))
+            selections = {name: {**selection, "files": 1} for name, selection in lint.REFERENCE_LIBRARY_SELECTIONS.items()}
+            identity = {"executable": str(executable), "wheel_artifacts": [], "distributions": {}}
+            origins, before = [], {}
+            for index, (name, selection) in enumerate(selections.items()):
+                member = selection.get("exact", selection.get("prefix", "") + ("_pydantic_core.pyi" if name == "pydantic_core" else "__init__.py"))
+                raw = (name + " original static type bytes").encode(); descriptor = {"bytes": len(raw), "sha256": lint.digest(raw)}
+                source = checker_site / member; source.parent.mkdir(parents=True, exist_ok=True); source.write_bytes(raw)
+                directory = output / "downloads/mypy" / ("wheel-" + str(index)); directory.mkdir(parents=True)
+                wheel = directory / (name + ".whl")
+                with zipfile.ZipFile(wheel, "w") as archive:
+                    archive.writestr(member, raw)
+                    archive.writestr((selection.get("prefix") or "") + "forbidden.so", b"native must not be copied")
+                    archive.writestr((selection.get("prefix") or "") + "startup.pth", b"startup must not be copied")
+                pin = {"filename": wheel.name, "sha256": lint.digest(wheel.read_bytes())}
+                identity["wheel_artifacts"].append({**pin, "bytes": wheel.stat().st_size})
+                identity["distributions"][name] = {"version": "test", "distribution_files": {member: descriptor}}
+                before[str(source)] = descriptor
+                origins.append({"name": name, "version": "test", "wheel_pin": pin, "member_selection": selection,
+                    "wheel_binding": {"source_id": "public-lock.json", "json_pointer": "/" + name}})
+            lint.write_json(environment / "identity.json", identity); lint.write_json(environment / "payloads-before.json", before)
+            case = {"context": {"tool": "mypy", "target": "3.12", "layout": {"model_packages": model},
+                "reference_library_assets": {"source_binding": {"source_id": "public-case.json"}, "origins": origins}},
+                "source_aliases": [{"case_source": {"source_id": "crates/mamba-quality/src/infrastructure/mypy/tests/dependencies.json", "json_pointer": "/29"}}]}
+            with patch.object(lint, "REFERENCE_LIBRARY_SELECTIONS", selections):
+                state = lint.copy_reference_libraries(case, executable, metadata, site)
+                self.assertEqual(state["file_count"], 5)
+                manifest = lint.read_json(Path(state["manifest_path"]).read_bytes())
+                self.assertEqual(len(manifest["expected_site_union_paths"]), 6)
+                self.assertTrue(all(row["metadata_site_before_fact"] == row["input_snapshot_fact"] == row["distribution_file_fact"] for row in manifest["files"]))
+                self.assertTrue((site / "pydantic_core/_pydantic_core.pyi").is_file())
+                self.assertFalse(any(path.suffix in {".so", ".pth"} for path in site.rglob("*")))
+                foreign = copy.deepcopy(case); foreign["source_aliases"][0]["case_source"]["json_pointer"] = "/28"
+                with self.assertRaisesRegex(ValueError, "outside the fixed"):
+                    lint.copy_reference_libraries(foreign, executable, metadata, site)
+                first = Path(manifest["files"][0]["installed_source"]); first.write_bytes(b"changed installed source")
+                with self.assertRaisesRegex(ValueError, "attested type bytes differ"):
+                    lint.copy_reference_libraries(case, executable, metadata, site)
+            with self.assertRaises(ValueError):
+                lint.selected_library_members(["pydantic/../escape.py"], {"prefix": "pydantic/", "excluded": [], "files": 1})
+
     def test_metadata_venv_uses_symlinks_and_checks_resolved_base_custody(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder); base = root / "base-python"; base.write_bytes(b"static pinned binary data")
@@ -488,6 +537,7 @@ class SourcePlanControls(unittest.TestCase):
         for row in corrections:
             case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
             old["selection"] = row["old_selection"]; old.pop("search_roots", None)
+            old.pop("module_source_roots", None); old.pop("module_source_roots_binding", None)
             self.assertEqual(lint.value_sha(old), row["old_request_id"])
             if "source_owned_directory_non_stub_selection" in row["reasons"]:
                 self.assertEqual(case["context"]["selection"]["paths"], sorted(name for name in old["layout"]["files"] if name.endswith(".py")))
@@ -536,6 +586,42 @@ class SourcePlanControls(unittest.TestCase):
         foreign = copy.deepcopy(case); foreign["owner_sources"] = []
         with self.assertRaises(lint.ComparisonError):
             lint.compare(sources, foreign, stdout, 2, project)
+
+    def test_reference_library_context_migration_is_only_declared_three_targets(self):
+        rows = self.lock["mypy_library_asset_corrections_from_64db"]
+        self.assertEqual(len(rows), 3)
+        cases = {case["request_id"]: case for case in self.cases}; sources = lint.Sources(self.repo)
+        self.assertEqual(sum("reference_library_assets" in case["context"] for case in self.cases), 3)
+        self.assertEqual(sum(item["files"] for item in lint.REFERENCE_LIBRARY_SELECTIONS.values()), 116)
+        for row in rows:
+            case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
+            assets = old.pop("reference_library_assets")
+            self.assertEqual(lint.value_sha(old), row["old_request_id"])
+            self.assertEqual(case["source_aliases"][0]["case_source"]["json_pointer"], "/29")
+            self.assertIn("locked Pydantic 2.13.5", sources.resolve(assets["source_binding"]))
+            for origin in assets["origins"]:
+                pin = sources.resolve(origin["wheel_binding"])
+                self.assertEqual(origin["wheel_pin"], {key: pin[key] for key in ("filename", "sha256")})
+
+    def test_namespace_root_keeps_only_fixed_case_module_identity(self):
+        rows = self.lock["pylint_namespace_corrections_from_64db"]
+        self.assertEqual(len(rows), 3)
+        cases = {case["request_id"]: case for case in self.cases}; sources = lint.Sources(self.repo)
+        for row in rows:
+            case = cases[row["new_request_id"]]; old = copy.deepcopy(case["context"])
+            roots = old.pop("module_source_roots"); binding = old.pop("module_source_roots_binding")
+            self.assertEqual(roots, ["."]); self.assertEqual(lint.value_sha(old), row["old_request_id"])
+            self.assertEqual(sources.resolve(binding["source"]), ["."])
+            self.assertEqual(case["source_aliases"][0]["case_source"]["json_pointer"], "/1")
+            with tempfile.TemporaryDirectory() as folder:
+                project = Path(folder)
+                argv = lint.argv_for(Path("/checker/python"), case, project, Path("/config"), None)
+                self.assertEqual([arg for arg in argv if arg.startswith("--source-roots=")], ["--source-roots=" + str(project.resolve())])
+                names = case["context"]["selection"]["paths"]
+                self.assertEqual(argv[-len(names):], names)
+                foreign = copy.deepcopy(case); foreign["source_aliases"][0]["case_source"]["json_pointer"] = "/2"
+                with self.assertRaisesRegex(ValueError, "outside the fixed namespace"):
+                    lint.argv_for(Path("/checker/python"), foreign, project, Path("/config"), None)
 
 
 if __name__ == "__main__":

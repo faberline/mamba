@@ -89,6 +89,30 @@ source aliases passed independent raw comparison. isort's 504 contexts and
 507 source aliases also passed independent raw comparison. All 19 artifacts
 and job logs are retained. These results do not pass the six failed Lint jobs.
 
+The third contract run,
+[40892463789](https://github.com/faberline/mamba/actions/runs/40892463789),
+completed its first attempt with 12 successful jobs and six failed Lint jobs.
+GitHub cancelled the unstarted supplemental Python 3.14 job because no hosted
+Mac runner was acquired. The cancelled job has no case artifact or job log.
+It is unrun. The controller requested a retry of that job alone.
+
+All 4,362 Lint checker commands completed. Independent comparison matched 4,355
+contexts and retained seven mismatches. All 138 metadata contexts and their 276
+query observations passed the independent query proof checks. The mismatches
+have three separate causes: missing source-declared Pydantic type data,
+namespace module discovery, and one Python 3.13 shadow-module output outside
+the existing authorized variant lists. The last output remains unaccepted
+while a separate user decision is pending.
+
+The new source-bound repair prepares 116 original text/type files from five
+pinned distributions for the single typed-Pydantic case across three targets.
+A separate manifest and input snapshot keep these library assets distinct from
+the unchanged model fixtures. No library program is installed or imported in
+the metadata interpreter. The namespace repair sets the project source root
+only for `cross_file_selected_imports.json` row 1 across the three targets.
+Both repairs retain the old input and expected bytes. They require a new
+hosted run. The new Python 3.13 variant is not enabled by these repairs.
+
 The repaired capture uses these source-bound rules:
 
 - Mac environments link to the exact archive-bound Python binary. They use the

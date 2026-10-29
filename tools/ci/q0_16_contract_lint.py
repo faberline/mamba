@@ -18,6 +18,7 @@ import re
 import shlex
 import stat
 import sys
+import zipfile
 
 import q0_16_reference as capture
 from q0_16_packet import CONFIG_BYTES, read_json, safe_path
@@ -56,6 +57,13 @@ PYLINT_RECIPE_SOURCES = {
     "crates/mamba-quality/src/infrastructure/filesystem.rs": "2374693d91c50293239ec53d076529d841c6167af1397d1bf44ce6c789ce19c9",
     "crates/mamba-quality/src/infrastructure/pylint/runner.rs": "5d4dd09b66c48ed289c3675f14a530ae25de9fad2ebefdef26922aa9af02f10a"}
 PYLINT_INIT_HOOK_SOURCE = {"member": "pylint/config/utils.py", "sha256": "563b8a79ff2b4225a81e46ab5f722bf24075956e683f76b4d9e9815d98fad350", "line_spans": [[146, 154]]}
+PYLINT_NAMESPACE_SOURCE = {"member": "pylint/lint/expand_modules.py", "sha256": "924ba931f2bea27008d2e2eeb19fdafed69290acab13767996946e52eca9eb05", "line_spans": [[99, 108]]}
+REFERENCE_LIBRARY_SELECTIONS = {
+    "pydantic": {"prefix": "pydantic/", "excluded": ["pydantic/mypy.py", "pydantic/v1/mypy.py", "pydantic/v1/_hypothesis_plugin.py"], "files": 104},
+    "pydantic_core": {"prefix": "pydantic_core/", "excluded": [], "files": 4},
+    "annotated-types": {"prefix": "annotated_types/", "excluded": ["annotated_types/test_cases.py"], "files": 2},
+    "typing-inspection": {"prefix": "typing_inspection/", "excluded": [], "files": 5},
+    "typing_extensions": {"exact": "typing_extensions.py", "excluded": [], "files": 1}}
 METADATA_QUERY_GUARD = r'''import contextlib, hashlib, io, json, os, pathlib, site, sys, traceback
 
 def validate_query_args(actual, helper):
@@ -364,7 +372,7 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
     tier = sources.object(REGISTRY)["tiers"]["B"]
     manifests = {m["unit_id"]: m for m in tier["manifests"] if m["tool"] in COUNTS}
     profile_path = "crates/mamba-quality/assets/profile.json"
-    requests, corrections, pylint_corrections = {}, {}, {}
+    requests, corrections, pylint_corrections, library_corrections, namespace_corrections = {}, {}, {}, {}, {}
     excluded = {"builtin_values_regressions.json", "pydantic_config.json", "pydantic_config_entrypoints.json", "cross_file_dependency_regressions.json"}
 
     def append(manifest: dict, record: dict, value: dict, section: dict):
@@ -376,6 +384,27 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
             "selection": selection_for(manifest["tool"], value, layout, owner),
             "profile_source": {"path": profile_path, "sha256": digest(sources.raw(profile_path))}}
         old_identity, correction = value_sha(context), None
+        if (record["record_pointer"]["source_id"] == "crates/mamba-quality/src/infrastructure/mypy/tests/dependencies.json"
+                and record["record_pointer"]["json_pointer"] == "/29"):
+            if value.get("name") != "typed_pydantic" or value.get("reference_data") != (
+                    "locked Pydantic 2.13.5 and its fixed dependency type data are present; builtin Rust model data supplies the same symbols"):
+                raise ValueError("fixed typed-Pydantic reference-library declaration differs")
+            library_ref = sources.child(record["record_pointer"], "reference_data")
+            package_lock_path = "tools/ci/q0_pydantic_reference_lock.json"
+            package_lock_ref = {"source_id": package_lock_path, "sha256": digest(sources.raw(package_lock_path)), "json_pointer": ""}
+            version = VERSIONS[int(section["target"].split(".")[1])]
+            packages = sources.object(package_lock_path)["dependencies"][version]
+            origins = []
+            for name, selection in REFERENCE_LIBRARY_SELECTIONS.items():
+                index, pin = next((index, pin) for index, pin in enumerate(packages) if pin["name"] == name)
+                origins.append({"name": name, "version": pin["version"], "wheel_pin": {key: pin[key] for key in ("filename", "sha256")},
+                    "wheel_binding": sources.child(package_lock_ref, "dependencies", version, index),
+                    "member_selection": selection})
+            context["reference_library_assets"] = {"source_binding": library_ref, "origins": origins,
+                "static_type_files_only": True, "library_programs_executed": False, "native_binaries_copied": False}
+            library_corrections[value_sha(context)] = {"old_request_id": old_identity, "new_request_id": value_sha(context),
+                "target": section["target"], "source_binding": library_ref,
+                "reason": "source_declares_locked_Pydantic_and_dependency_type_data_present"}
         if manifest["source"]["source_id"] == "crates/mamba-quality/src/infrastructure/mypy/tests/duplicate_modules.json":
             proofs = duplicate_command_selection(sources, record["record_pointer"], value, section["target"])
             old_selection = copy.deepcopy(context["selection"])
@@ -404,11 +433,25 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
                 context["selection"] = {"kind": "source_owned_directory_non_stub_selection", "paths": selected, "absolute": False}
                 reasons.append("source_owned_directory_non_stub_selection")
                 proofs.append(sources.child(record["record_pointer"], "inputs"))
+            intermediate_identity = value_sha(context)
+            if (record["record_pointer"]["source_id"] == "crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_selected_imports.json"
+                    and record["record_pointer"]["json_pointer"] == "/1"):
+                binding = {"source": sources.child(record["record_pointer"], "inputs"),
+                    "owner": {"source_id": "crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_stores.rs",
+                        "sha256": PYLINT_RECIPE_SOURCES["crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_stores.rs"]},
+                    "upstream": PYLINT_NAMESPACE_SOURCE}
+                context["module_source_roots"] = ["."]
+                context["module_source_roots_binding"] = binding
+                namespace_corrections[value_sha(context)] = {"old_request_id": intermediate_identity, "new_request_id": value_sha(context),
+                    "target": section["target"], "source_binding": binding,
+                    "reason": "preserve_project_relative_namespace_module_discovery"}
             if reasons:
                 pylint_corrections[value_sha(context)] = {"old_request_id": value_sha(prior_context), "new_request_id": value_sha(context),
                     "target": section["target"], "reasons": reasons, "source_bindings": proofs,
                     "old_selection": prior_context["selection"], "new_selection": copy.deepcopy(context["selection"]),
                     "old_search_roots": None, "new_search_roots": context.get("search_roots")}
+                if intermediate_identity != value_sha(context):
+                    pylint_corrections[value_sha(context)]["via_64db_request_id"] = intermediate_identity
         identity = value_sha(context)
         if correction:
             corrections[identity] = correction
@@ -460,6 +503,10 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
             or sum("ordered_project_import_search_roots" in row["reasons"] for row in pylint_corrections.values()) != 69
             or sum("source_owned_directory_non_stub_selection" in row["reasons"] for row in pylint_corrections.values()) != 27):
         raise ValueError("source-proven Pylint context correction denominator differs")
+    if len(library_corrections) != 3 or {row["target"] for row in library_corrections.values()} != set(TARGETS):
+        raise ValueError("fixed typed-Pydantic library correction denominator differs")
+    if len(namespace_corrections) != 3 or {row["target"] for row in namespace_corrections.values()} != set(TARGETS):
+        raise ValueError("fixed Pylint namespace-root correction denominator differs")
     for path, expected in PYLINT_RECIPE_SOURCES.items():
         if digest(sources.raw(path)) != expected:
             raise ValueError("fixed Pylint source recipe differs")
@@ -485,7 +532,11 @@ def build_lock(repo: Path) -> tuple[dict, list[dict]]:
         "generated_pyproject": {"source_owner": "tools/ci/q0_16_project_contracts.py", "bytes": len(PYPROJECT), "sha256": digest(PYPROJECT), "explicit_fixture_takes_precedence": True},
         "selection_corrections_from_R4": list(corrections.values()),
         "pylint_context_corrections_from_1881": list(pylint_corrections.values()),
+        "mypy_library_asset_corrections_from_64db": list(library_corrections.values()),
+        "pylint_namespace_corrections_from_64db": list(namespace_corrections.values()),
+        "reference_library_member_selections": REFERENCE_LIBRARY_SELECTIONS,
         "pylint_recipe_sources": PYLINT_RECIPE_SOURCES, "pylint_init_hook_source": PYLINT_INIT_HOOK_SOURCE,
+        "pylint_namespace_source": PYLINT_NAMESPACE_SOURCE,
         "requests": [{**c, "context": public_context(c["context"])} for c in cases],
         "source_programs_executed": False, "native_parity": "not_run"}
     return lock, cases
@@ -955,6 +1006,99 @@ def metadata_executable_identity(python: Path, base_python: Path) -> dict:
         "resolved_base": str(resolved), "resolved_binary": binary}
 
 
+def selected_library_members(names: list[str], selection: dict) -> list[str]:
+    if len(names) != len(set(names)):
+        raise ValueError("reference-library wheel has duplicate members")
+    result = []
+    for name in names:
+        selected = name == selection.get("exact") or bool(selection.get("prefix") and name.startswith(selection["prefix"]))
+        if selected and (name.endswith((".py", ".pyi")) or PurePosixPath(name).name == "py.typed") and name not in selection["excluded"]:
+            safe_path(name)
+            result.append(name)
+    result.sort()
+    if len(result) != selection["files"]:
+        raise ValueError("fixed reference-library type-file denominator differs")
+    return result
+
+
+def copy_reference_libraries(case: dict, executable: Path, root: Path, site: Path) -> dict | None:
+    assets = case["context"].get("reference_library_assets")
+    if assets is None:
+        return None
+    if (case["context"]["tool"] != "mypy" or len(case["source_aliases"]) != 1
+            or case["source_aliases"][0]["case_source"]["source_id"] != "crates/mamba-quality/src/infrastructure/mypy/tests/dependencies.json"
+            or case["source_aliases"][0]["case_source"]["json_pointer"] != "/29"
+            or [origin["name"] for origin in assets["origins"]] != list(REFERENCE_LIBRARY_SELECTIONS)):
+        raise ValueError("reference-library assets are outside the fixed typed-Pydantic case")
+    environment = executable.parent.parent.parent
+    identity_path, before_path = environment / "identity.json", environment / "payloads-before.json"
+    identity, before = read_json(identity_path.read_bytes()), read_json(before_path.read_bytes())
+    checker_site = executable.parent.parent / "lib" / ("python" + case["context"]["target"]) / "site-packages"
+    if identity["executable"] != str(executable):
+        raise ValueError("reference-library checker identity differs")
+    files, manifest = {}, []
+    for origin in assets["origins"]:
+        if capture.strict_json_bytes(origin["member_selection"]) != capture.strict_json_bytes(REFERENCE_LIBRARY_SELECTIONS[origin["name"]]):
+            raise ValueError("fixed reference-library member selection differs")
+        pin = origin["wheel_pin"]
+        wheel_identity = next(item for item in identity["wheel_artifacts"] if item["filename"] == pin["filename"])
+        download_root = environment.parent.parent / "downloads/mypy"
+        candidates = [directory / pin["filename"] for directory in download_root.glob("wheel-*") if (directory / pin["filename"]).exists()]
+        if len(candidates) != 1:
+            raise ValueError("reference-library wheel has no unique retained download")
+        wheel = candidates[0]
+        if (wheel.name != pin["filename"] or not stat.S_ISREG(wheel.lstat().st_mode) or not wheel.resolve().is_relative_to(download_root.resolve())
+                or digest(wheel.read_bytes()) != pin["sha256"] or wheel_identity["sha256"] != pin["sha256"]
+                or wheel.stat().st_size != wheel_identity["bytes"]):
+            raise ValueError("reference-library wheel differs from the exact locked/attested source")
+        distribution = next(item for name, item in identity["distributions"].items()
+            if name.replace("-", "_") == origin["name"].replace("-", "_"))
+        if distribution["version"] != origin["version"]:
+            raise ValueError("reference-library installed version differs")
+        with zipfile.ZipFile(wheel) as archive:
+            members = selected_library_members(archive.namelist(), origin["member_selection"])
+            for name in members:
+                info = archive.getinfo(name)
+                if info.is_dir() or stat.S_ISLNK(info.external_attr >> 16):
+                    raise ValueError("reference-library type member is not a regular file")
+                raw = archive.read(name); descriptor = {"bytes": len(raw), "sha256": digest(raw)}
+                source = checker_site / name
+                if (capture.strict_json_bytes(distribution["distribution_files"][name]) != capture.strict_json_bytes(descriptor)
+                        or capture.strict_json_bytes(before[str(source)]) != capture.strict_json_bytes(descriptor)
+                        or source.read_bytes() != raw):
+                    raise ValueError("reference-library wheel/installed/attested type bytes differ")
+                if name in files or (site / name).exists():
+                    raise ValueError("reference-library type file collides with declared fixture data")
+                files[name] = payload(raw)
+                destination = lexical_path(site, name); destination.parent.mkdir(parents=True, exist_ok=True)
+                with destination.open("xb") as stream:
+                    stream.write(raw)
+                manifest.append({"relative_path": name, **descriptor, "library": origin["name"], "version": origin["version"],
+                    "wheel_pin": pin, "wheel_binding": origin["wheel_binding"],
+                    "retained_wheel": str(wheel.relative_to(environment.parent.parent)),
+                    "metadata_site_before_fact": capture.fact(destination),
+                    "installed_source": str(source), "installed_file_fact": capture.fact(source),
+                    "distribution_file_fact": distribution["distribution_files"][name], "attested_before_fact": before[str(source)]})
+    if len(files) != sum(selection["files"] for selection in REFERENCE_LIBRARY_SELECTIONS.values()):
+        raise ValueError("typed-Pydantic reference-library file denominator differs")
+    write_payloads(root / "reference-library-input-snapshot", files)
+    for row in manifest:
+        row["input_snapshot_fact"] = capture.fact(root / "reference-library-input-snapshot" / row["relative_path"])
+    path = root / "reference-library-assets.json"
+    fixture_facts = {name: {key: descriptor[key] for key in ("bytes", "sha256")} for name, descriptor in case["context"]["layout"]["model_packages"].items()}
+    union = {name: {"kind": "regular", **descriptor} for name, descriptor in fixture_facts.items()}
+    union.update({name: {"kind": "regular", "bytes": descriptor["bytes"], "sha256": descriptor["sha256"]} for name, descriptor in files.items()})
+    if capture.strict_json_bytes(capture.artifact_inventory(site, [])) != capture.strict_json_bytes(union):
+        raise ValueError("metadata site differs from the exact declared model/reference-asset union")
+    write_json(path, {"source_binding": assets["source_binding"], "files": manifest, "file_count": len(files),
+        "target": case["context"]["target"], "python_version": VERSIONS[int(case["context"]["target"].split(".")[1])],
+        "declared_model_package_files": fixture_facts, "expected_site_union_paths": sorted([*fixture_facts, *files]),
+        "checker_identity": {"path": str(identity_path), **capture.fact(identity_path)},
+        "checker_payloads_before": {"path": str(before_path), **capture.fact(before_path)},
+        "native_binaries_copied": False, "libraries_installed_or_imported_into_metadata": False})
+    return {"manifest_path": str(path), "manifest": capture.fact(path), "file_count": len(files)}
+
+
 def metadata_query_transport(python: Path, helper: Path, version: str, root: Path, site: Path) -> tuple[Path, dict]:
     """Route only mypy's exact query through the genuine isolated interpreter."""
     guard, policy_path, launcher = root / "query-guard.py", root / "query-policy.json", root / "query-transport"
@@ -1098,6 +1242,7 @@ def prepare_metadata(base_python: Path, executable: Path, version: str, case: di
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("xb") as stream:
             stream.write(bytes.fromhex(descriptor["bytes_hex"]))
+    library_assets = copy_reference_libraries(case, executable, root, site)
     before = capture.artifact_inventory(site, [])
     write_json(root / "site-tree-before.json", before)
     probe = ("import sys;print(repr({'python':list(sys.version_info[:3]),'executable':sys.executable,"
@@ -1126,11 +1271,13 @@ def prepare_metadata(base_python: Path, executable: Path, version: str, case: di
         "helper": helper, "interpreter": executable_identity["resolved_binary"],
         "interpreter_symlink": executable_identity, "real_pyvenv_cfg": payload(cfg),
         "query_transport": transport_state,
+        "reference_library_assets": library_assets,
         "source_fixture_pyvenv_cfg_is_not_actual_identity": True, "fixture_imports": [], "creation_wait_completed": create["wait_completed"]})
     state = {"root": str(root), "site": str(site), "site_tree_before": before, "cfg_sha256": digest(cfg),
         "base_executable": str(base_python.resolve(strict=True)), "executable_identity": executable_identity,
         "executable_sha256": executable_identity["resolved_binary"]["sha256"], "python": [int(x) for x in version.split(".")],
         "query_transport": transport_state, "query_preflight_pid": query["pid"], "checker_venv": str(executable.parent.parent)}
+    state["reference_library_assets"] = library_assets
     verify_metadata_queries(state, None)
     return transport, state
 
@@ -1155,6 +1302,33 @@ def finish_metadata(state: dict, checker_pid: int | None = None) -> None:
         raise ValueError("metadata interpreter/config/static packages changed")
     if "query_transport" in state:
         verify_metadata_queries(state, checker_pid)
+    if state.get("reference_library_assets"):
+        assets = state["reference_library_assets"]
+        if capture.fact(Path(assets["manifest_path"])) != assets["manifest"]:
+            raise ValueError("immutable reference-library asset manifest changed")
+        manifest = read_json(Path(assets["manifest_path"]).read_bytes())
+        if len(manifest["files"]) != assets["file_count"]:
+            raise ValueError("reference-library manifest file denominator differs")
+        if manifest["expected_site_union_paths"] != sorted(state["site_tree_before"]):
+            raise ValueError("reference-library/model union differs from its captured before tree")
+        for row in manifest["files"]:
+            expected = {key: row[key] for key in ("bytes", "sha256")}
+            for path in (root / "reference-library-input-snapshot" / row["relative_path"], site / row["relative_path"]):
+                if capture.strict_json_bytes(capture.fact(path)) != capture.strict_json_bytes(expected):
+                    raise ValueError("reference-library snapshot/site type bytes changed")
+        after_rows = []
+        for row in manifest["files"]:
+            expected = {key: row[key] for key in ("bytes", "sha256")}
+            source_after = capture.fact(Path(row["installed_source"]))
+            if capture.strict_json_bytes(source_after) != capture.strict_json_bytes(expected):
+                raise ValueError("reference-library attested checker type source changed")
+            after_rows.append({"relative_path": row["relative_path"], "target": manifest["target"],
+                "metadata_site_after_fact": capture.fact(site / row["relative_path"]),
+                "input_snapshot_after_fact": capture.fact(root / "reference-library-input-snapshot" / row["relative_path"]),
+                "installed_source_after_fact": source_after})
+        save_or_verify_metadata_json(root / "reference-library-assets-after.json", {
+            "before_manifest": assets["manifest"], "target": manifest["target"], "files": after_rows,
+            "model_and_asset_union_unchanged": True, "library_programs_executed": False})
 
 
 def apply_filesystem(case: dict, project: Path, restores: list) -> dict:
@@ -1203,6 +1377,12 @@ def argv_for(executable: Path, case: dict, project: Path, config: Path, metadata
         return argv + names
     argv = [str(executable), "-I", "-m", "pylint", "--rcfile=/dev/null", "--persistent=n", "--max-line-length=88",
         "--py-version=" + context["target"], "--output-format=json2"]
+    if context.get("module_source_roots") is not None:
+        if (context["module_source_roots"] != ["."] or len(case["source_aliases"]) != 1
+                or case["source_aliases"][0]["case_source"]["source_id"] != "crates/mamba-quality/src/infrastructure/pylint/tests/cross_file_selected_imports.json"
+                or case["source_aliases"][0]["case_source"]["json_pointer"] != "/1"):
+            raise ValueError("module-discovery source root is outside the fixed namespace case")
+        argv += ["--source-roots=" + str(project.resolve(strict=True))]
     if context.get("search_roots") is not None:
         if context["search_roots"] != [".", "src"]:
             raise ValueError("only the exact source-owned ordered project roots are admitted")
@@ -1400,8 +1580,12 @@ def run(repo: Path, output: Path, python: Path, version: str, tool: str) -> int:
             init_hook_owner = executable.parent.parent / "lib" / ("python" + target) / "site-packages" / PYLINT_INIT_HOOK_SOURCE["member"]
             if capture.fact(init_hook_owner)["sha256"] != PYLINT_INIT_HOOK_SOURCE["sha256"]:
                 raise ValueError("pinned Pylint import-root init-hook owner differs")
+            namespace_owner = init_hook_owner.parent.parent / "lint/expand_modules.py"
+            if capture.fact(namespace_owner)["sha256"] != PYLINT_NAMESPACE_SOURCE["sha256"]:
+                raise ValueError("pinned Pylint namespace-discovery owner differs")
             write_json(output / "pylint-import-root-source.json", {"source": capture.fact(init_hook_owner),
                 "line_spans": PYLINT_INIT_HOOK_SOURCE["line_spans"], "hook_imports": ["sys"], "fixture_imports": [],
+                "namespace_discovery_source": capture.fact(namespace_owner), "namespace_line_spans": PYLINT_NAMESPACE_SOURCE["line_spans"],
                 "ordered_roots": ["project", "project/src"]})
         with (output / "initial-index.jsonl").open("x") as index:
             for case in planned:
